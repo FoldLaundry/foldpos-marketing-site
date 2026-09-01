@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fold POS</title>
+<meta name="description" content="Point of sale and operations software for laundromats and dry cleaners. Part of the Fold family.">
+<link rel="canonical" href="https://foldpos.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Fold POS">
+<meta property="og:description" content="Point of sale and operations software for laundromats and dry cleaners. Part of the Fold family.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2e5ce6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --ink:#12151c;
+    --ink-soft:#3a3f4c;
+    --paper:#f5f6fb;
+    --surface:#ffffff;
+    --line:#e2e5ef;
+    --line-soft:#ebedf5;
+    --muted:#6b7280;
+    --brand:#2e5ce6;
+    --brand-hover:#2249c4;
+    --brand-deep:#141b3d;
+    --brand-deep-soft:#232b57;
+    --brand-soft:#eaf0ff;
+    --indigo:#6355e8;
+    --indigo-soft:#eeecfd;
+    --success:#17a673;
+    --success-soft:#e6f6ef;
+    --amber:#c47a1f;
+    --amber-soft:#fbf0de;
+    --shadow-sm: 0 1px 2px rgba(18,21,28,0.06);
+    --shadow-md: 0 8px 24px -8px rgba(18,21,28,0.16);
+    --shadow-lg: 0 24px 60px -20px rgba(20,27,61,0.35);
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eef0f6;
+      --ink-soft:#c3c8d6;
+      --paper:#0d0f16;
+      --surface:#161923;
+      --line:#2a2e3c;
+      --line-soft:#20232f;
+      --muted:#9298aa;
+      --brand:#5b82f2;
+      --brand-hover:#7a9bf6;
+      --brand-deep:#0a0d21;
+      --brand-deep-soft:#161d3f;
+      --brand-soft:#182241;
+      --indigo:#8b7ef0;
+      --indigo-soft:#221f42;
+      --success:#3ecf98;
+      --success-soft:#123227;
+      --amber:#e0a355;
+      --amber-soft:#332510;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+      --shadow-md: 0 8px 24px -8px rgba(0,0,0,0.5);
+      --shadow-lg: 0 24px 60px -20px rgba(0,0,0,0.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef0f6;
+    --ink-soft:#c3c8d6;
+    --paper:#0d0f16;
+    --surface:#161923;
+    --line:#2a2e3c;
+    --line-soft:#20232f;
+    --muted:#9298aa;
+    --brand:#5b82f2;
+    --brand-hover:#7a9bf6;
+    --brand-deep:#0a0d21;
+    --brand-deep-soft:#161d3f;
+    --brand-soft:#182241;
+    --indigo:#8b7ef0;
+    --indigo-soft:#221f42;
+    --success:#3ecf98;
+    --success-soft:#123227;
+    --amber:#e0a355;
+    --amber-soft:#332510;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+    --shadow-md: 0 8px 24px -8px rgba(0,0,0,0.5);
+    --shadow-lg: 0 24px 60px -20px rgba(0,0,0,0.7);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  ::selection{background:var(--brand-soft); color:var(--brand-deep);}
+
+  h1,h2,h3,h4{
+    font-family:"Sora", -apple-system, sans-serif;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--brand);
+  }
+  .lede{
+    color:var(--ink-soft);
+    font-size:1.15rem;
+    line-height:1.6;
+    max-width:38em;
+  }
+  .mono-num{ font-family:"IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  section{ position:relative; }
+
+  a:focus-visible, button:focus-visible, .btn:focus-visible{
+    outline:2px solid var(--brand);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:"Plus Jakarta Sans", sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:13px 22px;
+    border-radius:100px;
+    border:1px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--brand);
+    color:#fff;
+    box-shadow:var(--shadow-sm);
+  }
+  .btn-primary:hover{ background:var(--brand-hover); box-shadow:var(--shadow-md); transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{ border-color:var(--brand); color:var(--brand); }
+  .btn-onbrand{
+    background:#fff;
+    color:var(--brand-deep);
+  }
+  .btn-onbrand:hover{ transform:translateY(-1px); box-shadow:0 12px 30px -10px rgba(0,0,0,0.4); }
+  .btn-sm{ padding:9px 16px; font-size:0.85rem; }
+  .btn svg{ width:16px; height:16px; }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand-lockup{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand-mark{
+    width:34px; height:34px; border-radius:9px;
+    background:linear-gradient(155deg, var(--brand), var(--brand-deep));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:"Sora", sans-serif; font-weight:700; font-size:17px;
+    flex:none;
+  }
+  .brand-word{ font-family:"Sora", sans-serif; font-weight:700; font-size:1.15rem; color:var(--ink); }
+  .family-pill{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:10.5px; font-weight:600; letter-spacing:0.04em;
+    color:var(--brand-deep);
+    background:var(--brand-soft);
+    border:1px solid color-mix(in srgb, var(--brand) 30%, transparent);
+    border-radius:100px;
+    padding:3px 9px;
+    margin-left:2px;
+  }
+  :root[data-theme="dark"] .family-pill, @media (prefers-color-scheme:dark){ .family-pill{ color:var(--brand); } }
+  nav.links{ display:flex; align-items:center; gap:34px; }
+  nav.links a{ text-decoration:none; color:var(--ink-soft); font-size:0.94rem; font-weight:500; }
+  nav.links a:hover{ color:var(--ink); }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .nav-login{ text-decoration:none; font-weight:600; font-size:0.94rem; color:var(--ink-soft); }
+  .nav-login:hover{ color:var(--ink); }
+  .nav-mobile-toggle{ display:none; }
+
+  @media (max-width: 860px){
+    nav.links{ display:none; }
+    .nav-login{ display:none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{ padding:76px 0 40px; overflow:hidden; }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-copy{ max-width:640px; }
+  .hero-copy .eyebrow{ display:block; margin-bottom:18px; }
+  .hero-copy h1{
+    font-size:clamp(2.3rem, 4.6vw, 3.55rem);
+    line-height:1.06;
+    font-weight:700;
+  }
+  .hero-copy .lede{ margin-top:20px; font-size:1.18rem; }
+  .hero-actions{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+  .hero-fine{
+    margin-top:20px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:0.01em;
+  }
+
+  .hero-stage{
+    position:relative;
+    padding-top:8px;
+    min-height:420px;
+  }
+  .chrome{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+  }
+  .chrome-bar{
+    display:flex; align-items:center; gap:6px;
+    padding:10px 14px;
+    border-bottom:1px solid var(--line-soft);
+    background:var(--surface);
+  }
+  .chrome-dot{ width:9px; height:9px; border-radius:50%; background:var(--line); }
+  .chrome-bar .chrome-dot:nth-child(1){ background:#f0685f; }
+  .chrome-bar .chrome-dot:nth-child(2){ background:#f4bd4f; }
+  .chrome-bar .chrome-dot:nth-child(3){ background:#63c766; }
+  .chrome img{ width:100%; height:auto; display:block; }
+
+  .hero-shot-front{
+    position:relative; z-index:2;
+    width:100%;
+    transform:rotate(0.6deg);
+  }
+  .hero-shot-back{
+    position:absolute;
+    top:-26px; right:-8%;
+    width:78%;
+    z-index:1;
+    transform:rotate(-5deg);
+    opacity:0.94;
+  }
+  .hero-shot-back .chrome{ box-shadow:var(--shadow-md); }
+
+  @media (min-width: 980px){
+    .hero-grid{ grid-template-columns:1.02fr 1fr; }
+    .hero-stage{ min-height:0; }
+  }
+
+  /* ============ SERVICE STRIP ============ */
+  .strip{ padding:34px 0 58px; }
+  .strip-label{ text-align:left; margin-bottom:18px; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .service-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--line);
+    background:var(--surface);
+    border-radius:100px;
+    padding:9px 16px 9px 12px;
+    font-size:0.9rem; font-weight:600; color:var(--ink-soft);
+  }
+  .service-pill .dot{ width:7px; height:7px; border-radius:50%; background:var(--brand); flex:none; }
+
+  hr.div{ border:none; border-top:1px solid var(--line-soft); margin:0; }
+
+  /* ============ SECTION HEADS ============ */
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head .eyebrow{ display:block; margin-bottom:14px; }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.35rem); line-height:1.15; }
+  .section-head .lede{ margin-top:14px; font-size:1.05rem; }
+  .center{ text-align:center; margin-left:auto; margin-right:auto; }
+  .center .lede{ margin-left:auto; margin-right:auto; }
+
+  /* ============ WALKTHROUGH ============ */
+  .walk{ padding:96px 0 40px; }
+  .walk-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:34px;
+    align-items:center;
+    padding:56px 0;
+  }
+  .walk-row + .walk-row{ border-top:1px solid var(--line-soft); }
+  .walk-rail{
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:18px;
+  }
+  .walk-dot{
+    width:30px; height:30px; border-radius:50%;
+    border:2px solid var(--brand);
+    color:var(--brand);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:12.5px;
+    flex:none;
+    background:var(--surface);
+  }
+  .walk-stage-label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.08em;
+    color:var(--muted); text-transform:uppercase;
+  }
+  .walk-text h3{ font-size:1.55rem; line-height:1.2; margin-bottom:14px; }
+  .walk-text p{ color:var(--ink-soft); font-size:1.02rem; max-width:34em; }
+  .walk-media .chrome{ transform:rotate(-0.4deg); }
+  .walk-row:nth-child(even) .walk-media .chrome{ transform:rotate(0.5deg); }
+
+  @media (min-width: 900px){
+    .walk-row{ grid-template-columns:0.85fr 1.15fr; gap:64px; }
+    .walk-row:nth-child(even) .walk-text{ order:2; }
+    .walk-row:nth-child(even) .walk-media{ order:1; }
+  }
+
+  /* ============ FEATURE GRID ============ */
+  .features{ padding:40px 0 100px; }
+  .feature-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+  }
+  @media (min-width:700px){ .feature-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1020px){ .feature-grid{ grid-template-columns:1fr 1fr 1fr; } }
+  .feature-card{
+    background:var(--surface);
+    padding:30px 28px;
+  }
+  .feature-icon{
+    width:40px; height:40px; border-radius:11px;
+    background:var(--brand-soft);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+    color:var(--brand);
+  }
+  .feature-icon svg{ width:20px; height:20px; }
+  .feature-card h4{ font-size:1.05rem; margin-bottom:9px; }
+  .feature-card p{ margin:0; color:var(--muted); font-size:0.93rem; line-height:1.6; }
+
+  /* ============ OPS: MACHINES &amp; SUPPLIES ============ */
+  .ops{ padding:20px 0 100px; }
+  .ops-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
+  @media (min-width:860px){ .ops-grid{ grid-template-columns:1fr 1fr; } }
+  .ops-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:40px 36px;
+    display:flex; flex-direction:column;
+  }
+  .ops-icon{
+    width:52px; height:52px; border-radius:14px;
+    background:var(--indigo-soft);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--indigo);
+    margin-bottom:24px;
+    flex:none;
+  }
+  .ops-icon svg{ width:26px; height:26px; }
+  .ops-card h3{ font-size:1.3rem; line-height:1.25; margin-bottom:12px; }
+  .ops-card > p{ color:var(--ink-soft); font-size:0.98rem; line-height:1.6; margin:0 0 24px; max-width:38em; }
+  .ops-list{ list-style:none; margin:auto 0 0; padding:20px 0 0; border-top:1px solid var(--line-soft); display:flex; flex-direction:column; gap:13px; }
+  .ops-list li{ display:flex; gap:10px; font-size:0.93rem; color:var(--ink-soft); align-items:flex-start; }
+  .ops-list svg{ width:16px; height:16px; flex:none; margin-top:3px; color:var(--success); }
+
+  /* ============ WHY / PROOF ============ */
+  .why{ padding:20px 0 100px; }
+  .why-panel{
+    background:var(--brand-deep);
+    border-radius:var(--radius-lg);
+    padding:56px;
+    color:#f3f5ff;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:44px;
+  }
+  @media (min-width:980px){ .why-panel{ grid-template-columns:1.1fr 0.9fr; padding:64px 68px; } }
+  .why-panel .eyebrow{ color:#a9bdfc; }
+  .why-panel h2{ color:#fff; font-size:clamp(1.6rem,2.8vw,2.1rem); margin-top:14px; line-height:1.22; }
+  .why-panel p{ color:#c3caed; font-size:1.02rem; margin-top:18px; max-width:36em; line-height:1.65; }
+  .stat-col{ display:flex; flex-direction:column; gap:0; }
+  .stat-row{
+    display:flex; align-items:baseline; gap:16px;
+    padding:20px 0;
+  }
+  .stat-row + .stat-row{ border-top:1px solid rgba(255,255,255,0.14); }
+  .stat-num{
+    font-family:"Sora", sans-serif; font-weight:700;
+    font-size:2rem; color:#fff; flex:none; min-width:108px;
+  }
+  .stat-desc{ color:#c3caed; font-size:0.95rem; line-height:1.5; }
+
+  /* ============ PRICING ============ */
+  .pricing{ padding:20px 0 100px; }
+  .price-grid{
+    display:grid; grid-template-columns:1fr; gap:22px;
+  }
+  @media (min-width:900px){ .price-grid{ grid-template-columns:repeat(3, 1fr); } }
+  .price-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:32px 28px;
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+  .price-card.featured{
+    border-color:var(--brand);
+    box-shadow:var(--shadow-md);
+  }
+  .price-featured-tag{
+    position:absolute; top:-13px; left:28px;
+    background:var(--brand); color:#fff;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:10.5px; font-weight:600; letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:5px 11px; border-radius:100px;
+  }
+  .price-tier{ font-family:"Sora", sans-serif; font-weight:700; font-size:1.2rem; }
+  .price-audience{ color:var(--muted); font-size:0.88rem; margin-top:4px; }
+  .price-amount{ display:flex; align-items:baseline; gap:6px; margin:22px 0 4px; }
+  .price-amount .num{ font-family:"Sora", sans-serif; font-weight:700; font-size:2.5rem; font-variant-numeric:tabular-nums; }
+  .price-amount .per{ color:var(--muted); font-size:0.9rem; }
+  .price-card .btn{ margin-top:22px; justify-content:center; width:100%; }
+  .price-list{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; flex:1; }
+  .price-list li{ display:flex; gap:10px; font-size:0.92rem; color:var(--ink-soft); align-items:flex-start; }
+  .price-list svg{ width:16px; height:16px; flex:none; margin-top:3px; color:var(--success); }
+  .pricing-foot{
+    margin-top:30px; display:flex; flex-wrap:wrap; gap:10px 28px; align-items:center;
+    color:var(--muted); font-size:0.9rem;
+  }
+  .pricing-foot a{ color:var(--brand); text-decoration:none; font-weight:600; }
+  .pricing-foot a:hover{ text-decoration:underline; }
+
+  /* ============ FAQ ============ */
+  .faq{ padding:20px 0 110px; }
+  .faq-list{ border-top:1px solid var(--line); max-width:820px; }
+  .faq-item{ border-bottom:1px solid var(--line); padding:26px 0; }
+  .faq-item summary{
+    cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    font-family:"Sora", sans-serif; font-weight:600; font-size:1.03rem;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item .plus{
+    width:24px; height:24px; flex:none; position:relative;
+  }
+  .faq-item .plus::before, .faq-item .plus::after{
+    content:""; position:absolute; background:var(--ink-soft);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  .faq-item .plus::before{ width:14px; height:2px; }
+  .faq-item .plus::after{ width:2px; height:14px; transition:transform 0.18s ease, opacity 0.18s ease; }
+  .faq-item[open] .plus::after{ opacity:0; }
+  .faq-item p{ margin:14px 0 0; color:var(--muted); font-size:0.96rem; max-width:60ch; }
+
+  /* ============ FINAL CTA ============ */
+  .cta-band{ padding:0 0 110px; }
+  .cta-panel{
+    background:linear-gradient(135deg, var(--brand), var(--brand-hover));
+    border-radius:var(--radius-lg);
+    padding:64px 48px;
+    text-align:center;
+    color:#fff;
+  }
+  .cta-panel h2{ color:#fff; font-size:clamp(1.7rem,3.4vw,2.5rem); }
+  .cta-panel p{ color:#dfe6ff; margin-top:14px; font-size:1.05rem; }
+  .cta-panel .hero-actions{ justify-content:center; margin-top:30px; }
+
+  /* ============ FOOTER ============ */
+  footer{ border-top:1px solid var(--line-soft); padding:64px 0 40px; }
+  .foot-top{
+    display:grid; grid-template-columns:1fr; gap:44px;
+    padding-bottom:48px;
+  }
+  @media (min-width:760px){ .foot-top{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
+  .foot-brand p{ color:var(--muted); font-size:0.92rem; max-width:26em; margin-top:14px; }
+  .foot-col h5{
+    font-family:"IBM Plex Mono", monospace; font-size:11.5px; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 16px;
+  }
+  .foot-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+  .foot-col a{ text-decoration:none; color:var(--ink-soft); font-size:0.93rem; }
+  .foot-col a:hover{ color:var(--brand); }
+  .foot-bottom{
+    border-top:1px solid var(--line-soft);
+    padding-top:26px;
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px;
+    color:var(--muted); font-size:0.85rem;
+  }
+  .foot-bottom a{ text-decoration:none; color:var(--muted); }
+  .foot-bottom a:hover{ color:var(--brand); }
+  .foot-legal{ display:flex; gap:20px; }
+</style>
+
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand-lockup" href="#top">
+      <span class="brand-mark">F</span>
+      <span class="brand-word">Fold POS</span>
+      <span class="family-pill">PART OF FOLD</span>
+    </a>
+    <nav class="links">
+      <a href="features.html">Product</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-login" href="#">Log in</a>
+      <a class="btn btn-primary btn-sm" href="#pricing">Start free trial</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Point of sale for laundromats &amp; dry cleaners</span>
+        <h1>Point of sale for laundry, not retail.</h1>
+        <p class="lede">Fold POS rings up wash-and-fold, dry cleaning, and alterations exactly the way your shop runs — by weight, by bag, by item — then tracks every order from drop-off to pickup so nothing gets lost behind a machine.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">Start free trial
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#faq">Book a demo</a>
+        </div>
+        <p class="hero-fine">No contract · Works with your existing tablet or printer</p>
+      </div>
+      <div class="hero-stage">
+        <div class="hero-shot-back">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/kanban-board.webp" alt="Fold POS workflow board showing orders moving through to-do, washing, drying, ironing, folding, and completed columns" />
+          </div>
+        </div>
+        <div class="hero-shot-front">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/order-intake.webp" alt="Fold POS order intake screen with wash and fold items and order total" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE STRIP ============ -->
+  <section class="strip">
+    <div class="wrap">
+      <div class="strip-label"><span class="eyebrow">One counter for every service you run</span></div>
+      <div class="pill-row">
+        <span class="service-pill"><span class="dot"></span>Wash &amp; Fold</span>
+        <span class="service-pill"><span class="dot"></span>Dry Cleaning</span>
+        <span class="service-pill"><span class="dot"></span>Alterations</span>
+        <span class="service-pill"><span class="dot"></span>Pickup &amp; Delivery</span>
+        <span class="service-pill"><span class="dot"></span>Self-Service</span>
+        <span class="service-pill"><span class="dot"></span>Multi-Location</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ============ WALKTHROUGH ============ -->
+  <section class="walk" id="walkthrough">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How an order actually moves</span>
+        <h2>Four screens. One order, start to finish.</h2>
+        <p class="lede">This is the same board your counter staff sees today — not a mockup of what a POS could look like.</p>
+      </div>
+
+      <div class="walk-row">
+        <div class="walk-text">
+          <div class="walk-rail"><span class="walk-dot">01</span><span class="walk-stage-label">Take the order</span></div>
+          <h3>Ring up an order the way your counter actually works</h3>
+          <p>Tap through wash-and-fold, dry cleaning, or alterations, add bags or per-pound pricing, toggle express service, and apply a discount — then take payment by cash, card, or pay-on-delivery, all from one screen.</p>
+        </div>
+        <div class="walk-media">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/order-intake.webp" alt="Order intake screen showing wash and fold item pricing and order summary with subtotal, discount, and tax" />
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-row">
+        <div class="walk-text">
+          <div class="walk-rail"><span class="walk-dot">02</span><span class="walk-stage-label">Track every stage</span></div>
+          <h3>See every order's exact stage, all day long</h3>
+          <p>Orders move across your real workflow — to-do, washing, drying, ironing, folding, completed — so nothing sits forgotten in a machine. Assign a washer or dryer in one tap and watch load progress in real time.</p>
+        </div>
+        <div class="walk-media">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/kanban-board.webp" alt="Workflow board with columns for to-do, washing, drying, ironing, folding, and completed orders" />
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-row">
+        <div class="walk-text">
+          <div class="walk-rail"><span class="walk-dot">03</span><span class="walk-stage-label">Keep the details on the ticket</span></div>
+          <h3>Every note, photo, and price change stays with the order</h3>
+          <p>Log a broken zipper, snap a photo of a stain before you clean it, and see the full price breakdown by task — so whoever hands the order back knows exactly what happened to it.</p>
+        </div>
+        <div class="walk-media">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/order-detail.webp" alt="Order details panel showing itemized alteration tasks, customer contact info, and a photo upload area" />
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-row">
+        <div class="walk-text">
+          <div class="walk-rail"><span class="walk-dot">04</span><span class="walk-stage-label">Run the shift</span></div>
+          <h3>Close out the day without reopening a spreadsheet</h3>
+          <p>Clock in and out, track revenue and order volume by service line, and hand off a clean shift log and activity feed to whoever opens tomorrow.</p>
+        </div>
+        <div class="walk-media">
+          <div class="chrome">
+            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+            <img src="assets/img/dashboard.webp" alt="Shift dashboard showing total customers, total revenue, service breakdown, and clock-in history" />
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; padding-top:36px;">
+        <a class="btn btn-ghost" href="features.html">See the full product tour
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE GRID ============ -->
+  <section class="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Under the hood</span>
+        <h2>Everything a shop needs, nothing it doesn't</h2>
+      </div>
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Flexible pricing</h4>
+          <p>Charge by the pound, the bag, or the item. Set minimums, express fees, and discounts once and reuse them on every order.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="17" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 4v2M16 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Machine &amp; staff scheduling</h4>
+          <p>Assign washers, dryers, irons, and staff, and see live progress on every machine currently in use.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M16 9.5c1.8.3 3 1.9 3 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Customer accounts</h4>
+          <p>Every customer's order history, contact info, and preferences saved and searchable right at the counter.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="6" width="17" height="12" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17" stroke="currentColor" stroke-width="1.6"/><path d="M7 14h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Payments built in</h4>
+          <p>Take cash, card, or pay-on-delivery, and get paid out without wiring up a separate processor.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h4>Pickup &amp; delivery</h4>
+          <p>Build routes, assign drivers, and update customers automatically as their order moves.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V9M11 19V4M18 19v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 19h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Reporting that's actually readable</h4>
+          <p>Revenue, order volume, and service mix by day, week, or location — no spreadsheet exports required.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPS: MACHINES & SUPPLIES ============ -->
+  <section class="ops">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Beyond the counter</span>
+        <h2>Machines and supplies, managed from the same screen</h2>
+        <p class="lede">Fold POS doesn't stop at ringing up orders — it keeps the equipment running and the shelves stocked, without a separate tool.</p>
+      </div>
+
+      <div class="ops-grid">
+
+        <div class="ops-card">
+          <div class="ops-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a4 4 0 0 0-5.4 4.9L4 16.5V20h3.5l5.3-5.3a4 4 0 0 0 4.9-5.4l-2.6 2.6-2-2 2.6-2.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Machine maintenance, without the clipboard</h3>
+          <p>Every washer, dryer, and press gets its own maintenance record. Log repairs as they happen, and know which machine is due for service before it breaks down mid-shift.</p>
+          <ul class="ops-list">
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Full maintenance and repair history, per machine</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Schedule a technician directly from the POS</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Preventive maintenance reminders based on machine usage</li>
+          </ul>
+        </div>
+
+        <div class="ops-card">
+          <div class="ops-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7.5 12 12l8-4.5M12 12v9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Supplies and retail inventory in one view</h3>
+          <p>Track the detergent, bags, hangers, and press pads that keep your operation running, plus the retail products you sell over the counter — side by side, updated live.</p>
+          <ul class="ops-list">
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Live inventory counts for retail products you sell</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Usage tracking for the operating supplies your orders consume</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Reorder suggestions and quantities, based on historic use and current workload</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY / PROOF ============ -->
+  <section class="why">
+    <div class="wrap">
+      <div class="why-panel">
+        <div>
+          <span class="eyebrow">Why it's built this way</span>
+          <h2>We timed real counters before we designed the board</h2>
+          <p>Before we wrote a line of the workflow board, we sat behind real laundromat and dry cleaner counters and watched how long it actually takes to find an order, assign a machine, and close out a shift. Fold POS is built around that — not a generic retail checkout with a laundry logo on top.</p>
+        </div>
+        <div class="stat-col">
+          <div class="stat-row">
+            <span class="stat-num mono-num">6</span>
+            <span class="stat-desc">order stages tracked automatically, from drop-off to pickup</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num mono-num">1</span>
+            <span class="stat-desc">screen for the counter, the workflow board, and payments</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num mono-num">0</span>
+            <span class="stat-desc">spreadsheets needed to close out a shift or reconcile the day</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Simple pricing</span>
+        <h2>Pick the plan that matches how many doors you run</h2>
+        <p class="lede">Every plan includes the counter, the workflow board, and payments. Add pickup &amp; delivery or multi-location tools when you're ready.</p>
+      </div>
+
+      <div class="price-grid">
+
+        <div class="price-card">
+          <div class="price-tier">Starter</div>
+          <div class="price-audience">For a single counter</div>
+          <div class="price-amount"><span class="num mono-num">$39</span><span class="per">/month</span></div>
+          <a class="btn btn-ghost" href="#">Start free trial</a>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Order intake &amp; POS</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Workflow board, to-do → completed</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Customer accounts &amp; history</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Cash, card &amp; pay-on-delivery</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Daily reporting</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine maintenance log</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <span class="price-featured-tag">Most popular</span>
+          <div class="price-tier">Growth</div>
+          <div class="price-audience">For shops adding delivery &amp; staff</div>
+          <div class="price-amount"><span class="num mono-num">$59</span><span class="per">/month</span></div>
+          <a class="btn btn-primary" href="#">Start free trial</a>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Starter</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery routing</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Staff shifts &amp; clock-in/out</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Express &amp; subscription pricing</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Marketing &amp; order reminders</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Supply inventory &amp; reorder suggestions</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-tier">Pro</div>
+          <div class="price-audience">For multi-location shops</div>
+          <div class="price-amount"><span class="num mono-num">$79</span><span class="per">/month</span></div>
+          <a class="btn btn-ghost" href="#">Start free trial</a>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Growth</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-location reporting rollups</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Route optimization</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Role-based staff permissions</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-location machine &amp; supply reporting</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pricing-foot">
+        <span>Card processing at competitive rates on every plan.</span>
+        <span>Hardware bundles from $499.</span>
+        <a href="#">Running more than 5 locations? Talk to sales →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Before you switch</span>
+        <h2>Questions owners actually ask</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I need new hardware, or can I use what I have?<span class="plus"></span></summary>
+          <p>Fold POS runs on most iPads, Android tablets, and receipt printers you already own. If you'd rather not source your own, we sell ready-to-go counter bundles.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I bring over my orders and customers from Cents or CleanCloud?<span class="plus"></span></summary>
+          <p>Yes. Our migration tool imports customers, order history, and pricing so you're not starting from a blank counter on day one.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a contract?<span class="plus"></span></summary>
+          <p>No. Every plan is month-to-month, and you can change tiers or cancel any time from your account settings.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work across multiple locations?<span class="plus"></span></summary>
+          <p>Yes. Growth and Pro plans roll up reporting across locations while keeping each shop's own workflow board separate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is Fold POS related to Fold?<span class="plus"></span></summary>
+          <p>Fold POS is a standalone product built by the Fold team, purpose-built for laundromats and dry cleaners rather than general service businesses.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2>Your counter's about to get a lot quieter.</h2>
+        <p>Start free — no credit card, no contract, no sales call required.</p>
+        <div class="hero-actions">
+          <a class="btn btn-onbrand" href="#pricing">Start free trial</a>
+          <a class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5); color:#fff;" href="#faq">Book a demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand-lockup" href="#top">
+          <span class="brand-mark">F</span>
+          <span class="brand-word">Fold POS</span>
+        </a>
+        <p>Point of sale and operations software for laundromats and dry cleaners. Part of the Fold family of tools for service businesses.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="features.html#workflow">Workflow board</a></li>
+          <li><a href="features.html#counter">Point of sale</a></li>
+          <li><a href="features.html#machines">Machine management</a></li>
+          <li><a href="features.html#supplies">Supplies &amp; inventory</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Fold</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Book a demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Fold POS. Part of Fold.</span>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
