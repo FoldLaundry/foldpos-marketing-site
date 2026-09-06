@@ -122,7 +122,7 @@
 
   /* Trust strip */
   .strip{ background:var(--fog); padding:0 0 60px; }
-  .strip-row{ display:flex; flex-wrap:wrap; gap:10px 28px; justify-content:center; align-items:center; color:var(--ink-3); font-size:.92rem; }
+  .strip-row{ display:flex; flex-wrap:wrap; gap:10px 22px; justify-content:center; align-items:center; color:var(--ink-3); font-size:.9rem; }
   .strip-row span{ display:inline-flex; align-items:center; gap:8px; }
   .strip-row .dot{ width:6px; height:6px; border-radius:50%; background:var(--brand); }
 
@@ -167,6 +167,8 @@
   .chapter-copy li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--brand); flex:none; margin-top:10px; }
   .chapter-copy .fact{ margin-top:26px; padding:16px 18px; border-left:3px solid var(--brand); background:var(--fog); border-radius:0 12px 12px 0; font-size:.95rem; color:var(--ink-2); }
   .chapter-copy .fact b{ color:var(--ink); font-weight:700; }
+  .chapter-shot .shot-under{ width:72%; margin:-14% 0 0 auto; position:relative; z-index:2; box-shadow:0 30px 60px -20px rgba(15,23,42,.35); }
+  @media (max-width:760px){ .chapter-shot .shot-under{ width:86%; margin-top:-8%; } }
   .chapter-shot .caption{ margin-top:12px; font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--ink-3); text-align:center; }
 
   /* reveal */
@@ -311,6 +313,7 @@
 <a href="laundromats">For laundromats</a>
 <a href="dry-cleaners">For dry cleaners</a>
 <a href="alterations">For tailors</a>
+<a href="#voice">Hey Fold</a>
 <a href="features.html">All features</a>
 <a href="#pricing">Pricing</a>
 </nav>
@@ -334,7 +337,7 @@
 </a>
 <a class="btn btn-ghost" href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a>
 </div>
-<p class="hero-fine">14 days free · no card · runs in your browser, on Mac, Windows and iPad</p>
+<p class="hero-fine">14 days free · no card · runs in your browser, on Mac, Windows and iPad · talks back when you say “Hey Fold”</p>
 </div>
 <div class="hero-band">
 <div class="hero-stage">
@@ -348,6 +351,7 @@
 <section aria-label="What Fold POS covers" class="strip">
 <div class="wrap">
 <div class="strip-row">
+<span><i class="dot"></i>Hey Fold</span>
 <span><i class="dot"></i>Wash &amp; fold</span>
 <span><i class="dot"></i>Dry cleaning</span>
 <span><i class="dot"></i>Alterations</span>
@@ -356,6 +360,28 @@
 <span><i class="dot"></i>Machines &amp; supplies</span>
 <span><i class="dot"></i>Staff shifts</span>
 <span><i class="dot"></i>Marketing</span>
+</div>
+</div>
+</section>
+<!-- ============ HEY FOLD ============ -->
+<section class="voice" id="voice">
+<div class="wrap">
+<div>
+<span class="eyebrow">Hey Fold · built into every plan</span>
+<h2>The only POS you can talk to. Say the order — it's rung up, printed and tagged.</h2>
+<p class="lede">Hands full of someone's laundry? Talk to the counter. Fold listens for its name, takes the order down, confirms it back to you, and sends the receipt and garment tags to the printer.</p>
+<ul>
+<li>Always-on wake word, push-to-talk as a fallback</li>
+<li>Customer lookup, order status and production updates by voice</li>
+<li>Works on the browser, Mac and Windows builds with a plain microphone</li>
+</ul>
+</div>
+<div aria-label="Example voice order" class="transcript">
+<div class="row"><span class="who">You</span><div class="bubble">Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.</div></div>
+<div aria-hidden="true" class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="row fold"><span class="who">Fold</span><div class="bubble">Got it. Maria Garcia — 2 bags wash &amp; fold, 1 comforter, due Thursday. $46.50. Print and tag?</div></div>
+<div class="row"><span class="who">You</span><div class="bubble">Yes.</div></div>
+<div class="row print"><span class="who">Print</span><div class="bubble">Receipt #WNF-0417 · customer + store copy → Epson TM-T20<br/>Tags 1/3 · 2/3 · 3/3 → Zebra heat-seal</div></div>
 </div>
 </div>
 </section>
@@ -418,18 +444,17 @@
 
 <div class="shot" data-for="drycleaner tailor"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Orders · Dry cleaning</span></div><img alt="Dry cleaning workflow board: to-do, inspection and tagging, dry cleaning, ironing, completed" height="1000" loading="lazy" src="assets/img/orders-board.webp" width="1600"/></div>
 </div>
-</div><div class="chapter flip reveal" data-for="laundromat drycleaner tailor" data-order="laundromat:5 drycleaner:5 tailor:4">
+</div><div class="chapter flip reveal" data-for="drycleaner tailor" data-order="drycleaner:5 tailor:4">
 <div class="chapter-copy">
 <span class="eyebrow">Machines</span>
-
 
 <h2 data-for="tailor">Every sewing machine and press has a record.</h2>
 <p class="lede">Log a repair as it happens, book the technician from the same screen, and see which machine is costing you money before it fails mid-shift.</p>
 <ul>
 <li>Repair history per machine with cost and downtime</li>
 <li>Technician appointments and a vendor book for plumbers, electricians and parts</li>
-<li data-for="drycleaner tailor">Machine history without the laundromat floor map — you don't need it, so it isn't there</li>
-
+<li>Machine history without the laundromat floor map — you don't need it, so it isn't there</li>
+<li>Preventive service reminders by hours run, not just by the calendar</li>
 </ul>
 </div>
 <div class="chapter-shot">
@@ -498,27 +523,6 @@
 </div>
 </section>
 <!-- ============ HEY FOLD ============ -->
-<section class="voice" id="voice">
-<div class="wrap">
-<div>
-<span class="eyebrow">Hey Fold</span>
-<h2>Say the order. It's rung up, printed and tagged.</h2>
-<p class="lede">Hands full of someone's laundry? Talk to the counter. Fold listens for its name, takes the order down, confirms it back to you, and sends the receipt and garment tags to the printer.</p>
-<ul>
-<li>Always-on wake word, push-to-talk as a fallback</li>
-<li>Customer lookup, order status and production updates by voice</li>
-<li>Works on the browser, Mac and Windows builds with a plain microphone</li>
-</ul>
-</div>
-<div aria-label="Example voice order" class="transcript">
-<div class="row"><span class="who">You</span><div class="bubble">Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.</div></div>
-<div aria-hidden="true" class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="row fold"><span class="who">Fold</span><div class="bubble">Got it. Maria Garcia — 2 bags wash &amp; fold, 1 comforter, due Thursday. $46.50. Print and tag?</div></div>
-<div class="row"><span class="who">You</span><div class="bubble">Yes.</div></div>
-<div class="row print"><span class="who">Print</span><div class="bubble">Receipt #WNF-0417 · customer + store copy → Epson TM-T20<br/>Tags 1/3 · 2/3 · 3/3 → Zebra heat-seal</div></div>
-</div>
-</div>
-</section>
 <!-- ============ TICKETS & TAGS ============ -->
 <section class="tickets" id="tags">
 <div class="wrap">
