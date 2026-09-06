@@ -3,14 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fold POS</title>
-<meta name="description" content="Point of sale and operations software for laundromats and dry cleaners. Part of the Fold family.">
+<title>Fold POS — Point of sale for laundromats &amp; dry cleaners</title>
+<meta name="description" content="Fold POS rings up wash &amp; fold, dry cleaning and alterations the way your shop runs, then tracks every order from drop-off to pickup. Machines, supplies, pickup &amp; delivery and staff shifts included.">
 <link rel="canonical" href="https://foldpos.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="Fold POS">
-<meta property="og:description" content="Point of sale and operations software for laundromats and dry cleaners. Part of the Fold family.">
+<meta property="og:title" content="Fold POS — Point of sale for laundry, not retail">
+<meta property="og:description" content="Fold POS rings up wash &amp; fold, dry cleaning and alterations the way your shop runs, then tracks every order from drop-off to pickup. Machines, supplies, pickup &amp; delivery and staff shifts included.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2e5ce6">
 <meta name="theme-color" content="#2e5ce6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,7 +231,11 @@
 
   @media (max-width: 860px){
     nav.links{ display:none; }
-    .nav-login{ display:none; }
+    .nav-inner{ padding:12px 20px; }
+    .brand-word{ white-space:nowrap; }
+    .family-pill{ display:none; }
+    .nav-login{ font-size:0.9rem; }
+    .nav-cta{ gap:14px; }
   }
 
   /* ============ HERO ============ */
@@ -293,6 +302,10 @@
   }
   .hero-shot-back .chrome{ box-shadow:var(--shadow-md); }
 
+  @media (max-width: 979px){
+    .hero-stage{ min-height:0; padding-top:34px; margin-top:8px; }
+    .hero-shot-back{ top:-4px; }
+  }
   @media (min-width: 980px){
     .hero-grid{ grid-template-columns:1.02fr 1fr; }
     .hero-stage{ min-height:0; }
@@ -311,6 +324,25 @@
     font-size:0.9rem; font-weight:600; color:var(--ink-soft);
   }
   .service-pill .dot{ width:7px; height:7px; border-radius:50%; background:var(--brand); flex:none; }
+
+
+  /* ============ BUSINESS TYPES ============ */
+  .types{ padding:70px 0 40px; }
+  .type-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+  @media (min-width:900px){ .type-grid{ grid-template-columns:repeat(3,1fr); } }
+  .type-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:30px 28px; display:flex; flex-direction:column; gap:12px;
+  }
+  .type-card .feature-icon{ margin-bottom:4px; }
+  .type-card h3{ font-size:1.18rem; }
+  .type-card p{ margin:0; color:var(--muted); font-size:0.95rem; line-height:1.6; }
+  .type-card ul{ list-style:none; margin:6px 0 0; padding:14px 0 0; border-top:1px solid var(--line-soft); display:flex; flex-direction:column; gap:9px; }
+  .type-card li{ display:flex; gap:9px; align-items:flex-start; font-size:0.92rem; color:var(--ink-soft); }
+  .type-card li svg{ width:15px; height:15px; flex:none; margin-top:3px; color:var(--success); }
+  .type-card .tag{ display:inline-block; font-family:"IBM Plex Mono", monospace; font-size:11px; font-weight:600; letter-spacing:0.04em; color:var(--brand); background:var(--brand-soft); border-radius:100px; padding:3px 9px; align-self:flex-start; }
+  .types-foot{ margin-top:22px; color:var(--muted); font-size:0.95rem; max-width:52em; line-height:1.6; }
+  .types-foot a{ color:var(--brand); font-weight:600; text-decoration:none; }
 
   hr.div{ border:none; border-top:1px solid var(--line-soft); margin:0; }
 
@@ -441,6 +473,7 @@
     font-size:2rem; color:#fff; flex:none; min-width:108px;
   }
   .stat-desc{ color:#c3caed; font-size:0.95rem; line-height:1.5; }
+  @media (max-width:600px){ .stat-num{ min-width:56px; font-size:1.7rem; } }
 
   /* ============ PRICING ============ */
   .pricing{ padding:20px 0 100px; }
@@ -561,7 +594,7 @@
     </nav>
     <div class="nav-cta">
       <a class="nav-login" href="https://pos.foldpos.com/login">Log in</a>
-      <a class="btn btn-primary btn-sm" href="#pricing">Start free trial</a>
+      <a class="btn btn-primary btn-sm" href="https://pos.foldpos.com/signup">Start free trial</a>
     </div>
   </div>
 </header>
@@ -576,10 +609,10 @@
         <h1>Point of sale for laundry, not retail.</h1>
         <p class="lede">Fold POS rings up wash-and-fold, dry cleaning, and alterations exactly the way your shop runs — by weight, by bag, by item — then tracks every order from drop-off to pickup so nothing gets lost behind a machine.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#pricing">Start free trial
+          <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free trial
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a class="btn btn-ghost" href="#faq">Book a demo</a>
+          <a class="btn btn-ghost" href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a>
         </div>
         <p class="hero-fine">No contract · Works with your existing tablet or printer</p>
       </div>
@@ -612,6 +645,67 @@
         <span class="service-pill"><span class="dot"></span>Self-Service</span>
         <span class="service-pill"><span class="dot"></span>Multi-Location</span>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ============ BUSINESS TYPES ============ -->
+  <section class="types" id="types">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Built for how your shop works</span>
+        <h2>Laundromat, dry cleaner, or tailor — you only see the tools you use</h2>
+        <p class="lede">Tell Fold POS what your business does when you sign up. It sets up the right services, tabs and screens for that kind of shop, and hides the rest. Change your mind later in Settings.</p>
+      </div>
+      <div class="type-grid">
+
+        <div class="type-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 7h2M14.5 7h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">SELF-SERVICE · WASH &amp; FOLD</span>
+          <h3>Laundromat</h3>
+          <p>Your floor of washers and dryers becomes a live map, and the counter handles drop-off wash &amp; fold beside it.</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Floor layout with live machine status and turns per day</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Wash &amp; fold by the pound or by the bag</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine repairs, supplies and vending stock</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery when you offer it</li>
+          </ul>
+        </div>
+
+        <div class="type-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 4l4 2 4-2 3 4-3 2v10H8V10L5 8l3-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="tag">DRY CLEANING · ALTERATIONS</span>
+          <h3>Dry cleaner</h3>
+          <p>Garment-level tickets with heat-seal tags, a conveyor that knows where every order hangs, and alterations on the same ticket.</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Itemized garments with photos, notes and tag barcodes</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Conveyor slot assignment and collection by scan</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterations priced per task, on the same order</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine history for presses and cleaning machines — no floor map needed</li>
+          </ul>
+        </div>
+
+        <div class="type-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 20l4-4M18 20l-4-4M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <span class="tag">ALTERATIONS</span>
+          <h3>Alterations &amp; tailoring</h3>
+          <p>A clean counter for per-item work — measurements, tasks and prices on every ticket, without laundry screens getting in the way.</p>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Per-task pricing: hems, zippers, take-ins, custom work</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Photos and notes so nothing is lost between fittings</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Customer history and due-date reminders</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Add dry cleaning later with one switch</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="types-foot">Run a mix? Pick more than one at signup — a dry cleaner that also does wash &amp; fold gets all three service tabs. Everything else (customers, staff shifts, reports, marketing, invoices) is there for every shop. <a href="https://pos.foldpos.com/signup">Start your free trial →</a></p>
     </div>
   </section>
 
@@ -793,7 +887,7 @@
   </section>
 
   <!-- ============ WHY / PROOF ============ -->
-  <section class="why">
+  <section class="why" id="why">
     <div class="wrap">
       <div class="why-panel">
         <div>
@@ -834,7 +928,7 @@
           <div class="price-tier">Starter</div>
           <div class="price-audience">For a single counter</div>
           <div class="price-amount"><span class="num mono-num">$39</span><span class="per">/month</span></div>
-          <a class="btn btn-ghost" href="#">Start free trial</a>
+          <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Start free trial</a>
           <ul class="price-list">
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Order intake &amp; POS</li>
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Workflow board, to-do → completed</li>
@@ -850,7 +944,7 @@
           <div class="price-tier">Growth</div>
           <div class="price-audience">For shops adding delivery &amp; staff</div>
           <div class="price-amount"><span class="num mono-num">$59</span><span class="per">/month</span></div>
-          <a class="btn btn-primary" href="#">Start free trial</a>
+          <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free trial</a>
           <ul class="price-list">
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Starter</li>
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery routing</li>
@@ -865,7 +959,7 @@
           <div class="price-tier">Pro</div>
           <div class="price-audience">For multi-location shops</div>
           <div class="price-amount"><span class="num mono-num">$79</span><span class="per">/month</span></div>
-          <a class="btn btn-ghost" href="#">Start free trial</a>
+          <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Start free trial</a>
           <ul class="price-list">
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Growth</li>
             <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-location reporting rollups</li>
@@ -881,7 +975,7 @@
       <div class="pricing-foot">
         <span>Card processing at competitive rates on every plan.</span>
         <span>Hardware bundles from $499.</span>
-        <a href="#">Running more than 5 locations? Talk to sales →</a>
+        <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20for%20multiple%20locations">Running more than 5 locations? Talk to sales →</a>
       </div>
     </div>
   </section>
@@ -925,8 +1019,8 @@
         <h2>Your counter's about to get a lot quieter.</h2>
         <p>Start free — no credit card, no contract, no sales call required.</p>
         <div class="hero-actions">
-          <a class="btn btn-onbrand" href="#pricing">Start free trial</a>
-          <a class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5); color:#fff;" href="#faq">Book a demo</a>
+          <a class="btn btn-onbrand" href="https://pos.foldpos.com/signup">Start free trial</a>
+          <a class="btn btn-ghost" style="border-color:rgba(255,255,255,0.5); color:#fff;" href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a>
         </div>
       </div>
     </div>
@@ -957,25 +1051,25 @@
       <div class="foot-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="#">About Fold</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#why">Why Fold POS</a></li>
+          <li><a href="#types">Who it's for</a></li>
+          <li><a href="mailto:contact@foldpos.com">Contact</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="#">Help center</a></li>
+          <li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20help">Help center</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#">Book a demo</a></li>
+          <li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Fold POS. Part of Fold.</span>
       <div class="foot-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
   </div>
