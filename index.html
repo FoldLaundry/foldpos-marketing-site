@@ -85,6 +85,22 @@
   .nav-login:hover{ color:var(--ink); }
   @media (max-width:860px){ nav.links{ display:none; } .nav-inner{ padding:12px 20px; } .nav-cta{ gap:12px; } }
 
+  /* viewing pill (home only, after a shop is chosen) */
+  .viewing{ display:none; align-items:center; gap:8px; font-size:.86rem; color:var(--ink-2); background:var(--fog); border:1px solid var(--line); border-radius:100px; padding:5px 6px 5px 12px; }
+  .viewing.on{ display:inline-flex; }
+  .viewing b{ color:var(--ink); font-weight:700; }
+  .viewing button{ appearance:none; border:0; background:#fff; border:1px solid var(--line); border-radius:100px; font:inherit; font-size:.8rem; font-weight:600; color:var(--brand); padding:3px 10px; cursor:pointer; }
+  @media (max-width:860px){ .viewing span.lbl{ display:none; } }
+  [data-for][hidden]{ display:none !important; }
+  .chapters .wrap{ display:flex; flex-direction:column; }
+  .shops-row{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:28px; }
+  .shops-row a{ text-decoration:none; font-weight:600; font-size:.95rem; color:var(--ink-2); border:1px solid var(--line); border-radius:100px; padding:10px 18px; }
+  .shops-row a:hover{ border-color:var(--ink); color:var(--ink); }
+  .shared{ padding:100px 0 40px; }
+  .shared-head{ max-width:760px; margin:0 auto 40px; text-align:center; }
+  .shared-head .eyebrow{ display:block; margin-bottom:14px; }
+  .shared-head .lede{ margin:16px auto 0; }
+
   /* ============ HERO ============ */
   .hero{ padding:88px 0 0; text-align:center; overflow:hidden; }
   .hero .eyebrow{ display:inline-block; margin-bottom:22px; }
@@ -292,13 +308,14 @@
       <span class="brand-word">Fold POS</span>
     </a>
     <nav class="links" aria-label="Primary">
-      <a href="#shops">Who it's for</a>
-      <a href="#counter">Product</a>
+      <a href="laundromats">For laundromats</a>
+      <a href="dry-cleaners">For dry cleaners</a>
+      <a href="alterations">For tailors</a>
       <a href="features.html">All features</a>
       <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
+      <span class="viewing" id="viewing"><span class="lbl">Viewing:</span> <b id="viewingName">Laundromat</b><button type="button" id="viewingChange">Change</button></span>
       <a class="nav-login" href="https://pos.foldpos.com/login">Log in</a>
       <a class="btn btn-primary btn-sm" href="https://pos.foldpos.com/signup">Start free trial</a>
     </div>
@@ -310,9 +327,9 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">Point of sale for laundromats, dry cleaners &amp; tailors</span>
-      <h1>Point of sale for <em>laundry</em>, not retail.</h1>
-      <p class="lede">Ring up wash &amp; fold by the pound, dry cleaning by the piece and alterations by the task — on one counter — then follow every order from drop-off to the moment it's handed back.</p>
+      <span class="eyebrow" id="heroEyebrow">Point of sale for laundromats, dry cleaners &amp; tailors</span>
+      <h1 id="heroTitle">Point of sale for <em>laundry</em>, not retail.</h1>
+      <p class="lede" id="heroLede">Ring up wash &amp; fold by the pound, dry cleaning by the piece and alterations by the task — on one counter — then follow every order from drop-off to the moment it's handed back.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free trial
           <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -351,8 +368,8 @@
     <div class="wrap">
       <div class="switch-head">
         <span class="eyebrow">Built for how your shop works</span>
-        <h2>Tell us what you do. The POS reshapes itself.</h2>
-        <p class="lede">Pick your business type at sign-up and Fold POS shows only the tools that shop needs — nothing else clutters the counter. Change it any time in Settings.</p>
+        <h2>Tell us what you do. The page — and the POS — reshape themselves.</h2>
+        <p class="lede">Pick your shop and everything below reorders itself for you, the same way the POS does at sign-up: only the tools that shop needs, nothing else on the counter.</p>
         <div class="seg" role="tablist" aria-label="Business type" id="shopSeg">
           <span class="thumb" aria-hidden="true"></span>
           <button role="tab" aria-selected="true" data-shop="laundromat">Laundromat</button>
@@ -363,15 +380,15 @@
 
       <div class="switch-panel" data-shop="laundromat">
         <div class="switch-copy">
-          <h3>Your floor becomes a live map. Your counter takes wash &amp; fold.</h3>
-          <p class="lede">Every washer and dryer sits on a floor plan that shows what's free, what's running and how long is left. Drop-off orders ring up by the pound or the bag right beside it.</p>
+          <h3>What a laundromat gets.</h3>
+          <p class="lede">The Laundromat tab with your floor map, wash &amp; fold by the pound at the counter, machine and vending-stock tracking, and delivery routes if you run a van.</p>
           <ul>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Floor layout with live machine status and turns per day</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Wash &amp; fold by weight with minimums and express pricing</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Repairs, vending stock and detergent supplies tracked per machine and shelf</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery routes when you offer them</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Laundromat tab: floor map, live machine status, turns per day</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Wash &amp; fold check-in by weight or by bag</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Machines, repairs, supplies and vending stock</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery when you offer it</li>
           </ul>
-          <div class="tags"><span class="tag">Laundromat tab</span><span class="tag">Wash &amp; fold</span><span class="tag">Machines</span><span class="tag off">Conveyor</span><span class="tag off">Garment tags</span></div>
+          <div class="tags"><span class="tag">Laundromat tab</span><span class="tag">Wash &amp; fold</span><span class="tag">Machines</span><span class="tag">Pickup &amp; delivery</span><span class="tag off">Conveyor</span><span class="tag off">Garment tags</span></div>
         </div>
         <div class="switch-shot">
           <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Laundromat · Main floor</span></div><img src="assets/img/laundromat.webp" width="1600" height="1111" alt="Laundromat floor plan with washers and dryers and their status" loading="lazy"></div>
@@ -380,15 +397,15 @@
 
       <div class="switch-panel" data-shop="drycleaner" hidden>
         <div class="switch-copy">
-          <h3>Every garment gets a tag. Every order gets a slot.</h3>
-          <p class="lede">Itemize by the piece, heat-seal a barcode on each garment, hang the order on the conveyor and Fold POS remembers exactly where it is until the customer walks in.</p>
+          <h3>What a dry cleaner gets.</h3>
+          <p class="lede">Per-piece tickets, heat-seal garment tags and conveyor slots, alterations on the same ticket — plus wash &amp; fold and pickup &amp; delivery, since most dry cleaners with a van offer both.</p>
           <ul>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Per-piece tickets with photos, stain and damage notes</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Heat-seal tags numbered 1/8 … 8/8 with lot number and due day</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Conveyor slot assignment and collection by scan</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterations priced per task on the same ticket</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dry cleaning, alterations and wash &amp; fold tabs at check-in</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garment tags and conveyor slot tracking</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine history for cleaning machines and presses — no floor map</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pickup &amp; delivery routes and partner jobs</li>
           </ul>
-          <div class="tags"><span class="tag">Dry cleaning</span><span class="tag">Alterations</span><span class="tag">Conveyor</span><span class="tag">Garment tags</span><span class="tag off">Laundromat tab</span></div>
+          <div class="tags"><span class="tag">Dry cleaning</span><span class="tag">Alterations</span><span class="tag">Wash &amp; fold</span><span class="tag">Conveyor</span><span class="tag">Garment tags</span><span class="tag off">Laundromat tab</span></div>
         </div>
         <div class="switch-shot">
           <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Orders · Dry cleaning</span></div><img src="assets/img/orders-board.webp" width="1600" height="1000" alt="Dry cleaning workflow board: to-do, inspection and tagging, dry cleaning, ironing, completed" loading="lazy"></div>
@@ -397,65 +414,110 @@
 
       <div class="switch-panel" data-shop="tailor" hidden>
         <div class="switch-copy">
-          <h3>A clean counter for per-item work.</h3>
-          <p class="lede">Hems, zippers, take-ins and custom jobs priced per task, with measurements, photos and notes on every ticket — and none of the laundry screens in the way.</p>
+          <h3>What an alterations shop gets.</h3>
+          <p class="lede">A counter for per-task work — hems, zippers, take-ins, custom jobs — with garment tags, photos and notes on every ticket and none of the laundry screens.</p>
           <ul>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Task-based pricing you set once and reuse</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Photos and notes so nothing is lost between fittings</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Customer history and due-date reminders</li>
-            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Add dry cleaning later with one switch in Settings</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterations tab with task-based pricing</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garment tags, photos, measurements and notes</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Customers, due-date reminders and invoices</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dry cleaning can be switched on later</li>
           </ul>
-          <div class="tags"><span class="tag">Alterations</span><span class="tag">Garment tags</span><span class="tag">Customers</span><span class="tag off">Laundromat tab</span><span class="tag off">Wash &amp; fold</span></div>
+          <div class="tags"><span class="tag">Alterations</span><span class="tag">Garment tags</span><span class="tag">Customers</span><span class="tag off">Laundromat tab</span><span class="tag off">Wash &amp; fold</span><span class="tag off">Conveyor</span></div>
         </div>
         <div class="switch-shot">
           <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Order details</span></div><img src="assets/img/order-detail.webp" width="1600" height="1000" alt="Order ticket with itemized alterations, customer details, notes and photos" loading="lazy"></div>
         </div>
       </div>
 
-      <p class="switch-note">Run a mix? Pick more than one — a dry cleaner that also does wash &amp; fold gets all three service tabs. Customers, staff, invoices, reports and marketing are there for every shop.</p>
+      <p class="switch-note">Run a mix? Most dry cleaners with pickup &amp; delivery also take wash &amp; fold — pick both at sign-up and you get every service tab. The back office below is the same for everyone.</p>
     </div>
   </section>
 
-  <!-- ============ CHAPTERS ============ -->
+  <!-- ============ CHAPTERS (data-for = which shops see it; data-order = position per shop) ============ -->
   <section class="chapters" id="counter">
     <div class="wrap">
 
-      <div class="chapter reveal">
+      <div class="chapter reveal" data-for="laundromat drycleaner" data-order="laundromat:1 drycleaner:2">
         <div class="chapter-copy">
-          <span class="eyebrow">Check in</span>
+          <span class="eyebrow">Wash &amp; fold · drop-off laundry</span>
           <h2>Ring it up the way the customer describes it.</h2>
-          <p class="lede">“Two bags, one comforter, rush it.” Tap through wash &amp; fold, dry cleaning or alterations, weigh a bag, add a per-piece item, toggle express — and the price is right before you've finished talking.</p>
+          <p class="lede">“Two bags, one comforter, rush it.” Weigh a bag, add a per-piece item, toggle express — and the price is right before you've finished talking.</p>
           <ul>
             <li>By the pound with a minimum, by the bag, or by the piece, on one order</li>
-            <li>Express fees and discounts applied automatically</li>
+            <li>Express fees, discounts and per-customer default pricing applied automatically</li>
+            <li data-for="laundromat">Bag counts and weights on the ticket, so a 3-bag order comes back as 3 bags</li>
+            <li data-for="drycleaner">Lives beside dry cleaning on the same counter — one customer, one ticket, two services</li>
             <li>Find a returning customer by name, phone or barcode scan mid-order</li>
             <li>Cash, card or pay-on-delivery; split a payment across two</li>
           </ul>
           <div class="fact"><b>Two receipts, one tap.</b> A customer copy and a store copy print the moment you submit — on the impact or thermal printer you already own.</div>
         </div>
         <div class="chapter-shot">
-          <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Check in</span></div><img src="assets/img/order-intake.webp" width="1600" height="1000" alt="Check-in screen with wash and fold items and an order summary" loading="lazy"></div>
+          <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Check in · Wash &amp; fold</span></div><img src="assets/img/order-intake.webp" width="1600" height="1000" alt="Check-in screen with wash and fold items and an order summary" loading="lazy"></div>
         </div>
       </div>
 
-      <div class="chapter flip reveal">
+      <div class="chapter flip reveal" data-for="drycleaner tailor" data-order="drycleaner:1 tailor:1">
+        <div class="chapter-copy">
+          <span class="eyebrow" data-for="drycleaner">Dry cleaning</span>
+          <span class="eyebrow" data-for="tailor">Alterations</span>
+          <h2 data-for="drycleaner">Every garment gets a tag. Every order gets a slot.</h2>
+          <h2 data-for="tailor">Every job priced by the task, every garment on a ticket.</h2>
+          <p class="lede" data-for="drycleaner">Itemize by the piece, note the stain, heat-seal a barcode on each garment, hang the order on the conveyor — and Fold POS remembers where it is until the customer walks in.</p>
+          <p class="lede" data-for="tailor">Hems, zippers, take-ins and custom work priced per task, with measurements, photos and notes on the ticket so nothing is lost between fittings.</p>
+          <ul>
+            <li>Per-piece tickets with photos, stain and damage notes</li>
+            <li>Heat-seal tags numbered 1/8 … 8/8 with lot number and due day</li>
+            <li data-for="drycleaner">Conveyor slot assigned at check-in, freed at hand-over; find any order by scanning its ticket</li>
+            <li data-for="drycleaner">Alterations priced per task on the same ticket</li>
+            <li data-for="tailor">Task pricing you set once and reuse: hem, taper, zipper, relining</li>
+            <li data-for="tailor">Add dry cleaning later with one switch in Settings</li>
+          </ul>
+        </div>
+        <div class="chapter-shot">
+          <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Order details</span></div><img src="assets/img/order-detail.webp" width="1600" height="1000" alt="Order ticket with itemized garments, customer details, notes and photos" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="chapter reveal" data-for="laundromat" data-order="laundromat:2">
+        <div class="chapter-copy">
+          <span class="eyebrow">Self-service floor</span>
+          <h2>Your floor becomes a live map.</h2>
+          <p class="lede">Every washer and dryer sits on a floor plan that shows what's free, what's running and how long is left — for your staff at the counter and for the customer who asks “is 12 open?”</p>
+          <ul>
+            <li>Floor plan built from your real brands, sizes, stacks and zones</li>
+            <li>Turns per machine per day — see which machines earn their keep</li>
+            <li>Start a machine from a QR code or token; extend time from the counter</li>
+            <li>Attended wash &amp; fold loads show whose order is in which machine</li>
+          </ul>
+        </div>
+        <div class="chapter-shot">
+          <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Laundromat · Main floor</span></div><img src="assets/img/laundromat.webp" width="1600" height="1111" alt="Laundromat floor plan with washers and dryers and their status" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="chapter flip reveal" data-for="laundromat drycleaner tailor" data-order="laundromat:3 drycleaner:3 tailor:3">
         <div class="chapter-copy">
           <span class="eyebrow">Orders</span>
           <h2>Every order has a column. Every column has a count.</h2>
-          <p class="lede">Orders move left to right through the stages your shop actually uses — washing, drying, folding; inspection, cleaning, pressing — so nothing sits forgotten in a machine or on a rail.</p>
+          <p class="lede" data-for="laundromat">Orders move left to right through washing, drying, folding and completed, so nothing sits forgotten in a machine.</p>
+          <p class="lede" data-for="drycleaner">Orders move left to right through inspection &amp; tagging, cleaning, pressing and completed, so nothing sits forgotten on a rail.</p>
+          <p class="lede" data-for="tailor">Orders move left to right through fitting, in progress, pressing and ready, with the due date on every card.</p>
           <ul>
-            <li>Separate boards for wash &amp; fold, dry cleaning and alterations</li>
+            <li data-for="laundromat drycleaner">Separate boards for wash &amp; fold, dry cleaning and alterations</li>
             <li>Express orders flagged in red, due dates on every card</li>
-            <li>Assign a washer, dryer or staff member in one tap</li>
+            <li data-for="laundromat">Assign a washer or dryer in one tap; live cycle countdown on the card</li>
+            <li data-for="drycleaner tailor">Assign a presser or seamstress in one tap</li>
             <li>Photos, notes and price changes stay on the ticket</li>
           </ul>
         </div>
         <div class="chapter-shot">
-          <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Orders · Wash &amp; fold</span></div><img src="assets/img/kanban-board.webp" width="1600" height="1000" alt="Workflow board with orders in to-do, washing, drying, ironing, folding and completed columns" loading="lazy"></div>
+          <div class="shot" data-for="laundromat"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Orders · Wash &amp; fold</span></div><img src="assets/img/kanban-board.webp" width="1600" height="1000" alt="Workflow board with orders in to-do, washing, drying, ironing, folding and completed columns" loading="lazy"></div>
+          <div class="shot" data-for="drycleaner tailor"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Orders · Dry cleaning</span></div><img src="assets/img/orders-board.webp" width="1600" height="1000" alt="Dry cleaning workflow board: to-do, inspection and tagging, dry cleaning, ironing, completed" loading="lazy"></div>
         </div>
       </div>
 
-      <div class="chapter reveal">
+      <div class="chapter reveal" data-for="laundromat drycleaner" data-order="laundromat:4 drycleaner:4">
         <div class="chapter-copy">
           <span class="eyebrow">Pickup &amp; delivery</span>
           <h2>Build the day's route in one click. Know what it cost you.</h2>
@@ -473,16 +535,18 @@
         </div>
       </div>
 
-      <div class="chapter flip reveal">
+      <div class="chapter flip reveal" data-for="laundromat drycleaner tailor" data-order="laundromat:5 drycleaner:5 tailor:4">
         <div class="chapter-copy">
           <span class="eyebrow">Machines</span>
-          <h2>Every washer, dryer and press has a record.</h2>
+          <h2 data-for="laundromat">Every washer and dryer has a record.</h2>
+          <h2 data-for="drycleaner">Every cleaning machine and press has a record.</h2>
+          <h2 data-for="tailor">Every sewing machine and press has a record.</h2>
           <p class="lede">Log a repair as it happens, book the technician from the same screen, and see which machine is costing you money before it fails mid-shift.</p>
           <ul>
             <li>Repair history per machine with cost and downtime</li>
             <li>Technician appointments and a vendor book for plumbers, electricians and parts</li>
-            <li>Floor plan editor for laundromats: brands, sizes, stacks, zones</li>
-            <li>Self-service sessions, tokens and QR start for attended floors</li>
+            <li data-for="drycleaner tailor">Machine history without the laundromat floor map — you don't need it, so it isn't there</li>
+            <li data-for="laundromat">Preventive service reminders by turns run, not just by the calendar</li>
           </ul>
         </div>
         <div class="chapter-shot">
@@ -490,11 +554,13 @@
         </div>
       </div>
 
-      <div class="chapter reveal">
+      <div class="chapter reveal" data-for="laundromat drycleaner tailor" data-order="laundromat:6 drycleaner:6 tailor:5">
         <div class="chapter-copy">
           <span class="eyebrow">Supplies</span>
           <h2>Know what's running low before it runs out.</h2>
-          <p class="lede">Detergent, poly bags, hangers, heat-seal tag rolls and press pads, next to the vending and retail products you sell over the counter — with a low-stock line that turns amber before you're on your last box.</p>
+          <p class="lede" data-for="laundromat">Detergent, bags and the vending products on your shelf, with a low-stock line that turns amber before you're on your last box.</p>
+          <p class="lede" data-for="drycleaner">Solvent, poly bags, hangers, heat-seal tag rolls and press pads, with a low-stock line that turns amber before you're on your last box.</p>
+          <p class="lede" data-for="tailor">Thread, zippers, interfacing, hangers and tag rolls, with a low-stock line that turns amber before you're on your last box.</p>
           <ul>
             <li>Quantity, minimum stock, unit cost and supplier on every item</li>
             <li>Supplier catalogue: Cleaner's Supply, WAWAK, United Fabricare</li>
@@ -506,7 +572,20 @@
         </div>
       </div>
 
-      <div class="chapter flip reveal">
+    </div>
+  </section>
+
+  <!-- ============ SHARED BY EVERY SHOP ============ -->
+  <section class="shared" id="shared">
+    <div class="wrap">
+      <div class="shared-head">
+        <span class="eyebrow">The same for every shop</span>
+        <h2>Whatever you clean, the back office is the same.</h2>
+        <p class="lede">Customers, staff, marketing, printing, reports and payments work identically for a laundromat, a dry cleaner or a tailor — so a mixed shop never runs two systems.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="chapter reveal">
         <div class="chapter-copy">
           <span class="eyebrow">Marketing</span>
           <h2>Reach customers before they think to call.</h2>
@@ -522,8 +601,7 @@
           <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Marketing · Automated flows</span></div><img src="assets/img/marketing-flows.webp" width="1600" height="1353" alt="Automated marketing flows: birthday treat, lapsed 45 days, ready for pickup notice, first-order thank-you" loading="lazy"></div>
         </div>
       </div>
-
-      <div class="chapter reveal">
+      <div class="chapter flip reveal">
         <div class="chapter-copy">
           <span class="eyebrow">Staff</span>
           <h2>A clean handoff every time the shift changes.</h2>
@@ -539,7 +617,6 @@
           <div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span class="url">Employees</span></div><img src="assets/img/employees.webp" width="1600" height="1353" alt="Employees list with roles, shifts and status" loading="lazy"></div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -607,7 +684,7 @@
   <section class="more" id="more">
     <div class="wrap">
       <div class="more-head">
-        <span class="eyebrow">And the rest of the shop</span>
+        <span class="eyebrow">Also in every shop</span>
         <h2>Everything a shop needs, nothing it doesn't.</h2>
         <p class="lede">The parts you'd otherwise run in three other apps and a spreadsheet.</p>
       </div>
@@ -752,7 +829,9 @@
         <li><a href="#pricing">Pricing</a></li>
       </ul></div>
       <div class="foot-col"><h5>Company</h5><ul>
-        <li><a href="#shops">Who it's for</a></li>
+        <li><a href="laundromats">For laundromats</a></li>
+        <li><a href="dry-cleaners">For dry cleaners</a></li>
+        <li><a href="alterations">For tailors</a></li>
         <li><a href="#voice">Hey Fold</a></li>
         <li><a href="mailto:contact@foldpos.com">Contact</a></li>
       </ul></div>
@@ -784,14 +863,40 @@
   }
   tilt(); window.addEventListener('scroll', tilt, { passive:true });
 
-  // Business-type switcher.
+  // Business-type switcher: personalises the whole page (hero, chapters, order, nav pill).
+  var SHOPS = {
+    laundromat: { name:'Laundromat', eyebrow:'Point of sale for laundromats', title:'Point of sale for <em>laundromats</em>, not retail.', lede:'Wash &amp; fold by the pound at the counter, a live map of every washer and dryer on the floor, and every order followed from drop-off to pickup.' },
+    drycleaner: { name:'Dry cleaner', eyebrow:'Point of sale for dry cleaners', title:'Point of sale for <em>dry cleaners</em>, not retail.', lede:'Garment tags, conveyor slots and per-piece tickets — with wash &amp; fold and pickup &amp; delivery on the same counter when you offer them.' },
+    tailor: { name:'Alterations', eyebrow:'Point of sale for alterations &amp; tailoring', title:'Point of sale for <em>tailors</em>, not retail.', lede:'Per-task pricing, measurements and photos on every ticket, due-date reminders — and none of the laundry screens in the way.' }
+  };
+  var page = document.documentElement.getAttribute('data-shop');   // set on the per-shop landing pages
+  function applyShop(name, opts){
+    opts = opts || {};
+    document.querySelectorAll('[data-for]').forEach(function(el){
+      el.hidden = el.getAttribute('data-for').split(' ').indexOf(name) < 0;
+    });
+    document.querySelectorAll('[data-order]').forEach(function(el){
+      var m = el.getAttribute('data-order').match(new RegExp(name + ':(\\d+)'));
+      el.style.order = m ? m[1] : 99;
+    });
+    var first = null;
+    document.querySelectorAll('.chapters .chapter').forEach(function(c){ if (!c.hidden && (first === null || +c.style.order < +first.style.order)) first = c; });
+    document.querySelectorAll('.chapters .chapter').forEach(function(c){ c.style.borderTop = c === first ? '0' : ''; });
+    if (!page && opts.hero !== false) {
+      var sh = SHOPS[name];
+      var ey = document.getElementById('heroEyebrow'), ti = document.getElementById('heroTitle'), le = document.getElementById('heroLede');
+      if (ey) ey.innerHTML = sh.eyebrow; if (ti) ti.innerHTML = sh.title; if (le) le.innerHTML = sh.lede;
+      var v = document.getElementById('viewing'); if (v) { v.classList.add('on'); document.getElementById('viewingName').textContent = sh.name; }
+      try { history.replaceState(null, '', '#' + name); } catch (e) {}
+    }
+  }
   var seg = document.getElementById('shopSeg');
   if (seg) {
     var tabs = Array.prototype.slice.call(seg.querySelectorAll('button'));
     var thumb = seg.querySelector('.thumb');
     var panels = Array.prototype.slice.call(document.querySelectorAll('.switch-panel'));
     function moveThumb(btn){ if (!btn) return; thumb.style.left = btn.offsetLeft + 'px'; thumb.style.width = btn.offsetWidth + 'px'; }
-    function select(name, focus){
+    function select(name, focus, hero){
       tabs.forEach(function(b){
         var on = b.dataset.shop === name;
         b.setAttribute('aria-selected', on ? 'true' : 'false');
@@ -806,19 +911,27 @@
           if (s && !reduce) { s.classList.add('is-out'); requestAnimationFrame(function(){ requestAnimationFrame(function(){ s.classList.remove('is-out'); }); }); }
         } else { p.hidden = true; }
       });
+      applyShop(name, { hero: hero });
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
     }
     tabs.forEach(function(b){
-      b.addEventListener('click', function(){ select(b.dataset.shop); });
+      b.addEventListener('click', function(){ select(b.dataset.shop, false, true); });
       b.addEventListener('keydown', function(e){
         var i = tabs.indexOf(b);
-        if (e.key === 'ArrowRight') select(tabs[(i+1)%tabs.length].dataset.shop, true);
-        if (e.key === 'ArrowLeft') select(tabs[(i-1+tabs.length)%tabs.length].dataset.shop, true);
+        if (e.key === 'ArrowRight') select(tabs[(i+1)%tabs.length].dataset.shop, true, true);
+        if (e.key === 'ArrowLeft') select(tabs[(i-1+tabs.length)%tabs.length].dataset.shop, true, true);
       });
     });
     var h = location.hash.replace('#','');
-    select(['laundromat','drycleaner','tailor'].indexOf(h) >= 0 ? h : 'laundromat');
+    var known = ['laundromat','drycleaner','tailor'].indexOf(h) >= 0;
+    // Before a choice the page shows the laundromat layout but keeps the generic hero.
+    select(known ? h : 'laundromat', false, known);
+    var ch = document.getElementById('viewingChange');
+    if (ch) ch.addEventListener('click', function(){ document.getElementById('shops').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); });
     window.addEventListener('resize', function(){ moveThumb(seg.querySelector('[aria-selected="true"]')); });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ moveThumb(seg.querySelector('[aria-selected="true"]')); });
+  } else if (page) {
+    applyShop(page);
   }
 
   // Reveal chapters as they enter.
