@@ -80,6 +80,19 @@ for key, sh in SHOPS.items():
     # the viewing pill is a home-page thing
     v = soup.select_one('#viewing')
     if v: v.decompose()
+    # Shop pages are a pitch, not the whole catalogue: a visitor who picked
+    # "dry cleaner" wants the three things that matter to them, pricing and a
+    # way in. The overview strip, platform list and FAQ stay on the home page;
+    # the "every shop gets" section keeps its words but not its screenshots;
+    # only this shop's first three chapters survive.
+    for sel in ('.strip', '#platforms', '#faq'):
+        el = soup.select_one(sel)
+        if el: el.decompose()
+    for shot in soup.select('#shared .shot, #shared img, #shared picture'):
+        shot.decompose()
+    for c in soup.select('.chapters .chapter'):
+        if order(c) > 3:
+            c.decompose()
     out = str(soup)
     open(sh['file'], 'w', encoding='utf-8').write(out)
     print('wrote', sh['file'], len(out))
