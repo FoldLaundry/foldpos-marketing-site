@@ -1,0 +1,323 @@
+# Fold POS — the full site in one document
+
+> Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry. Website: https://foldpos.com/ · App: https://pos.foldpos.com/login · Contact: contact@foldpos.com
+
+This document collects the readable content of foldpos.com. Individual pages have their own markdown mirrors (`/fold-pos.md`, `/laundromats.md`, `/dry-cleaners.md`, `/alterations.md`, `/features.md`, `/pricing.md`, `/setup.md`, `/download.md`, `/faq.md`, `/developers.md`), and the short index is at `/llms.txt`.
+
+---
+
+## What Fold POS is
+
+Point of sale for laundry, not retail. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task — on one counter — then follows every order from drop-off to the moment it's handed back. Machines, supplies, routes, marketing and staff shifts live in the same screen.
+
+14 days free · no card · runs in your browser, on Mac, Windows and iPad · talks back when you say "Hey Fold".
+
+Fold POS is built by the team behind Fold, a laundry and dry-cleaning service, which runs its own counters on it. It is purpose-built for laundromats, dry cleaners and tailors, not a retail checkout with a laundry logo. Fold POS is part of Fold; the company behind it is Fold Laundry LLC.
+
+## Who it's for
+
+Three shop types, chosen at sign-up and changeable any time in Settings. Pick your shop and the POS reshapes itself: only the tools that shop needs, nothing else on the counter. A shop that does more than one thing — most dry cleaners with pickup & delivery also take wash & fold — picks both at sign-up and gets every service tab. The back office is the same for everyone.
+
+### Laundromats
+
+The Laundromat tab with your floor map, wash & fold by the pound at the counter, machine and vending-stock tracking, and delivery routes if you run a van.
+
+- Laundromat tab: floor map, live machine status, turns per day
+- Wash & fold check-in by weight or by bag
+- Machines, repairs, supplies and vending stock
+- Pickup & delivery when you offer it
+
+The laundromat orders board moves left to right through washing, drying, folding and completed, so nothing sits forgotten in a machine. Supplies for a laundromat cover detergent, bags and the vending products on the shelf.
+
+### Dry cleaners
+
+Per-piece tickets, heat-seal garment tags and conveyor slots, alterations on the same ticket — plus wash & fold and pickup & delivery, since most dry cleaners with a van offer both.
+
+- Dry cleaning, alterations and wash & fold tabs at check-in
+- Garment tags and conveyor slot tracking
+- Machine history for cleaning machines and presses — no floor map
+- Pickup & delivery routes and partner jobs
+
+The dry cleaning board moves left to right through inspection & tagging, cleaning, pressing and completed, so nothing sits forgotten on a rail. Supplies cover solvent, poly bags, hangers, heat-seal tag rolls and press pads.
+
+### Alterations and tailoring shops
+
+A counter for per-task work — hems, zippers, take-ins, custom jobs — with garment tags, photos and notes on every ticket and none of the laundry screens.
+
+- Alterations tab with task-based pricing
+- Garment tags, photos, measurements and notes
+- Customers, due-date reminders and invoices
+- Dry cleaning can be switched on later
+
+The alterations board moves left to right through fitting, in progress, pressing and ready, with the due date on every card. Supplies cover thread, zippers, interfacing, hangers and tag rolls.
+
+---
+
+## Hey Fold — the voice assistant
+
+Built into every plan. The only POS you can talk to: say the order and it's rung up, printed and tagged.
+
+Hands full of someone's laundry? Talk to the counter. Fold listens for its name, takes the order down, confirms it back to you, and sends the receipt and garment tags to the printer.
+
+- Always-on wake word, push-to-talk as a fallback
+- Customer lookup, order status and production updates by voice
+- Works on the browser, Mac and Windows builds with a plain microphone
+
+The exchange shown on the home page:
+
+> **You:** Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.
+> **Fold:** Got it. Maria Garcia — 2 bags wash & fold, 1 comforter, due Thursday. $46.50. Print and tag?
+> **You:** Yes.
+
+The receipt (customer + store copy) prints to an Epson TM-T20; the tags 1/3, 2/3 and 3/3 go to a Zebra heat-seal printer.
+
+---
+
+## The counter
+
+**Ring it up the way the customer describes it.** "Two bags, one comforter, rush it." Weigh a bag, add a per-piece item, toggle express — and the price is right before you've finished talking.
+
+- By the pound with a minimum, by the bag, or by the piece, on one order
+- Express fees, discounts and per-customer default pricing applied automatically
+- Bag counts and weights on the ticket, so a 3-bag order comes back as 3 bags
+- Wash & fold lives beside dry cleaning on the same counter — one customer, one ticket, two services
+- Find a returning customer by name, phone or barcode scan mid-order
+- Cash, card or pay-on-delivery; split a payment across two
+- Custom items for one-off requests
+
+Two receipts, one tap: a customer copy and a store copy print the moment you submit — on the impact or thermal printer you already own.
+
+## Dry cleaning and alterations tickets
+
+**Every garment gets a tag. Every order gets a slot.** Itemize by the piece, note the stain, heat-seal a barcode on each garment, hang the order on the conveyor — and Fold POS remembers where it is until the customer walks in.
+
+**Every job priced by the task, every garment on a ticket.** Hems, zippers, take-ins and custom work priced per task, with measurements, photos and notes on the ticket so nothing is lost between fittings.
+
+- Per-piece tickets with photos, stain and damage notes
+- Heat-seal tags numbered 1/8 … 8/8 with lot number and due day
+- Conveyor slot assigned at check-in, freed at hand-over; find any order by scanning its ticket
+- Alterations priced per task on the same ticket
+- Task pricing you set once and reuse: hem, taper, zipper, relining
+- Add dry cleaning later with one switch in Settings
+
+## The workflow board
+
+**Every order has a home, every stage has a count.** Orders move left to right across the exact stages your shop uses — to-do, washing, drying, ironing, folding, completed — with a live count on every column. Open a stage to assign a washer, dryer, or staff member, and watch the progress bar move as the load runs.
+
+- Six-stage board that matches how your shop actually runs
+- Separate boards for wash & fold, dry cleaning and alterations
+- Assign a machine or staff member in one tap; live cycle countdown on the card
+- Express orders flagged in red, due dates on every card
+- Search and filter by order ID or customer
+- Photos, notes and price changes stay on the ticket
+
+## The ticket
+
+**Nothing about an order gets lost between hands.** Every order carries its own record: an itemized breakdown of tasks and pricing, the customer's contact and intake details, and a place for photos and notes. Flag a broken zipper or a stain before you clean it, so whoever hands the order back knows exactly what happened to it — and what it cost.
+
+- Itemized task and pricing breakdown per order
+- Photos and notes attached directly to the ticket
+- Full customer contact, intake time, and staff on file
+- Move an order to its next phase from the same screen
+- Edit or cancel an order without starting over
+
+## The self-service floor
+
+**Your floor becomes a live map. Every machine on it keeps a record.** Every washer and dryer sits on a floor plan that shows what's free, what's running and how long is left — for your staff at the counter and for the customer who asks "is 12 open?" Tap any machine and its whole life is there: turns, repairs, the technician who fixed it last.
+
+- Floor plan built from your real brands, sizes, stacks and zones
+- Turns per machine per day — see which machines earn their keep
+- Start a machine from a QR code or token; extend time from the counter
+- Attended wash & fold loads show whose order is in which machine
+- Live cycle countdowns, visible to every staff member
+- Repair history per machine with cost and downtime; book the technician from the same screen
+- Preventive service reminders by turns run, not just by the calendar
+
+## Machine management
+
+**Know exactly what's going on with every machine you own.** Every washer, dryer, cleaning machine, press or sewing machine has its own record — what was fixed, which parts were replaced, and who worked on it. Fold POS tracks usage and flags a machine for service before it breaks down mid-load, and you can schedule a technician without leaving the POS.
+
+- Full repair history per machine with cost and downtime
+- Technician appointments and a vendor book for plumbers, electricians and parts
+- Preventive maintenance reminders based on real usage — by hours or turns run, not just the calendar
+- Machine history without the laundromat floor map for shops that don't need one
+
+## Supplies and inventory
+
+**Know what's running low before it runs out.** Track the detergent, poly bags, hangers and press pads that keep the operation running, alongside the vending and retail products self-serve customers buy off your shelves. A low-stock line turns amber before you're on your last box.
+
+- Quantity, minimum stock, unit cost and supplier on every item
+- Supplier catalogue: Cleaner's Supply, WAWAK, United Fabricare
+- Usage logged against the orders that consume it
+- Live vending and retail inventory for self-serve laundromats
+- AI-driven reorder suggestions and quantities, based on historic use and current workload
+
+## Pickup & delivery
+
+**Build the day's route in one click. Know what it cost you.** Pick the drivers, press Build, and every pickup and delivery is sequenced into a route with ETAs and a map. Drivers get a stop list on their phone; you get the margin per order.
+
+- Optimised routes from the day's scheduled stops, reorder by drag
+- Insights: stops completed, on-time %, cost per order, margin per order
+- Automatic customer texts for pickup, ready, and out-for-delivery
+- Live stop list and status for every driver on the road; proof of delivery tied back to the ticket
+- Partner jobs from Fold, Laundryheap and Rinse land in the same schedule
+- Status callbacks and a driver run sheet, no separate app
+
+## Marketing
+
+**Reach customers before they think to call.** Automated flows that fire on their own — a thank-you after the first order, a nudge at 45 days quiet, a birthday treat — plus SMS, email and push campaigns to segments Fold POS builds for you.
+
+- Flows triggered by first order, order completed, inactivity, birthday
+- Segments by spend, service mix and last visit, updated automatically
+- Templates for promos, reminders and win-backs
+- Location-aware blasts — "we're picking up in your neighborhood tonight"
+- "Orders not collected" reminders in one click from Reports
+- Delivery and reply tracking on every campaign
+
+## Staff and shifts
+
+**A clean handoff every time the shift changes.** Staff clock in and out on the same screen they ring orders on. Roles decide what each person can open. The morning shift sees exactly what happened overnight.
+
+- Clock-in, breaks and clock-out tied to each employee
+- Roles and permissions per module, an audit log of who changed what
+- Shift statistics: orders, revenue and service mix per person
+- Shift notes and activity history for a clean handoff
+- Built-in team chat and notifications
+
+## The rest of the back office
+
+Customers, staff, marketing, printing, reports and payments work identically for a laundromat, a dry cleaner or a tailor — so a mixed shop never runs two systems.
+
+- **Customers & B2B accounts** — history, preferences, addresses and notes at the counter. Tax id, payment terms and monthly invoicing for hotels, gyms and restaurants.
+- **Invoices** — individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a second.
+- **Reports you can actually read** — sales by day, week and month, service mix, customers, costs, profit & loss, orders not collected — and CSV export of any of them.
+- **Conveyor** — slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you where the order hangs.
+- **Payments built in** — cash, card, pay-on-delivery and split tenders. Stripe or Clover behind a payment link your customer pays on their phone.
+- **Search anything, ⌘F** — one search box for customers, orders, tickets and settings. Keyboard-wedge barcode scanners just work.
+
+---
+
+## Printing and hardware
+
+**Prints on the printers you already own.** Claim tickets on the impact printer, garment tags on the heat-seal printer — Fold Print Agent pairs with a six-digit code and keeps them printing from any browser tab or the desktop app.
+
+- Epson TM-T20, Bixolon SRP-275, Star and Zebra out of the box
+- Lot number, piece count, customer, due day and barcode on every tag
+- Permanent heat-sealed barcodes for regulars: scan the garment, it knows the customer
+- Reprint any receipt or tag from the print queue
+
+**Runs where your counter is.** The same POS in a browser tab, as a Mac or Windows app, or on the iPad by the register. One login, same data everywhere. Platforms: Browser, macOS, Windows, iPad.
+
+**Printers & scanners.** Keep the hardware you have. If you'd rather not source it, Fold POS sells ready-to-go counter bundles, from $499. Supported: Epson, Bixolon, Star, Zebra, USB scanners.
+
+**Delivery partners.** Turn a marketplace on, give them the API key, and their jobs land in your schedule with status updates flowing back. Partners: Fold, Laundryheap, Rinse.
+
+### The Fold print helper
+
+A small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari. Download at https://foldpos.com/download (Windows build, 22 MB, Windows 10 and 11).
+
+1. Open the file you downloaded and click Next through it. No admin password is needed.
+2. When it finishes, a page opens in your browser. Sign in to Fold POS, go to Settings › Receipts › Fold Print Agent › Pair with a code, and type the 6-digit code into that page.
+3. Pick your printer in Settings › Receipts and print a test receipt. It stays paired even after a restart.
+
+On a Mac, Chrome prints straight to the printer — open Fold POS in Chrome, then Settings › Receipts › Connect printer. The Mac helper for Safari and Firefox is on its way; email contact@foldpos.com to get set up in the meantime.
+
+If Windows shows "Windows protected your PC", that is because the helper is new and not yet in Microsoft's reputation list: click More info, then Run anyway. The helper only talks to app.foldpos.com and your printers, doesn't change printer settings, and uninstalls from Windows › Add or remove programs like anything else. Its status page is at localhost:9377 on that computer.
+
+---
+
+## Pricing and plans
+
+Pick the plan that matches how many doors you run. Every plan is month-to-month with a 14-day free trial and no card up front. Change or cancel any time from Settings.
+
+### Starter — $39/month — for a single counter
+- Check-in, orders board & payments
+- Customer accounts & history
+- Receipts, tags & printing
+- Daily reporting
+- Machine maintenance log
+
+### Growth — $59/month — for shops adding delivery & staff (most popular)
+- Everything in Starter
+- Pickup & delivery routing
+- Staff shifts & clock-in/out
+- Express & subscription pricing
+- Marketing & order reminders
+- Supply inventory & reorder suggestions
+
+### Pro — $79/month — for multi-location shops
+- Everything in Growth
+- Multi-location reporting rollups
+- Route optimization
+- Role-based staff permissions
+- Priority support
+- Multi-location machine & supply reporting
+
+Card processing at competitive rates on every plan. Hardware bundles from $499. Hey Fold is built into every plan. Running more than 5 locations? Talk to sales at contact@foldpos.com.
+
+After the 14-day trial you pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start. There is no contract.
+
+---
+
+## Switching from another system
+
+Fold POS has a migration tool. From the FAQ: *"Can I bring over my customers and orders from Cents or CleanCloud?" — "Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one."*
+
+The setup guide says the same about the price list: import it from Cents, CleanCloud or a spreadsheet, or start from Fold POS's ready-made list and change prices as you go. Coming from another system, export customers and prices there first, then use **Settings › Import data**. An import can be undone.
+
+---
+
+## How to get started
+
+1. **Create your store account** (2 min) — pick your shop type, add your address. No card needed; the first 14 days are free. https://pos.foldpos.com/signup
+2. **Open Fold POS on the counter computer** (1 min) — it runs in the browser, nothing to install. Chrome, Edge, Firefox and Safari all work. https://pos.foldpos.com/login
+3. **Bring in your price list** (5–15 min) — import from Cents, CleanCloud or a spreadsheet, or start from the ready-made list.
+4. **Connect your receipt printer** (2 min) — plug it in by USB. Chrome prints directly; Edge, Firefox and Safari use the Fold print helper from https://foldpos.com/download. Works with Epson, Star and Bixolon receipt printers.
+5. **Add your staff** (3 min) — a login each, so tickets show who rang them up. Staff can check in and check out; only the owner changes prices and settings.
+6. **Customer texts** (1 min) — Fold can text customers when an order is ready; it is on by default, and the wording is editable.
+7. **Ring up a real order** (2 min) — check in, type a customer, tap the garments, continue to checkout. The ticket prints. Try the mic and say "two shirts and a suit for Maria, ready Thursday" — that is Hey Fold.
+
+The full guide is at https://foldpos.com/setup.
+
+---
+
+## Frequently asked questions
+
+**Do I need new hardware, or can I use what I have?**
+Fold POS runs in a browser, on Mac and Windows, and on most iPads, with the receipt and tag printers you already own — Epson, Bixolon, Star and Zebra are supported out of the box. If you'd rather not source your own, we sell ready-to-go counter bundles.
+
+**Can I bring over my customers and orders from Cents or CleanCloud?**
+Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one.
+
+**What happens after the 14-day trial?**
+You pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start.
+
+**Is there a contract?**
+No. Every plan is month-to-month; you can change tiers or cancel any time from Settings.
+
+**Does it work across multiple locations?**
+Yes. Growth and Pro plans roll up reporting across locations while keeping each shop's own boards separate.
+
+**How is Fold POS related to Fold?**
+Fold POS is built by the team behind Fold, a laundry and dry-cleaning service. We run our own counters on it — it's purpose-built for laundromats, dry cleaners and tailors, not a retail checkout with a laundry logo.
+
+---
+
+## For developers and AI agents
+
+- Markdown mirrors of every page, declared on each HTML page with `<link rel="alternate" type="text/markdown">`.
+- A public read-only MCP server at `https://app.foldpos.com/v1/mcp` — Streamable HTTP, no auth. Tools: `about_fold_pos`, `pricing_plans`, `features`, `supported_hardware`, `switching_from`, `getting_started`, `contact`. Add it in Claude Code or Claude Desktop with `claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp`.
+- The store-owner API — a store's own customers, orders and reporting — is private and undocumented; email contact@foldpos.com.
+
+Details: https://foldpos.com/developers
+
+---
+
+## Contact and legal
+
+- Email: contact@foldpos.com (questions, demos, migration help, sales for more than 5 locations)
+- App: https://pos.foldpos.com/login · Sign up: https://pos.foldpos.com/signup
+- Privacy policy: https://foldpos.com/privacy
+- Terms of service: https://foldpos.com/terms
+
+© 2026 Fold POS. Part of Fold. Fold POS is a product of Fold Laundry LLC.

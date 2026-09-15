@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fold POS for developers and AI agents</title>
+<meta name="description" content="Machine-readable Fold POS: llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp for agents that need pricing, features and hardware facts.">
+<link rel="canonical" href="https://foldpos.com/developers">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Fold POS for developers and AI agents">
+<meta property="og:description" content="llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/developers">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fold POS for developers and AI agents">
+<meta name="twitter:description" content="llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og.png">
+<link rel="alternate" type="text/markdown" href="/developers.md">
+<meta name="theme-color" content="#1e5eff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--ground:#f4f6fa;--card:#fff;--ink:#0b0d12;--muted:#6b7180;--line:#e3e7ef;--accent:#1e5eff;--accent-hover:#154bd6;--accent-soft:#e9efff;--good:#12a86f;--warn-soft:#fff4e0;--warn-ink:#8a5a00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:inherit;text-decoration:none}
+.brand .pill{background:var(--accent);color:#fff;font-size:11px;padding:2px 7px;border-radius:999px;letter-spacing:.06em}
+header a.small{color:var(--muted);font-size:14px;text-decoration:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 12px 30px -20px rgba(11,27,43,.25);margin-bottom:16px}
+h1{font-family:Sora,sans-serif;font-size:30px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Sora,sans-serif;font-size:19px;margin:0 0 8px}
+h3{font-family:Sora,sans-serif;font-size:15px;margin:18px 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:18px}
+.muted{color:var(--muted);font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin:0 0 12px}
+.ico svg{width:26px;height:26px}
+a{color:var(--accent)}
+ul.plain{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:10px}
+ul.plain li{display:flex;gap:12px;align-items:flex-start}
+ul.plain li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:10px}
+code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#0e1730;color:#dbe4ff;border-radius:12px;padding:16px 18px;overflow-x:auto;font-size:14px;line-height:1.5;margin:0 0 14px}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+table{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td code{white-space:nowrap}
+.note{background:var(--warn-soft);color:var(--warn-ink);border-radius:12px;padding:12px 14px;font-size:15px;margin:0 0 14px}
+.help{margin:22px 0 0;text-align:center;font-size:14px;color:var(--muted)}
+.help a{color:var(--accent);font-weight:700;text-decoration:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://foldpos.com/#organization",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "logo": "https://foldpos.com/assets/img/og.png",
+  "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
+  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "contact@foldpos.com",
+    "availableLanguage": "English"
+  }]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://foldpos.com/developers#webpage",
+  "url": "https://foldpos.com/developers",
+  "name": "Fold POS for developers and AI agents",
+  "description": "Machine-readable Fold POS: llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp.",
+  "inLanguage": "en-US",
+  "isPartOf": { "@id": "https://foldpos.com/#website" },
+  "primaryImageOfPage": "https://foldpos.com/assets/img/og.png",
+  "publisher": { "@id": "https://foldpos.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Fold POS MCP server tools",
+  "description": "Read-only tools exposed by the public Fold POS MCP server at https://app.foldpos.com/v1/mcp.",
+  "numberOfItems": 7,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "about_fold_pos", "description": "What Fold POS is and who it is for." },
+    { "@type": "ListItem", "position": 2, "name": "pricing_plans", "description": "Starter, Growth and Pro plans, what each includes, and the free trial." },
+    { "@type": "ListItem", "position": 3, "name": "features", "description": "Features by area and by shop type." },
+    { "@type": "ListItem", "position": 4, "name": "supported_hardware", "description": "Receipt and tag printers, scanners and platforms." },
+    { "@type": "ListItem", "position": 5, "name": "switching_from", "description": "What the migration tool brings over from another system." },
+    { "@type": "ListItem", "position": 6, "name": "getting_started", "description": "Trial signup, the store setup guide and the print helper." },
+    { "@type": "ListItem", "position": 7, "name": "contact", "description": "How to reach the Fold POS team." }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Developers</a>
+  <a class="small" href="https://foldpos.com/">Back to foldpos.com</a>
+</header>
+
+<main>
+  <section class="card">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+    <h1>Fold POS for developers and AI agents</h1>
+    <p class="lead">Fold POS is point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. This page is the machine-readable entrance: a site map for language models, markdown copies of every page, and a public MCP server that answers questions about the product.</p>
+    <p class="muted">Everything here is read-only and public. Nothing on this page needs an account.</p>
+  </section>
+
+  <section class="card">
+    <h2>llms.txt and llms-full.txt</h2>
+    <p>Two plain-text files describe the whole site the way <code>robots.txt</code> describes crawl rules.</p>
+    <ul class="plain">
+      <li><a href="/llms.txt"><code>/llms.txt</code></a> — a short index: what Fold POS is, and a linked list of every page with a one-line description.</li>
+      <li><a href="/llms-full.txt"><code>/llms-full.txt</code></a> — the readable content of the entire site in one markdown document: shop types, features, Hey Fold, printing and hardware, pricing, switching over, and how to get started.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Markdown mirrors</h2>
+    <p>Every public page has a markdown twin with the navigation, styling and marketing chrome stripped out. Each HTML page points at its twin with <code>&lt;link rel="alternate" type="text/markdown"&gt;</code>.</p>
+    <table>
+      <thead><tr><th>Page</th><th>Markdown</th></tr></thead>
+      <tbody>
+        <tr><td><a href="/">Home</a></td><td><a href="/fold-pos.md"><code>/fold-pos.md</code></a></td></tr>
+        <tr><td><a href="/laundromats">For laundromats</a></td><td><a href="/laundromats.md"><code>/laundromats.md</code></a></td></tr>
+        <tr><td><a href="/dry-cleaners">For dry cleaners</a></td><td><a href="/dry-cleaners.md"><code>/dry-cleaners.md</code></a></td></tr>
+        <tr><td><a href="/alterations">For tailors</a></td><td><a href="/alterations.md"><code>/alterations.md</code></a></td></tr>
+        <tr><td><a href="/features">All features</a></td><td><a href="/features.md"><code>/features.md</code></a></td></tr>
+        <tr><td><a href="/#pricing">Pricing</a></td><td><a href="/pricing.md"><code>/pricing.md</code></a></td></tr>
+        <tr><td><a href="/#faq">FAQ</a></td><td><a href="/faq.md"><code>/faq.md</code></a></td></tr>
+        <tr><td><a href="/setup">Store setup</a></td><td><a href="/setup.md"><code>/setup.md</code></a></td></tr>
+        <tr><td><a href="/download">Print helper</a></td><td><a href="/download.md"><code>/download.md</code></a></td></tr>
+        <tr><td>This page</td><td><a href="/developers.md"><code>/developers.md</code></a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>The Fold POS MCP server</h2>
+    <p>A public Model Context Protocol server answers product questions for agents, so a model does not have to scrape the site to get the pricing or the printer list right.</p>
+    <ul class="plain">
+      <li>Endpoint: <code>https://app.foldpos.com/v1/mcp</code></li>
+      <li>Transport: Streamable HTTP</li>
+      <li>Auth: none — it is public</li>
+      <li>Scope: read-only. It returns product information only; there is no store, customer or order data behind it.</li>
+    </ul>
+
+    <h3>Tools</h3>
+    <table>
+      <thead><tr><th>Tool</th><th>Returns</th></tr></thead>
+      <tbody>
+        <tr><td><code>about_fold_pos</code></td><td>What Fold POS is and who it is for.</td></tr>
+        <tr><td><code>pricing_plans</code></td><td>Starter, Growth and Pro, what each includes, and the 14-day free trial.</td></tr>
+        <tr><td><code>features</code></td><td>Features by area and by shop type.</td></tr>
+        <tr><td><code>supported_hardware</code></td><td>Receipt and tag printers, scanners, and the platforms the POS runs on.</td></tr>
+        <tr><td><code>switching_from</code></td><td>What the migration tool brings over from another system.</td></tr>
+        <tr><td><code>getting_started</code></td><td>Trial signup, the store setup guide and the print helper.</td></tr>
+        <tr><td><code>contact</code></td><td>How to reach the Fold POS team.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Claude Code and Claude Desktop</h3>
+    <pre><code>claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp</code></pre>
+
+    <h3>Other MCP clients</h3>
+    <p>Clients that take a JSON config want the same two facts — the transport and the URL:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp"
+    }
+  }
+}</code></pre>
+  </section>
+
+  <section class="card">
+    <h2>The store-owner API</h2>
+    <p class="note">The API that reaches a store's own customers, orders and reporting is <b>private</b>. It is not part of the public MCP server and has no public documentation.</p>
+    <p class="muted">If you are a Fold POS customer or a partner who needs programmatic access to a store's data, email <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20API">contact@foldpos.com</a> and tell us what you are building.</p>
+    <p class="muted">Delivery marketplaces are a separate path: Fold, Laundryheap and Rinse connect from inside the POS — turn the partner on, give them the API key, and their jobs land in the store's schedule with status updates flowing back.</p>
+  </section>
+</main>
+
+<p class="help">Questions? Email <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20for%20developers">contact@foldpos.com</a>.</p>
+</div>
+</body>
+</html>

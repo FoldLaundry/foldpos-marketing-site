@@ -14,7 +14,14 @@
 <meta property="og:image" content="https://foldpos.com/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fold POS — Point of sale for laundry, not retail">
+<meta name="twitter:description" content="Wash &amp; fold, dry cleaning and alterations on one counter. Every order tracked from drop-off to pickup. 14-day free trial, no card.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og.png">
+<link rel="alternate" type="text/markdown" href="/fold-pos.md">
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -300,6 +307,164 @@
   .foot-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:44px; padding-top:22px; border-top:1px solid var(--line); color:var(--ink-3); font-size:.88rem; }
   .foot-legal{ display:flex; gap:20px; } .foot-legal a{ color:inherit; text-decoration:none; }
 </style>
+<!--JSONLD-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://foldpos.com/#organization",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "logo": "https://foldpos.com/assets/img/og.png",
+  "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
+  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "contact@foldpos.com",
+    "availableLanguage": "English"
+  }]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://foldpos.com/#website",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "publisher": { "@id": "https://foldpos.com/#organization" },
+  "inLanguage": "en-US"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://foldpos.com/#software",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Point of sale software",
+  "operatingSystem": "Web, macOS, Windows, iPadOS",
+  "description": "Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then tracks every order from drop-off to pickup. Machines, supplies, pickup & delivery routes, marketing and staff shifts in the same screen.",
+  "image": "https://foldpos.com/assets/img/og.png",
+  "publisher": { "@id": "https://foldpos.com/#organization" },
+  "featureList": [
+    "Check-in and orders priced by the pound, the bag, the piece or the task",
+    "Orders board from check-in to completed",
+    "Heat-seal garment tags and conveyor slot tracking",
+    "Live floor map of every washer and dryer",
+    "Machine repair history and preventive service reminders",
+    "Supply and vending inventory with low-stock alerts",
+    "Pickup & delivery route building with per-order margin",
+    "Marketing flows, SMS and email campaigns",
+    "Staff clock-in, roles and shift statistics",
+    "Receipt and garment-tag printing via Fold Print Agent",
+    "Hey Fold voice assistant",
+    "Reports with CSV export"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter",
+      "description": "For a single counter.",
+      "price": "39.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Growth",
+      "description": "For shops adding delivery & staff.",
+      "price": "59.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "59.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "description": "For multi-location shops.",
+      "price": "79.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "79.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "14-day free trial",
+      "description": "Every plan is month-to-month with a 14-day free trial and no card up front.",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "free trial",
+      "url": "https://pos.foldpos.com/signup"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://foldpos.com/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need new hardware, or can I use what I have?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fold POS runs in a browser, on Mac and Windows, and on most iPads, with the receipt and tag printers you already own — Epson, Bixolon, Star and Zebra are supported out of the box. If you'd rather not source your own, we sell ready-to-go counter bundles." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring over my customers and orders from Cents or CleanCloud?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the 14-day trial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a contract?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Every plan is month-to-month; you can change tiers or cancel any time from Settings." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work across multiple locations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Growth and Pro plans roll up reporting across locations while keeping each shop's own boards separate." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Fold POS related to Fold?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fold POS is built by the team behind Fold, a laundry and dry-cleaning service. We run our own counters on it — it's purpose-built for laundromats, dry cleaners and tailors, not a retail checkout with a laundry logo." }
+    }
+  ]
+}
+</script>
+<!--/JSONLD-->
 </head>
 <body>
 
@@ -846,6 +1011,7 @@
       <div class="foot-col"><h5>Support</h5><ul>
         <li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20help">Help</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="developers">Developers &amp; AI</a></li>
         <li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a></li>
         <li><a href="https://pos.foldpos.com/login">Log in</a></li>
       </ul></div>

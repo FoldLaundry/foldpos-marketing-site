@@ -1,0 +1,39 @@
+# Fold POS
+
+> Point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then follows every order from drop-off to pickup — with machines, supplies, pickup & delivery routes, marketing, staff shifts and printing in the same screen. Plans are $39, $59 and $79 a month, month-to-month, with a 14-day free trial and no card up front.
+
+Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints to the Epson, Bixolon, Star and Zebra printers a shop already owns. "Hey Fold", a voice assistant that takes an order by speech and sends it to the printer, is built into every plan. Markdown mirrors of each page are linked below; each HTML page also declares its mirror with `<link rel="alternate" type="text/markdown">`.
+
+## Product
+
+- [Fold POS home](https://foldpos.com/fold-pos.md): What Fold POS is, who it is for, and every part of it in one page — counter, orders board, floor map, delivery, back office, pricing.
+- [All features](https://foldpos.com/features.md): The nine feature areas in depth — counter, workflow board, ticket, machine management, floor plan, supplies, marketing, pickup & delivery, staff & shifts.
+- [Pricing](https://foldpos.com/pricing.md): Starter $39, Growth $59 and Pro $79 a month, what each plan includes, the 14-day free trial, card processing and hardware bundles.
+- [FAQ](https://foldpos.com/faq.md): Hardware, migrating from Cents or CleanCloud, what happens after the trial, contracts, multiple locations, and how Fold POS relates to Fold.
+
+## By shop type
+
+- [For laundromats](https://foldpos.com/laundromats.md): Wash & fold by the pound, a live floor map of every washer and dryer, machine and vending stock, delivery routes.
+- [For dry cleaners](https://foldpos.com/dry-cleaners.md): Per-piece tickets, heat-seal garment tags, conveyor slots, alterations on the same ticket, wash & fold and pickup & delivery.
+- [For tailors and alterations shops](https://foldpos.com/alterations.md): Per-task pricing, measurements, photos and notes on every ticket, due-date reminders, and none of the laundry screens.
+
+## Getting started
+
+- [Store setup guide](https://foldpos.com/setup.md): Seven short steps to open a shop on Fold POS — account, browser, price list import, printer, staff, customer texts, first order.
+- [Fold print helper](https://foldpos.com/download.md): The small Windows program that lets any browser print receipts and garment tags, and how to pair it with a six-digit code.
+- [Sign up](https://pos.foldpos.com/signup): Start the 14-day free trial; no card up front.
+- [Log in](https://pos.foldpos.com/login): The Fold POS app itself.
+
+## For developers and agents
+
+- [Developers & AI](https://foldpos.com/developers.md): The markdown mirrors, and the public read-only MCP server at https://app.foldpos.com/v1/mcp (Streamable HTTP, no auth).
+- [llms-full.txt](https://foldpos.com/llms-full.txt): The whole site's readable content as one markdown document.
+
+## Contact
+
+- [Email Fold POS](mailto:contact@foldpos.com): Questions, a demo, migration help, or access to the private store-owner API.
+
+## Optional
+
+- [Privacy policy](https://foldpos.com/privacy): How Fold POS collects, uses and protects your data.
+- [Terms of service](https://foldpos.com/terms): The terms that apply to a Fold POS account and subscription.
