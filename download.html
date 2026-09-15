@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fold print helper — Fold POS</title>
+<meta name="description" content="Download the Fold print helper so Fold POS can print receipts and garment tags from any browser on Windows or Mac.">
+<link rel="canonical" href="https://foldpos.com/download">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1e5eff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--ground:#f4f6fa;--card:#fff;--ink:#0b0d12;--muted:#6b7180;--line:#e3e7ef;--accent:#1e5eff;--accent-hover:#154bd6;--accent-soft:#e9efff;--good:#12a86f;--warn-soft:#fff4e0;--warn-ink:#8a5a00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:680px;margin:0 auto;padding:28px 18px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:inherit;text-decoration:none}
+.brand .pill{background:var(--accent);color:#fff;font-size:11px;padding:2px 7px;border-radius:999px;letter-spacing:.06em}
+header a.small{color:var(--muted);font-size:14px;text-decoration:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 12px 30px -20px rgba(11,27,43,.25);margin-bottom:16px}
+h1{font-family:Sora,sans-serif;font-size:30px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Sora,sans-serif;font-size:19px;margin:0 0 8px}
+p{margin:0 0 14px}
+.lead{font-size:18px}
+.muted{color:var(--muted);font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin:0 0 12px}
+.ico svg{width:26px;height:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;border-radius:14px;font:inherit;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn .sub{font-weight:500;font-size:13px;opacity:.85}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 14px}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+ol.steps li{display:flex;gap:14px;align-items:flex-start;counter-increment:s}
+ol.steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+.note{background:var(--warn-soft);color:var(--warn-ink);border-radius:12px;padding:12px 14px;font-size:15px;margin:0 0 14px}
+.note b{color:inherit}
+.help{margin:22px 0 0;text-align:center;font-size:14px;color:var(--muted)}
+.help a{color:var(--accent);font-weight:700;text-decoration:none}
+[hidden]{display:none!important}
+code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Print helper</a>
+  <a class="small" href="https://foldpos.com/setup">Store setup guide</a>
+</header>
+
+<main>
+  <section class="card">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V4h10v4"/><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M7 14h10v6H7z"/><circle cx="17" cy="11.5" r=".7" fill="currentColor"/></svg></div>
+    <h1>Print from any browser</h1>
+    <p class="lead">The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari.</p>
+
+    <div id="win">
+      <div class="row">
+        <a class="btn primary" href="/download/Fold-Print-Agent-Setup.exe" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
+          <span>Download for Windows <span class="sub">· 22 MB · Windows 10 and 11</span></span>
+        </a>
+      </div>
+    </div>
+    <div id="mac" hidden>
+      <p class="muted"><b>On a Mac?</b> Chrome prints straight to the printer — open Fold POS in Chrome, then <b>Settings › Receipts › Connect printer</b>. The Mac helper for Safari and Firefox is on its way; email us and we'll set it up with you in the meantime.</p>
+      <div class="row"><a class="btn" href="/download/Fold-Print-Agent-Setup.exe" download>Download for Windows instead</a></div>
+    </div>
+    <p class="muted" id="other" hidden>Download this on the Windows computer the printer is plugged into.</p>
+  </section>
+
+  <section class="card">
+    <h2>Three steps</h2>
+    <ol class="steps">
+      <li><span>Open the file you downloaded and click <b>Next</b> through it. No admin password is needed.</span></li>
+      <li><span>When it finishes, a page opens in your browser. Sign in to Fold POS, go to <b>Settings › Receipts › Fold Print Agent › Pair with a code</b>, and type the 6-digit code into that page.</span></li>
+      <li><span>Pick your printer in Settings › Receipts and print a test receipt. Done — it stays paired even after a restart.</span></li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>If Windows shows a blue warning</h2>
+    <p class="note"><b>“Windows protected your PC”</b> appears because the helper is new and not yet in Microsoft's reputation list. Click <b>More info</b>, then <b>Run anyway</b>.</p>
+    <p class="muted">The helper only talks to <code>app.foldpos.com</code> and your printers. It doesn't change printer settings, and it's removed from Windows › Add or remove programs like anything else. Its status page is always at <a href="http://localhost:9377">localhost:9377</a> on that computer.</p>
+  </section>
+</main>
+
+<p class="help">Need a hand? Email <a href="mailto:contact@foldpos.com?subject=Fold%20print%20helper">contact@foldpos.com</a> — we'll do it with you over a call.</p>
+</div>
+<script>
+(function(){
+  var p = navigator.platform || '';
+  var ua = navigator.userAgent || '';
+  var isWin = /Win/.test(p), isMac = /Mac/.test(p) && !/iPhone|iPad/.test(ua), isMobile = /Android|iPhone|iPad/.test(ua);
+  if (isMac) { document.getElementById('win').hidden = true; document.getElementById('mac').hidden = false; }
+  else if (isMobile) { document.getElementById('other').hidden = false; }
+})();
+</script>
+</body>
+</html>
