@@ -578,11 +578,11 @@ def put_chrome(fname):
             s = s[:i] + ftr + '\n' + s[i:]
     # The chrome always sits at the edges of <body>, outside any page container.
     hb = re.search(r'<!--fx:header-->.*?<!--/fx:header-->', s, re.S).group(0)
-    s = s.replace(hb, '', 1)
+    s = s.replace('\n' + hb, '', 1) if ('\n' + hb) in s else s.replace(hb, '', 1)
     bm = re.search(r'<body[^>]*>', s)
     s = s[:bm.end()] + '\n' + hb + s[bm.end():]
     fb = re.search(r'<!--fx:footer-->.*?<!--/fx:footer-->', s, re.S).group(0)
-    s = s.replace(fb, '', 1)
+    s = s.replace(fb + '\n', '', 1) if (fb + '\n') in s else s.replace(fb, '', 1)
     i = s.rindex('</body>')
     s = s[:i] + fb + '\n' + s[i:]
     if CHROME_CSS not in s:
