@@ -1,4 +1,4 @@
-# Point of sale for tailors, not retail
+# A tailoring POS for owners, by owners
 
 > Canonical page: https://foldpos.com/alterations · Markdown mirror.
 

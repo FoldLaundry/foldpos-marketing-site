@@ -112,7 +112,7 @@
   /* ============ HERO ============ */
   .hero{ padding:88px 0 0; text-align:center; overflow:hidden; }
   .hero .eyebrow{ display:inline-block; margin-bottom:22px; }
-  .hero h1{ max-width:15ch; margin:0 auto; }
+  .hero h1{ max-width:22ch; margin:0 auto; }
   .hero h1 em{ font-style:normal; color:var(--brand); }
   .hero .lede{ margin:26px auto 0; text-align:center; max-width:40em; }
   .hero-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:34px; }
@@ -407,7 +407,7 @@
 <section class="hero">
 <div class="wrap">
 <span class="eyebrow" id="heroEyebrow">Point of sale for laundromats</span>
-<h1 id="heroTitle">Point of sale for <em>laundromats</em>, not retail.</h1>
+<h1 id="heroTitle">A <em>laundromat</em> POS<br/>for owners, by owners.</h1>
 <p class="lede" id="heroLede">Wash &amp; fold by the pound at the counter, a live map of every washer and dryer on the floor, and every order followed from drop-off to pickup.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free trial
@@ -714,9 +714,9 @@
 
   // Business-type switcher: personalises the whole page (hero, chapters, order, nav pill).
   var SHOPS = {
-    laundromat: { name:'Laundromat', eyebrow:'Point of sale for laundromats', title:'Point of sale for <em>laundromats</em>, not retail.', lede:'Wash &amp; fold by the pound at the counter, a live map of every washer and dryer on the floor, and every order followed from drop-off to pickup.' },
-    drycleaner: { name:'Dry cleaner', eyebrow:'Point of sale for dry cleaners', title:'Point of sale for <em>dry cleaners</em>, not retail.', lede:'Garment tags, conveyor slots and per-piece tickets — with wash &amp; fold and pickup &amp; delivery on the same counter when you offer them.' },
-    tailor: { name:'Alterations', eyebrow:'Point of sale for alterations &amp; tailoring', title:'Point of sale for <em>tailors</em>, not retail.', lede:'Per-task pricing, measurements and photos on every ticket, due-date reminders — and none of the laundry screens in the way.' }
+    laundromat: { name:'Laundromat', eyebrow:'Point of sale for laundromats', title:'A <em>laundromat</em> POS<br>for owners, by owners.', lede:'Wash &amp; fold by the pound at the counter, a live map of every washer and dryer on the floor, and every order followed from drop-off to pickup.' },
+    drycleaner: { name:'Dry cleaner', eyebrow:'Point of sale for dry cleaners', title:'A <em>dry cleaning</em> POS<br>for owners, by owners.', lede:'Garment tags, conveyor slots and per-piece tickets — with wash &amp; fold and pickup &amp; delivery on the same counter when you offer them.' },
+    tailor: { name:'Alterations', eyebrow:'Point of sale for alterations &amp; tailoring', title:'A <em>tailoring</em> POS<br>for owners, by owners.', lede:'Per-task pricing, measurements and photos on every ticket, due-date reminders — and none of the laundry screens in the way.' }
   };
   var page = document.documentElement.getAttribute('data-shop');   // set on the per-shop landing pages
   function applyShop(name, opts){

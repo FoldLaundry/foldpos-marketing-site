@@ -8,7 +8,7 @@ This document collects the readable content of foldpos.com. Individual pages hav
 
 ## What Fold POS is
 
-Point of sale for laundry, not retail. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task — on one counter — then follows every order from drop-off to the moment it's handed back. Machines, supplies, routes, marketing and staff shifts live in the same screen.
+A Laundry & Dry Cleaning POS for owners, by owners. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task — on one counter — then follows every order from drop-off to the moment it's handed back. Machines, supplies, routes, marketing and staff shifts live in the same screen.
 
 14 days free · no card · runs in your browser, on Mac, Windows and iPad · talks back when you say "Hey Fold".
 

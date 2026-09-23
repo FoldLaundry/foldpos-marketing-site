@@ -1,4 +1,4 @@
-# Point of sale for dry cleaners, not retail
+# A dry cleaning POS for owners, by owners
 
 > Canonical page: https://foldpos.com/dry-cleaners · Markdown mirror.
 

@@ -1,4 +1,4 @@
-# Point of sale for laundromats, not retail
+# A laundromat POS for owners, by owners
 
 > Canonical page: https://foldpos.com/laundromats · Markdown mirror.
 
