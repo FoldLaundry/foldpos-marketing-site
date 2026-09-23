@@ -193,6 +193,11 @@ def check_page(fname):
 def main():
     os.chdir(ROOT)
     pages = sorted(os.path.basename(f) for f in glob.glob(os.path.join(ROOT, '*.html')))
+    # A page that only redirects (meta refresh, noindex) has no content to check.
+    redirects = [f for f in pages if 'http-equiv="refresh"' in open(os.path.join(ROOT, f), encoding='utf-8').read()]
+    for f in redirects:
+        notes.append('%s: redirect page, skipped' % f)
+    pages = [f for f in pages if f not in redirects]
     if not pages:
         err('repo', 'no .html files found')
 

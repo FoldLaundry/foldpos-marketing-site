@@ -351,29 +351,61 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/css/chrome.css">
 </head>
 <body>
-<header class="nav">
-<div class="nav-inner">
-<a aria-label="Fold POS home" class="brand-lockup" href="#top">
-<span class="brand-mark">F</span>
-<span class="brand-word">Fold POS</span>
-</a>
-<nav aria-label="Primary" class="links">
-<a href="laundromats">For laundromats</a>
-<a href="dry-cleaners">For dry cleaners</a>
-<a href="alterations">For tailors</a>
-<a href="#voice">Hey Fold</a>
-<a href="features.html">All features</a>
-<a href="#pricing">Pricing</a>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/" aria-label="Fold POS home"><i></i>Fold POS</a>
+    <nav aria-label="Primary">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Shops<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/laundromats"><b>Laundromats</b><small>Wash &amp; fold by the pound, the floor map</small></a>
+            <a href="/dry-cleaners"><b>Dry cleaners</b><small>Per-piece tickets, tags and conveyor slots</small></a>
+            <a href="/alterations" aria-current="page"><b>Tailors</b><small>Per-task pricing, measurements, fittings</small></a>
+          </div>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/#heyfold">Hey Fold</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menu">
+  <p class="fx-menu-h">Shops</p>
+  <a href="/laundromats">Laundromats</a>
+  <a href="/dry-cleaners">Dry cleaners</a>
+  <a href="/alterations" aria-current="page">Tailors</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/features">Features</a>
+  <a href="/#heyfold">Hey Fold</a>
+  <a href="/pricing">Pricing</a>
+  <p class="fx-menu-h">Support</p>
+  <a href="/faq">FAQ</a>
+  <a href="/help">Help</a>
+  <a href="/contact">Contact</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Log in</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
+  </div>
 </nav>
-<div class="nav-cta">
+<!--/fx:header-->
 
-<a class="nav-login" href="https://pos.foldpos.com/login">Log in</a>
-<a class="btn btn-primary btn-sm" href="https://pos.foldpos.com/signup">Start free trial</a>
-</div>
-</div>
-</header>
+
+
+
 <main id="top">
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -576,7 +608,7 @@
 <div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><rect height="17" rx="2.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="3.5"></rect><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><h4>Invoices</h4><p>Individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a second.</p></div>
 <div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><h4>Reports you can actually read</h4><p>Sales by day, week and month, service mix, customers, costs, profit &amp; loss, orders not collected — and CSV export of any of them.</p></div>
 <div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="1.6"></path></svg></div><h4>Conveyor</h4><p>Slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you where the order hangs.</p></div>
-<div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><rect height="14" rx="3" stroke="currentColor" stroke-width="1.6" width="18" x="3" y="5"></rect><path d="M7 10h4M7 14h10" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><h4>Payments built in</h4><p>Cash, card, pay-on-delivery and split tenders. Stripe or Clover behind a payment link your customer pays on their phone.</p></div>
+<div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><rect height="14" rx="3" stroke="currentColor" stroke-width="1.6" width="18" x="3" y="5"></rect><path d="M7 10h4M7 14h10" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><h4>Payments built in</h4><p>Cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link your customer can pay on their phone.</p></div>
 <div class="more-card"><div class="ic"><svg fill="none" viewbox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"></circle></svg></div><h4>Search anything, ⌘F</h4><p>One search box for customers, orders, tickets and settings. Keyboard-wedge barcode scanners just work.</p></div>
 </div>
 </div>
@@ -633,8 +665,7 @@
 </div>
 </div>
 <div class="pricing-foot">
-<span>Card processing at competitive rates on every plan.</span>
-<span>Hardware bundles from $499.</span>
+<span>Payments on your own processor, at your rates.</span>
 <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20for%20multiple%20locations">Running more than 5 locations? Talk to sales →</a>
 </div>
 </div>
@@ -655,41 +686,7 @@
 </div>
 </section>
 </main>
-<footer>
-<div class="wrap">
-<div class="foot-top">
-<div class="foot-brand">
-<a class="brand-lockup" href="#top"><span class="brand-mark">F</span><span class="brand-word">Fold POS</span></a>
-<p>Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.</p>
-</div>
-<div class="foot-col"><h5>Product</h5><ul>
-<li><a href="#counter">Check in &amp; orders</a></li>
-<li><a href="features.html#delivery">Pickup &amp; delivery</a></li>
-<li><a href="features.html#machines">Machines</a></li>
-<li><a href="features.html#supplies">Supplies</a></li>
-<li><a href="#pricing">Pricing</a></li>
-</ul></div>
-<div class="foot-col"><h5>Company</h5><ul>
-<li><a href="laundromats">For laundromats</a></li>
-<li><a href="dry-cleaners">For dry cleaners</a></li>
-<li><a href="alterations">For tailors</a></li>
-<li><a href="#voice">Hey Fold</a></li>
-<li><a href="mailto:contact@foldpos.com">Contact</a></li>
-</ul></div>
-<div class="foot-col"><h5>Support</h5><ul>
-<li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20help">Help</a></li>
-<li><a href="/#faq">FAQ</a></li>
-<li><a href="developers">Developers &amp; AI</a></li>
-<li><a href="mailto:contact@foldpos.com?subject=Fold%20POS%20demo">Book a demo</a></li>
-<li><a href="https://pos.foldpos.com/login">Log in</a></li>
-</ul></div>
-</div>
-<div class="foot-bottom">
-<span>© 2026 Fold POS. Part of Fold.</span>
-<div class="foot-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-</div>
-</div>
-</footer>
+
 <script>
 (function(){
   document.documentElement.classList.add('js');
@@ -787,5 +784,50 @@
   }
 })();
 </script>
+
+<script src="/assets/js/chrome.js" defer></script>
+
+
+<!--fx:footer-->
+<div class="fx-foot" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/"><i></i>Fold POS</a>
+        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry's own counters.</p>
+      </div>
+      <div><p class="fx-foot-h">Product</p><ul>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/#heyfold">Hey Fold</a></li>
+        <li><a href="/#delivery">Pickup &amp; delivery</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Shops</p><ul>
+        <li><a href="/laundromats">Laundromats</a></li>
+        <li><a href="/dry-cleaners">Dry cleaners</a></li>
+        <li><a href="/alterations">Tailors</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Support</p><ul>
+        <li><a href="/help">Help center</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/printers">Printers</a></li>
+        <li><a href="/setup">Store setup</a></li>
+        <li><a href="/download">Print helper</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Company</p><ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/developers">Developers &amp; AI</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+</div>
+<!--/fx:footer-->
 </body>
 </html>

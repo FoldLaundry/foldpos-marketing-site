@@ -1,32 +1,78 @@
-# Fold POS FAQ — questions owners actually ask
+# Fold POS FAQ
 
-> Source: the FAQ section of https://foldpos.com/#faq · Markdown mirror. Anything else — contact@foldpos.com.
+> Canonical page: https://foldpos.com/faq · Markdown mirror. Anything else: contact@foldpos.com.
 
-## Do I need new hardware, or can I use what I have?
+## Getting started
 
-Fold POS runs in a browser, on Mac and Windows, and on most iPads, with the receipt and tag printers you already own — Epson, Bixolon, Star and Zebra are supported out of the box. If you'd rather not source your own, we sell ready-to-go counter bundles.
+**What is Fold POS?** A point of sale and command center for laundromats, dry cleaners and tailors. It follows every order from the counter to the customer’s phone: check-in, tags, the back room, where the order lives, the ready text, pickup and payment, and the reports at the end of the day.
 
-## Can I bring over my customers and orders from Cents or CleanCloud?
+**Who is it for?** Laundromats (wash & fold by the pound, the floor and the machines), dry cleaners (every garment its own line and tag, conveyor slots) and tailors (jobs with measurements and fittings). Many shops do more than one; they all live on one counter.
 
-Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one.
+**Do I need to install anything?** No. Fold POS runs in any browser at pos.foldpos.com. There is also a desktop app for the counter PC (Windows or Mac) and it runs on the iPad. Windows counter PCs use a small print helper for the printers.
 
-## What happens after the 14-day trial?
+**How long does it take to set up?** The setup guide is seven short steps: your account, the browser, your price list, the printer, staff, customer texts and a first order. Stuck on a step? Email us and we’ll do it with you.
 
-You pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start.
+**Is it in Spanish?** Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.
 
-## Is there a contract?
+## Pricing & billing
 
-No. Every plan is month-to-month; you can change tiers or cancel any time from Settings.
+**How much does it cost?** Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See pricing for everything in each plan.
 
-## Does it work across multiple locations?
+**Is there a free trial?** 14 days free, with no card up front.
 
-Yes. Growth and Pro plans roll up reporting across locations while keeping each shop's own boards separate.
+**Is there a contract?** No. Every plan is month to month. Change plans or cancel from Settings.
 
-## How is Fold POS related to Fold?
+**What happens after the trial?** You pick a plan in Settings › Plan & billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.
 
-Fold POS is built by the team behind Fold, a laundry and dry-cleaning service. We run our own counters on it — it's purpose-built for laundromats, dry cleaners and tailors, not a retail checkout with a laundry logo.
+## Printers & hardware
+
+**Which printers does it work with?** The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece. See every printer.
+
+**Do I need the print helper?** Chrome can print straight to the printer: Settings › Receipts › Connect printer. On Windows, if the list is empty, or if you use Edge or Firefox, install the Fold print helper and pair it with the 6-digit code from Settings › Receipts. On a Mac, use Chrome; the Mac helper is on its way.
+
+**Windows says “Windows protected your PC.” Is that safe?** That warning appears because the helper is new. Click More info, then Run anyway. The helper only talks to Fold POS and your printers, and it uninstalls like any other program.
+
+**Does it run on an iPad?** Yes. Staff can move work along from an iPad on the wall or a phone in their pocket, and the counter sees it the moment they do.
+
+## Switching over
+
+**Can I bring my customers from Cents or CleanCloud?** Yes, from Cents, CleanCloud or a CSV: customers and your price list. Export them from your old system, then open Settings › Import data. You can undo an import.
+
+**Can I take my data with me if I leave?** Yes, the same way it came in.
+
+**Will you help us move?** Yes. Email contact@foldpos.com and we’ll do it with you.
+
+## Payments
+
+**Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.
+
+**Can business accounts pay monthly?** Yes. Monthly invoicing for accounts, with the card on file or however they pay.
+
+## Hey Fold
+
+**What is Hey Fold?** Fold’s voice. Say the customer, the pieces and when it’s due, and the order is typed, priced and printing. Fold reads it back and waits for your “yes” before anything happens.
+
+**How do I talk to it?** On a computer, press Caps Lock to talk and press it again when you’re done, or tap the orb. It works on every screen.
+
+**Is it listening all the time?** No. It stays quiet until you call its name, press Caps Lock or tap the orb.
+
+**Does it cost extra?** No. Hey Fold is on every plan, in English and Spanish.
+
+## Pickup & delivery
+
+**Can I run my own delivery service?** Yes. Today’s pickups and drop-offs with who’s on each, routes built on a map, and the Fold Driver app for your drivers: today’s stops, navigation, and a photo or signature at the door.
+
+**What if no driver is free?** Send it with an Uber Direct courier, booked on your store’s own Uber account from the counter.
+
+**Which plan has delivery?** Growth and Pro. Route optimization is on Pro.
+
+## About Fold
+
+**How is Fold POS related to Fold?** Fold POS is built by Fold Laundry, a laundry and dry-cleaning service. We run our own counters on it. Our story.
+
+**Who do I contact?** contact@foldpos.com, or use the contact page.
 
 ## More
 
-- [Home](/fold-pos.md) · [Pricing](/pricing.md) · [All features](/features.md)
-- [Store setup guide](/setup.md) · [Print helper](/download.md)
+- [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
+- [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md) · [All features](/features.md) · [Developers & AI](/developers.md)

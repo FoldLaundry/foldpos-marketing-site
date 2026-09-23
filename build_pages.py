@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Generate the per-shop landing pages (laundromats.html, dry-cleaners.html,
-alterations.html) from index.html, so there is one source of truth.
+alterations.html) from templates/shop-base.html (the previous homepage), so
+they share one source of truth.
 
-Run after editing index.html:  python3 build_pages.py
+Run after editing templates/shop-base.html:
+    python3 build_pages.py && python3 build_site.py
 """
 import re
 from bs4 import BeautifulSoup
@@ -86,7 +88,7 @@ def art(noun):
     return 'an' if noun[0] in 'aeiou' else 'a'
 
 
-src = open('index.html', encoding='utf-8').read()
+src = open('templates/shop-base.html', encoding='utf-8').read()
 
 for key, sh in SHOPS.items():
     s = src

@@ -192,7 +192,7 @@ Customers, staff, marketing, printing, reports and payments work identically for
 - **Invoices** — individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a second.
 - **Reports you can actually read** — sales by day, week and month, service mix, customers, costs, profit & loss, orders not collected — and CSV export of any of them.
 - **Conveyor** — slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you where the order hangs.
-- **Payments built in** — cash, card, pay-on-delivery and split tenders. Stripe or Clover behind a payment link your customer pays on their phone.
+- **Payments built in** — cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link your customer can pay on their phone.
 - **Search anything, ⌘F** — one search box for customers, orders, tickets and settings. Keyboard-wedge barcode scanners just work.
 
 ---
@@ -208,7 +208,7 @@ Customers, staff, marketing, printing, reports and payments work identically for
 
 **Runs where your counter is.** The same POS in a browser tab, as a Mac or Windows app, or on the iPad by the register. One login, same data everywhere. Platforms: Browser, macOS, Windows, iPad.
 
-**Printers & scanners.** Keep the hardware you have. If you'd rather not source it, Fold POS sells ready-to-go counter bundles, from $499. Supported: Epson, Bixolon, Star, Zebra, USB scanners.
+**Printers & scanners.** Keep the hardware you have. Supported: Epson, Bixolon, Star, Zebra, USB scanners.
 
 **Delivery partners.** Turn a marketplace on, give them the API key, and their jobs land in your schedule with status updates flowing back. Partners: Fold, Laundryheap, Rinse.
 
@@ -253,7 +253,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Priority support
 - Multi-location machine & supply reporting
 
-Card processing at competitive rates on every plan. Hardware bundles from $499. Hey Fold is built into every plan. Running more than 5 locations? Talk to sales at contact@foldpos.com.
+Payments on your own processor, at your rates. Hey Fold is built into every plan. Running more than 5 locations? Talk to sales at contact@foldpos.com.
 
 After the 14-day trial you pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start. There is no contract.
 

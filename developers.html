@@ -58,6 +58,7 @@ td code{white-space:nowrap}
 .note{background:var(--warn-soft);color:var(--warn-ink);border-radius:12px;padding:12px 14px;font-size:15px;margin:0 0 14px}
 .help{margin:22px 0 0;text-align:center;font-size:14px;color:var(--muted)}
 .help a{color:var(--accent);font-weight:700;text-decoration:none}
+code{overflow-wrap:anywhere}
 </style>
 <script type="application/ld+json">
 {
@@ -109,13 +110,65 @@ td code{white-space:nowrap}
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/css/chrome.css">
 </head>
 <body>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/" aria-label="Fold POS home"><i></i>Fold POS</a>
+    <nav aria-label="Primary">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Shops<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/laundromats"><b>Laundromats</b><small>Wash &amp; fold by the pound, the floor map</small></a>
+            <a href="/dry-cleaners"><b>Dry cleaners</b><small>Per-piece tickets, tags and conveyor slots</small></a>
+            <a href="/alterations"><b>Tailors</b><small>Per-task pricing, measurements, fittings</small></a>
+          </div>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/#heyfold">Hey Fold</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menu">
+  <p class="fx-menu-h">Shops</p>
+  <a href="/laundromats">Laundromats</a>
+  <a href="/dry-cleaners">Dry cleaners</a>
+  <a href="/alterations">Tailors</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/features">Features</a>
+  <a href="/#heyfold">Hey Fold</a>
+  <a href="/pricing">Pricing</a>
+  <p class="fx-menu-h">Support</p>
+  <a href="/faq">FAQ</a>
+  <a href="/help">Help</a>
+  <a href="/contact">Contact</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Log in</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
+  </div>
+</nav>
+<!--/fx:header-->
+
+
+
+
+
+
 <div class="wrap">
-<header>
-  <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Developers</a>
-  <a class="small" href="https://foldpos.com/">Back to foldpos.com</a>
-</header>
+
 
 <main>
   <section class="card">
@@ -145,8 +198,12 @@ td code{white-space:nowrap}
         <tr><td><a href="/dry-cleaners">For dry cleaners</a></td><td><a href="/dry-cleaners.md"><code>/dry-cleaners.md</code></a></td></tr>
         <tr><td><a href="/alterations">For tailors</a></td><td><a href="/alterations.md"><code>/alterations.md</code></a></td></tr>
         <tr><td><a href="/features">All features</a></td><td><a href="/features.md"><code>/features.md</code></a></td></tr>
-        <tr><td><a href="/#pricing">Pricing</a></td><td><a href="/pricing.md"><code>/pricing.md</code></a></td></tr>
-        <tr><td><a href="/#faq">FAQ</a></td><td><a href="/faq.md"><code>/faq.md</code></a></td></tr>
+        <tr><td><a href="/pricing">Pricing</a></td><td><a href="/pricing.md"><code>/pricing.md</code></a></td></tr>
+        <tr><td><a href="/faq">FAQ</a></td><td><a href="/faq.md"><code>/faq.md</code></a></td></tr>
+        <tr><td><a href="/help">Help center</a></td><td><a href="/help.md"><code>/help.md</code></a></td></tr>
+        <tr><td><a href="/printers">Printers</a></td><td><a href="/printers.md"><code>/printers.md</code></a></td></tr>
+        <tr><td><a href="/contact">Contact</a></td><td><a href="/contact.md"><code>/contact.md</code></a></td></tr>
+        <tr><td><a href="/about">About</a></td><td><a href="/about.md"><code>/about.md</code></a></td></tr>
         <tr><td><a href="/setup">Store setup</a></td><td><a href="/setup.md"><code>/setup.md</code></a></td></tr>
         <tr><td><a href="/download">Print helper</a></td><td><a href="/download.md"><code>/download.md</code></a></td></tr>
         <tr><td>This page</td><td><a href="/developers.md"><code>/developers.md</code></a></td></tr>
@@ -203,5 +260,54 @@ td code{white-space:nowrap}
 
 <p class="help">Questions? Email <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20for%20developers">contact@foldpos.com</a>.</p>
 </div>
+
+<script src="/assets/js/chrome.js" defer></script>
+
+
+
+
+
+
+<!--fx:footer-->
+<div class="fx-foot" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/"><i></i>Fold POS</a>
+        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry's own counters.</p>
+      </div>
+      <div><p class="fx-foot-h">Product</p><ul>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/#heyfold">Hey Fold</a></li>
+        <li><a href="/#delivery">Pickup &amp; delivery</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Shops</p><ul>
+        <li><a href="/laundromats">Laundromats</a></li>
+        <li><a href="/dry-cleaners">Dry cleaners</a></li>
+        <li><a href="/alterations">Tailors</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Support</p><ul>
+        <li><a href="/help">Help center</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/printers">Printers</a></li>
+        <li><a href="/setup">Store setup</a></li>
+        <li><a href="/download">Print helper</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Company</p><ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/developers">Developers &amp; AI</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+</div>
+<!--/fx:footer-->
 </body>
 </html>

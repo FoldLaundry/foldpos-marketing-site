@@ -1,54 +1,52 @@
 # Fold POS pricing
 
-> Source: the pricing section of https://foldpos.com/#pricing · Markdown mirror.
+> Canonical page: https://foldpos.com/pricing · Markdown mirror.
 
-Pick the plan that matches how many doors you run. Every plan is month-to-month with a 14-day free trial and no card up front. Change or cancel any time from Settings.
+Month to month, 14-day free trial, no card up front. Change or cancel any time from Settings.
 
 Start a free trial: https://pos.foldpos.com/signup
 
 ## Starter — $39/month
 
-For a single counter.
+One counter.
 
-- Check-in, orders board & payments
-- Customer accounts & history
-- Receipts, tags & printing
+- Check-in, orders board and payments
+- Customer accounts and history
+- Receipts, tags and printing
 - Daily reporting
 - Machine maintenance log
+- Hey Fold
 
 ## Growth — $59/month (most popular)
 
-For shops adding delivery & staff.
+Adding delivery and staff.
 
 - Everything in Starter
 - Pickup & delivery routing
-- Staff shifts & clock-in/out
-- Express & subscription pricing
-- Marketing & order reminders
-- Supply inventory & reorder suggestions
+- Staff shifts and clock-in
+- Express and subscription pricing
+- Marketing and order reminders
+- Supply inventory and reorder suggestions
 
 ## Pro — $79/month
 
-For multi-location shops.
+More than one location.
 
 - Everything in Growth
-- Multi-location reporting rollups
+- Multi-location reporting
 - Route optimization
 - Role-based staff permissions
 - Priority support
-- Multi-location machine & supply reporting
 
 ## Everything else about the money
 
-- Card processing at competitive rates on every plan.
-- Hardware bundles from $499 — ready-to-go counter bundles, if you'd rather not source printers and scanners yourself.
-- Hey Fold, the voice assistant, is built into every plan.
-- Running more than 5 locations? Talk to sales: contact@foldpos.com
-- No contract. Every plan is month-to-month; you can change tiers or cancel any time from Settings.
-- After the 14-day trial you pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start.
-- Growth and Pro roll up reporting across locations while keeping each shop's own boards separate.
-
+- **Is there a contract?** No. Every plan is month to month. Change plans or cancel any time from Settings.
+- **Do I need a card to start the trial?** No. The first 14 days are free and we don’t ask for a card.
+- **What happens when the trial ends?** You pick a plan in Settings › Plan & billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.
+- **Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.
+- **Is Hey Fold extra?** No. Hey Fold is built into every plan.
+- **What if we have more than five locations?** Email contact@foldpos.com and we’ll set it up with you.
 ## More
 
-- [Home](/fold-pos.md) · [All features](/features.md) · [FAQ](/faq.md)
-- [Terms](https://foldpos.com/terms) · [Privacy](https://foldpos.com/privacy)
+- [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
+- [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md) · [All features](/features.md) · [Developers & AI](/developers.md)

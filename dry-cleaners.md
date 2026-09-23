@@ -86,7 +86,7 @@ Claim tickets on the impact printer, garment tags on the heat-seal printer — F
 - **Invoices** — individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a second.
 - **Reports you can actually read** — sales by day, week and month, service mix, customers, costs, profit & loss, orders not collected — and CSV export of any of them.
 - **Conveyor** — slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you where the order hangs.
-- **Payments built in** — cash, card, pay-on-delivery and split tenders. Stripe or Clover behind a payment link your customer pays on their phone.
+- **Payments built in** — cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link your customer can pay on their phone.
 - **Search anything, ⌘F** — one search box for customers, orders, tickets and settings. Keyboard-wedge barcode scanners just work.
 
 ## Pricing
@@ -99,7 +99,7 @@ Every plan is month-to-month with a 14-day free trial and no card up front.
 | Growth (most popular) | Shops adding delivery & staff | $59/month |
 | Pro | Multi-location shops | $79/month |
 
-Card processing at competitive rates on every plan. Hardware bundles from $499. Running more than 5 locations? Talk to sales. Full plan contents: [pricing.md](/pricing.md)
+Payments on your own processor, at your rates. Running more than 5 locations? Talk to sales. Full plan contents: [pricing.md](/pricing.md)
 
 ## Not a dry cleaner?
 

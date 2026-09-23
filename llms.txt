@@ -8,8 +8,10 @@ Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints t
 
 - [Fold POS home](https://foldpos.com/fold-pos.md): What Fold POS is, who it is for, and every part of it in one page — counter, orders board, floor map, delivery, back office, pricing.
 - [All features](https://foldpos.com/features.md): The nine feature areas in depth — counter, workflow board, ticket, machine management, floor plan, supplies, marketing, pickup & delivery, staff & shifts.
-- [Pricing](https://foldpos.com/pricing.md): Starter $39, Growth $59 and Pro $79 a month, what each plan includes, the 14-day free trial, card processing and hardware bundles.
-- [FAQ](https://foldpos.com/faq.md): Hardware, migrating from Cents or CleanCloud, what happens after the trial, contracts, multiple locations, and how Fold POS relates to Fold.
+- [Pricing](https://foldpos.com/pricing.md): Starter $39, Growth $59 and Pro $79 a month, what each plan includes, the 14-day free trial, and payments on the shop's own processor.
+- [FAQ](https://foldpos.com/faq.md): Getting started, pricing and the trial, printers and the print helper, switching from Cents or CleanCloud, payments, Hey Fold, pickup & delivery, and how Fold POS relates to Fold.
+- [Help center](https://foldpos.com/help.md): Short how-tos: set up a store, connect a printer, import data, use Hey Fold, add staff, customer texts, delivery, plan & billing.
+- [About](https://foldpos.com/about.md): Why Fold Laundry built Fold POS, and what it cares about.
 
 ## By shop type
 
@@ -20,6 +22,7 @@ Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints t
 ## Getting started
 
 - [Store setup guide](https://foldpos.com/setup.md): Seven short steps to open a shop on Fold POS — account, browser, price list import, printer, staff, customer texts, first order.
+- [Printers](https://foldpos.com/printers.md): Supported receipt and tag printers (Epson, Star, Bixolon, Zebra), barcode scanners, and how each browser connects.
 - [Fold print helper](https://foldpos.com/download.md): The small Windows program that lets any browser print receipts and garment tags, and how to pair it with a six-digit code.
 - [Sign up](https://pos.foldpos.com/signup): Start the 14-day free trial; no card up front.
 - [Log in](https://pos.foldpos.com/login): The Fold POS app itself.
@@ -31,6 +34,7 @@ Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints t
 
 ## Contact
 
+- [Contact page](https://foldpos.com/contact.md): Demos, switching from another system, store support, partners and the API.
 - [Email Fold POS](mailto:contact@foldpos.com): Questions, a demo, migration help, or access to the private store-owner API.
 
 ## Optional

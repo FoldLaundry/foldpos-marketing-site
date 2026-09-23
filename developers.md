@@ -22,6 +22,10 @@ Every public page has a markdown twin with the navigation, styling and marketing
 | All features | `/features.md` |
 | Pricing | `/pricing.md` |
 | FAQ | `/faq.md` |
+| Help center | `/help.md` |
+| Printers | `/printers.md` |
+| Contact | `/contact.md` |
+| About | `/about.md` |
 | Store setup | `/setup.md` |
 | Print helper | `/download.md` |
 | This page | `/developers.md` |
