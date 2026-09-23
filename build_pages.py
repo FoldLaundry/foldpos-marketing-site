@@ -46,7 +46,7 @@ def jsonld(sh):
   "@id": "https://foldpos.com/#organization",
   "name": "Fold POS",
   "url": "https://foldpos.com/",
-  "logo": "https://foldpos.com/assets/img/og.png",
+  "logo": "https://foldpos.com/assets/img/og-2026.png",
   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
   "parentOrganization": {{ "@type": "Organization", "name": "Fold Laundry LLC" }},
   "contactPoint": [{{
@@ -68,7 +68,7 @@ def jsonld(sh):
   "inLanguage": "en-US",
   "isPartOf": {{ "@id": "https://foldpos.com/#website" }},
   "about": {{ "@id": "https://foldpos.com/#software" }},
-  "primaryImageOfPage": "https://foldpos.com/assets/img/og.png",
+  "primaryImageOfPage": "https://foldpos.com/assets/img/og-2026.png",
   "publisher": {{ "@id": "https://foldpos.com/#organization" }}
 }}
 </script>

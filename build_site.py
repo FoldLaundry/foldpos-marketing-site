@@ -94,7 +94,7 @@ def page(slug, title, desc, og_title, crumb, body, extra_ld=(), script=''):
 <meta property="og:title" content="{esc(og_title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{SITE}/assets/img/og.png">
+<meta property="og:image" content="{SITE}/assets/img/og-2026.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="{url}">
@@ -102,7 +102,7 @@ def page(slug, title, desc, og_title, crumb, body, extra_ld=(), script=''):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(og_title)}">
 <meta name="twitter:description" content="{esc(desc)}">
-<meta name="twitter:image" content="{SITE}/assets/img/og.png">
+<meta name="twitter:image" content="{SITE}/assets/img/og-2026.png">
 <link rel="alternate" type="text/markdown" href="/{slug}.md">
 <meta name="theme-color" content="#1e5eff">
 {ld}
