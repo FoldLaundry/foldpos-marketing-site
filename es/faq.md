@@ -14,7 +14,7 @@
 
 **¿Está en español?** Sí. El mostrador, Hey Fold y los mensajes que reciben sus clientes funcionan en español e inglés.
 
-**¿Puedo usar Fold POS fuera de Estados Unidos?** Sí. Tiendas de todo el continente americano pueden registrarse y usar Fold POS. Los planes se cobran en dólares estadounidenses (USD), el mostrador, Hey Fold y los mensajes a sus clientes funcionan en español e inglés, y usted cobra con su propio procesador de pagos.
+**¿Puedo usar Fold POS fuera de Estados Unidos?** Sí. Tiendas de todo el continente americano, excepto Cuba, pueden registrarse y usar Fold POS. Los planes se cobran en dólares estadounidenses (USD), el mostrador, Hey Fold y los mensajes a sus clientes funcionan en español e inglés, y usted cobra con su propio procesador de pagos.
 
 ## Precios y facturación
 

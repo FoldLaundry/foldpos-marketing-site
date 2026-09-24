@@ -1,12 +1,14 @@
 # Fold POS
 
-> Point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then follows every order from drop-off to pickup — with machines, supplies, pickup & delivery routes, marketing, staff shifts and printing in the same screen. Plans are $39, $59 and $79 a month (USD), month-to-month, with a 14-day free trial and no card up front. Shops anywhere in the Americas can sign up; the counter, Hey Fold and customer texts work in English and Spanish, and the whole site is also in Spanish at https://foldpos.com/es/.
+> Point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then follows every order from drop-off to pickup — with machines, supplies, pickup & delivery routes, marketing, staff shifts and printing in the same screen. Plans are $39, $59 and $79 a month (USD), month-to-month, with a 14-day free trial and no card up front. Shops anywhere in the Americas except Cuba can sign up; the counter, Hey Fold and customer texts work in English and Spanish, and the whole site is also in Spanish at https://foldpos.com/es/.
 
 Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints to the Epson, Bixolon, Star and Zebra printers a shop already owns. "Hey Fold", a voice assistant that takes an order by speech and sends it to the printer, is built into every plan. Markdown mirrors of each page are linked below; each HTML page also declares its mirror with `<link rel="alternate" type="text/markdown">`.
 
 ## Product
 
 - [Fold POS home](https://foldpos.com/fold-pos.md): What Fold POS is, who it is for, and every part of it in one page — counter, orders board, floor map, delivery, back office, pricing.
+- [Hey Fold](https://foldpos.com/hey-fold.md): The voice assistant in every plan: how to call it, what to say, how it confirms before anything prints, English and Spanish.
+- [Pickup & delivery](https://foldpos.com/pickup-delivery.md): Today's runs, routes on a map, the Fold Driver app, Uber Direct couriers, status texts and cost per stop; on Growth and Pro.
 - [All features](https://foldpos.com/features.md): The nine feature areas in depth — counter, workflow board, ticket, machine management, floor plan, supplies, marketing, pickup & delivery, staff & shifts.
 - [Pricing](https://foldpos.com/pricing.md): Starter $39, Growth $59 and Pro $79 a month, what each plan includes, the 14-day free trial, and payments on the shop's own processor.
 - [FAQ](https://foldpos.com/faq.md): Getting started, pricing and the trial, printers and the print helper, switching from Cents or CleanCloud, payments, Hey Fold, pickup & delivery, and how Fold POS relates to Fold.
@@ -43,6 +45,8 @@ Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints t
 Fold POS en español, para tiendas de todo el continente americano. Los precios son en dólares estadounidenses (USD).
 
 - [Inicio](https://foldpos.com/es/fold-pos.md): Qué es Fold POS, para quién es y cada parte en una sola página.
+- [Hey Fold](https://foldpos.com/es/hey-fold.md): El asistente de voz de todos los planes: cómo llamarlo, qué decirle y cómo confirma antes de imprimir.
+- [Recogida y entrega](https://foldpos.com/es/pickup-delivery.md): Rutas, la app Fold Driver, mensajeros de Uber Direct y mensajes de estado; en Growth y Pro.
 - [Todas las funciones](https://foldpos.com/es/features.md): Las nueve áreas de funciones en detalle.
 - [Precios](https://foldpos.com/es/pricing.md): Starter $39, Growth $59 y Pro $79 al mes (USD), la prueba gratis de 14 días y los pagos con su propio procesador.
 - [Preguntas frecuentes](https://foldpos.com/es/faq.md): Primeros pasos, uso fuera de Estados Unidos, precios, impresoras, cambio de sistema, pagos, Hey Fold y entregas.

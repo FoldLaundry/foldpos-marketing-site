@@ -13,3 +13,4 @@ Email: contact@foldpos.com
 
 - [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
 - [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md) · [All features](/features.md) · [Developers & AI](/developers.md)
+- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md)

@@ -254,7 +254,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Role-based staff permissions
 - Priority support
 
-Payments on your own processor, at your rates. Hey Fold is built into every plan. Prices are in US dollars (USD); shops anywhere in the Americas can sign up. Running more than 5 locations? Email contact@foldpos.com and we'll set it up with you.
+Payments on your own processor, at your rates. Hey Fold is built into every plan. Prices are in US dollars (USD); shops anywhere in the Americas except Cuba can sign up. Running more than 5 locations? Email contact@foldpos.com and we'll set it up with you.
 
 After the 14-day trial you pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start. There is no contract.
 

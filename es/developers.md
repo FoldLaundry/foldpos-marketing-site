@@ -60,7 +60,7 @@ Un servidor público de Model Context Protocol responde preguntas sobre el produ
 | `about_fold_pos` | Qué es Fold POS y para quién es. |
 | `pricing_plans` | Starter, Growth y Pro, qué incluye cada uno y la prueba gratis de 14 días. `language` opcional: `en` o `es`. |
 | `features` | Funciones por área y por tipo de negocio. |
-| `availability` | Dónde se puede usar Fold POS (el continente americano), idiomas y cobro en USD. `country` opcional. |
+| `availability` | Dónde se puede usar Fold POS (el continente americano, excepto Cuba), idiomas y cobro en USD. `country` opcional. |
 | `supported_hardware` | Impresoras de recibos y de etiquetas, escáneres y las plataformas en las que funciona el POS. |
 | `switching_from` | Qué se trae desde Cents, CleanCloud o un CSV. |
 | `getting_started` | Registro para la prueba gratis, la guía de configuración de la tienda y el asistente de impresión. |

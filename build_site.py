@@ -141,7 +141,8 @@ def head_block(kicker, h1, lede, crumb):
 def md_footer():
     return ('\n## More\n\n- [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md)'
             ' · [Contact](/contact.md) · [About](/about.md)\n- [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md)'
-            ' · [All features](/features.md) · [Developers & AI](/developers.md)\n')
+            ' · [All features](/features.md) · [Developers & AI](/developers.md)'
+            '\n- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md)\n')
 
 
 # ════════════════════════════ PRICING ════════════════════════════
@@ -251,7 +252,7 @@ FAQ = [
         ('Do I need to install anything?', '<p>No. Fold POS runs in any browser at pos.foldpos.com. There is also a desktop app for the counter PC (Windows or Mac) and it runs on the iPad. Windows counter PCs use a small print helper for the printers.</p>'),
         ('How long does it take to set up?', '<p>The <a href="/setup">setup guide</a> is seven short steps: your account, the browser, your price list, the printer, staff, customer texts and a first order. Stuck on a step? Email us and we’ll do it with you.</p>'),
         ('Is it in Spanish?', '<p>Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.</p>'),
-        ('Can I use Fold POS outside the United States?', '<p>Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also <a href="/es/faq" hreflang="es" lang="es">in Spanish</a>.</p>'),
+        ('Can I use Fold POS outside the United States?', '<p>Yes. Shops anywhere in the Americas except Cuba can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also <a href="/es/faq" hreflang="es" lang="es">in Spanish</a>.</p>'),
     ]),
     ('pricing', 'Pricing &amp; billing', 'card', [
         ('How much does it cost?', '<p>Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See <a href="/pricing">pricing</a> for everything in each plan.</p>'),
@@ -551,7 +552,7 @@ def printers():
     return html_, '\n'.join(md) + md_footer()
 
 # ════════════════════════════ chrome on every page ════════════════════════════
-ACTIVE = {'printers.html': '/printers', 'pricing.html': '/pricing', 'faq.html': '/faq', 'help.html': '/help', 'contact.html': '/contact',
+ACTIVE = {'hey-fold.html': '/hey-fold', 'pickup-delivery.html': '/pickup-delivery', 'printers.html': '/printers', 'pricing.html': '/pricing', 'faq.html': '/faq', 'help.html': '/help', 'contact.html': '/contact',
           'features.html': '/features', 'laundromats.html': '/laundromats', 'dry-cleaners.html': '/dry-cleaners',
           'alterations.html': '/alterations'}
 
@@ -657,11 +658,13 @@ def put_lang(fname):
 
 
 SITEMAP_PAGES = [('index.html', '1.0'), ('laundromats.html', '0.9'), ('dry-cleaners.html', '0.9'), ('alterations.html', '0.9'),
-                 ('features.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
+                 ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
                  ('contact.html', '0.6'), ('about.html', '0.5'), ('printers.html', '0.7'), ('developers.html', '0.6'),
-                 ('download.html', '0.5'), ('privacy.html', '0.3'), ('terms.html', '0.3')]
+                 ('download.html', '0.5'),
+                 ('privacy.html', '0.3'), ('terms.html', '0.3')]
 SITEMAP_MD = ['fold-pos.md', 'laundromats.md', 'dry-cleaners.md', 'alterations.md', 'features.md', 'pricing.md', 'faq.md',
-              'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md']
+              'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md',
+              'hey-fold.md', 'pickup-delivery.md']
 
 
 def sitemap():
@@ -734,7 +737,10 @@ def put_chrome(fname):
 
 
 def main():
-    for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers)):
+    from pages_heyfold import hey_fold
+    from pages_delivery import pickup_delivery
+    for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers),
+                     ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery)):
         h, md = fn()
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')

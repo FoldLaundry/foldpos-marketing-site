@@ -49,7 +49,7 @@ A public Model Context Protocol server answers product questions for agents, so 
 | `about_fold_pos` | What Fold POS is and who it is for. |
 | `pricing_plans` | Starter, Growth and Pro, what each includes, and the 14-day free trial. Optional `language`: `en` or `es`. |
 | `features` | Features by area and by shop type. |
-| `availability` | Where Fold POS can be used (the Americas), languages, and billing in USD. Optional `country`. |
+| `availability` | Where Fold POS can be used (the Americas, except Cuba), languages, and billing in USD. Optional `country`. |
 | `supported_hardware` | Receipt and tag printers, scanners, and the platforms the POS runs on. |
 | `switching_from` | What comes over from Cents, CleanCloud or a CSV. |
 | `getting_started` | Trial signup, the store setup guide and the print helper. |

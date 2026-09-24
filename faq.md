@@ -14,7 +14,7 @@
 
 **Is it in Spanish?** Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.
 
-**Can I use Fold POS outside the United States?** Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also [in Spanish](https://foldpos.com/es/faq).
+**Can I use Fold POS outside the United States?** Yes. Shops anywhere in the Americas except Cuba can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also [in Spanish](https://foldpos.com/es/faq).
 
 ## Pricing & billing
 
@@ -78,3 +78,4 @@
 
 - [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
 - [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md) · [All features](/features.md) · [Developers & AI](/developers.md)
+- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md)
