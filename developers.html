@@ -6,6 +6,11 @@
 <title>Fold POS for developers and AI agents</title>
 <meta name="description" content="Machine-readable Fold POS: llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp for agents that need pricing, features and hardware facts.">
 <link rel="canonical" href="https://foldpos.com/developers">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/developers">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/developers">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/developers">
+<!--/fx:hreflang-->
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Fold POS for developers and AI agents">
@@ -17,6 +22,7 @@
 <meta property="og:url" content="https://foldpos.com/developers">
 <meta property="og:site_name" content="Fold POS">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fold POS for developers and AI agents">
 <meta name="twitter:description" content="llms.txt, markdown mirrors of every page, and a public read-only MCP server at https://app.foldpos.com/v1/mcp.">
@@ -69,13 +75,39 @@ code{overflow-wrap:anywhere}
   "url": "https://foldpos.com/",
   "logo": "https://foldpos.com/assets/img/og-2026.png",
   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
-  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@foldpos.com",
-    "availableLanguage": "English"
-  }]
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -98,15 +130,68 @@ code{overflow-wrap:anywhere}
   "@type": "ItemList",
   "name": "Fold POS MCP server tools",
   "description": "Read-only tools exposed by the public Fold POS MCP server at https://app.foldpos.com/v1/mcp.",
-  "numberOfItems": 7,
+  "numberOfItems": 10,
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "about_fold_pos", "description": "What Fold POS is and who it is for." },
-    { "@type": "ListItem", "position": 2, "name": "pricing_plans", "description": "Starter, Growth and Pro plans, what each includes, and the free trial." },
-    { "@type": "ListItem", "position": 3, "name": "features", "description": "Features by area and by shop type." },
-    { "@type": "ListItem", "position": 4, "name": "supported_hardware", "description": "Receipt and tag printers, scanners and platforms." },
-    { "@type": "ListItem", "position": 5, "name": "switching_from", "description": "What the migration tool brings over from another system." },
-    { "@type": "ListItem", "position": 6, "name": "getting_started", "description": "Trial signup, the store setup guide and the print helper." },
-    { "@type": "ListItem", "position": 7, "name": "contact", "description": "How to reach the Fold POS team." }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "about_fold_pos",
+      "description": "What Fold POS is and who it is for."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "pricing_plans",
+      "description": "Starter, Growth and Pro, what each includes, and the 14-day free trial. Optional language: en or es."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "features",
+      "description": "Features by area and by shop type."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "availability",
+      "description": "Where Fold POS can be used (the Americas), languages, and billing in USD. Optional country."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "supported_hardware",
+      "description": "Receipt and tag printers, scanners, and the platforms the POS runs on."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "switching_from",
+      "description": "What comes over from Cents, CleanCloud or a CSV."
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "getting_started",
+      "description": "Trial signup, the store setup guide and the print helper."
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "faq",
+      "description": "The FAQ in English or Spanish, optionally filtered by a query."
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "site_page",
+      "description": "Any page of foldpos.com as markdown, in English or Spanish."
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "contact",
+      "description": "How to reach the Fold POS team."
+    }
   ]
 }
 </script>
@@ -136,6 +221,7 @@ code{overflow-wrap:anywhere}
       </ul>
     </nav>
     <div class="fx-cta">
+      <a class="fx-lang" href="/es/developers" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
       <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
       <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
       <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
@@ -155,6 +241,7 @@ code{overflow-wrap:anywhere}
   <a href="/faq">FAQ</a>
   <a href="/help">Help</a>
   <a href="/contact">Contact</a>
+  <a class="fx-menu-lang" href="/es/developers" hreflang="es" lang="es">Español</a>
   <div class="fx-menu-cta">
     <a href="https://pos.foldpos.com/login">Log in</a>
     <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
@@ -189,7 +276,7 @@ code{overflow-wrap:anywhere}
 
   <section class="card">
     <h2>Markdown mirrors</h2>
-    <p>Every public page has a markdown twin with the navigation, styling and marketing chrome stripped out. Each HTML page points at its twin with <code>&lt;link rel="alternate" type="text/markdown"&gt;</code>.</p>
+    <p>Every public page has a markdown twin with the navigation, styling and marketing chrome stripped out, and a Spanish version under <a href="/es/developers" hreflang="es" lang="es"><code>/es/</code></a> with its own twin (<a href="/es/fold-pos.md"><code>/es/fold-pos.md</code></a>, <a href="/es/pricing.md"><code>/es/pricing.md</code></a> and so on). Each HTML page points at its twin with <code>&lt;link rel="alternate" type="text/markdown"&gt;</code>.</p>
     <table>
       <thead><tr><th>Page</th><th>Markdown</th></tr></thead>
       <tbody>
@@ -219,6 +306,7 @@ code{overflow-wrap:anywhere}
       <li>Transport: Streamable HTTP</li>
       <li>Auth: none — it is public</li>
       <li>Scope: read-only. It returns product information only; there is no store, customer or order data behind it.</li>
+      <li>Server card: <a href="/.well-known/mcp.json"><code>/.well-known/mcp.json</code></a>, so clients and registries can find it from the domain.</li>
     </ul>
 
     <h3>Tools</h3>
@@ -226,14 +314,18 @@ code{overflow-wrap:anywhere}
       <thead><tr><th>Tool</th><th>Returns</th></tr></thead>
       <tbody>
         <tr><td><code>about_fold_pos</code></td><td>What Fold POS is and who it is for.</td></tr>
-        <tr><td><code>pricing_plans</code></td><td>Starter, Growth and Pro, what each includes, and the 14-day free trial.</td></tr>
+        <tr><td><code>pricing_plans</code></td><td>Starter, Growth and Pro, what each includes, and the 14-day free trial. Optional <code>language</code>: <code>en</code> or <code>es</code>.</td></tr>
         <tr><td><code>features</code></td><td>Features by area and by shop type.</td></tr>
+        <tr><td><code>availability</code></td><td>Where Fold POS can be used (the Americas), languages, and billing in USD. Optional <code>country</code>.</td></tr>
         <tr><td><code>supported_hardware</code></td><td>Receipt and tag printers, scanners, and the platforms the POS runs on.</td></tr>
-        <tr><td><code>switching_from</code></td><td>What the migration tool brings over from another system.</td></tr>
+        <tr><td><code>switching_from</code></td><td>What comes over from Cents, CleanCloud or a CSV.</td></tr>
         <tr><td><code>getting_started</code></td><td>Trial signup, the store setup guide and the print helper.</td></tr>
+        <tr><td><code>faq</code></td><td>The FAQ in English or Spanish, optionally filtered by a <code>query</code>.</td></tr>
+        <tr><td><code>site_page</code></td><td>Any page of foldpos.com as markdown, in English or Spanish.</td></tr>
         <tr><td><code>contact</code></td><td>How to reach the Fold POS team.</td></tr>
       </tbody>
     </table>
+    <p>Resources: <code>foldpos://llms.txt</code>, <code>foldpos://llms-full.txt</code>, and every page as <code>foldpos://pages/{language}/{page}.md</code>. Prompts: <code>recommend_plan</code> and <code>explain_fold_pos_es</code>.</p>
 
     <h3>Claude Code and Claude Desktop</h3>
     <pre><code>claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp</code></pre>
@@ -303,7 +395,7 @@ code{overflow-wrap:anywhere}
       </ul></div>
     </div>
     <div class="fx-foot-bot">
-      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/developers" hreflang="es" lang="es">Español</a></span>
       <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
     </div>
   </div>

@@ -1,21 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Pages -->
-  <url><loc>https://foldpos.com/</loc><lastmod>2026-09-23</lastmod><priority>1.0</priority></url>
-  <url><loc>https://foldpos.com/laundromats</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority></url>
-  <url><loc>https://foldpos.com/dry-cleaners</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority></url>
-  <url><loc>https://foldpos.com/alterations</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority></url>
-  <url><loc>https://foldpos.com/features</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority></url>
-  <url><loc>https://foldpos.com/pricing</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority></url>
-  <url><loc>https://foldpos.com/faq</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority></url>
-  <url><loc>https://foldpos.com/help</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority></url>
-  <url><loc>https://foldpos.com/contact</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority></url>
-  <url><loc>https://foldpos.com/about</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
-  <url><loc>https://foldpos.com/printers</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority></url>
-  <url><loc>https://foldpos.com/developers</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority></url>
-  <url><loc>https://foldpos.com/download</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Pages, English -->
+  <url><loc>https://foldpos.com/</loc><lastmod>2026-09-23</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/"/>
+  </url>
+  <url><loc>https://foldpos.com/laundromats</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/laundromats"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/laundromats"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/laundromats"/>
+  </url>
+  <url><loc>https://foldpos.com/dry-cleaners</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/dry-cleaners"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/dry-cleaners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/dry-cleaners"/>
+  </url>
+  <url><loc>https://foldpos.com/alterations</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/alterations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/alterations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/alterations"/>
+  </url>
+  <url><loc>https://foldpos.com/features</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/features"/>
+  </url>
+  <url><loc>https://foldpos.com/pricing</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/pricing"/>
+  </url>
+  <url><loc>https://foldpos.com/faq</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/faq"/>
+  </url>
+  <url><loc>https://foldpos.com/help</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/help"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/help"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/help"/>
+  </url>
+  <url><loc>https://foldpos.com/contact</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/contact"/>
+  </url>
+  <url><loc>https://foldpos.com/about</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/about"/>
+  </url>
+  <url><loc>https://foldpos.com/printers</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/printers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/printers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/printers"/>
+  </url>
+  <url><loc>https://foldpos.com/developers</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/developers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/developers"/>
+  </url>
+  <url><loc>https://foldpos.com/download</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/download"/>
+  </url>
   <url><loc>https://foldpos.com/privacy</loc><lastmod>2026-09-23</lastmod><priority>0.3</priority></url>
   <url><loc>https://foldpos.com/terms</loc><lastmod>2026-09-23</lastmod><priority>0.3</priority></url>
+
+  <!-- Pages, Spanish -->
+  <url><loc>https://foldpos.com/es/</loc><lastmod>2026-09-23</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/"/>
+  </url>
+  <url><loc>https://foldpos.com/es/laundromats</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/laundromats"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/laundromats"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/laundromats"/>
+  </url>
+  <url><loc>https://foldpos.com/es/dry-cleaners</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/dry-cleaners"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/dry-cleaners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/dry-cleaners"/>
+  </url>
+  <url><loc>https://foldpos.com/es/alterations</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/alterations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/alterations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/alterations"/>
+  </url>
+  <url><loc>https://foldpos.com/es/features</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/features"/>
+  </url>
+  <url><loc>https://foldpos.com/es/pricing</loc><lastmod>2026-09-23</lastmod><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/pricing"/>
+  </url>
+  <url><loc>https://foldpos.com/es/faq</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/faq"/>
+  </url>
+  <url><loc>https://foldpos.com/es/help</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/help"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/help"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/help"/>
+  </url>
+  <url><loc>https://foldpos.com/es/contact</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/contact"/>
+  </url>
+  <url><loc>https://foldpos.com/es/about</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/about"/>
+  </url>
+  <url><loc>https://foldpos.com/es/printers</loc><lastmod>2026-09-23</lastmod><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/printers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/printers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/printers"/>
+  </url>
+  <url><loc>https://foldpos.com/es/developers</loc><lastmod>2026-09-23</lastmod><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/developers"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/developers"/>
+  </url>
+  <url><loc>https://foldpos.com/es/download</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/download"/>
+  </url>
 
   <!-- Markdown mirrors for agents -->
   <url><loc>https://foldpos.com/fold-pos.md</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
@@ -32,6 +151,19 @@
   <url><loc>https://foldpos.com/setup.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/download.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/developers.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/fold-pos.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/laundromats.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/dry-cleaners.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/alterations.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/features.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/pricing.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/faq.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/help.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/contact.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/about.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/printers.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/download.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/developers.md</loc><lastmod>2026-09-23</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/llms.txt</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
   <url><loc>https://foldpos.com/llms-full.txt</loc><lastmod>2026-09-23</lastmod><priority>0.5</priority></url>
 </urlset>

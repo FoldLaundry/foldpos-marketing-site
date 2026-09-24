@@ -6,6 +6,11 @@
 <title>Contact — Fold POS</title>
 <meta name="description" content="Contact Fold POS: a demo on your own counter, help switching from Cents or CleanCloud, support for your store, or partnerships and the API. contact@foldpos.com.">
 <link rel="canonical" href="https://foldpos.com/contact">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/contact">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/contact">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/contact">
+<!--/fx:hreflang-->
 <link rel="icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Contact Fold POS">
@@ -16,6 +21,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://foldpos.com/contact">
 <meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Fold POS">
 <meta name="twitter:description" content="Contact Fold POS: a demo on your own counter, help switching from Cents or CleanCloud, support for your store, or partnerships and the API. contact@foldpos.com.">
@@ -44,31 +51,49 @@
 </script>
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "ContactPage",
- "url": "https://foldpos.com/contact",
- "name": "Contact Fold POS",
- "mainEntity": {
-  "@type": "Organization",
-  "@id": "https://foldpos.com/#organization",
-  "name": "Fold POS",
-  "contactPoint": [
-   {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@foldpos.com",
-    "availableLanguage": [
-     "English",
-     "Spanish"
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://foldpos.com/contact",
+  "name": "Contact Fold POS",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://foldpos.com/#organization",
+    "name": "Fold POS",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@foldpos.com",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ]
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "contact@foldpos.com"
+      }
+    ],
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "North America"
+      },
+      {
+        "@type": "Place",
+        "name": "Central America"
+      },
+      {
+        "@type": "Place",
+        "name": "South America"
+      },
+      {
+        "@type": "Place",
+        "name": "Caribbean"
+      }
     ]
-   },
-   {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "contact@foldpos.com"
-   }
-  ]
- }
+  }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,6 +126,7 @@
       </ul>
     </nav>
     <div class="fx-cta">
+      <a class="fx-lang" href="/es/contact" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
       <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
       <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
       <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
@@ -120,6 +146,7 @@
   <a href="/faq">FAQ</a>
   <a href="/help">Help</a>
   <a href="/contact" aria-current="page">Contact</a>
+  <a class="fx-menu-lang" href="/es/contact" hreflang="es" lang="es">Español</a>
   <div class="fx-menu-cta">
     <a href="https://pos.foldpos.com/login">Log in</a>
     <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
@@ -204,7 +231,7 @@
       </ul></div>
     </div>
     <div class="fx-foot-bot">
-      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/contact" hreflang="es" lang="es">Español</a></span>
       <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
     </div>
   </div>

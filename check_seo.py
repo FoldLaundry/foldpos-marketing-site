@@ -10,6 +10,10 @@ It checks, for every .html file in the repo:
   * every <script type="application/ld+json"> block parses as JSON
   * every internal <a href> resolves to a file in the repo (clean URLs included)
   * the <link rel="alternate" type="text/markdown"> target exists
+  * <html lang> matches the folder (es/ is Spanish), and a page with a translation
+    carries hreflang en / es / x-default links that point back at each other
+
+Spanish pages live in es/ and are checked the same way as the English ones.
 
 and, site-wide:
   * every <loc> in sitemap.xml maps to a file that exists
@@ -58,11 +62,17 @@ class Page(HTMLParser):
         self.links = []         # (rel, href, type)
         self.hrefs = []         # <a href>
         self.jsonld = []
+        self.lang = ''
+        self.hreflang = {}      # hreflang -> href
         self._in_ld = False
         self._ld = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == 'html':
+            self.lang = a.get('lang', '')
+        if tag == 'link' and a.get('hreflang') and a.get('rel', '').lower() == 'alternate':
+            self.hreflang[a['hreflang']] = a.get('href', '')
         if tag == 'title':
             self._in_title = True
         elif tag == 'meta':
@@ -123,15 +133,23 @@ def resolve(target):
 
 def canonical_for(fname):
     """The clean-URL canonical this file should declare."""
-    if fname == 'index.html':
-        return SITE + '/'
+    if fname.endswith('index.html'):
+        return SITE + '/' + fname[:-len('index.html')]
     return SITE + '/' + fname[:-len('.html')]
+
+
+HREFLANG = {}   # fname -> {hreflang: href}, checked for reciprocity in main()
 
 
 def check_page(fname):
     src = open(os.path.join(ROOT, fname), encoding='utf-8').read()
     p = Page()
     p.feed(src)
+
+    want_lang = 'es' if fname.startswith('es/') else 'en'
+    if not p.lang.startswith(want_lang):
+        err(fname, '<html lang=%r>, expected %r' % (p.lang, want_lang))
+    HREFLANG[fname] = p.hreflang
 
     title = p.title.strip()
     if not title:
@@ -193,6 +211,7 @@ def check_page(fname):
 def main():
     os.chdir(ROOT)
     pages = sorted(os.path.basename(f) for f in glob.glob(os.path.join(ROOT, '*.html')))
+    pages += sorted('es/' + os.path.basename(f) for f in glob.glob(os.path.join(ROOT, 'es', '*.html')))
     # A page that only redirects (meta refresh, noindex) has no content to check.
     redirects = [f for f in pages if 'http-equiv="refresh"' in open(os.path.join(ROOT, f), encoding='utf-8').read()]
     for f in redirects:
@@ -213,6 +232,25 @@ def main():
                 err(fname, 'duplicate meta description, also used by %s' % seen_descs[desc])
             seen_descs[desc] = fname
 
+    # ---- hreflang: every translated page names both languages and x-default, reciprocally ----
+    for fname in pages:
+        other = fname[3:] if fname.startswith('es/') else 'es/' + fname
+        hl = HREFLANG.get(fname, {})
+        if other not in pages:
+            if hl:
+                err(fname, 'has hreflang links but no translation file %s' % other)
+            continue
+        for key in ('en', 'es', 'x-default'):
+            if key not in hl:
+                err(fname, 'missing hreflang=%r (translation %s exists)' % (key, other))
+        en, es = (other, fname) if fname.startswith('es/') else (fname, other)
+        if hl.get('en') != canonical_for(en) or hl.get('es') != canonical_for(es):
+            err(fname, 'hreflang en/es %r / %r do not match the canonicals of %s / %s' % (hl.get('en'), hl.get('es'), en, es))
+        if hl.get('x-default') != canonical_for(en):
+            err(fname, 'hreflang x-default should be the English page')
+        if HREFLANG.get(other, {}) and HREFLANG[other].get('en') != hl.get('en'):
+            err(fname, 'hreflang is not reciprocal with %s' % other)
+
     # ---- sitemap ----
     sm_path = os.path.join(ROOT, 'sitemap.xml')
     if not os.path.isfile(sm_path):
@@ -228,6 +266,12 @@ def main():
                 continue
             if resolve(loc[len(SITE):]) is None:
                 err('sitemap.xml', '%s does not map to a file' % loc)
+        for alt in re.findall(r'<xhtml:link[^>]*href="([^"]+)"', sm):
+            if not alt.startswith(SITE) or resolve(alt[len(SITE):]) is None:
+                err('sitemap.xml', 'alternate %s does not map to a file' % alt)
+        for f in pages:
+            if canonical_for(f) not in locs and f not in ('setup.html',):
+                err('sitemap.xml', '%s (%s) is not listed' % (canonical_for(f), f))
         if 'setup' in [urlsplit(l).path.strip('/') for l in locs]:
             err('sitemap.xml', '/setup is noindex and must not be listed')
         for loc in locs:
@@ -263,6 +307,8 @@ def main():
             err('llms.txt', 'has no blockquote summary')
         if '\n## Optional' not in llms:
             err('llms.txt', 'has no "Optional" section')
+        if '\n## En español' not in llms:
+            err('llms.txt', 'has no "En español" section')
         for url in re.findall(r'\]\((%s[^)\s]*)\)' % re.escape(SITE), llms):
             if resolve(url[len(SITE):]) is None:
                 err('llms.txt', '%s does not map to a file' % url)
@@ -270,7 +316,20 @@ def main():
     # ---- report ----
     for n in sorted(set(notes)):
         print('note   ', n)
-    print('checked %d HTML pages, sitemap.xml, robots.txt, llms.txt' % len(pages))
+    # ---- MCP server card ----
+    card = os.path.join(ROOT, '.well-known', 'mcp.json')
+    if not os.path.isfile(card):
+        err('.well-known/mcp.json', 'missing')
+    else:
+        try:
+            c = json.load(open(card, encoding='utf-8'))
+            if not c.get('remotes') and not c.get('url') and not c.get('endpoints'):
+                err('.well-known/mcp.json', 'names no server endpoint')
+        except ValueError as e:
+            err('.well-known/mcp.json', 'does not parse: %s' % e)
+
+    print('checked %d HTML pages (%d Spanish), sitemap.xml, robots.txt, llms.txt, mcp.json'
+          % (len(pages), sum(f.startswith('es/') for f in pages)))
     if errors:
         print('\n%d problem(s):' % len(errors))
         for e in errors:

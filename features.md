@@ -75,7 +75,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 ## 08 — Pickup & delivery
 
-**End-to-end delivery, without a separate app.** Build a route, assign a driver, and let Fold POS handle the rest — customers get automatic texts as their order is picked up, cleaned, and on its way back, and your driver gets a stop list instead of a stack of sticky notes.
+**End-to-end delivery, from the counter to the door.** Build a route, assign a driver, and let Fold POS handle the rest — customers get automatic texts as their order is picked up, cleaned, and on its way back, and your driver gets a stop list instead of a stack of sticky notes.
 
 - Route building and driver assignment from the POS
 - Automatic customer texts for pickup, ready, and out-for-delivery
@@ -93,7 +93,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 ## And everything around it
 
-- **Payments built in** — take cash, card, or pay-on-delivery, and get paid out without wiring up a separate processor.
+- **Payments built in** — take cash, card, or pay-on-delivery, on your own card processor at your rates.
 - **Customer accounts** — every customer's order history, contact info, and preferences saved and searchable right at the counter.
 - **Reporting that's actually readable** — revenue, order volume, and service mix by day, week, or location — no spreadsheet exports required.
 

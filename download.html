@@ -6,6 +6,11 @@
 <title>Fold print helper — Fold POS</title>
 <meta name="description" content="Download the Fold print helper so Fold POS can print receipts and garment tags from any browser on Windows or Mac.">
 <link rel="canonical" href="https://foldpos.com/download">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/download">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/download">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/download">
+<!--/fx:hreflang-->
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Fold print helper — Fold POS">
@@ -17,6 +22,7 @@
 <meta property="og:url" content="https://foldpos.com/download">
 <meta property="og:site_name" content="Fold POS">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fold print helper — Fold POS">
 <meta name="twitter:description" content="Download the Fold print helper so Fold POS can print receipts and garment tags from any browser on Windows or Mac.">
@@ -68,13 +74,39 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
   "url": "https://foldpos.com/",
   "logo": "https://foldpos.com/assets/img/og-2026.png",
   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
-  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@foldpos.com",
-    "availableLanguage": "English"
-  }]
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -101,10 +133,38 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
   "operatingSystem": "Windows 10, Windows 11",
   "fileSize": "22 MB",
   "softwareVersion": "1.0.2",
-  "description": "A small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari.",
+  "description": "A small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge or Firefox on Windows.",
   "url": "https://foldpos.com/download",
-  "publisher": { "@id": "https://foldpos.com/#organization" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "publisher": {
+    "@id": "https://foldpos.com/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "eligibleRegion": [
+      {
+        "@type": "Place",
+        "name": "North America"
+      },
+      {
+        "@type": "Place",
+        "name": "Central America"
+      },
+      {
+        "@type": "Place",
+        "name": "South America"
+      },
+      {
+        "@type": "Place",
+        "name": "Caribbean"
+      }
+    ]
+  },
+  "inLanguage": [
+    "en",
+    "es"
+  ]
 }
 </script>
 <link rel="stylesheet" href="/assets/css/chrome.css">
@@ -133,6 +193,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
       </ul>
     </nav>
     <div class="fx-cta">
+      <a class="fx-lang" href="/es/download" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
       <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
       <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
       <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
@@ -152,6 +213,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
   <a href="/faq">FAQ</a>
   <a href="/help">Help</a>
   <a href="/contact">Contact</a>
+  <a class="fx-menu-lang" href="/es/download" hreflang="es" lang="es">Español</a>
   <div class="fx-menu-cta">
     <a href="https://pos.foldpos.com/login">Log in</a>
     <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
@@ -171,7 +233,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
   <section class="card">
     <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V4h10v4"/><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M7 14h10v6H7z"/><circle cx="17" cy="11.5" r=".7" fill="currentColor"/></svg></div>
     <h1>Print from any browser</h1>
-    <p class="lead">The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari.</p>
+    <p class="lead">The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge or Firefox on Windows.</p>
 
     <div id="win">
       <div class="row">
@@ -258,7 +320,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
       </ul></div>
     </div>
     <div class="fx-foot-bot">
-      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/download" hreflang="es" lang="es">Español</a></span>
       <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
     </div>
   </div>

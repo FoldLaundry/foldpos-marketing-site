@@ -6,6 +6,11 @@
 <title>Fold POS — The command center for laundromats, dry cleaners and tailors</title>
 <meta name="description" content="A command center for laundromats, dry cleaners and tailors, built by store owners. Follow one order from the counter to the customer's phone — what you see and what they see — and try Hey Fold, the counter that listens.">
 <link rel="canonical" href="https://foldpos.com/">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/">
+<!--/fx:hreflang-->
 <link rel="icon" href="favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Fold POS — The command center for your store">
@@ -17,6 +22,7 @@
 <meta property="og:url" content="https://foldpos.com/">
 <meta property="og:site_name" content="Fold POS">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fold POS — The command center for your store">
 <meta name="twitter:description" content="Follow one order all the way home: what you see at the counter and what your customer sees on her phone. Built by store owners.">
@@ -32,13 +38,39 @@
   "url": "https://foldpos.com/",
   "logo": "https://foldpos.com/assets/img/og-2026.png",
   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
-  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@foldpos.com",
-    "availableLanguage": "English"
-  }]
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -64,7 +96,9 @@
   "operatingSystem": "Web, macOS, Windows, iPadOS",
   "description": "Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then tracks every order from drop-off to pickup. Machines, supplies, pickup & delivery routes, marketing and staff shifts in the same screen.",
   "image": "https://foldpos.com/assets/img/og-2026.png",
-  "publisher": { "@id": "https://foldpos.com/#organization" },
+  "publisher": {
+    "@id": "https://foldpos.com/#organization"
+  },
   "featureList": [
     "Check-in and orders priced by the pound, the bag, the piece or the task",
     "Orders board from check-in to completed",
@@ -94,7 +128,25 @@
         "billingDuration": 1,
         "billingIncrement": 1,
         "unitCode": "MON"
-      }
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
     },
     {
       "@type": "Offer",
@@ -110,7 +162,25 @@
         "billingDuration": 1,
         "billingIncrement": 1,
         "unitCode": "MON"
-      }
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
     },
     {
       "@type": "Offer",
@@ -126,7 +196,25 @@
         "billingDuration": 1,
         "billingIncrement": 1,
         "unitCode": "MON"
-      }
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
     },
     {
       "@type": "Offer",
@@ -135,8 +223,48 @@
       "price": "0",
       "priceCurrency": "USD",
       "category": "free trial",
-      "url": "https://pos.foldpos.com/signup"
+      "url": "https://pos.foldpos.com/signup",
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
     }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ],
+  "inLanguage": [
+    "en",
+    "es"
   ]
 }
 </script>
@@ -791,6 +919,7 @@ svg.i{width:18px;height:18px;flex:none}
       </ul>
     </nav>
     <div class="fx-cta">
+      <a class="fx-lang" href="/es/" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
       <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
       <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
       <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
@@ -810,6 +939,7 @@ svg.i{width:18px;height:18px;flex:none}
   <a href="/faq">FAQ</a>
   <a href="/help">Help</a>
   <a href="/contact">Contact</a>
+  <a class="fx-menu-lang" href="/es/" hreflang="es" lang="es">Español</a>
   <div class="fx-menu-cta">
     <a href="https://pos.foldpos.com/login">Log in</a>
     <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
@@ -1430,7 +1560,7 @@ svg.i{width:18px;height:18px;flex:none}
       </ul></div>
     </div>
     <div class="fx-foot-bot">
-      <span>© 2026 Fold Laundry LLC · Fold POS</span>
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/" hreflang="es" lang="es">Español</a></span>
       <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
     </div>
   </div>

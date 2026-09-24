@@ -1,0 +1,1570 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fold POS — El centro de mando para lavanderías, tintorerías y sastrerías</title>
+<meta name="description" content="Un centro de mando para lavanderías, tintorerías y sastrerías, creado por dueños de tiendas. Siga un pedido del mostrador al teléfono de su cliente —lo que usted ve y lo que ve su cliente— y pruebe Hey Fold, el mostrador que escucha.">
+<link rel="canonical" href="https://foldpos.com/es/">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/">
+<!--/fx:hreflang-->
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Fold POS — El centro de mando de su tienda">
+<meta property="og:description" content="Siga un pedido hasta que llega a casa: lo que usted ve en el mostrador y lo que su clienta ve en su teléfono. Creado por dueños de tiendas.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/es/">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="es_419">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fold POS — El centro de mando de su tienda">
+<meta name="twitter:description" content="Siga un pedido hasta que llega a casa: lo que usted ve en el mostrador y lo que su clienta ve en su teléfono. Creado por dueños de tiendas.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<link rel="alternate" type="text/markdown" href="/es/fold-pos.md">
+<meta name="theme-color" content="#1e5eff">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://foldpos.com/#organization",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "logo": "https://foldpos.com/assets/img/og-2026.png",
+  "description": "Software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías. Creado por Fold Laundry.",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://foldpos.com/#website",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "publisher": { "@id": "https://foldpos.com/#organization" },
+  "inLanguage": "es-419"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://foldpos.com/#software",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Software de punto de venta (POS)",
+  "operatingSystem": "Web, macOS, Windows, iPadOS",
+  "description": "Fold POS cobra el lavado y doblado por libra, el lavado en seco por pieza y los arreglos por trabajo en un solo mostrador, y sigue cada pedido desde que se deja hasta que se recoge. Máquinas, suministros, rutas de recogida y entrega, marketing y turnos del personal en la misma pantalla.",
+  "image": "https://foldpos.com/assets/img/og-2026.png",
+  "publisher": {
+    "@id": "https://foldpos.com/#organization"
+  },
+  "featureList": [
+    "Recepción y pedidos con precio por libra, por bolsa, por pieza o por trabajo",
+    "Tablero de pedidos, de la recepción a completado",
+    "Etiquetas termoadhesivas para prendas y control de posiciones en el transportador",
+    "Plano en vivo de cada lavadora y secadora",
+    "Historial de reparaciones de máquinas y recordatorios de mantenimiento preventivo",
+    "Inventario de suministros y máquinas expendedoras con alertas de existencias bajas",
+    "Armado de rutas de recogida y entrega con margen por pedido",
+    "Flujos de marketing y campañas por SMS y correo electrónico",
+    "Registro de entrada del personal, roles y estadísticas de turnos",
+    "Impresión de recibos y etiquetas de prendas con Fold Print Agent",
+    "Asistente de voz Hey Fold",
+    "Informes con exportación a CSV"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter",
+      "description": "Para un solo mostrador.",
+      "price": "39.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "name": "Growth",
+      "description": "Para tiendas que suman entregas a domicilio y personal.",
+      "price": "59.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "59.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "description": "Para negocios con varias sucursales.",
+      "price": "79.00",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "79.00",
+        "priceCurrency": "USD",
+        "billingDuration": 1,
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      },
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "name": "Prueba gratis de 14 días",
+      "description": "Todos los planes son mes a mes, con prueba gratis de 14 días y sin tarjeta por adelantado.",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "free trial",
+      "url": "https://pos.foldpos.com/signup",
+      "eligibleRegion": [
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Central America"
+        },
+        {
+          "@type": "Place",
+          "name": "South America"
+        },
+        {
+          "@type": "Place",
+          "name": "Caribbean"
+        }
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ],
+  "inLanguage": [
+    "en",
+    "es"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "¿Con qué impresoras funciona?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Con la impresora de recibos y la de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o por red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta termoadhesiva de 1 × 3 pulgadas por pieza."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Funciona en Windows, Mac y iPad?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sí. Abra pos.foldpos.com en cualquier navegador o use la app de escritorio en la PC del mostrador o en el iPad junto a la caja. Las PC con Windows del mostrador llevan un pequeño asistente de impresión desde foldpos.com/download."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Puedo traer a mis clientes desde Cents o CleanCloud?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sí, desde Cents, CleanCloud o un CSV. Y puede llevarse sus datos de la misma forma."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Puedo usar mi propio procesador de tarjetas?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sí. Tarjeta, efectivo, cheque, crédito de tienda y pagos divididos, con su procesador y a sus tarifas."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Está en español?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "El mostrador, Hey Fold y los mensajes que reciben sus clientes funcionan en inglés y en español."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Necesito una tarjeta para empezar?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. 14 días gratis, sin tarjeta, mes a mes. Cambie o cancele desde Ajustes."
+   }
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0b0d12; --ink-2:#3b404c; --ink-3:#6b7180;
+  --paper:#ffffff; --fog:#f4f6fa; --fog-2:#e9edf4; --line:#e3e7ef;
+  --brand:#1e5eff; --brand-hover:#154bd6; --brand-soft:#e9efff;
+  --deep:#0e1730; --mint:#12a86f; --amber:#c2410c;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Sora",-apple-system,sans-serif;margin:0;letter-spacing:-.03em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 18px}}
+
+/* ─── nav ─── */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.mark{display:flex;align-items:center;gap:10px;font-family:"Sora";font-weight:700;font-size:18px;text-decoration:none;letter-spacing:-.02em}
+.mark i{width:26px;height:26px;border-radius:8px;background:var(--brand);display:inline-block;position:relative}
+.mark i::after{content:"";position:absolute;inset:7px 6px 7px 6px;border:2px solid #fff;border-radius:3px;border-top-width:5px}
+.links{display:flex;gap:22px;margin-left:8px;font-size:14px;color:var(--ink-2)}
+.links a{text-decoration:none}
+.links a:hover{color:var(--ink)}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:14px}
+.nav-login{text-decoration:none;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;transition:transform .2s var(--ease),background .2s,box-shadow .2s;cursor:pointer;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-hover)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink-3)}
+.btn-sm{padding:9px 16px;font-size:14px}
+@media (max-width:860px){.links{display:none}.nav-login{display:none}}
+
+/* ─── hero (statement) ─── */
+.hero{padding:72px 0 0;text-align:center}
+.hero .lede{max-width:660px}
+.seg{display:inline-flex;gap:4px;background:var(--fog);border-radius:999px;padding:4px;margin:30px 0 56px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:10px 18px;font:600 14px "Plus Jakarta Sans",sans-serif;color:var(--ink-2);cursor:pointer;transition:background .2s,color .2s}
+.seg button.on{background:var(--ink);color:#fff}
+.seg button:hover:not(.on){color:var(--ink)}
+.hero .scrollhint{margin:34px auto 0;display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink-3);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.hero .scrollhint i{width:1px;height:40px;background:linear-gradient(var(--ink-3),transparent);display:block;animation:drip 1.8s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ─── the journey: one sticky scene, two lanes, six steps ─── */
+.journey{position:relative}
+.jgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.jstage{position:sticky;top:72px;height:calc(100vh - 96px);min-height:560px;display:grid;place-items:center}
+.jsteps{display:flex;flex-direction:column}
+.step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;opacity:.28;transition:opacity .5s}
+.step.on{opacity:1}
+.step .when{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:16px}
+.step h2{font-size:clamp(32px,4.2vw,52px);line-height:1.06;font-weight:700}
+.step p{max-width:470px;color:var(--ink-2);font-size:clamp(16px,1.6vw,18px);margin-top:18px}
+.step .diff{margin-top:18px;max-width:470px;display:grid;gap:6px;font-size:14px;color:var(--ink-2)}
+.step .diff span b{color:var(--ink);font-weight:600}
+.step .diff span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brand);margin-right:10px;vertical-align:2px}
+.step .rule{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.step .rule span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--ink-2)}
+
+/* the scene */
+.scene{position:relative;width:min(100%,460px);height:560px;max-width:100%;border-radius:36px;background:var(--fog);overflow:hidden;transition:background .6s}
+.journey[data-state="pickup"] .scene{background:#e9f8f1}
+.journey[data-state="office"] .scene{background:var(--deep)}
+.lane{position:absolute;left:0;right:0;padding:18px 22px 0}
+.lane-you{top:0;height:52%}
+.lane-them{top:52%;bottom:0;border-top:1px dashed rgba(14,23,48,.14)}
+.journey[data-state="office"] .lane-them{border-top-color:rgba(255,255,255,.14)}
+.lane .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:8px}
+.lane .lbl i{width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;background:var(--ink);color:#fff;font-size:10px;font-style:normal}
+.lane-them .lbl i{background:var(--brand)}
+.journey[data-state="office"] .lane .lbl{color:#8fa0c4}
+
+/* objects: one per lane per step */
+.ob{position:absolute;left:22px;right:22px;opacity:0;transform:translateY(10px);transition:opacity .45s var(--ease),transform .55s var(--ease);pointer-events:none}
+.lane-you .ob{top:44px}
+.lane-them .ob{top:44px}
+.journey[data-state="counter"] .ob[data-for="counter"],.journey[data-state="back"] .ob[data-for="back"],.journey[data-state="rack"] .ob[data-for="rack"],.journey[data-state="text"] .ob[data-for="text"],.journey[data-state="pickup"] .ob[data-for="pickup"],.journey[data-state="office"] .ob[data-for="office"]{opacity:1;transform:none}
+
+/* the tag: shared truth, crosses the lanes */
+.bigtag{position:absolute;right:22px;top:57%;width:196px;transform:translateY(-50%) rotate(-3deg);background:#fff;border-radius:10px;padding:14px 14px 12px 34px;box-shadow:0 30px 60px -24px rgba(14,23,48,.45);font:600 12px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);transition:transform .7s var(--ease),opacity .4s;z-index:3}
+.bigtag::before{content:"";position:absolute;left:13px;top:50%;width:10px;height:10px;border:2px solid var(--ink-3);border-radius:50%;transform:translateY(-50%);background:var(--fog)}
+.bigtag .ord{font-size:17px;font-weight:700}
+.bigtag .nm{color:var(--ink-3);font-weight:500;font-size:11px;margin-top:2px}
+.bigtag .pc{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:11px}
+.bigtag .st{margin-top:10px;display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);min-height:16px}
+.bigtag .st i{width:7px;height:7px;border-radius:50%;background:var(--ink-3);display:inline-block;flex:none;transition:background .4s,box-shadow .4s}
+.journey[data-state="back"] .bigtag .st i{background:var(--brand);box-shadow:0 0 0 4px rgba(30,94,255,.18)}
+.journey[data-state="rack"] .bigtag .st i,.journey[data-state="text"] .bigtag .st i{background:var(--mint);box-shadow:0 0 0 4px rgba(18,168,111,.18)}
+.journey[data-state="pickup"] .bigtag .st i{background:var(--ink)}
+.journey[data-state="office"] .bigtag{opacity:0;transform:translateY(-30%) rotate(-3deg)}
+.stamp{position:absolute;right:-12px;top:-12px;border:3px solid var(--mint);color:var(--mint);border-radius:8px;padding:3px 8px;font:700 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;transform:rotate(12deg) scale(1.6);opacity:0;transition:transform .35s var(--ease),opacity .3s}
+.journey[data-state="pickup"] .stamp{opacity:1;transform:rotate(12deg) scale(1)}
+
+/* object styles */
+.pos{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 20px 40px -28px rgba(14,23,48,.4);width:min(100%,250px)}
+.pos .ph{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:flex;justify-content:space-between}
+.pos .ph b{color:var(--ink);text-transform:none;letter-spacing:0}
+.pos .li{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--fog-2)}
+.pos .li:last-of-type{border:0}
+.pos .li small{display:block;color:var(--ink-3);font-size:11px}
+.pos .li b{font-variant-numeric:tabular-nums}
+.pos .tot{display:flex;justify-content:space-between;margin-top:6px;padding-top:8px;border-top:1px dashed var(--line);font-weight:700;font-family:"Sora"}
+.pos .rdy{margin-top:8px;font-size:12px;color:var(--ink-2)}
+.pos .rdy i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:6px}
+.phone{width:min(100%,250px);display:flex;flex-direction:column;gap:6px}
+.phone .bubble{margin:0;border-radius:18px 18px 4px 18px;align-self:flex-end;max-width:240px;box-shadow:0 20px 40px -20px rgba(30,94,255,.5);font-size:13px}
+.phone .bubble.in{background:#fff;color:var(--ink);border-radius:18px 18px 18px 4px;align-self:flex-start;box-shadow:0 12px 30px -20px rgba(14,23,48,.4)}
+.phone small{color:var(--ink-3);font-size:11px;align-self:flex-end}
+.journey[data-state="office"] .phone small{color:#8fa0c4}
+.pipe{display:flex;gap:6px;width:min(100%,260px)}
+.pipe span{flex:1;text-align:center;font-size:11px;font-weight:600;color:var(--ink-3);padding:8px 0 0;border-top:3px solid var(--line)}
+.pipe span.done{color:var(--ink);border-color:var(--ink)}
+.pipe span.now{color:var(--brand);border-color:var(--brand)}
+.pipenote{font-size:12px;color:var(--ink-2);margin-top:12px;width:min(100%,250px)}
+.pipenote b{color:var(--ink)}
+.rack{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;width:min(100%,250px)}
+.rack span{aspect-ratio:1;border-radius:6px;background:#fff;display:grid;place-items:center;font:600 10px ui-monospace,Menlo,monospace;color:var(--ink-3)}
+.rack span.here{background:var(--mint);color:#fff}
+.racknote{font-size:12px;color:var(--ink-2);margin-top:10px}
+.racknote b{color:var(--ink)}
+.status{background:#fff;border-radius:16px;padding:14px 16px;width:min(100%,250px);box-shadow:0 12px 30px -20px rgba(14,23,48,.4)}
+.status .sh{font-size:11px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.status .sb{font-family:"Sora";font-weight:600;font-size:15px;margin-top:4px}
+.status .sl{font-size:12px;color:var(--ink-2);margin-top:6px}
+.status .bar{height:5px;border-radius:5px;background:var(--fog-2);margin-top:10px;overflow:hidden}
+.status .bar i{display:block;height:100%;background:var(--brand);width:45%;border-radius:5px}
+.paidrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.paidrow span{white-space:nowrap;background:var(--fog);border-radius:999px;padding:6px 11px;font-size:12px;font-weight:600}
+.paidrow span.paid{background:var(--mint);color:#fff}
+.board{color:#fff;width:min(100%,290px)}
+.board .bh{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8fa0c4;font-weight:700}
+.board .big{font-family:"Sora";font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-top:6px;font-variant-numeric:tabular-nums}
+.board .row{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:14px}
+.board .row div{border-top:1px solid rgba(255,255,255,.14);padding-top:8px}
+.board .row b{display:block;font-family:"Sora";font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.board .row span{font-size:11px;color:#8fa0c4}
+.board .row b.warn{color:#fbbf24}
+.acct{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px;width:min(100%,260px);color:#fff}
+.acct .ah{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8fa0c4;font-weight:700}
+.acct .an{font-family:"Sora";font-weight:600;font-size:15px;margin-top:4px}
+.acct .al{font-size:12px;color:#c7d0ea;margin-top:6px;line-height:1.5}
+
+@media (max-width:860px){
+  .jgrid{grid-template-columns:1fr;gap:0}
+  .jstage{position:sticky;top:0;height:auto;min-height:0;padding:70px 0 6px;background:var(--paper);z-index:2}
+  .scene{width:100%;height:400px;max-width:460px;border-radius:24px}
+  .lane{padding:12px 16px 0}
+  .lane-you .ob,.lane-them .ob{top:34px;left:16px;right:16px}
+  .bigtag{width:150px;padding:10px 10px 8px 28px;font-size:10px;right:14px}
+  .bigtag .ord{font-size:14px}.bigtag .st{font-size:9px}
+  .pos,.phone,.status,.pipe,.rack,.pipenote{width:min(100%,58%)}
+  .pos{padding:10px 12px}.pos .li{padding:4px 0;font-size:12px}
+  .pos .li small,.pos .rdy{display:none}.pos .tot{margin-top:2px;padding-top:4px;font-size:13px}
+  .rack{grid-template-columns:repeat(4,1fr)}
+  .board .big{font-size:22px;margin-top:2px}.board{width:62%}.board .row{margin-top:4px;gap:4px 12px}.board .row b{font-size:13px}.board .row div{padding-top:4px}.board .bh{font-size:9px}
+  .acct{width:62%;padding:8px 12px}.acct .an{font-size:13px}.acct .al{font-size:11px;margin-top:3px}
+  .step{min-height:0;padding:36px 0 44px;opacity:1}
+}
+
+
+/* ─── the screens ─── */
+.screens{padding:110px 0 100px}
+.screens .tabrow{display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+.screens .tabrow:first-of-type{margin-top:26px}
+.screens .explain{order:0}
+.screens .tl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);min-width:132px}
+.screens .tabs{display:flex;flex-wrap:wrap;gap:6px}
+.screens .tabs button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font:600 14px "Plus Jakarta Sans",sans-serif;color:var(--ink-2);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.screens .tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.frame{margin-top:22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 50px 100px -50px rgba(14,23,48,.45);overflow:hidden}
+.frame .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--fog);border-bottom:1px solid var(--line)}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:var(--fog-2);display:inline-block}
+.frame .bar span{margin-left:10px;flex:1;text-align:center;font-size:12px;color:var(--ink-3);background:#fff;border-radius:6px;padding:4px 10px;max-width:360px;margin-right:auto}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:1600/1000;opacity:1;transition:opacity .25s}
+.frame img.swap{opacity:0}
+.screens .explain{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px 48px;align-items:start}
+.screens .ex-head{display:flex;flex-direction:column;gap:8px}
+.screens .ex-head h3{font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-.02em}
+.screens .at{color:var(--ink-3);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.screens .explain p{color:var(--ink-2);font-size:16px;line-height:1.55;max-width:560px}
+.screens .feats{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.screens .feats span{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;color:var(--ink-2)}
+.screens .feats span::before{content:"✓";color:var(--mint);font-weight:700;margin-right:7px}
+@media (max-width:760px){.screens .explain{grid-template-columns:1fr}}
+.step .see{display:inline-block;margin-top:18px;font-size:14px;font-weight:600;color:var(--brand);text-decoration:none}
+.step .see:hover{text-decoration:underline}
+@media (max-width:640px){.screens{padding:80px 0}}
+
+
+/* ─── also in every shop ─── */
+.also{padding:64px 0 60px;background:var(--fog)}
+.also h2{font-size:clamp(22px,2.6vw,30px)}
+.also .lede{font-size:15px;margin-top:8px;max-width:60ch}
+.also .grid{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start}
+@media (max-width:860px){.also .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.also .grid{grid-template-columns:1fr}}
+.also .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px 11px;text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;display:grid;grid-template-columns:30px 1fr;column-gap:10px;row-gap:4px;align-items:start;align-content:start;transition:transform .25s var(--ease),box-shadow .25s,border-color .25s;position:relative}
+.also .card:hover{transform:translateY(-2px);box-shadow:0 24px 50px -40px rgba(14,23,48,.45);border-color:var(--ink-3)}
+.also .card.open{border-color:var(--ink);box-shadow:0 24px 50px -40px rgba(14,23,48,.45)}
+.also .ic{width:30px;height:30px;border-radius:9px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;transition:background .25s,color .25s;grid-row:1 / span 3}
+.also .ic svg{width:17px;height:17px}
+.also .card.open .ic,.also .card:hover .ic{background:var(--brand);color:#fff}
+.also h4{font-family:"Sora";font-size:15px;font-weight:600;margin:0;letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:center;gap:10px;line-height:1.25}
+.also h4 i{width:18px;height:18px;border-radius:50%;border:1px solid var(--line);display:inline-grid;place-items:center;font-style:normal;font-size:12px;color:var(--ink-3);transition:transform .3s var(--ease),background .2s,color .2s;flex:none}
+.also .card.open h4 i{transform:rotate(45deg);background:var(--ink);color:#fff;border-color:var(--ink)}
+.also .card p{color:var(--ink-2);font-size:13px;line-height:1.45;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.also .card.open p{display:block;-webkit-line-clamp:unset}
+.also .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.also .card.open .more{grid-template-rows:1fr}
+.also .more > div{overflow:hidden}
+.also .demo{margin-top:6px;background:var(--fog);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.also .demo b{color:var(--ink);font-weight:600}
+.also .demo .k{display:inline-block;font:600 11px ui-monospace,Menlo,monospace;background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 5px}
+.also .see{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:600;color:var(--brand)}
+.also .hint{margin-top:14px;font-size:12.5px;color:var(--ink-3)}
+@media (max-width:640px){.also{padding:52px 0}}
+
+/* ─── built by owners ─── */
+.owners{background:var(--fog);padding:110px 0}
+.owners h2{font-size:clamp(34px,5vw,58px);line-height:1.06;font-weight:700;max-width:820px}
+.owners .quote{font-size:clamp(18px,2.1vw,24px);font-weight:500;line-height:1.45;max-width:820px;margin-top:26px;color:var(--ink-2)}
+.owners .quote em{font-style:normal;color:var(--brand)}
+.owners .facts{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.owners .fact{border-top:1px solid var(--line);padding-top:16px}
+.owners .fact b{font-family:"Sora";font-size:22px;font-weight:700;letter-spacing:-.02em;display:block}
+.owners .fact span{display:block;color:var(--ink-2);font-size:14px;margin-top:6px;line-height:1.45}
+@media (max-width:860px){.owners .facts{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.owners{padding:80px 0}}
+
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:22px}
+.hero h1{font-size:clamp(44px,7vw,84px);line-height:1.02;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--ink-3)}
+.hero .lede{margin:26px auto 0;font-size:clamp(17px,2vw,21px);color:var(--ink-2);line-height:1.5}
+@media (max-width:640px){.hero{padding:64px 0 16px}}
+
+/* ─── the counter (Hey Fold) ─── */
+.heyfold{position:relative;background:var(--deep);color:#fff;padding:120px 0 200px;overflow:hidden;isolation:isolate}
+.heyfold .kicker{color:#8fa0c4}
+.heyfold h2,.heyfold .lede{text-align:center}
+.heyfold h2{margin:0 auto;color:#fff;font-size:clamp(38px,6vw,72px)}
+.heyfold .lede{margin-left:auto;margin-right:auto;color:#c7d0ea;max-width:640px}
+.heyfold .how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:40px auto 0}
+.heyfold .how div{border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.heyfold .how b{display:block;font-family:"Sora";font-size:17px;font-weight:600;letter-spacing:-.01em}
+.heyfold .how span{display:block;color:#8fa0c4;font-size:14px;margin-top:6px;line-height:1.45}
+@media (max-width:640px){.heyfold .how{grid-template-columns:1fr;gap:14px}}
+.heyfold .counter{margin-top:56px}
+.heyfold .say{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none;backdrop-filter:blur(10px)}
+.heyfold .say:focus-within{border-color:rgba(255,255,255,.4);box-shadow:0 0 0 4px rgba(124,92,255,.3)}
+.heyfold .say input{color:#fff}
+.heyfold .say input::placeholder{color:#8fa0c4}
+.heyfold .go{background:#fff;color:var(--ink)}
+.heyfold .go:hover{background:#e9efff}
+.heyfold .chip{background:transparent;border-color:rgba(255,255,255,.18);color:#c7d0ea}
+.heyfold .chip:hover{border-color:#fff;color:#fff}
+.heyfold .chip.on{background:#fff;color:var(--ink);border-color:#fff}
+.heyfold .heard{color:#8fa0c4}.heyfold .heard b{color:#fff}
+.heyfold .ticket{background:rgba(255,255,255,.06);color:#fff}
+.heyfold .ticket .who{color:#8fa0c4}.heyfold .ticket .who b{color:#fff}
+.heyfold .line{background:rgba(255,255,255,.08)}
+.heyfold .line small{color:#8fa0c4}
+.heyfold .line.rush{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.4)}.heyfold .line.rush .amt{color:#fbbf24}
+.heyfold .totals{border-top-color:rgba(255,255,255,.18)}
+.heyfold .ready{color:#c7d0ea}.heyfold .ready b{color:#fff}
+.heyfold .empty{color:#8fa0c4}
+.heyfold .printer{background:#0a1124;border:1px solid rgba(255,255,255,.08)}
+.heyfold .tagnote,.heyfold .demo-note{color:#8fa0c4}
+/* the mic: a small live orb instead of a grey button */
+.heyfold .mic{background:radial-gradient(circle at 35% 30%,#c4b5fd,#7c5cff 55%,#4c1d95);color:#fff;box-shadow:0 0 0 0 rgba(124,92,255,.5),0 10px 30px -10px rgba(124,92,255,.8);animation:orb 2.6s ease-in-out infinite}
+.heyfold .mic:hover{filter:brightness(1.1)}
+.heyfold .mic.listening{background:radial-gradient(circle at 35% 30%,#8ef0c4,var(--mint) 55%,#0b7a4f);animation:orbhot .9s ease-in-out infinite}
+@keyframes orb{0%,100%{box-shadow:0 0 0 0 rgba(124,92,255,.45),0 10px 30px -10px rgba(124,92,255,.8)}50%{box-shadow:0 0 0 8px rgba(124,92,255,0),0 10px 30px -10px rgba(124,92,255,.8)}}
+@keyframes orbhot{0%,100%{box-shadow:0 0 0 0 rgba(18,168,111,.55)}50%{box-shadow:0 0 0 12px rgba(18,168,111,0)}}
+/* the aurora: the screen lighting up along its bottom edge while Fold listens */
+.aurora{position:absolute;left:0;right:0;bottom:0;height:min(52vh,480px);pointer-events:none;z-index:0;--lvl:.35}
+.aurora i{position:absolute;bottom:-45%;width:70%;height:140%;border-radius:50%;filter:blur(50px);opacity:calc(.6*var(--lvl) + .4);transform-origin:50% 100%;transform:scaleY(calc(.7 + .6*var(--lvl)));transition:opacity .4s,transform .4s;will-change:transform,opacity}
+.aurora i:nth-child(1){left:-10%;background:radial-gradient(closest-side,#7c5cff,transparent 70%);animation:au1 9s ease-in-out infinite}
+.aurora i:nth-child(2){left:22%;background:radial-gradient(closest-side,#12a86f,transparent 70%);animation:au2 11s ease-in-out infinite}
+.aurora i:nth-child(3){left:50%;background:radial-gradient(closest-side,#a78bfa,transparent 70%);animation:au3 13s ease-in-out infinite}
+.aurora i:nth-child(4){left:70%;background:radial-gradient(closest-side,#34d399,transparent 70%);animation:au1 10s ease-in-out infinite reverse}
+@keyframes au1{0%,100%{translate:0 0}50%{translate:6% -6%}}
+@keyframes au2{0%,100%{translate:0 0}50%{translate:-8% -4%}}
+@keyframes au3{0%,100%{translate:0 0}50%{translate:5% -8%}}
+.aurora::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#a78bfa,#34d399,#c4b5fd,#12a86f,transparent);opacity:calc(.5 + .5*var(--lvl));filter:blur(1px)}
+.heyfold .wrap{position:relative;z-index:1}
+.listen{position:absolute;left:50%;bottom:34px;transform:translate(-50%,10px);z-index:2;display:inline-flex;align-items:center;gap:10px;background:rgba(10,17,36,.7);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);border-radius:999px;padding:10px 18px 10px 14px;font-size:14px;color:#fff;opacity:0;transition:opacity .3s,transform .3s var(--ease);pointer-events:none}
+.listen.on{opacity:1;transform:translate(-50%,0)}
+.listen i{width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:orbhot 1s ease-in-out infinite}
+.listen .k{font:600 12px ui-monospace,Menlo,monospace;background:rgba(255,255,255,.12);border-radius:6px;padding:2px 7px;margin-left:4px}
+.capshint{margin-top:10px;font-size:13px;color:#8fa0c4;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.capshint .k{font:600 12px ui-monospace,Menlo,monospace;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:3px 8px;color:#fff}
+@media (prefers-reduced-motion:reduce){.aurora i,.heyfold .mic{animation:none}}
+@media (max-width:640px){.heyfold{padding:80px 0 160px}}
+.counter{max-width:920px;margin:44px auto 0;text-align:left}
+.say{display:flex;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:8px 8px 8px 22px;box-shadow:0 30px 80px -40px rgba(14,23,48,.35);transition:border-color .2s,box-shadow .2s}
+.say:focus-within{border-color:var(--brand);box-shadow:0 30px 80px -40px rgba(30,94,255,.45),0 0 0 4px var(--brand-soft)}
+.say input{flex:1;border:0;outline:0;background:transparent;font:500 clamp(17px,2.2vw,22px)/1.3 "Plus Jakarta Sans",sans-serif;color:var(--ink);min-width:0;padding:10px 0}
+.say input::placeholder{color:var(--ink-3)}
+.mic,.go{flex:none;height:46px;border-radius:999px;border:0;cursor:pointer;font:600 15px "Plus Jakarta Sans",sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .2s var(--ease)}
+.mic{width:46px;background:var(--fog);color:var(--ink-2)}
+.mic:hover{background:var(--fog-2)}
+.mic.listening{background:#fee2e2;color:#b91c1c;animation:pulse 1.2s infinite}
+.mic[hidden]{display:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(185,28,28,.35)}50%{box-shadow:0 0 0 10px rgba(185,28,28,0)}}
+.go{padding:0 20px;background:var(--ink);color:#fff}
+.go:hover{background:#1f2430}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 4px 0}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;color:var(--ink-2);cursor:pointer;font-family:inherit;transition:border-color .2s,color .2s,background .2s}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.stage{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;margin-top:28px;align-items:start}
+@media (max-width:760px){.stage{grid-template-columns:1fr}}
+.ticket{background:var(--fog);border-radius:26px;padding:26px 26px 22px;min-height:300px;position:relative;overflow:hidden}
+.ticket .who{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.ticket .who b{color:var(--ink);text-transform:none;letter-spacing:0;font-size:15px;font-weight:600}
+.lines{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;min-height:120px}
+.line{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:12px 14px;background:var(--paper);border-radius:14px;opacity:0;transform:translateY(8px);animation:rise .45s var(--ease) forwards}
+.line small{display:block;color:var(--ink-3);font-size:13px;margin-top:2px}
+.line .amt{font-variant-numeric:tabular-nums;font-weight:600}
+.line.rush{border:1.5px solid #fed7aa;background:#fff7ed}
+.line.rush .amt{color:var(--amber)}
+@keyframes rise{to{opacity:1;transform:none}}
+.totals{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline;opacity:0;transition:opacity .4s}
+.totals.show{opacity:1}
+.totals .t{font-family:"Sora";font-weight:700;font-size:28px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ready{margin-top:10px;display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink-2);opacity:0;transition:opacity .4s .15s}
+.ready.show{opacity:1}
+.ready i{width:8px;height:8px;border-radius:50%;background:var(--mint);display:inline-block}
+.ready b{color:var(--ink)}
+.empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink-3);font-size:15px;text-align:center;padding:30px;pointer-events:none;transition:opacity .3s}
+.empty.hide{opacity:0}
+.heard{font-size:13px;color:var(--ink-3);margin-top:12px;min-height:20px}
+.heard b{color:var(--ink-2);font-weight:500}
+
+/* printer + receipt + tags */
+.out{display:flex;flex-direction:column;gap:18px}
+.printer{background:var(--deep);border-radius:22px;padding:18px 18px 0;color:#c7d0ea;position:relative;overflow:hidden;min-height:300px}
+.printer .plabel{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.printer .plabel i{width:8px;height:8px;border-radius:50%;background:#33445f;display:inline-block;transition:background .3s}
+.printer.busy .plabel i{background:var(--mint);box-shadow:0 0 0 4px rgba(18,168,111,.25)}
+.slot{height:6px;background:#0a1124;border-radius:6px;margin:14px -6px 0;box-shadow:inset 0 2px 4px rgba(0,0,0,.7)}
+.paper{background:#fff;color:var(--ink);margin:0 22px;padding:16px 16px 18px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;border-radius:0 0 4px 4px;transform:translateY(-105%);transition:transform 1.6s cubic-bezier(.2,.6,.2,1);box-shadow:0 20px 40px -20px rgba(0,0,0,.6);position:relative}
+.paper::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:8px;background:linear-gradient(135deg,transparent 50%,#fff 50%) 0 0/8px 8px,linear-gradient(225deg,transparent 50%,#fff 50%) 0 0/8px 8px}
+.paper.print{transform:translateY(0)}
+.paper .c{text-align:center}
+.paper .big{font-weight:700;font-size:15px}
+.paper .rule{border-top:1px dashed #999;margin:8px 0}
+.paper .row{display:flex;justify-content:space-between;gap:8px}
+.paper .rdy{border:2px solid var(--ink);padding:6px;text-align:center;font-weight:700;font-size:14px;margin:8px 0}
+.tags{display:flex;gap:10px;flex-wrap:wrap;min-height:44px}
+.tag{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 10px;font:600 12px/1.2 ui-monospace,Menlo,monospace;color:var(--ink);box-shadow:0 8px 20px -14px rgba(14,23,48,.5);opacity:0;transform:translateY(6px) rotate(-2deg);animation:tagin .4s var(--ease) forwards;position:relative;padding-left:22px}
+.tag::before{content:"";position:absolute;left:8px;top:50%;width:6px;height:6px;border:1.5px solid var(--ink-3);border-radius:50%;transform:translateY(-50%)}
+.tag small{display:block;font-weight:500;color:var(--ink-3);font-size:11px}
+@keyframes tagin{to{opacity:1;transform:none}}
+.tagnote{font-size:13px;color:var(--ink-3)}
+.demo-note{text-align:center;font-size:13px;color:var(--ink-3);margin-top:22px}
+
+/* ─── chapters ─── */
+.chapter{padding:120px 0}
+.chapter.tight{padding-top:60px}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.chapter h2,.screens h2{font-size:clamp(34px,5vw,58px);line-height:1.06;font-weight:700;max-width:820px}
+.chapter .lede{max-width:600px;color:var(--ink-2);font-size:clamp(17px,1.8vw,19px);margin-top:20px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+@media (max-width:640px){.chapter{padding:80px 0}}
+
+/* three shops */
+.shops{margin-top:44px;display:grid;gap:2px}
+.shop{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:26px 6px;border-top:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;font-family:inherit;color:var(--ink);transition:padding .25s var(--ease)}
+.shop:last-child{border-bottom:1px solid var(--line)}
+.shop .n{font-family:"Sora";font-size:clamp(22px,3vw,30px);font-weight:600;letter-spacing:-.02em}
+.shop .u{color:var(--ink-3);font-size:15px}
+.shop .arrow{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .2s,border-color .2s,transform .3s var(--ease)}
+.shop:hover .arrow,.shop.on .arrow{background:var(--ink);border-color:var(--ink);color:#fff;transform:rotate(45deg)}
+.shop.on .n{color:var(--brand)}
+@media (max-width:640px){.shop{grid-template-columns:1fr auto}.shop .u{grid-column:1/-1;margin-top:-10px}}
+
+/* the day */
+.day{background:var(--fog);border-radius:28px;padding:34px;display:grid;gap:0}
+.drow{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line);align-items:start}
+.drow:first-child{border-top:0;padding-top:0}
+.drow .when{font-family:"Sora";font-weight:600;font-size:15px}
+.drow .when small{display:block;color:var(--ink-3);font-weight:500;font-family:"Plus Jakarta Sans";font-size:13px;margin-top:2px}
+.drow .what{color:var(--ink-2)}
+.drow .what b{color:var(--ink);font-weight:600}
+.bubble{margin-top:10px;display:inline-block;background:var(--brand);color:#fff;border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:14px;max-width:320px;line-height:1.4}
+.late{display:inline-flex;align-items:center;gap:8px;background:#fff7ed;color:var(--amber);border:1px solid #fed7aa;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600}
+
+/* prints */
+.print2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media (max-width:520px){.print2{grid-template-columns:1fr}}
+.strip{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 14px;font:12px/1.45 ui-monospace,Menlo,monospace;box-shadow:0 30px 60px -36px rgba(14,23,48,.5)}
+.strip .c{text-align:center}.strip .big{font-weight:700;font-size:14px}.strip .rule{border-top:1px dashed #999;margin:7px 0}.strip .row{display:flex;justify-content:space-between}
+.hst{display:flex;flex-direction:column;gap:10px}
+.hstag{background:#fff;border:1px solid var(--line);border-radius:4px;padding:8px 12px 8px 26px;font:600 12px/1.3 ui-monospace,Menlo,monospace;position:relative;box-shadow:0 10px 24px -18px rgba(14,23,48,.5)}
+.hstag::before{content:"";position:absolute;left:9px;top:50%;width:7px;height:7px;border:1.5px solid var(--ink-3);border-radius:50%;transform:translateY(-50%)}
+.hstag small{display:block;color:var(--ink-3);font-weight:500;font-size:11px}
+.own{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.own span{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;color:var(--ink-2)}
+
+/* platforms */
+.doors{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+@media (max-width:760px){.doors{grid-template-columns:1fr 1fr}}
+.door{border-top:1px solid var(--line);padding-top:18px}
+.door b{font-family:"Sora";font-size:20px;font-weight:600;display:block;letter-spacing:-.02em}
+.door span{color:var(--ink-3);font-size:14px;display:block;margin-top:6px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+@media (max-width:860px){.plans{grid-template-columns:1fr}}
+.plan{border:1px solid var(--line);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;gap:14px;position:relative}
+.plan.pop{border-color:var(--ink)}
+.plan .pill{position:absolute;top:-12px;left:26px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px}
+.plan h3{font-size:20px;font-weight:600}
+.plan .for{color:var(--ink-3);font-size:14px;margin-top:-8px}
+.plan .price{font-family:"Sora";font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.plan .price small{font:500 14px "Plus Jakarta Sans";color:var(--ink-3);letter-spacing:0}
+.plan ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;color:var(--ink-2);font-size:15px}
+.plan li::before{content:"–";color:var(--ink-3);margin-right:10px}
+.plan .btn{margin-top:auto;justify-content:center}
+.fine{margin-top:18px;color:var(--ink-3);font-size:14px}
+
+/* close */
+.close{padding:140px 0 120px;text-align:center}
+.close h2{font-size:clamp(38px,6vw,72px);font-weight:700;line-height:1.02}
+.close .actions{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.close .fineprint{margin-top:16px;color:var(--ink-3);font-size:14px}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--ink-3);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between}
+footer a{text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.paper{transform:none}.line,.tag{opacity:1;transform:none}}
+
+/* ─── v9: fewer words, more pictures ─── */
+svg.i{width:18px;height:18px;flex:none}
+.step .irow{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.step .irow span{display:inline-flex;align-items:center;gap:7px;background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:7px 13px 7px 10px;font-size:13px;font-weight:600}
+.step p{max-width:440px}
+.plog{margin-top:14px;display:grid;gap:6px;width:min(100%,260px)}
+.plog span{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:11.5px;color:var(--ink-3)}
+.plog span i{width:7px;height:7px;border-radius:50%;background:var(--mint);flex:none}
+.plog span b{color:var(--ink);font-weight:600;margin-right:auto}
+@media (max-width:860px){.plog{display:none}}
+.heyfold .how{display:flex;align-items:center;justify-content:center;gap:14px;max-width:760px;margin:34px auto 0}
+.heyfold .how div{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04)}
+.heyfold .how svg.i{width:22px;height:22px;color:#a78bfa}
+.heyfold .how div:last-child svg.i{color:#34d399}
+.heyfold .how b{font-size:15px;white-space:nowrap}
+.heyfold .how .arr{width:22px;height:2px;background:linear-gradient(90deg,#7c5cff,#12a86f);border-radius:2px;flex:none}
+@media (max-width:640px){.heyfold .how{flex-direction:column;align-items:stretch}.heyfold .how .arr{width:2px;height:12px;align-self:center}}
+.also .card{grid-template-columns:30px 1fr;align-items:center}
+.also .card .more{grid-column:1 / -1}
+.also .thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:8px;border:1px solid var(--line);margin-top:10px}
+.also .one{margin:8px 0 0;font-size:13px;color:var(--ink-2)}
+.owners .quote{font-size:clamp(22px,2.4vw,30px);max-width:26ch}
+.owners .facts{grid-template-columns:repeat(4,1fr)}
+.owners .fact{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--paper)}
+.owners .fact svg.i{width:26px;height:26px;color:var(--brand)}
+.owners .fact b{font-size:17px;display:inline}
+@media (max-width:860px){.owners .facts{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.owners .facts{grid-template-columns:1fr}}
+.t13{width:min(100%,330px);aspect-ratio:3/1;background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:0 10px 24px -18px rgba(14,23,48,.5);display:grid;grid-template-columns:1fr auto;align-content:center;column-gap:10px;row-gap:2px;padding:0 14px;font:700 14px/1.25 ui-monospace,Menlo,monospace;color:#0b0d12}
+.t13 b{white-space:nowrap}
+.t13 b{font-weight:700;letter-spacing:-.02em}
+.t13 b.r{text-align:right}
+.t13 span{grid-column:1 / -1}
+.t13n{font-size:12px;color:var(--ink-3)}
+.door{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);border-radius:16px;padding:20px}
+.door svg.i{width:28px;height:28px;color:var(--brand);margin-bottom:6px}
+.door b{font-size:18px}
+.door span{margin-top:0}
+
+/* ─── v10: the whole store, every door ─── */
+.devs{display:flex;gap:8px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.devs button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font:600 14px "Plus Jakarta Sans",sans-serif;color:var(--ink-2);cursor:pointer;transition:all .25s}
+.devs button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.devstage{display:flex;flex-direction:column;align-items:center;margin-top:8px}
+.frame{width:100%;transition:max-width .6s var(--ease),border-radius .6s var(--ease),border-width .6s var(--ease),padding .6s var(--ease),background .6s;max-width:100%}
+.frame[data-dev="desktop"]{max-width:920px;border:14px solid #11151f;border-bottom-width:30px;border-radius:16px;background:#11151f}
+.frame[data-dev="ipad"]{max-width:760px;border:20px solid #11151f;border-radius:38px;background:#11151f}
+.frame[data-dev="desktop"] .bar,.frame[data-dev="ipad"] .bar{display:none}
+.frame[data-dev="ipad"] img{border-radius:10px}
+.stand{width:0;height:0;opacity:0;transition:all .5s var(--ease)}
+.frame[data-dev="desktop"]+.stand{width:150px;height:46px;opacity:1;background:linear-gradient(#2a2f3b,#171b24);clip-path:polygon(28% 0,72% 0,86% 82%,100% 100%,0 100%,14% 82%)}
+.frame img{transition:opacity .35s,transform .5s var(--ease)}
+.frame img.swap{opacity:0;transform:scale(.985) translateY(6px)}
+.screens .explain{grid-template-columns:1fr;justify-items:center;text-align:center}
+.screens .explain .at,#screenFeats{display:none}
+.screens .explain p{margin:0 auto}
+.icotabs button{display:inline-flex;align-items:center;gap:7px;position:relative;overflow:hidden}
+.icotabs button svg.i{width:16px;height:16px}
+.screens .tabs button::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--brand)}
+.screens .tabs button{position:relative;overflow:hidden}
+.screens.auto .tabs button.on::after{animation:tabfill 3.8s linear forwards;background:#6ea0ff}
+@keyframes tabfill{from{width:0}to{width:100%}}
+@media (max-width:640px){.frame[data-dev="desktop"]{border-width:8px;border-bottom-width:18px}.frame[data-dev="ipad"]{border-width:12px;border-radius:24px}.frame[data-dev="desktop"]+.stand{width:90px;height:28px}}
+@media (prefers-reduced-motion: reduce){.frame,.frame img,.stand{transition:none}}
+.close .ownerline{font-family:"Sora";font-size:clamp(18px,2vw,22px);color:var(--ink-3);max-width:34ch;margin:0 auto 22px;line-height:1.4}
+.close .ownerline em{font-style:normal;color:var(--ink)}
+
+/* ─── v11: tabs above the device, delivery hub, FAQ ─── */
+.screens .lede{margin-top:14px}
+.screens .tabrow{margin-top:14px}
+.screens .tabrow:first-of-type{margin-top:26px}
+.screens .tabs button{padding:7px 13px;font-size:13px}
+.screens .tl{min-width:128px}
+.devs{margin-top:22px}
+.frame[data-dev="browser"]{max-width:960px;margin-left:auto;margin-right:auto}
+.frame[data-dev="desktop"]{max-width:860px}
+.frame[data-dev="ipad"]{max-width:700px}
+.screens .explain{margin-top:18px}
+.screens .explain h3{font-size:20px}
+.hub{padding:110px 0;background:linear-gradient(180deg,var(--fog),#fff)}
+.hub h2{max-width:16ch}
+.hubgrid{display:grid;grid-template-columns:320px 1fr;gap:28px;margin-top:36px;align-items:start}
+.hubsteps{display:flex;flex-direction:column;gap:8px}
+.hubsteps button{padding:12px 14px}
+.hubsteps button{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;font-family:inherit;color:var(--ink);cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .25s}
+.hubsteps button svg.i{width:22px;height:22px;padding:7px;box-sizing:content-box;border-radius:10px;background:var(--brand-soft);color:var(--brand)}
+.hubsteps button b{display:block;font-family:"Sora";font-size:16px;font-weight:600}
+.hubsteps button small{display:block;color:var(--ink-3);font-size:13px;line-height:1.4;margin-top:3px}
+.hubsteps button.on{border-color:var(--brand);box-shadow:0 20px 40px -30px rgba(30,94,255,.6)}
+.hubsteps button.on svg.i{background:var(--brand);color:#fff}
+.hubsteps .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--brand)}
+.hub.auto .hubsteps button.on .bar{animation:tabfill 4.2s linear forwards}
+.hubframe{margin-top:0}
+#hubImg{transition:opacity .3s,transform .5s var(--ease)}
+#hubImg.swap{opacity:0;transform:scale(.985) translateY(6px)}
+.hubchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hubchips span{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 11px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.hubchips svg.i{width:16px;height:16px;color:var(--brand)}
+@media (max-width:900px){.hubgrid{grid-template-columns:1fr}.hubframe{order:-1}.hubsteps{display:grid;grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.hubsteps{grid-template-columns:1fr}.hubsteps button small{display:none}.hub{padding:72px 0}}
+.faqlist{margin-top:30px;max-width:820px;border-top:1px solid var(--line)}
+.faqlist details{border-bottom:1px solid var(--line)}
+.faqlist summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-family:"Sora";font-size:18px;font-weight:600}
+.faqlist summary::-webkit-details-marker{display:none}
+.faqlist summary i{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);flex:none;position:relative;transition:transform .3s var(--ease),background .2s}
+.faqlist summary i::before,.faqlist summary i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:var(--ink-2);transform:translate(-50%,-50%)}
+.faqlist summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faqlist details[open] summary i{transform:rotate(45deg);background:var(--ink)}
+.faqlist details[open] summary i::before,.faqlist details[open] summary i::after{background:#fff}
+.faqlist summary:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:6px}
+.faqlist .ans{padding:0 0 22px;color:var(--ink-2);font-size:16px;line-height:1.55;max-width:680px}
+.faqlist .ans a{color:var(--brand);font-weight:600}
+.faqtags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.faqtags .t13{width:min(100%,300px);font-size:13px}
+
+/* hero: a slow loop of Fold's own pieces drifting behind the headline */
+.hero-amb{position:relative;overflow:hidden;min-height:min(820px,92vh);display:flex;align-items:center;padding:40px 0 60px;background:#f6f8fc url(/assets/video/fold-hero-ambient-es-poster.jpg) center/cover}
+.hero-amb .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-amb::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(46% 42% at 50% 50%,rgba(255,255,255,.9) 0%,rgba(255,255,255,.55) 55%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0) 80%,#fff 100%)}
+.hero-amb .wrap{position:relative;z-index:2;width:100%}
+.hero .hero-cta{margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-amb .seg{margin:26px 0 0;background:rgba(255,255,255,.8);box-shadow:0 0 0 1px rgba(14,23,48,.06)}
+@media (prefers-reduced-motion:reduce){.hero-amb .hero-bg{display:none}}
+@media (max-width:760px){.hero-amb{min-height:0;padding:150px 0 150px;background-image:url(/assets/video/fold-hero-ambient-es-portrait-poster.jpg)}.hero-amb::after{background:radial-gradient(70% 36% at 50% 50%,rgba(255,255,255,.92) 0%,rgba(255,255,255,.6) 60%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0) 88%,#fff 100%)}}
+</style>
+<link rel="stylesheet" href="/assets/css/chrome.css">
+</head>
+<body>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/es/" aria-label="Inicio de Fold POS"><i></i>Fold POS</a>
+    <nav aria-label="Principal">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Negocios<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/es/laundromats"><b>Lavanderías</b><small>Lavado y doblado por libra, el plano del local</small></a>
+            <a href="/es/dry-cleaners"><b>Tintorerías</b><small>Tickets por prenda, etiquetas y lugares en el transportador</small></a>
+            <a href="/es/alterations"><b>Sastrerías</b><small>Precio por trabajo, medidas y pruebas</small></a>
+          </div>
+        </li>
+        <li><a href="/es/features">Funciones</a></li>
+        <li><a href="/es/#heyfold">Hey Fold</a></li>
+        <li><a href="/es/pricing">Precios</a></li>
+        <li><a href="/es/faq">Preguntas</a></li>
+        <li><a href="/es/help">Ayuda</a></li>
+        <li><a href="/es/contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-lang" href="/" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+      <a class="fx-login" href="https://pos.foldpos.com/login">Iniciar sesión</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Empiece gratis</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menú"><span></span></button>
+    </div>
+  </div>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menú">
+  <p class="fx-menu-h">Negocios</p>
+  <a href="/es/laundromats">Lavanderías</a>
+  <a href="/es/dry-cleaners">Tintorerías</a>
+  <a href="/es/alterations">Sastrerías</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/es/features">Funciones</a>
+  <a href="/es/#heyfold">Hey Fold</a>
+  <a href="/es/pricing">Precios</a>
+  <p class="fx-menu-h">Soporte</p>
+  <a href="/es/faq">Preguntas frecuentes</a>
+  <a href="/es/help">Ayuda</a>
+  <a href="/es/contact">Contacto</a>
+  <a class="fx-menu-lang" href="/" hreflang="en" lang="en">English</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Iniciar sesión</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Empiece gratis, 14 días</a>
+  </div>
+</nav>
+<!--/fx:header-->
+
+
+
+
+
+
+
+
+
+
+<main>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></symbol><symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-4l2-5h12l2 5v4z"/><path d="M4 12h16"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></symbol><symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol><symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.5V5a1.5 1.5 0 0 1 1.5-1.5h7.5l8 8-9 9-8-8z"/><circle cx="8" cy="8" r="1.4"/></symbol><symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></symbol><symbol id="i-history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/><path d="M12 8v4l3 2"/></symbol><symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol><symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M7 12h10"/></symbol><symbol id="i-rack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M6 5v14M18 5v14"/><path d="M9 5v3a1.5 1.5 0 1 0 3 0M13 5v5a1.5 1.5 0 1 0 3 0"/></symbol><symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4H6.5A2.5 2.5 0 0 1 4 14.5z"/></symbol><symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol><symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z"/></symbol><symbol id="i-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M12 9l-6 6v6M12 9l6 6v6"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/></symbol><symbol id="i-stores" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 5 4h14l2 5.5M4 9.5V20h16V9.5M3 9.5h18"/><path d="M9.5 20v-5h5v5"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M16 5.5a3 3 0 0 1 0 5.5M17.5 13.8c1.8.7 3 2.6 3 5.2"/></symbol><symbol id="i-ledger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M21 19H3"/></symbol><symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V4h10v4M7 17H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-3"/><rect x="7" y="13" width="10" height="7" rx="1"/></symbol><symbol id="i-speak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4H6.5A2.5 2.5 0 0 1 4 14.5z"/><path d="m9 10.5 2 2 4-4"/></symbol><symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 5 4h14l2 5.5M4 9.5V20h16V9.5M3 9.5h18"/><path d="M12 13v7"/></symbol><symbol id="i-arrows" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol><symbol id="i-browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M6.5 6.8h.01M9 6.8h.01"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16v4"/></symbol><symbol id="i-ipad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M11 18h2"/></symbol><symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></symbol></svg>
+<section class="hero hero-amb">
+  <video class="hero-bg" muted loop playsinline preload="none" aria-hidden="true" data-wide="/assets/video/fold-hero-ambient-es" data-tall="/assets/video/fold-hero-ambient-es-portrait"></video>
+  <div class="wrap">
+    <span class="eyebrow">Un centro de mando para su tienda. Creado por dueños de tiendas.</span>
+    <h1>Siga un pedido<br><em>hasta que llega a casa.</em></h1>
+    <p class="lede">Lo que usted ve y lo que ve su cliente. Un pedido, de principio a fin.</p>
+    <div class="hero-cta"><a class="btn btn-primary" href="https://pos.foldpos.com/signup">Empiece gratis</a><a class="btn btn-ghost" href="#heyfold">Pruebe Hey Fold</a></div>
+    <div class="seg" id="shopSeg" role="tablist" aria-label="Tipo de negocio">
+      <button type="button" class="on" data-shop="laundromat" role="tab" aria-selected="true">Lavandería</button>
+      <button type="button" data-shop="cleaner" role="tab" aria-selected="false">Tintorería</button>
+      <button type="button" data-shop="tailor" role="tab" aria-selected="false">Sastrería</button>
+    </div>
+  </div>
+</section>
+
+<section class="journey" id="journey" data-state="counter" data-shop="laundromat">
+  <div class="wrap jgrid">
+    <div class="jstage" aria-hidden="true">
+      <div class="scene" id="scene">
+        <div class="lane lane-you">
+          <div class="lbl"><i>1</i>Lo que usted ve</div>
+          <div class="ob" data-for="counter" data-lane="you"></div>
+          <div class="ob" data-for="back" data-lane="you"></div>
+          <div class="ob" data-for="rack" data-lane="you"></div>
+          <div class="ob" data-for="text" data-lane="you"></div>
+          <div class="ob" data-for="pickup" data-lane="you"></div>
+          <div class="ob" data-for="office" data-lane="you"></div>
+        </div>
+        <div class="lane lane-them">
+          <div class="lbl"><i>2</i>Lo que ve su cliente</div>
+          <div class="ob" data-for="counter" data-lane="them"></div>
+          <div class="ob" data-for="back" data-lane="them"></div>
+          <div class="ob" data-for="rack" data-lane="them"></div>
+          <div class="ob" data-for="text" data-lane="them"></div>
+          <div class="ob" data-for="pickup" data-lane="them"></div>
+          <div class="ob" data-for="office" data-lane="them"></div>
+        </div>
+        <div class="bigtag" id="bigtag">
+          <div class="ord" id="tagOrd">W1042 · 1/3</div>
+          <div class="nm">ORTIZ · ···0142</div>
+          <div class="pc"><span id="tagItem">Edredón</span><span id="tagSub">king</span></div>
+          <div class="st"><i></i><b id="tagState">Recibido · mié 9:40</b></div>
+          <div class="stamp">RECOGIDO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jsteps">
+      <div class="step on" data-state="counter">
+        <div class="when">Miércoles · 9:40 a. m. · El mostrador</div>
+        <h2>Recibido antes de que ella encuentre sus llaves.</h2>
+        <p>Entra el teléfono, las prendas con un toque o de viva voz, y salen el ticket y las etiquetas. Veinte segundos.</p>
+        <a class="see" href="#screens" data-screen="checkin">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-card"/></svg>Tarjeta o efectivo</span><span><svg class="i" aria-hidden="true"><use href="#i-mic"/></svg>Dígalo</span><span><svg class="i" aria-hidden="true"><use href="#i-tag"/></svg>Una etiqueta por pieza</span></div>
+      </div>
+      <div class="step" data-state="back">
+        <div class="when">Jueves · 2:10 p. m. · La trastienda</div>
+        <h2>Cada pieza sabe qué sigue.</h2>
+        <p>El personal la avanza desde el iPad de la pared. Ella ve “en proceso”, sin tener que llamar.</p>
+        <a class="see" href="#screens" data-screen="orders">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-flow"/></svg>Sus estaciones</span><span><svg class="i" aria-hidden="true"><use href="#i-history"/></svg>Quién hizo qué</span><span><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>Por pieza</span></div>
+      </div>
+      <div class="step" data-state="rack">
+        <div class="when">Viernes · 4:30 p. m. · Dónde está</div>
+        <h2>Un lugar, no “por ahí atrás”.</h2>
+        <p>Escanee la etiqueta, toque la posición. Cuando ella llegue, usted sabe exactamente dónde está.</p>
+        <a class="see" href="#screens" data-screen="checkout">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-scan"/></svg>Escanee y encuentre</span><span><svg class="i" aria-hidden="true"><use href="#i-rack"/></svg>Rack o transportador</span></div>
+      </div>
+      <div class="step" data-state="text">
+        <div class="when">Viernes · 4:31 p. m. · Su teléfono</div>
+        <h2>Listo. Su teléfono ya lo sabe.</h2>
+        <p>Llega la última pieza y sale el aviso de “listo”, con el nombre de su tienda.</p>
+        <a class="see" href="#screens" data-screen="customers">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Mensajes automáticos</span><span><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Recordatorios</span><span><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg>English · Español</span></div>
+      </div>
+      <div class="step" data-state="pickup">
+        <div class="when">Sábado · 11:05 a. m. · La puerta</div>
+        <h2>Escanear. Pagar. Listo.</h2>
+        <p>Escanee cualquier etiqueta y cobre. La posición se libera sola; el recibo le llega al teléfono.</p>
+        <a class="see" href="#screens" data-screen="checkout">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-split"/></svg>Pago dividido</span><span><svg class="i" aria-hidden="true"><use href="#i-invoice"/></svg>Cuentas mensuales</span><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Historial completo</span></div>
+      </div>
+      <div class="step" data-state="office">
+        <div class="when">Sábado · 7:15 p. m. · Su oficina, o su sofá</div>
+        <h2>Toda la tienda, en una pantalla.</h2>
+        <p>El día tal como pasó, desde cualquier navegador o su teléfono.</p>
+        <a class="see" href="#screens" data-screen="dashboard">Ver esta pantalla ↗</a>
+        <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-stores"/></svg>Todas las sucursales</span><span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Turnos</span><span><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg>QuickBooks</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="heyfold" id="heyfold">
+  <div class="wrap">
+    <div class="kicker">Conozca Hey Fold</div>
+    <h2>El mostrador que escucha.</h2>
+    <p class="lede">Diga el pedido. Queda registrado y ya se está imprimiendo antes de que suelte la bolsa.</p>
+    <div class="how"><div><svg class="i" aria-hidden="true"><use href="#i-mic"/></svg><b>Usted lo dice</b></div><i class="arr"></i><div><svg class="i" aria-hidden="true"><use href="#i-speak"/></svg><b>Fold se lo repite</b></div><i class="arr"></i><div><svg class="i" aria-hidden="true"><use href="#i-printer"/></svg><b>Se imprime</b></div></div>
+    <div class="counter" id="counter">
+      <form class="say" id="sayForm" autocomplete="off">
+        <input id="sayInput" type="text" placeholder="Hey Fold — dos bolsas y un edredón, urgente" aria-label="Diga un pedido" spellcheck="false">
+        <button type="button" class="mic" id="mic" title="Dicte el pedido" aria-label="Dicte el pedido" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        </button>
+        <button type="submit" class="go">Registrar</button>
+      </form>
+      <div class="chips" id="chips">
+        <button type="button" class="chip" data-say="dos bolsas y un edredón, urgente">Dos bolsas y un edredón, urgente</button>
+        <button type="button" class="chip" data-say="cinco camisas y un traje de dos piezas">Cinco camisas y un traje</button>
+        <button type="button" class="chip" data-say="dobladillo a dos pares de pantalones">Dobladillo a dos pantalones</button>
+        <button type="button" class="chip" data-say="tres camisas, un vestido y doce libras de lavado y doblado">Camisas, un vestido y 12 lb de lavado y doblado</button>
+      </div>
+      <div class="capshint" id="capshint" hidden><span>Pulse</span><span class="k">Bloq Mayús (Caps Lock)</span><span>para hablar con Fold; púlsela otra vez cuando termine. O toque el micrófono.</span></div>
+      <div class="heard" id="heard"></div>
+
+      <div class="stage">
+        <div class="ticket" aria-live="polite">
+          <div class="who"><span>Recepción</span><b id="cust">Cliente ocasional</b></div>
+          <ul class="lines" id="lines"></ul>
+          <div class="totals" id="totals"><span>Total</span><span class="t" id="total">$0.00</span></div>
+          <div class="ready" id="ready"><i></i><span>Listo <b id="readyWhen">—</b></span></div>
+          <div class="empty" id="empty">Escriba o diga un pedido y véalo registrarse.</div>
+        </div>
+        <div class="out">
+          <div class="printer" id="printer">
+            <div class="plabel"><span>Impresora de recibos</span><i></i></div>
+            <div class="slot"></div>
+            <div class="paper" id="paper"></div>
+          </div>
+          <div class="tags" id="tags"></div>
+          <div class="tagnote" id="tagnote"></div>
+        </div>
+      </div>
+      <p class="demo-note">Precios de demostración. Aquí van los suyos.</p>
+    </div>
+  </div>
+  <div class="listen" id="listenPill" aria-live="polite"><i></i><span>Escuchando…</span><span class="k">Bloq Mayús</span><span>para detener</span></div>
+  <div class="aurora" id="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</section>
+
+<section class="screens" id="screens">
+  <div class="wrap">
+    <div class="kicker">Toda la tienda</div>
+    <h2>Cada pantalla. En cada dispositivo.</h2>
+    <p class="lede">Pantallas reales de una tienda Fold. Toque una o mírelas pasar.</p>
+    <div class="tabrow"><span class="tl" id="tabsForLbl">Para lavanderías</span><div class="tabs" id="screenTabs" role="tablist"></div></div>
+    <div class="tabrow"><span class="tl">Todos los negocios</span><div class="tabs icotabs" id="screenTabsAll" role="tablist"><button type="button" data-screen="checkout"><svg class="i" aria-hidden="true"><use href="#i-scan"/></svg><span>Entrega</span></button><button type="button" data-screen="payment"><svg class="i" aria-hidden="true"><use href="#i-card"/></svg><span>Pagos</span></button><button type="button" data-screen="customers"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>Clientes</span></button><button type="button" data-screen="invoices"><svg class="i" aria-hidden="true"><use href="#i-invoice"/></svg><span>Facturas</span></button><button type="button" data-screen="dashboard"><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg><span>Informes</span></button><button type="button" data-screen="marketing"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span>Marketing</span></button><button type="button" data-screen="supplies"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg><span>Suministros</span></button><button type="button" data-screen="schedule"><svg class="i" aria-hidden="true"><use href="#i-history"/></svg><span>Turnos</span></button></div></div>
+    <div class="devs" id="devs" role="tablist" aria-label="Dispositivo"><button type="button" data-dev="browser" class="on"><svg class="i" aria-hidden="true"><use href="#i-browser"/></svg>Navegador</button><button type="button" data-dev="desktop"><svg class="i" aria-hidden="true"><use href="#i-desktop"/></svg>Windows y Mac</button><button type="button" data-dev="ipad"><svg class="i" aria-hidden="true"><use href="#i-ipad"/></svg>iPad</button></div>
+    <div class="devstage"><div class="frame" id="frame" data-dev="browser">
+      <div class="bar"><i></i><i></i><i></i><span>pos.foldpos.com</span></div>
+      <img id="screenImg" src="" alt="" width="1600" height="1000">
+    </div><div class="stand" aria-hidden="true"></div></div>
+    <div class="explain">
+      <div class="ex-head"><h3 id="screenTitle">Recepción</h3><span class="at" id="screenAt">Miércoles · 9:40 a. m. · El mostrador</span></div>
+      <p id="screenCap"></p>
+      <div class="feats" id="screenFeats"></div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter hub" id="delivery">
+  <div class="wrap">
+    <div class="kicker">Recogida y entrega</div>
+    <h2>Su propio servicio a domicilio, desde el mostrador.</h2>
+    <p class="lede">Sus repartidores, los marketplaces asociados y los mensajeros bajo demanda, en un solo calendario.</p>
+    <div class="hubgrid">
+      <div class="hubsteps" id="hubSteps" role="tablist"><button type="button" data-img="pd-activities" class="on"><svg class="i" aria-hidden="true"><use href="#i-flow"/></svg><span><b>Recorridos de hoy</b><small>Cada recogida y entrega, con quién la hace.</small></span><i class="bar"></i></button><button type="button" data-img="pd-routes"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg><span><b>Rutas en un mapa</b><small>Marque a sus repartidores y arme las rutas del día con un toque.</small></span><i class="bar"></i></button><button type="button" data-img="pd-courier" data-url="pos.foldpos.com · Recogida y entrega › Mensajería"><svg class="i" aria-hidden="true"><use href="#i-car"/></svg><span><b>Mensajeros de Uber Direct</b><small>¿Ningún repartidor libre? Envíelo con Uber Direct, en su propia cuenta.</small></span><i class="bar"></i></button><button type="button" data-img="pd-driver" data-url="App Fold Driver"><svg class="i" aria-hidden="true"><use href="#i-ipad"/></svg><span><b>App para repartidores</b><small>Paradas de hoy, navegación, foto y firma en la puerta.</small></span><i class="bar"></i></button><button type="button" data-img="pd-insights"><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg><span><b>Lo que cuesta</b><small>Costo, margen y puntualidad, por parada y por repartidor.</small></span><i class="bar"></i></button></div>
+      <div class="frame hubframe"><div class="bar"><i></i><i></i><i></i><span id="hubUrl">pos.foldpos.com · Recogida y entrega</span></div><img id="hubImg" src="/assets/img/new/pd-activities.webp" alt="Recogida y entrega en Fold POS" width="1600" height="1000"></div>
+    </div>
+    <div class="hubchips"><span><svg class="i" aria-hidden="true"><use href="#i-stores"/></svg>Integración de pedidos de socios</span><span><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Mensajes de estado</span><span><svg class="i" aria-hidden="true"><use href="#i-card"/></svg>Cargo de entrega al cobrar</span><span><svg class="i" aria-hidden="true"><use href="#i-stores"/></svg>Optimización de rutas en Pro</span></div>
+  </div>
+</section>
+
+<section class="chapter" id="pricing">
+  <div class="wrap">
+    <div class="kicker">Precios</div>
+    <h2>Elija el plan según cuántas tiendas maneja.</h2>
+    <p class="lede">Mes a mes. 14 días gratis, sin tarjeta.</p>
+    <div class="plans">
+      <div class="plan"><h3>Starter</h3><p class="for">Un mostrador</p><div class="price">$39<small> /mes</small></div>
+        <ul><li>Recepción, pedidos y pagos</li><li>Cuentas e historial de clientes</li><li>Recibos, etiquetas e impresión</li><li>Informes diarios</li></ul>
+        <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Empiece gratis</a></div>
+      <div class="plan pop"><span class="pill">El más popular</span><h3>Growth</h3><p class="for">Suma entregas y personal</p><div class="price">$59<small> /mes</small></div>
+        <ul><li>Todo lo de Starter</li><li>Rutas de recogida y entrega</li><li>Turnos y registro de entrada del personal</li><li>Marketing y recordatorios de pedidos</li></ul>
+        <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Empiece gratis</a></div>
+      <div class="plan"><h3>Pro</h3><p class="for">Más de una sucursal</p><div class="price">$79<small> /mes</small></div>
+        <ul><li>Todo lo de Growth</li><li>Informes de varias sucursales</li><li>Optimización de rutas</li><li>Permisos del personal por rol</li></ul>
+        <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Empiece gratis</a></div>
+    </div>
+    <p class="fine">Precios en dólares estadounidenses (USD). Pagos con su propio procesador, a sus tarifas. Hey Fold en todos los planes. <a href="/es/pricing#compare">Compare todas las funciones</a> · ¿Más de cinco sucursales? <a href="/es/contact">Hable con nosotros</a>.</p>
+  </div>
+</section>
+
+<section class="chapter faq" id="faq">
+  <div class="wrap">
+    <div class="kicker">Preguntas</div>
+    <h2>Antes de que pregunte.</h2>
+    <div class="faqlist"><details><summary>¿Con qué impresoras funciona?<i></i></summary><div class="ans">Con la impresora de recibos y la de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o por red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta termoadhesiva de 1 × 3 pulgadas por pieza. <a href="/es/printers" style="color:var(--brand);font-weight:600;text-decoration:none">Ver todas las impresoras</a>.<div class="faqtags"><div class="t13"><b>W1042 1/3 &nbsp;ORTIZ</b><b class="r">VIE 18/09</b><span>Edredón - Lavado y doblado</span></div><div class="t13"><b>W1042 2/3 &nbsp;ORTIZ</b><b class="r">VIE 18/09</b><span>Bolsa 1 - Lavado y doblado</span></div><div class="t13"><b>W1042 3/3 &nbsp;ORTIZ</b><b class="r">VIE 18/09</b><span>Bolsa 2 - Lavado y doblado</span></div></div></div></details><details><summary>¿Funciona en Windows, Mac y iPad?<i></i></summary><div class="ans">Sí. Abra pos.foldpos.com en cualquier navegador o use la app de escritorio en la PC del mostrador o en el iPad junto a la caja. Las PC con Windows del mostrador llevan un pequeño asistente de impresión desde <a href="/es/download">foldpos.com/download</a>.</div></details><details><summary>¿Puedo traer a mis clientes desde Cents o CleanCloud?<i></i></summary><div class="ans">Sí, desde Cents, CleanCloud o un CSV. Y puede llevarse sus datos de la misma forma.</div></details><details><summary>¿Puedo usar mi propio procesador de tarjetas?<i></i></summary><div class="ans">Sí. Tarjeta, efectivo, cheque, crédito de tienda y pagos divididos, con su procesador y a sus tarifas.</div></details><details><summary>¿Está en español?<i></i></summary><div class="ans">El mostrador, Hey Fold y los mensajes que reciben sus clientes funcionan en inglés y en español.</div></details><details><summary>¿Necesito una tarjeta para empezar?<i></i></summary><div class="ans">No. 14 días gratis, sin tarjeta, mes a mes. Cambie o cancele desde Ajustes.</div></details></div>
+    <p style="margin-top:22px;font-size:15px;color:var(--ink-3)">Más en las <a href="/es/faq" style="color:var(--brand);font-weight:600;text-decoration:none">preguntas frecuentes</a> y en el <a href="/es/help" style="color:var(--brand);font-weight:600;text-decoration:none">centro de ayuda</a>.</p>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="ownerline">Creado en los mostradores de Fold, porque <em>nada de lo que podíamos comprar sabía lo que era un edredón.</em></p>
+    <h2>Su mostrador está por volverse mucho más tranquilo.</h2>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Empiece gratis</a>
+      <a class="btn btn-ghost" href="#heyfold">Pruebe Hey Fold</a>
+    </div>
+    <p class="fineprint">Sin tarjeta, sin contrato, sin llamada de ventas.</p>
+  </div>
+</section>
+
+</main>
+
+
+
+<script>
+(function(){
+  // ─── the counter: a small parser for the way people actually say an order ───
+  var NUM={a:1,an:1,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,dozen:12,half:0.5,fifteen:15,twenty:20,un:1,una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,docena:12,media:0.5,medio:0.5,quince:15,veinte:20};
+  // Sample prices. The real counter uses the shop's own price list.
+  var ITEMS=[
+    {k:'dress shirt', re:/\b(dress )?shirts?\b(?! ?dress)|\bcamisas?( de vestir)?\b/, name:'Camisa de vestir', price:3.5, type:'dc', tag:'camisa'},
+    {k:'suit', re:/\b(two|2)[ -]?(pc|piece)? ?suits?\b|\bsuits?\b|\btrajes?( de (dos|2) piezas)?\b/, name:'Traje de dos piezas', price:16, type:'dc', tag:'traje', pieces:2},
+    {k:'blazer', re:/\bblazers?\b|\bsport ?coats?\b|\bsacos?\b/, name:'Saco', price:12, type:'dc', tag:'saco'},
+    {k:'jacket', re:/\bjackets?\b|\bchaquetas?\b|\bchamarras?\b/, name:'Chaqueta', price:12, type:'dc', tag:'chaqueta'},
+    {k:'coat', re:/\b(over)?coats?\b|\babrigos?\b/, name:'Abrigo', price:18, type:'dc', tag:'abrigo'},
+    {k:'dress', re:/\bdress(es)?\b(?! shirt)|\bvestidos?\b/, name:'Vestido', price:14, type:'dc', tag:'vestido'},
+    {k:'blouse', re:/\bblouses?\b|\bblusas?\b/, name:'Blusa', price:7, type:'dc', tag:'blusa'},
+    {k:'pants', re:/\b(pairs? of )?(pants|trousers|slacks)\b|\b(pares? de )?pantalon(es)?\b/, name:'Pantalón', price:8, type:'dc', tag:'pantalón'},
+    {k:'skirt', re:/\bskirts?\b|\bfaldas?\b/, name:'Falda', price:8, type:'dc', tag:'falda'},
+    {k:'tie', re:/\bties?\b|\bcorbatas?\b/, name:'Corbata', price:5, type:'dc', tag:'corbata'},
+    {k:'comforter', re:/\bcomforters?\b|\bduvets?\b|\bedredon(es)?\b/, name:'Edredón', price:30, type:'wf', tag:'edredón'},
+    {k:'blanket', re:/\bblankets?\b|\bcobijas?\b|\bmantas?\b/, name:'Cobija', price:18, type:'wf', tag:'cobija'},
+    {k:'bag', re:/\bbags?\b|\bloads?\b|\bbolsas?\b|\bcargas?\b/, name:'Lavado y doblado', price:1.75, type:'wf', perLb:true, lbEach:12, tag:'bolsa'},
+    {k:'lb', re:/\b(lbs?|pounds?)\b( of)?( wash( and| &)? fold)?|\blibras?\b( de)?( lavado( y)? doblado)?/, name:'Lavado y doblado', price:1.75, type:'wf', perLb:true, isLb:true, tag:'bolsa'},
+    {k:'hem', re:/\bhem(ming)?\b|\bdobladillos?\b|\bbastillas?\b/, name:'Dobladillo', price:14, type:'alt', job:true},
+    {k:'zipper', re:/\b(replace |fix )?(a |the )?zippers?\b|\b(cambiar |arreglar )?(el |un )?(cierres?|cremalleras?|zipers?)\b/, name:'Cambio de cierre', price:22, type:'alt', job:true},
+    {k:'take in', re:/\btake(n)? in\b|\btaper\b|\bentallar\b|\bajustar\b/, name:'Entallar', price:24, type:'alt', job:true},
+    {k:'button', re:/\bbuttons?\b|\bboton(es)?\b/, name:'Coser botón', price:4, type:'alt', job:true}
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var input=$('sayInput'),lines=$('lines'),totals=$('totals'),totalEl=$('total'),ready=$('ready'),readyWhen=$('readyWhen'),empty=$('empty'),paper=$('paper'),printer=$('printer'),tags=$('tags'),tagnote=$('tagnote'),heard=$('heard'),cust=$('cust');
+  var timers=[];
+  function later(fn,ms){timers.push(setTimeout(fn,ms))}
+  function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+  function money(n){return '$'+n.toFixed(2)}
+  function words(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 &-]/g,' ').replace(/\s+/g,' ').trim()}
+  function qtyBefore(text,idx){
+    // the number immediately before the item, as digits or as a word
+    var before=text.slice(0,idx).trim().split(' ');
+    for(var i=before.length-1;i>=0&&i>=before.length-4;i--){
+      var w=before[i]; if(!w) continue;
+      if(/^\d+(\.\d+)?$/.test(w)) return parseFloat(w);
+      if(w in NUM) return NUM[w];
+      if(w==='of'||w==='pairs'||w==='pair'||w==='pounds'||w==='pound'||w==='lb'||w==='lbs'||w==='piece'||w==='pc'||w==='pairs'||w==='de'||w==='par'||w==='pares'||w==='libra'||w==='libras'||w==='pieza'||w==='piezas') continue;
+      break;
+    }
+    return 1;
+  }
+  function parse(text){
+    var t=words(text), rush=/\brush\b|\bexpress\b|\bsame ?day\b|\btoday\b|\bhurry\b|\burgente\b|\bexpres\b|\bmismo dia\b|\bhoy\b|\bprisa\b/.test(t), out=[], used=[];
+    ITEMS.forEach(function(it){
+      var re=new RegExp(it.re.source,'g'), m;
+      while((m=re.exec(t))){
+        var start=m.index, ok=true;
+        used.forEach(function(u){ if(start>=u[0]&&start<u[1]) ok=false; });
+        if(!ok) continue;
+        used.push([start,start+m[0].length]);
+        var q=qtyBefore(t,start);
+        if(it.isLb){ out.push({name:it.name,detail:q+' lb · $1.75/lb',amount:q*it.price,tags:Math.max(1,Math.round(q/12)),tag:it.tag,type:it.type}); }
+        else if(it.perLb){ var lb=q*it.lbEach; out.push({name:it.name,detail:q+(q===1?' bolsa':' bolsas')+' · aprox. '+lb+' lb · $1.75/lb',amount:lb*it.price,tags:q,tag:it.tag,type:it.type}); }
+        else if(it.job){ out.push({name:it.name,detail:(q>1?q+' × ':'')+'arreglo',amount:q*it.price,tags:q,tag:it.name.toLowerCase(),type:it.type}); }
+        else { out.push({name:it.name,qty:q,detail:q+' × '+money(it.price),amount:q*it.price,tags:q*(it.pieces||1),tag:it.tag,type:it.type}); }
+      }
+    });
+    return {items:out,rush:rush};
+  }
+  function readyDay(items,rush){
+    var days=0; items.forEach(function(i){ var d=i.type==='alt'?4:i.type==='dc'?2:1; if(d>days) days=d; });
+    if(rush) days=Math.min(days,1);
+    var d=new Date(); d.setDate(d.getDate()+days);
+    var name=d.toLocaleDateString('es-MX',{weekday:'long'});
+    var label=days===0?'hoy':days===1?'mañana':'el '+name;
+    var full=d.toLocaleDateString('es-MX',{weekday:'short',month:'short',day:'numeric'});
+    return {label:label,full:full,after:'5:00 p. m.'};
+  }
+  function render(text){ if(typeof auSet==='function'){ auSet(1); clearTimeout(auDecay); auDecay=setTimeout(function(){auSet(.45)},2500); }
+    clearTimers();
+    lines.innerHTML='';tags.innerHTML='';paper.classList.remove('print');printer.classList.remove('busy');
+    totals.classList.remove('show');ready.classList.remove('show');tagnote.textContent='';
+    var r=parse(text);
+    heard.innerHTML=r.items.length?'Escuché: <b>'+text.replace(/</g,'&lt;')+'</b>':'';
+    if(!r.items.length){ empty.classList.remove('hide'); empty.textContent='Escuché “'+text+'”, pero no encontré nada que se venda aquí. Pruebe con una bolsa, un edredón, unas camisas o un dobladillo.'; return; }
+    empty.classList.add('hide');
+    var total=0, pieces=0, delay=0;
+    r.items.forEach(function(it,i){
+      total+=it.amount; pieces+=it.tags;
+      later(function(){
+        var li=document.createElement('li'); li.className='line';
+        li.innerHTML='<div>'+it.name+'<small>'+it.detail+'</small></div><div class="amt">'+money(it.amount)+'</div>';
+        lines.appendChild(li);
+      },delay); delay+=380;
+    });
+    if(r.rush){
+      var fee=Math.round(total*0.5*100)/100; total+=fee;
+      later(function(){
+        var li=document.createElement('li'); li.className='line rush';
+        li.innerHTML='<div>Urgente<small>+50 % · listo antes</small></div><div class="amt">'+money(fee)+'</div>';
+        lines.appendChild(li);
+      },delay); delay+=380;
+    }
+    var when=readyDay(r.items,r.rush), finalTotal=total, finalPieces=pieces, snapshot=r.items.slice();
+    later(function(){ totalEl.textContent=money(finalTotal); totals.classList.add('show'); },delay+100);
+    later(function(){ readyWhen.textContent=when.label+' después de las '+when.after+' · '+when.full; ready.classList.add('show'); },delay+300);
+    later(function(){
+      printer.classList.add('busy');
+      var rows=snapshot.map(function(it){return '<div class="row"><span>'+it.name+((it.qty||it.tags)>1?' ×'+(it.qty||it.tags):'')+'</span><span>'+it.amount.toFixed(2)+'</span></div>'}).join('');
+      if(r.rush) rows+='<div class="row"><span>Urgente</span><span>'+(finalTotal-snapshot.reduce(function(a,b){return a+b.amount},0)).toFixed(2)+'</span></div>';
+      paper.innerHTML='<div class="c big">SUNNY WASH</div><div class="c">Ticket de retiro · #W'+(1040+Math.floor(Math.random()*900))+'</div><div class="rule"></div>'+rows+'<div class="rule"></div><div class="row big"><span>TOTAL</span><span>'+money(finalTotal)+'</span></div><div class="rdy">Listo después de las '+when.after+'<br>'+when.full.toUpperCase()+'</div><div class="c">Gracias</div>';
+      paper.classList.add('print');
+    },delay+700);
+    later(function(){
+      var n=0, last4='0142';
+      snapshot.forEach(function(it){ for(var i=0;i<it.tags;i++){ n++; (function(k,label){ later(function(){ var t=document.createElement('div'); t.className='tag'; t.innerHTML='W1042 · '+k+'/'+finalPieces+'<small>OCASIONAL · '+last4+' · '+label+'</small>'; tags.appendChild(t); }, (k-1)*140); })(n,it.tag); } });
+      later(function(){ tagnote.textContent=finalPieces+(finalPieces===1?' etiqueta':' etiquetas')+' en la impresora de etiquetas termoadhesivas: una por pieza, para que una bolsa y un edredón nunca se separen.'; printer.classList.remove('busy'); }, finalPieces*140+300);
+    },delay+1500);
+  }
+  $('sayForm').addEventListener('submit',function(e){e.preventDefault(); var v=input.value.trim(); if(v) render(v);});
+  document.querySelectorAll('[data-say]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-say'); input.value=v;
+      document.querySelectorAll('.chip.on,.shop.on').forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+      render(v);
+      if(b.classList.contains('shop')) document.getElementById('counter').scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+  // ─── the aurora: brighter while Fold is being spoken to ───
+  var aurora=$('aurora'), auLevel=.45, auTarget=.45, auDecay=null;
+  function auSet(v){ auTarget=Math.max(0,Math.min(1,v)); }
+  (function auLoop(){ auLevel+= (auTarget-auLevel)*.12; aurora.style.setProperty('--lvl',auLevel.toFixed(3)); requestAnimationFrame(auLoop); })();
+  input.addEventListener('input',function(){ auSet(.9); clearTimeout(auDecay); auDecay=setTimeout(function(){auSet(.45)},900); });
+  input.addEventListener('focus',function(){ auSet(.6); });
+  input.addEventListener('blur',function(){ auSet(.45); });
+  var auMeter=null;
+  function auListen(on){
+    if(!on){ auSet(.45); if(auMeter){ auMeter.stop(); auMeter=null; } return; }
+    auSet(.8);
+    if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.AudioContext)) return;
+    navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+      var ctx=new AudioContext(), src=ctx.createMediaStreamSource(stream), an=ctx.createAnalyser(); an.fftSize=512; src.connect(an);
+      var buf=new Uint8Array(an.frequencyBinCount), alive=true;
+      (function tick(){ if(!alive) return; an.getByteTimeDomainData(buf); var sum=0; for(var i=0;i<buf.length;i++){ var d=(buf[i]-128)/128; sum+=d*d; } auSet(.5+Math.min(.5,Math.sqrt(sum/buf.length)*4)); requestAnimationFrame(tick); })();
+      auMeter={stop:function(){ alive=false; stream.getTracks().forEach(function(t){t.stop()}); ctx.close(); }};
+    }).catch(function(){});
+  }
+  // Speech, where the browser has it (Chrome, Edge, Safari). Off otherwise — never a dead button.
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition, mic=$('mic');
+  if(SR){
+    mic.hidden=false; $('capshint').hidden=false; var rec=new SR(); rec.lang='es-MX'; rec.interimResults=true; var live=false;
+    var pill=$('listenPill');
+    function startListening(){ if(live){ rec.stop(); return; } try{ rec.start(); live=true; mic.classList.add('listening'); pill.classList.add('on'); input.placeholder='Escuchando…'; auListen(true); }catch(e){} }
+    // Caps Lock = push to talk, like a desktop assistant: press to start, press again to stop.
+    document.addEventListener('keydown',function(e){ if(e.key!=='CapsLock'||e.repeat) return; if(!document.getElementById('heyfold').getBoundingClientRect().height) return; e.preventDefault(); if(!live){ document.getElementById('heyfold').scrollIntoView({behavior:'smooth',block:'center'}); } startListening(); });
+    mic.addEventListener('click',startListening);
+    rec.onresult=function(ev){ var s=''; for(var i=0;i<ev.results.length;i++) s+=ev.results[i][0].transcript; input.value=s; if(ev.results[ev.results.length-1].isFinal){ rec.stop(); render(s); } };
+    rec.onend=function(){ live=false; mic.classList.remove('listening'); pill.classList.remove('on'); auListen(false); input.placeholder='Hey Fold — dos bolsas y un edredón, urgente'; };
+    rec.onerror=rec.onend;
+  }
+  // First paint: an order already rung up, so the page never opens on an empty counter.
+  later(function(){ input.value='dos bolsas y un edredón, urgente'; document.querySelector('.chip').classList.add('on'); render(input.value); }, 500);
+  // ─── the journey: one order, three trades, two points of view ───
+  var SHOPS={
+    laundromat:{
+      order:'W1042', pieces:3, tagItem:'Edredón', tagSub:'king', tagN:'1/3',
+      lines:[['Lavado y doblado','2 bolsas · 24 lb · $1.75/lb','42.00'],['Edredón','king · por pieza','30.00']], total:'72.00',
+      got:'Recibido, María: 2 bolsas de lavado y doblado y un edredón king. Listo el viernes después de las 5 p. m. — Sunny Wash',
+      stations:['Clasificado','Lavando','Secando','Doblado'], now:1, stationNote:'<b>Estación 2 · Lavadora 6</b> · Luis, 2:10 p. m.',
+      status:'En lavado', statusSub:'Listo el viernes después de las 5 p. m.', pct:45,
+      where:'Estante B-12', whereNote:'<b>Estante B-12</b> · 2 bolsas + edredón, juntos', slots:['B-9','B-10','B-11','B-12','B-13','B-14','C-9','C-10','C-11','C-12','C-13','C-14'], here:3,
+      ready:'Hola, María: su pedido en Sunny Wash está listo. Abierto hasta las 7 esta noche.',
+      pay:'Tarjeta guardada ···4421', thanks:'Gracias, María: $72.00 pagados. Hasta la próxima. — Sunny Wash',
+      day:{sales:'$2,184',orders:'41',pieces:'118 lb · 9 artículos',late:'1',staff:'3 en turno',ready:'36 listos'},
+      acct:'12 pedidos este año · tarjeta guardada · suele venir los miércoles · ¿recogida y entrega la próxima vez?',
+      diff:{counter:['<b>Lavandería:</b> las bolsas van a la báscula y el precio sale de la tarifa por libra.','<b>Tintorería:</b> cada prenda es su propia línea y lleva su propia etiqueta.','<b>Sastrería:</b> el trabajo es la línea —dobladillo, entallado, cierre— con medidas.'],
+            back:['<b>Lavandería:</b> clasificado, lavando, secando, doblado.','<b>Tintorería:</b> etiquetado, limpieza, planchado, ensamblado.','<b>Sastrería:</b> marcado, costura, planchado, prueba.'],
+            rack:['<b>Lavandería:</b> estantes y contenedores.','<b>Tintorería:</b> posiciones en el rack y números del transportador.','<b>Sastrería:</b> ganchos, y la prueba en el calendario.'],
+            office:['<b>Lavandería:</b> libras recibidas, ingresos de máquinas, autoservicio frente a ropa para dejar.','<b>Tintorería:</b> piezas planchadas, rendimiento por estación, lo que sigue en el rack.','<b>Sastrería:</b> trabajos abiertos, pruebas de esta semana, segundas visitas pendientes.']}
+    },
+    cleaner:{
+      order:'DC-1042', pieces:6, tagItem:'Camisa de vestir', tagSub:'blanca · almidón', tagN:'1/6',
+      lines:[['Camisa de vestir','4 × $3.50 · almidón ligero','14.00'],['Traje de dos piezas','azul marino · planchado','16.00']], total:'30.00',
+      got:'Recibido, María: 4 camisas y un traje, 6 piezas. Listo el viernes después de las 5 p. m. — Boulevard Cleaners',
+      stations:['Etiquetado','Limpieza','Planchado','Ensamblado'], now:1, stationNote:'<b>Limpieza · Máquina 2</b> · Ana, 2:10 p. m.',
+      status:'En limpieza', statusSub:'Listo el viernes después de las 5 p. m.', pct:40,
+      where:'Transportador 118', whereNote:'<b>Transportador 118</b> · 6 piezas en un gancho', slots:['114','115','116','117','118','119','120','121','122','123','124','125'], here:4,
+      ready:'Hola, María: sus 6 piezas en Boulevard Cleaners están listas. Abierto hasta las 7 esta noche.',
+      pay:'Tarjeta guardada ···4421', thanks:'Gracias, María: $30.00 pagados. Hasta la próxima. — Boulevard Cleaners',
+      day:{sales:'$1,960',orders:'38',pieces:'214 piezas',late:'1',staff:'4 en turno',ready:'31 listos'},
+      acct:'26 pedidos este año · almidón ligero, siempre · tarjeta guardada · parada de ruta los martes',
+      diff:null
+    },
+    tailor:{
+      order:'A-1042', pieces:2, tagItem:'Pantalón · dobladillo', tagSub:'a 30 pulg.', tagN:'1/2',
+      lines:[['Dobladillo de pantalón','2 pares · entrepierna de 30 pulg.','28.00'],['Cambio de cierre','chaqueta · 22 pulg. · negro','22.00']], total:'50.00',
+      got:'Recibido, María: dobladillo a 2 pantalones y cierre de chaqueta. Listo el viernes después de las 5 p. m. — Stitch & Press',
+      stations:['Marcado','Costura','Planchado','Prueba'], now:1, stationNote:'<b>Costura · Mesa 1</b> · Rosa, 2:10 p. m.',
+      status:'En arreglo', statusSub:'Listo el viernes después de las 5 p. m.', pct:50,
+      where:'Gancho 7', whereNote:'<b>Gancho 7</b> · prueba reservada sáb. 11:00', slots:['1','2','3','4','5','6','7','8','9','10','11','12'], here:6,
+      ready:'Hola, María: sus arreglos en Stitch & Press están listos. ¿Se los prueba el sábado a las 11? Responda SÍ para confirmar.',
+      pay:'Tarjeta ···4421', thanks:'Gracias, María: $50.00 pagados. Esperamos que le queden perfectos. — Stitch & Press',
+      day:{sales:'$940',orders:'19',pieces:'31 trabajos',late:'0',staff:'2 en turno',ready:'14 listos'},
+      acct:'8 trabajos este año · entrepierna de 30 pulg. registrada · recordatorios de prueba activados',
+      diff:null
+    }
+  };
+  SHOPS.cleaner.diff=SHOPS.laundromat.diff; SHOPS.tailor.diff=SHOPS.laundromat.diff;
+
+  var journey=$('journey'), steps=[].slice.call(document.querySelectorAll('.step')), tagState=$('tagState');
+  var LABEL=function(s){return {counter:'Recibido · mié 9:40',back:s.stations[s.now]+' · jue 2:10',rack:s.where+' · vie 4:30',text:'Listo · mensaje enviado',pickup:'Recogido · sáb 11:05',office:'Cerrado · sáb 11:05'}};
+  var HINT={counter:'Miércoles, 9:40 a. m.',back:'Jueves, 2:10 p. m.',rack:'Viernes, 4:30 p. m.',text:'Viernes, 4:31 p. m.',pickup:'Sábado, 11:05 a. m.',office:'Sábado, 7:15 p. m.'};
+  function ob(state,lane){return document.querySelector('.ob[data-for="'+state+'"][data-lane="'+lane+'"]')}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function renderShop(key){
+    var s=SHOPS[key]; journey.setAttribute('data-shop',key);
+    $('tagOrd').textContent=s.order+' · '+s.tagN; $('tagItem').textContent=s.tagItem; $('tagSub').textContent=s.tagSub;
+    ob('counter','you').innerHTML='<div class="pos"><div class="ph"><span>Recepción</span><b>María Ortiz</b></div>'+s.lines.map(function(l){return '<div class="li"><span>'+esc(l[0])+'<small>'+esc(l[1])+'</small></span><b>$'+l[2]+'</b></div>'}).join('')+'<div class="tot"><span>Total</span><span>$'+s.total+'</span></div><div class="rdy"><i></i>Listo vie. 18 sept. después de las 5:00 p. m.</div></div>';
+    ob('counter','them').innerHTML='<div class="phone"><div class="bubble in">'+esc(s.got)+'</div><small>Mensaje · mié 9:41 a. m. · además del ticket impreso en su mano</small></div>';
+    ob('back','you').innerHTML='<div class="pipe">'+s.stations.map(function(n,i){return '<span class="'+(i<s.now?'done':i===s.now?'now':'')+'">'+esc(n)+'</span>'}).join('')+'</div><div class="pipenote">'+s.stationNote+'</div><div class="plog">'+s.stations.slice(0,s.now+1).map(function(n,i){return '<span><i></i><b>'+esc(n)+'</b>'+['Ana · 1:40 p. m.','Luis · 2:10 p. m.','Ana · 3:05 p. m.','Luis · 4:20 p. m.'][i]+'</span>'}).join('')+'</div>';
+    ob('back','them').innerHTML='<div class="status"><div class="sh">Pedido '+esc(s.order)+'</div><div class="sb">'+esc(s.status)+'</div><div class="sl">'+esc(s.statusSub)+'</div><div class="bar"><i style="width:'+s.pct+'%"></i></div></div>';
+    ob('rack','you').innerHTML='<div class="rack">'+s.slots.map(function(n,i){return '<span class="'+(i===s.here?'here':'')+'">'+esc(n)+'</span>'}).join('')+'</div><div class="racknote">'+s.whereNote+'</div>';
+    ob('rack','them').innerHTML='<div class="status"><div class="sh">Pedido '+esc(s.order)+'</div><div class="sb">Casi listo</div><div class="sl">Terminando la última pieza · vie 4:30 p. m.</div><div class="bar"><i style="width:90%"></i></div></div>';
+    ob('text','you').innerHTML='<div class="status"><div class="sh">Pedido '+esc(s.order)+' · '+s.pieces+' piezas</div><div class="sb">Listo · '+esc(s.where)+'</div><div class="sl">Mensaje enviado automáticamente · vie 4:31 p. m.<br>Recordatorio si no lo recoge antes del martes</div></div>';
+    ob('text','them').innerHTML='<div class="phone"><div class="bubble">'+esc(s.ready)+'</div><small>vie 4:31 p. m.</small></div>';
+    ob('pickup','you').innerHTML='<div class="pos"><div class="ph"><span>Escaneado</span><b>'+esc(s.order)+'</b></div><div class="li"><span>'+s.pieces+' piezas · '+esc(s.where)+'</span><b>$'+s.total+'</b></div><div class="paidrow"><span>'+esc(s.pay)+'</span><span class="paid">Pagado · sáb 11:05</span></div></div>';
+    ob('pickup','them').innerHTML='<div class="phone"><div class="bubble in">'+esc(s.thanks)+'</div><small>Recibo · sáb 11:05 a. m.</small></div>';
+    ob('office','you').innerHTML='<div class="board"><div class="bh">Sábado · Sunny Wash</div><div class="big">'+s.day.sales+'</div><div class="row"><div><b>'+s.day.orders+'</b><span>pedidos hoy</span></div><div><b>'+esc(s.day.pieces)+'</b><span>entradas y salidas</span></div><div><b>'+esc(s.day.ready)+'</b><span>esperan ser recogidos</span></div><div><b class="warn">'+s.day.late+' con retraso</b><span>a quien llamar</span></div></div></div>';
+    ob('office','them').innerHTML='<div class="acct"><div class="ah">Su cuenta</div><div class="an">María Ortiz</div><div class="al">'+esc(s.acct)+'</div></div>';
+    ['counter','back','rack','office'].forEach(function(k){ var d=$('d-'+k); if(d) d.innerHTML=s.diff[k].map(function(t){return '<span>'+t+'</span>'}).join(''); });
+    tagState.textContent=LABEL(s)[journey.getAttribute('data-state')];
+    // Office board header follows the shop's name
+    var names={laundromat:'Sunny Wash',cleaner:'Boulevard Cleaners',tailor:'Stitch & Press'};
+    ob('office','you').querySelector('.bh').textContent='Sábado · '+names[key]+' · '+s.day.staff;
+    ob('counter','you').querySelector('.ph').setAttribute('title',names[key]);
+  }
+  var seg=$('shopSeg');
+  seg.addEventListener('click',function(e){ var b=e.target.closest('button[data-shop]'); if(!b) return;
+    seg.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b); x.setAttribute('aria-selected',x===b?'true':'false')});
+    renderShop(b.getAttribute('data-shop')); buildShopTabs(b.getAttribute('data-shop')); });
+  renderShop('laundromat');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(!e.isIntersecting) return;
+        var st=e.target.getAttribute('data-state'); journey.setAttribute('data-state',st);
+        steps.forEach(function(x){x.classList.toggle('on',x===e.target)});
+        tagState.textContent=LABEL(SHOPS[journey.getAttribute('data-shop')])[st]; });
+    },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+    steps.forEach(function(x){io.observe(x)});
+  } else { steps.forEach(function(x){x.classList.add('on')}); }
+  // ─── the screens: one frame, many screens, the first row follows the shop ───
+  var SCREENS={
+    'checkin-wf':{src:'/assets/img/new/checkin-wf.webp',alt:'Fold POS — Recepción por libra',title:'Recepción por libra',at:'Miércoles · 9:40 a. m. · El mostrador',more:'Toque una bolsa, escriba lo que marca la báscula y el precio sale de su tarifa por libra. Edredones, cobijas y tapetes van por pieza. El cliente se encuentra por nombre o teléfono, o se agrega en una línea, y el ticket se imprime en cuanto usted cobra.',feats:['Bolsas por libra', 'Artículos por pieza', 'Pesos mínimos', 'Precios para el mismo día y exprés', 'Tarjeta guardada', 'Cliente ocasional sin cuenta']},
+    'checkin-dc':{src:'/assets/img/new/checkin-dc.webp',alt:'Fold POS — Recepción por pieza',title:'Recepción por pieza',at:'Miércoles · 9:40 a. m. · El mostrador',more:'Cada prenda es su propia línea —color, almidón, una nota sobre la mancha— y recibe su propia etiqueta termoadhesiva al cobrar, numerada x de N para que nada se vaya solo a casa. Sus prendas más usadas suben solas al principio.',feats:['Una etiqueta por prenda', 'Color y notas por pieza', 'Cargos extra y exprés', 'Sus prendas más pedidas primero', 'Tarjeta guardada', 'Recepción por voz con Hey Fold']},
+    'checkin-alt':{src:'/assets/img/new/checkin-alt.webp',alt:'Fold POS — Recepción por trabajo',title:'Recepción por trabajo',at:'Miércoles · 9:40 a. m. · El mostrador',more:'Los arreglos se venden como trabajo, no como prendas: un dobladillo, un entallado, un cierre, con la medida en el ticket. La prueba va al calendario y la segunda visita queda en el mismo ticket.',feats:['Trabajos con medidas', 'Pruebas en el calendario', 'Segundas visitas en un ticket', 'Anticipos y saldos']},
+    'orders-wf':{src:'/assets/img/new/orders-wf.webp',alt:'Fold POS — Tablero de pedidos',title:'Tablero de pedidos',at:'Jueves · 2:10 p. m. · La trastienda',more:'Cada pedido en su etapa —Por hacer, Lavando, Secando, Doblando, Completado— con el peso y el día de entrega en la tarjeta. El personal lo avanza con un toque desde el iPad de la pared o el teléfono en el bolsillo; el mostrador ve el cambio al instante, y los pedidos exprés llevan su distintivo.',feats:['Sus estaciones, sus nombres', 'Avance con un toque o escaneo', 'Quién lo movió y cuándo', 'Distintivo exprés', 'Búsqueda por nombre o ticket']},
+    'orders-dc':{src:'/assets/img/new/orders-dc.webp',alt:'Fold POS — Tablero de pedidos',title:'Tablero de pedidos',at:'Jueves · 2:10 p. m. · La trastienda',more:'Inspección y etiquetado, limpieza, planchado, ensamblado: el proceso de tintorería tal como lo trabaja su planta. Cada tarjeta muestra las piezas y el día de entrega; cada movimiento queda registrado con quién lo hizo.',feats:['Inspección y etiquetado', 'Movimientos por pieza o por pedido', 'Quién hizo qué y cuándo', 'Distintivo exprés', 'Búsqueda por nombre o ticket']},
+    'orders-alt':{src:'/assets/img/new/orders-alt.webp',alt:'Fold POS — Tablero de pedidos',title:'Tablero de pedidos',at:'Jueves · 2:10 p. m. · La trastienda',more:'Inspección previa, el trabajo en sí, inspección final, terminado. Los trabajos avanzan como tareas con la persona asignada, así una semana cargada se ve antes de que se llene de atrasos.',feats:['Tareas con responsable', 'Inspección previa y final', 'Días de entrega en la tarjeta']},
+    'floor':{src:'/assets/img/new/floor.webp',alt:'Fold POS — Plano del local',title:'Plano del local',at:'Solo lavanderías',more:'Cada lavadora y secadora en una pantalla, disponible o en uso, con la distribución real de su local. Asigne la carga de un cliente a una máquina, vea de un vistazo qué está libre y deje que los clientes de autoservicio paguen con tarjeta o con la app.',feats:['La distribución de su local', 'Disponible / en uso / fuera de servicio', 'Cargas asignadas a máquinas', 'Pagos con tarjeta y app en las máquinas']},
+    'machines':{src:'/assets/img/new/machines.webp',alt:'Fold POS — Gestión de máquinas',title:'Gestión de máquinas',at:'Solo lavanderías',more:'Fold trata sus máquinas como los activos que son. Cuenta los ciclos por máquina y por día, señala las que trabajan poco, lleva el registro de mantenimiento y, cuando algo se descompone, usted agenda al técnico desde el POS: la máquina queda fuera de servicio en el plano hasta que se cierra la visita. Los lectores de tarjetas y sistemas de pago de las máquinas reportan al mismo panel, así los ingresos de las máquinas quedan junto a los del mostrador.',feats:['Ciclos por día, por máquina', 'Mantenimiento pendiente e historial', 'Técnico agendado desde el POS', 'Fuera de servicio en el plano mientras tanto', 'Sistemas de pago de máquinas (CCI/FasCard, Alliance, Laundroworks, SpyderWash)', 'Ingresos de máquinas en el panel']},
+    'checkout':{src:'/assets/img/new/checkout.webp',alt:'Fold POS — Entrega',title:'Entrega',at:'Sábado · 11:05 a. m. · La puerta',more:'Escriba un nombre, un teléfono o un número de ticket —o escanee la etiqueta— y el pedido aparece con su posición en el rack, su saldo y un botón para cobrar. Reimprima el ticket o las etiquetas sin salir de la pantalla.',feats:['Búsqueda por nombre, teléfono, ticket o escaneo', 'Posición en rack y transportador', 'Saldo pendiente y tarjeta guardada', 'Reimpresión de ticket o etiquetas', 'Enlace de pago por mensaje']},
+    'payment':{src:'/assets/img/new/payment.webp',alt:'Fold POS — Pago',title:'Pago',at:'Sábado · 11:05 a. m. · La puerta',more:'Primero la tarjeta, porque es lo que la gente le entrega. Efectivo, cheque y crédito de tienda al lado. Pago al recoger y contra entrega para quienes pagan después, y facturas mensuales para las cuentas: el hotel, el restaurante, el consultorio dental.',feats:['Tarjeta, efectivo, cheque, crédito de tienda', 'Pago al recoger y contra entrega', 'Facturación mensual para cuentas', 'Pagos divididos', 'Su procesador, sus tarifas']},
+    'customers':{src:'/assets/img/new/customers.webp',alt:'Fold POS — Clientes',title:'Clientes',at:'Viernes · 4:31 p. m. · Su teléfono',more:'Todos los que alguna vez le dejaron algo, con su historial, su tarjeta guardada, sus preferencias y cada mensaje que les envió. Los segmentos los agrupan —clientes semanales, inactivos hace 45 días, cuentas— para usarlos en marketing.',feats:['Historial completo de pedidos', 'Tarjeta guardada', 'Preferencias y notas', 'Todos los mensajes en un hilo', 'Segmentos para marketing']},
+    'invoices':{src:'/assets/img/new/invoices.webp',alt:'Fold POS — Facturas',title:'Facturas',at:'',more:'',feats:[]},
+    'dashboard':{src:'/assets/img/new/dashboard.webp',alt:'Fold POS — Panel',title:'Panel',at:'Sábado · 7:15 p. m. · Su oficina',more:'La tienda tal como fue hoy —ingresos, pedidos, lo que está listo y esperando, ingresos de máquinas, la tendencia— desde la oficina, el sofá o el estacionamiento. Los dueños con varias sucursales ven todas las tiendas juntas, o una por una.',feats:['Hoy, esta semana, este mes', 'Ingresos por servicio', 'Listo y esperando recogida', 'Consolidado de varias sucursales', 'Exportación a CSV y QuickBooks']},
+    'delivery':{src:'/assets/img/new/delivery.webp',alt:'Fold POS — Recogida y entrega',title:'Recogida y entrega',at:'Todos los negocios',more:"Las recogidas y entregas caen en un calendario, y un toque arma las rutas del día para sus repartidores. Ellos usan la app Fold Driver en su teléfono: las paradas en orden, navegación, una foto en la puerta y un mensaje al cliente en cada paso. ¿No tiene repartidores propios? Pase un recorrido a una red asociada —Fold, Laundryheap, Rinse— desde la misma pantalla, o a Uber Direct para algo puntual. Las métricas muestran el costo por parada y el margen por pedido, para saber si el servicio a domicilio se paga solo.",feats:['Calendario de recogidas y entregas', 'Rutas armadas con un toque', 'App Fold Driver para sus repartidores', 'Mensaje al cliente en cada paso', 'Redes asociadas y Uber Direct', 'Costo por parada y margen por pedido']},
+    'marketing':{src:'/assets/img/new/marketing.webp',alt:'Fold POS — Marketing',title:'Marketing',at:'Todos los negocios',more:'Los mensajes y correos que hacen volver a la gente, escritos una vez y enviados por el POS por su cuenta. Los flujos automáticos se activan con eventos —el primer pedido, un cumpleaños, cuarenta y cinco días sin noticias— y las campañas salen a un segmento en la fecha que usted elija, con resultados contados en pedidos, no en aperturas.',feats:['Flujos automáticos por eventos', 'Campañas a un segmento', 'Recuperación de clientes inactivos', 'Solicitudes de reseña tras la recogida', 'Resultados contados en pedidos']},
+    'supplies':{src:'/assets/img/new/supplies.webp',alt:'Fold POS — Gestión de suministros',title:'Gestión de suministros',at:'Todos los negocios',more:'Ganchos, bolsas plásticas, detergente, etiquetas, producto de las máquinas expendedoras: lo que tiene, qué tan rápido se va y qué pedir esta semana. Fold calcula el consumo a partir de los pedidos que ya registra, le avisa antes de que se le acabe y prepara el pedido a su proveedor.',feats:['Existencias y días de cobertura', 'Consumo según pedidos reales', 'Sugerencias de pedido con costo', 'Proveedores e historial de precios', 'Alertas de existencias bajas']},
+    'schedule':{src:'/assets/img/new/schedule.webp',alt:'Fold POS — Personal y turnos',title:'Personal y turnos',at:'Todos los negocios',more:'Quién está, quién registró su entrada, cuánto ingresó cada turno. Los turnos se programan en el POS, el personal registra su entrada ahí mismo y las horas para la nómina salen sin cuaderno. Los permisos deciden quién ve qué.',feats:['Turnos y registro de entrada', 'Horas para la nómina', 'Totales por turno', 'Roles y permisos']},
+    'heyfold':{src:'/assets/img/new/heyfold.webp',alt:'Fold POS — Hey Fold',title:'Hey Fold',at:'En cualquier momento · En cualquier pantalla',more:"Diga el pedido, el cliente y la fecha de entrega: queda escrito, con precio y listo para imprimir. Hey Fold también responde: dónde está el pedido de María, qué entró hoy, empieza a lavar las bolsas de Aline.",feats:['Recepción por voz', 'Dónde está un pedido', 'Avanzar un pedido', 'Inglés y español']}
+  };
+
+  var SHOP_TABS={laundromat:[['checkin-wf','Recepción por libra'],['orders-wf','Tablero de pedidos'],['floor','Plano del local'],['machines','Gestión de máquinas']],
+                 cleaner:[['checkin-dc','Recepción por pieza'],['orders-dc','Tablero de pedidos']],
+                 tailor:[['checkin-alt','Recepción por trabajo'],['orders-alt','Tablero de pedidos']]};
+  var SHOP_LBL={laundromat:'Para lavanderías',cleaner:'Para tintorerías',tailor:'Para sastrerías'};
+  var screenImg=$('screenImg'), screenCap=$('screenCap'), screenAt=$('screenAt'), screenTitle=$('screenTitle'), screenFeats=$('screenFeats'), screenTabs=$('screenTabs'), screenTabsAll=$('screenTabsAll'), tabsForLbl=$('tabsForLbl');
+  var screenKey='checkin-wf';
+  var SHORT={"checkin-wf": "Bolsas a la báscula, con precio por libra.", "checkin-dc": "Cada prenda, su propia línea y su etiqueta.", "checkin-alt": "El trabajo es la línea: dobladillo, entallado, cierre.", "orders-wf": "Cada pedido, por estación.", "orders-dc": "Etiquetado, limpieza, planchado, ensamblado.", "orders-alt": "Marcado, costura, planchado, prueba.", "floor": "Cada lavadora y secadora, en vivo.", "machines": "Máquinas, mantenimiento, la visita del técnico.", "checkout": "Escanee una etiqueta y aparece todo el pedido.", "payment": "Tarjeta, efectivo, dividido o pago después.", "customers": "Historial, tarjeta guardada, cada mensaje.", "invoices": "Una factura mensual por cuenta.", "dashboard": "Ventas del día, pedidos y lo que va atrasado.", "delivery": "Rutas en un mapa, repartidores en la app.", "marketing": "Campañas para los clientes indicados.", "supplies": "Existencias y pedidos a proveedores.", "schedule": "Quién trabaja cuándo y quién registró su entrada.", "heyfold": "Dígalo y queda registrado.", "partners": "Socios de entrega en un solo lugar."};
+  function showScreen(key){
+    var sc=SCREENS[key]; if(!sc) return; screenKey=key;
+    document.querySelectorAll('#screenTabs button,#screenTabsAll button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-screen')===key)});
+    screenImg.classList.add('swap');
+    setTimeout(function(){ screenImg.src=sc.src; screenImg.alt=sc.alt; screenTitle.textContent=sc.title; screenCap.textContent=SHORT[key]||sc.more; screenAt.textContent=sc.at; screenFeats.innerHTML=sc.feats.map(function(f){return '<span>'+f+'</span>'}).join(''); screenImg.classList.remove('swap'); },200);
+  }
+  function buildShopTabs(shop){
+    tabsForLbl.textContent=SHOP_LBL[shop];
+    screenTabs.innerHTML=SHOP_TABS[shop].map(function(t){return '<button type="button" data-screen="'+t[0]+'">'+t[1]+'</button>'}).join('');
+    // keep the same kind of screen when the shop changes (check in → check in)
+    var kind=screenKey.split('-')[0], next=SHOP_TABS[shop].filter(function(t){return t[0].split('-')[0]===kind})[0];
+    showScreen(next?next[0]:(SCREENS[screenKey]&&!/-(wf|dc|alt)$/.test(screenKey)?screenKey:SHOP_TABS[shop][0][0]));
+  }
+  function stepScreen(kind){ var shop=journey.getAttribute('data-shop'); var t=SHOP_TABS[shop].filter(function(t){return t[0].split('-')[0]===kind})[0]; return t?t[0]:kind; }
+  document.addEventListener('click',function(e){ var b=e.target.closest('#screenTabs button,#screenTabsAll button'); if(b) showScreen(b.getAttribute('data-screen')); });
+  document.querySelectorAll('.step .see').forEach(function(a){ a.addEventListener('click',function(){ showScreen(stepScreen(a.getAttribute('data-screen'))); }); });
+  buildShopTabs('laundromat');
+  // ─── also in every shop: cards open in place ───
+  var ag=document.getElementById('alsoGrid'); if(ag) ag.addEventListener('click',function(e){
+    var see=e.target.closest('a.see'); if(see){ e.stopPropagation(); showScreen(see.getAttribute('data-screen')); return; }
+    var c=e.target.closest('.card'); if(c) c.classList.toggle('open');
+  });
+
+  // ─── device switch + autoplay tour of the screens ───
+  (function(){
+    var frame=$('frame'), devs=$('devs'), sec=$('screens');
+    devs.addEventListener('click',function(e){ var b=e.target.closest('button[data-dev]'); if(!b) return;
+      devs.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)}); frame.setAttribute('data-dev',b.getAttribute('data-dev')); stop(); });
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches, timer=null, inView=false, user=false, n=0;
+    var DEV=['browser','desktop','ipad'];
+    function list(){ return [].slice.call(document.querySelectorAll('#screenTabs button,#screenTabsAll button')); }
+    function tick(){ var l=list(); if(!l.length) return; var i=l.findIndex(function(b){return b.classList.contains('on')}); var nx=l[(i+1)%l.length];
+      showScreen(nx.getAttribute('data-screen')); n++; if(n%3===0){ var d=DEV[(n/3)%DEV.length]; frame.setAttribute('data-dev',d); devs.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-dev')===d)}); } }
+    function start(){ if(reduce||user||timer) return; sec.classList.add('auto'); timer=setInterval(tick,3800); }
+    function stop(){ user=true; clearInterval(timer); timer=null; sec.classList.remove('auto'); }
+    sec.addEventListener('click',function(e){ if(e.target.closest('.tabs button')) stop(); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ inView=e.isIntersecting; if(inView) start(); else { clearInterval(timer); timer=null; sec.classList.remove('auto'); } }); },{threshold:.35}).observe(frame); }
+  })();
+
+  // ─── pickup & delivery hub: steps drive the screen, and play on their own ───
+  (function(){
+    var box=$('hubSteps'), img=$('hubImg'), sec=$('delivery'); if(!box) return;
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches, t=null, user=false;
+    function show(b){ box.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+      img.classList.add('swap'); var u=$('hubUrl'); if(u) u.textContent=b.getAttribute('data-url')||'pos.foldpos.com · Recogida y entrega'; setTimeout(function(){ img.src='/assets/img/new/'+b.getAttribute('data-img')+'.webp'; img.onload=function(){img.classList.remove('swap')}; },180); }
+    function tick(){ var l=[].slice.call(box.querySelectorAll('button')), i=l.findIndex(function(b){return b.classList.contains('on')}); show(l[(i+1)%l.length]); }
+    box.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; user=true; clearInterval(t); t=null; sec.classList.remove('auto'); show(b); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting&&!reduce&&!user&&!t){ sec.classList.add('auto'); t=setInterval(tick,4200); }
+      else if(!e.isIntersecting){ clearInterval(t); t=null; sec.classList.remove('auto'); } }); },{threshold:.35}).observe(img);
+  })();
+  // Nav hairline once you've scrolled.
+  var nav=$('nav'); window.addEventListener('scroll',function(){ nav.classList.toggle('scrolled',window.scrollY>8); },{passive:true});
+})();
+</script>
+<script src="/assets/js/chrome.js" defer></script>
+
+
+
+
+
+
+
+<script>
+// Hero background loop: the wide cut on desktop, the portrait cut on phones, nothing for reduced motion.
+(function(){
+  var v=document.querySelector('.hero-bg'); if(!v||!window.matchMedia) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var base=v.getAttribute(matchMedia('(max-width: 760px)').matches?'data-tall':'data-wide');
+  v.poster=base+'-poster.jpg';
+  [['webm','video/webm'],['mp4','video/mp4']].forEach(function(f){ var s=document.createElement('source'); s.src=base+'.'+f[0]; s.type=f[1]; v.appendChild(s); });
+  v.load(); var p=v.play(); if(p&&p.catch) p.catch(function(){});
+})();
+</script>
+<!--fx:footer-->
+<div class="fx-foot" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/es/"><i></i>Fold POS</a>
+        <p>El centro de mando para lavanderías, tintorerías y sastrerías. Hecho en los propios mostradores de Fold Laundry.</p>
+      </div>
+      <div><p class="fx-foot-h">Producto</p><ul>
+        <li><a href="/es/features">Funciones</a></li>
+        <li><a href="/es/#heyfold">Hey Fold</a></li>
+        <li><a href="/es/#delivery">Recogida y entrega</a></li>
+        <li><a href="/es/pricing">Precios</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Negocios</p><ul>
+        <li><a href="/es/laundromats">Lavanderías</a></li>
+        <li><a href="/es/dry-cleaners">Tintorerías</a></li>
+        <li><a href="/es/alterations">Sastrerías</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Soporte</p><ul>
+        <li><a href="/es/help">Centro de ayuda</a></li>
+        <li><a href="/es/faq">Preguntas frecuentes</a></li>
+        <li><a href="/es/printers">Impresoras</a></li>
+        <li><a href="/setup" hreflang="en">Configuración de la tienda (inglés)</a></li>
+        <li><a href="/es/download">Asistente de impresión</a></li>
+        <li><a href="/es/contact">Contacto</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Empresa</p><ul>
+        <li><a href="/es/about">Nosotros</a></li>
+        <li><a href="/es/developers">Desarrolladores e IA</a></li>
+        <li><a href="/privacy" hreflang="en">Privacidad (inglés)</a></li>
+        <li><a href="/terms" hreflang="en">Términos (inglés)</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/" hreflang="en" lang="en">English</a></span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+</div>
+<!--/fx:footer-->
+</body>
+</html>

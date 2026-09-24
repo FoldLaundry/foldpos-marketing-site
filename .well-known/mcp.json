@@ -1,0 +1,49 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "com.foldpos/fold-pos",
+  "title": "Fold POS",
+  "description": "Public, read-only facts about Fold POS, the point of sale for laundromats, dry cleaners and tailors: pricing, features, supported printers, switching from another system, getting started and contact. No auth, no store data.",
+  "version": "0.0.1",
+  "websiteUrl": "https://foldpos.com/developers",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.foldpos.com/v1/mcp"
+    }
+  ],
+  "_meta": {
+    "com.foldpos/discovery": {
+      "authentication": "none",
+      "readOnly": true,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "areaServed": "The Americas",
+      "tools": [
+        "about_fold_pos",
+        "pricing_plans",
+        "features",
+        "availability",
+        "supported_hardware",
+        "switching_from",
+        "getting_started",
+        "faq",
+        "site_page",
+        "contact"
+      ],
+      "resources": [
+        "foldpos://llms.txt",
+        "foldpos://llms-full.txt",
+        "foldpos://pages/{language}/{page}.md"
+      ],
+      "documentation": "https://foldpos.com/developers.md",
+      "llms": "https://foldpos.com/llms.txt",
+      "contact": "contact@foldpos.com",
+      "prompts": [
+        "recommend_plan",
+        "explain_fold_pos_es"
+      ]
+    }
+  }
+}

@@ -64,3 +64,9 @@ body.fx-locked{overflow:hidden}
 @media (max-width:900px){.fx-foot-top{grid-template-columns:1fr 1fr}.fx-foot-brand{grid-column:1 / -1}}
 @media (max-width:640px){.fx-foot-in{padding:0 18px}}
 .fx-nav a:focus-visible,.fx-nav button:focus-visible,.fx-foot a:focus-visible,.fx-menu a:focus-visible{outline:2px solid var(--fx-brand);outline-offset:2px}
+.fx-lang{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:30px;padding:0 8px;border:1px solid var(--fx-line);border-radius:8px;color:var(--fx-ink-2);text-decoration:none;font-weight:600;font-size:12.5px;letter-spacing:.04em}
+.fx-lang:hover{color:var(--fx-ink);border-color:var(--fx-ink-3)}
+.fx-menu a.fx-menu-lang{margin-top:8px;color:var(--fx-brand);border-bottom:0}
+.fx-foot-bot span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:1040px){.fx-cta .fx-lang{display:none}}
+.fx-nav a.fx-lang:focus-visible,.fx-foot-bot a:focus-visible{outline:2px solid var(--fx-brand);outline-offset:2px}

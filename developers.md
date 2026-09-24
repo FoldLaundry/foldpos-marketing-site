@@ -13,6 +13,8 @@ Fold POS is point of sale and operations software for laundromats, dry cleaners 
 
 Every public page has a markdown twin with the navigation, styling and marketing chrome stripped out. Each HTML page points at its twin with `<link rel="alternate" type="text/markdown">`.
 
+Every page also has a Spanish version under `/es/` with its own markdown twin: `/es/fold-pos.md`, `/es/pricing.md`, `/es/faq.md` and so on (the full list is on https://foldpos.com/es/developers).
+
 | Page | Markdown |
 | --- | --- |
 | Home | `/fold-pos.md` |
@@ -35,6 +37,7 @@ Every public page has a markdown twin with the navigation, styling and marketing
 A public Model Context Protocol server answers product questions for agents, so a model does not have to scrape the site to get the pricing or the printer list right.
 
 - **Endpoint:** `https://app.foldpos.com/v1/mcp`
+- **Server card:** `https://foldpos.com/.well-known/mcp.json`
 - **Transport:** Streamable HTTP
 - **Auth:** none — it is public
 - **Scope:** read-only. It returns product information only; there is no store, customer or order data behind it.
@@ -44,12 +47,17 @@ A public Model Context Protocol server answers product questions for agents, so 
 | Tool | Returns |
 | --- | --- |
 | `about_fold_pos` | What Fold POS is and who it is for. |
-| `pricing_plans` | Starter, Growth and Pro, what each includes, and the 14-day free trial. |
+| `pricing_plans` | Starter, Growth and Pro, what each includes, and the 14-day free trial. Optional `language`: `en` or `es`. |
 | `features` | Features by area and by shop type. |
+| `availability` | Where Fold POS can be used (the Americas), languages, and billing in USD. Optional `country`. |
 | `supported_hardware` | Receipt and tag printers, scanners, and the platforms the POS runs on. |
-| `switching_from` | What the migration tool brings over from another system. |
+| `switching_from` | What comes over from Cents, CleanCloud or a CSV. |
 | `getting_started` | Trial signup, the store setup guide and the print helper. |
+| `faq` | The FAQ in English or Spanish, optionally filtered by a `query`. |
+| `site_page` | Any page of foldpos.com as markdown, in English or Spanish. |
 | `contact` | How to reach the Fold POS team. |
+
+Resources: `foldpos://llms.txt`, `foldpos://llms-full.txt`, and every page as `foldpos://pages/{language}/{page}.md`. Prompts: `recommend_plan` and `explain_fold_pos_es`.
 
 ### Claude Code and Claude Desktop
 

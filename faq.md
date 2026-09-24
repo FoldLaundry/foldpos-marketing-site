@@ -14,6 +14,8 @@
 
 **Is it in Spanish?** Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.
 
+**Can I use Fold POS outside the United States?** Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also in Spanish.
+
 ## Pricing & billing
 
 **How much does it cost?** Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See pricing for everything in each plan.

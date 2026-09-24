@@ -16,7 +16,7 @@ Open sign up: https://pos.foldpos.com/signup
 
 Fold POS runs in the browser — nothing to install. Chrome, Edge, Firefox and Safari all work. Bookmark it.
 
-Chrome can print straight to the receipt printer. Edge, Firefox and Safari use the small **Fold print helper** instead — step 4 sets that up in two minutes.
+Chrome can print straight to the receipt printer. On Windows, Edge and Firefox use the small **Fold print helper** instead — step 4 sets that up in two minutes. On a Mac, use Chrome.
 
 Open: https://pos.foldpos.com/login
 
@@ -31,7 +31,7 @@ Coming from another system? Export customers and prices there first, then **Sett
 Plug the printer into the computer by USB. Then pick the browser you use:
 
 - **I use Chrome** — Settings › Receipts › Connect printer, pick it from the list, print a test page. On Windows, if the list is empty, install the print helper instead.
-- **I use Edge, Firefox or Safari** — install the Fold print helper: a small program that starts with the computer and prints whatever Fold POS sends. Run it, then type the pairing code from Settings › Receipts.
+- **I use Edge or Firefox on Windows** — install the Fold print helper: a small program that starts with the computer and prints whatever Fold POS sends. Run it, then type the pairing code from Settings › Receipts.
 
 Works with Epson, Star and Bixolon receipt printers. Plug it in by USB and leave it at that — no need to add it in Windows or macOS settings.
 

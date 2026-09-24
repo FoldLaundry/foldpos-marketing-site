@@ -96,13 +96,39 @@ h1{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:28px;line
   "url": "https://foldpos.com/",
   "logo": "https://foldpos.com/assets/img/og-2026.png",
   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
-  "parentOrganization": { "@type": "Organization", "name": "Fold Laundry LLC" },
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@foldpos.com",
-    "availableLanguage": "English"
-  }]
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -177,7 +203,7 @@ h1{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:28px;line
       link:{label:'Open Sign up', href:POS+'/signup'} },
     { key:'browser', icon:'browser', n:'Step 2 of 7', title:'Open Fold POS on the counter computer', time:'1 min',
       lead:'Fold POS runs in the browser — nothing to install. Chrome, Edge, Firefox and Safari all work. Bookmark it.',
-      hint:'Chrome can print straight to the receipt printer. Edge, Firefox and Safari use the small <b>Fold print helper</b> instead — step 4 sets that up in two minutes.',
+      hint:'Chrome can print straight to the receipt printer. On Windows, Edge and Firefox use the small <b>Fold print helper</b> instead — step 4 sets that up in two minutes. On a Mac, use Chrome.',
       link:{label:'Open pos.foldpos.com', href:POS+'/login'} },
     { key:'prices', icon:'tag', n:'Step 3 of 7', title:'Bring in your price list', time:'5–15 min',
       lead:'Import it from Cents, CleanCloud or a spreadsheet, or start from our ready-made list and change prices as you go.',
@@ -189,7 +215,7 @@ h1{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:28px;line
       hint:'Works with Epson, Star and Bixolon receipt printers. Plug it in by USB and leave it at that — no need to add it in Windows or macOS settings.',
       choices:[
         {v:'chrome', b:'I use Chrome', t:'Settings › Receipts › Connect printer, pick it from the list, print a test page. On Windows, if the list is empty, install the print helper below instead.'},
-        {v:'other',  b:'I use Edge, Firefox or Safari', t:'Install the Fold print helper: a small program that starts with the computer and prints whatever Fold POS sends. Run it, then type the pairing code from Settings › Receipts.'}
+        {v:'other',  b:'I use Edge or Firefox on Windows', t:'Install the Fold print helper: a small program that starts with the computer and prints whatever Fold POS sends. Run it, then type the pairing code from Settings › Receipts.'}
       ],
       link:{label:'Open Receipts settings', href:POS+'/settings?section=receipts'} },
     { key:'team', icon:'team', n:'Step 5 of 7', title:'Add your staff', time:'3 min',

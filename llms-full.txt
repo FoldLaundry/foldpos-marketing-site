@@ -2,7 +2,7 @@
 
 > Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry. Website: https://foldpos.com/ · App: https://pos.foldpos.com/login · Contact: contact@foldpos.com
 
-This document collects the readable content of foldpos.com. Individual pages have their own markdown mirrors (`/fold-pos.md`, `/laundromats.md`, `/dry-cleaners.md`, `/alterations.md`, `/features.md`, `/pricing.md`, `/setup.md`, `/download.md`, `/faq.md`, `/developers.md`), and the short index is at `/llms.txt`.
+This document collects the readable content of foldpos.com. Individual pages have their own markdown mirrors (`/fold-pos.md`, `/laundromats.md`, `/dry-cleaners.md`, `/alterations.md`, `/features.md`, `/pricing.md`, `/faq.md`, `/help.md`, `/printers.md`, `/setup.md`, `/download.md`, `/contact.md`, `/about.md`, `/developers.md`), and the short index is at `/llms.txt`. Every page is also in Spanish under `/es/` (for example `/es/fold-pos.md`, `/es/pricing.md`, `/es/faq.md`).
 
 ---
 
@@ -161,7 +161,8 @@ Two receipts, one tap: a customer copy and a store copy print the moment you sub
 - Automatic customer texts for pickup, ready, and out-for-delivery
 - Live stop list and status for every driver on the road; proof of delivery tied back to the ticket
 - Partner jobs from Fold, Laundryheap and Rinse land in the same schedule
-- Status callbacks and a driver run sheet, no separate app
+- The Fold Driver app for your drivers: the day's stops, navigation, and a photo or signature at the door
+- No driver free? Book an Uber Direct courier from the counter, on the store's own Uber account
 
 ## Marketing
 
@@ -214,7 +215,7 @@ Customers, staff, marketing, printing, reports and payments work identically for
 
 ### The Fold print helper
 
-A small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari. Download at https://foldpos.com/download (Windows build, 22 MB, Windows 10 and 11).
+A small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge or Firefox on Windows. Download at https://foldpos.com/download (Windows build, 22 MB, Windows 10 and 11).
 
 1. Open the file you downloaded and click Next through it. No admin password is needed.
 2. When it finishes, a page opens in your browser. Sign in to Fold POS, go to Settings › Receipts › Fold Print Agent › Pair with a code, and type the 6-digit code into that page.
@@ -236,6 +237,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Receipts, tags & printing
 - Daily reporting
 - Machine maintenance log
+- Hey Fold
 
 ### Growth — $59/month — for shops adding delivery & staff (most popular)
 - Everything in Starter
@@ -247,13 +249,12 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 
 ### Pro — $79/month — for multi-location shops
 - Everything in Growth
-- Multi-location reporting rollups
+- Multi-location reporting
 - Route optimization
 - Role-based staff permissions
 - Priority support
-- Multi-location machine & supply reporting
 
-Payments on your own processor, at your rates. Hey Fold is built into every plan. Running more than 5 locations? Talk to sales at contact@foldpos.com.
+Payments on your own processor, at your rates. Hey Fold is built into every plan. Prices are in US dollars (USD); shops anywhere in the Americas can sign up. Running more than 5 locations? Email contact@foldpos.com and we'll set it up with you.
 
 After the 14-day trial you pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start. There is no contract.
 
@@ -261,7 +262,7 @@ After the 14-day trial you pick a plan from Settings › Plan & billing. If you 
 
 ## Switching from another system
 
-Fold POS has a migration tool. From the FAQ: *"Can I bring over my customers and orders from Cents or CleanCloud?" — "Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one."*
+Fold POS has a migration tool. From the FAQ: *"Can I bring over my customers from Cents or CleanCloud?" — "Yes, from Cents, CleanCloud or a CSV: your customers and your price list. Export them from your old system and open Settings › Import data. An import can be undone, and we'll do the move with you if you email contact@foldpos.com."*
 
 The setup guide says the same about the price list: import it from Cents, CleanCloud or a spreadsheet, or start from Fold POS's ready-made list and change prices as you go. Coming from another system, export customers and prices there first, then use **Settings › Import data**. An import can be undone.
 
@@ -272,7 +273,7 @@ The setup guide says the same about the price list: import it from Cents, CleanC
 1. **Create your store account** (2 min) — pick your shop type, add your address. No card needed; the first 14 days are free. https://pos.foldpos.com/signup
 2. **Open Fold POS on the counter computer** (1 min) — it runs in the browser, nothing to install. Chrome, Edge, Firefox and Safari all work. https://pos.foldpos.com/login
 3. **Bring in your price list** (5–15 min) — import from Cents, CleanCloud or a spreadsheet, or start from the ready-made list.
-4. **Connect your receipt printer** (2 min) — plug it in by USB. Chrome prints directly; Edge, Firefox and Safari use the Fold print helper from https://foldpos.com/download. Works with Epson, Star and Bixolon receipt printers.
+4. **Connect your receipt printer** (2 min) — plug it in by USB. Chrome prints directly; on Windows, Edge and Firefox use the Fold print helper from https://foldpos.com/download; on a Mac, use Chrome. Works with Epson, Star, Bixolon and Zebra printers.
 5. **Add your staff** (3 min) — a login each, so tickets show who rang them up. Staff can check in and check out; only the owner changes prices and settings.
 6. **Customer texts** (1 min) — Fold can text customers when an order is ready; it is on by default, and the wording is editable.
 7. **Ring up a real order** (2 min) — check in, type a customer, tap the garments, continue to checkout. The ticket prints. Try the mic and say "two shirts and a suit for Maria, ready Thursday" — that is Hey Fold.
@@ -284,10 +285,10 @@ The full guide is at https://foldpos.com/setup.
 ## Frequently asked questions
 
 **Do I need new hardware, or can I use what I have?**
-Fold POS runs in a browser, on Mac and Windows, and on most iPads, with the receipt and tag printers you already own — Epson, Bixolon, Star and Zebra are supported out of the box. If you'd rather not source your own, we sell ready-to-go counter bundles.
+Fold POS runs in a browser, on Mac and Windows, and on most iPads, with the receipt and tag printers you already own — Epson, Bixolon, Star and Zebra are supported out of the box. The [printers page](https://foldpos.com/printers) lists every supported model.
 
-**Can I bring over my customers and orders from Cents or CleanCloud?**
-Yes. Our migration tool imports customers, order history and pricing so you're not starting from a blank counter on day one.
+**Can I bring over my customers from Cents or CleanCloud?**
+Yes, from Cents, CleanCloud or a CSV: your customers and your price list. Export them from your old system and open Settings › Import data. An import can be undone, and we'll do the move with you if you email contact@foldpos.com.
 
 **What happens after the 14-day trial?**
 You pick a plan from Settings › Plan & billing. If you don't, the POS goes read-only — everything you entered stays, and choosing a plan brings it right back. No card is needed to start.
@@ -296,7 +297,13 @@ You pick a plan from Settings › Plan & billing. If you don't, the POS goes rea
 No. Every plan is month-to-month; you can change tiers or cancel any time from Settings.
 
 **Does it work across multiple locations?**
-Yes. Growth and Pro plans roll up reporting across locations while keeping each shop's own boards separate.
+Yes. The Pro plan is for more than one location: reporting rolls up across locations while each shop keeps its own boards.
+
+**Can I use Fold POS outside the United States?**
+Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor.
+
+**Is it in Spanish?**
+Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish, and this whole site is in Spanish at https://foldpos.com/es/ (markdown: https://foldpos.com/es/fold-pos.md).
 
 **How is Fold POS related to Fold?**
 Fold POS is built by the team behind Fold, a laundry and dry-cleaning service. We run our own counters on it — it's purpose-built for laundromats, dry cleaners and tailors, not a retail checkout with a laundry logo.
@@ -306,7 +313,8 @@ Fold POS is built by the team behind Fold, a laundry and dry-cleaning service. W
 ## For developers and AI agents
 
 - Markdown mirrors of every page, declared on each HTML page with `<link rel="alternate" type="text/markdown">`.
-- A public read-only MCP server at `https://app.foldpos.com/v1/mcp` — Streamable HTTP, no auth. Tools: `about_fold_pos`, `pricing_plans`, `features`, `supported_hardware`, `switching_from`, `getting_started`, `contact`. Add it in Claude Code or Claude Desktop with `claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp`.
+- A public read-only MCP server at `https://app.foldpos.com/v1/mcp` — Streamable HTTP, no auth. Tools: `about_fold_pos`, `pricing_plans`, `features`, `availability`, `supported_hardware`, `switching_from`, `getting_started`, `faq`, `site_page`, `contact` (several take `language: "es"` for Spanish). Resources: `foldpos://llms.txt`, `foldpos://llms-full.txt` and every page as `foldpos://pages/{language}/{page}.md`. Add it in Claude Code or Claude Desktop with `claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp`.
+- A server card describing the MCP server (endpoint, transport, tools) at `https://foldpos.com/.well-known/mcp.json`.
 - The store-owner API — a store's own customers, orders and reporting — is private and undocumented; email contact@foldpos.com.
 
 Details: https://foldpos.com/developers

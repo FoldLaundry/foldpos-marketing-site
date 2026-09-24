@@ -2,7 +2,7 @@
 
 > Canonical page: https://foldpos.com/download · Markdown mirror.
 
-The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge, Firefox or Safari.
+The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge or Firefox on Windows.
 
 **Download for Windows** — 22 MB · Windows 10 and 11 · https://foldpos.com/download/Fold-Print-Agent-Setup.exe
 

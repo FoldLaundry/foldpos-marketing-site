@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fold POS para desarrolladores y agentes de IA</title>
+<meta name="description" content="Fold POS legible por máquinas: llms.txt, espejos en markdown de cada página y un servidor MCP público de solo lectura en https://app.foldpos.com/v1/mcp para agentes que necesitan datos de precios, funciones y hardware.">
+<link rel="canonical" href="https://foldpos.com/es/developers">
+<!--fx:hreflang-->
+<link rel="alternate" hreflang="en" href="https://foldpos.com/developers">
+<link rel="alternate" hreflang="es" href="https://foldpos.com/es/developers">
+<link rel="alternate" hreflang="x-default" href="https://foldpos.com/developers">
+<!--/fx:hreflang-->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Fold POS para desarrolladores y agentes de IA">
+<meta property="og:description" content="llms.txt, espejos en markdown de cada página y un servidor MCP público de solo lectura en https://app.foldpos.com/v1/mcp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/es/developers">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="es_419">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fold POS para desarrolladores y agentes de IA">
+<meta name="twitter:description" content="llms.txt, espejos en markdown de cada página y un servidor MCP público de solo lectura en https://app.foldpos.com/v1/mcp.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<link rel="alternate" type="text/markdown" href="/es/developers.md">
+<meta name="theme-color" content="#1e5eff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--ground:#f4f6fa;--card:#fff;--ink:#0b0d12;--muted:#6b7180;--line:#e3e7ef;--accent:#1e5eff;--accent-hover:#154bd6;--accent-soft:#e9efff;--good:#12a86f;--warn-soft:#fff4e0;--warn-ink:#8a5a00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:inherit;text-decoration:none}
+.brand .pill{background:var(--accent);color:#fff;font-size:11px;padding:2px 7px;border-radius:999px;letter-spacing:.06em}
+header a.small{color:var(--muted);font-size:14px;text-decoration:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 12px 30px -20px rgba(11,27,43,.25);margin-bottom:16px}
+h1{font-family:Sora,sans-serif;font-size:30px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Sora,sans-serif;font-size:19px;margin:0 0 8px}
+h3{font-family:Sora,sans-serif;font-size:15px;margin:18px 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:18px}
+.muted{color:var(--muted);font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin:0 0 12px}
+.ico svg{width:26px;height:26px}
+a{color:var(--accent)}
+ul.plain{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:10px}
+ul.plain li{display:flex;gap:12px;align-items:flex-start}
+ul.plain li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:10px}
+code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#0e1730;color:#dbe4ff;border-radius:12px;padding:16px 18px;overflow-x:auto;font-size:14px;line-height:1.5;margin:0 0 14px}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+table{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td code{white-space:nowrap}
+.note{background:var(--warn-soft);color:var(--warn-ink);border-radius:12px;padding:12px 14px;font-size:15px;margin:0 0 14px}
+.help{margin:22px 0 0;text-align:center;font-size:14px;color:var(--muted)}
+.help a{color:var(--accent);font-weight:700;text-decoration:none}
+code{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://foldpos.com/#organization",
+  "name": "Fold POS",
+  "url": "https://foldpos.com/",
+  "logo": "https://foldpos.com/assets/img/og-2026.png",
+  "description": "Software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías. Creado por Fold Laundry.",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fold Laundry LLC"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contact@foldpos.com",
+      "availableLanguage": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "North America"
+    },
+    {
+      "@type": "Place",
+      "name": "Central America"
+    },
+    {
+      "@type": "Place",
+      "name": "South America"
+    },
+    {
+      "@type": "Place",
+      "name": "Caribbean"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://foldpos.com/es/developers#webpage",
+  "url": "https://foldpos.com/es/developers",
+  "name": "Fold POS para desarrolladores y agentes de IA",
+  "description": "Fold POS legible por máquinas: llms.txt, espejos en markdown de cada página y un servidor MCP público de solo lectura en https://app.foldpos.com/v1/mcp.",
+  "inLanguage": "es-419",
+  "isPartOf": { "@id": "https://foldpos.com/#website" },
+  "primaryImageOfPage": "https://foldpos.com/assets/img/og-2026.png",
+  "publisher": { "@id": "https://foldpos.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Herramientas del servidor MCP de Fold POS",
+  "description": "Herramientas de solo lectura que ofrece el servidor MCP público de Fold POS en https://app.foldpos.com/v1/mcp.",
+  "numberOfItems": 10,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "about_fold_pos",
+      "description": "Qué es Fold POS y para quién es."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "pricing_plans",
+      "description": "Starter, Growth y Pro, qué incluye cada uno y la prueba gratis de 14 días. language opcional: en o es."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "features",
+      "description": "Funciones por área y por tipo de negocio."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "availability",
+      "description": "Dónde se puede usar Fold POS (el continente americano), idiomas y cobro en USD. country opcional."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "supported_hardware",
+      "description": "Impresoras de recibos y de etiquetas, escáneres y las plataformas en las que funciona el POS."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "switching_from",
+      "description": "Qué se trae desde Cents, CleanCloud o un CSV."
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "getting_started",
+      "description": "Registro para la prueba gratis, la guía de configuración de la tienda y el asistente de impresión."
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "faq",
+      "description": "Las preguntas frecuentes en inglés o español, con un filtro query opcional."
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "site_page",
+      "description": "Cualquier página de foldpos.com en markdown, en inglés o español."
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "contact",
+      "description": "Cómo contactar al equipo de Fold POS."
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/css/chrome.css">
+</head>
+<body>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/es/" aria-label="Inicio de Fold POS"><i></i>Fold POS</a>
+    <nav aria-label="Principal">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Negocios<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/es/laundromats"><b>Lavanderías</b><small>Lavado y doblado por libra, el plano del local</small></a>
+            <a href="/es/dry-cleaners"><b>Tintorerías</b><small>Tickets por prenda, etiquetas y lugares en el transportador</small></a>
+            <a href="/es/alterations"><b>Sastrerías</b><small>Precio por trabajo, medidas y pruebas</small></a>
+          </div>
+        </li>
+        <li><a href="/es/features">Funciones</a></li>
+        <li><a href="/es/#heyfold">Hey Fold</a></li>
+        <li><a href="/es/pricing">Precios</a></li>
+        <li><a href="/es/faq">Preguntas</a></li>
+        <li><a href="/es/help">Ayuda</a></li>
+        <li><a href="/es/contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-lang" href="/developers" hreflang="en" lang="en" aria-label="View this page in English">EN</a>
+      <a class="fx-login" href="https://pos.foldpos.com/login">Iniciar sesión</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Empiece gratis</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menú"><span></span></button>
+    </div>
+  </div>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menú">
+  <p class="fx-menu-h">Negocios</p>
+  <a href="/es/laundromats">Lavanderías</a>
+  <a href="/es/dry-cleaners">Tintorerías</a>
+  <a href="/es/alterations">Sastrerías</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/es/features">Funciones</a>
+  <a href="/es/#heyfold">Hey Fold</a>
+  <a href="/es/pricing">Precios</a>
+  <p class="fx-menu-h">Soporte</p>
+  <a href="/es/faq">Preguntas frecuentes</a>
+  <a href="/es/help">Ayuda</a>
+  <a href="/es/contact">Contacto</a>
+  <a class="fx-menu-lang" href="/developers" hreflang="en" lang="en">English</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Iniciar sesión</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Empiece gratis, 14 días</a>
+  </div>
+</nav>
+<!--/fx:header-->
+
+
+
+
+
+
+<div class="wrap">
+
+
+<main>
+  <section class="card">
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+    <h1>Fold POS para desarrolladores y agentes de IA</h1>
+    <p class="lead">Fold POS es un software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías, creado por Fold Laundry. Esta página es la entrada legible por máquinas: un mapa del sitio para modelos de lenguaje, copias en markdown de cada página y un servidor MCP público que responde preguntas sobre el producto.</p>
+    <p class="muted">Todo lo que hay aquí es público y de solo lectura. Nada en esta página requiere una cuenta.</p>
+  </section>
+
+  <section class="card">
+    <h2>llms.txt y llms-full.txt</h2>
+    <p>Dos archivos de texto plano describen todo el sitio, así como <code>robots.txt</code> describe las reglas de rastreo.</p>
+    <ul class="plain">
+      <li><a href="/llms.txt"><code>/llms.txt</code></a> — un índice breve: qué es Fold POS y una lista enlazada de todas las páginas, con una descripción de una línea.</li>
+      <li><a href="/llms-full.txt"><code>/llms-full.txt</code></a> — el contenido legible de todo el sitio en un solo documento markdown: tipos de negocio, funciones, Hey Fold, impresión y hardware, precios, cómo cambiarse desde otro sistema y cómo empezar.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Espejos en markdown</h2>
+    <p>Cada página pública tiene un gemelo en markdown, sin navegación, estilos ni elementos de marketing. Cada página HTML apunta a su gemelo con <code>&lt;link rel="alternate" type="text/markdown"&gt;</code>.</p>
+    <table>
+      <thead><tr><th>Página</th><th>Markdown</th></tr></thead>
+      <tbody>
+        <tr><td><a href="/" hreflang="en">Inicio (inglés)</a></td><td><a href="/fold-pos.md"><code>/fold-pos.md</code></a></td></tr>
+        <tr><td><a href="/laundromats" hreflang="en">Para lavanderías (inglés)</a></td><td><a href="/laundromats.md"><code>/laundromats.md</code></a></td></tr>
+        <tr><td><a href="/dry-cleaners" hreflang="en">Para tintorerías (inglés)</a></td><td><a href="/dry-cleaners.md"><code>/dry-cleaners.md</code></a></td></tr>
+        <tr><td><a href="/alterations" hreflang="en">Para sastrerías (inglés)</a></td><td><a href="/alterations.md"><code>/alterations.md</code></a></td></tr>
+        <tr><td><a href="/features" hreflang="en">Todas las funciones (inglés)</a></td><td><a href="/features.md"><code>/features.md</code></a></td></tr>
+        <tr><td><a href="/pricing" hreflang="en">Precios (inglés)</a></td><td><a href="/pricing.md"><code>/pricing.md</code></a></td></tr>
+        <tr><td><a href="/faq" hreflang="en">Preguntas frecuentes (inglés)</a></td><td><a href="/faq.md"><code>/faq.md</code></a></td></tr>
+        <tr><td><a href="/help" hreflang="en">Centro de ayuda (inglés)</a></td><td><a href="/help.md"><code>/help.md</code></a></td></tr>
+        <tr><td><a href="/printers" hreflang="en">Impresoras (inglés)</a></td><td><a href="/printers.md"><code>/printers.md</code></a></td></tr>
+        <tr><td><a href="/contact" hreflang="en">Contacto (inglés)</a></td><td><a href="/contact.md"><code>/contact.md</code></a></td></tr>
+        <tr><td><a href="/about" hreflang="en">Nosotros (inglés)</a></td><td><a href="/about.md"><code>/about.md</code></a></td></tr>
+        <tr><td><a href="/setup" hreflang="en">Configuración de la tienda (inglés)</a></td><td><a href="/setup.md"><code>/setup.md</code></a></td></tr>
+        <tr><td><a href="/download" hreflang="en">Asistente de impresión (inglés)</a></td><td><a href="/download.md"><code>/download.md</code></a></td></tr>
+        <tr><td><a href="/developers" hreflang="en">Esta página (inglés)</a></td><td><a href="/developers.md"><code>/developers.md</code></a></td></tr>
+        <tr><td><a href="/es/">Inicio (español)</a></td><td><a href="/es/fold-pos.md"><code>/es/fold-pos.md</code></a></td></tr>
+        <tr><td><a href="/es/laundromats">Para lavanderías (español)</a></td><td><a href="/es/laundromats.md"><code>/es/laundromats.md</code></a></td></tr>
+        <tr><td><a href="/es/dry-cleaners">Para tintorerías (español)</a></td><td><a href="/es/dry-cleaners.md"><code>/es/dry-cleaners.md</code></a></td></tr>
+        <tr><td><a href="/es/alterations">Para sastrerías (español)</a></td><td><a href="/es/alterations.md"><code>/es/alterations.md</code></a></td></tr>
+        <tr><td><a href="/es/features">Todas las funciones (español)</a></td><td><a href="/es/features.md"><code>/es/features.md</code></a></td></tr>
+        <tr><td><a href="/es/pricing">Precios (español)</a></td><td><a href="/es/pricing.md"><code>/es/pricing.md</code></a></td></tr>
+        <tr><td><a href="/es/faq">Preguntas frecuentes (español)</a></td><td><a href="/es/faq.md"><code>/es/faq.md</code></a></td></tr>
+        <tr><td><a href="/es/help">Centro de ayuda (español)</a></td><td><a href="/es/help.md"><code>/es/help.md</code></a></td></tr>
+        <tr><td><a href="/es/printers">Impresoras (español)</a></td><td><a href="/es/printers.md"><code>/es/printers.md</code></a></td></tr>
+        <tr><td><a href="/es/contact">Contacto (español)</a></td><td><a href="/es/contact.md"><code>/es/contact.md</code></a></td></tr>
+        <tr><td><a href="/es/about">Nosotros (español)</a></td><td><a href="/es/about.md"><code>/es/about.md</code></a></td></tr>
+        <tr><td><a href="/es/download">Asistente de impresión (español)</a></td><td><a href="/es/download.md"><code>/es/download.md</code></a></td></tr>
+        <tr><td>Esta página (español)</td><td><a href="/es/developers.md"><code>/es/developers.md</code></a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>El servidor MCP de Fold POS</h2>
+    <p>Un servidor público de Model Context Protocol responde preguntas sobre el producto a los agentes, para que un modelo no tenga que extraer datos del sitio para acertar con los precios o la lista de impresoras.</p>
+    <ul class="plain">
+      <li>Endpoint: <code>https://app.foldpos.com/v1/mcp</code></li>
+      <li>Transporte: Streamable HTTP</li>
+      <li>Autenticación: ninguna, es público</li>
+      <li>Alcance: solo lectura. Devuelve únicamente información del producto; no hay datos de tiendas, clientes ni pedidos detrás.</li>
+      <li>Ficha del servidor: <a href="/.well-known/mcp.json"><code>/.well-known/mcp.json</code></a>, para que clientes y registros lo encuentren desde el dominio.</li>
+    </ul>
+
+    <h3>Herramientas</h3>
+    <table>
+      <thead><tr><th>Herramienta</th><th>Devuelve</th></tr></thead>
+      <tbody>
+        <tr><td><code>about_fold_pos</code></td><td>Qué es Fold POS y para quién es.</td></tr>
+        <tr><td><code>pricing_plans</code></td><td>Starter, Growth y Pro, qué incluye cada uno y la prueba gratis de 14 días. <code>language</code> opcional: <code>en</code> o <code>es</code>.</td></tr>
+        <tr><td><code>features</code></td><td>Funciones por área y por tipo de negocio.</td></tr>
+        <tr><td><code>availability</code></td><td>Dónde se puede usar Fold POS (el continente americano), idiomas y cobro en USD. <code>country</code> opcional.</td></tr>
+        <tr><td><code>supported_hardware</code></td><td>Impresoras de recibos y de etiquetas, escáneres y las plataformas en las que funciona el POS.</td></tr>
+        <tr><td><code>switching_from</code></td><td>Qué se trae desde Cents, CleanCloud o un CSV.</td></tr>
+        <tr><td><code>getting_started</code></td><td>Registro para la prueba gratis, la guía de configuración de la tienda y el asistente de impresión.</td></tr>
+        <tr><td><code>faq</code></td><td>Las preguntas frecuentes en inglés o español, con un filtro <code>query</code> opcional.</td></tr>
+        <tr><td><code>site_page</code></td><td>Cualquier página de foldpos.com en markdown, en inglés o español.</td></tr>
+        <tr><td><code>contact</code></td><td>Cómo contactar al equipo de Fold POS.</td></tr>
+      </tbody>
+    </table>
+    <p>Recursos: <code>foldpos://llms.txt</code>, <code>foldpos://llms-full.txt</code> y cada página como <code>foldpos://pages/{language}/{page}.md</code>. Prompts: <code>recommend_plan</code> y <code>explain_fold_pos_es</code>.</p>
+
+    <h3>Claude Code y Claude Desktop</h3>
+    <pre><code>claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp</code></pre>
+
+    <h3>Otros clientes MCP</h3>
+    <p>Los clientes que usan una configuración JSON necesitan los mismos dos datos, el transporte y la URL:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp"
+    }
+  }
+}</code></pre>
+  </section>
+
+  <section class="card">
+    <h2>La API para dueños de tienda</h2>
+    <p class="note">La API que accede a los clientes, pedidos e informes de una tienda es <b>privada</b>. No forma parte del servidor MCP público y no tiene documentación pública.</p>
+    <p class="muted">Si es cliente de Fold POS o un socio que necesita acceso programático a los datos de una tienda, escriba a <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20API">contact@foldpos.com</a> y cuéntenos qué está creando.</p>
+    <p class="muted">Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan a la agenda de la tienda, con actualizaciones de estado de ida y vuelta.</p>
+  </section>
+</main>
+
+<p class="help">¿Preguntas? Escriba a <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20for%20developers">contact@foldpos.com</a>.</p>
+</div>
+
+<script src="/assets/js/chrome.js" defer></script>
+
+
+
+
+
+
+<!--fx:footer-->
+<div class="fx-foot" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/es/"><i></i>Fold POS</a>
+        <p>El centro de mando para lavanderías, tintorerías y sastrerías. Hecho en los propios mostradores de Fold Laundry.</p>
+      </div>
+      <div><p class="fx-foot-h">Producto</p><ul>
+        <li><a href="/es/features">Funciones</a></li>
+        <li><a href="/es/#heyfold">Hey Fold</a></li>
+        <li><a href="/es/#delivery">Recogida y entrega</a></li>
+        <li><a href="/es/pricing">Precios</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Negocios</p><ul>
+        <li><a href="/es/laundromats">Lavanderías</a></li>
+        <li><a href="/es/dry-cleaners">Tintorerías</a></li>
+        <li><a href="/es/alterations">Sastrerías</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Soporte</p><ul>
+        <li><a href="/es/help">Centro de ayuda</a></li>
+        <li><a href="/es/faq">Preguntas frecuentes</a></li>
+        <li><a href="/es/printers">Impresoras</a></li>
+        <li><a href="/setup" hreflang="en">Configuración de la tienda (inglés)</a></li>
+        <li><a href="/es/download">Asistente de impresión</a></li>
+        <li><a href="/es/contact">Contacto</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Empresa</p><ul>
+        <li><a href="/es/about">Nosotros</a></li>
+        <li><a href="/es/developers">Desarrolladores e IA</a></li>
+        <li><a href="/privacy" hreflang="en">Privacidad (inglés)</a></li>
+        <li><a href="/terms" hreflang="en">Términos (inglés)</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/developers" hreflang="en" lang="en">English</a></span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+</div>
+<!--/fx:footer-->
+</body>
+</html>

@@ -23,6 +23,10 @@ os.chdir(ROOT)
 
 HEADER = open('partials/header.html', encoding='utf-8').read().strip()
 FOOTER = open('partials/footer.html', encoding='utf-8').read().strip()
+# Spanish chrome for es/*.html. {{ALT}} in either is the same page in the other language.
+HEADER_ES = open('partials/header.es.html', encoding='utf-8').read().strip()
+FOOTER_ES = open('partials/footer.es.html', encoding='utf-8').read().strip()
+LASTMOD = '2026-09-23'   # bump when the site content changes
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700'
@@ -240,6 +244,7 @@ FAQ = [
         ('Do I need to install anything?', '<p>No. Fold POS runs in any browser at pos.foldpos.com. There is also a desktop app for the counter PC (Windows or Mac) and it runs on the iPad. Windows counter PCs use a small print helper for the printers.</p>'),
         ('How long does it take to set up?', '<p>The <a href="/setup">setup guide</a> is seven short steps: your account, the browser, your price list, the printer, staff, customer texts and a first order. Stuck on a step? Email us and we’ll do it with you.</p>'),
         ('Is it in Spanish?', '<p>Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.</p>'),
+        ('Can I use Fold POS outside the United States?', '<p>Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also <a href="/es/faq" hreflang="es" lang="es">in Spanish</a>.</p>'),
     ]),
     ('pricing', 'Pricing &amp; billing', 'card', [
         ('How much does it cost?', '<p>Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See <a href="/pricing">pricing</a> for everything in each plan.</p>'),
@@ -544,13 +549,140 @@ ACTIVE = {'printers.html': '/printers', 'pricing.html': '/pricing', 'faq.html': 
           'alterations.html': '/alterations'}
 
 
+def url_for(fname):
+    """Clean URL path of a page file: index.html -> /, es/index.html -> /es/, es/faq.html -> /es/faq."""
+    if fname.endswith('index.html'):
+        return '/' + fname[:-len('index.html')]
+    return '/' + fname[:-len('.html')]
+
+
+def pair_of(fname):
+    """The same page in the other language, or None when it has no translation."""
+    other = fname[3:] if fname.startswith('es/') else 'es/' + fname
+    return other if os.path.isfile(other) else None
+
+
 def chrome_for(fname):
-    h = HEADER
-    cur = ACTIVE.get(fname)
+    es = fname.startswith('es/')
+    h, f = (HEADER_ES, FOOTER_ES) if es else (HEADER, FOOTER)
+    cur = ACTIVE.get(fname[3:] if es else fname)
     if cur:
+        if es:
+            cur = '/es' + cur
         h = h.replace(f'href="{cur}">', f'href="{cur}" aria-current="page">')
         h = h.replace(f'href="{cur}"><b>', f'href="{cur}" aria-current="page"><b>')
-    return f'<!--fx:header-->\n{h}\n<!--/fx:header-->', f'<!--fx:footer-->\n{FOOTER}\n<!--/fx:footer-->'
+    other = pair_of(fname)
+    alt = url_for(other) if other else ('/' if es else '/es/')
+    h, f = h.replace('{{ALT}}', alt), f.replace('{{ALT}}', alt)
+    return f'<!--fx:header-->\n{h}\n<!--/fx:header-->', f'<!--fx:footer-->\n{f}\n<!--/fx:footer-->'
+
+
+# ═══════════════════════ languages, regions, sitemap ═══════════════════════
+# Fold POS sells to shops anywhere in the Americas, in English and Spanish.
+AMERICAS = [{"@type": "Place", "name": n} for n in ("North America", "Central America", "South America", "Caribbean")]
+LANGS = ["English", "Spanish"]
+
+
+def hreflang_block(fname):
+    other = pair_of(fname)
+    if not other:
+        return ''
+    en, es = (other, fname) if fname.startswith('es/') else (fname, other)
+    return ('<!--fx:hreflang-->\n'
+            f'<link rel="alternate" hreflang="en" href="{SITE}{url_for(en)}">\n'
+            f'<link rel="alternate" hreflang="es" href="{SITE}{url_for(es)}">\n'
+            f'<link rel="alternate" hreflang="x-default" href="{SITE}{url_for(en)}">\n'
+            '<!--/fx:hreflang-->')
+
+
+def fix_ld(obj):
+    """Languages and service area in the JSON-LD. Returns True if anything changed."""
+    changed = False
+    if isinstance(obj, list):
+        return any([fix_ld(x) for x in obj])
+    if not isinstance(obj, dict):
+        return False
+    t = obj.get('@type')
+    if 'availableLanguage' in obj and obj['availableLanguage'] != LANGS:
+        obj['availableLanguage'] = LANGS
+        changed = True
+    if t in ('Organization', 'SoftwareApplication') and obj.get('@id', '').endswith(('#organization', '#software')):
+        if obj.get('areaServed') != AMERICAS:
+            obj['areaServed'] = AMERICAS
+            changed = True
+    if t == 'SoftwareApplication' and obj.get('inLanguage') != ['en', 'es']:
+        obj['inLanguage'] = ['en', 'es']
+        changed = True
+    if t == 'Offer' and obj.get('eligibleRegion') != AMERICAS:
+        obj['eligibleRegion'] = AMERICAS
+        changed = True
+    for v in list(obj.values()):
+        if isinstance(v, (dict, list)):
+            changed = fix_ld(v) or changed
+    return changed
+
+
+def put_lang(fname):
+    """hreflang links, og:locale and the JSON-LD language/region fields."""
+    s = open(fname, encoding='utf-8').read()
+    es = fname.startswith('es/')
+    s = re.sub(r'\n?<!--fx:hreflang-->.*?<!--/fx:hreflang-->', '', s, flags=re.S)
+    hb = hreflang_block(fname)
+    if hb:
+        m = re.search(r'<link[^>]*rel="canonical"[^>]*>', s)
+        s = s[:m.end()] + '\n' + hb + s[m.end():]
+    loc, alt = ('es_419', 'en_US') if es else ('en_US', 'es_419')
+    s = re.sub(r'\n<meta (?=[^>]*property="og:locale(?::alternate)?")[^>]*>', '', s)
+    m = re.search(r'<meta (?=[^>]*property="og:site_name")[^>]*>', s)
+    tags = f'\n<meta property="og:locale" content="{loc}">' + (f'\n<meta property="og:locale:alternate" content="{alt}">' if hb else '')
+    s = s[:m.end()] + tags + s[m.end():]
+
+    def ld(m):
+        try:
+            data = json.loads(m.group(2))
+        except ValueError:
+            return m.group(0)
+        if not fix_ld(data):
+            return m.group(0)
+        return m.group(1) + '\n' + json.dumps(data, ensure_ascii=False, indent=2) + '\n' + m.group(3)
+    s = re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)', ld, s, flags=re.S)
+    open(fname, 'w', encoding='utf-8').write(s)
+
+
+SITEMAP_PAGES = [('index.html', '1.0'), ('laundromats.html', '0.9'), ('dry-cleaners.html', '0.9'), ('alterations.html', '0.9'),
+                 ('features.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
+                 ('contact.html', '0.6'), ('about.html', '0.5'), ('printers.html', '0.7'), ('developers.html', '0.6'),
+                 ('download.html', '0.5'), ('privacy.html', '0.3'), ('terms.html', '0.3')]
+SITEMAP_MD = ['fold-pos.md', 'laundromats.md', 'dry-cleaners.md', 'alterations.md', 'features.md', 'pricing.md', 'faq.md',
+              'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md']
+
+
+def sitemap():
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+
+    def url(fname, prio):
+        e = [f'  <url><loc>{SITE}{url_for(fname)}</loc><lastmod>{LASTMOD}</lastmod><priority>{prio}</priority>']
+        other = pair_of(fname)
+        if other:
+            en, es = (other, fname) if fname.startswith('es/') else (fname, other)
+            e.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{SITE}{url_for(en)}"/>')
+            e.append(f'    <xhtml:link rel="alternate" hreflang="es" href="{SITE}{url_for(es)}"/>')
+            e.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{url_for(en)}"/>')
+            e.append('  </url>')
+            return '\n'.join(e)
+        return e[0] + '</url>'
+    out.append('  <!-- Pages, English -->')
+    out += [url(f, p) for f, p in SITEMAP_PAGES]
+    out.append('\n  <!-- Pages, Spanish -->')
+    out += [url('es/' + f, p) for f, p in SITEMAP_PAGES if os.path.isfile('es/' + f)]
+    out.append('\n  <!-- Markdown mirrors for agents -->')
+    for f in SITEMAP_MD + ['es/' + m for m in SITEMAP_MD] + ['llms.txt', 'llms-full.txt']:
+        if os.path.isfile(f):
+            prio = '0.4' if f.startswith('es/') else '0.5' if f in SITEMAP_MD[:7] + ['llms.txt', 'llms-full.txt'] else '0.4'
+            out.append(f'  <url><loc>{SITE}/{f}</loc><lastmod>{LASTMOD}</lastmod><priority>{prio}</priority></url>')
+    out.append('</urlset>')
+    open('sitemap.xml', 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 
 
 def put_chrome(fname):
@@ -601,9 +733,14 @@ def main():
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')
         print('wrote', slug)
     chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html'))
+    chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html'))
     for f in chrome_pages:
         put_chrome(f)
     print('chrome on', ', '.join(chrome_pages))
+    for f in chrome_pages + ['setup.html']:
+        put_lang(f)
+    sitemap()
+    print('hreflang, og:locale, JSON-LD regions and sitemap.xml done')
 
 
 if __name__ == '__main__':

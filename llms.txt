@@ -1,6 +1,6 @@
 # Fold POS
 
-> Point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then follows every order from drop-off to pickup — with machines, supplies, pickup & delivery routes, marketing, staff shifts and printing in the same screen. Plans are $39, $59 and $79 a month, month-to-month, with a 14-day free trial and no card up front.
+> Point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. Fold POS rings up wash & fold by the pound, dry cleaning by the piece and alterations by the task on one counter, then follows every order from drop-off to pickup — with machines, supplies, pickup & delivery routes, marketing, staff shifts and printing in the same screen. Plans are $39, $59 and $79 a month (USD), month-to-month, with a 14-day free trial and no card up front. Shops anywhere in the Americas can sign up; the counter, Hey Fold and customer texts work in English and Spanish, and the whole site is also in Spanish at https://foldpos.com/es/.
 
 Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints to the Epson, Bixolon, Star and Zebra printers a shop already owns. "Hey Fold", a voice assistant that takes an order by speech and sends it to the printer, is built into every plan. Markdown mirrors of each page are linked below; each HTML page also declares its mirror with `<link rel="alternate" type="text/markdown">`.
 
@@ -30,12 +30,31 @@ Fold POS runs in a browser, as a Mac or Windows app, or on an iPad, and prints t
 ## For developers and agents
 
 - [Developers & AI](https://foldpos.com/developers.md): The markdown mirrors, and the public read-only MCP server at https://app.foldpos.com/v1/mcp (Streamable HTTP, no auth).
+- [MCP server card](https://foldpos.com/.well-known/mcp.json): Machine-readable description of the public MCP server: endpoint, transport and tools.
 - [llms-full.txt](https://foldpos.com/llms-full.txt): The whole site's readable content as one markdown document.
 
 ## Contact
 
 - [Contact page](https://foldpos.com/contact.md): Demos, switching from another system, store support, partners and the API.
 - [Email Fold POS](mailto:contact@foldpos.com): Questions, a demo, migration help, or access to the private store-owner API.
+
+## En español
+
+Fold POS en español, para tiendas de todo el continente americano. Los precios son en dólares estadounidenses (USD).
+
+- [Inicio](https://foldpos.com/es/fold-pos.md): Qué es Fold POS, para quién es y cada parte en una sola página.
+- [Todas las funciones](https://foldpos.com/es/features.md): Las nueve áreas de funciones en detalle.
+- [Precios](https://foldpos.com/es/pricing.md): Starter $39, Growth $59 y Pro $79 al mes (USD), la prueba gratis de 14 días y los pagos con su propio procesador.
+- [Preguntas frecuentes](https://foldpos.com/es/faq.md): Primeros pasos, uso fuera de Estados Unidos, precios, impresoras, cambio de sistema, pagos, Hey Fold y entregas.
+- [Centro de ayuda](https://foldpos.com/es/help.md): Guías cortas para configurar la tienda, conectar una impresora, importar datos y más.
+- [Para lavanderías](https://foldpos.com/es/laundromats.md): Lavado y doblado por libra, el plano del local y las máquinas.
+- [Para tintorerías](https://foldpos.com/es/dry-cleaners.md): Tickets por prenda, etiquetas termoadhesivas y lugares en el transportador.
+- [Para sastrerías](https://foldpos.com/es/alterations.md): Precio por trabajo, medidas, fotos y pruebas.
+- [Impresoras](https://foldpos.com/es/printers.md): Impresoras de recibos y etiquetas compatibles (Epson, Star, Bixolon, Zebra).
+- [Asistente de impresión](https://foldpos.com/es/download.md): El pequeño programa para Windows que imprime recibos y etiquetas desde cualquier navegador.
+- [Desarrolladores e IA](https://foldpos.com/es/developers.md): Los espejos en markdown y el servidor MCP público.
+- [Contacto](https://foldpos.com/es/contact.md): Demostraciones, cambio de sistema, soporte y socios.
+- [Nosotros](https://foldpos.com/es/about.md): Por qué Fold Laundry creó Fold POS.
 
 ## Optional
 
