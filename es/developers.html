@@ -311,7 +311,7 @@ code{overflow-wrap:anywhere}
     </table>
   </section>
 
-  <section class="card">
+  <section class="card" id="mcp">
     <h2>El servidor MCP de Fold POS</h2>
     <p>Un servidor público de Model Context Protocol responde preguntas sobre el producto a los agentes, para que un modelo no tenga que extraer datos del sitio para acertar con los precios o la lista de impresoras.</p>
     <ul class="plain">
@@ -319,7 +319,7 @@ code{overflow-wrap:anywhere}
       <li>Transporte: Streamable HTTP</li>
       <li>Autenticación: ninguna, es público</li>
       <li>Alcance: solo lectura. Devuelve únicamente información del producto; no hay datos de tiendas, clientes ni pedidos detrás.</li>
-      <li>Ficha del servidor: <a href="/.well-known/mcp.json"><code>/.well-known/mcp.json</code></a>, para que clientes y registros lo encuentren desde el dominio.</li>
+      <li><span>Ficha del servidor: <a href="/.well-known/mcp.json"><code>/.well-known/mcp.json</code></a>, para que clientes y registros lo encuentren desde el dominio.</span></li>
     </ul>
 
     <h3>Herramientas</h3>
@@ -340,7 +340,16 @@ code{overflow-wrap:anywhere}
     </table>
     <p>Recursos: <code>foldpos://llms.txt</code>, <code>foldpos://llms-full.txt</code> y cada página como <code>foldpos://pages/{language}/{page}.md</code>. Prompts: <code>recommend_plan</code> y <code>explain_fold_pos_es</code>.</p>
 
-    <h3>Claude Code y Claude Desktop</h3>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta página.</p>
+
+    <h3>Claude (claude.ai y la app de escritorio)</h3>
+    <ol>
+      <li>Abra <b>Settings › Connectors</b> (Configuración › Conectores) y elija <b>Add custom connector</b> (Agregar conector personalizado).</li>
+      <li>Póngale el nombre <b>Fold POS</b> y pegue <code>https://app.foldpos.com/v1/mcp</code> como URL. Deje vacíos los campos de inicio de sesión: no necesita cuenta.</li>
+      <li>En un chat nuevo, pregunte algo como “¿Puedo usar Fold POS en México?” o “¿Cuánto cuesta para dos tintorerías?”.</li>
+    </ol>
+
+    <h3>Claude Code</h3>
     <pre><code>claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp</code></pre>
 
     <h3>Otros clientes MCP</h3>

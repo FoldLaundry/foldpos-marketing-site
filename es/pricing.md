@@ -13,7 +13,7 @@ Un mostrador.
 - Recepción, tablero de pedidos y cobros
 - Cuentas de clientes e historial
 - Recibos, etiquetas e impresión
-- Reportes diarios
+- Informes diarios
 - Registro de mantenimiento de máquinas
 - Hey Fold
 
@@ -33,7 +33,7 @@ Para sumar entregas y personal.
 Más de una sucursal.
 
 - Todo lo de Growth
-- Reportes de varias sucursales
+- Informes de varias sucursales
 - Optimización de rutas
 - Permisos del personal por rol
 - Soporte prioritario

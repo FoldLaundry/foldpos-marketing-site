@@ -62,6 +62,13 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+def md_text(s):
+    """Like strip_tags, but keeps links as markdown links (site paths made absolute)."""
+    s = re.sub(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>',
+               lambda m: '[%s](%s)' % (re.sub(r'<[^>]+>', '', m.group(2)), (SITE + m.group(1)) if m.group(1).startswith('/') else m.group(1)), s, flags=re.S)
+    return strip_tags(s)
+
+
 def strip_tags(s):
     s = re.sub(r'</?(p|li|ol|ul|div|br|h[1-6])\b[^>]*>', ' ', s)   # block tags become spaces
     s = re.sub(r'<[^>]+>', '', s)                                   # inline tags just go
@@ -229,10 +236,10 @@ def pricing():
           'Month to month, 14-day free trial, no card up front. Change or cancel any time from Settings.', '',
           'Start a free trial: https://pos.foldpos.com/signup', '']
     for name, price, who, pop, feats in PLANS:
-        md += [f'## {name} — ${price}/month' + (' (most popular)' if pop else ''), '', strip_tags(who), '']
-        md += [f'- {strip_tags(f)}' for f in feats] + ['']
+        md += [f'## {name} — ${price}/month' + (' (most popular)' if pop else ''), '', md_text(who), '']
+        md += [f'- {md_text(f)}' for f in feats] + ['']
     md += ['## Everything else about the money', '']
-    md += [f'- **{strip_tags(q)}** {strip_tags(a)}' for q, a in PRICING_FAQ]
+    md += [f'- **{md_text(q)}** {md_text(a)}' for q, a in PRICING_FAQ]
     return html_, '\n'.join(md) + md_footer()
 
 
@@ -253,7 +260,7 @@ FAQ = [
         ('What happens after the trial?', '<p>You pick a plan in Settings › Plan &amp; billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.</p>'),
     ]),
     ('printing', 'Printers &amp; hardware', 'printer', [
-        ('Which printers does it work with?', '<p>The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece. <a href="/printers">See every printer</a>.</p>'),
+        ('Which printers does it work with?', '<p>The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in tag per piece, from a heat-seal tag printer or your impact printer. <a href="/printers">See every printer</a>.</p>'),
         ('Do I need the print helper?', '<p>Chrome can print straight to the printer: Settings › Receipts › Connect printer. On Windows, if the list is empty, or if you use Edge or Firefox, install the <a href="/download">Fold print helper</a> and pair it with the 6-digit code from Settings › Receipts. On a Mac, use Chrome; the Mac helper is on its way.</p>'),
         ('Windows says “Windows protected your PC.” Is that safe?', '<p>That warning appears because the helper is new. Click <b>More info</b>, then <b>Run anyway</b>. The helper only talks to Fold POS and your printers, and it uninstalls like any other program.</p>'),
         ('Does it run on an iPad?', '<p>Yes. Staff can move work along from an iPad on the wall or a phone in their pocket, and the counter sees it the moment they do.</p>'),
@@ -303,9 +310,9 @@ def faq():
                  'Fold POS FAQ', 'FAQ', body, [ld])
     md = ['# Fold POS FAQ', '', '> Canonical page: https://foldpos.com/faq · Markdown mirror. Anything else: contact@foldpos.com.', '']
     for _, t, _, qs in FAQ:
-        md += [f'## {strip_tags(t)}', '']
+        md += [f'## {md_text(t)}', '']
         for q, a in qs:
-            md += [f'**{strip_tags(q)}** {strip_tags(a)}', '']
+            md += [f'**{md_text(q)}** {md_text(a)}', '']
     return html_, '\n'.join(md) + md_footer()
 
 
@@ -376,11 +383,11 @@ def help_():
                  'Fold POS help center', 'Help', body, script=script)
     md = ['# Fold POS help center', '', '> Canonical page: https://foldpos.com/help · Markdown mirror. Still stuck? contact@foldpos.com and we’ll do it with you.', '']
     for k, icon, t, kw, content, href, more in TOPICS:
-        md += [f'## {strip_tags(t)}', '']
+        md += [f'## {md_text(t)}', '']
         for li in re.findall(r'<li>(.*?)</li>', content, re.S):
             md.append(f'- {strip_tags(li)}')
         link = href if href.startswith('http') else SITE + href
-        md += ['', f'{strip_tags(more)}: {link}', '']
+        md += ['', f'{md_text(more)}: {link}', '']
     return html_, '\n'.join(md) + md_footer()
 
 
@@ -436,7 +443,7 @@ def contact():
                  'Contact Fold POS', 'Contact', body, [org], script)
     md = ['# Contact Fold POS', '', '> Canonical page: https://foldpos.com/contact · Markdown mirror.', '',
           'Email: contact@foldpos.com', '']
-    md += [f'- **{strip_tags(t)}**: {strip_tags(d)} Subject line: "{s}".' for k, i, t, d, s in ROUTES_]
+    md += [f'- **{md_text(t)}**: {md_text(d)} Subject line: "{s}".' for k, i, t, d, s in ROUTES_]
     return html_, '\n'.join(md) + '\n' + md_footer()
 
 
@@ -537,10 +544,10 @@ def printers():
     md = ['# Printers that work with Fold POS', '', '> Canonical page: https://foldpos.com/printers · Markdown mirror.', '',
           'Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Keep the hardware you have.', '']
     for i, t, sub, pts in PRINTER_KINDS:
-        md += [f'## {t}', '', strip_tags(sub), ''] + [f'- {strip_tags(p)}' for p in pts] + ['']
-    md += ['## How it connects', ''] + [f'- **{strip_tags(w)}**: {strip_tags(a)} {strip_tags(h)}' for w, a, h in CONNECT]
+        md += [f'## {t}', '', md_text(sub), ''] + [f'- {md_text(p)}' for p in pts] + ['']
+    md += ['## How it connects', ''] + [f'- **{md_text(w)}**: {md_text(a)} {md_text(h)}' for w, a, h in CONNECT]
     md += ['', 'Print helper for Windows: https://foldpos.com/download', '', '## Printer questions', '']
-    md += [f'**{strip_tags(q)}** {strip_tags(a)}\n' for q, a in PRINTER_FAQ]
+    md += [f'**{md_text(q)}** {md_text(a)}\n' for q, a in PRINTER_FAQ]
     return html_, '\n'.join(md) + md_footer()
 
 # ════════════════════════════ chrome on every page ════════════════════════════

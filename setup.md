@@ -47,7 +47,7 @@ Employees is in the left menu. Keep the **Admin / Staff** toggle in mind on the 
 
 Fold can text customers when an order is ready. It is on for you already — have a look at the wording and turn off anything you don't want.
 
-Texts go out from Fold's number during the pilot. Your own store number comes later.
+Texts go out in your shop's name.
 
 ## Step 7 of 7 — Ring up a real order (2 min)
 

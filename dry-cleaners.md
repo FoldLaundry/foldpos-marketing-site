@@ -14,7 +14,7 @@ Garment tags, conveyor slots and per-piece tickets — with wash & fold and pick
 
 The only POS you can talk to. Say the order — it's rung up, printed and tagged. Fold listens for its name, takes the order down, confirms it back to you, and sends the receipt and garment tags to the printer.
 
-- Always-on wake word, push-to-talk as a fallback
+- Say “Hey Fold”, press Caps Lock or tap the orb; it stays quiet until called
 - Customer lookup, order status and production updates by voice
 - Works on the browser, Mac and Windows builds with a plain microphone
 

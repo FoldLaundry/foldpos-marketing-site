@@ -31,8 +31,8 @@ Any USB keyboard-wedge scanner.
 ## How it connects
 
 - **Chrome, on Windows or a Mac**: Prints straight to the printer. Settings › Receipts › Connect printer, pick it from the list, print a test page.
-- **Windows with Edge or Firefox, or an empty list in Chrome**: Use the Fold print helper. Install it from foldpos.com/download, then type the 6-digit code from Settings › Receipts. It stays paired after a restart.
-- **A Mac with Safari or Firefox**: Use Chrome for now. The Mac print helper is on its way. Email us and we’ll set you up in the meantime.
+- **Windows with Edge or Firefox, or an empty list in Chrome**: Use the Fold print helper. Install it from [foldpos.com/download](https://foldpos.com/download), then type the 6-digit code from Settings › Receipts. It stays paired after a restart.
+- **A Mac with Safari or Firefox**: Use Chrome for now. The Mac print helper is on its way. [Email us](https://foldpos.com/contact) and we’ll set you up in the meantime.
 
 Print helper for Windows: https://foldpos.com/download
 
@@ -44,7 +44,7 @@ Print helper for Windows: https://foldpos.com/download
 
 **Windows says “Windows protected your PC.”** The print helper is new, so Windows doesn’t know it yet. Click More info, then Run anyway. The helper only talks to Fold POS and your printers, and uninstalls like any other program.
 
-**The printer isn’t in the list.** On Windows, install the print helper and pair it. Still missing? Email contact@foldpos.com with the printer’s make and model.
+**The printer isn’t in the list.** On Windows, install the [print helper](https://foldpos.com/download) and pair it. Still missing? Email [contact@foldpos.com](mailto:contact@foldpos.com?subject=Printer%20help) with the printer’s make and model.
 
 **Can I turn the barcode on tags off?** Yes. There’s a switch for barcodes on garment tags in Settings.
 

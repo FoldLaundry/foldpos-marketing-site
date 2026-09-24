@@ -18,7 +18,7 @@ Pick your kind of shop — laundromat, dry cleaner or tailor — and the same si
 
 **Saturday, 11:05 AM — the door. Scan. Pay. Gone.** Scan any tag and the whole order comes up. Card, cash, or the card on file; split payments; monthly invoicing for accounts. The tag is stamped picked up, the slot frees itself, the order closes with its full history, and she gets a receipt on her phone.
 
-**Saturday, 7:15 PM — your office, or your couch. The whole store, on one screen.** Not a report you run — the day as it happened: sales by service, pieces in and out, who's on shift, what's late, what's still on the rack, from any browser or your phone. Multi-location roll-up, staff shifts and clock-in, QuickBooks daily sales.
+**Saturday, 7:15 PM — your office, or your couch. The whole store, on one screen.** Not a report you run — the day as it happened: sales by service, pieces in and out, who's on shift, what's late, what's still on the rack, from any browser or your phone. Multi-location roll-up on Pro, staff shifts and clock-in, QuickBooks daily sales.
 
 ## Meet Hey Fold — the counter that listens
 
@@ -42,8 +42,8 @@ Your own delivery service, run from the counter: your drivers, partner marketpla
 
 Month to month, 14-day free trial, no card up front. Change or cancel from Settings.
 
-- **Starter — $39/month, one counter.** Check-in, orders and payments; customer accounts and history; receipts, tags and printing; daily reporting.
-- **Growth — $59/month, adding delivery and staff.** Everything in Starter, pickup & delivery routing, staff shifts and clock-in, express and subscription pricing, marketing and order reminders.
+- **Starter — $39/month, one counter.** Check-in, orders and payments; customer accounts and history; receipts, tags and printing; daily reporting; machine maintenance log; Hey Fold.
+- **Growth — $59/month, adding delivery and staff.** Everything in Starter, pickup & delivery routing, staff shifts and clock-in, express and subscription pricing, marketing and order reminders, supply inventory and reorder suggestions.
 - **Pro — $79/month, more than one location.** Everything in Growth, multi-location reporting, route optimization, role-based permissions, priority support.
 
 Built at Fold’s own counters, because nothing we could buy knew what a comforter was.
@@ -52,7 +52,7 @@ Start free at https://pos.foldpos.com/signup · Log in at https://pos.foldpos.co
 
 ## Questions
 
-- **Which printers does it work with?** The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece. Every printer: /printers.md
+- **Which printers does it work with?** The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in tag per piece, from a heat-seal tag printer or your impact printer. Every printer: /printers.md
 - **Does it run on Windows, a Mac and an iPad?** Yes: pos.foldpos.com in any browser, the desktop app on the counter PC, or the iPad. Windows counter PCs use the print helper at /download.
 - **Can I bring my customers from Cents or CleanCloud?** Yes, or from a CSV — and take your data with you the same way.
 - **Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.

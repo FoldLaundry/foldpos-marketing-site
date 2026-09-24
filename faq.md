@@ -10,15 +10,15 @@
 
 **Do I need to install anything?** No. Fold POS runs in any browser at pos.foldpos.com. There is also a desktop app for the counter PC (Windows or Mac) and it runs on the iPad. Windows counter PCs use a small print helper for the printers.
 
-**How long does it take to set up?** The setup guide is seven short steps: your account, the browser, your price list, the printer, staff, customer texts and a first order. Stuck on a step? Email us and we’ll do it with you.
+**How long does it take to set up?** The [setup guide](https://foldpos.com/setup) is seven short steps: your account, the browser, your price list, the printer, staff, customer texts and a first order. Stuck on a step? Email us and we’ll do it with you.
 
 **Is it in Spanish?** Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.
 
-**Can I use Fold POS outside the United States?** Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also in Spanish.
+**Can I use Fold POS outside the United States?** Yes. Shops anywhere in the Americas can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also [in Spanish](https://foldpos.com/es/faq).
 
 ## Pricing & billing
 
-**How much does it cost?** Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See pricing for everything in each plan.
+**How much does it cost?** Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See [pricing](https://foldpos.com/pricing) for everything in each plan.
 
 **Is there a free trial?** 14 days free, with no card up front.
 
@@ -28,9 +28,9 @@
 
 ## Printers & hardware
 
-**Which printers does it work with?** The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece. See every printer.
+**Which printers does it work with?** The receipt and tag printers you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in tag per piece, from a heat-seal tag printer or your impact printer. [See every printer](https://foldpos.com/printers).
 
-**Do I need the print helper?** Chrome can print straight to the printer: Settings › Receipts › Connect printer. On Windows, if the list is empty, or if you use Edge or Firefox, install the Fold print helper and pair it with the 6-digit code from Settings › Receipts. On a Mac, use Chrome; the Mac helper is on its way.
+**Do I need the print helper?** Chrome can print straight to the printer: Settings › Receipts › Connect printer. On Windows, if the list is empty, or if you use Edge or Firefox, install the [Fold print helper](https://foldpos.com/download) and pair it with the 6-digit code from Settings › Receipts. On a Mac, use Chrome; the Mac helper is on its way.
 
 **Windows says “Windows protected your PC.” Is that safe?** That warning appears because the helper is new. Click More info, then Run anyway. The helper only talks to Fold POS and your printers, and it uninstalls like any other program.
 
@@ -42,7 +42,7 @@
 
 **Can I take my data with me if I leave?** Yes, the same way it came in.
 
-**Will you help us move?** Yes. Email contact@foldpos.com and we’ll do it with you.
+**Will you help us move?** Yes. Email [contact@foldpos.com](mailto:contact@foldpos.com?subject=Switching%20to%20Fold%20POS) and we’ll do it with you.
 
 ## Payments
 
@@ -70,9 +70,9 @@
 
 ## About Fold
 
-**How is Fold POS related to Fold?** Fold POS is built by Fold Laundry, a laundry and dry-cleaning service. We run our own counters on it. Our story.
+**How is Fold POS related to Fold?** Fold POS is built by Fold Laundry, a laundry and dry-cleaning service. We run our own counters on it. [Our story](https://foldpos.com/about).
 
-**Who do I contact?** contact@foldpos.com, or use the contact page.
+**Who do I contact?** [contact@foldpos.com](mailto:contact@foldpos.com), or use the [contact page](https://foldpos.com/contact).
 
 ## More
 

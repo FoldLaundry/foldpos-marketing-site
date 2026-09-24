@@ -70,7 +70,15 @@ Un servidor público de Model Context Protocol responde preguntas sobre el produ
 
 Recursos: `foldpos://llms.txt`, `foldpos://llms-full.txt` y cada página como `foldpos://pages/{language}/{page}.md`. Prompts: `recommend_plan` y `explain_fold_pos_es`.
 
-### Claude Code y Claude Desktop
+El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a la página para desarrolladores.
+
+### Claude (claude.ai y la app de escritorio)
+
+1. Abra **Settings › Connectors** (Configuración › Conectores) y elija **Add custom connector** (Agregar conector personalizado).
+2. Póngale el nombre **Fold POS** y pegue `https://app.foldpos.com/v1/mcp` como URL. Deje vacíos los campos de inicio de sesión: no necesita cuenta.
+3. En un chat nuevo, pregunte algo como "¿Puedo usar Fold POS en México?"
+
+### Claude Code
 
 ```
 claude mcp add --transport http fold-pos https://app.foldpos.com/v1/mcp

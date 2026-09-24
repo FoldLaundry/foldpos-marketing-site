@@ -278,7 +278,7 @@
    "name": "Which printers does it work with?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "The receipt printer and tag printer you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece."
+    "text": "The receipt printer and tag printer you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in tag per piece, from a heat-seal tag printer or your impact printer."
    }
   },
   {
@@ -444,7 +444,7 @@ a{color:inherit}
 .phone small{color:var(--ink-3);font-size:11px;align-self:flex-end}
 .journey[data-state="office"] .phone small{color:#8fa0c4}
 .pipe{display:flex;gap:6px;width:min(100%,260px)}
-.pipe span{flex:1;text-align:center;font-size:11px;font-weight:600;color:var(--ink-3);padding:8px 0 0;border-top:3px solid var(--line)}
+.pipe span{flex:1 1 0;min-width:0;text-align:center;font-size:11px;font-weight:600;color:var(--ink-3);padding:8px 0 0;border-top:3px solid var(--line)}
 .pipe span.done{color:var(--ink);border-color:var(--ink)}
 .pipe span.now{color:var(--brand);border-color:var(--brand)}
 .pipenote{font-size:12px;color:var(--ink-2);margin-top:12px;width:min(100%,250px)}
@@ -485,6 +485,8 @@ a{color:inherit}
   .bigtag{width:150px;padding:10px 10px 8px 28px;font-size:10px;right:14px}
   .bigtag .ord{font-size:14px}.bigtag .st{font-size:9px}
   .pos,.phone,.status,.pipe,.rack,.pipenote{width:min(100%,58%)}
+  /* phones: the stations are too narrow for their names; the bars stay, and the note under them names the current station */
+  .pipe span{font-size:0;padding-top:0}
   .pos{padding:10px 12px}.pos .li{padding:4px 0;font-size:12px}
   .pos .li small,.pos .rdy{display:none}.pos .tot{margin-top:2px;padding-top:4px;font-size:13px}
   .rack{grid-template-columns:repeat(4,1fr)}
@@ -1069,7 +1071,7 @@ svg.i{width:18px;height:18px;flex:none}
       </form>
       <div class="chips" id="chips">
         <button type="button" class="chip" data-say="two bags and a comforter, rush it">Two bags and a comforter, rush it</button>
-        <button type="button" class="chip" data-say="five shirts and a two piece suit">Five shirts and a suit</button>
+        <button type="button" class="chip" data-say="five shirts and a suit for Maria, ready Saturday">Five shirts and a suit for Maria, ready Saturday</button>
         <button type="button" class="chip" data-say="hem two pairs of pants">Hem two pairs of pants</button>
         <button type="button" class="chip" data-say="three shirts, a dress, and twelve pounds of wash and fold">Shirts, a dress and 12 lb of wash & fold</button>
       </div>
@@ -1141,13 +1143,13 @@ svg.i{width:18px;height:18px;flex:none}
     <p class="lede">Month to month. 14 days free, no card.</p>
     <div class="plans">
       <div class="plan"><h3>Starter</h3><p class="for">One counter</p><div class="price">$39<small> /month</small></div>
-        <ul><li>Check-in, orders and payments</li><li>Customer accounts and history</li><li>Receipts, tags and printing</li><li>Daily reporting</li></ul>
+        <ul><li>Check-in, orders and payments</li><li>Customer accounts and history</li><li>Receipts, tags and printing</li><li>Daily reporting</li><li>Machine maintenance log</li><li>Hey Fold</li></ul>
         <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Start free</a></div>
       <div class="plan pop"><span class="pill">Most popular</span><h3>Growth</h3><p class="for">Adding delivery and staff</p><div class="price">$59<small> /month</small></div>
-        <ul><li>Everything in Starter</li><li>Pickup &amp; delivery routing</li><li>Staff shifts and clock-in</li><li>Marketing and order reminders</li></ul>
+        <ul><li>Everything in Starter</li><li>Pickup &amp; delivery routing</li><li>Staff shifts and clock-in</li><li>Express and subscription pricing</li><li>Marketing and order reminders</li><li>Supply inventory and reorder suggestions</li></ul>
         <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free</a></div>
       <div class="plan"><h3>Pro</h3><p class="for">More than one location</p><div class="price">$79<small> /month</small></div>
-        <ul><li>Everything in Growth</li><li>Multi-location reporting</li><li>Route optimization</li><li>Role-based staff permissions</li></ul>
+        <ul><li>Everything in Growth</li><li>Multi-location reporting</li><li>Route optimization</li><li>Role-based staff permissions</li><li>Priority support</li></ul>
         <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Start free</a></div>
     </div>
     <p class="fine">Payments on your own processor, at your rates. Hey Fold on every plan. <a href="/pricing#compare">Compare every feature</a> · More than five locations? <a href="/contact">Talk to us</a>.</p>
@@ -1158,7 +1160,7 @@ svg.i{width:18px;height:18px;flex:none}
   <div class="wrap">
     <div class="kicker">Questions</div>
     <h2>Before you ask.</h2>
-    <div class="faqlist"><details><summary>Which printers does it work with?<i></i></summary><div class="ans">The receipt printer and tag printer you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in heat-seal tag per piece. <a href="/printers" style="color:var(--brand);font-weight:600;text-decoration:none">See every printer</a>.<div class="faqtags"><div class="t13"><b>W1042 1/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Comforter - Wash &amp; Fold</span></div><div class="t13"><b>W1042 2/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Bag 1 - Wash &amp; Fold</span></div><div class="t13"><b>W1042 3/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Bag 2 - Wash &amp; Fold</span></div></div></div></details><details><summary>Does it run on Windows, a Mac and an iPad?<i></i></summary><div class="ans">Yes. Open pos.foldpos.com in any browser, or use the desktop app on the counter PC or the iPad by the register. Windows counter PCs get a small print helper from <a href="download">foldpos.com/download</a>.</div></details><details><summary>Can I bring my customers from Cents or CleanCloud?<i></i></summary><div class="ans">Yes, from Cents, CleanCloud or a CSV. You can take your data with you the same way.</div></details><details><summary>Can I use my own card processor?<i></i></summary><div class="ans">Yes. Card, cash, check, store credit and split payments, on your processor at your rates.</div></details><details><summary>Is it in Spanish?<i></i></summary><div class="ans">The counter, Hey Fold and the texts your customers get all work in English and Spanish.</div></details><details><summary>Do I need a card to start?<i></i></summary><div class="ans">No. 14 days free, no card, month to month. Change or cancel from Settings.</div></details></div>
+    <div class="faqlist"><details><summary>Which printers does it work with?<i></i></summary><div class="ans">The receipt printer and tag printer you already own: Epson, Star, Bixolon and Zebra, impact or thermal, USB or network. Receipts print the moment an order is placed, with one 1 × 3 in tag per piece, from a heat-seal tag printer or your impact printer. <a href="/printers" style="color:var(--brand);font-weight:600;text-decoration:none">See every printer</a>.<div class="faqtags"><div class="t13"><b>W1042 1/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Comforter - Wash &amp; Fold</span></div><div class="t13"><b>W1042 2/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Bag 1 - Wash &amp; Fold</span></div><div class="t13"><b>W1042 3/3 &nbsp;ORTIZ</b><b class="r">FRI 09/18</b><span>Bag 2 - Wash &amp; Fold</span></div></div></div></details><details><summary>Does it run on Windows, a Mac and an iPad?<i></i></summary><div class="ans">Yes. Open pos.foldpos.com in any browser, or use the desktop app on the counter PC or the iPad by the register. Windows counter PCs get a small print helper from <a href="download">foldpos.com/download</a>.</div></details><details><summary>Can I bring my customers from Cents or CleanCloud?<i></i></summary><div class="ans">Yes, from Cents, CleanCloud or a CSV. You can take your data with you the same way.</div></details><details><summary>Can I use my own card processor?<i></i></summary><div class="ans">Yes. Card, cash, check, store credit and split payments, on your processor at your rates.</div></details><details><summary>Is it in Spanish?<i></i></summary><div class="ans">The counter, Hey Fold and the texts your customers get all work in English and Spanish.</div></details><details><summary>Do I need a card to start?<i></i></summary><div class="ans">No. 14 days free, no card, month to month. Change or cancel from Settings.</div></details></div>
     <p style="margin-top:22px;font-size:15px;color:var(--ink-3)">More in the <a href="/faq" style="color:var(--brand);font-weight:600;text-decoration:none">full FAQ</a> and the <a href="/help" style="color:var(--brand);font-weight:600;text-decoration:none">help center</a>.</p>
   </div>
 </section>
@@ -1239,22 +1241,67 @@ svg.i{width:18px;height:18px;flex:none}
         else { out.push({name:it.name,qty:q,detail:q+' × '+money(it.price),amount:q*it.price,tags:q*(it.pieces||1),tag:it.tag,type:it.type}); }
       }
     });
-    return {items:out,rush:rush};
+    return {items:out,rush:rush,who:findWho(text),due:findDue(t)};
   }
-  function readyDay(items,rush){
+  // ─── who it's for and when it's due: "for Maria, ready Thursday by 3" / "para María, el jueves a las 3" ───
+  var DAYS={sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6,domingo:0,lunes:1,martes:2,miercoles:3,jueves:4,viernes:5,sabado:6};
+  var STOP={};
+  ('for para de del the a an me my mi mis su sus el la los las lo le today tomorrow tonight hoy manana pasado next this that same day days dia dias noon morning afternoon evening tarde noche week semana rush urgente express expres hurry prisa ready listo lista listos pickup pick up delivery entrega recoger please por favor it and y with con at by after before around a las antes despues cleaning dry wash fold lavado doblado seco tintoreria order pedido customer cliente walk in ocasional her him them ella el ellos').split(' ').forEach(function(w){STOP[w]=1});
+  Object.keys(DAYS).forEach(function(w){STOP[w]=1}); Object.keys(NUM).forEach(function(w){STOP[w]=1});
+  var TITLES={mr:'Mr.',mrs:'Mrs.',ms:'Ms.',dr:'Dr.',sr:'Sr.',sra:'Sra.',srta:'Srta.'};
+  function isItemWord(w){ return ITEMS.some(function(it){ return new RegExp('^(?:'+it.re.source+')$').test(w) || new RegExp(it.re.source).test(w); }); }
+  function nameOk(w){ w=words(w); return !!w && !/\d/.test(w) && !STOP[w] && !isItemWord(w) && w.length>1; }
+  function cap(w){ return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase(); }
+  function findWho(raw){
+    var re=/(?:^|[\s,])(?:for|para|a nombre de)\s+((?:(?:the|la|el)\s+)?(?:(?:mr|mrs|ms|dr|sr|sra|srta)\.?\s+)?[A-Za-zÀ-ÿ'’-]+(?:\s+[A-Za-zÀ-ÿ'’-]+)?)/gi, m;
+    while((m=re.exec(raw))){
+      var parts=m[1].split(/\s+/), title='';
+      if(/^(the|la|el)$/i.test(parts[0])&&parts.length>1) parts.shift();
+      var t0=words(parts[0]);
+      if(TITLES[t0]){ title=TITLES[t0]; parts.shift(); }
+      if(!parts.length||!nameOk(parts[0])) continue;
+      var name=[cap(parts[0])];
+      if(parts[1]&&nameOk(parts[1])) name.push(cap(parts[1]));
+      return (title?title+' ':'')+name.join(' ');
+    }
+    return '';
+  }
+  function numWord(w){ return /^\d+$/.test(w)?parseInt(w,10):(w in NUM?NUM[w]:null); }
+  function findDue(t){
+    // t is already lower-cased and accent-free (words()).
+    var now=new Date(), days=null, m;
+    if(/\bday after tomorrow\b|\bpasado manana\b/.test(t)) days=2;
+    else if(/\b(today|same ?day|tonight|hoy|mismo dia)\b/.test(t)) days=0;
+    else if(/\btomorrow\b/.test(t)||/\bmanana\b/.test(t.replace(/\b(por|en|de|a) la manana\b/g,' '))) days=1;
+    else if((m=/\b(?:in|en) (\d+|[a-z]+) (?:days?|dias?)\b/.exec(t))&&numWord(m[1])!==null) days=numWord(m[1]);
+    else if((m=/\b(sunday|monday|tuesday|wednesday|thursday|friday|saturday|domingo|lunes|martes|miercoles|jueves|viernes|sabado)\b/.exec(t))){
+      days=(DAYS[m[1]]-now.getDay()+7)%7; if(days===0) days=7;
+    }
+    var at=null;
+    if((m=/\b(?:at|by|after|around|a las|para las|despues de las|antes de las) (\d{1,2})(?: (00|15|30|45))?(?: ?(am|pm|a m|p m))?\b/.exec(t))){
+      var h=parseInt(m[1],10), mm=m[2]||'00', ap=(m[3]||'').replace(' ','');
+      if(h>=1&&h<=12){ if(!ap) ap=(h>=8&&h<12)?'am':'pm'; at={h:h,m:mm,pm:ap==='pm'}; }
+    }
+    return {days:days,at:at};
+  }
+  function readyDay(items,rush,due){
     var days=0; items.forEach(function(i){ var d=i.type==='alt'?4:i.type==='dc'?2:1; if(d>days) days=d; });
     if(rush) days=Math.min(days,1);
+    // a day the customer asked for wins; sooner than the normal turnaround makes it a rush
+    if(due&&due.days!==null){ if(due.days<days) rush=true; days=due.days; }
     var d=new Date(); d.setDate(d.getDate()+days);
     var name=d.toLocaleDateString('en-US',{weekday:'long'});
-    var label=days===0?'today':days===1?'tomorrow':name;
+    var label=days===0?'today':days===1?'tomorrow':(days>6?'next ':'')+name;
     var full=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-    return {label:label,full:full,after:'5:00 PM'};
+    var after='5:00 PM'; if(due&&due.at) after=due.at.h+':'+due.at.m+(due.at.pm?' PM':' AM');
+    return {label:label,full:full,after:after,rush:rush};
   }
   function render(text){ if(typeof auSet==='function'){ auSet(1); clearTimeout(auDecay); auDecay=setTimeout(function(){auSet(.45)},2500); }
     clearTimers();
     lines.innerHTML='';tags.innerHTML='';paper.classList.remove('print');printer.classList.remove('busy');
     totals.classList.remove('show');ready.classList.remove('show');tagnote.textContent='';
-    var r=parse(text);
+    var r=parse(text), when=readyDay(r.items,r.rush,r.due); r.rush=when.rush;
+    cust.textContent=r.who||'Walk-in';
     heard.innerHTML=r.items.length?'Heard: <b>'+text.replace(/</g,'&lt;')+'</b>':'';
     if(!r.items.length){ empty.classList.remove('hide'); empty.textContent='I heard “'+text+'” but nothing in it I sell. Try a bag, a comforter, some shirts, or a hem.'; return; }
     empty.classList.add('hide');
@@ -1275,20 +1322,20 @@ svg.i{width:18px;height:18px;flex:none}
         lines.appendChild(li);
       },delay); delay+=380;
     }
-    var when=readyDay(r.items,r.rush), finalTotal=total, finalPieces=pieces, snapshot=r.items.slice();
+    var finalTotal=total, finalPieces=pieces, snapshot=r.items.slice();
     later(function(){ totalEl.textContent=money(finalTotal); totals.classList.add('show'); },delay+100);
     later(function(){ readyWhen.textContent=when.label+' after '+when.after+' · '+when.full; ready.classList.add('show'); },delay+300);
     later(function(){
       printer.classList.add('busy');
       var rows=snapshot.map(function(it){return '<div class="row"><span>'+it.name+((it.qty||it.tags)>1?' ×'+(it.qty||it.tags):'')+'</span><span>'+it.amount.toFixed(2)+'</span></div>'}).join('');
       if(r.rush) rows+='<div class="row"><span>Rush</span><span>'+(finalTotal-snapshot.reduce(function(a,b){return a+b.amount},0)).toFixed(2)+'</span></div>';
-      paper.innerHTML='<div class="c big">SUNNY WASH</div><div class="c">Claim ticket · #W'+(1040+Math.floor(Math.random()*900))+'</div><div class="rule"></div>'+rows+'<div class="rule"></div><div class="row big"><span>TOTAL</span><span>'+money(finalTotal)+'</span></div><div class="rdy">Ready after '+when.after+'<br>'+when.full.toUpperCase()+'</div><div class="c">Thank you</div>';
+      paper.innerHTML='<div class="c big">SUNNY WASH</div><div class="c">Claim ticket · #W'+(1040+Math.floor(Math.random()*900))+'</div>'+(r.who?'<div class="c">'+r.who.replace(/</g,'&lt;')+'</div>':'')+'<div class="rule"></div>'+rows+'<div class="rule"></div><div class="row big"><span>TOTAL</span><span>'+money(finalTotal)+'</span></div><div class="rdy">Ready after '+when.after+'<br>'+when.full.toUpperCase()+'</div><div class="c">Thank you</div>';
       paper.classList.add('print');
     },delay+700);
     later(function(){
-      var n=0, last4='0142';
-      snapshot.forEach(function(it){ for(var i=0;i<it.tags;i++){ n++; (function(k,label){ later(function(){ var t=document.createElement('div'); t.className='tag'; t.innerHTML='W1042 · '+k+'/'+finalPieces+'<small>WALK-IN · '+last4+' · '+label+'</small>'; tags.appendChild(t); }, (k-1)*140); })(n,it.tag); } });
-      later(function(){ tagnote.textContent=finalPieces+(finalPieces===1?' tag':' tags')+' on the heat-seal printer — one per piece, so a bag and a comforter never get separated.'; printer.classList.remove('busy'); }, finalPieces*140+300);
+      var n=0, last4='0142', tagWho=r.who?r.who.replace(/^(Mr|Mrs|Ms|Dr|Sr|Sra|Srta)\. /,'').split(' ').pop().toUpperCase().slice(0,12):'WALK-IN';
+      snapshot.forEach(function(it){ for(var i=0;i<it.tags;i++){ n++; (function(k,label){ later(function(){ var t=document.createElement('div'); t.className='tag'; t.innerHTML='W1042 · '+k+'/'+finalPieces+'<small>'+tagWho+' · '+last4+' · '+label+'</small>'; tags.appendChild(t); }, (k-1)*140); })(n,it.tag); } });
+      later(function(){ tagnote.textContent=finalPieces+(finalPieces===1?' tag':' tags')+' on the tag printer — one per piece, so a bag and a comforter never get separated.'; printer.classList.remove('busy'); }, finalPieces*140+300);
     },delay+1500);
   }
   $('sayForm').addEventListener('submit',function(e){e.preventDefault(); var v=input.value.trim(); if(v) render(v);});
@@ -1436,7 +1483,7 @@ svg.i{width:18px;height:18px;flex:none}
     'payment':{src:'assets/img/new/payment.webp',alt:'Fold POS — Payment',title:'Payment',at:'Saturday · 11:05 AM · The door',more:'Card first, because that is what people hand you. Cash, check and store credit beside it. Pay-on-collection and COD for the ones who pay later, and monthly invoices for the accounts — the hotel, the restaurant, the dental office.',feats:['Card, cash, check, store credit', 'Pay on collection and COD', 'Monthly invoicing for accounts', 'Split tenders', 'Your processor, your rates']},
     'customers':{src:'assets/img/new/customers.webp',alt:'Fold POS — Customers',title:'Customers',at:'Friday · 4:31 PM · Her phone',more:'Everyone who has ever dropped something off, with their history, their card on file, their preferences and every text you sent them. Segments group them — weekly regulars, lapsed 45 days, accounts — for the marketing side to use.',feats:['Full order history', 'Card on file', 'Preferences and notes', 'Every text in one thread', 'Segments for marketing']},
     'invoices':{src:'assets/img/new/invoices.webp',alt:'Fold POS — Invoices',title:'Invoices',at:'',more:'',feats:[]},
-    'dashboard':{src:'assets/img/new/dashboard.webp',alt:'Fold POS — Dashboard',title:'Dashboard',at:'Saturday · 7:15 PM · Your office',more:'The store as it happened today — revenue, orders, what is ready and waiting, machine revenue, the trend — from the office, the couch or the parking lot. Multi-location owners see every store rolled up, or one at a time.',feats:['Today, this week, this month', 'Revenue by service', 'Ready and waiting for pickup', 'Multi-location roll-up', 'Export to CSV and QuickBooks']},
+    'dashboard':{src:'assets/img/new/dashboard.webp',alt:'Fold POS — Dashboard',title:'Dashboard',at:'Saturday · 7:15 PM · Your office',more:'The store as it happened today — revenue, orders, what is ready and waiting, machine revenue, the trend — from the office, the couch or the parking lot. On Pro, owners with more than one store see every store rolled up, or one at a time.',feats:['Today, this week, this month', 'Revenue by service', 'Ready and waiting for pickup', 'Multi-location roll-up on Pro', 'Export to CSV and QuickBooks']},
     'delivery':{src:'assets/img/new/delivery.webp',alt:'Fold POS — Pickup & delivery',title:'Pickup & delivery',at:'Every shop',more:"Pickups and deliveries land on a calendar, and one tap builds the day's routes for your drivers. Your drivers use the Fold Driver app on their phone: the stops in order, navigation, a photo at the door, and the customer texted at each step. No drivers of your own? Hand a run to a partner network — Fold, Laundryheap, Rinse — from the same screen, or Uber Direct for a one-off. Insights show cost per stop and margin per order so you know whether delivery is paying for itself.",feats:['Pickup and delivery calendar', 'One-tap route builder', 'Fold Driver app for your drivers', 'Customer texted at every step', 'Partner networks and Uber Direct', 'Cost per stop and margin per order']},
     'marketing':{src:'assets/img/new/marketing.webp',alt:'Fold POS — Marketing',title:'Marketing',at:'Every shop',more:'The texts and emails that bring people back, written once and sent by the POS on its own. Automated flows fire on events — the first order, a birthday, forty-five days of silence — and campaigns go out to a segment on a date you pick, with the results counted in orders, not opens.',feats:['Automated flows on events', 'Campaigns to a segment', 'Win-back and lapsed customers', 'Review requests after pickup', 'Results counted in orders']},
     'supplies':{src:'assets/img/new/supplies.webp',alt:'Fold POS — Supply management',title:'Supply management',at:'Every shop',more:'Hangers, poly, detergent, tags, vending stock: what you have, how fast it goes, and what to reorder this week. Fold reads the usage off the orders you already ring up, warns before you run out, and drafts the order to your vendor.',feats:['Stock on hand and days of cover', 'Usage from real orders', 'Reorder suggestions with cost', 'Vendors and price history', 'Low-stock alerts']},

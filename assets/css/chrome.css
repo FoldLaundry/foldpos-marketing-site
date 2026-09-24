@@ -70,3 +70,5 @@ body.fx-locked{overflow:hidden}
 .fx-foot-bot span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:1040px){.fx-cta .fx-lang{display:none}}
 .fx-nav a.fx-lang:focus-visible,.fx-foot-bot a:focus-visible{outline:2px solid var(--fx-brand);outline-offset:2px}
+/* anchors land below the sticky header */
+:target{scroll-margin-top:84px}

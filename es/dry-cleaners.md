@@ -14,7 +14,7 @@ Etiquetas para cada prenda, espacios en el transportador y tickets por prenda �
 
 El único POS con el que puede hablar. Diga el pedido — queda registrado, impreso y etiquetado. Fold escucha su nombre, toma el pedido, se lo confirma y envía el recibo y las etiquetas de las prendas a la impresora.
 
-- Palabra de activación siempre atenta, con pulsar para hablar como respaldo
+- Diga “Hey Fold”, presione Bloq Mayús o toque el orbe; se queda en silencio hasta que lo llama
 - Búsqueda de clientes, estado de pedidos y avances de producción por voz
 - Funciona en el navegador y en las versiones para Mac y Windows con un micrófono común
 

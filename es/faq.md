@@ -4,7 +4,7 @@
 
 ## Primeros pasos
 
-**¿Qué es Fold POS?** Un punto de venta (POS) y centro de mando para lavanderías, tintorerías y sastrerías. Sigue cada pedido desde el mostrador hasta el teléfono del cliente: la recepción, las etiquetas, la trastienda, dónde está el pedido, el aviso de “listo”, el retiro y el cobro, y los reportes al final del día.
+**¿Qué es Fold POS?** Un punto de venta (POS) y centro de mando para lavanderías, tintorerías y sastrerías. Sigue cada pedido desde el mostrador hasta el teléfono del cliente: la recepción, las etiquetas, la trastienda, dónde está el pedido, el aviso de “listo”, el retiro y el cobro, y los informes al final del día.
 
 **¿Para quién es?** Lavanderías (lavado y doblado por libra, el piso y las máquinas), tintorerías (cada prenda con su propia línea y etiqueta, lugares en el transportador) y sastrerías (trabajos con medidas y pruebas). Muchos negocios hacen más de una cosa; todo cabe en un solo mostrador.
 
@@ -28,7 +28,7 @@
 
 ## Impresoras y equipos
 
-**¿Con qué impresoras funciona?** Con las impresoras de recibos y de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o en red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta termoadhesiva de 1 × 3 pulgadas por pieza. Vea todas las impresoras.
+**¿Con qué impresoras funciona?** Con las impresoras de recibos y de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o en red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta de 1 × 3 pulgadas por pieza, en una impresora de etiquetas termoadhesivas o en su impresora de impacto. [Vea todas las impresoras](https://foldpos.com/es/printers).
 
 **¿Necesito el asistente de impresión?** Chrome puede imprimir directamente en la impresora: Ajustes › Recibos › Conectar impresora. En Windows, si la lista está vacía o si usa Edge o Firefox, instale el asistente de impresión de Fold y emparéjelo con el código de 6 dígitos de Ajustes › Recibos. En una Mac, use Chrome; el asistente para Mac está en camino.
 

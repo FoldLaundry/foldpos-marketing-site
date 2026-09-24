@@ -18,7 +18,7 @@ Elija su tipo de negocio (lavandería, tintorería o sastrería) y los mismos se
 
 **Sábado, 11:05 a. m.: la puerta. Escanear. Pagar. Listo.** Escanee cualquier etiqueta y aparece todo el pedido. Tarjeta, efectivo o la tarjeta guardada; pagos divididos; facturación mensual para cuentas. La etiqueta queda marcada como recogida, la posición se libera sola, el pedido se cierra con todo su historial y ella recibe el recibo en su teléfono.
 
-**Sábado, 7:15 p. m.: su oficina, o su sofá. Toda la tienda, en una pantalla.** No es un informe que hay que generar: es el día tal como pasó. Ventas por servicio, piezas que entraron y salieron, quién está en turno, qué va atrasado, qué sigue en el rack, desde cualquier navegador o su teléfono. Consolidado de varias sucursales, turnos y registro de entrada del personal, ventas diarias en QuickBooks.
+**Sábado, 7:15 p. m.: su oficina, o su sofá. Toda la tienda, en una pantalla.** No es un informe que hay que generar: es el día tal como pasó. Ventas por servicio, piezas que entraron y salieron, quién está en turno, qué va atrasado, qué sigue en el rack, desde cualquier navegador o su teléfono. Consolidado de varias sucursales en Pro, turnos y registro de entrada del personal, ventas diarias en QuickBooks.
 
 ## Conozca Hey Fold: el mostrador que escucha
 
@@ -42,8 +42,8 @@ Su propio servicio a domicilio, manejado desde el mostrador: sus repartidores, l
 
 Mes a mes, prueba gratis de 14 días, sin tarjeta por adelantado. Cambie o cancele desde Ajustes. Precios en dólares estadounidenses (USD).
 
-- **Starter: $39/mes, un mostrador.** Recepción, pedidos y pagos; cuentas e historial de clientes; recibos, etiquetas e impresión; informes diarios.
-- **Growth: $59/mes, suma entregas y personal.** Todo lo de Starter, rutas de recogida y entrega, turnos y registro de entrada del personal, precios exprés y por suscripción, marketing y recordatorios de pedidos.
+- **Starter: $39/mes, un mostrador.** Recepción, pedidos y pagos; cuentas e historial de clientes; recibos, etiquetas e impresión; informes diarios; registro de mantenimiento de máquinas; Hey Fold.
+- **Growth: $59/mes, suma entregas y personal.** Todo lo de Starter, rutas de recogida y entrega, turnos y registro de entrada del personal, precios exprés y por suscripción, marketing y recordatorios de pedidos, inventario de insumos y sugerencias de reabastecimiento.
 - **Pro: $79/mes, más de una sucursal.** Todo lo de Growth, informes de varias sucursales, optimización de rutas, permisos por rol, soporte prioritario.
 
 Creado en los mostradores de Fold, porque nada de lo que podíamos comprar sabía lo que era un edredón.
@@ -52,7 +52,7 @@ Empiece gratis en https://pos.foldpos.com/signup · Inicie sesión en https://po
 
 ## Preguntas
 
-- **¿Con qué impresoras funciona?** Con las impresoras de recibos y de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o por red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta termoadhesiva de 1 × 3 pulgadas por pieza. Todas las impresoras: /es/printers.md
+- **¿Con qué impresoras funciona?** Con las impresoras de recibos y de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o por red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta de 1 × 3 pulgadas por pieza, en una impresora de etiquetas termoadhesivas o en su impresora de impacto. Todas las impresoras: /es/printers.md
 - **¿Funciona en Windows, Mac y iPad?** Sí: pos.foldpos.com en cualquier navegador, la app de escritorio en la PC del mostrador, o el iPad. Las PC con Windows del mostrador usan el asistente de impresión de /es/download.
 - **¿Puedo traer a mis clientes desde Cents o CleanCloud?** Sí, o desde un CSV, y puede llevarse sus datos de la misma forma.
 - **¿Puedo usar mi propio procesador de tarjetas?** Sí. Tarjeta, efectivo, cheque, crédito de tienda y pagos divididos, con su procesador y a sus tarifas.

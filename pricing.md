@@ -45,7 +45,7 @@ More than one location.
 - **What happens when the trial ends?** You pick a plan in Settings › Plan & billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.
 - **Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.
 - **Is Hey Fold extra?** No. Hey Fold is built into every plan.
-- **What if we have more than five locations?** Email contact@foldpos.com and we’ll set it up with you.
+- **What if we have more than five locations?** Email [contact@foldpos.com](mailto:contact@foldpos.com?subject=More%20than%20five%20locations) and we’ll set it up with you.
 ## More
 
 - [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
