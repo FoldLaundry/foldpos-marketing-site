@@ -72,3 +72,13 @@ body.fx-locked{overflow:hidden}
 .fx-nav a.fx-lang:focus-visible,.fx-foot-bot a:focus-visible{outline:2px solid var(--fx-brand);outline-offset:2px}
 /* anchors land below the sticky header */
 :target{scroll-margin-top:84px}
+/* Footer street scene (partials/footer-scene.svg), timed by chrome.js. */
+.fx-foot.fx-foot-scene{border-top:0;background:linear-gradient(180deg,#fff 0%,#f6f8fe 150px);padding-bottom:0;color:#3b4a73}
+.fx-foot-scene .fx-foot-bot{border-top-color:#dbe3f7}
+.fx-foot-scene .fx-foot-h{color:#5a6a95}
+.fx-scene{position:relative;overflow:hidden;margin-top:6px;line-height:0}
+.fx-scene svg{display:block;width:100%;height:auto;max-height:440px}
+@media (max-width:700px){
+  .fx-scene{height:250px}
+  .fx-scene svg{position:absolute;bottom:0;left:50%;height:250px;width:auto;max-width:none;max-height:none;transform:translateX(-60%)}
+}

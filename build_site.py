@@ -26,6 +26,23 @@ FOOTER = open('partials/footer.html', encoding='utf-8').read().strip()
 # Spanish chrome for es/*.html. {{ALT}} in either is the same page in the other language.
 HEADER_ES = open('partials/header.es.html', encoding='utf-8').read().strip()
 FOOTER_ES = open('partials/footer.es.html', encoding='utf-8').read().strip()
+# The illustrated street scene at the foot of every page, with its signage in each language.
+SCENE = open('partials/footer-scene.svg', encoding='utf-8').read().split('-->', 1)[1].strip()
+SCENE_TEXT = {
+    'en': {'SCENE_LABEL': 'Illustration: a pickup van pulls up to a laundromat and a staff member wheels the clean linens inside.',
+           'SCENE_SIGN': 'WASH · DRY · FOLD', 'SCENE_OPEN': 'OPEN', 'SCENE_OPEN_LS': '1',
+           'SCENE_VAN1': 'PICKUP', 'SCENE_VAN2': '&amp; DELIVERY'},
+    'es': {'SCENE_LABEL': 'Ilustración: una camioneta de recogida llega a la lavandería y un empleado entra la ropa limpia en un carrito.',
+           'SCENE_SIGN': 'LAVADO · SECADO · DOBLADO', 'SCENE_OPEN': 'ABIERTO', 'SCENE_OPEN_LS': '.4',
+           'SCENE_VAN1': 'RECOGIDA', 'SCENE_VAN2': 'Y ENTREGA'},
+}
+def scene_for(lang):
+    s = SCENE
+    for k, v in SCENE_TEXT[lang].items():
+        s = s.replace('{{' + k + '}}', v)
+    return s
+FOOTER = FOOTER.replace('{{SCENE}}', scene_for('en'))
+FOOTER_ES = FOOTER_ES.replace('{{SCENE}}', scene_for('es'))
 LASTMOD = '2026-09-23'   # bump when the site content changes
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'

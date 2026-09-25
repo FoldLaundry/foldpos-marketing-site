@@ -286,7 +286,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
 
 
 <!--fx:footer-->
-<div class="fx-foot" role="contentinfo">
+<div class="fx-foot fx-foot-scene" role="contentinfo">
   <div class="fx-foot-in">
     <div class="fx-foot-top">
       <div class="fx-foot-brand">
@@ -324,6 +324,204 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
       <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
     </div>
   </div>
+  <div class="fx-scene"><svg class="fx-scene-art" focusable="false" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: a pickup van pulls up to a laundromat and a staff member wheels the clean linens inside.">
+  <defs>
+    <pattern id="fsHatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="#24439f" stroke-width=".8" stroke-opacity=".55"/></pattern>
+    <pattern id="fsHatchFar" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" stroke="#24439f" stroke-width=".7" stroke-opacity=".22"/></pattern>
+    <pattern id="fsStreet" width="8" height="4" patternUnits="userSpaceOnUse"><line x1="0" y1="2" x2="8" y2="2" stroke="#24439f" stroke-width=".6" stroke-opacity=".28"/></pattern>
+    <pattern id="fsWire" width="5" height="6" patternUnits="userSpaceOnUse"><line x1="2.5" y1="0" x2="2.5" y2="6" stroke="#24439f" stroke-width=".8" stroke-opacity=".7"/><line x1="0" y1="3" x2="5" y2="3" stroke="#24439f" stroke-width=".5" stroke-opacity=".35"/></pattern>
+    <pattern id="fsAwning" width="48" height="30" patternUnits="userSpaceOnUse"><rect width="24" height="30" fill="#24439f"/><rect x="24" width="24" height="30" fill="#f6f8fe"/></pattern>
+    <g id="fsCloudA"><circle cx="0" cy="0" r="26"/><circle cx="30" cy="-12" r="32"/><circle cx="66" cy="-2" r="26"/><circle cx="94" cy="6" r="18"/><circle cx="-24" cy="8" r="16"/><rect x="-40" y="8" width="150" height="16" rx="8"/></g>
+    <g id="fsCloudB"><circle cx="0" cy="0" r="16"/><circle cx="22" cy="-8" r="20"/><circle cx="46" cy="0" r="15"/><rect x="-14" y="4" width="74" height="11" rx="5.5"/></g>
+    <clipPath id="fsDrumClip"><circle r="12"/></clipPath>
+    <!-- one washer: frame, controls, glass; drum contents are added per machine -->
+    <g id="fsWasher">
+      <rect x="0" y="0" width="52" height="54" rx="3" fill="#f6f8fe" stroke="#24439f" stroke-width="1.6"/>
+      <line x1="0" y1="9" x2="52" y2="9" stroke="#24439f" stroke-width="1.2"/>
+      <circle cx="8" cy="4.6" r="1.8" fill="#24439f"/><circle cx="15" cy="4.6" r="1.8" fill="none" stroke="#24439f" stroke-width="1"/>
+      <rect x="30" y="2.6" width="16" height="4" rx="1" fill="#24439f" fill-opacity=".35"/>
+      <circle cx="26" cy="31" r="16.5" fill="#f6f8fe" stroke="#24439f" stroke-width="2.2"/>
+      <circle cx="26" cy="31" r="12.5" fill="#dfe7fb" stroke="#24439f" stroke-width=".8"/>
+    </g>
+    <g id="fsLoad"><circle r="12" fill="none"/><path d="M-11 3 C-6 -2 -1 8 5 3 S 11 6 11 6 L 11 12 L -11 12 Z" fill="#24439f" fill-opacity=".55"/><path d="M-6 -2 q4 -5 9 -1 q-2 5 -9 1z" fill="#24439f" fill-opacity=".35"/><circle cx="6" cy="-6" r="2" fill="#24439f" fill-opacity=".3"/></g>
+    <g id="fsWheel"><circle r="5.2" fill="#f6f8fe" stroke="#24439f" stroke-width="1.8"/><line x1="-5" y1="0" x2="5" y2="0" stroke="#24439f" stroke-width="1"/><line x1="0" y1="-5" x2="0" y2="5" stroke="#24439f" stroke-width="1"/></g>
+  </defs>
+
+  <!-- clouds -->
+  <g class="fs-clouds">
+    <g transform="translate(150 70)"><animateTransform attributeName="transform" type="translate" values="150 70;215 70;150 70" dur="140s" repeatCount="indefinite"/>
+      <use href="#fsCloudA" fill="none" stroke="#24439f" stroke-opacity=".38" stroke-width="2.4"/><use href="#fsCloudA" fill="#f6f8fe"/>
+      <rect x="-36" y="12" width="140" height="11" fill="url(#fsHatchFar)"/></g>
+    <g transform="translate(560 44)"><animateTransform attributeName="transform" type="translate" values="560 44;500 44;560 44" dur="110s" repeatCount="indefinite"/>
+      <use href="#fsCloudB" fill="none" stroke="#24439f" stroke-opacity=".32" stroke-width="2.2"/><use href="#fsCloudB" fill="#f6f8fe"/></g>
+    <g transform="translate(1240 58)"><animateTransform attributeName="transform" type="translate" values="1240 58;1300 58;1240 58" dur="160s" repeatCount="indefinite"/>
+      <use href="#fsCloudA" fill="none" stroke="#24439f" stroke-opacity=".34" stroke-width="2.4"/><use href="#fsCloudA" fill="#f6f8fe"/>
+      <rect x="-36" y="12" width="140" height="11" fill="url(#fsHatchFar)"/></g>
+  </g>
+
+  <!-- far skyline -->
+  <g stroke="#24439f" stroke-opacity=".32" stroke-width="1">
+    <rect x="-2" y="196" width="92" height="140" fill="url(#fsHatchFar)"/>
+    <rect x="90" y="236" width="70" height="100" fill="#eef2fd"/>
+    <rect x="170" y="176" width="96" height="160" fill="url(#fsHatchFar)"/>
+    <rect x="266" y="222" width="62" height="114" fill="#eef2fd"/>
+    <rect x="1206" y="188" width="92" height="148" fill="url(#fsHatchFar)"/>
+    <rect x="1298" y="218" width="78" height="118" fill="#eef2fd"/>
+    <rect x="1376" y="168" width="70" height="168" fill="url(#fsHatchFar)"/>
+  </g>
+  <g fill="#24439f" fill-opacity=".22">
+    <rect x="102" y="250" width="10" height="14"/><rect x="124" y="250" width="10" height="14"/><rect x="102" y="276" width="10" height="14"/><rect x="146" y="276" width="10" height="14"/>
+    <rect x="278" y="236" width="9" height="13"/><rect x="302" y="236" width="9" height="13"/><rect x="278" y="262" width="9" height="13"/>
+    <rect x="1312" y="232" width="10" height="14"/><rect x="1336" y="232" width="10" height="14"/><rect x="1312" y="258" width="10" height="14"/><rect x="1358" y="258" width="10" height="14"/>
+  </g>
+
+  <!-- tree (behind the walker) -->
+  <g>
+    <path d="M626 330 L630 258 L636 258 L641 330 Z" fill="#24439f"/>
+    <path d="M633 272 l-14 -12 M634 266 l12 -10" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+    <g stroke="#24439f" stroke-width="1.8"><circle cx="608" cy="236" r="28" fill="#dfe7fb"/><circle cx="654" cy="230" r="32" fill="#dfe7fb"/><circle cx="632" cy="200" r="30" fill="#dfe7fb"/><circle cx="628" cy="244" r="22" fill="#dfe7fb"/></g>
+    <g fill="#dfe7fb"><circle cx="608" cy="236" r="26.4"/><circle cx="654" cy="230" r="30.4"/><circle cx="632" cy="200" r="28.4"/><circle cx="628" cy="244" r="20.4"/></g>
+    <clipPath id="fsTreeClip"><circle cx="608" cy="236" r="26.4"/><circle cx="654" cy="230" r="30.4"/><circle cx="632" cy="200" r="28.4"/><circle cx="628" cy="244" r="20.4"/></clipPath>
+    <g clip-path="url(#fsTreeClip)"><ellipse cx="646" cy="262" rx="70" ry="30" fill="url(#fsHatch)"/><ellipse cx="664" cy="214" rx="20" ry="30" fill="url(#fsHatch)" opacity=".7"/></g>
+    <g fill="none" stroke="#24439f" stroke-width="1.2" stroke-linecap="round" stroke-opacity=".7">
+      <path d="M606 190 q5 -5 10 0 q5 -5 10 0 M640 186 q5 -5 10 0 M592 226 q5 -5 10 0 q5 -5 10 0 M636 218 q5 -5 10 0 M662 220 q5 -5 10 0 M614 246 q5 -5 10 0 M650 244 q5 -5 10 0"/>
+    </g>
+  </g>
+
+  <!-- bench -->
+  <g stroke="#24439f" stroke-linecap="round" fill="none">
+    <path d="M448 312 H516" stroke-width="3"/><path d="M450 300 H514 M450 306 H514" stroke-width="2"/>
+    <path d="M456 312 V330 M508 312 V330 M456 300 V312 M508 300 V312" stroke-width="2.2"/>
+  </g>
+
+  <!-- the laundromat -->
+  <g>
+    <!-- roof vent + steam -->
+    <rect x="1112" y="80" width="14" height="26" fill="#f6f8fe" stroke="#24439f" stroke-width="1.5"/>
+    <rect x="1106" y="73" width="26" height="7" rx="1.5" fill="#24439f"/>
+    <g fill="none" stroke="#24439f" stroke-width="1.6" stroke-linecap="round">
+      <path d="M1119 68 c-6 -7 6 -13 0 -20 c-6 -7 6 -13 0 -20" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;0 -26" dur="4.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.5;0" dur="4.2s" repeatCount="indefinite"/></path>
+      <path d="M1112 68 c-5 -6 5 -11 0 -17 c-5 -6 5 -11 0 -17" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;-6 -24" dur="4.2s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.4;0" dur="4.2s" begin="1.4s" repeatCount="indefinite"/></path>
+      <path d="M1126 68 c-5 -6 5 -11 0 -17 c-5 -6 5 -11 0 -17" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;6 -24" dur="4.2s" begin="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.4;0" dur="4.2s" begin="2.8s" repeatCount="indefinite"/></path>
+    </g>
+    <!-- facade -->
+    <rect x="1190" y="116" width="14" height="214" fill="url(#fsHatch)" stroke="#24439f" stroke-width="1.2"/>
+    <rect x="760" y="112" width="430" height="218" fill="#f6f8fe" stroke="#24439f" stroke-width="1.8"/>
+    <rect x="750" y="102" width="450" height="12" fill="#e3eafb" stroke="#24439f" stroke-width="1.6"/>
+    <g fill="#24439f"><rect x="764" y="114" width="422" height="3" fill-opacity=".5"/></g>
+    <!-- upper windows -->
+    <g stroke="#24439f" stroke-width="1.5">
+      <g fill="#f6f8fe">
+        <rect x="796" y="130" width="62" height="56"/><rect x="896" y="130" width="62" height="56"/><rect x="996" y="130" width="62" height="56"/><rect x="1096" y="130" width="62" height="56"/>
+      </g>
+      <g fill="url(#fsHatch)" stroke="none">
+        <rect x="797" y="158" width="60" height="27"/><rect x="897" y="150" width="60" height="35"/><rect x="997" y="160" width="60" height="25"/><rect x="1097" y="154" width="60" height="31"/>
+      </g>
+      <path d="M827 130 V186 M796 158 H858 M927 130 V186 M896 158 H958 M1027 130 V186 M996 158 H1058 M1127 130 V186 M1096 158 H1158" fill="none"/>
+      <g fill="#e3eafb"><rect x="792" y="186" width="70" height="5"/><rect x="892" y="186" width="70" height="5"/><rect x="992" y="186" width="70" height="5"/><rect x="1092" y="186" width="70" height="5"/></g>
+    </g>
+    <!-- sign -->
+    <rect x="782" y="200" width="386" height="30" rx="2" fill="#24439f"/>
+    <text x="975" y="220.5" text-anchor="middle" fill="#f6f8fe" font-family="Sora, 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" letter-spacing="4">WASH · DRY · FOLD</text>
+    <!-- awning -->
+    <path d="M774 236 H1186 V254 H774 Z" fill="url(#fsAwning)" stroke="#24439f" stroke-width="1.6"/>
+    <path d="M774 254 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 z" fill="url(#fsAwning)" stroke="#24439f" stroke-width="1.4"/>
+    <rect x="776" y="262" width="408" height="4" fill="url(#fsHatch)"/>
+    <!-- storefront window with washers -->
+    <rect x="784" y="266" width="302" height="62" fill="#eef2fd" stroke="#24439f" stroke-width="2"/>
+    <g transform="translate(790 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.6s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(849 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.7s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(908 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3.2s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(967 272)"><use href="#fsWasher"/></g>
+    <g transform="translate(1026 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.9s" repeatCount="indefinite"/></g></g></g>
+    <path d="M806 326 L842 268 M818 326 L852 272 M1000 326 L1036 268" stroke="#fff" stroke-width="3" stroke-opacity=".7"/>
+    <!-- door: doorway behind a panel hinged on its right edge -->
+    <rect x="1100" y="262" width="66" height="68" fill="#cfdaf6"/>
+    <rect x="1100" y="262" width="66" height="68" fill="url(#fsHatch)"/>
+    <g id="fsDoor">
+      <rect x="1101" y="263" width="64" height="67" fill="#f6f8fe"/>
+      <rect x="1108" y="270" width="50" height="46" fill="#eef2fd" stroke="#24439f" stroke-width="1.2"/>
+      <rect x="1113" y="280" width="40" height="12" rx="2" fill="#24439f"/>
+      <text x="1133" y="289.4" text-anchor="middle" fill="#f6f8fe" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" letter-spacing="1">OPEN</text>
+      <line x1="1110" y1="300" x2="1110" y2="310" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <rect x="1100" y="262" width="66" height="68" fill="none" stroke="#24439f" stroke-width="2"/>
+    <!-- planter -->
+    <path d="M1170 330 l3 -16 h14 l3 16 z" fill="#24439f"/>
+    <g fill="#eef2fd" stroke="#24439f" stroke-width="1.3"><ellipse cx="1174" cy="306" rx="6" ry="9" transform="rotate(-20 1174 306)"/><ellipse cx="1186" cy="304" rx="6" ry="10" transform="rotate(18 1186 304)"/><ellipse cx="1180" cy="300" rx="5" ry="10"/></g>
+  </g>
+
+  <!-- sidewalk, curb, street -->
+  <rect x="0" y="330" width="1440" height="22" fill="#eef2fd"/>
+  <line x1="0" y1="330" x2="1440" y2="330" stroke="#24439f" stroke-width="1.6"/>
+  <g stroke="#24439f" stroke-opacity=".28" stroke-width="1"><path d="M40 330 l-8 22 M160 330 l-8 22 M280 330 l-8 22 M400 330 l-8 22 M520 330 l-8 22 M640 330 l-8 22 M760 330 l-8 22 M880 330 l-8 22 M1000 330 l-8 22 M1120 330 l-8 22 M1240 330 l-8 22 M1360 330 l-8 22"/></g>
+  <rect x="0" y="352" width="1440" height="7" fill="#dfe7fb" stroke="#24439f" stroke-width="1.3"/>
+  <rect x="0" y="359" width="1440" height="41" fill="url(#fsStreet)"/>
+  <g fill="#24439f" fill-opacity=".35"><rect x="30" y="382" width="60" height="3"/><rect x="170" y="382" width="60" height="3"/><rect x="310" y="382" width="60" height="3"/><rect x="450" y="382" width="60" height="3"/><rect x="590" y="382" width="60" height="3"/><rect x="730" y="382" width="60" height="3"/><rect x="870" y="382" width="60" height="3"/><rect x="1010" y="382" width="60" height="3"/><rect x="1150" y="382" width="60" height="3"/><rect x="1290" y="382" width="60" height="3"/></g>
+
+  <!-- the worker with the linen cart; positions, legs and loading are driven by footer_scene.js -->
+  <clipPath id="fsDoorClip"><rect x="-600" y="0" width="1704" height="400"/></clipPath>
+  <g clip-path="url(#fsDoorClip)"><g id="fsW" opacity="0" transform="translate(1185 341) scale(-1 1) translate(-15 0)">
+    <g>
+      <line x1="31" y1="-12" x2="31" y2="-82" stroke="#24439f" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="95" y1="-44" x2="95" y2="-82" stroke="#24439f" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="29" y1="-82" x2="97" y2="-82" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+      <g id="fsI4"><g><animateTransform attributeName="transform" type="rotate" values="0 72 -82;3 72 -82;0 72 -82;-2 72 -82;0 72 -82" dur="1.6s" repeatCount="indefinite"/>
+        <path d="M58 -83 h28 l1 12 q-3 5 -6 0 q-3 5 -6 0 q-3 5 -6 0 q-3 5 -6 0 q-3 4 -5 0 z" fill="#fff" stroke="#24439f" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M66 -82 v9 M76 -82 v10" stroke="#24439f" stroke-width=".7" stroke-opacity=".5"/></g></g>
+      <g fill="#fff" stroke="#24439f" stroke-width="1.2">
+        <g id="fsI1"><rect x="36" y="-51" width="20" height="7" rx="2"/><rect x="37" y="-57.5" width="19" height="7" rx="2"/><rect x="36.5" y="-64" width="19" height="7" rx="2"/></g>
+        <g id="fsI2"><rect x="58" y="-51" width="20" height="7" rx="2"/><rect x="58.5" y="-57.5" width="19" height="7" rx="2"/></g>
+        <g id="fsI3"><rect x="80" y="-51" width="13" height="7" rx="2"/></g>
+      </g>
+      <path d="M30 -44 H96 L92 -12 H34 Z" fill="#f6f8fe"/>
+      <path d="M30 -44 H96 L92 -12 H34 Z" fill="url(#fsWire)" stroke="#24439f" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="28" y1="-44" x2="98" y2="-44" stroke="#24439f" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M37 -12 l2 7 M89 -12 l-2 7" stroke="#24439f" stroke-width="1.8"/>
+      <g id="fsCW1" transform="translate(40 -5)"><use href="#fsWheel"/></g>
+      <g id="fsCW2" transform="translate(86 -5)"><use href="#fsWheel"/></g>
+    </g>
+    <g id="fsBody">
+      <g id="fsL1" opacity=".62"><path id="fsL1p" d="M14 -32 L14 -17 L14 -3 h6" fill="none" stroke="#24439f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <path d="M18 -55 L26 -49 L31 -50" fill="none" stroke="#24439f" stroke-width="4" stroke-opacity=".62" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8.5 -30 L20 -30 L26.5 -55 Q20 -62 13 -59 Z" fill="#24439f"/>
+      <path d="M19.5 -31 L22.5 -31 L26 -48 L23 -50 Z" fill="#fff" fill-opacity=".9"/>
+      <rect x="18" y="-63" width="4" height="4" fill="#24439f"/>
+      <circle cx="21.5" cy="-67.5" r="6.4" fill="#24439f"/>
+      <path d="M15.5 -70.5 Q21 -77 27 -71 L32 -70.2" fill="none" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M21 -56 L27 -48.5 L31 -47.5" fill="none" stroke="#24439f" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="fsL2"><path id="fsL2p" d="M14 -32 L14 -17 L14 -3 h6" fill="none" stroke="#24439f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+  </g></g>
+
+  <!-- street lamp (in front of the walker) -->
+  <g stroke="#24439f" fill="none">
+    <path d="M338 352 V196" stroke-width="3.2"/>
+    <path d="M338 204 q0 -14 16 -14 h8" stroke-width="2.4"/>
+    <path d="M354 190 h18 l-4 10 h-10 z" fill="#24439f" stroke-width="1.2"/>
+    <rect x="332" y="340" width="12" height="12" fill="#24439f"/>
+  </g>
+
+  <!-- pickup van: drawn facing right, mirrored by footer_scene.js so it drives in from the right; the lettering stays unmirrored -->
+  <defs><g id="fsVanWheel"><circle r="11" fill="#24439f"/><circle r="5.6" fill="#f6f8fe"/><path d="M0 -5.6 V5.6 M-5.6 0 H5.6" stroke="#24439f" stroke-width="1.6"/><circle r="1.8" fill="#24439f"/></g></defs>
+  <g id="fsVan" transform="translate(1660 293.7) scale(-1.3 1.3)">
+    <path d="M0 58 V12 Q0 4 8 4 H112 Q124 4 132 18 L150 36 Q156 38 156 46 V58 Z" fill="#f6f8fe" stroke="#24439f" stroke-width="1.6"/>
+    <path d="M114 10 H124 Q128 10 131 16 L144 34 H114 Z" fill="#eef2fd" stroke="#24439f" stroke-width="1.3"/>
+    <circle cx="125" cy="22" r="4.6" fill="#24439f"/><path d="M118 34 q7 -9 14 0z" fill="#24439f"/>
+    <line x1="110" y1="6" x2="110" y2="58" stroke="#24439f" stroke-width="1.1"/>
+    <rect x="0" y="46" width="156" height="12" fill="url(#fsHatch)"/>
+    <line x1="14" y1="30" x2="96" y2="30" stroke="#24439f" stroke-width=".8" stroke-opacity=".4"/>
+    <rect x="152" y="40" width="5" height="4" rx="1" fill="#24439f"/>
+    <rect x="-1.5" y="18" width="3" height="10" rx="1" fill="#24439f"/>
+    <g id="fsVDoor" transform="scale(0 1)"><rect x="-22" y="6" width="22" height="46" fill="#f6f8fe" stroke="#24439f" stroke-width="1.3"/><rect x="-18" y="11" width="14" height="14" fill="#eef2fd" stroke="#24439f" stroke-width=".9"/></g>
+    <g id="fsVW1" transform="translate(32 60)"><use href="#fsVanWheel"/></g>
+    <g id="fsVW2" transform="translate(126 60)"><use href="#fsVanWheel"/></g>
+  </g>
+  <g id="fsVanText" transform="translate(1588.5 293.7) scale(1.3)" fill="#24439f">
+    <text x="0" y="22" text-anchor="middle" font-family="Sora, 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="2">PICKUP</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="7.5" letter-spacing="1.6">&amp; DELIVERY</text>
+  </g>
+</svg></div>
 </div>
 <!--/fx:footer-->
 </body>
