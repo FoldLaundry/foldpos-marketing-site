@@ -25,12 +25,12 @@
 })();
 
 (function(){
-  // One 22-second story, driven by a single clock:
+  // One 26-second story, driven by a single clock:
   // the van pulls up, the worker comes out with an empty cart, loads the linens from the van,
-  // turns and wheels them into the shop while the van drives off.
+  // turns and wheels them into the shop while the van drives off; then about 6 s of quiet street before it loops.
   var svg=document.querySelector('.fx-scene svg'); if(!svg) return;
   var $=function(id){return svg.getElementById?svg.getElementById(id):document.getElementById(id)};
-  var T=22, S=1.3, VY=293.7, VSTOP=820, VIN=1660, VOUT=-40;
+  var T=26, S=1.3, VY=293.7, VSTOP=820, VIN=1660, VOUT=-40;
   var W=$('fsW'), body=$('fsBody'), L1=$('fsL1'), L1p=$('fsL1p'), L2=$('fsL2'), L2p=$('fsL2p'),
       CW1=$('fsCW1'), CW2=$('fsCW2'), van=$('fsVan'), vtext=$('fsVanText'), vdoor=$('fsVDoor'),
       VW1=$('fsVW1'), VW2=$('fsVW2'), door=$('fsDoor'), items=[$('fsI1'),$('fsI2'),$('fsI3'),$('fsI4')];

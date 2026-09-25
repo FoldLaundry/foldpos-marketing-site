@@ -12,6 +12,7 @@ styled by assets/css/chrome.css and driven by assets/js/chrome.js. Each page
 carries them between <!--fx:header--> / <!--fx:footer--> markers, so running
 this again replaces them in place.
 """
+import hashlib
 import html
 import json
 import os
@@ -48,8 +49,12 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700'
          '&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">')
-CHROME_CSS = '<link rel="stylesheet" href="/assets/css/chrome.css">'
-CHROME_JS = '<script src="/assets/js/chrome.js" defer></script>'
+# ?v= is a hash of the file, so a changed chrome.css / chrome.js is fetched fresh
+# instead of browsers reusing a cached copy (the server sends no cache headers).
+def _asset_v(path):
+    return hashlib.sha1(open(path, 'rb').read()).hexdigest()[:10]
+CHROME_CSS = '<link rel="stylesheet" href="/assets/css/chrome.css?v=%s">' % _asset_v('assets/css/chrome.css')
+CHROME_JS = '<script src="/assets/js/chrome.js?v=%s" defer></script>' % _asset_v('assets/js/chrome.js')
 
 # ─── icons: reuse the homepage sprite ───
 _sprite = open('index.html', encoding='utf-8').read()
@@ -744,6 +749,8 @@ def put_chrome(fname):
     s = s.replace(fb + '\n', '', 1) if (fb + '\n') in s else s.replace(fb, '', 1)
     i = s.rindex('</body>')
     s = s[:i] + fb + '\n' + s[i:]
+    s = re.sub(r'<link rel="stylesheet" href="/assets/css/chrome\.css(?:\?v=\w+)?">', lambda m: CHROME_CSS, s)
+    s = re.sub(r'<script src="/assets/js/chrome\.js(?:\?v=\w+)?" defer></script>', lambda m: CHROME_JS, s)
     if CHROME_CSS not in s:
         s = s.replace('</head>', CHROME_CSS + '\n</head>', 1)
     if 'fonts.googleapis.com/css2?family=Sora' not in s:
