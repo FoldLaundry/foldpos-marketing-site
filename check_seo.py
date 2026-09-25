@@ -189,7 +189,7 @@ def check_page(fname):
     if md:
         if not exists(md.lstrip('/')):
             err(fname, 'markdown alternate %r does not exist' % md)
-    elif fname not in ('privacy.html', 'terms.html'):
+    elif fname not in ('privacy.html', 'terms.html', '404.html'):
         err(fname, 'missing <link rel="alternate" type="text/markdown">')
 
     for href in p.hrefs:
@@ -270,7 +270,7 @@ def main():
             if not alt.startswith(SITE) or resolve(alt[len(SITE):]) is None:
                 err('sitemap.xml', 'alternate %s does not map to a file' % alt)
         for f in pages:
-            if canonical_for(f) not in locs and f not in ('setup.html',):
+            if canonical_for(f) not in locs and f not in ('setup.html', '404.html'):   # both noindex
                 err('sitemap.xml', '%s (%s) is not listed' % (canonical_for(f), f))
         if 'setup' in [urlsplit(l).path.strip('/') for l in locs]:
             err('sitemap.xml', '/setup is noindex and must not be listed')

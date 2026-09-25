@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lost in the wash (404) — Fold POS</title>
+<meta name="description" content="This page went missing in the wash. Find what you were looking for on Fold POS, the point of sale for laundromats, dry cleaners and tailors.">
+<link rel="canonical" href="https://foldpos.com/404">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Lost in the wash — Fold POS">
+<meta property="og:description" content="This page went missing in the wash. Find what you were looking for on Fold POS, the point of sale for laundromats, dry cleaners and tailors.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/404">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lost in the wash — Fold POS">
+<meta name="twitter:description" content="This page went missing in the wash. Find what you were looking for on Fold POS, the point of sale for laundromats, dry cleaners and tailors.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta name="theme-color" content="#1e5eff">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Page not found", "url": "https://foldpos.com/404", "isPartOf": {"@type": "WebSite", "name": "Fold POS", "url": "https://foldpos.com/"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/pages.css">
+<style>
+/* 404: lost in the wash. Tokens come from pages.css. */
+.nf{padding:64px 0 56px;background:linear-gradient(180deg,var(--fog) 0%,#fff 100%);overflow:hidden}
+.nf .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.nf .kicker{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+.nf h1{font-size:clamp(34px,4.6vw,54px)}
+.nf .lede{margin-top:16px;font-size:clamp(17px,1.8vw,19px);color:var(--ink-2);max-width:48ch}
+.nf .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.nf .status{margin-top:22px;min-height:1.6em;font-size:14.5px;color:var(--ink-3)}
+.nf .status b{color:var(--ink-2);font-weight:600}
+@media (max-width:860px){.nf .grid{grid-template-columns:1fr;gap:28px}.nf .art{order:-1;max-width:300px;margin:0 auto}}
+
+/* the machine */
+.washer{width:100%;height:auto;display:block;overflow:visible}
+.washer .body{transform-origin:50% 100%;animation:wobble 2.4s var(--ease) infinite}
+.washer .drum{transform-origin:170px 222px;animation:tumble 3.2s linear infinite}
+.washer .bubble{animation:rise 3.4s ease-in infinite;opacity:0}
+.washer .bubble:nth-of-type(2){animation-delay:.8s}
+.washer .bubble:nth-of-type(3){animation-delay:1.7s}
+.washer .bubble:nth-of-type(4){animation-delay:2.4s}
+.washer .blink{animation:blink 1.2s steps(1) infinite}
+.washer.fast .drum{animation-duration:.55s}
+.washer.fast .body{animation-duration:.3s}
+.doorbtn{all:unset;cursor:pointer;display:block;border-radius:24px}
+.doorbtn:focus-visible{outline:2px solid var(--brand);outline-offset:6px}
+@keyframes tumble{to{transform:rotate(360deg)}}
+@keyframes wobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-.6deg) translateX(-1px)}75%{transform:rotate(.6deg) translateX(1px)}}
+@keyframes rise{0%{opacity:0;transform:translateY(0) scale(.6)}20%{opacity:.9}100%{opacity:0;transform:translateY(-70px) scale(1.1)}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.washer .body,.washer .drum,.washer .bubble,.washer .blink{animation:none}.washer .bubble{opacity:.6}}
+
+/* lost & found: claim tickets */
+.lf{padding:56px 0 64px}
+.lf h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:10px}
+.lf .sub{color:var(--ink-2);margin-bottom:28px;max-width:62ch}
+.tags{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:960px){.tags{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.tags{grid-template-columns:1fr}}
+.tag{position:relative;display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px 44px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .2s}
+.tag::before{content:"";position:absolute;left:16px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--fog-2);box-shadow:inset 0 0 0 2px var(--line)}
+.tag::after{content:"";position:absolute;left:34px;top:12px;bottom:12px;border-left:2px dashed var(--line)}
+.tag:hover{transform:translateY(-3px) rotate(-.6deg);box-shadow:0 18px 36px -24px rgba(14,23,48,.45);border-color:var(--brand)}
+.tag:nth-child(even):hover{transform:translateY(-3px) rotate(.6deg)}
+.tag .no{font:600 12px/1 "Sora",sans-serif;letter-spacing:.08em;color:var(--brand);text-transform:uppercase}
+.tag .t{display:block;margin-top:8px;font:600 17px/1.25 "Sora",sans-serif;letter-spacing:-.02em}
+.tag .d{display:block;margin-top:4px;font-size:14px;color:var(--ink-3)}
+
+.note{margin-top:36px;display:flex;gap:16px;align-items:flex-start;background:var(--brand-soft);border-radius:16px;padding:20px 22px;color:var(--ink-2);font-size:15px}
+.note svg{flex:none;width:28px;height:28px;color:var(--brand);margin-top:2px}
+.note b{color:var(--ink)}
+.note p+p{margin-top:6px}
+.note code{font:600 14px "Plus Jakarta Sans",sans-serif;color:var(--ink);background:#fff;border-radius:6px;padding:1px 6px}
+</style>
+<link rel="stylesheet" href="/assets/css/chrome.css">
+</head>
+<body>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/" aria-label="Fold POS home"><i></i>Fold POS</a>
+    <nav aria-label="Primary">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Shops<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/laundromats"><b>Laundromats</b><small>Wash &amp; fold by the pound, the floor map</small></a>
+            <a href="/dry-cleaners"><b>Dry cleaners</b><small>Per-piece tickets, tags and conveyor slots</small></a>
+            <a href="/alterations"><b>Tailors</b><small>Per-task pricing, measurements, fittings</small></a>
+          </div>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/hey-fold">Hey Fold</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-lang" href="/es/" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+      <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menu">
+  <p class="fx-menu-h">Shops</p>
+  <a href="/laundromats">Laundromats</a>
+  <a href="/dry-cleaners">Dry cleaners</a>
+  <a href="/alterations">Tailors</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/features">Features</a>
+  <a href="/hey-fold">Hey Fold</a>
+  <a href="/pricing">Pricing</a>
+  <p class="fx-menu-h">Support</p>
+  <a href="/faq">FAQ</a>
+  <a href="/help">Help</a>
+  <a href="/contact">Contact</a>
+  <a class="fx-menu-lang" href="/es/" hreflang="es" lang="es">Español</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Log in</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
+  </div>
+</nav>
+<!--/fx:header-->
+<main id="top">
+<section class="nf"><div class="wrap"><div class="grid">
+  <div>
+    <div class="kicker">Error 404 · Lost in the wash</div>
+    <h1>This page went into the wash and never came out.</h1>
+    <p class="lede">We checked the drum, the lint trap and behind the dryer. Like the other sock, it’s just gone. Let’s get you somewhere that exists.</p>
+    <div class="acts">
+      <a class="btn btn-primary" href="/">Back to the homepage</a>
+      <a class="btn btn-ghost" href="/features">See what Fold POS does</a>
+    </div>
+    <p class="status" id="status" aria-live="polite">Tap the machine to run another cycle.</p>
+  </div>
+  <div class="art">
+    <button class="doorbtn" id="door" type="button" aria-label="Run another spin cycle">
+    <svg class="washer" id="washer" viewBox="0 0 340 400" role="img" aria-labelledby="wt">
+      <title id="wt">A washing machine spinning, with the numbers 404 on its display</title>
+      <ellipse cx="170" cy="392" rx="130" ry="8" fill="#0e1730" opacity=".08"/>
+      <g class="body">
+        <rect x="20" y="20" width="300" height="366" rx="26" fill="#fff" stroke="#e3e7ef" stroke-width="2"/>
+        <rect x="20" y="20" width="300" height="78" rx="26" fill="#f4f6fa"/>
+        <rect x="20" y="72" width="300" height="26" fill="#f4f6fa"/>
+        <line x1="20" y1="98" x2="320" y2="98" stroke="#e3e7ef" stroke-width="2"/>
+        <rect x="42" y="40" width="76" height="38" rx="9" fill="#0e1730"/>
+        <text x="80" y="66" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="20" fill="#12a86f" letter-spacing="2">404</text>
+        <circle class="blink" cx="136" cy="59" r="4" fill="#12a86f"/>
+        <circle cx="178" cy="59" r="7" fill="#e9edf4"/><circle cx="204" cy="59" r="7" fill="#e9edf4"/>
+        <circle cx="274" cy="59" r="18" fill="#fff" stroke="#e3e7ef" stroke-width="2"/>
+        <line x1="274" y1="59" x2="274" y2="45" stroke="#1e5eff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="170" cy="222" r="104" fill="#f4f6fa" stroke="#e3e7ef" stroke-width="2"/>
+        <circle cx="170" cy="222" r="86" fill="#e9efff" stroke="#c9d6ff" stroke-width="6"/>
+        <clipPath id="glass"><circle cx="170" cy="222" r="83"/></clipPath>
+        <g clip-path="url(#glass)">
+          <path d="M84 238c20-10 38-10 58 0s38 10 58 0 38-10 58 0v80H84z" fill="#1e5eff" opacity=".22"/>
+          <g class="drum">
+            <!-- a sock -->
+            <path d="M150 164h22v38c0 6 3 10 9 12l14 5c8 3 10 13 3 18-4 3-9 3-14 1l-26-10c-6-2-8-7-8-13z" fill="#1e5eff"/>
+            <rect x="150" y="164" width="22" height="7" fill="#0e1730" opacity=".25"/>
+            <!-- a t-shirt -->
+            <path d="M200 232l14-8 10 6 10-6 14 8-6 12-7-3v22h-22v-22l-7 3z" fill="#12a86f" transform="rotate(24 224 240)"/>
+            <!-- a towel -->
+            <rect x="104" y="238" width="44" height="26" rx="4" fill="#0e1730" opacity=".82" transform="rotate(-18 126 251)"/>
+            <rect x="104" y="258" width="44" height="4" fill="#fff" opacity=".5" transform="rotate(-18 126 251)"/>
+          </g>
+          <circle class="bubble" cx="130" cy="290" r="6" fill="#fff"/>
+          <circle class="bubble" cx="196" cy="296" r="4" fill="#fff"/>
+          <circle class="bubble" cx="170" cy="300" r="7" fill="#fff"/>
+          <circle class="bubble" cx="222" cy="288" r="5" fill="#fff"/>
+        </g>
+        <path d="M110 170a86 86 0 0 1 60-34" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none" opacity=".8"/>
+        <rect x="262" y="210" width="10" height="26" rx="5" fill="#e3e7ef"/>
+        <line x1="20" y1="342" x2="320" y2="342" stroke="#e3e7ef" stroke-width="2"/>
+        <rect x="136" y="356" width="68" height="4" rx="2" fill="#e3e7ef"/>
+        <rect x="136" y="366" width="68" height="4" rx="2" fill="#e3e7ef"/>
+      </g>
+    </svg>
+    </button>
+  </div>
+</div></div></section>
+
+<section class="lf"><div class="wrap">
+  <h2>Lost &amp; found</h2>
+  <p class="sub">Nobody has claimed these yet. One of them might be what you came for.</p>
+  <div class="tags">
+    <a class="tag" href="/laundromats"><span class="no">Ticket 101</span><span class="t">Laundromats</span><span class="d">Machines, wash &amp; fold and card systems.</span></a>
+    <a class="tag" href="/dry-cleaners"><span class="no">Ticket 102</span><span class="t">Dry cleaners</span><span class="d">Garment tags, conveyor and pickup.</span></a>
+    <a class="tag" href="/alterations"><span class="no">Ticket 103</span><span class="t">Alterations</span><span class="d">Fittings, jobs and ready dates.</span></a>
+    <a class="tag" href="/pickup-delivery"><span class="no">Ticket 104</span><span class="t">Pickup &amp; delivery</span><span class="d">Routes, drivers and online booking.</span></a>
+    <a class="tag" href="/hey-fold"><span class="no">Ticket 105</span><span class="t">Hey Fold</span><span class="d">Run the counter by voice.</span></a>
+    <a class="tag" href="/pricing"><span class="no">Ticket 106</span><span class="t">Pricing</span><span class="d">14 days free. No card, no contract.</span></a>
+    <a class="tag" href="/faq"><span class="no">Ticket 107</span><span class="t">FAQ</span><span class="d">Answers before you ask.</span></a>
+    <a class="tag" href="/contact"><span class="no">Ticket 108</span><span class="t">Talk to us</span><span class="d">A real person, not a ticket queue.</span></a>
+  </div>
+
+  <div class="note" role="note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8l1 3H7z"/><path d="M5 6h14l-1.2 13.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8z"/><path d="M10 11h4"/></svg>
+    <div>
+      <p><b>Trying to book a pickup with your laundry?</b> Shop links look like <code>foldpos.com/your-shop</code>. Check the spelling in the text or email they sent you, or give the shop a call.</p>
+      <p lang="es"><b>¿Buscabas la página de reservas de tu lavandería?</b> Revisa el enlace que te enviaron o llama a la tienda. <a href="/es/">Ir a Fold POS en español</a>.</p>
+    </div>
+  </div>
+</div></section>
+</main>
+<script>
+(function () {
+  var door = document.getElementById('door');
+  var washer = document.getElementById('washer');
+  var status = document.getElementById('status');
+  var lines = [
+    'Extra spin… <b>still not in here.</b>',
+    'Checked the pockets. Found a receipt and <b>$1.35 in quarters</b>. No page.',
+    'Added fabric softener. The page is now <b>soft, fresh and still missing</b>.',
+    'Emptied the lint trap. <b>Mostly lint.</b>',
+    'Tried the delicate cycle. <b>It was too delicate to exist.</b>',
+    'Ran it again on hot. <b>404 degrees. Nothing.</b>'
+  ];
+  var i = 0, timer;
+  door.addEventListener('click', function () {
+    washer.classList.add('fast');
+    status.innerHTML = 'Spinning…';
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      washer.classList.remove('fast');
+      status.innerHTML = lines[i % lines.length];
+      i++;
+    }, 1400);
+  });
+})();
+</script>
+<!--fx:footer-->
+<div class="fx-foot" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/"><i></i>Fold POS</a>
+        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry's own counters.</p>
+      </div>
+      <div><p class="fx-foot-h">Product</p><ul>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/hey-fold">Hey Fold</a></li>
+        <li><a href="/pickup-delivery">Pickup &amp; delivery</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Shops</p><ul>
+        <li><a href="/laundromats">Laundromats</a></li>
+        <li><a href="/dry-cleaners">Dry cleaners</a></li>
+        <li><a href="/alterations">Tailors</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Support</p><ul>
+        <li><a href="/help">Help center</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/printers">Printers</a></li>
+        <li><a href="/setup">Store setup</a></li>
+        <li><a href="/download">Print helper</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Company</p><ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/developers">Developers &amp; AI</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/" hreflang="es" lang="es">Español</a></span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+</div>
+<!--/fx:footer-->
+<script src="/assets/js/chrome.js" defer></script>
+</body>
+</html>
