@@ -911,8 +911,9 @@ svg.i{width:18px;height:18px;flex:none}
 .pv-world{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
 .pv-vid{position:absolute;inset:0;width:1920px;height:1080px;display:block;transition:filter .9s}
 .pv-vid.dof{filter:blur(2.2px) saturate(.92)}
-.pv-screen{position:absolute;left:0;top:0;width:1600px;height:1000px;transform-origin:0 0;overflow:hidden;background:#fff}
+.pv-screen{position:absolute;left:0;top:0;width:1600px;height:1000px;transform-origin:0 0;background:#fff;box-shadow:0 0 0 26px #141518;border-radius:4px}
 .pv-screen img{position:absolute;inset:0;width:1600px;height:1000px;transition:opacity .35s}
+.pv-clip{position:absolute;inset:0;overflow:hidden}
 .pv-type{position:absolute;left:552px;top:468px;width:508px;height:34px;background:#fdffff;opacity:0;font:400 19px/34px Roboto,"Plus Jakarta Sans",sans-serif;color:#1b1f2a;padding-left:6px;white-space:nowrap}
 .pv-type i{display:inline-block;width:2px;height:20px;background:#1e5eff;vertical-align:-4px;margin-left:1px}
 .pv-ring{position:absolute;left:1262px;top:88px;width:326px;height:608px;border:6px solid #1e5eff;border-radius:24px;opacity:0;box-shadow:0 0 0 10px rgba(30,94,255,.15)}
@@ -1629,15 +1630,27 @@ svg.i{width:18px;height:18px;flex:none}
   var c=function(x){return x<0?0:x>1?1:x}, eio=function(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
   var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
   // camera: [time, zoom, centre x, centre y] in video pixels
-  var CAM=[[0,1.08,960,560],[3.4,1.08,960,560],[4.8,4.45,555,721],[11.2,4.45,555,721],[12.6,1.12,1000,560]];
+  var CAM=[[0,1.08,960,560],[3.4,1.08,960,560],[4.8,4.2,555,721],[11.2,4.2,555,721],[12.6,1.12,1000,560]];
   function cam(t){
     var a=CAM[0],b=CAM[0];
     for(var i=0;i<CAM.length-1;i++){ if(t>=CAM[i][0]){a=CAM[i];b=CAM[i+1];} }
     var u=b[0]>a[0]?eio(c((t-a[0])/(b[0]-a[0]))):1;
     return [a[1]+(b[1]-a[1])*u, a[2]+(b[2]-a[2])*u, a[3]+(b[3]-a[3])*u];
   }
+  // screen corners (TL, TR, BR, BL) in video pixels: as filmed, and squared up to face the camera
+  var VQ=[[399,603.5],[755.5,604],[736.5,838.5],[354,834.5]], FQ=[[352,594],[758,594],[758,848],[352,848]];
+  var scr=$('pvScreen');
+  function quad(q){ // CSS matrix3d taking the 1600x1000 screen onto the quad q
+    var x0=q[0][0],y0=q[0][1],x1=q[1][0],y1=q[1][1],x2=q[2][0],y2=q[2][1],x3=q[3][0],y3=q[3][1];
+    var sx=x0-x1+x2-x3, sy=y0-y1+y2-y3, dx1=x1-x2, dx2=x3-x2, dy1=y1-y2, dy2=y3-y2, den=dx1*dy2-dx2*dy1;
+    var g=(sx*dy2-dx2*sy)/den, h=(dx1*sy-sx*dy1)/den;
+    var a=x1-x0+g*x1, b=x3-x0+h*x3, d=y1-y0+g*y1, e=y3-y0+h*y3, W=1600, H=1000;
+    return 'matrix3d('+[a/W,d/W,0,g/W, b/H,e/H,0,h/H, 0,0,1,0, x0,y0,0,1].map(function(v){return +v.toFixed(9)}).join(',')+')';
+  }
   function place(t){
     var W=stage.clientWidth, H=stage.clientHeight, base=W/1920, k=cam(t), z=base*k[0];
+    var f=eio(c((k[0]-1.08)/(4.2-1.08)));
+    scr.style.transform=quad(VQ.map(function(p,i){ return [p[0]+(FQ[i][0]-p[0])*f, p[1]+(FQ[i][1]-p[1])*f]; }));
     var x=W/2-k[1]*z, y=H/2-k[2]*z;
     x=Math.min(0,Math.max(W-1920*z,x)); y=Math.min(0,Math.max(H-1080*z,y));
     vid.classList.toggle('dof',k[0]>1.8);
@@ -1676,14 +1689,26 @@ svg.i{width:18px;height:18px;flex:none}
   var autoAt=0;
   function visible(){ var r=stage.getBoundingClientRect(), vh=innerHeight; return c((Math.min(vh,r.bottom)-Math.max(0,r.top))/r.height); }
   function scrollP(){ var r=stage.getBoundingClientRect(), vh=innerHeight; return c((vh*0.98-r.top)/(vh*0.62)); }
+  function panDown(){
+    var r=stage.getBoundingClientRect(), vh=innerHeight;
+    if(r.top>=0&&r.bottom<=vh) return;                       // already in full view
+    var from=scrollY, to=Math.max(from, from+r.top-Math.max(0,(vh-r.height)/2));
+    if(to-from<8) return;
+    var t1=null, stop=false, quit=function(){ stop=true; };
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(e){ addEventListener(e,quit,{once:true,passive:true}); });
+    requestAnimationFrame(function step(n){ if(stop) return; if(t1===null) t1=n;
+      var u=c((n-t1)/1400); scrollTo({top:from+(to-from)*eio(u),behavior:'instant'}); if(u<1) requestAnimationFrame(step); });
+  }
+  var halted=false;
   function tick(now){
+    if(halted) return;
     if(start===null) start=now;
     if(now-start>textDone){
-      if(t0===null){ t0=now; vid.preload='auto'; try{ vid.load(); }catch(e){} }
+      if(t0===null){ t0=now; vid.preload='auto'; try{ vid.load(); }catch(e){} panDown(); }
       // 1) the sketch draws (faster if the visitor scrolls)
       if(reveal===null){
         var vis=visible(); if(vis<0.35){ t0=now-autoAt*5200; } autoAt=c((now-t0)/5200);
-        var target=Math.max(autoAt, scrollP()>0.02?scrollP():0);
+        var target=autoAt;
         P+=(target-P)*0.08; if(target>=1&&P>0.99){ P=1; reveal=now; } drawSketch(P);
       }
       // 2) the sketch becomes the real shop, then the clip plays
@@ -1700,7 +1725,7 @@ svg.i{width:18px;height:18px;flex:none}
     if(playT===null||T<16) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
-  window.pvStop=function(){ start=-1e12; playT=-1e12; };
+  window.pvStop=function(){ halted=true; };
   window.pvAt=function(t){ place(t); screens(t); };
   window.pvSketch=function(P,r){ drawSketch(P); sk.style.opacity=1-r; paper.style.opacity=1-r; };
 })();
