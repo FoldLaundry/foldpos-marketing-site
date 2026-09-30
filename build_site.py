@@ -769,7 +769,7 @@ def main():
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')
         print('wrote', slug)
-    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html'))
+    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html', 'follow-the-bag.html'))
     chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html'))
     for f in chrome_pages:
         put_chrome(f)
