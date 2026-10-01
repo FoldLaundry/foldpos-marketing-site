@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Start here — Fold POS</title>
-<meta name="description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
+<meta name="description" content="Welcome to Fold POS. Get your shop open in about an hour: set up the counter, add your prices, connect your printer, add staff, check your customer texts and take your first order.">
 <link rel="canonical" href="https://foldpos.com/start">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Start here — Fold POS">
-<meta property="og:description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
+<meta property="og:description" content="Welcome to Fold POS. Get your shop open in about an hour, one short step at a time.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
 <meta property="og:image:width" content="1200">
@@ -20,579 +20,1077 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Start here — Fold POS">
-<meta name="twitter:description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
+<meta name="twitter:description" content="Welcome to Fold POS. Get your shop open in about an hour, one short step at a time.">
 <meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
-<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f16" media="(prefers-color-scheme: dark)">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://foldpos.com/start#page","url":"https://foldpos.com/start","name":"Start here — Fold POS","description":"Getting started with Fold POS after you sign up: the counter, prices, printer, staff, customer texts and a first order.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Fold POS","url":"https://foldpos.com/"}}
+</script>
 <style>
-/* Apple-style: one quiet column of big type; a single live "stage" stays in view and acts out whichever step you're on. */
+/* Start here v3. Brand tokens from the homepage; one accent (brand blue) for actions only. */
 :root{
-  --paper:#fbfbfd; --surface:#ffffff; --ink:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7;
-  --blue:#1e5eff; --blue-soft:#e8efff; --green:#1f9d55; --green-soft:#e3f5ea; --tag:#fff6dc; --tag-ink:#5b4a12;
-  --stage:#f2f2f5; --shadow:0 30px 60px -30px rgba(29,29,31,.28);
-  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Figtree","Helvetica Neue",Arial,sans-serif;
+  --ink:#0b0d12; --ink-2:#3b404c; --ink-3:#5d6372;
+  --paper:#ffffff; --fog:#f4f6fa; --surface:#ffffff; --line:#e3e7ef; --line-2:#cfd5e1;
+  --brand:#1e5eff; --brand-hover:#154bd6; --brand-soft:#e9efff; --link:#1e5eff;
+  --ok:#0f7a52; --ok-soft:#e3f5ec; --tag:#fff3cf; --tag-ink:#5b4a12;
+  --stage:#eef1f7; --shadow:0 24px 48px -28px rgba(14,23,48,.35);
+  --foot-bg:linear-gradient(180deg,#fff 0%,#f6f8fe 150px); --foot-ink:#3b4a73; --foot-h:#5a6a95;
+  --lbar-h:60px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#000000; --surface:#1c1c1e; --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a;
-  --blue:#4d82ff; --blue-soft:#14244d; --green:#30d158; --green-soft:#0f2c1a; --tag:#3a321a; --tag-ink:#f3df9b;
-  --stage:#111113; --shadow:0 30px 60px -30px rgba(0,0,0,.8); color-scheme:dark}}
+  --ink:#eef0f6; --ink-2:#c3c8d6; --ink-3:#a3aabb;
+  --paper:#0d0f16; --fog:#141823; --surface:#1b1f2b; --line:#2a2e3c; --line-2:#3a4052;
+  --brand-soft:#182241; --link:#8fb0ff; --ok:#3ecf98; --ok-soft:#113326; --tag:#3a321a; --tag-ink:#f3df9b;
+  --stage:#11141d; --shadow:0 24px 48px -28px rgba(0,0,0,.9);
+  --foot-bg:#0d0f16; --foot-ink:#c3c8d6; --foot-h:#a3aabb; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#000000; --surface:#1c1c1e; --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a;
-  --blue:#4d82ff; --blue-soft:#14244d; --green:#30d158; --green-soft:#0f2c1a; --tag:#3a321a; --tag-ink:#f3df9b;
-  --stage:#111113; --shadow:0 30px 60px -30px rgba(0,0,0,.8); color-scheme:dark}
+  --ink:#eef0f6; --ink-2:#c3c8d6; --ink-3:#a3aabb;
+  --paper:#0d0f16; --fog:#141823; --surface:#1b1f2b; --line:#2a2e3c; --line-2:#3a4052;
+  --brand-soft:#182241; --link:#8fb0ff; --ok:#3ecf98; --ok-soft:#113326; --tag:#3a321a; --tag-ink:#f3df9b;
+  --stage:#11141d; --shadow:0 24px 48px -28px rgba(0,0,0,.9);
+  --foot-bg:#0d0f16; --foot-ink:#c3c8d6; --foot-h:#a3aabb; color-scheme:dark}
 *{box-sizing:border-box}
-html,body{background:var(--paper)}
-body{margin:0;color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.47;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
-.bar-in{max-width:1080px;margin:0 auto;padding-block:12px;padding-inline:20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink)}
-.logo span{color:var(--blue)}
-.bar nav{display:flex;gap:18px;font-size:14px}
-.bar nav a{color:var(--muted)}
-.cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue);color:#fff;font-weight:600;font-size:15px}
-.cta:hover{text-decoration:none;filter:brightness(1.08)}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
-.hero{text-align:center;padding-block:84px 40px}
-.hero h1{font-size:clamp(44px,8vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:700;margin:0 auto 18px;max-width:12ch;text-wrap:balance}
-.hero p{font-size:clamp(19px,2.2vw,24px);color:var(--muted);max-width:34ch;margin:0 auto 28px;line-height:1.35;text-wrap:balance}
-.hero .meta{font-size:15px;color:var(--muted);margin-top:16px}
-.progress{font-variant-numeric:tabular-nums}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Sora",-apple-system,sans-serif;margin:0;letter-spacing:-.03em;text-wrap:balance;color:var(--ink)}
+p{margin:0}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+[hidden]{display:none!important}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.band{padding:72px 0}
+.band.fog{background:var(--fog)}
+.label{font:600 14px/1.2 "Plus Jakarta Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.h2{font-size:clamp(30px,4vw,44px);line-height:1.1}
+.lead{font-size:19px;color:var(--ink-2);margin-top:12px;max-width:52ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--brand);color:#fff;font:600 16px/1 "Plus Jakarta Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--brand-hover)}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;background:transparent;color:var(--ink);border:1px solid var(--line-2);font:600 16px/1 "Plus Jakarta Sans",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn2:hover{border-color:var(--ink-3)}
 
-/* The tour: steps on the left, the stage sticks on the right. */
-.tour{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:56px;padding-block:40px 80px}
-.steps{display:flex;flex-direction:column}
-.step{padding-block:22vh;padding-inline:0;min-height:60vh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .45s ease}
-.step:first-child{padding-top:8vh}
-.step.on{opacity:1}
-.step .n{font-size:15px;font-weight:600;color:var(--blue);margin:0 0 8px;font-variant-numeric:tabular-nums}
-.step h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em;margin:0 0 12px;text-wrap:balance}
-.step p{margin:0 0 14px;color:var(--muted);max-width:46ch}
-.step .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
-.done{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
-.done .box{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:all .2s}
-.done[aria-pressed="true"]{border-color:var(--green);color:var(--green)}
-.done[aria-pressed="true"] .box{background:var(--green);border-color:var(--green)}
-.done[aria-pressed="true"] .box::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.time{font-size:14px;color:var(--muted)}
-.stage-col{position:relative}
-.stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);aspect-ratio:16/12;max-height:72vh;width:100%;background:var(--stage);border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
-.scene{position:absolute;inset:0;padding:28px;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.98);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
-.scene.show{opacity:1;transform:none;pointer-events:auto}
-.replay{position:absolute;right:16px;bottom:16px;z-index:5;min-height:36px;padding:0 14px;border-radius:999px;border:0;background:color-mix(in srgb,var(--surface) 86%,transparent);color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.caption{position:absolute;left:20px;bottom:20px;z-index:5;font-size:13px;color:var(--muted);max-width:60%}
+/* Shared chrome, page-local tweaks: the site header scrolls away (the local bar below sticks),
+   both are solid so nothing ghosts through, and the chrome follows dark mode on this page. */
+body .fx-nav,body .fx-menu,body .fx-foot{--fx-ink:var(--ink);--fx-ink-2:var(--ink-2);--fx-ink-3:var(--ink-3);--fx-line:var(--line);--fx-fog:var(--fog)}
+body .fx-nav{position:relative;background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:var(--line)}
+body .fx-menu,body .fx-drop,body .fx-burger{background:var(--surface)}
+body .fx-foot.fx-foot-scene{background:var(--foot-bg);color:var(--foot-ink)}
+body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 
-/* Shared scene pieces */
-.win{background:var(--surface);border-radius:18px;box-shadow:0 12px 30px -14px rgba(0,0,0,.25);width:min(100%,460px);padding:20px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
-.win h4{margin:0 0 12px;font-size:16px;letter-spacing:-.01em}
-.f{height:38px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;padding:0 12px;font-size:14px;margin-bottom:8px;background:var(--paper);overflow:hidden;white-space:nowrap}
-.f.focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
-.f .ph{color:var(--muted)}
-.f.filled{animation:flash .6s ease}
-@keyframes flash{0%{background:var(--blue-soft)}100%{background:var(--paper)}}
-.caret{display:inline-block;width:1.5px;height:16px;background:var(--blue);margin-left:1px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
-.chip{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);transition:all .25s}
-.chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
-.sugg{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:-4px 0 8px;overflow:hidden;max-height:0;opacity:0;transition:max-height .35s ease,opacity .25s}
-.sugg.open{max-height:120px;opacity:1}
-.sugg div{padding:8px 12px;font-size:13px}
-.sugg div small{display:block;color:var(--muted)}
-.sugg .hi{background:var(--blue-soft)}
-.grid2{display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:6px}
-.pop{transform:scale(.6);opacity:0;transition:transform .45s cubic-bezier(.2,1.4,.4,1),opacity .3s}
-.pop.in{transform:none;opacity:1}
-.devices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(100%,460px)}
-.dev{background:var(--surface);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;position:relative;border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
-.dev svg{width:46px;height:46px}
-.dev b{font-size:15px}
-.dev small{color:var(--muted);font-size:13px;line-height:1.3}
-.tick{position:absolute;right:14px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);transform:scale(0);transition:transform .35s cubic-bezier(.2,1.5,.4,1)}
-.tick::after{content:"";position:absolute;left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+/* Local bar: shop type, step x of y, Continue. */
+.lbar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.lbar-in{max-width:1120px;margin:0 auto;padding:6px 24px;min-height:var(--lbar-h);display:flex;align-items:center;gap:16px}
+.lb-title{display:inline-flex;align-items:center;min-height:44px;font:700 17px/1.2 "Sora",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lb-type{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:var(--ink-2);font-size:15px;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34ch}
+.lb-prog{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.meter{width:120px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--ok);border-radius:6px;transition:width .4s}
+.lbar .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* Hero */
+.hero{padding:72px 0 64px;text-align:center}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.045em}
+.hero .lead{margin:16px auto 0;font-size:clamp(20px,2.4vw,26px);color:var(--ink-2);text-align:center}
+.hero .acts{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:30px}
+.hero .meta{font-size:16px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.hero .small{font-size:16px;color:var(--ink-2)}
+.hero .small a{display:inline-block;padding:10px 4px;font-weight:600}
+
+/* Shop type */
+.shop{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center}
+.types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.type{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 17px/1.25 "Plus Jakarta Sans",sans-serif;text-align:left;cursor:pointer}
+.type svg{width:28px;height:28px;flex:none;color:var(--ink-2)}
+.type .tk{margin-left:auto;width:24px;height:24px;flex:none;border-radius:50%;border:1.5px solid var(--line-2);position:relative}
+.type[aria-pressed="true"]{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+.type[aria-pressed="true"] svg{color:var(--brand)}
+.type[aria-pressed="true"] .tk{background:var(--brand);border-color:var(--brand)}
+.type[aria-pressed="true"] .tk::after,.chk::after{content:"";position:absolute;left:8px;top:4px;width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.type small{display:block;font-weight:500;font-size:14px;color:var(--ink-3)}
+.switch{margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2);font-size:16px}
+.switch b{color:var(--ink)}
+
+/* Highlights */
+.hl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.tile{background:var(--fog);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:6px}
+.tile h3{font-size:22px;line-height:1.2}
+.tile p{color:var(--ink-2)}
+.mini{height:110px;margin-bottom:12px;border-radius:16px;background:var(--surface);display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden}
+.mb{width:56px;height:40px;border-radius:10px;border:1px solid var(--line-2);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.mr{width:96px;height:84px;background:#fff;border:1px solid #d8dce5;border-radius:4px;padding:10px;display:flex;flex-direction:column;gap:6px;color:#1d1d1f}
+.mr i{display:block;height:5px;border-radius:3px;background:#c9ced9}
+.mr i:first-child{background:#1d1d1f;width:70%}
+.mt{max-width:84%;padding:9px 13px;border-radius:16px 16px 16px 5px;background:var(--brand-soft);color:var(--ink);font-size:14px;line-height:1.35}
+.play .mb{animation:popin .5s cubic-bezier(.2,1.4,.4,1) both}
+.play .mb:nth-child(2){animation-delay:.25s}.play .mb:nth-child(3){animation-delay:.5s}
+.play .mr{animation:feed 1.6s cubic-bezier(.3,.7,.3,1) both}
+.play .mt{animation:popin .5s .6s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes popin{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes feed{from{transform:translateY(-90px)}to{transform:none}}
+
+/* Before you begin */
+.before{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+.have{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.have li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.have li b{color:var(--ink)}
+.dotk{flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;border:1.5px solid var(--line-2)}
+.total{margin-top:18px;font-size:19px;color:var(--ink)}
+.total b{font-family:"Sora",sans-serif}
+
+/* Steps */
+.setup{display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px;align-items:start}
+.toc{position:sticky;top:calc(var(--lbar-h) + 24px)}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.toc a{display:flex;align-items:center;gap:12px;min-height:44px;padding:6px 10px;border-radius:12px;color:var(--ink-2);text-decoration:none;font-size:16px;line-height:1.25}
+.toc a:hover{background:var(--fog)}
+.toc a[aria-current="step"]{background:var(--fog);color:var(--ink);font-weight:600}
+.toc .nb{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line-2);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;position:relative}
+.toc .is-done .nb,.toc .acct .nb{background:var(--ok);border-color:var(--ok);font-size:0}
+.toc .is-done .nb::after,.toc .acct .nb::after{content:"";position:absolute;left:8px;top:4px;width:6px;height:11px;border:solid var(--paper);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.acctrow{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:18px;background:var(--ok-soft);color:var(--ink);margin-bottom:12px}
+.acctrow .chk{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ok);position:relative}
+.acctrow .chk::after{left:10px;top:5px;border-color:var(--paper)}
+.step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:36px;align-items:center;padding:44px 0;border-top:1px solid var(--line);scroll-margin-top:calc(var(--lbar-h) + 12px)}
+.st-meta{font-size:15px;font-weight:600;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-bottom:8px}
+.st-meta .num{color:var(--link)}
+.step h3{font-size:clamp(28px,3vw,36px);line-height:1.12;margin-bottom:10px}
+.where{display:inline-block;font-size:15px;font-weight:600;color:var(--ink);background:var(--fog);border:1px solid var(--line);border-radius:8px;padding:4px 10px;margin-bottom:12px}
+.step p.c{color:var(--ink-2);margin-bottom:10px;max-width:48ch}
+.normal{display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-size:16px;margin:4px 0 12px;max-width:48ch}
+.normal::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--ok)}
+.acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.done{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--ink);font:600 16px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.done .box{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ink-3);position:relative;flex:none}
+.done[aria-pressed="true"]{border-color:var(--ok);background:var(--ok-soft)}
+.done[aria-pressed="true"] .box{background:var(--ok);border-color:var(--ok)}
+.done[aria-pressed="true"] .box::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid var(--paper);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.later-note{font-size:15px;color:var(--ink-3)}
+.step.is-done{padding:20px 0;grid-template-columns:minmax(0,1fr)}
+.step.is-done .fig,.step.is-done .hide-done{display:none}
+.step.is-done h3{font-size:22px;margin:0}
+.step.is-done .acts{margin-top:10px}
+
+/* Figures: the visual is role=img; its controls live in the caption, outside it. */
+.fig{margin:0}
+.stage{position:relative;aspect-ratio:4/3;border-radius:24px;background:var(--stage);display:flex;align-items:center;justify-content:center;padding:20px}
+.cap{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;font-size:15px;color:var(--ink-2)}
+.rp{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 15px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.rp svg{width:14px;height:14px}
+
+/* Scene pieces */
+.devs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:470px}
+.dev{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;position:relative;opacity:0;transform:scale(.8);transition:opacity .3s,transform .4s cubic-bezier(.2,1.4,.4,1)}
+.dev.in{opacity:1;transform:none}
+.dev svg{width:30px;height:30px;flex:none;color:var(--ink)}
+.dev b{display:block;font-size:14px;line-height:1.2}
+.dev small{display:block;font-size:12px;color:var(--ink-3);line-height:1.25}
+.tick{position:absolute;right:-6px;top:-6px;width:20px;height:20px;border-radius:50%;background:var(--ok);transform:scale(0);transition:transform .3s cubic-bezier(.2,1.5,.4,1)}
+.tick::after{content:"";position:absolute;left:7px;top:4px;width:4px;height:8px;border:solid var(--paper);border-width:0 2px 2px 0;transform:rotate(45deg)}
 .tick.in{transform:scale(1)}
-.sheet{display:flex;gap:18px;align-items:center;width:100%;justify-content:center}
-.csv{background:var(--surface);border-radius:14px;padding:12px;font-size:13px;width:190px;border:1px solid var(--line);font-variant-numeric:tabular-nums}
-.csv div{display:flex;justify-content:space-between;padding:5px 4px;border-bottom:1px solid var(--line);transition:opacity .3s,transform .5s}
-.csv div:last-child{border-bottom:0}
-.csv .fn{margin:0 4px 6px;font-weight:600;color:var(--muted);transition:color .3s}
-.csv.ok .fn{color:var(--green)}
-.csv div.gone{opacity:0;transform:translateX(40px)}
-.cards{display:grid;grid-template-columns:repeat(2,96px);gap:10px}
-.card{background:var(--surface);border-radius:14px;padding:12px 10px;border:1px solid var(--line);font-size:13px;min-height:74px;display:flex;flex-direction:column;justify-content:space-between}
+.sheet{display:flex;gap:10px;align-items:center;justify-content:center;width:100%}
+.csv{flex:none;background:var(--surface);border-radius:14px;padding:10px 12px;font-size:13px;width:164px;border:1px solid var(--line);font-variant-numeric:tabular-nums;color:var(--ink)}
+.csv .fn{font-weight:700;color:var(--ink-3);padding:2px 0 6px;transition:color .3s}
+.csv.ok .fn{color:var(--ok)}
+.csv .r{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid var(--line);transition:color .3s}
+.csv .r.ok{color:var(--ok)}
+.csv .r.ok span:first-child::before{content:"✓ "}
+.arrow{font-size:26px;color:var(--ink-3)}
+.cards{flex:none;display:grid;grid-template-columns:repeat(2,86px);gap:8px}
+.card{background:var(--surface);border-radius:12px;padding:10px;border:1px solid var(--line);font-size:13px;color:var(--ink);min-height:66px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transform:scale(.6);transition:opacity .3s,transform .45s cubic-bezier(.2,1.4,.4,1)}
+.card.in{opacity:1;transform:none}
 .card b{font-size:16px;font-variant-numeric:tabular-nums}
-.arrow{font-size:28px;color:var(--muted)}
-.printer{position:relative;width:240px;display:flex;flex-direction:column;align-items:center}
-.pbody{width:240px;height:96px;border-radius:22px;background:linear-gradient(180deg,#3a3a3c,#1d1d1f);position:relative;z-index:2}
-.pbody::after{content:"";position:absolute;left:40px;right:40px;top:20px;height:6px;border-radius:4px;background:#0d0d0e}
-.paper{width:160px;background:#fff;color:#1d1d1f;font-size:11px;line-height:1.5;padding:0 12px;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:0;overflow:hidden;transition:height 1.6s cubic-bezier(.3,.7,.3,1);margin-top:-70px;padding-top:0;z-index:1;font-family:ui-monospace,Menlo,monospace}
-.paper.out{height:178px;margin-top:-70px;padding-top:80px}
-.tags{display:flex;gap:6px;margin-top:16px}
-.tagp{width:92px;height:34px;background:var(--tag);color:var(--tag-ink);border-radius:4px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:600;transform:translateY(-14px);opacity:0;transition:all .4s;font-variant-numeric:tabular-nums}
-.tagp.in{transform:none;opacity:1}
-.team{display:flex;flex-direction:column;align-items:center;gap:18px}
-.avatars{display:flex;gap:10px}
-.av{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;transition:transform .3s,box-shadow .3s}
-.av.sel{transform:scale(1.15);box-shadow:0 0 0 3px var(--paper),0 0 0 6px var(--blue)}
-.dots{display:flex;gap:14px}
-.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--muted);transition:all .2s}
+.printer{display:flex;flex-direction:column;align-items:center}
+.pbody{width:250px;height:84px;border-radius:20px;background:linear-gradient(180deg,#3a3a3c,#1d1d1f);position:relative;z-index:2}
+.pbody::after{content:"";position:absolute;left:36px;right:36px;top:18px;height:6px;border-radius:4px;background:#0d0d0e}
+.paper{width:214px;margin-top:-62px;padding:0 14px;background:#fff;color:#1d1d1f;font:11.5px/1.55 ui-monospace,Menlo,Consolas,monospace;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:62px;overflow:hidden;transition:height 1.4s cubic-bezier(.3,.7,.3,1),padding-top 1.4s;z-index:1}
+.paper.out{height:186px;padding-top:68px}
+.paper div{display:flex;justify-content:space-between;white-space:nowrap}
+.paper b{font-weight:700}
+.tags{display:flex;gap:6px;margin-top:14px}
+.tagp{width:92px;word-spacing:3px;height:30px;background:var(--tag);color:var(--tag-ink);border-radius:4px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;opacity:0;transform:translateY(-12px);transition:opacity .3s,transform .4s}
+.tagp.in{opacity:1;transform:none}
+.floor{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;width:100%;max-width:470px}
+.m{aspect-ratio:1;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;font-weight:600;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.m .drum{width:44%;aspect-ratio:1;border-radius:50%;border:3px solid var(--line-2)}
+.m.run{color:var(--ink);border-color:var(--brand)}
+.m.run .drum{border-color:var(--brand);border-top-color:transparent}
+.playing .m.run .drum{animation:spin 1.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.floorkey{grid-column:1 / -1;display:flex;gap:16px;justify-content:center;font-size:13px;color:var(--ink-2);margin-top:4px}
+.team{display:flex;flex-direction:column;align-items:center;gap:12px}
+.avs{display:flex;gap:10px}
+.av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px;transition:transform .3s,box-shadow .3s}
+.av.sel{transform:scale(1.12);box-shadow:0 0 0 3px var(--stage),0 0 0 6px var(--brand)}
+.hello{font-size:14px;font-weight:600;color:var(--ink-2);min-height:20px}
+.hello.ok{color:var(--ok)}
+.dots{display:flex;gap:12px}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--ink-3)}
 .dot.on{background:var(--ink);border-color:var(--ink)}
-.pad{display:grid;grid-template-columns:repeat(3,56px);gap:10px}
-.key{height:56px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid var(--line);transition:background .15s}
-.key.press{background:var(--blue-soft)}
-.hello{font-size:15px;color:var(--muted);min-height:22px;transition:color .3s}
-.hello.ok{color:var(--green);font-weight:600}
-.phone{width:240px;height:400px;border-radius:40px;background:var(--surface);border:10px solid #1d1d1f;padding:34px 12px 12px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;position:relative}
-.phone::before{content:"";position:absolute;top:8px;left:50%;width:70px;height:18px;border-radius:12px;background:#1d1d1f;transform:translateX(-50%)}
-.from{position:absolute;top:36px;left:0;right:0;text-align:center;font-size:12px;color:var(--muted)}
-.bub{align-self:flex-start;max-width:85%;background:var(--stage);color:var(--ink);border-radius:18px 18px 18px 6px;padding:9px 12px;font-size:13px;line-height:1.35;opacity:0;transform:translateY(10px) scale(.96);transition:all .35s}
-.bub.me{align-self:flex-end;background:var(--blue);color:#fff;border-radius:18px 18px 6px 18px}
+.pad{display:grid;grid-template-columns:repeat(3,48px);gap:8px}
+.key{height:48px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--ink);transition:background .15s}
+.key.blank{visibility:hidden}
+.key.press{background:var(--brand-soft);border-color:var(--brand)}
+.phone{width:230px;height:310px;border-radius:36px;background:var(--surface);border:9px solid #1d1d1f;padding:30px 12px 14px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;position:relative}
+.phone::before{content:"";position:absolute;top:7px;left:50%;width:64px;height:16px;border-radius:10px;background:#1d1d1f;transform:translateX(-50%)}
+.from{position:absolute;top:30px;left:0;right:0;text-align:center;font-size:12px;font-weight:600;color:var(--ink-3)}
+.bub{align-self:flex-start;max-width:88%;background:var(--stage);color:var(--ink);border-radius:16px 16px 16px 5px;padding:8px 11px;font-size:12.5px;line-height:1.35;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.bub.me{align-self:flex-end;background:var(--brand);color:#fff;border-radius:16px 16px 5px 16px}
 .bub.in{opacity:1;transform:none}
-.typing{align-self:flex-start;background:var(--stage);border-radius:18px;padding:10px 12px;display:none;gap:4px}
+.typing{align-self:flex-start;background:var(--stage);border-radius:16px;padding:9px 11px;display:none;gap:4px}
 .typing.in{display:flex}
-.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1s infinite}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);animation:bounce 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes bounce{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
-.counter{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;width:min(100%,480px)}
+.counter{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;width:100%;max-width:470px}
 .gar{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.g{background:var(--surface);border-radius:14px;border:1px solid var(--line);padding:12px 8px;text-align:center;font-size:13px;transition:transform .15s,border-color .2s,background .2s}
-.g svg{width:34px;height:34px;display:block;margin:0 auto 6px}
-.g.tap{transform:scale(.94);border-color:var(--blue);background:var(--blue-soft)}
-.ticket{background:var(--surface);border-radius:14px;border:1px solid var(--line);padding:12px;font-size:13px;display:flex;flex-direction:column;gap:6px;font-variant-numeric:tabular-nums}
-.ticket .li{display:flex;justify-content:space-between;opacity:0;transform:translateX(-8px);transition:all .3s}
-.ticket .li.in{opacity:1;transform:none}
-.ticket .tot{border-top:1px solid var(--line);padding-top:6px;margin-top:auto;display:flex;justify-content:space-between;font-weight:700;font-size:16px}
-.pay{margin-top:6px;height:38px;border-radius:10px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;transition:transform .15s,background .3s}
+.g{background:var(--surface);border-radius:12px;border:1px solid var(--line);padding:10px 6px;text-align:center;font-size:13px;color:var(--ink);transition:transform .15s,border-color .2s,background .2s}
+.g svg{width:30px;height:30px;display:block;margin:0 auto 4px}
+.g.tap{transform:scale(.94);border-color:var(--brand);background:var(--brand-soft)}
+.ticket{background:var(--surface);border-radius:12px;border:1px solid var(--line);padding:10px 12px;font-size:13px;color:var(--ink);display:flex;flex-direction:column;gap:5px;font-variant-numeric:tabular-nums}
+.ticket .li{display:flex;justify-content:space-between;opacity:0;transition:opacity .3s}
+.ticket .li.in{opacity:1}
+.ticket .tot{border-top:1px solid var(--line);padding-top:6px;margin-top:auto;display:flex;justify-content:space-between;font-weight:700;font-size:15px}
+.pay{margin-top:4px;min-height:34px;border-radius:9px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12.5px;text-align:center;transition:transform .15s,background .3s}
 .pay.press{transform:scale(.95)}
-.pay.paid{background:var(--green)}
+.pay.paid{background:var(--ok);color:var(--paper)}
+.find{display:flex;flex-direction:column;gap:10px;width:100%;max-width:440px}
+.fld{height:42px;border:1.5px solid var(--brand);border-radius:10px;display:flex;align-items:center;padding:0 12px;font-size:14px;background:var(--surface);color:var(--ink);white-space:nowrap;overflow:hidden}
+.fld .ph{color:var(--ink-3)}
+.caret{display:inline-block;width:1.5px;height:16px;background:var(--brand);margin-left:1px}
+.pieces{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:11.5px;color:var(--ink-2);transition:transform .3s,box-shadow .3s}
+.pc b{display:block;font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}
+.pc.hit{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);transform:translateY(-3px)}
+.map{width:100%;height:100%}
+.map svg{width:100%;height:100%;display:block}
 
-/* Shop types */
-.types{padding-block:40px 100px;text-align:center}
-.types h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.04em;line-height:1.05;margin:0 0 12px}
-.types > p{color:var(--muted);font-size:19px;margin:0 auto 28px;max-width:40ch}
-.seg{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:4px;border-radius:999px;background:var(--stage);margin-bottom:24px}
-.seg button{border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:40px}
-.seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.tstage{position:relative;aspect-ratio:16/8;max-width:900px;margin:0 auto;background:var(--stage);border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
-.tlist{max-width:640px;margin:22px auto 0;text-align:left;display:grid;gap:8px;padding:0;list-style:none}
-.tlist li{display:flex;gap:10px;align-items:baseline;color:var(--ink)}
-.tlist li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--blue);transform:translateY(-2px)}
-.road{position:absolute;left:8%;right:8%;top:74%;height:4px;background:var(--line);border-radius:4px}
-.place{position:absolute;top:28%;width:var(--pw);text-align:center;font-size:14px;font-weight:600}
-.place .bld{height:84px;border-radius:16px;background:var(--surface);border:1px solid var(--line);margin-bottom:8px;display:flex;align-items:center;justify-content:center}
-.scene[data-name=plant]{--pw:120px}
-.bag{position:absolute;top:calc(74% - 50px);left:calc(6% + var(--pw)/2 - 23px);width:46px;height:52px;transition:left 2.2s cubic-bezier(.5,0,.3,1)}
-.ping{position:absolute;top:22%;font-size:12px;font-weight:600;color:var(--green);background:var(--green-soft);padding:4px 10px;border-radius:999px;opacity:0;transform:translate(-50%,6px);transition:all .3s;white-space:nowrap}
-.ping.in{opacity:1;transform:translate(-50%,0)}
-.floor{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;width:min(90%,620px)}
-.m{aspect-ratio:1;border-radius:18px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:var(--muted);transition:all .3s;font-variant-numeric:tabular-nums}
-.m .drum{width:46%;aspect-ratio:1;border-radius:50%;border:3px solid var(--line);transition:border-color .3s}
-.m.run{color:var(--ink)}
-.m.run .drum{border-color:var(--blue);border-top-color:transparent;animation:spin 1.4s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.map{position:absolute;inset:0}
-.map svg{width:100%;height:100%}
-.find{display:flex;flex-direction:column;gap:12px;width:min(90%,560px)}
-.find .f{height:46px;font-size:16px}
-.pieces{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.pc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;font-size:12px;transition:all .3s}
-.pc b{display:block;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.pc.hit{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);transform:translateY(-4px)}
-.help{border-top:1px solid var(--line);padding-block:48px 72px;text-align:center;color:var(--muted)}
-.help h2{color:var(--ink);font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+/* Later */
+.grow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:32px}
+.gt{background:var(--surface);border-radius:24px;padding:22px;border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.gt h3{font-size:22px;line-height:1.2}
+.gt p{color:var(--ink-2)}
+.gt .stage{aspect-ratio:16/10;padding:12px;margin-bottom:4px}
+.gt .go{margin-top:auto;padding-top:8px}
+.wide{grid-column:span 2;grid-row:span 2}
 
-@media (max-width:860px){
-  .bar nav{display:none}
-  .tour{grid-template-columns:minmax(0,1fr);gap:0}
-  .stage-col{order:-1;position:sticky;top:calc(env(safe-area-inset-top,0px) + 62px);z-index:10;padding-block:8px;background:var(--paper)}
-  .stage{position:relative;top:0;aspect-ratio:16/11;border-radius:24px}
-  .scene{padding:14px;transform-origin:center}
-  .scene > *{zoom:.62}
-  .step{padding-block:12vh;min-height:50vh}
-  .tstage{aspect-ratio:4/3;border-radius:24px}
-  .tstage .scene > *{zoom:.8}
-  .tstage .scene[data-name=plant] > *{zoom:1}
-  .scene[data-name=plant]{--pw:88px}
-  .place .bld{height:52px}
-  .place{font-size:13px;top:22%}
-  .ping{font-size:10px;padding:3px 7px;top:7%}
-  .scene[data-name=plant] .road{top:72%}
-  .scene[data-name=plant] .bag{top:calc(72% - 50px)}
-  .seg{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;justify-content:flex-start;scrollbar-width:none}
-  .seg button{flex:none;font-size:14px;padding:8px 12px}
-  .caption{display:none}
+/* Worries */
+.qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 40px;margin-top:32px}
+.qa h3{font-size:20px;line-height:1.3;margin-bottom:6px}
+.qa p{color:var(--ink-2)}
+
+/* Close */
+.close{text-align:center}
+.close .lead{margin:12px auto 0}
+.close .acts{justify-content:center;margin-top:24px}
+
+@media (max-width:1040px){
+  .setup{grid-template-columns:minmax(0,1fr)}
+  .toc{display:none}
 }
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media (max-width:860px){
+  .shop,.before{grid-template-columns:minmax(0,1fr);gap:24px}
+  .step{grid-template-columns:minmax(0,1fr);gap:18px;padding:32px 0}
+  .step .fig{order:-1}
+  .grow{grid-template-columns:minmax(0,1fr)}
+  .wide{grid-column:auto}
+}
+@media (max-width:640px){
+  :root{--lbar-h:56px}
+  .wrap{padding:0 18px}
+  .band{padding:52px 0}
+  .lbar-in{padding:6px 18px;gap:10px}
+  .lb-title,.meter{display:none}
+  .lb-type{max-width:15ch;padding:0}
+  .lb-prog{margin-left:auto;font-size:15px}
+  .hero{padding:44px 0 44px}
+  .types{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .type{min-height:56px;padding:10px 12px;gap:8px;font-size:16px}
+  .type small{display:none}
+  .type .tk{width:20px;height:20px}
+  .type[aria-pressed="true"] .tk::after{left:6px;top:3px;width:5px;height:9px}
+  .hl{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:24px -18px 0;padding:0 18px 6px;scrollbar-width:none}
+  .hl .tile{flex:0 0 78%;scroll-snap-align:start;padding:18px}
+  .mini{height:84px}
+  .stage{aspect-ratio:auto;min-height:220px;padding:14px 10px;border-radius:20px}
+  .stage>.phone,.stage>.team,.stage>.printer{zoom:.82}
+  .stage>.sheet{zoom:.86}
+  .band{padding:40px 0}
+  .lead{font-size:18px;margin-top:8px}
+  .h2{font-size:30px}
+  .hero{padding:36px 0 36px}
+  .hero .acts{margin-top:22px;gap:8px}
+  .mini{height:64px;margin-bottom:6px}
+  .mr{height:56px;width:80px;padding:7px;gap:4px}
+  .tile h3{font-size:20px}
+  .have li{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:8px 0}
+  .total{margin-top:8px}
+  .step{padding:24px 0;gap:12px}
+  .step h3{font-size:26px;margin-bottom:6px}
+  .where{margin-bottom:8px}
+  .acts{margin-top:10px}
+  .stage{min-height:0}
+  .stage>.phone{zoom:.66}
+  .stage>.team{zoom:.62}
+  .grow{margin-top:20px;gap:14px}
+  .gt{padding:16px}
+  .qa{margin-top:20px;gap:16px}
+  .switch{margin-top:12px;padding:12px 14px}
+  .types{gap:8px}
+  .gt .stage{min-height:0;aspect-ratio:16/10}
+  .hero h1{font-size:44px}
+  .have{gap:8px}.have li{padding:10px 14px}
+  .step p.c{margin-bottom:8px}
+  .cap{margin-top:6px}
+  .dev small{display:none}
+  .dev{padding:8px 10px}
+  .devs{gap:8px}
+  .qa{grid-template-columns:minmax(0,1fr);gap:22px}
+  .acts .btn,.acts .btn2{flex:1 1 auto}
+  .close .acts .btn,.close .acts .btn2{flex:0 1 auto}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/chrome.css?v=e400cb5706">
 </head>
 <body>
-
-
-<header class="bar"><div class="bar-in">
-  <a class="logo" href="https://foldpos.com/">Fold <span>POS</span></a>
-  <nav aria-label="Page"><a href="#tour">First day</a><a href="#types">Your kind of shop</a><a href="/hardware">Hardware</a><a href="#help">Help</a></nav>
-  <a class="cta" href="https://pos.foldpos.com/signup">Create your account</a>
-</div></header>
-
-<main>
-<section class="hero wrap">
-  <h1>Open on Fold POS today.</h1>
-  <p>Seven short steps from sign-up to your first real order. Watch each one, then do it.</p>
-  <a class="cta" href="#tour">Start the tour</a>
-  <div class="meta">About an hour in all · <span class="progress" id="progress">0 of 7 done</span></div>
-</section>
-
-<section class="tour wrap" id="tour" aria-label="Your first day, step by step">
-  <div class="steps" id="steps">
-    <article class="step" data-scene="account">
-      <p class="n">Step 1 of 7</p>
-      <h2>Create your account.</h2>
-      <p>Your name, your shop and what it does. Start typing the address and pick it from the list: street, city, state and ZIP fill themselves.</p>
-      <div class="row"><a href="https://pos.foldpos.com/signup">Sign up</a><span class="time">2 minutes</span><button class="done" type="button" data-step="1"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="hardware">
-      <p class="n">Step 2 of 7</p>
-      <h2>Check what you already have.</h2>
-      <p>A computer with Chrome, a receipt printer, a cash drawer and your card terminal. Most shops own all four. Dry cleaners add a tag printer and a scanner.</p>
-      <div class="row"><a href="/hardware">See the hardware guide</a><span class="time">5 minutes</span><button class="done" type="button" data-step="2"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="prices">
-      <p class="n">Step 3 of 7</p>
-      <h2>Bring your price list over.</h2>
-      <p>Import it from Cents, CleanCloud or a spreadsheet in Settings › Import data. Every garment becomes a button at the counter.</p>
-      <div class="row"><a href="mailto:contact@foldpos.com?subject=Import%20my%20prices">Or have us do it</a><span class="time">15 minutes</span><button class="done" type="button" data-step="3"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="printers">
-      <p class="n">Step 4 of 7</p>
-      <h2>Connect your printers.</h2>
-      <p>Plug in the receipt printer and print a test. Tag printers cut one 1 × 3 in tag per piece. On Windows, Edge, Firefox or Safari, the free print helper does the connecting.</p>
-      <div class="row"><a href="/download">Get the print helper</a><span class="time">10 minutes</span><button class="done" type="button" data-step="4"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="staff">
-      <p class="n">Step 5 of 7</p>
-      <h2>Add your staff.</h2>
-      <p>Everyone gets their own login and a 4-digit code. Between customers, a code unlocks the counter as that person, so every order shows who took it.</p>
-      <div class="row"><span class="time">10 minutes</span><button class="done" type="button" data-step="5"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="texts">
-      <p class="n">Step 6 of 7</p>
-      <h2>Let customers know it's ready.</h2>
-      <p>Turn on customer texts in Settings › Customer texts. Customers hear the moment their order is ready, and can book a pickup by text.</p>
-      <div class="row"><span class="time">5 minutes</span><button class="done" type="button" data-step="6"><span class="box"></span>Done</button></div>
-    </article>
-    <article class="step" data-scene="order">
-      <p class="n">Step 7 of 7</p>
-      <h2>Take your first real order.</h2>
-      <p>Tap the garments, take payment, and the ticket and tags print. That's a normal day from here on.</p>
-      <div class="row"><a href="https://pos.foldpos.com/">Open the POS</a><span class="time">5 minutes</span><button class="done" type="button" data-step="7"><span class="box"></span>Done</button></div>
-    </article>
-  </div>
-  <div class="stage-col"><div class="stage" id="stage" role="img" aria-label="Animated example of the current step">
-
-    <div class="scene" data-name="account"><div class="win">
-      <h4>Tell us about your shop</h4>
-      <div class="f" data-type="Sonia's Cleaners" data-k="shop"><span class="ph">Shop name</span></div>
-      <div class="chips"><span class="chip" data-c="1">Laundromat</span><span class="chip" data-c="2">Wash &amp; fold</span><span class="chip" data-c="3">Dry cleaning</span><span class="chip" data-c="4">Alterations</span></div>
-      <div class="f" data-type="4721 Gea" data-k="addr"><span class="ph">Where is your shop?</span></div>
-      <div class="sugg"><div class="hi">4721 Geary Blvd<small>San Francisco, CA</small></div><div>4721 Geary Way<small>Mountain View, CA</small></div></div>
-      <div class="f" data-k="street"><span class="ph">Street address</span></div>
-      <div class="grid2"><div class="f" data-k="city"><span class="ph">City</span></div><div class="f" data-k="state"><span class="ph">State</span></div><div class="f" data-k="zip"><span class="ph">ZIP</span></div></div>
-    </div></div>
-
-    <div class="scene" data-name="hardware"><div class="devices">
-      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="5" y="9" width="38" height="24" rx="3"/><path d="M18 41h12M24 33v8"/></svg><b>Computer with Chrome</b><small>Any PC or Mac from the last 5 years</small></div>
-      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="7" y="18" width="34" height="16" rx="4"/><path d="M15 18V8h18v10M15 34v6h18v-6"/></svg><b>Receipt printer</b><small>Thermal, 80 mm. Epson, Star, Bixolon</small></div>
-      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="6" y="20" width="36" height="18" rx="3"/><path d="M6 28h36M20 33h8"/></svg><b>Cash drawer</b><small>Plugs into the receipt printer</small></div>
-      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="13" y="5" width="22" height="38" rx="4"/><path d="M18 13h12v8H18zM18 28h2M23 28h2M28 28h2M18 33h2M23 33h2M28 33h2"/></svg><b>Card terminal</b><small>The one you already use</small></div>
-    </div></div>
-
-    <div class="scene" data-name="prices"><div class="sheet">
-      <div class="csv"><p class="fn">prices.csv</p><div><span>Dress shirt</span><span>4.50</span></div><div><span>2-piece suit</span><span>16.00</span></div><div><span>Pants</span><span>7.25</span></div><div><span>Dress</span><span>14.00</span></div></div>
-      <span class="arrow" aria-hidden="true">›</span>
-      <div class="cards"><div class="card pop">Dress shirt<b>$4.50</b></div><div class="card pop">2-piece suit<b>$16.00</b></div><div class="card pop">Pants<b>$7.25</b></div><div class="card pop">Dress<b>$14.00</b></div></div>
-    </div></div>
-
-    <div class="scene" data-name="printers"><div class="printer">
-      <div class="pbody"></div>
-      <div class="paper"><b>SONIA'S CLEANERS</b><br>DC-0001 · Dana W.<br>Dress shirt ×2 &nbsp; 9.00<br>Pants &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7.25<br><b>Ready Fri after 5 PM</b></div>
-      <div class="tags"><div class="tagp">DC-0001 1/3</div><div class="tagp">DC-0001 2/3</div><div class="tagp">DC-0001 3/3</div></div>
-    </div></div>
-
-    <div class="scene" data-name="staff"><div class="team">
-      <div class="avatars"><span class="av" style="background:#ff9f0a">S</span><span class="av" style="background:#30b0c7">M</span><span class="av" style="background:#af52de">J</span><span class="av" style="background:#34c759">R</span></div>
-      <div class="hello">Enter your code</div>
-      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-      <div class="pad"><span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span><span class="key">5</span><span class="key">6</span><span class="key">7</span><span class="key">8</span><span class="key">9</span></div>
-    </div></div>
-
-    <div class="scene" data-name="texts"><div class="phone">
-      <div class="from">Sonia's Cleaners</div>
-      <div class="bub">Hi Dana, we got your order DC-0001: 3 pieces, ready Fri after 5 PM.</div>
-      <div class="typing"><i></i><i></i><i></i></div>
-      <div class="bub">Your order DC-0001 is ready for pickup. See you soon!</div>
-      <div class="bub me">Thank you! Coming at 6</div>
-    </div></div>
-
-    <div class="scene" data-name="order"><div class="counter">
-      <div class="gar">
-        <div class="g" data-i="0"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 6l6 4 6-4 8 5-3 7-4-2v18H13V16l-4 2-3-7z"/></svg>Dress shirt</div>
-        <div class="g" data-i="1"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 6h16l2 28h-7l-3-18-3 18h-7z"/></svg>Pants</div>
-        <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M15 5h10l-2 7 9 22H8l9-22z"/></svg>Dress</div>
-        <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 6l7 6 7-6 7 6-2 22H8L6 12z"/></svg>Blazer</div>
-      </div>
-      <div class="ticket">
-        <b>New order</b>
-        <div class="li"><span>Dress shirt</span><span>4.50</span></div>
-        <div class="li"><span>Dress shirt</span><span>4.50</span></div>
-        <div class="li"><span>Pants</span><span>7.25</span></div>
-        <div class="tot"><span>Total</span><span class="sum">$0.00</span></div>
-        <div class="pay">Pay</div>
-      </div>
-    </div></div>
-
-    <button class="replay" type="button" id="replay">Replay</button>
-  </div></div>
-</section>
-
-<section class="types wrap" id="types" aria-labelledby="types-h">
-  <h2 id="types-h">Made for your kind of shop.</h2>
-  <p>Once the basics are in, set up what's yours.</p>
-  <div class="seg" role="tablist" aria-label="Kind of shop">
-    <button role="tab" aria-selected="true" aria-controls="tstage" data-t="dry" id="t-dry">Dry cleaners</button>
-    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="laundromat" id="t-laundromat">Laundromats</button>
-    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="plant" id="t-plant">Plants &amp; drop stores</button>
-    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="delivery" id="t-delivery">Pickup &amp; delivery</button>
-  </div>
-  <div class="tstage" id="tstage" role="tabpanel">
-    <div class="scene" data-name="dry"><div class="find">
-      <div class="f focus" data-type="DC-0042-3"><span class="ph">Find a piece: scan a tag or type it</span></div>
-      <div class="pieces"><div class="pc"><b>1/4</b>Dress shirt</div><div class="pc"><b>2/4</b>Dress shirt</div><div class="pc"><b>3/4</b>Blazer · navy</div><div class="pc"><b>4/4</b>Pants</div></div>
-    </div></div>
-    <div class="scene" data-name="laundromat"><div class="floor">
-      <div class="m"><span class="drum"></span>W1</div><div class="m"><span class="drum"></span>W2</div><div class="m"><span class="drum"></span>W3</div><div class="m"><span class="drum"></span>W4</div><div class="m"><span class="drum"></span>D1</div><div class="m"><span class="drum"></span>D2</div>
-      <div class="m"><span class="drum"></span>W5</div><div class="m"><span class="drum"></span>W6</div><div class="m"><span class="drum"></span>W7</div><div class="m"><span class="drum"></span>W8</div><div class="m"><span class="drum"></span>D3</div><div class="m"><span class="drum"></span>D4</div>
-    </div></div>
-    <div class="scene" data-name="plant">
-      <div class="road"></div>
-      <div class="place" style="left:6%"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 18h32v20H6zM4 18l4-10h28l4 10"/></svg></div>Drop store</div>
-      <div class="place" style="left:calc(50% - var(--pw)/2)"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 30V14h22v16M26 20h8l6 6v4H26"/><circle cx="12" cy="32" r="4"/><circle cx="32" cy="32" r="4"/></svg></div>Driver</div>
-      <div class="place" style="right:6%"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 38V20l10-6v6l10-6v6l10-6v24z"/></svg></div>Plant</div>
-      <svg class="bag" viewBox="0 0 46 52" aria-hidden="true"><path d="M9 16h28l4 32H5z" fill="var(--blue)"/><path d="M16 16c0-10 14-10 14 0" stroke="var(--blue)" stroke-width="3" fill="none"/><rect x="14" y="26" width="18" height="12" rx="2" fill="#fff"/></svg>
-      <div class="ping" style="left:calc(6% + var(--pw)/2)">Sealed · 6 pieces</div>
-      <div class="ping" style="left:50%">Picked up</div>
-      <div class="ping" style="left:calc(94% - var(--pw)/2)">Received · 6 of 6</div>
+<!--fx:header-->
+<div class="fx-nav" id="nav" role="banner">
+  <div class="fx-nav-in">
+    <a class="fx-mark" href="/" aria-label="Fold POS home"><i></i>Fold POS</a>
+    <nav aria-label="Primary">
+      <ul class="fx-links">
+        <li>
+          <button type="button" class="fx-drop-btn" aria-expanded="false" aria-controls="fx-shops">Shops<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fx-drop" id="fx-shops">
+            <a href="/laundromats"><b>Laundromats</b><small>Wash &amp; fold by the pound, the floor map</small></a>
+            <a href="/dry-cleaners"><b>Dry cleaners</b><small>Per-piece tickets, tags and conveyor slots</small></a>
+            <a href="/alterations"><b>Tailors</b><small>Per-task pricing, measurements, fittings</small></a>
+          </div>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/hey-fold">Hey Fold</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="fx-cta">
+      <a class="fx-lang" href="/es/" hreflang="es" lang="es" aria-label="Ver esta página en español">ES</a>
+      <a class="fx-login" href="https://pos.foldpos.com/login">Log in</a>
+      <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free</a>
+      <button type="button" class="fx-burger" aria-expanded="false" aria-controls="fx-menu" aria-label="Menu"><span></span></button>
     </div>
-    <div class="scene" data-name="delivery"><div class="map"><svg viewBox="0 0 900 450" aria-hidden="true">
-      <g stroke="var(--line)" stroke-width="10" fill="none"><path d="M0 120h900M0 300h900M200 0v450M520 0v450M760 0v450"/></g>
-      <path id="route" d="M120 300H200V120H520V300H760V120" fill="none" stroke="var(--blue)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1700" stroke-dashoffset="1700"/>
-      <g font-size="15" font-weight="600" fill="var(--ink)" font-family="inherit">
-        <circle cx="120" cy="300" r="12" fill="var(--ink)"/><text x="80" y="340">Shop</text>
-        <circle cx="200" cy="180" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="215" y="185">1 · Pickup</text>
-        <circle cx="440" cy="120" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="400" y="100">2 · Delivery</text>
-        <circle cx="520" cy="260" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="535" y="265">3 · Pickup</text>
-        <circle cx="760" cy="160" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="680" y="100">4 · Delivery</text>
-      </g>
-    </svg></div></div>
-    <button class="replay" type="button" id="treplay">Replay</button>
   </div>
-  <ul class="tlist" id="tlist"></ul>
+</div>
+<nav class="fx-menu" id="fx-menu" aria-label="Menu">
+  <p class="fx-menu-h">Shops</p>
+  <a href="/laundromats">Laundromats</a>
+  <a href="/dry-cleaners">Dry cleaners</a>
+  <a href="/alterations">Tailors</a>
+  <p class="fx-menu-h">Fold POS</p>
+  <a href="/features">Features</a>
+  <a href="/hey-fold">Hey Fold</a>
+  <a href="/pricing">Pricing</a>
+  <p class="fx-menu-h">Support</p>
+  <a href="/faq">FAQ</a>
+  <a href="/help">Help</a>
+  <a href="/contact">Contact</a>
+  <a class="fx-menu-lang" href="/es/" hreflang="es" lang="es">Español</a>
+  <div class="fx-menu-cta">
+    <a href="https://pos.foldpos.com/login">Log in</a>
+    <a class="fx-btn" href="https://pos.foldpos.com/signup">Start free, 14 days</a>
+  </div>
+</nav>
+<!--/fx:header-->
+
+<div class="lbar" id="lbar">
+  <div class="lbar-in">
+    <a class="lb-title" href="#top">Start here</a>
+    <a class="lb-type" href="#shop" id="lb-type" aria-label="Shop type: All shop types. Change">All shop types</a>
+    <div class="lb-prog"><span id="lb-step">Step 1 of 6</span><span class="meter" aria-hidden="true"><i id="lb-meter"></i></span></div>
+    <a class="btn" href="#s-counter" id="lb-go">Continue</a>
+  </div>
+</div>
+
+<main id="top">
+<section class="hero wrap" aria-labelledby="h-hero">
+  <h1 id="h-hero">Welcome to Fold POS.</h1>
+  <p class="lead">Let’s get your shop open.</p>
+  <div class="acts">
+    <a class="btn" href="https://pos.foldpos.com/">Open Fold POS</a>
+    <p class="meta" id="progress" aria-live="polite">About an hour · 0 of 6 done</p>
+    <p class="small">No account yet? <a href="https://pos.foldpos.com/signup">Start your free trial</a></p>
+  </div>
 </section>
 
-<section class="help wrap" id="help">
-  <h2>Stuck on anything?</h2>
-  <p>Answers are in the <a href="/help">help center</a>. Or email <a href="mailto:contact@foldpos.com?subject=Getting%20started%20with%20Fold%20POS">contact@foldpos.com</a> and we'll do it with you. Watch how bags move between a plant and its stores in <a href="/follow-the-bag">Follow the bag</a>.</p>
+<section class="band fog" id="shop" aria-labelledby="h-shop">
+  <div class="wrap shop">
+    <div>
+      <p class="label">Your shop</p>
+      <h2 class="h2" id="h-shop">What does your shop do?</h2>
+      <p class="lead">Pick all that apply, like you did at sign-up. We’ll show only the steps you need.</p>
+    </div>
+    <div>
+      <div class="types" role="group" aria-label="Shop type">
+        <button class="type" type="button" aria-pressed="false" data-type="laundromat"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="20" height="22" rx="3"/><circle cx="14" cy="15" r="5.5"/><path d="M8 7h3"/></svg><span>Laundromat<small>Self-service</small></span><span class="tk"></span></button>
+        <button class="type" type="button" aria-pressed="false" data-type="wash-fold"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h20v12H4zM4 16h20M9 10V6h10v4"/></svg><span>Wash &amp; fold<small>By the pound</small></span><span class="tk"></span></button>
+        <button class="type" type="button" aria-pressed="false" data-type="dry-cleaning"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 8a2.5 2.5 0 1 1 2.5-2.5M14 8v2L3 19h22L14 10"/></svg><span>Dry cleaning<small>Tickets and tags</small></span><span class="tk"></span></button>
+        <button class="type" type="button" aria-pressed="false" data-type="alterations"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="20" r="3.5"/><circle cx="20" cy="20" r="3.5"/><path d="M10.5 17.5 21 4M17.5 17.5 7 4"/></svg><span>Alterations<small>Jobs and fittings</small></span><span class="tk"></span></button>
+      </div>
+      <p class="switch"><b>Switching from Cents or CleanCloud?</b> Bring your customers and prices with you in step 2, or <a href="mailto:contact@foldpos.com?subject=Switching%20to%20Fold%20POS">email us</a> and we’ll do it with you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="first-day" aria-labelledby="h-first">
+  <div class="wrap">
+    <p class="label">Your first day</p>
+    <h2 class="h2" id="h-first">Three things, and you’re open.</h2>
+    <div class="hl" id="hl">
+      <div class="tile"><div class="mini" aria-hidden="true"><span class="mb">Shirt</span><span class="mb">Suit</span><span class="mb">Pants</span></div><h3>Add your prices.</h3><p>Every item becomes a button at the counter.</p></div>
+      <div class="tile"><div class="mini" aria-hidden="true"><span class="mr"><i></i><i></i><i></i><i></i></span></div><h3>Connect your printer.</h3><p>A customer copy and a store copy print the moment you take an order.</p></div>
+      <div class="tile"><div class="mini" aria-hidden="true"><span class="mt">Your order DC-0001 is ready for pickup.</span></div><h3>Take your first order.</h3><p>Your customer gets a text the moment it’s ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band fog" id="before" aria-labelledby="h-before">
+  <div class="wrap before">
+    <div>
+      <p class="label">Before you begin</p>
+      <h2 class="h2" id="h-before">Have these ready.</h2>
+      <p class="total"><b>About an hour</b> in all. Stop whenever you like: your ticks stay on this device.</p>
+    </div>
+    <ul class="have">
+      <li><span class="dotk"></span><span><b>The computer by your register,</b> with Chrome. Any Windows PC or Mac from the last 5 years.</span></li>
+      <li><span class="dotk"></span><span><b>Your receipt printer</b> and its USB cable.</span></li>
+      <li data-for="dry-cleaning alterations"><span class="dotk"></span><span><b>Your tag printer and barcode scanner,</b> if you have them.</span></li>
+      <li data-for="wash-fold"><span class="dotk"></span><span><b>Any scale.</b> You weigh the bag and type the pounds.</span></li>
+      <li><span class="dotk"></span><span><b>Your price list,</b> or an export from Cents or CleanCloud.</span></li>
+      <li><span class="dotk"></span><span><b>Your staff’s names.</b></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="steps" aria-labelledby="h-steps">
+  <div class="wrap">
+    <p class="label">Setup</p>
+    <h2 class="h2" id="h-steps"><span id="nsteps">Six</span> steps to your first order.</h2>
+  </div>
+  <div class="wrap setup" style="margin-top:32px">
+    <nav class="toc" aria-label="Setup steps">
+      <ol id="toc">
+        <li><a class="acct" href="#acct"><span class="nb" aria-hidden="true"></span>Account created</a></li>
+      </ol>
+    </nav>
+    <div>
+      <p class="acctrow" id="acct"><span class="chk" aria-hidden="true"></span><span><b>Account created.</b> You did that when you signed up.</span></p>
+
+      <article class="step" id="s-counter" data-step="counter" aria-labelledby="h-counter">
+        <div>
+          <p class="st-meta"><span class="num">Step 1 of 6</span> · 5 minutes</p>
+          <h3 id="h-counter">Set up the counter.</h3>
+          <div class="hide-done">
+            <p class="c">Open pos.foldpos.com in Chrome on the computer by your register, and bookmark it. Most shops already own the rest.</p>
+            <p class="c" data-for="dry-cleaning alterations">For tags, add a tag printer and a barcode scanner.</p>
+            <p class="c" data-for="wash-fold">Any scale works: weigh the bag and type the pounds.</p>
+            <p class="normal">Most store owners use Windows. Chrome gives the easiest printing.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="/hardware">See the hardware guide</a><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="counter"><div class="stage" role="img" aria-label=""><div class="devs"></div></div><figcaption class="cap"><span class="cp">What most counters already have.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-prices" data-step="prices" aria-labelledby="h-prices">
+        <div>
+          <p class="st-meta"><span class="num">Step 2 of 6</span> · 15 minutes</p>
+          <h3 id="h-prices">Add your prices.</h3>
+          <div class="hide-done">
+            <p class="where">Settings › Import data</p>
+            <p class="c">Export your customers and prices from Cents, CleanCloud or a spreadsheet, then pick the file. No list? Start from ours.</p>
+            <p class="c" data-for="laundromat wash-fold">Price by the pound with a minimum, by the bag or by the piece.</p>
+            <p class="c" data-for="dry-cleaning alterations">Every garment becomes a button at the counter.</p>
+            <p class="normal">Check what came in. You can undo an import.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><a class="btn2 hide-done" href="mailto:contact@foldpos.com?subject=Import%20my%20prices">Or have us do it</a><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="prices"><div class="stage" role="img" aria-label="A price list called prices.csv is imported. Dress shirt $4.50, 2-piece suit $16.00, Pants $7.25 and Dress $14.00 each become a button."><div class="sheet">
+          <div class="csv"><p class="fn">prices.csv</p><div class="r"><span>Dress shirt</span><span>4.50</span></div><div class="r"><span>2-piece suit</span><span>16.00</span></div><div class="r"><span>Pants</span><span>7.25</span></div><div class="r"><span>Dress</span><span>14.00</span></div></div>
+          <span class="arrow" aria-hidden="true">›</span>
+          <div class="cards"><div class="card">Dress shirt<b>$4.50</b></div><div class="card">2-piece suit<b>$16.00</b></div><div class="card">Pants<b>$7.25</b></div><div class="card">Dress<b>$14.00</b></div></div>
+        </div></div><figcaption class="cap"><span class="cp">Each line of your list becomes a price button.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-printer" data-step="printer" aria-labelledby="h-printer">
+        <div>
+          <p class="st-meta"><span class="num">Step 3 of 6</span> · 10 minutes</p>
+          <h3 id="h-printer">Connect your printer.</h3>
+          <div class="hide-done">
+            <p class="where">Settings › Receipts › Connect printer</p>
+            <p class="c">Plug the receipt printer into the counter computer by USB. In Chrome, pick it from the list and print a test page.</p>
+            <p class="c">On Windows with Edge or Firefox, or if the list is empty, pair the <a href="/download">free print helper</a>. On a Mac, use Chrome.</p>
+            <p class="c" data-for="dry-cleaning alterations">Tag printer: run Calibrate cutter once in Settings › Receipts. Each piece gets its own tag: 1/3, 2/3, 3/3.</p>
+            <p class="normal">No need to add the printer in Windows or macOS first.</p>
+            <p class="normal" data-for="dry-cleaning alterations">No tag printer yet? Start with receipts and add tags when you’re ready.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="printer"><div class="stage" role="img" aria-label=""><div class="printer">
+          <div class="pbody"></div>
+          <div class="paper"><div><b>SONIA’S CLEANERS</b></div><div><span>DC-0001 · Dana W.</span></div><div><span>Dress shirt ×2</span><span>9.00</span></div><div><span>Pants</span><span>7.25</span></div><div><b>Total</b><b>16.25</b></div><div><b>Ready Fri after 5 PM</b></div></div>
+          <div class="tags" data-for="dry-cleaning alterations"><div class="tagp">DC-0001&nbsp; 1/3</div><div class="tagp">DC-0001&nbsp; 2/3</div><div class="tagp">DC-0001&nbsp; 3/3</div></div>
+        </div></div><figcaption class="cap"><span class="cp"></span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-machines" data-step="machines" data-types="laundromat" aria-labelledby="h-machines">
+        <div>
+          <p class="st-meta"><span class="num">Step 4 of 7</span> · Optional</p>
+          <h3 id="h-machines">Map your machines.</h3>
+          <div class="hide-done">
+            <p class="where">Machine management</p>
+            <p class="c">Add each washer and dryer with its real brand and size. Your floor becomes a live map: what’s free, what’s running and how long is left.</p>
+            <p class="normal">Later is fine. The counter works without it.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><button class="btn2 hide-done later" type="button">Later is fine</button><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="machines"><div class="stage" role="img" aria-label="A floor map of 8 washers and 4 dryers. Seven of them start running, one after another, and show as running on the map."><div class="floor">
+          <div class="m"><span class="drum"></span>W1</div><div class="m"><span class="drum"></span>W2</div><div class="m"><span class="drum"></span>W3</div><div class="m"><span class="drum"></span>W4</div><div class="m"><span class="drum"></span>D1</div><div class="m"><span class="drum"></span>D2</div>
+          <div class="m"><span class="drum"></span>W5</div><div class="m"><span class="drum"></span>W6</div><div class="m"><span class="drum"></span>W7</div><div class="m"><span class="drum"></span>W8</div><div class="m"><span class="drum"></span>D3</div><div class="m"><span class="drum"></span>D4</div>
+        </div></div><figcaption class="cap"><span class="cp">Your floor, live: blue means running.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-staff" data-step="staff" aria-labelledby="h-staff">
+        <div>
+          <p class="st-meta"><span class="num">Step 4 of 6</span> · 10 minutes · Optional</p>
+          <h3 id="h-staff">Invite your staff.</h3>
+          <div class="hide-done">
+            <p class="where">Employees, in the left menu</p>
+            <p class="c">Give each person their own login and a 4-digit code. Between customers, a code unlocks the counter as that person, so every order shows who took it.</p>
+            <p class="normal">Staff check orders in and out. Only you change prices and settings.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><button class="btn2 hide-done later" type="button">Later is fine</button><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="staff"><div class="stage" role="img" aria-label="A keypad. Maria types her 4-digit code and the counter unlocks: Unlocked. Hi, Maria."><div class="team">
+          <div class="avs"><span class="av" style="background:#b45309">S</span><span class="av" style="background:#0e7490">M</span><span class="av" style="background:#7e22ce">J</span><span class="av" style="background:#15803d">R</span></div>
+          <div class="hello">Enter your code</div>
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="pad"><span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span><span class="key">5</span><span class="key">6</span><span class="key">7</span><span class="key">8</span><span class="key">9</span><span class="key blank"></span><span class="key">0</span><span class="key">⌫</span></div>
+        </div></div><figcaption class="cap"><span class="cp">A 4-digit code unlocks the counter as that person.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-texts" data-step="texts" aria-labelledby="h-texts">
+        <div>
+          <p class="st-meta"><span class="num">Step 5 of 6</span> · 5 minutes · Optional</p>
+          <h3 id="h-texts">Check your customer texts.</h3>
+          <div class="hide-done">
+            <p class="where">Settings › Customer texts</p>
+            <p class="c">The ready text goes out in your shop’s name, in English or Spanish. Change the wording or turn off anything you don’t want.</p>
+            <p class="normal">Nothing to switch on. Texts are on already.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><button class="btn2 hide-done later" type="button">Later is fine</button><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="texts"><div class="stage" role="img" aria-label="A phone gets two texts from Sonia’s Cleaners: Hi Dana, we got your order DC-0001: 3 pieces, ready Fri after 5 PM. Then: Your order DC-0001 is ready for pickup. Dana replies: Thank you! Coming at 6."><div class="phone">
+          <div class="from">Sonia’s Cleaners</div>
+          <div class="bub">Hi Dana, we got your order DC-0001: 3 pieces, ready Fri after 5 PM.</div>
+          <div class="typing"><i></i><i></i><i></i></div>
+          <div class="bub">Your order DC-0001 is ready for pickup. See you soon!</div>
+          <div class="bub me">Thank you! Coming at 6</div>
+        </div></div><figcaption class="cap"><span class="cp">Texts go out in your shop’s name.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+
+      <article class="step" id="s-order" data-step="order" aria-labelledby="h-order">
+        <div>
+          <p class="st-meta"><span class="num">Step 6 of 6</span> · 5 minutes</p>
+          <h3 id="h-order">Take your first real order.</h3>
+          <div class="hide-done">
+            <p class="c">Tap the items, take payment, and the ticket prints<span data-for="dry-cleaning alterations"> with a tag for every piece</span>.<span data-for="wash-fold"> For wash &amp; fold, weigh the bag and type the pounds.</span></p>
+            <p class="c">Or press Caps Lock and say it. Hey Fold reads it back and waits for your “yes”.</p>
+            <p class="normal">Cards run on your own terminal. Fold records the payment.</p>
+          </div>
+          <div class="acts"><a class="btn hide-done" href="https://pos.foldpos.com/">Open Fold POS</a><button class="done" type="button" aria-pressed="false"><span class="box"></span>Mark done</button></div>
+        </div>
+        <figure class="fig" data-scene="order"><div class="stage" role="img" aria-label="At the counter, two dress shirts and pants are tapped in on ticket DC-0001. The total reaches $16.25, Pay is pressed and it says Paid, tickets printing."><div class="counter">
+          <div class="gar">
+            <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l6 4 6-4 8 5-3 7-4-2v18H13V16l-4 2-3-7z"/></svg>Dress shirt</div>
+            <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h16l2 28h-7l-3-18-3 18h-7z"/></svg>Pants</div>
+            <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M15 5h10l-2 7 9 22H8l9-22z"/></svg>Dress</div>
+            <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M13 6l7 6 7-6 7 6-2 22H8L6 12z"/></svg>Blazer</div>
+          </div>
+          <div class="ticket"><b>DC-0001</b><div class="li"><span>Dress shirt</span><span>4.50</span></div><div class="li"><span>Dress shirt</span><span>4.50</span></div><div class="li"><span>Pants</span><span>7.25</span></div><div class="tot"><span>Total</span><span class="sum">$0.00</span></div><div class="pay">Pay</div></div>
+        </div></div><figcaption class="cap"><span class="cp">Tap, pay, print. That’s a normal day.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band fog" id="later" aria-labelledby="h-later">
+  <div class="wrap">
+    <p class="label">When you’re ready</p>
+    <h2 class="h2" id="h-later">Grow into it later.</h2>
+    <div class="grow">
+      <div class="gt wide" id="g-delivery">
+        <figure class="fig" data-scene="route"><div class="stage" role="img" aria-label="A map. A route is drawn from the shop through four stops: pickup, delivery, pickup, delivery."><div class="map"><svg viewBox="0 0 900 450" aria-hidden="true">
+          <g stroke="var(--line-2)" stroke-width="10" fill="none"><path d="M0 120h900M0 300h900M200 0v450M520 0v450M760 0v450"/></g>
+          <path class="route" d="M120 300H200V120H520V300H760V120" fill="none" stroke="var(--brand)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1700" stroke-dashoffset="1700"/>
+          <g font-size="22" font-weight="700" fill="var(--ink)" font-family="Plus Jakarta Sans,sans-serif">
+            <circle cx="120" cy="300" r="13" fill="var(--ink)"/><text x="70" y="350">Shop</text>
+            <circle class="pin" cx="200" cy="200" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="218" y="207">1 · Pickup</text>
+            <circle class="pin" cx="420" cy="120" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="330" y="96">2 · Delivery</text>
+            <circle class="pin" cx="520" cy="240" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="538" y="247">3 · Pickup</text>
+            <circle class="pin" cx="760" cy="160" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="640" y="96">4 · Delivery</text>
+          </g></svg></div></div><figcaption class="cap"><span class="cp">Every pickup and drop-off in one route.</span><button class="rp" type="button">Replay</button></figcaption></figure>
+        <h3>Run pickup &amp; delivery.</h3>
+        <p>Build the day’s routes on a map. Drivers use the Fold Driver app, and customers get a text at each step. On Growth and Pro.</p>
+        <p class="go"><a class="btn2" href="/pickup-delivery">How delivery works</a></p>
+      </div>
+      <div class="gt" data-for="dry-cleaning alterations" id="g-bag">
+        <h3>Find any piece.</h3>
+        <p>Every order has a Pieces view, and Find a piece on Orders finds any tag in seconds. Send work to a plant? Every bag is scanned at each hand-off.</p>
+        <p class="go"><a class="btn2" href="/follow-the-bag">Follow the bag</a></p>
+      </div>
+      <div class="gt" data-for="laundromat wash-fold" id="g-voice">
+        <h3>Talk to your counter.</h3>
+        <p>Say the customer, the pieces and when it’s due. Hey Fold rings it up, reads it back and waits for your “yes”. On every plan.</p>
+        <p class="go"><a class="btn2" href="/hey-fold">Meet Hey Fold</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="worried" aria-labelledby="h-worried">
+  <div class="wrap">
+    <p class="label">Worried about…?</p>
+    <h2 class="h2" id="h-worried">Most worries have a short answer.</h2>
+    <div class="qa">
+      <div><h3>What if the internet drops?</h3><p>The counter keeps taking orders and sends them when it’s back.</p></div>
+      <div><h3>Do I need new hardware?</h3><p>Most shops already own what Fold POS needs. It works with Epson, Star, Bixolon and Zebra printers, impact or thermal, USB or network.</p></div>
+      <div><h3>Windows says “Windows protected your PC.”</h3><p>That appears because the print helper is new. Click More info, then Run anyway. The helper only talks to Fold POS and your printers.</p></div>
+      <div><h3>What happens after the 14-day trial?</h3><p>Pick a plan in Settings › Plan &amp; billing. If you don’t, the POS goes read-only. Everything you entered stays.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band fog close" id="help" aria-labelledby="h-help">
+  <div class="wrap">
+    <h2 class="h2" id="h-help">Stuck? Email us.</h2>
+    <p class="lead">Tell us which step, and we’ll do it with you.</p>
+    <div class="acts"><a class="btn" href="mailto:contact@foldpos.com?subject=Getting%20started%20with%20Fold%20POS">Email contact@foldpos.com</a><a class="btn2" href="/help">Help center</a></div>
+  </div>
 </section>
 </main>
+
 
 <script>
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Each stage keeps its own timer list, so the tour and the shop-type demo never cancel each other.
-  var timers = [];
-  function later(ms, fn){ timers.push(setTimeout(fn, reduce ? 0 : ms)); }
-  function $(root, s){ return root.querySelector(s); }
-  function $$(root, s){ return Array.prototype.slice.call(root.querySelectorAll(s)); }
+  function $(r, s){ return r.querySelector(s); }
+  function $$(r, s){ return Array.prototype.slice.call(r.querySelectorAll(s)); }
+  function store(k, v){ try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch(e){} return null; }
 
-  // Type text into a fake field, one character at a time.
-  function type(field, text, start, speed, done){
-    var t = start;
-    field.classList.add('focus');
-    for (var i = 1; i <= text.length; i++) (function(n){
-      later(t, function(){ field.innerHTML = text.slice(0, n).replace(/&/g,'&amp;').replace(/</g,'&lt;') + '<span class="caret"></span>'; });
-      t += speed;
-    })(i);
-    later(t + 150, function(){ field.innerHTML = field.textContent; field.classList.remove('focus'); if (done) done(); });
-    return t + 150;
-  }
-  function fill(field, text){ field.textContent = text; field.classList.remove('filled'); void field.offsetWidth; field.classList.add('filled'); }
+  /* ── Shop type: ?type=a,b beats what this browser remembers; empty means all. ── */
+  var NAMES = {'laundromat':'Laundromat','wash-fold':'Wash & fold','dry-cleaning':'Dry cleaning','alterations':'Alterations'};
+  var ALIAS = {'laundromats':'laundromat','self-service':'laundromat','wash-and-fold':'wash-fold','washfold':'wash-fold','wash_fold':'wash-fold','wash-fold':'wash-fold','dry-cleaner':'dry-cleaning','dry-cleaners':'dry-cleaning','drycleaning':'dry-cleaning','dry_cleaning':'dry-cleaning','dry-clean':'dry-cleaning','alteration':'alterations','tailor':'alterations','tailors':'alterations'};
+  function norm(list){ var out = []; list.forEach(function(x){ x = String(x).trim().toLowerCase(); x = NAMES[x] ? x : ALIAS[x]; if (x && out.indexOf(x) < 0) out.push(x); }); return out; }
+  var sel = [], q = null;
+  try { q = new URLSearchParams(location.search).get('type'); } catch(e){}
+  if (q) { sel = norm(q.split(',')); store('foldpos-start-type', sel); }
+  else { var saved = store('foldpos-start-type'); sel = norm(Array.isArray(saved) ? saved : []); }
+  function wants(attr){ if (!attr || !sel.length) return true; return attr.split(' ').some(function(t){ return sel.indexOf(t) >= 0; }); }
 
-  var scenes = {
-    account: function(s){
-      var shop = $(s,'[data-k=shop]'), addr = $(s,'[data-k=addr]'), sugg = $(s,'.sugg');
-      var ph = {shop:'Shop name', addr:'Where is your shop?', street:'Street address', city:'City', state:'State', zip:'ZIP'};
-      $$(s,'.f').forEach(function(f){ f.innerHTML = '<span class="ph">'+ph[f.dataset.k]+'</span>'; f.className='f'; });
-      $$(s,'.chip').forEach(function(c){ c.classList.remove('on'); }); sugg.classList.remove('open');
-      var t = type(shop, "Sonia's Cleaners", 300, 55);
-      later(t + 200, function(){ $(s,'[data-c="2"]').classList.add('on'); });
-      later(t + 500, function(){ $(s,'[data-c="3"]').classList.add('on'); });
-      later(t + 800, function(){ $(s,'[data-c="4"]').classList.add('on'); });
-      var t2 = type(addr, '4721 Gea', t + 1200, 90);
-      later(t2, function(){ addr.classList.add('focus'); sugg.classList.add('open'); });
-      later(t2 + 1100, function(){
-        sugg.classList.remove('open'); addr.classList.remove('focus');
-        addr.textContent = '4721 Geary Blvd, San Francisco, CA';
-        fill($(s,'[data-k=street]'), '4721 Geary Boulevard');
-      });
-      later(t2 + 1300, function(){ fill($(s,'[data-k=city]'), 'San Francisco'); });
-      later(t2 + 1500, function(){ fill($(s,'[data-k=state]'), 'California'); });
-      later(t2 + 1700, function(){ fill($(s,'[data-k=zip]'), '94118'); });
-    },
-    hardware: function(s){
-      var d = $$(s,'.dev'); d.forEach(function(x){ x.classList.remove('in'); $(x,'.tick').classList.remove('in'); });
-      d.forEach(function(x,i){ later(200 + i*220, function(){ x.classList.add('in'); }); later(1300 + i*300, function(){ $(x,'.tick').classList.add('in'); }); });
-    },
-    prices: function(s){
-      var rows = $$(s,'.csv div'), cards = $$(s,'.card');
-      var csv = $(s,'.csv'), fn = $(s,'.fn'); csv.classList.remove('ok'); fn.textContent = 'prices.csv';
-      rows.forEach(function(r){ r.classList.remove('gone'); }); cards.forEach(function(c){ c.classList.remove('in'); });
-      later(600 + rows.length*450, function(){ csv.classList.add('ok'); fn.textContent = 'prices.csv · 4 imported'; });
-      rows.forEach(function(r,i){ later(600 + i*450, function(){ r.classList.add('gone'); cards[i].classList.add('in'); }); });
-    },
-    printers: function(s){
-      var p = $(s,'.paper'), tags = $$(s,'.tagp');
-      p.classList.remove('out'); tags.forEach(function(t){ t.classList.remove('in'); });
-      later(400, function(){ p.classList.add('out'); });
-      tags.forEach(function(t,i){ later(2200 + i*500, function(){ t.classList.add('in'); }); });
-    },
-    staff: function(s){
-      var av = $$(s,'.av'), dots = $$(s,'.dot'), keys = $$(s,'.key'), hello = $(s,'.hello');
-      av.forEach(function(a){ a.classList.remove('sel'); }); dots.forEach(function(d){ d.classList.remove('on'); });
-      hello.textContent = 'Enter your code'; hello.classList.remove('ok');
-      [3,7,1,9].forEach(function(k,i){
-        later(500 + i*420, function(){ keys[k-1].classList.add('press'); dots[i].classList.add('on'); });
-        later(700 + i*420, function(){ keys[k-1].classList.remove('press'); });
-      });
-      later(2400, function(){ av[1].classList.add('sel'); hello.textContent = 'Unlocked. Hi, Maria'; hello.classList.add('ok'); });
-    },
-    texts: function(s){
-      var b = $$(s,'.bub'), ty = $(s,'.typing');
-      b.forEach(function(x){ x.classList.remove('in'); }); ty.classList.remove('in');
-      later(400, function(){ b[0].classList.add('in'); });
-      later(1600, function(){ ty.classList.add('in'); });
-      later(2600, function(){ ty.classList.remove('in'); b[1].classList.add('in'); });
-      later(3700, function(){ b[2].classList.add('in'); });
-    },
-    order: function(s){
-      var g = $$(s,'.g'), li = $$(s,'.li'), sum = $(s,'.sum'), pay = $(s,'.pay');
-      li.forEach(function(l){ l.classList.remove('in'); }); sum.textContent = '$0.00'; pay.textContent = 'Pay'; pay.classList.remove('paid');
-      var totals = ['$4.50','$9.00','$16.25'];
-      [0,0,1].forEach(function(gi,i){
-        later(500 + i*650, function(){ g[gi].classList.add('tap'); li[i].classList.add('in'); sum.textContent = totals[i]; });
-        later(700 + i*650, function(){ g[gi].classList.remove('tap'); });
-      });
-      later(2700, function(){ pay.classList.add('press'); });
-      later(2850, function(){ pay.classList.remove('press'); pay.classList.add('paid'); pay.textContent = 'Paid · tickets printing'; });
-    },
-    dry: function(s){
-      var f = $(s,'.f'), pcs = $$(s,'.pc');
-      f.innerHTML = '<span class="ph">Find a piece: scan a tag or type it</span>'; pcs.forEach(function(p){ p.classList.remove('hit'); });
-      var t = type(f, 'DC-0042-3', 400, 70);
-      later(t + 200, function(){ pcs[2].classList.add('hit'); });
-    },
-    laundromat: function(s){
-      var m = $$(s,'.m'); m.forEach(function(x){ x.classList.remove('run'); });
-      [0,2,3,5,6,9,10].forEach(function(i,n){ later(300 + n*260, function(){ m[i].classList.add('run'); }); });
-    },
-    plant: function(s){
-      var bag = $(s,'.bag'), p = $$(s,'.ping');
-      bag.style.transition = 'none'; bag.style.left = ''; void bag.offsetWidth; bag.style.transition = '';
-      p.forEach(function(x){ x.classList.remove('in'); });
-      later(300, function(){ p[0].classList.add('in'); });
-      later(1300, function(){ bag.style.left = 'calc(50% - 23px)'; });
-      later(3500, function(){ p[1].classList.add('in'); });
-      later(4300, function(){ bag.style.left = 'calc(94% - var(--pw)/2 - 23px)'; });
-      later(6500, function(){ p[2].classList.add('in'); });
-    },
-    delivery: function(s){
-      var r = $(s,'#route');
-      r.style.transition = 'none'; r.style.strokeDashoffset = 1700; void r.getBoundingClientRect();
-      later(300, function(){ r.style.transition = 'stroke-dashoffset 4s ease-in-out'; r.style.strokeDashoffset = 0; });
-    }
-  };
+  /* ── Progress, remembered in this browser (v2's ticks carry over). ── */
+  var st = store('foldpos-start-v3') || {}; st.done = st.done || {}; st.later = st.later || {};
+  var old = store('foldpos-start-done');
+  if (old && !st.migrated){ var map = {2:'counter',3:'prices',4:'printer',5:'staff',6:'texts',7:'order'}; for (var k in old) if (old[k] && map[k]) st.done[map[k]] = true; st.migrated = true; store('foldpos-start-v3', st); }
 
-  function show(stageEl, name){
-    (stageEl._timers || []).forEach(clearTimeout);
-    timers = stageEl._timers = [];
-    $$(stageEl,'.scene').forEach(function(sc){ sc.classList.toggle('show', sc.dataset.name === name); });
-    var sc = $(stageEl,'.scene[data-name="'+name+'"]');
-    if (sc && scenes[name]) scenes[name](sc);
-  }
+  var steps = $$(document, '.step'), toc = document.getElementById('toc');
+  var WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven'];
+  steps.forEach(function(s){
+    var li = document.createElement('li');
+    li.innerHTML = '<a href="#' + s.id + '"><span class="nb" aria-hidden="true"></span><span>' + $(s,'h3').textContent.replace(/\.$/,'') + '</span></a>';
+    s._toc = li; toc.appendChild(li);
+    var b = $(s,'.done');
+    b.addEventListener('click', function(){
+      var on = !st.done[s.dataset.step]; st.done[s.dataset.step] = on; if (on) delete st.later[s.dataset.step];
+      store('foldpos-start-v3', st); render();
+      if (on) b.focus();
+    });
+    var l = $(s,'.later');
+    if (l) l.addEventListener('click', function(){ st.later[s.dataset.step] = true; store('foldpos-start-v3', st); render(); var n = visible()[visible().indexOf(s) + 1]; if (n) go(n); });
+  });
+  function visible(){ return steps.filter(function(s){ return !s.hidden; }); }
+  function go(s){ s.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); var h = $(s,'h3'); h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
 
-  // Tour: the step in the middle of the screen drives the stage.
-  var stage = document.getElementById('stage'), steps = $$(document,'.step'), current = null;
-  function activate(step){
-    if (step === current) return;
-    current = step;
-    steps.forEach(function(x){ x.classList.toggle('on', x === step); });
-    show(stage, step.dataset.scene);
-  }
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting) activate(e.target); });
-    }, {rootMargin:'-45% 0px -45% 0px'});
-    steps.forEach(function(s){ io.observe(s); });
-  }
-  activate(steps[0]);
-  document.getElementById('replay').addEventListener('click', function(){ current && show(stage, current.dataset.scene); });
-
-  // Done buttons, remembered in this browser only.
-  var KEY = 'foldpos-start-done', done = {};
-  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ done = {}; }
-  var btns = $$(document,'.done'), prog = document.getElementById('progress');
+  var prog = document.getElementById('progress'), lbStep = document.getElementById('lb-step'), lbGo = document.getElementById('lb-go'), lbType = document.getElementById('lb-type'), meter = document.getElementById('lb-meter');
   function render(){
-    var n = 0;
-    btns.forEach(function(b){ var on = !!done[b.dataset.step]; b.setAttribute('aria-pressed', on); b.lastChild.textContent = on ? 'Done' : 'Mark done'; if (on) n++; });
-    prog.textContent = n + ' of 7 done';
+    $$(document, '[data-for]').forEach(function(e){ e.hidden = !wants(e.getAttribute('data-for')); });
+    steps.forEach(function(s){ s.hidden = !wants(s.getAttribute('data-types')); s._toc.hidden = s.hidden; });
+    var vis = visible(), n = vis.length, d = 0, next = null, nextIdx = 0;
+    vis.forEach(function(s, i){
+      var on = !!st.done[s.dataset.step]; if (on) d++;
+      if (!on && !next && !st.later[s.dataset.step]) { next = s; nextIdx = i; }
+      $(s,'.num').textContent = 'Step ' + (i + 1) + ' of ' + n;
+      $(s,'.done').setAttribute('aria-pressed', on);
+      s.classList.toggle('is-done', on);
+      s._toc.firstChild.classList.toggle('is-done', on);
+      $(s._toc,'.nb').textContent = on ? '' : i + 1;
+    });
+    if (!next) vis.some(function(s, i){ if (!st.done[s.dataset.step]) { next = s; nextIdx = i; return true; } });
+    document.getElementById('nsteps').textContent = WORDS[n] || n;
+    prog.textContent = 'About an hour · ' + d + ' of ' + n + ' done';
+    meter.style.width = (n ? d / n * 100 : 0) + '%';
+    var label = sel.length ? sel.map(function(t){ return NAMES[t]; }).join(' + ') : 'All shop types';
+    lbType.textContent = label; lbType.setAttribute('aria-label', 'Shop type: ' + label + '. Change');
+    if (next){ lbGo.textContent = 'Continue'; lbGo.href = '#' + next.id; lbGo._step = next; }
+    else { lbGo.textContent = 'Open Fold POS'; lbGo.href = 'https://pos.foldpos.com/'; lbGo._step = null; }
+    barStep();
+    $$(document, '.type').forEach(function(b){ b.setAttribute('aria-pressed', sel.indexOf(b.dataset.type) >= 0); });
+    figs.forEach(function(f){ if (f._sc.label) f._stage.setAttribute('aria-label', f._sc.label()); if (f._sc.caption) f._cap.textContent = f._sc.caption(); if (f._sc.build) { f._sc.build(f._stage); f._seek(f._t || 0); } });
   }
-  btns.forEach(function(b){ b.addEventListener('click', function(){
-    done[b.dataset.step] = !done[b.dataset.step];
-    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  // The bar names the step on screen while you're in the steps, otherwise the next one to do.
+  var inView = null;
+  function barStep(){ var vis = visible(), n = vis.length, s = (inView && !inView.hidden) ? inView : lbGo._step;
+    lbStep.textContent = s ? 'Step ' + (vis.indexOf(s) + 1) + ' of ' + n : 'All ' + n + ' done'; }
+  lbGo.addEventListener('click', function(e){ if (lbGo._step){ e.preventDefault(); go(lbGo._step); } });
+  $$(document, '.type').forEach(function(b){ b.addEventListener('click', function(){
+    var t = b.dataset.type, i = sel.indexOf(t); if (i >= 0) sel.splice(i, 1); else sel.push(t);
+    sel = norm(Object.keys(NAMES).filter(function(x){ return sel.indexOf(x) >= 0; }));
+    store('foldpos-start-type', sel);
+    try { var u = new URL(location.href); if (sel.length) u.searchParams.set('type', sel.join(',')); else u.searchParams.delete('type'); history.replaceState(null, '', u); } catch(e){}
     render();
   }); });
-  render();
 
-  // Shop types
-  var tstage = document.getElementById('tstage'), tabs = $$(document,'.seg button'), tlist = document.getElementById('tlist'), curT = 'dry';
-  var lists = {
-    dry: ['Set up the tag printer and run <b>Calibrate cutter</b> once in Settings › Receipts.','Every order has a <b>Pieces</b> view. <b>Find a piece</b> on Orders finds any tag in seconds.'],
-    laundromat: ['Add your machines and lay out the floor in Machine management.','Connect your machine payment system if you use one, and see which machines are running at a glance.'],
-    plant: ['Link your shops in Settings › Plant &amp; drop stores, and set the plant’s rates.','Drivers scan each bag with the Fold POS Driver app. <a href="/follow-the-bag">Follow the bag</a> shows the whole trip.'],
-    delivery: ['Set your service area and pickup windows; customers can book online or by text.','Routes build themselves on the map, and drivers follow them in the Fold POS Driver app. <a href="/pickup-delivery">How delivery works</a>.']
+  /* ── Animations: each scene is a pure function of time, so pause, replay and the
+     reduced-motion end frame all come from one seek(t). ── */
+  function on(el, c, v){ if (el.classList.contains(c) !== !!v) el.classList.toggle(c, !!v); }
+  function txt(el, v){ if (el.textContent !== v) el.textContent = v; }
+  var tags = function(){ return wants('dry-cleaning alterations'); };
+  var DEVS = [
+    ['Computer with Chrome','Any PC or Mac from the last 5 years','<rect x="5" y="9" width="38" height="24" rx="3"/><path d="M18 41h12M24 33v8"/>'],
+    ['Receipt printer','Thermal, 80 mm. Epson, Star, Bixolon','<rect x="7" y="18" width="34" height="16" rx="4"/><path d="M15 18V8h18v10M15 34v6h18v-6"/>'],
+    ['Cash drawer','Plugs into the receipt printer','<rect x="6" y="20" width="36" height="18" rx="3"/><path d="M6 28h36M20 33h8"/>'],
+    ['Card terminal','The one you already use','<rect x="13" y="5" width="22" height="38" rx="4"/><path d="M18 13h12v8H18zM18 28h2M23 28h2M28 28h2M18 33h2M23 33h2M28 33h2"/>'],
+    ['Tag printer','One tag per piece','<rect x="6" y="14" width="36" height="20" rx="4"/><path d="M14 34v8h20v-8M30 22h6"/>','dry-cleaning alterations'],
+    ['Barcode scanner','USB. Nothing to set up','<path d="M8 10h22l4 8H20l-4 18h-7l3-18H8z"/><path d="M34 14h8M34 18h6"/>','dry-cleaning alterations'],
+    ['Any scale','Weigh, then type the pounds','<path d="M8 38h32l-4-16H12z"/><circle cx="24" cy="14" r="6"/><path d="M24 12v3"/>','wash-fold']
+  ];
+  function devList(){ return DEVS.filter(function(d){ return wants(d[3]); }); }
+  var S = {
+    counter: {
+      dur: function(){ return 1500 + devList().length * 240; },
+      label: function(){ return 'Checklist of what the counter needs, each item ticked: ' + devList().map(function(d){ return d[0]; }).join(', ') + '.'; },
+      build: function(st){ var w = $(st,'.devs'), l = devList(), key = l.map(function(d){ return d[0]; }).join();
+        if (w._k === key) return; w._k = key;
+        w.innerHTML = l.map(function(d){ return '<div class="dev"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d[2] + '</svg><span><b>' + d[0] + '</b><small>' + d[1] + '</small></span></div>'; }).join(''); },
+      at: function(st, t){ $$(st,'.dev').forEach(function(x, i){ on(x,'in', t >= 150 + i*170); on($(x,'.tick'),'in', t >= 1100 + i*240); }); }
+    },
+    prices: { dur: function(){ return 2700; },
+      at: function(st, t){ var r = $$(st,'.r'), c = $$(st,'.card'); r.forEach(function(x, i){ var v = t >= 500 + i*450; on(x,'ok', v); on(c[i],'in', v); });
+        var all = t >= 500 + 3*450; on($(st,'.csv'),'ok', all); txt($(st,'.fn'), all ? 'prices.csv · 4 imported' : 'prices.csv'); } },
+    printer: { dur: function(){ return tags() ? 3300 : 2100; },
+      label: function(){ return 'A receipt printer prints ticket DC-0001 for Dana W.: Dress shirt ×2 9.00, Pants 7.25, Total 16.25, Ready Fri after 5 PM' + (tags() ? '. Then three tags print, DC-0001 1/3, 2/3 and 3/3.' : '.'); },
+      caption: function(){ return tags() ? 'The ticket prints, then one tag per piece.' : 'The ticket prints the moment you take the order.'; },
+      at: function(st, t){ on($(st,'.paper'),'out', t >= 300); $$(st,'.tagp').forEach(function(x, i){ on(x,'in', t >= 1900 + i*400); }); } },
+    machines: { dur: function(){ return 2300; },
+      at: function(st, t){ var m = $$(st,'.m'); [0,2,3,5,6,9,10].forEach(function(i, n){ on(m[i],'run', t >= 300 + n*250); }); } },
+    staff: { dur: function(){ return 2900; },
+      at: function(st, t){ var keys = $$(st,'.key'), dots = $$(st,'.dot'), idx = {3:2,7:6,1:0,9:8};
+        keys.forEach(function(k){ on(k,'press', false); });
+        [3,7,1,9].forEach(function(k, i){ var a = 500 + i*420; on(dots[i],'on', t >= a); if (t >= a && t < a + 220) on(keys[idx[k]],'press', true); });
+        var ok = t >= 2400; on($$(st,'.av')[1],'sel', ok); on($(st,'.hello'),'ok', ok); txt($(st,'.hello'), ok ? 'Unlocked. Hi, Maria' : 'Enter your code'); } },
+    texts: { dur: function(){ return 3700; },
+      at: function(st, t){ var b = $$(st,'.bub'); on(b[0],'in', t >= 300); on($(st,'.typing'),'in', t >= 1300 && t < 2300); on(b[1],'in', t >= 2300); on(b[2],'in', t >= 3300); } },
+    order: { dur: function(){ return 3000; },
+      at: function(st, t){ var g = $$(st,'.g'), li = $$(st,'.li'), tot = ['$0.00','$4.50','$9.00','$16.25'], n = 0;
+        [0,0,1].forEach(function(gi, i){ var a = 400 + i*600; if (t >= a) n = i + 1; on(li[i],'in', t >= a); });
+        g.forEach(function(x, i){ on(x,'tap', [0,0,1].some(function(gi, j){ var a = 400 + j*600; return gi === i && t >= a && t < a + 200; })); });
+        txt($(st,'.sum'), tot[n]); var p = $(st,'.pay'); on(p,'press', t >= 2400 && t < 2550); on(p,'paid', t >= 2550); txt(p, t >= 2550 ? 'Paid · tickets printing' : 'Pay'); } },
+    route: { dur: function(){ return 4300; },
+      at: function(st, t){ var u = Math.min(1, Math.max(0, (t - 300) / 3800)); u = u < .5 ? 2*u*u : 1 - Math.pow(-2*u + 2, 2)/2;
+        $(st,'.route').style.strokeDashoffset = String(1700 * (1 - u)); } }
   };
-  function setT(t){
-    curT = t;
-    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.t === t); });
-    tstage.setAttribute('aria-labelledby', 't-' + t);
-    tlist.innerHTML = lists[t].map(function(x){ return '<li><span>'+x+'</span></li>'; }).join('');
-    show(tstage, t);
-  }
-  tabs.forEach(function(b,i){
-    b.addEventListener('click', function(){ setT(b.dataset.t); });
-    b.addEventListener('keydown', function(e){
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); setT(n.dataset.t); }
+
+  var ICON = {play:'<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>', pause:'<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg>', replay:'<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2a5 5 0 1 1-4.6 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M1.5 1.5v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'};
+  var figs = $$(document, '.fig[data-scene]');
+  figs.forEach(function(f){
+    var sc = S[f.dataset.scene], stage = $(f,'.stage'), btn = $(f,'.rp'), what = (f.closest('.step, .gt') && $(f.closest('.step, .gt'),'h3').textContent.replace(/\.$/,'')) || 'Animation';
+    f._sc = sc; f._stage = stage; f._cap = $(f,'.cp'); f._t = 0;
+    var state = 'idle', t0 = 0, raf = 0;
+    function setBtn(kind){ var word = kind === 'pause' ? 'Pause' : kind === 'play' ? 'Play' : 'Replay'; btn.innerHTML = ICON[kind] + word; btn.setAttribute('aria-label', word + ' animation: ' + what); }
+    f._seek = function(t){ f._t = t; sc.at(stage, t); };
+    function tick(now){ var t = now - t0; if (t >= sc.dur()) { f._seek(sc.dur()); stop('ended'); return; } f._seek(t); raf = requestAnimationFrame(tick); }
+    function play(from){ cancelAnimationFrame(raf); state = 'playing'; f.classList.add('playing'); t0 = performance.now() - (from || 0); setBtn('pause'); raf = requestAnimationFrame(tick); }
+    function stop(s){ cancelAnimationFrame(raf); state = s; f.classList.remove('playing'); setBtn(s === 'paused' ? 'play' : 'replay'); }
+    f._play = play;
+    btn.addEventListener('click', function(){
+      if (state === 'playing') stop('paused');
+      else if (state === 'paused') play(f._t);
+      else { f._seek(0); play(0); }
     });
+    if (sc.build) sc.build(stage);
+    if (reduce) { f._seek(sc.dur()); state = 'ended'; setBtn('replay'); }
+    else { f._seek(0); setBtn('play'); }
+    f._start = function(){ if (state === 'idle') play(0); };
   });
-  document.getElementById('treplay').addEventListener('click', function(){ show(tstage, curT); });
-  // The shop-type stage replays when it scrolls into view.
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) show(tstage, curT); }); }, {threshold:.5}).observe(tstage);
+  render();
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target._start(); io.unobserve(e.target); } }); }, {threshold:.55});
+    figs.forEach(function(f){ io.observe(f); });
+    var hio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('play'); hio.unobserve(e.target); } }); }, {threshold:.6});
+    $$(document, '.tile').forEach(function(t){ hio.observe(t); });
+  } else {
+    figs.forEach(function(f){ if (!reduce) f._start(); });
   }
-  setT('dry');
+  if ('IntersectionObserver' in window){
+    var cur = null, sio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (!e.isIntersecting) return;
+      if (cur) cur.removeAttribute('aria-current'); cur = e.target._toc.firstChild; cur.setAttribute('aria-current','step'); inView = e.target; barStep(); }); }, {rootMargin:'-40% 0px -55% 0px'});
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if (!e.isIntersecting && inView){ inView = null; barStep(); } }); }).observe(document.getElementById('steps'));
+    steps.forEach(function(s){ sio.observe(s); });
+  }
 })();
 </script>
+<script src="/assets/js/chrome.js?v=b726038c52" defer></script>
+<!--fx:footer-->
+<div class="fx-foot fx-foot-scene" role="contentinfo">
+  <div class="fx-foot-in">
+    <div class="fx-foot-top">
+      <div class="fx-foot-brand">
+        <a class="fx-mark" href="/"><i></i>Fold POS</a>
+        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry's own counters.</p>
+      </div>
+      <div><p class="fx-foot-h">Product</p><ul>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/hey-fold">Hey Fold</a></li>
+        <li><a href="/pickup-delivery">Pickup &amp; delivery</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Shops</p><ul>
+        <li><a href="/laundromats">Laundromats</a></li>
+        <li><a href="/dry-cleaners">Dry cleaners</a></li>
+        <li><a href="/alterations">Tailors</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Support</p><ul>
+        <li><a href="/help">Help center</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/printers">Printers</a></li>
+        <li><a href="/setup">Store setup</a></li>
+        <li><a href="/download">Print helper</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div><p class="fx-foot-h">Company</p><ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/developers">Developers &amp; AI</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="fx-foot-bot">
+      <span>© 2026 Fold Laundry LLC · Fold POS · <a href="/es/" hreflang="es" lang="es">Español</a></span>
+      <a href="mailto:contact@foldpos.com">contact@foldpos.com</a>
+    </div>
+  </div>
+  <div class="fx-scene"><svg class="fx-scene-art" focusable="false" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: a pickup van pulls up to a laundromat and a staff member wheels the clean linens inside.">
+  <defs>
+    <pattern id="fsHatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="#24439f" stroke-width=".8" stroke-opacity=".55"/></pattern>
+    <pattern id="fsHatchFar" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" stroke="#24439f" stroke-width=".7" stroke-opacity=".22"/></pattern>
+    <pattern id="fsStreet" width="8" height="4" patternUnits="userSpaceOnUse"><line x1="0" y1="2" x2="8" y2="2" stroke="#24439f" stroke-width=".6" stroke-opacity=".28"/></pattern>
+    <pattern id="fsWire" width="5" height="6" patternUnits="userSpaceOnUse"><line x1="2.5" y1="0" x2="2.5" y2="6" stroke="#24439f" stroke-width=".8" stroke-opacity=".7"/><line x1="0" y1="3" x2="5" y2="3" stroke="#24439f" stroke-width=".5" stroke-opacity=".35"/></pattern>
+    <pattern id="fsAwning" width="48" height="30" patternUnits="userSpaceOnUse"><rect width="24" height="30" fill="#24439f"/><rect x="24" width="24" height="30" fill="#f6f8fe"/></pattern>
+    <g id="fsCloudA"><circle cx="0" cy="0" r="26"/><circle cx="30" cy="-12" r="32"/><circle cx="66" cy="-2" r="26"/><circle cx="94" cy="6" r="18"/><circle cx="-24" cy="8" r="16"/><rect x="-40" y="8" width="150" height="16" rx="8"/></g>
+    <g id="fsCloudB"><circle cx="0" cy="0" r="16"/><circle cx="22" cy="-8" r="20"/><circle cx="46" cy="0" r="15"/><rect x="-14" y="4" width="74" height="11" rx="5.5"/></g>
+    <clipPath id="fsDrumClip"><circle r="12"/></clipPath>
+    <!-- one washer: frame, controls, glass; drum contents are added per machine -->
+    <g id="fsWasher">
+      <rect x="0" y="0" width="52" height="54" rx="3" fill="#f6f8fe" stroke="#24439f" stroke-width="1.6"/>
+      <line x1="0" y1="9" x2="52" y2="9" stroke="#24439f" stroke-width="1.2"/>
+      <circle cx="8" cy="4.6" r="1.8" fill="#24439f"/><circle cx="15" cy="4.6" r="1.8" fill="none" stroke="#24439f" stroke-width="1"/>
+      <rect x="30" y="2.6" width="16" height="4" rx="1" fill="#24439f" fill-opacity=".35"/>
+      <circle cx="26" cy="31" r="16.5" fill="#f6f8fe" stroke="#24439f" stroke-width="2.2"/>
+      <circle cx="26" cy="31" r="12.5" fill="#dfe7fb" stroke="#24439f" stroke-width=".8"/>
+    </g>
+    <g id="fsLoad"><circle r="12" fill="none"/><path d="M-11 3 C-6 -2 -1 8 5 3 S 11 6 11 6 L 11 12 L -11 12 Z" fill="#24439f" fill-opacity=".55"/><path d="M-6 -2 q4 -5 9 -1 q-2 5 -9 1z" fill="#24439f" fill-opacity=".35"/><circle cx="6" cy="-6" r="2" fill="#24439f" fill-opacity=".3"/></g>
+    <g id="fsWheel"><circle r="5.2" fill="#f6f8fe" stroke="#24439f" stroke-width="1.8"/><line x1="-5" y1="0" x2="5" y2="0" stroke="#24439f" stroke-width="1"/><line x1="0" y1="-5" x2="0" y2="5" stroke="#24439f" stroke-width="1"/></g>
+  </defs>
 
+  <!-- clouds -->
+  <g class="fs-clouds">
+    <g transform="translate(150 70)"><animateTransform attributeName="transform" type="translate" values="150 70;215 70;150 70" dur="140s" repeatCount="indefinite"/>
+      <use href="#fsCloudA" fill="none" stroke="#24439f" stroke-opacity=".38" stroke-width="2.4"/><use href="#fsCloudA" fill="#f6f8fe"/>
+      <rect x="-36" y="12" width="140" height="11" fill="url(#fsHatchFar)"/></g>
+    <g transform="translate(560 44)"><animateTransform attributeName="transform" type="translate" values="560 44;500 44;560 44" dur="110s" repeatCount="indefinite"/>
+      <use href="#fsCloudB" fill="none" stroke="#24439f" stroke-opacity=".32" stroke-width="2.2"/><use href="#fsCloudB" fill="#f6f8fe"/></g>
+    <g transform="translate(1240 58)"><animateTransform attributeName="transform" type="translate" values="1240 58;1300 58;1240 58" dur="160s" repeatCount="indefinite"/>
+      <use href="#fsCloudA" fill="none" stroke="#24439f" stroke-opacity=".34" stroke-width="2.4"/><use href="#fsCloudA" fill="#f6f8fe"/>
+      <rect x="-36" y="12" width="140" height="11" fill="url(#fsHatchFar)"/></g>
+  </g>
+
+  <!-- far skyline -->
+  <g stroke="#24439f" stroke-opacity=".32" stroke-width="1">
+    <rect x="-2" y="196" width="92" height="140" fill="url(#fsHatchFar)"/>
+    <rect x="90" y="236" width="70" height="100" fill="#eef2fd"/>
+    <rect x="170" y="176" width="96" height="160" fill="url(#fsHatchFar)"/>
+    <rect x="266" y="222" width="62" height="114" fill="#eef2fd"/>
+    <rect x="1206" y="188" width="92" height="148" fill="url(#fsHatchFar)"/>
+    <rect x="1298" y="218" width="78" height="118" fill="#eef2fd"/>
+    <rect x="1376" y="168" width="70" height="168" fill="url(#fsHatchFar)"/>
+  </g>
+  <g fill="#24439f" fill-opacity=".22">
+    <rect x="102" y="250" width="10" height="14"/><rect x="124" y="250" width="10" height="14"/><rect x="102" y="276" width="10" height="14"/><rect x="146" y="276" width="10" height="14"/>
+    <rect x="278" y="236" width="9" height="13"/><rect x="302" y="236" width="9" height="13"/><rect x="278" y="262" width="9" height="13"/>
+    <rect x="1312" y="232" width="10" height="14"/><rect x="1336" y="232" width="10" height="14"/><rect x="1312" y="258" width="10" height="14"/><rect x="1358" y="258" width="10" height="14"/>
+  </g>
+
+  <!-- tree (behind the walker) -->
+  <g>
+    <path d="M626 330 L630 258 L636 258 L641 330 Z" fill="#24439f"/>
+    <path d="M633 272 l-14 -12 M634 266 l12 -10" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+    <g stroke="#24439f" stroke-width="1.8"><circle cx="608" cy="236" r="28" fill="#dfe7fb"/><circle cx="654" cy="230" r="32" fill="#dfe7fb"/><circle cx="632" cy="200" r="30" fill="#dfe7fb"/><circle cx="628" cy="244" r="22" fill="#dfe7fb"/></g>
+    <g fill="#dfe7fb"><circle cx="608" cy="236" r="26.4"/><circle cx="654" cy="230" r="30.4"/><circle cx="632" cy="200" r="28.4"/><circle cx="628" cy="244" r="20.4"/></g>
+    <clipPath id="fsTreeClip"><circle cx="608" cy="236" r="26.4"/><circle cx="654" cy="230" r="30.4"/><circle cx="632" cy="200" r="28.4"/><circle cx="628" cy="244" r="20.4"/></clipPath>
+    <g clip-path="url(#fsTreeClip)"><ellipse cx="646" cy="262" rx="70" ry="30" fill="url(#fsHatch)"/><ellipse cx="664" cy="214" rx="20" ry="30" fill="url(#fsHatch)" opacity=".7"/></g>
+    <g fill="none" stroke="#24439f" stroke-width="1.2" stroke-linecap="round" stroke-opacity=".7">
+      <path d="M606 190 q5 -5 10 0 q5 -5 10 0 M640 186 q5 -5 10 0 M592 226 q5 -5 10 0 q5 -5 10 0 M636 218 q5 -5 10 0 M662 220 q5 -5 10 0 M614 246 q5 -5 10 0 M650 244 q5 -5 10 0"/>
+    </g>
+  </g>
+
+  <!-- bench -->
+  <g stroke="#24439f" stroke-linecap="round" fill="none">
+    <path d="M448 312 H516" stroke-width="3"/><path d="M450 300 H514 M450 306 H514" stroke-width="2"/>
+    <path d="M456 312 V330 M508 312 V330 M456 300 V312 M508 300 V312" stroke-width="2.2"/>
+  </g>
+
+  <!-- the laundromat -->
+  <g>
+    <!-- roof vent + steam -->
+    <rect x="1112" y="80" width="14" height="26" fill="#f6f8fe" stroke="#24439f" stroke-width="1.5"/>
+    <rect x="1106" y="73" width="26" height="7" rx="1.5" fill="#24439f"/>
+    <g fill="none" stroke="#24439f" stroke-width="1.6" stroke-linecap="round">
+      <path d="M1119 68 c-6 -7 6 -13 0 -20 c-6 -7 6 -13 0 -20" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;0 -26" dur="4.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.5;0" dur="4.2s" repeatCount="indefinite"/></path>
+      <path d="M1112 68 c-5 -6 5 -11 0 -17 c-5 -6 5 -11 0 -17" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;-6 -24" dur="4.2s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.4;0" dur="4.2s" begin="1.4s" repeatCount="indefinite"/></path>
+      <path d="M1126 68 c-5 -6 5 -11 0 -17 c-5 -6 5 -11 0 -17" opacity="0"><animateTransform attributeName="transform" type="translate" values="0 6;6 -24" dur="4.2s" begin="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.4;0" dur="4.2s" begin="2.8s" repeatCount="indefinite"/></path>
+    </g>
+    <!-- facade -->
+    <rect x="1190" y="116" width="14" height="214" fill="url(#fsHatch)" stroke="#24439f" stroke-width="1.2"/>
+    <rect x="760" y="112" width="430" height="218" fill="#f6f8fe" stroke="#24439f" stroke-width="1.8"/>
+    <rect x="750" y="102" width="450" height="12" fill="#e3eafb" stroke="#24439f" stroke-width="1.6"/>
+    <g fill="#24439f"><rect x="764" y="114" width="422" height="3" fill-opacity=".5"/></g>
+    <!-- upper windows -->
+    <g stroke="#24439f" stroke-width="1.5">
+      <g fill="#f6f8fe">
+        <rect x="796" y="130" width="62" height="56"/><rect x="896" y="130" width="62" height="56"/><rect x="996" y="130" width="62" height="56"/><rect x="1096" y="130" width="62" height="56"/>
+      </g>
+      <g fill="url(#fsHatch)" stroke="none">
+        <rect x="797" y="158" width="60" height="27"/><rect x="897" y="150" width="60" height="35"/><rect x="997" y="160" width="60" height="25"/><rect x="1097" y="154" width="60" height="31"/>
+      </g>
+      <path d="M827 130 V186 M796 158 H858 M927 130 V186 M896 158 H958 M1027 130 V186 M996 158 H1058 M1127 130 V186 M1096 158 H1158" fill="none"/>
+      <g fill="#e3eafb"><rect x="792" y="186" width="70" height="5"/><rect x="892" y="186" width="70" height="5"/><rect x="992" y="186" width="70" height="5"/><rect x="1092" y="186" width="70" height="5"/></g>
+    </g>
+    <!-- sign -->
+    <rect x="782" y="200" width="386" height="30" rx="2" fill="#24439f"/>
+    <text x="975" y="220.5" text-anchor="middle" fill="#f6f8fe" font-family="Sora, 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" letter-spacing="4">WASH · DRY · FOLD</text>
+    <!-- awning -->
+    <path d="M774 236 H1186 V254 H774 Z" fill="url(#fsAwning)" stroke="#24439f" stroke-width="1.6"/>
+    <path d="M774 254 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 q12 10 24 0 z" fill="url(#fsAwning)" stroke="#24439f" stroke-width="1.4"/>
+    <rect x="776" y="262" width="408" height="4" fill="url(#fsHatch)"/>
+    <!-- storefront window with washers -->
+    <rect x="784" y="266" width="302" height="62" fill="#eef2fd" stroke="#24439f" stroke-width="2"/>
+    <g transform="translate(790 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.6s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(849 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.7s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(908 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3.2s" repeatCount="indefinite"/></g></g></g>
+    <g transform="translate(967 272)"><use href="#fsWasher"/></g>
+    <g transform="translate(1026 272)"><use href="#fsWasher"/><g transform="translate(26 31)" clip-path="url(#fsDrumClip)"><g><use href="#fsLoad"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.9s" repeatCount="indefinite"/></g></g></g>
+    <path d="M806 326 L842 268 M818 326 L852 272 M1000 326 L1036 268" stroke="#fff" stroke-width="3" stroke-opacity=".7"/>
+    <!-- door: doorway behind a panel hinged on its right edge -->
+    <rect x="1100" y="262" width="66" height="68" fill="#cfdaf6"/>
+    <rect x="1100" y="262" width="66" height="68" fill="url(#fsHatch)"/>
+    <g id="fsDoor">
+      <rect x="1101" y="263" width="64" height="67" fill="#f6f8fe"/>
+      <rect x="1108" y="270" width="50" height="46" fill="#eef2fd" stroke="#24439f" stroke-width="1.2"/>
+      <rect x="1113" y="280" width="40" height="12" rx="2" fill="#24439f"/>
+      <text x="1133" y="289.4" text-anchor="middle" fill="#f6f8fe" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" letter-spacing="1">OPEN</text>
+      <line x1="1110" y1="300" x2="1110" y2="310" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <rect x="1100" y="262" width="66" height="68" fill="none" stroke="#24439f" stroke-width="2"/>
+    <!-- planter -->
+    <path d="M1170 330 l3 -16 h14 l3 16 z" fill="#24439f"/>
+    <g fill="#eef2fd" stroke="#24439f" stroke-width="1.3"><ellipse cx="1174" cy="306" rx="6" ry="9" transform="rotate(-20 1174 306)"/><ellipse cx="1186" cy="304" rx="6" ry="10" transform="rotate(18 1186 304)"/><ellipse cx="1180" cy="300" rx="5" ry="10"/></g>
+  </g>
+
+  <!-- sidewalk, curb, street -->
+  <rect x="0" y="330" width="1440" height="22" fill="#eef2fd"/>
+  <line x1="0" y1="330" x2="1440" y2="330" stroke="#24439f" stroke-width="1.6"/>
+  <g stroke="#24439f" stroke-opacity=".28" stroke-width="1"><path d="M40 330 l-8 22 M160 330 l-8 22 M280 330 l-8 22 M400 330 l-8 22 M520 330 l-8 22 M640 330 l-8 22 M760 330 l-8 22 M880 330 l-8 22 M1000 330 l-8 22 M1120 330 l-8 22 M1240 330 l-8 22 M1360 330 l-8 22"/></g>
+  <rect x="0" y="352" width="1440" height="7" fill="#dfe7fb" stroke="#24439f" stroke-width="1.3"/>
+  <rect x="0" y="359" width="1440" height="41" fill="url(#fsStreet)"/>
+  <g fill="#24439f" fill-opacity=".35"><rect x="30" y="382" width="60" height="3"/><rect x="170" y="382" width="60" height="3"/><rect x="310" y="382" width="60" height="3"/><rect x="450" y="382" width="60" height="3"/><rect x="590" y="382" width="60" height="3"/><rect x="730" y="382" width="60" height="3"/><rect x="870" y="382" width="60" height="3"/><rect x="1010" y="382" width="60" height="3"/><rect x="1150" y="382" width="60" height="3"/><rect x="1290" y="382" width="60" height="3"/></g>
+
+  <!-- the worker with the linen cart; positions, legs and loading are driven by footer_scene.js -->
+  <clipPath id="fsDoorClip"><rect x="-600" y="0" width="1704" height="400"/></clipPath>
+  <g clip-path="url(#fsDoorClip)"><g id="fsW" opacity="0" transform="translate(1185 341) scale(-1 1) translate(-15 0)">
+    <g>
+      <line x1="31" y1="-12" x2="31" y2="-82" stroke="#24439f" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="95" y1="-44" x2="95" y2="-82" stroke="#24439f" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="29" y1="-82" x2="97" y2="-82" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+      <g id="fsI4"><g><animateTransform attributeName="transform" type="rotate" values="0 72 -82;3 72 -82;0 72 -82;-2 72 -82;0 72 -82" dur="1.6s" repeatCount="indefinite"/>
+        <path d="M58 -83 h28 l1 12 q-3 5 -6 0 q-3 5 -6 0 q-3 5 -6 0 q-3 5 -6 0 q-3 4 -5 0 z" fill="#fff" stroke="#24439f" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M66 -82 v9 M76 -82 v10" stroke="#24439f" stroke-width=".7" stroke-opacity=".5"/></g></g>
+      <g fill="#fff" stroke="#24439f" stroke-width="1.2">
+        <g id="fsI1"><rect x="36" y="-51" width="20" height="7" rx="2"/><rect x="37" y="-57.5" width="19" height="7" rx="2"/><rect x="36.5" y="-64" width="19" height="7" rx="2"/></g>
+        <g id="fsI2"><rect x="58" y="-51" width="20" height="7" rx="2"/><rect x="58.5" y="-57.5" width="19" height="7" rx="2"/></g>
+        <g id="fsI3"><rect x="80" y="-51" width="13" height="7" rx="2"/></g>
+      </g>
+      <path d="M30 -44 H96 L92 -12 H34 Z" fill="#f6f8fe"/>
+      <path d="M30 -44 H96 L92 -12 H34 Z" fill="url(#fsWire)" stroke="#24439f" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="28" y1="-44" x2="98" y2="-44" stroke="#24439f" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M37 -12 l2 7 M89 -12 l-2 7" stroke="#24439f" stroke-width="1.8"/>
+      <g id="fsCW1" transform="translate(40 -5)"><use href="#fsWheel"/></g>
+      <g id="fsCW2" transform="translate(86 -5)"><use href="#fsWheel"/></g>
+    </g>
+    <g id="fsBody">
+      <g id="fsL1" opacity=".62"><path id="fsL1p" d="M14 -32 L14 -17 L14 -3 h6" fill="none" stroke="#24439f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <path d="M18 -55 L26 -49 L31 -50" fill="none" stroke="#24439f" stroke-width="4" stroke-opacity=".62" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8.5 -30 L20 -30 L26.5 -55 Q20 -62 13 -59 Z" fill="#24439f"/>
+      <path d="M19.5 -31 L22.5 -31 L26 -48 L23 -50 Z" fill="#fff" fill-opacity=".9"/>
+      <rect x="18" y="-63" width="4" height="4" fill="#24439f"/>
+      <circle cx="21.5" cy="-67.5" r="6.4" fill="#24439f"/>
+      <path d="M15.5 -70.5 Q21 -77 27 -71 L32 -70.2" fill="none" stroke="#24439f" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M21 -56 L27 -48.5 L31 -47.5" fill="none" stroke="#24439f" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="fsL2"><path id="fsL2p" d="M14 -32 L14 -17 L14 -3 h6" fill="none" stroke="#24439f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+  </g></g>
+
+  <!-- street lamp (in front of the walker) -->
+  <g stroke="#24439f" fill="none">
+    <path d="M338 352 V196" stroke-width="3.2"/>
+    <path d="M338 204 q0 -14 16 -14 h8" stroke-width="2.4"/>
+    <path d="M354 190 h18 l-4 10 h-10 z" fill="#24439f" stroke-width="1.2"/>
+    <rect x="332" y="340" width="12" height="12" fill="#24439f"/>
+  </g>
+
+  <!-- pickup van: drawn facing right, mirrored by footer_scene.js so it drives in from the right; the lettering stays unmirrored -->
+  <defs><g id="fsVanWheel"><circle r="11" fill="#24439f"/><circle r="5.6" fill="#f6f8fe"/><path d="M0 -5.6 V5.6 M-5.6 0 H5.6" stroke="#24439f" stroke-width="1.6"/><circle r="1.8" fill="#24439f"/></g></defs>
+  <g id="fsVan" transform="translate(1660 293.7) scale(-1.3 1.3)">
+    <path d="M0 58 V12 Q0 4 8 4 H112 Q124 4 132 18 L150 36 Q156 38 156 46 V58 Z" fill="#f6f8fe" stroke="#24439f" stroke-width="1.6"/>
+    <path d="M114 10 H124 Q128 10 131 16 L144 34 H114 Z" fill="#eef2fd" stroke="#24439f" stroke-width="1.3"/>
+    <circle cx="125" cy="22" r="4.6" fill="#24439f"/><path d="M118 34 q7 -9 14 0z" fill="#24439f"/>
+    <line x1="110" y1="6" x2="110" y2="58" stroke="#24439f" stroke-width="1.1"/>
+    <rect x="0" y="46" width="156" height="12" fill="url(#fsHatch)"/>
+    <line x1="14" y1="30" x2="96" y2="30" stroke="#24439f" stroke-width=".8" stroke-opacity=".4"/>
+    <rect x="152" y="40" width="5" height="4" rx="1" fill="#24439f"/>
+    <rect x="-1.5" y="18" width="3" height="10" rx="1" fill="#24439f"/>
+    <g id="fsVDoor" transform="scale(0 1)"><rect x="-22" y="6" width="22" height="46" fill="#f6f8fe" stroke="#24439f" stroke-width="1.3"/><rect x="-18" y="11" width="14" height="14" fill="#eef2fd" stroke="#24439f" stroke-width=".9"/></g>
+    <g id="fsVW1" transform="translate(32 60)"><use href="#fsVanWheel"/></g>
+    <g id="fsVW2" transform="translate(126 60)"><use href="#fsVanWheel"/></g>
+  </g>
+  <g id="fsVanText" transform="translate(1588.5 293.7) scale(1.3)" fill="#24439f">
+    <text x="0" y="22" text-anchor="middle" font-family="Sora, 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="2">PICKUP</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="7.5" letter-spacing="1.6">&amp; DELIVERY</text>
+  </g>
+</svg></div>
+</div>
+<!--/fx:footer-->
 </body>
 </html>
