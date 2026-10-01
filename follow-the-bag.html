@@ -25,311 +25,574 @@
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
-/* Layout: a road scene (store → van → plant) on top, the step's screen + custody record + board beneath; one bag travels, everything else reacts. */
+/* Layout: Apple-style product film. One cinematic stage with a camera that pans and pushes in on the bag,
+   a chapter bar under it, then the chapter's words beside the real screen, then the record and the numbers. */
 :root{
-  --bg:#f3f6fb; --panel:#ffffff; --ink:#0f1b33; --muted:#5a6780; --line:#d8e0ee;
-  --accent:#1e5eff; --accent-soft:#e3ebff; --good:#12805c; --good-soft:#e2f4ec;
-  --bad:#c2352b; --bad-soft:#fbe5e3; --road:#c9d3e4; --paper:#fffdf7;
-  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
-  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --bg:#f5f7fb; --surface:#ffffff; --ink:#0d1526; --muted:#5d6880; --hair:#e2e7f0;
+  --accent:#1e5eff; --accent-2:#7a5cff; --accent-soft:#e6edff;
+  --good:#0f8a5f; --good-soft:#dff3ea; --bad:#d4382c; --bad-soft:#fde6e3;
+  --frame:#0d1526; --screen:#f7f9fc;
+  --sky-top:#d9e4fb; --sky-bot:#f6f8fd; --hill:#e3e9f5; --ground:#e9eef6; --road:#d3dbe8; --dash:#ffffff;
+  --bldg:#ffffff; --edge:#d3dbe9; --glass:#e9f0fd; --roof:#c9d3e4; --tire:#0d1526; --hub:#c9d3e4;
+  --paper:#fffdf8; --label:#ffffff; --bars:#0d1526;
+  --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.65,0,.35,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0c1322; --panel:#141d31; --ink:#e8eefb; --muted:#9aa8c3; --line:#26324c;
-  --accent:#6f9bff; --accent-soft:#1c2b52; --good:#4cc79a; --good-soft:#133329;
-  --bad:#ff7b70; --bad-soft:#3a1a18; --road:#2a3754; --paper:#1d2740; color-scheme:dark}}
+  --bg:#05080f; --surface:#0e1524; --ink:#eef2fb; --muted:#97a3bc; --hair:#1e2a40;
+  --accent:#6f9bff; --accent-2:#a78bff; --accent-soft:#16264a;
+  --good:#4cc79a; --good-soft:#10301f; --bad:#ff7b70; --bad-soft:#3a1714;
+  --frame:#2b3753; --screen:#0b111e;
+  --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
+  --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
+  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0c1322; --panel:#141d31; --ink:#e8eefb; --muted:#9aa8c3; --line:#26324c;
-  --accent:#6f9bff; --accent-soft:#1c2b52; --good:#4cc79a; --good-soft:#133329;
-  --bad:#ff7b70; --bad-soft:#3a1a18; --road:#2a3754; --paper:#1d2740; color-scheme:dark}
+  --bg:#05080f; --surface:#0e1524; --ink:#eef2fb; --muted:#97a3bc; --hair:#1e2a40;
+  --accent:#6f9bff; --accent-2:#a78bff; --accent-soft:#16264a;
+  --good:#4cc79a; --good-soft:#10301f; --bad:#ff7b70; --bad-soft:#3a1714;
+  --frame:#2b3753; --screen:#0b111e;
+  --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
+  --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
+  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);margin:0}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:18px}
-header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between}
-h1{font:700 clamp(26px,4vw,40px)/1.05 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
-.sub{color:var(--muted);margin:6px 0 0;max-width:60ch}
-.seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px}
-.seg button{border:0;background:none;color:var(--muted);font:600 13px var(--body);padding:7px 14px;border-radius:999px;cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
-.seg button:focus-visible,.ctrl button:focus-visible,.dots button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.stage{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:17px/1.5 var(--body);margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:56px 72px;display:grid;gap:28px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+/* Hero */
+.hero{display:grid;justify-items:center;text-align:center;gap:14px}
+.kicker{font:600 15px var(--body);color:var(--accent);margin:0}
+.kicker a{color:inherit;text-decoration:none}.kicker a:hover{text-decoration:underline}
+h1{font:800 clamp(44px,8.5vw,96px)/.98 var(--display);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font:500 clamp(18px,2.2vw,22px)/1.4 var(--body);color:var(--muted);max-width:34ch;margin:4px 0 0;text-wrap:balance}
+.seg{display:inline-flex;position:relative;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:999px;padding:4px;margin-top:10px}
+.seg button{position:relative;z-index:1;border:0;background:none;color:var(--muted);font:600 14px var(--body);padding:9px 18px;border-radius:999px;cursor:pointer;transition:color .3s}
+.seg button[aria-pressed="true"]{color:var(--ink)}
+.seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:var(--surface);box-shadow:0 1px 3px rgb(0 0 0 / .12),0 4px 14px rgb(0 0 0 / .06);transition:transform .45s var(--ease),width .45s var(--ease)}
+
+/* Stage */
+.stage{position:relative;border-radius:28px;overflow:hidden;background:var(--sky-bot);box-shadow:0 30px 80px -40px rgb(13 21 38 / .35);isolation:isolate}
 .scene{display:block;width:100%;height:auto}
-.ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
-.ctrl button{font:600 13px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer}
-.ctrl button.primary{background:var(--accent);border-color:var(--accent);color:#fff;min-width:84px}
-.dots{display:flex;gap:6px;flex:1;min-width:180px}
-.dots button{flex:1;height:8px;border-radius:4px;border:0;background:var(--line);cursor:pointer;padding:0}
-.dots button.done{background:color-mix(in srgb,var(--accent) 45%,var(--line))}
-.dots button.on{background:var(--accent)}
-.stepname{font:600 13px var(--body);color:var(--muted);min-width:0}
-.grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px}
-@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
-.eyebrow{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
-.card h2{font:700 22px/1.2 var(--display);margin:0 0 6px;text-wrap:balance}
-.card p{margin:0;color:var(--muted);max-width:62ch}
-.device{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:14px;display:grid;gap:10px}
-.device .who{display:flex;justify-content:space-between;gap:8px;font:600 12px var(--body);color:var(--muted)}
-.big{font:700 30px/1 var(--display);font-variant-numeric:tabular-nums}
-.pill{display:inline-flex;align-items:center;gap:6px;font:600 12px var(--body);padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);width:fit-content}
+#world{transition:transform 1.6s var(--ease)}
+.hud{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}
+.glass{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font:600 13px var(--body);color:var(--ink);
+  background:color-mix(in srgb,var(--surface) 72%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  box-shadow:0 1px 0 rgb(255 255 255 / .25) inset,0 6px 20px -10px rgb(13 21 38 / .4)}
+.glass .t{font:600 12px var(--mono);color:var(--muted)}
+.glass.alert{color:var(--bad)}
+.live{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 0 var(--good);animation:live 2s infinite}
+.glass.alert .live{background:var(--bad)}
+@keyframes live{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:48px 24px 20px;background:linear-gradient(to top,color-mix(in srgb,var(--bg) 82%,transparent),transparent);pointer-events:none}
+.cap p{margin:0;font:700 clamp(17px,2.4vw,26px)/1.2 var(--display);letter-spacing:-.015em;text-wrap:balance;max-width:28ch}
+.fade{animation:fade .6s var(--ease) both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* SVG paint */
+.s-skyT{stop-color:var(--sky-top)} .s-skyB{stop-color:var(--sky-bot)}
+.f-hill{fill:var(--hill)} .f-ground{fill:var(--ground)} .f-road{fill:var(--road)}
+.f-bldg{fill:var(--bldg);stroke:var(--edge);stroke-width:2} .f-glass{fill:var(--glass)} .f-roof{fill:var(--roof)}
+.f-accent{fill:var(--accent)} .f-ink{fill:var(--ink)} .f-muted{fill:var(--muted)} .f-edge{fill:var(--edge)}
+.f-tire{fill:var(--tire)} .f-hub{fill:var(--hub)} .f-paper{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.f-label{fill:var(--label);stroke:var(--ink);stroke-width:1} .f-bars{fill:var(--bars)} .f-white{fill:#fff}
+.f-surface{fill:var(--surface)} .f-good{fill:var(--good)} .f-bad{fill:var(--bad)} .f-soft{fill:var(--accent-soft)}
+.f-shadow{fill:var(--ink);opacity:.12}
+.st-ink{stroke:var(--ink)} .st-accent{stroke:var(--accent)} .st-edge{stroke:var(--edge)}
+.svgt{font-family:var(--display);font-weight:700}
+.svgl{font:600 13px var(--body);letter-spacing:.14em}
+.mono{font-family:var(--mono);font-weight:600}
+.dash{stroke:var(--dash);stroke-width:4;stroke-dasharray:28 24}
+.drive .dash{animation:road 1.6s var(--ease)}
+.drive.back .dash{animation-name:roadback}
+@keyframes road{to{stroke-dashoffset:-208}} @keyframes roadback{to{stroke-dashoffset:208}}
+#van,#bagPos,#tagPos{transition:transform 1.6s var(--ease),opacity .5s ease}
+.wheel{transform-box:fill-box;transform-origin:center}
+#van.moving .wheel{animation:spin .5s linear 3}
+#van.moving.left .wheel{animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.steam circle{fill:var(--edge);transform-box:fill-box;transform-origin:center;animation:steam 5s ease-out infinite;opacity:0}
+.steam circle:nth-child(2){animation-delay:1.6s} .steam circle:nth-child(3){animation-delay:3.2s}
+@keyframes steam{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.8}100%{opacity:0;transform:translate(26px,-70px) scale(1.8)}}
+.cloud{fill:var(--surface);opacity:.7;animation:drift 60s linear infinite alternate}
+@keyframes drift{to{transform:translateX(80px)}}
+#chips{transition:opacity .5s ease,transform .6s var(--spring);transform-box:fill-box;transform-origin:center}
+.chip rect{transition:fill .3s ease,stroke .3s ease}
+.chip.ok rect{fill:var(--good-soft);stroke:var(--good)} .chip.ok text{fill:var(--good)}
+.chip.miss rect{fill:var(--bad-soft);stroke:var(--bad);stroke-dasharray:4 3} .chip.miss text{fill:var(--bad)}
+.chip.miss{animation:pulse 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.chip.pop{animation:pop .45s var(--spring)}
+@keyframes pop{from{transform:translateY(10px) scale(.6);opacity:0}}
+
+/* Transport */
+.transport{display:flex;align-items:center;gap:16px;padding-inline:4px}
+.playbtn{flex:none;width:44px;height:44px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;
+  background:color-mix(in srgb,var(--ink) 8%,transparent);color:var(--ink);transition:transform .2s var(--spring),background .2s}
+.playbtn:hover{background:color-mix(in srgb,var(--ink) 13%,transparent)} .playbtn:active{transform:scale(.92)}
+.playbtn svg{width:18px;height:18px;fill:currentColor}
+.segs{flex:1;display:flex;gap:6px;min-width:0}
+.segs button{flex:1;height:22px;border:0;background:none;padding:9px 0;cursor:pointer;min-width:0}
+.segs i{display:block;height:4px;border-radius:2px;background:color-mix(in srgb,var(--ink) 12%,transparent);overflow:hidden}
+.segs b{display:block;height:100%;width:0;background:var(--ink);border-radius:2px}
+.segs .done b{width:100%;background:color-mix(in srgb,var(--ink) 45%,transparent)}
+.segs .on b{width:100%}
+.segs .on.run b{width:0;animation:fill var(--dur,3.6s) linear forwards}
+.segs .bad i{background:color-mix(in srgb,var(--bad) 30%,transparent)} .segs .bad b{background:var(--bad)}
+@keyframes fill{to{width:100%}}
+.count{flex:none;font:600 13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;min-width:4.5ch;text-align:right}
+
+/* Chapter */
+.chapter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:8px 12px}
+@media (max-width:860px){.chapter{grid-template-columns:minmax(0,1fr);gap:28px}}
+.eyebrow{font:600 14px var(--body);color:var(--accent);margin:0 0 10px}
+.eyebrow.bad{color:var(--bad)}
+.chapter h2{font:800 clamp(30px,4.4vw,50px)/1.04 var(--display);letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+.chapter p.desc{font:500 19px/1.5 var(--body);color:var(--muted);margin:0;max-width:40ch}
+.chapter p.desc strong{color:var(--ink);font-weight:600}
+.device-wrap{display:grid;place-items:center;min-height:420px}
+@media (max-width:860px){.device-wrap{min-height:0}}
+
+/* Devices */
+.phone{width:min(290px,100%);border-radius:46px;padding:12px;background:var(--frame);box-shadow:0 40px 70px -40px rgb(13 21 38 / .55),0 0 0 1px color-mix(in srgb,var(--ink) 10%,transparent)}
+.phone .scr{border-radius:35px;background:var(--screen);min-height:500px;padding:46px 18px 22px;position:relative;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.phone .scr::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:92px;height:26px;border-radius:14px;background:var(--frame)}
+.counter{width:min(440px,100%);border-radius:26px;padding:12px;background:var(--frame);box-shadow:0 40px 70px -40px rgb(13 21 38 / .55)}
+.counter .scr{border-radius:16px;background:var(--screen);min-height:300px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.stand{width:120px;height:14px;margin:0 auto;border-radius:0 0 12px 12px;background:var(--frame);opacity:.8}
+.app-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font:600 12px var(--body);color:var(--muted)}
+.app-top .code{font:600 12px var(--mono);color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent);padding:3px 8px;border-radius:6px}
+.app-h{font:700 20px/1.2 var(--display);letter-spacing:-.01em;margin:0}
+.big{font:800 54px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.big small{font:600 18px var(--body);color:var(--muted);letter-spacing:0;margin-left:6px}
+.meta{font:500 14px/1.45 var(--body);color:var(--muted)}
+.meta .mono{font:600 12px var(--mono);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--body);padding:5px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);width:fit-content}
 .pill.good{background:var(--good-soft);color:var(--good)} .pill.bad{background:var(--bad-soft);color:var(--bad)}
-.code{font:500 13px var(--mono);letter-spacing:.02em}
-.pieces{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-.piece{border:1px solid var(--line);border-radius:6px;background:var(--panel);text-align:center;padding:6px 2px;font:500 11px var(--mono);color:var(--muted);transition:background .3s,color .3s,border-color .3s}
+.pill svg{width:14px;height:14px;fill:currentColor}
+.pieces{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.piece{border:1px solid var(--hair);border-radius:8px;background:var(--surface);text-align:center;padding:8px 0;font:600 11px var(--mono);color:var(--muted);transition:background .3s,color .3s,border-color .3s,transform .4s var(--spring)}
 .piece.ok{background:var(--good-soft);color:var(--good);border-color:transparent}
-.piece.miss{background:var(--bad-soft);color:var(--bad);border-color:transparent}
-.log{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;max-height:320px;overflow:auto}
-.log li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;font-size:13px;padding:8px 10px;border-radius:8px;background:var(--bg);animation:in .35s ease-out}
-.log li.bad{background:var(--bad-soft)}
-.log time{font:500 12px var(--mono);color:var(--muted)}
-.log b{font-weight:600}
-@keyframes in{from{opacity:.2;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
-@media (max-width:520px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.col{border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--bg);transition:border-color .3s,background .3s}
-.col.on{border-color:var(--accent);background:var(--accent-soft)}
-.col .n{font:700 24px/1 var(--display);font-variant-numeric:tabular-nums}
-.col .l{font:600 12px var(--body);color:var(--muted);margin-top:4px}
-.foot{color:var(--muted);font-size:13px}
-@media (prefers-reduced-motion: reduce){.log li{animation:none} .piece,.col{transition:none}}
+.piece.miss{background:var(--bad-soft);color:var(--bad);border:1px dashed var(--bad)}
+.piece.pop{transform:scale(1.12)}
+.camera{position:relative;height:150px;border-radius:18px;background:linear-gradient(160deg,#1b2334,#0c111c);overflow:hidden;display:grid;place-items:center}
+.camera .lbl{width:120px;height:70px;border-radius:6px;background:#fff;display:grid;place-items:center;transform:rotate(-4deg);box-shadow:0 10px 30px rgb(0 0 0 / .4)}
+.camera .lbl span{font:600 10px var(--mono);color:#0d1526}
+.camera .lbl i{display:block;width:96px;height:30px;background:repeating-linear-gradient(90deg,#0d1526 0 2px,transparent 2px 4px,#0d1526 4px 7px,transparent 7px 9px)}
+.camera .reticle{position:absolute;inset:26px 60px;border:2px solid rgb(255 255 255 / .85);border-radius:14px}
+.camera .laser{position:absolute;left:56px;right:56px;height:2px;top:50%;background:#ff4d4d;box-shadow:0 0 12px #ff4d4d;animation:sweep 1.4s var(--ease) infinite alternate}
+@keyframes sweep{from{transform:translateY(-34px)}to{transform:translateY(34px)}}
+.bubble{align-self:flex-start;max-width:90%;background:color-mix(in srgb,var(--ink) 8%,transparent);border-radius:20px 20px 20px 6px;padding:11px 14px;font:500 15px/1.4 var(--body)}
+.from{font:600 12px var(--body);color:var(--muted);text-align:center}
+.spacer{flex:1}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* Record + tracker */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.duo{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border-radius:24px;padding:26px;min-width:0}
+.panel h3{font:800 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 6px}
+.panel .sub{color:var(--muted);margin:0;font-size:15px;max-width:44ch}
+.log{list-style:none;margin:18px 0 0;padding:0;position:relative;max-height:390px;overflow:auto}
+.log li{display:grid;grid-template-columns:20px 54px minmax(0,1fr);gap:10px;padding:9px 0;font-size:15px;align-items:baseline;position:relative}
+.log li::before{content:"";grid-column:1;justify-self:center;width:9px;height:9px;border-radius:50%;background:color-mix(in srgb,var(--ink) 25%,transparent);transform:translateY(-1px)}
+.log li:first-child::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.log li.bad::before{background:var(--bad);box-shadow:0 0 0 4px var(--bad-soft)}
+.log li.bad span{color:var(--bad)}
+.log li.new{animation:fade .5s var(--ease) both}
+.log time{font:600 13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.log b{font-weight:700}
+.track{margin-top:26px;position:relative;padding-top:6px}
+.rail{position:relative;height:6px;border-radius:3px;background:color-mix(in srgb,var(--ink) 10%,transparent);margin:0 9%}
+.rail .fill{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.2s var(--ease)}
+.rail .dot{position:absolute;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--surface);border:6px solid var(--accent);box-shadow:0 4px 14px -4px var(--accent);transition:left 1.2s var(--ease)}
+.stops{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:16px;text-align:center}
+.stops div{font:600 13px/1.25 var(--body);color:var(--muted);padding-inline:2px}
+.stops div.on{color:var(--ink)}
+.stops div.on::after{content:"DC-0042";display:block;margin-top:4px;font:600 11px var(--mono);color:var(--accent)}
+.where{margin-top:22px;padding:16px 18px;border-radius:16px;background:var(--bg);display:flex;gap:12px;align-items:center}
+.where .big2{font:800 22px/1.15 var(--display);letter-spacing:-.01em}
+.where .meta{font-size:14px}
+
+/* Numbers */
+.numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:center;padding-block:28px}
+@media (max-width:700px){.numbers{grid-template-columns:minmax(0,1fr)}}
+.num{display:grid;gap:6px}
+.num .v{font:800 clamp(48px,7vw,80px)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(180deg,var(--ink),color-mix(in srgb,var(--ink) 55%,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.num.bad .v{background:linear-gradient(180deg,var(--bad),color-mix(in srgb,var(--bad) 60%,var(--ink)));-webkit-background-clip:text;background-clip:text}
+.num .l{font:500 16px/1.35 var(--body);color:var(--muted);max-width:24ch;margin:0 auto}
+.foot{color:var(--muted);font-size:13px;text-align:center;max-width:70ch;margin:0 auto}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (max-width:560px){
+  .wrap{padding-block:36px 56px}
+  .hud{top:10px;left:10px;right:10px} .glass{font-size:11px;padding:5px 10px} .glass .t{font-size:11px}
+  .hud .right{display:none}
+  .cap{position:static;padding:14px 16px 16px;background:none}
+  .stage{border-radius:22px}
+  .count{display:none}
+  .panel{padding:20px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .segs .on.run b{width:100%}
+}
 </style>
-<style>.brand{display:inline-block;margin-bottom:6px;font-family:var(--body);font-weight:600;font-size:14px;color:var(--accent);text-decoration:none}.brand:hover{text-decoration:underline}</style>
 </head>
 <body>
+
 <div class="wrap">
-  <header>
-    <div>
-      <a class="brand" href="/">Fold POS</a>
-      <h1>Follow the bag</h1>
-      <p class="sub">One dry-cleaning order, seven pieces, one bag. Watch every change of hands get scanned from drop store to plant and back, and what happens when a piece goes missing.</p>
-    </div>
+  <header class="hero">
+    <p class="kicker"><a href="/">Fold POS</a> · Piece tracking</p>
+    <h1>Follow <span class="grad">the bag.</span></h1>
+    <p class="lede">Seven pieces. One bag. Every change of hands, scanned, from your counter to the plant and back.</p>
     <div class="seg" role="group" aria-label="Scenario">
+      <span class="thumb" id="thumb" aria-hidden="true"></span>
       <button id="scNormal" aria-pressed="true">Everything arrives</button>
       <button id="scMissing" aria-pressed="false">A piece goes missing</button>
     </div>
   </header>
 
-  <section class="stage" aria-label="The bag's route">
-    <svg class="scene" id="scene" viewBox="0 0 1000 300" role="img" aria-label="Drop store, driver van and plant along a road, with the bag moving between them">
+  <section class="stage" aria-label="The bag's route from drop store to plant and back">
+    <svg class="scene" id="scene" viewBox="0 0 1200 560" role="img" aria-labelledby="sceneDesc">
+      <desc id="sceneDesc">A drop store on the left and a cleaning plant on the right, joined by a road. A Fold van carries the bag between them, and each scan lights up the bag's label.</desc>
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--accent-soft)"/><stop offset="1" stop-color="var(--panel)"/></linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="s-skyT"/><stop offset="1" class="s-skyB"/></linearGradient>
+        <linearGradient id="vanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b74ff"/><stop offset="1" stop-color="#1546d6"/></linearGradient>
+        <radialGradient id="ring" r=".5"><stop offset=".6" stop-color="#1e5eff" stop-opacity="0"/><stop offset="1" stop-color="#1e5eff" stop-opacity=".55"/></radialGradient>
       </defs>
-      <rect x="0" y="0" width="1000" height="300" fill="url(#sky)"/>
-      <rect x="0" y="232" width="1000" height="68" fill="var(--road)"/>
-      <line x1="0" y1="266" x2="1000" y2="266" stroke="var(--panel)" stroke-width="4" stroke-dasharray="26 22"/>
-      <!-- drop store -->
-      <g id="stStore">
-        <rect x="40" y="96" width="200" height="136" rx="6" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
-        <path d="M30 100 L250 100 L236 70 L44 70 Z" fill="var(--accent)"/>
-        <text x="140" y="92" text-anchor="middle" font-family="var(--display)" font-weight="700" font-size="17" fill="#fff">DROP STORE</text>
-        <rect x="64" y="130" width="70" height="102" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-        <rect x="152" y="130" width="66" height="54" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-        <rect x="160" y="196" width="50" height="10" rx="2" fill="var(--line)"/>
+      <rect width="1200" height="560" fill="url(#sky)"/>
+      <g id="world">
+        <!-- far layer -->
+        <ellipse class="cloud" cx="220" cy="90" rx="70" ry="16"/><ellipse class="cloud" cx="660" cy="60" rx="90" ry="18"/><ellipse class="cloud" cx="980" cy="110" rx="60" ry="13"/>
+        <path class="f-hill" d="M0 400 Q150 330 320 380 T640 360 T960 350 T1200 370 V460 H0 Z"/>
+        <rect class="f-ground" x="0" y="440" width="1200" height="120"/>
+        <rect class="f-road" x="0" y="454" width="1200" height="70"/>
+        <g id="roadDash"><line class="dash" x1="-60" y1="489" x2="1260" y2="489"/></g>
+
+        <!-- drop store -->
+        <g id="store">
+          <text class="svgl f-muted" x="205" y="210" text-anchor="middle">DROP STORE</text>
+          <rect class="f-bldg" x="70" y="226" width="270" height="214" rx="6"/>
+          <rect class="f-accent" x="70" y="226" width="270" height="44" rx="6"/>
+          <rect class="f-accent" x="70" y="250" width="270" height="20"/>
+          <text class="svgt f-white" x="205" y="256" text-anchor="middle" font-size="20" letter-spacing="1">BLVD CLEANERS</text>
+          <path class="f-soft" d="M70 270 h270 v14 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 q-13.5 12 -27 0 Z"/>
+          <rect class="f-glass" x="92" y="304" width="142" height="106" rx="4"/>
+          <line class="st-edge" x1="98" y1="318" x2="228" y2="318" stroke-width="3"/>
+          <g id="rack"></g>
+          <rect class="f-glass" x="252" y="304" width="66" height="136" rx="3"/>
+          <circle class="f-edge" cx="306" cy="374" r="3"/>
+        </g>
+
+        <!-- plant -->
+        <g id="plant">
+          <rect class="f-roof" x="1104" y="118" width="26" height="70" rx="2"/>
+          <g class="steam" id="steam"><circle cx="1117" cy="112" r="10"/><circle cx="1117" cy="112" r="10"/><circle cx="1117" cy="112" r="10"/></g>
+          <path class="f-roof" d="M840 232 V196 L920 164 V196 L1000 164 V196 L1080 164 V196 L1160 164 V232 Z"/>
+          <rect class="f-bldg" x="840" y="226" width="320" height="214" rx="6"/>
+          <text class="svgl f-muted" x="1000" y="150" text-anchor="middle">PLANT</text>
+          <text class="svgt f-ink" x="1000" y="262" text-anchor="middle" font-size="18" letter-spacing="1">FOLD CLEANING PLANT</text>
+          <g><circle class="f-glass" cx="902" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="902" cy="338" r="18" fill="none" class="st-accent" stroke-width="4"/></g>
+          <g><circle class="f-glass" cx="986" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="986" cy="338" r="18" fill="none" class="st-accent" stroke-width="4"/></g>
+          <rect class="f-glass" x="1046" y="296" width="94" height="144" rx="3"/>
+          <g id="rollerLines"></g>
+        </g>
+
+        <!-- bag (drawn before the van so it slides in behind the van body) -->
+        <g id="bagPos" style="transform:translate(285px,440px)">
+          <ellipse class="f-shadow" cx="0" cy="2" rx="38" ry="5"/>
+          <g id="bagBody">
+            <path class="f-paper" d="M-30 -92 Q0 -102 30 -92 L37 -6 Q0 5 -37 -6 Z"/>
+            <path d="M0 -100 V-109 Q0 -118 8 -118 Q16 -118 16 -110" fill="none" class="st-ink" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="0" y1="-92" x2="0" y2="-70" class="st-ink" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect class="f-label" x="-23" y="-64" width="46" height="30" rx="3"/>
+            <g id="bars"></g>
+            <rect id="laser" x="-27" y="-63" width="54" height="2.5" rx="1" fill="#ff4040" opacity="0"/>
+          </g>
+        </g>
+
+        <!-- van -->
+        <g id="van" style="transform:translate(-320px,0)">
+          <ellipse class="f-shadow" cx="118" cy="446" rx="120" ry="8"/>
+          <g id="vanFlip">
+            <rect x="0" y="336" width="170" height="96" rx="14" fill="url(#vanGrad)"/>
+            <path d="M168 360 H206 Q216 360 222 370 L234 396 Q238 404 238 412 V432 H168 Z" fill="url(#vanGrad)"/>
+            <path d="M176 368 H204 Q210 368 214 376 L224 398 H176 Z" class="f-glass"/>
+            <rect x="0" y="410" width="238" height="5" fill="#fff" opacity=".22"/>
+            <rect x="160" y="336" width="3" height="96" fill="#000" opacity=".12"/>
+            <g class="wheel"><circle class="f-tire" cx="48" cy="432" r="21"/><circle class="f-hub" cx="48" cy="432" r="9"/><rect class="f-tire" x="46.5" y="424" width="3" height="16"/></g>
+            <g class="wheel"><circle class="f-tire" cx="192" cy="432" r="21"/><circle class="f-hub" cx="192" cy="432" r="9"/><rect class="f-tire" x="190.5" y="424" width="3" height="16"/></g>
+          </g>
+          <text id="vanWord" class="svgt f-white" x="84" y="394" text-anchor="middle" font-size="26" letter-spacing="2">FOLD</text>
+        </g>
+
+        <!-- floating bag tag (always above the van) -->
+        <g id="tagPos" style="transform:translate(285px,300px)">
+          <circle id="ringFx" cx="0" cy="0" r="40" fill="url(#ring)" opacity="0"/>
+          <rect class="f-surface" x="-74" y="-16" width="148" height="32" rx="16" stroke="var(--edge)" stroke-width="1"/>
+          <circle id="tagDot" cx="-56" cy="0" r="5" class="f-accent"/>
+          <text id="tagText" class="mono f-ink" x="6" y="5" text-anchor="middle" font-size="13">BK7Q2M9X</text>
+          <g id="check" opacity="0"><circle cx="86" cy="0" r="13" class="f-good"/><path d="M80 0 l4 4 l8 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+        </g>
+
+        <!-- unpacking count, floats over the plant -->
+        <g id="chips" opacity="0" transform="translate(890 196)">
+          <rect class="f-surface" x="-156" y="-30" width="312" height="60" rx="18" stroke="var(--edge)"/>
+        </g>
       </g>
-      <!-- plant -->
-      <g id="stPlant">
-        <rect x="730" y="80" width="240" height="152" rx="6" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
-        <path d="M730 80 L790 50 L790 80 L850 50 L850 80 L910 50 L910 80 L970 50 L970 80 Z" fill="var(--line)"/>
-        <rect x="934" y="18" width="18" height="40" fill="var(--line)"/>
-        <text x="850" y="112" text-anchor="middle" font-family="var(--display)" font-weight="700" font-size="17" fill="var(--ink)">PLANT</text>
-        <circle cx="790" cy="175" r="26" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/><circle cx="790" cy="175" r="12" fill="none" stroke="var(--accent)" stroke-width="3"/>
-        <circle cx="860" cy="175" r="26" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/><circle cx="860" cy="175" r="12" fill="none" stroke="var(--accent)" stroke-width="3"/>
-        <rect x="904" y="140" width="46" height="92" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-      </g>
-      <!-- van -->
-      <g id="van" style="transition:transform 1.4s cubic-bezier(.5,0,.3,1)">
-        <rect x="0" y="176" width="150" height="62" rx="10" fill="var(--accent)"/>
-        <path d="M150 190 L186 190 L204 214 L204 238 L150 238 Z" fill="var(--accent)"/>
-        <path d="M156 196 L182 196 L194 212 L156 212 Z" fill="var(--accent-soft)"/>
-        <text x="75" y="214" text-anchor="middle" font-family="var(--display)" font-weight="700" font-size="16" fill="#fff">FOLD</text>
-        <circle cx="40" cy="242" r="15" fill="var(--ink)"/><circle cx="40" cy="242" r="6" fill="var(--panel)"/>
-        <circle cx="164" cy="242" r="15" fill="var(--ink)"/><circle cx="164" cy="242" r="6" fill="var(--panel)"/>
-      </g>
-      <!-- bag -->
-      <g id="bag" style="transition:transform 1.4s cubic-bezier(.5,0,.3,1)">
-        <path d="M-26 -58 Q0 -72 26 -58 L32 -6 Q0 6 -32 -6 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
-        <path d="M-12 -62 Q0 -80 12 -62" fill="none" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="-20" y="-44" width="40" height="26" rx="2" fill="#fff" stroke="var(--ink)" stroke-width="1"/>
-        <g id="bars"></g>
-        <circle id="flash" cx="0" cy="-32" r="34" fill="var(--accent)" opacity="0"/>
-      </g>
-      <text id="sceneCap" x="500" y="36" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="15" fill="var(--ink)"></text>
     </svg>
-    <div class="ctrl">
-      <button id="prev" aria-label="Previous step">Back</button>
-      <button id="play" class="primary">Play</button>
-      <button id="next" aria-label="Next step">Next</button>
-      <div class="dots" id="dots" role="group" aria-label="Steps"></div>
-      <span class="stepname" id="stepName" aria-live="polite"></span>
+    <div class="hud" aria-hidden="true">
+      <span class="glass" id="hudL"><span class="live"></span><span id="hudPlace">Drop store</span><span class="t" id="hudTime">8:02</span></span>
+      <span class="glass right" id="hudR">Order DC-0042</span>
     </div>
+    <div class="cap"><p id="cap" aria-live="polite"></p></div>
   </section>
 
-  <div class="grid">
-    <section class="card" aria-live="polite">
+  <div class="transport">
+    <button class="playbtn" id="play" aria-label="Play"><svg viewBox="0 0 24 24" id="playIcon"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+    <div class="segs" id="segs" role="group" aria-label="Chapters"></div>
+    <span class="count" id="count"></span>
+  </div>
+
+  <section class="chapter" aria-live="polite">
+    <div>
       <p class="eyebrow" id="eyebrow"></p>
       <h2 id="title"></h2>
-      <p id="desc"></p>
-      <div class="device" id="device"></div>
-    </section>
-    <section class="card">
-      <p class="eyebrow">Custody record</p>
-      <h2>Every scan adds a line</h2>
-      <p>Who, when, where, which bag, how many. The latest line is where the order is now.</p>
+      <p class="desc" id="desc"></p>
+    </div>
+    <div class="device-wrap" id="device"></div>
+  </section>
+
+  <div class="duo">
+    <section class="panel">
+      <h3>Every scan adds a line.</h3>
+      <p class="sub">Who, when, where, which bag, how many. The top line is where the order is right now.</p>
       <ol class="log" id="log"></ol>
+    </section>
+    <section class="panel">
+      <h3>Always know where it is.</h3>
+      <p class="sub">The Plant &amp; bags board, as both the drop store and the plant see it.</p>
+      <div class="track">
+        <div class="rail"><span class="fill" id="fill"></span><span class="dot" id="dot"></span></div>
+        <div class="stops" id="stops"></div>
+      </div>
+      <div class="where"><div><div class="big2" id="whereBig"></div><div class="meta" id="whereMeta"></div></div></div>
     </section>
   </div>
 
-  <section class="card">
-    <p class="eyebrow">Plant &amp; bags board</p>
-    <h2>Where order DC-0042 is right now</h2>
-    <div class="board" id="board"></div>
-  </section>
+  <section class="numbers" id="numbers" aria-label="The order in numbers"></section>
 
-  <p class="foot">Illustration of Fold POS piece tracking. Names, codes and times are examples. Drivers scan with the Fold Driver app on their own phone; stores and plants scan with a USB or Bluetooth scanner.</p>
+  <p class="foot">Illustration of Fold POS piece tracking. Names, codes and times are examples. Drivers scan with the Fold Driver app on their own phone; drop stores and plants scan with a USB or Bluetooth scanner.</p>
 </div>
 
 <script>
 (function(){
-  const X = {store:140, van:500, plant:850};
-  const STAGES = [['waiting','Waiting at store'],['to_plant','To the plant'],['at_plant','At the plant'],['to_store','On the way back'],['back','Back at store']];
+  const W=1200,H=560;
   const BAG1='BK7Q2M9X', BAG2='BM3X8K2P';
-  const steps = [
-    {at:'store', van:'away', stage:'waiting', who:'Drop store · counter', eyebrow:'Step 1 · Intake',
-     title:'Tag the pieces, bag them, print the label',
-     desc:'Seven pieces get tags DC-0042-1 to 7. The counter adds the order to a new bag and prints its label. The bag knows exactly what is inside.',
-     cap:'Bag '+BAG1+' created at the drop store', bag:BAG1,
-     device:()=>screen('Bag '+BAG1, pill('Open','') , '7 pieces · order DC-0042', piecesRow(0,0)),
-     log:{t:'8:02',w:'Drop store',x:'Bag '+BAG1+' created · 7 pieces'}},
-    {at:'store', van:'store', stage:'waiting', scan:true, who:'Drop store · scanner', eyebrow:'Step 2 · Seal',
-     title:'Scan the bag to seal it',
-     desc:'One scan closes the bag. From now on nothing can be added without it showing in the record.',
-     cap:'Sealed and waiting for the driver', bag:BAG1,
-     device:()=>screen('Bag '+BAG1, pill('Sealed','good'), 'Ready for pickup', ''),
-     log:{t:'8:05',w:'Drop store',x:'Bag '+BAG1+' sealed'}},
-    {at:'van', van:'store', stage:'to_plant', scan:true, who:'Fold Driver · phone camera', eyebrow:'Step 3 · Driver picks up',
-     title:'The driver scans the bag with a phone',
-     desc:'The Fold Driver app scans the label with the camera and shows the count for this stop. Time and GPS are saved, even with no signal.',
-     cap:'With the driver · 1 of 1 bags', bag:BAG1,
-     device:()=>screen('Pick up at the drop store', '<div class="big">1 of 1 bags</div>', 'Scanned 8:41 · 34.0195, -118.4912', pill('Uploaded','good')),
-     log:{t:'8:41',w:'Driver Maria',x:'Picked up '+BAG1+' at the drop store'}},
-    {at:'plant', van:'plant', stage:'to_plant', scan:true, who:'Fold Driver · phone camera', eyebrow:'Step 4 · Drop-off',
-     title:'Scan again at the plant door',
-     desc:'The drop-off scan says the driver handed it over. The plant confirms with its own scan.',
-     cap:'Dropped off at the plant', bag:BAG1,
-     device:()=>screen('Drop off at the plant', '<div class="big">1 of 1 bags</div>', 'Scanned 9:18', pill('Uploaded','good')),
-     log:{t:'9:18',w:'Driver Maria',x:'Dropped off '+BAG1+' at the plant'}},
-    {at:'plant', van:'away', stage:'at_plant', scan:true, who:'Plant · receiving scanner', eyebrow:'Step 5 · Plant receives',
-     title:'The plant scans the bag in',
-     desc:'One bag scan confirms the hand-off. The plant now holds it, and the drop store can see that on its board.',
-     cap:'Received at the plant · 1 of 1 bags', bag:BAG1,
-     device:()=>screen('Receive', '<div class="big">1 of 1 bags</div>', 'Expected from the drop store today: 1', pill('Received','good')),
-     log:{t:'9:22',w:'Plant',x:'Received '+BAG1+' · 1 of 1 bags'}},
-    {at:'plant', van:'away', stage:'at_plant', scan:true, unpack:true, who:'Plant · unpacking table', eyebrow:'Step 6 · Unpack',
-     title:'Open the bag, scan each piece once',
-     desc:'This is the only place pieces are counted after intake. The screen compares what came out with what the bag says went in.',
-     cap:'Unpacking '+BAG1, bag:BAG1,
-     device:()=>unpackScreen(),
-     log:()=> missing() ? {t:'9:31',w:'Plant',x:'Unpacked '+BAG1+' · 6 of 7 pieces',bad:true} : {t:'9:31',w:'Plant',x:'Unpacked '+BAG1+' · 7 of 7 pieces'}},
-    {at:'plant', van:'away', stage:'at_plant', alertOnly:true, who:'Plant & bags · Alerts', eyebrow:'Step 6b · The gap is flagged',
-     title:'A short count raises an alert right away',
-     desc:'Both the plant and the drop store see it, while the driver may still be on site. Most "lost" pieces turn up the same day: still in the van, or on the store rack.',
-     cap:'Alert · DC-0042-5 is missing', bag:BAG1,
-     device:()=>screen('Alert', pill('Count mismatch','bad'), 'Bag '+BAG1+': 6 of 7 pieces. DC-0042-5 (blue blazer) was not in the bag.', '<span class="code">Resolve: "Found on the store rack, sent in bag '+BAG2+'"</span>'),
-     log:{t:'9:31',w:'Fold',x:'Alert: DC-0042-5 missing from '+BAG1,bad:true}},
-    {at:'plant', van:'away', stage:'at_plant', scan:true, who:'Plant · assembly', eyebrow:'Step 7 · Clean, assemble, re-bag',
-     title:'Assembly scans every piece, then a new bag goes back',
-     desc:'Pieces are scanned at assembly as before. The order goes into a return bag with its own label.',
-     cap:'Assembled · new bag '+BAG2, bag:BAG2,
-     device:()=>screen('Assemble DC-0042', '<div class="big">'+(missing()?'6':'7')+' of 7</div>', missing()? 'Piece 5 follows once the store finds it' : 'All pieces assembled', piecesRow(missing()?6:7, 0, missing())),
-     log:{t:'15:40',w:'Plant',x:'Assembled DC-0042 · bag '+BAG2+' created and sealed'}},
-    {at:'van', van:'plant', stage:'to_store', scan:true, who:'Fold Driver · phone camera', eyebrow:'Step 8 · On the way back',
-     title:'Pick-up scan at the plant',
-     desc:'Same scan, other direction. The drop store sees the order is on its way back.',
-     cap:'On the way back · 1 of 1 bags', bag:BAG2,
-     device:()=>screen('Pick up at the plant', '<div class="big">1 of 1 bags</div>', 'Scanned 16:05', pill('Uploaded','good')),
-     log:{t:'16:05',w:'Driver Maria',x:'Picked up '+BAG2+' at the plant'}},
-    {at:'store', van:'store', stage:'back', scan:true, who:'Drop store · scanner', eyebrow:'Step 9 · Back at the store',
-     title:'The store scans the bag in, and the customer is told',
-     desc:'Receiving the bag at the store makes the order Ready and sends the usual ready text. The plant name never appears to the customer.',
-     cap:'Back at the store · order ready', bag:BAG2,
-     device:()=>screen('Text to the customer', pill('Ready','good'), '"Hi Dana, your order DC-0042 is ready for pickup at Blvd Cleaners."', ''),
-     log:{t:'16:44',w:'Drop store',x:'Received '+BAG2+' · DC-0042 ready'}},
-    {at:'store', van:'away', stage:'back', who:'Drop store · counter', eyebrow:'Step 10 · Handed back',
-     title:'Collected. Every piece marked handed back',
-     desc:'If a question ever comes up, the record shows every hand-off with a time, a person and a place.',
-     cap:'Collected · record complete', bag:BAG2, hideBag:true,
-     device:()=>screen('Order DC-0042', pill('Collected','good'), '7 pieces · 11 scans · 0 open alerts', ''),
-     log:{t:'18:10',w:'Drop store',x:'Handed back to Dana · pieces released'}},
+  const STAGES=[['waiting','Waiting at store'],['to_plant','To the plant'],['at_plant','At the plant'],['to_store','On the way back'],['back','Back at store']];
+  const SHOTS={wide:[600,280,1],store:[250,330,1.6],plant:[930,330,1.6],unpack:[960,300,1.75]};
+  const VANX={offL:-320,store:360,plant:600,offR:1320};
+  const BAGP={store:[285,440],plant:[965,440],vanStore:[470,436],vanPlant:[715,436],gone:[205,440]};
+  const ICON={check:'<svg viewBox="0 0 16 16"><path d="M6.2 11.6 2.8 8.2l1.1-1.1 2.3 2.3 5.9-5.9 1.1 1.1z"/></svg>',warn:'<svg viewBox="0 0 16 16"><path d="M8 1 15 14H1zm-.8 5v4h1.6V6zm0 5v1.6h1.6V11z"/></svg>'};
+  const missing=()=>scenario==='missing';
+  const pill=(t,k,ic)=>'<span class="pill '+(k||'')+'">'+(ic?ICON[ic]:'')+t+'</span>';
+  const pieces=(ok,miss,popN)=>{let h='<div class="pieces">';for(let n=1;n<=7;n++){const m=miss&&n===5;const isOk=Array.isArray(ok)?ok.includes(n):n<=ok;h+='<div class="piece '+(m?'miss':(isOk?'ok':''))+(n===popN?' pop':'')+'">'+n+'/7</div>'}return h+'</div>'};
+  const counter=(who,code,body)=>'<div><div class="counter"><div class="scr"><div class="app-top"><span>'+who+'</span><span class="code">'+code+'</span></div>'+body+'</div></div><div class="stand"></div></div>';
+  const phone=(who,code,body)=>'<div class="phone"><div class="scr"><div class="app-top"><span>'+who+'</span><span class="code">'+code+'</span></div>'+body+'</div></div>';
+
+  const steps=[
+    {shot:'wide',van:'offL',face:'R',bag:'store',code:BAG1,stage:'waiting',place:'Drop store',t:'8:02',
+     eyebrow:'Intake',title:'Tag every piece. Bag it. Print the label.',
+     desc:'Seven pieces get tags <strong>DC-0042-1</strong> to <strong>7</strong>. The counter puts the order in a new bag and prints its label. The bag knows exactly what is inside.',
+     cap:'Bag '+BAG1+' is created at the drop store.',
+     device:()=>counter('Drop store · counter',BAG1,'<p class="app-h">New bag</p><div class="big">7<small>pieces</small></div><div class="meta">Order <span class="mono">DC-0042</span> · Dana R.</div>'+pieces(7)+'<div class="row">'+pill('Label printed','good','check')+'</div>'),
+     log:{w:'Drop store',x:'Bag '+BAG1+' created · 7 pieces'}},
+    {shot:'store',van:'store',face:'R',bag:'store',code:BAG1,scan:true,stage:'waiting',place:'Drop store',t:'8:05',
+     eyebrow:'Seal',title:'One scan seals the bag.',
+     desc:'From here on, nothing can go in or come out without it showing up in the record.',
+     cap:'Sealed. Waiting for the driver.',
+     device:()=>counter('Drop store · scanner',BAG1,'<p class="app-h">Bag '+BAG1+'</p><div class="row">'+pill('Sealed','good','check')+'</div><div class="meta">7 pieces · ready for pickup</div><div class="spacer"></div><div class="meta">Driver Maria is 4 minutes away.</div>'),
+     log:{w:'Drop store',x:'Bag '+BAG1+' sealed'}},
+    {shot:'store',van:'store',face:'R',bag:'vanStore',code:BAG1,scan:true,stage:'to_plant',place:'With the driver',t:'8:41',
+     eyebrow:'Pickup',title:'The driver scans it with a phone.',
+     desc:'The Fold Driver app reads the label with the camera and shows the count for this stop. Time and location are saved, <strong>even with no signal</strong>.',
+     cap:'In the van. 1 of 1 bags.',
+     device:()=>phone('Fold Driver · pickup',BAG1,'<div class="camera"><div class="lbl"><i></i><span>'+BAG1+'</span></div><div class="reticle"></div><div class="laser"></div></div><div class="big">1<small>of 1 bags</small></div><div class="meta">Blvd Cleaners · 8:41<br><span class="mono">34.0195, −118.4912</span></div>'+pill('Uploaded','good','check')),
+     log:{w:'Driver Maria',x:'Picked up '+BAG1+' at the drop store'}},
+    {shot:'plant',van:'plant',face:'R',bag:'plant',code:BAG1,scan:true,stage:'to_plant',place:'Plant door',t:'9:18',
+     eyebrow:'Drop-off',title:'Scanned again at the plant door.',
+     desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own.',
+     cap:'Dropped off at the plant.',
+     device:()=>phone('Fold Driver · drop-off',BAG1,'<p class="app-h">Fold Cleaning Plant</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Scanned 9:18</div><div class="spacer"></div>'+pill('Uploaded','good','check')+'<div class="meta">Next stop: Westside Cleaners</div>'),
+     log:{w:'Driver Maria',x:'Dropped off '+BAG1+' at the plant'}},
+    {shot:'plant',van:'offR',face:'R',bag:'plant',code:BAG1,scan:true,stage:'at_plant',place:'Plant',t:'9:22',
+     eyebrow:'Receive',title:'The plant scans it in.',
+     desc:'One scan confirms the hand-off. The plant now holds the bag, and the drop store sees that on its own board.',
+     cap:'Received at the plant. 1 of 1 bags.',
+     device:()=>counter('Plant · receiving',BAG1,'<p class="app-h">Receive</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Expected from Blvd Cleaners today: 1</div><div class="row">'+pill('Received','good','check')+'</div>'),
+     log:{w:'Plant',x:'Received '+BAG1+' · 1 of 1 bags'}},
+    {shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,unpack:true,chips:true,stage:'at_plant',place:'Unpacking table',t:'9:31',
+     eyebrow:'Unpack',title:'Open the bag. Scan each piece once.',
+     desc:'This is the one place pieces are counted after intake. The screen checks what came out against what the bag says went in.',
+     cap:'Unpacking '+BAG1+'.',
+     device:()=>counter('Plant · unpacking table',BAG1,'<p class="app-h">Unpack</p><div class="big" id="upCount">0<small>of 7</small></div><div id="upRow">'+pieces(0)+'</div><div id="upNote" class="row"></div>'),
+     log:()=>missing()?{w:'Plant',x:'Unpacked '+BAG1+' · 6 of 7 pieces',bad:true}:{w:'Plant',x:'Unpacked '+BAG1+' · 7 of 7 pieces'}},
+    {alertOnly:true,shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,chips:true,stage:'at_plant',place:'Alert',t:'9:31',bad:true,
+     eyebrow:'The gap is flagged',title:'A short count raises an alert. Right away.',
+     desc:'The plant and the drop store both see it, 13 minutes after drop-off. Most missing pieces turn up the same day: still in the van, or on the store rack.',
+     cap:'DC-0042-5 is missing.',
+     device:()=>counter('Plant & bags · Alerts',BAG1,'<div class="row">'+pill('Count mismatch','bad','warn')+'</div><p class="app-h">6 of 7 pieces in '+BAG1+'</p><div class="meta"><span class="mono">DC-0042-5</span> · blue blazer · last scanned at intake, 8:02</div>'+pieces([1,2,3,4,6,7],true)+'<div class="meta">Resolve with: “Found on the store rack, sent in bag <span class="mono">'+BAG2+'</span>”</div>'),
+     log:{w:'Fold',x:'Alert: DC-0042-5 missing from '+BAG1,bad:true}},
+    {shot:'plant',van:'offR',face:'R',bag:'plant',code:BAG2,scan:true,chips:true,stage:'at_plant',place:'Assembly',t:'15:40',
+     eyebrow:'Clean, assemble, re-bag',title:'Assembled, then into a new bag.',
+     desc:'Assembly scans every piece. The order goes home in a return bag with a label of its own.',
+     cap:'Assembled. New bag '+BAG2+'.',
+     device:()=>counter('Plant · assembly',BAG2,'<p class="app-h">Assemble DC-0042</p><div class="big">'+(missing()?'6':'7')+'<small>of 7</small></div>'+pieces(missing()?[1,2,3,4,6,7]:7,missing())+'<div class="meta">'+(missing()?'Piece 5 follows once the store finds it.':'All pieces assembled. Return bag sealed.')+'</div>'),
+     log:{w:'Plant',x:'Assembled DC-0042 · bag '+BAG2+' created and sealed'}},
+    {shot:'plant',van:'plant',face:'L',bag:'vanPlant',code:BAG2,scan:true,stage:'to_store',place:'With the driver',t:'16:05',
+     eyebrow:'On the way back',title:'Same scan. Other direction.',
+     desc:'The pickup scan at the plant tells the drop store its order is on the way back.',
+     cap:'Heading back. 1 of 1 bags.',
+     device:()=>phone('Fold Driver · pickup',BAG2,'<div class="camera"><div class="lbl"><i></i><span>'+BAG2+'</span></div><div class="reticle"></div><div class="laser"></div></div><div class="big">1<small>of 1 bags</small></div><div class="meta">Fold Cleaning Plant · 16:05</div>'+pill('Uploaded','good','check')),
+     log:{w:'Driver Maria',x:'Picked up '+BAG2+' at the plant'}},
+    {shot:'store',van:'store',face:'L',bag:'store',code:BAG2,scan:true,stage:'back',place:'Drop store',t:'16:44',
+     eyebrow:'Back at the store',title:'Scanned in. Your customer gets a text.',
+     desc:'Receiving the bag makes the order Ready and sends the usual ready text. <strong>The plant never appears to the customer.</strong>',
+     cap:'Back at the store. Order ready.',
+     device:()=>phone('Messages',BAG2,'<div class="from">Blvd Cleaners · Today 4:44 PM</div><div class="bubble">Hi Dana, your order DC-0042 is ready for pickup at Blvd Cleaners. We’re open until 7 PM.</div><div class="spacer"></div>'),
+     log:{w:'Drop store',x:'Received '+BAG2+' · DC-0042 ready'}},
+    {shot:'wide',van:'offL',face:'L',bag:'gone',code:BAG2,stage:'back',place:'Collected',t:'18:10',done:true,
+     eyebrow:'Handed back',title:'Collected. The record is complete.',
+     desc:'If a question ever comes up, every hand-off is there with a time, a person and a place.',
+     cap:'Collected by Dana. Record complete.',
+     device:()=>counter('Drop store · counter',BAG2,'<p class="app-h">Order DC-0042</p><div class="row">'+pill('Collected','good','check')+'</div><div class="big">'+(missing()?'6':'7')+'<small>pieces handed back</small></div><div class="meta">6 hand-offs · every one scanned · '+(missing()?'1 open alert (DC-0042-5)':'0 open alerts')+'</div>'),
+     log:{w:'Drop store',x:'Handed back to Dana · pieces released'}},
   ];
 
-  let scenario='normal', i=0, timer=null;
+  let scenario='normal', i=0, playing=false, timer=null, upTimer=null, lastI=-1;
   const $=id=>document.getElementById(id);
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const missing=()=>scenario==='missing';
-  const active=()=>steps.filter(s=>!s.alertOnly || missing());
+  const NS='http://www.w3.org/2000/svg';
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const active=()=>steps.filter(s=>!s.alertOnly||missing());
+  const cur=()=>active()[i];
+  const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e};
 
-  function pill(t,k){return '<span class="pill '+(k||'')+'">'+t+'</span>'}
-  function screen(head, a, b, c){return '<div class="who"><span>'+cur().who+'</span><span class="code">'+cur().bag+'</span></div><b>'+head+'</b>'+(a||'')+'<div>'+(b||'')+'</div>'+(c||'')}
-  function piecesRow(ok, _x, miss){let h='<div class="pieces">';for(let n=1;n<=7;n++){const m=miss&&n===5;h+='<div class="piece '+(m?'miss':(n<=ok?'ok':''))+'">'+n+'/7</div>'}return h+'</div>'}
-  function unpackScreen(){return '<div class="who"><span>'+cur().who+'</span><span class="code">'+BAG1+'</span></div><b>Unpack</b><div class="big" id="upCount">0 of 7</div><div id="upRow">'+piecesRow(0)+'</div><div id="upNote"></div>'}
-  function cur(){return active()[i]}
+  // static scenery details
+  (function(){
+    const g=$('bars');let x=-19;[2,1,1,2,3,1,1,2,1,3,2,1,1,1,2,2,1,3,1,1,2,1].forEach((v,k)=>{if(k%2===0)el('rect',{x:x,y:-60,width:v*.9,height:20,class:'f-bars'},g);x+=v*.9+.45});
+    const rack=$('rack');[[110,'#9fb6e8'],[136,'#e8c39f'],[162,'#b9d9c8'],[188,'#d9b9d6'],[212,'#c8cfe0']].forEach(([cx,c])=>{el('path',{d:'M'+cx+' 318 l0 6 M'+(cx-10)+' 330 l10 -6 l10 6 l2 44 l-24 0 z',fill:c,stroke:'none',opacity:.85},rack)});
+    const rl=$('rollerLines');for(let y=312;y<440;y+=14)el('line',{x1:1048,y1:y,x2:1138,y2:y,class:'st-edge','stroke-width':2},rl);
+    const chips=$('chips');for(let n=1;n<=7;n++){const g=el('g',{class:'chip',id:'chip'+n},chips);const x=-140+(n-1)*40;el('rect',{x:x,y:-17,width:34,height:34,rx:9,class:'f-surface',stroke:'var(--edge)','stroke-width':1.5},g);const t=el('text',{x:x+17,y:5,'text-anchor':'middle','font-size':11,class:'mono f-muted'},g);t.textContent=n+'/7'}
+  })();
 
-  // barcode on the bag label: fixed pattern, illustrative only
-  (function(){const g=$('bars');const w=[2,1,1,2,3,1,1,2,1,3,2,1,1,1,2,2,1,3,1,1];let x=-17;w.forEach((v,k)=>{if(k%2===0){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',-41);r.setAttribute('width',v*.9);r.setAttribute('height',17);r.setAttribute('fill','#0f1b33');g.appendChild(r)}x+=v*.9+.4})})();
+  function setChips(okList,missN,popN){for(let n=1;n<=7;n++){const c=$('chip'+n);c.setAttribute('class','chip'+(n===missN?' miss':(okList.includes(n)?' ok':''))+(n===popN?' pop':''))}}
 
-  function place(){
-    const s=cur();
-    const bx = X[s.at];
-    $('bag').style.transform='translate('+(s.at==='van'? 475 : bx)+'px,'+(s.at==='van'?186:228)+'px)';
-    $('bag').style.opacity = s.hideBag?0:1;
-    const vx = s.at==='van' ? 400 : s.van==='store'? 250 : s.van==='plant'? 520 : (s.at==='plant'? -260 : 1040);
-    $('van').style.transform='translate('+vx+'px,0)';
-    $('sceneCap').textContent=s.cap;
-    if(s.scan && !reduce){const f=$('flash');f.animate([{opacity:.55,transform:'scale(.4)'},{opacity:0,transform:'scale(1.4)'}],{duration:700,easing:'ease-out',delay:900});f.style.transformBox='fill-box';f.style.transformOrigin='center'}
+  function camera(shot){let [cx,cy,s]=SHOTS[shot];let tx=W/2-s*cx,ty=H/2-s*cy;tx=Math.min(0,Math.max(W-W*s,tx));ty=Math.min(0,Math.max(H-H*s,ty));$('world').style.transform='translate('+tx+'px,'+ty+'px) scale('+s+')'}
+
+  function place(s,prev){
+    camera(s.shot);
+    const van=$('van'), vx=VANX[s.van], flip=$('vanFlip');
+    const pvx=prev?VANX[prev.van]:vx;
+    flip.setAttribute('transform',s.face==='L'?'translate(238 0) scale(-1 1)':'');
+    $('vanWord').setAttribute('x',s.face==='L'?154:84);
+    van.style.transform='translate('+vx+'px,0)';
+    if(!reduce&&prev&&pvx!==vx){van.classList.remove('moving','left');void van.getBBox();van.classList.add('moving');if(vx<pvx)van.classList.add('left');
+      const w=$('world');w.classList.remove('drive','back');void w.getBBox();w.classList.add('drive');if(vx<pvx)w.classList.add('back')}
+    const [bx,by]=BAGP[s.bag];
+    $('bagPos').style.transform='translate('+bx+'px,'+by+'px)';
+    $('bagPos').style.opacity=(s.bag==='vanStore'||s.bag==='vanPlant'||s.bag==='gone')?0:1;
+    const ty=(s.bag==='vanStore'||s.bag==='vanPlant')?300:by-150;
+    $('tagPos').style.transform='translate('+bx+'px,'+ty+'px)';
+    $('tagPos').style.opacity=s.bag==='gone'?0:1;
+    $('tagText').textContent=s.code;
+    $('tagDot').setAttribute('class',s.bad?'f-bad':(s.done||s.stage==='back'?'f-good':'f-accent'));
+    $('check').setAttribute('opacity',0);
+    const chips=$('chips');chips.setAttribute('opacity',s.chips?1:0);
+    if(s.chips&&!s.unpack){ if(missing()) setChips([1,2,3,4,6,7],5); else setChips([1,2,3,4,5,6,7]) }
+    if(!s.chips) setChips([],0);
+    if(s.scan) scanFx(s);
   }
+  function scanFx(s){
+    if(reduce){$('check').setAttribute('opacity',1);return}
+    const delay=1250;
+    if(s.bag==='store'||s.bag==='plant'){$('laser').animate([{opacity:0,transform:'translateY(0)'},{opacity:1,offset:.15},{opacity:1,transform:'translateY(28px)',offset:.85},{opacity:0,transform:'translateY(28px)'}],{duration:650,delay:delay,easing:'ease-in-out'})}
+    const r=$('ringFx');r.style.transformBox='fill-box';r.style.transformOrigin='center';
+    r.animate([{opacity:.9,transform:'scale(.3)'},{opacity:0,transform:'scale(2.2)'}],{duration:800,delay:delay+500,easing:'cubic-bezier(.2,.7,.3,1)'});
+    const c=$('check');c.style.transformBox='fill-box';c.style.transformOrigin='center';
+    setTimeout(()=>{if(cur()===s)c.setAttribute('opacity',1)},delay+500);
+    c.animate([{transform:'scale(0)'},{transform:'scale(1.25)',offset:.6},{transform:'scale(1)'}],{duration:450,delay:delay+500,easing:'ease-out',fill:'backwards'});
+  }
+
   function render(){
     const list=active(); i=Math.max(0,Math.min(i,list.length-1)); const s=list[i];
-    $('eyebrow').textContent=s.eyebrow; $('title').textContent=s.title; $('desc').textContent=s.desc;
+    const prev=lastI>=0?(list[lastI]||null):null;
+    const k=$('eyebrow');k.textContent=s.eyebrow;k.className='eyebrow'+(s.bad?' bad':'');
+    $('title').innerHTML=s.title;$('desc').innerHTML=s.desc;
+    const cap=$('cap');cap.textContent=s.cap;cap.classList.remove('fade');void cap.offsetWidth;cap.classList.add('fade');
+    $('hudPlace').textContent=s.place;$('hudTime').textContent=s.t;$('hudL').className='glass'+(s.bad?' alert':'');
     $('device').innerHTML=s.device();
-    $('stepName').textContent=(i+1)+' of '+list.length+' · '+s.eyebrow.replace(/^Step [0-9b]+ · /,'');
-    // dots
-    const d=$('dots'); d.innerHTML=''; list.forEach((st,k)=>{const b=document.createElement('button');b.className=k<i?'done':(k===i?'on':'');b.setAttribute('aria-label','Step '+(k+1)+': '+st.title);b.onclick=()=>{stop();i=k;render()};d.appendChild(b)});
-    // log up to this step
-    const log=$('log'); log.innerHTML='';
-    list.slice(0,i+1).forEach(st=>{const L=typeof st.log==='function'?st.log():st.log;const li=document.createElement('li');if(L.bad)li.className='bad';li.innerHTML='<time>'+L.t+'</time><span><b>'+L.w+'</b> · '+L.x+'</span>';log.prepend(li)});
-    // board
-    const b=$('board'); b.innerHTML='';
-    STAGES.forEach(([k,l])=>{const on=s.stage===k;const c=document.createElement('div');c.className='col'+(on?' on':'');c.innerHTML='<div class="n">'+(on?1:0)+'</div><div class="l">'+l+'</div>';b.appendChild(c)});
-    place();
-    if(s.unpack) runUnpack();
+    const dv=$('device').firstElementChild;if(dv&&!reduce){dv.classList.add('fade')}
+    $('count').textContent=(i+1)+' / '+list.length;
+    // chapter segments
+    const sg=$('segs');sg.innerHTML='';
+    list.forEach((st,n)=>{const b=document.createElement('button');b.className=(n<i?'done':(n===i?'on':''))+(st.bad?' bad':'')+(n===i&&playing?' run':'');
+      b.style.setProperty('--dur',dur(st)+'ms');b.setAttribute('aria-label','Chapter '+(n+1)+': '+st.eyebrow);if(n===i)b.setAttribute('aria-current','step');
+      b.innerHTML='<i><b></b></i>';b.onclick=()=>{pause();go(n)};sg.appendChild(b)});
+    // custody record
+    const log=$('log');log.innerHTML='';
+    list.slice(0,i+1).forEach((st,n)=>{const L=typeof st.log==='function'?st.log():st.log;const li=document.createElement('li');li.className=(L.bad?'bad':'')+(n===i?' new':'');
+      li.innerHTML='<time>'+st.t+'</time><span><b>'+L.w+'</b> · '+L.x+'</span>';log.prepend(li)});
+    // tracker
+    const idx=STAGES.findIndex(([k])=>k===s.stage), pct=idx/(STAGES.length-1)*100;
+    $('fill').style.width=pct+'%';$('dot').style.left=pct+'%';
+    $('stops').innerHTML=STAGES.map(([k,l],n)=>'<div class="'+(n===idx?'on':'')+'">'+l+'</div>').join('');
+    $('whereBig').textContent=s.bad?'At the plant · 1 piece short':STAGES[idx][1];
+    $('whereMeta').textContent='Last scan '+s.t+' · '+s.place+' · bag '+s.code;
+    numbers();
+    place(s,prev); lastI=i;
+    clearInterval(upTimer); if(s.unpack) runUnpack();
   }
-  let upTimer=null;
+  function numbers(){
+    const N=missing()
+      ?[['13 min','from drop-off to the missing-piece alert',true],['6','hand-offs, every one scanned'],['8:02','the last time DC-0042-5 was seen, so you know where to look',true]]
+      :[['7 of 7','pieces home, each one accounted for'],['6','hand-offs, every one scanned'],['0','arguments about who had it last']];
+    $('numbers').innerHTML=N.map(([v,l,b])=>'<div class="num'+(b?' bad':'')+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>').join('');
+  }
   function runUnpack(){
-    clearInterval(upTimer); let n=0; const total=missing()?6:7;
-    const tick=()=>{n++; const shown=Math.min(n,total);
-      const c=$('upCount'); if(!c){clearInterval(upTimer);return}
-      c.textContent=shown+' of 7';
-      $('upRow').innerHTML=piecesRow(shown);
-      if(missing()){ // pieces 1-4,6,7 scanned; 5 never arrives
-        const ok=[1,2,3,4,6,7].slice(0,shown); let h='<div class="pieces">';for(let k=1;k<=7;k++){const m=n>=total&&k===5;h+='<div class="piece '+(m?'miss':(ok.includes(k)?'ok':''))+'">'+k+'/7</div>'}$('upRow').innerHTML=h+'</div>'}
-      if(n>=total){clearInterval(upTimer); $('upNote').innerHTML= missing()? pill('Finish · 1 piece short','bad') : pill('Finish · all 7 accounted for','good')}
-    };
-    if(reduce){n=total-1;tick();return}
-    upTimer=setInterval(tick,330);
+    const order=missing()?[1,2,3,4,6,7]:[1,2,3,4,5,6,7]; let n=0;
+    const tick=()=>{n++;const shown=order.slice(0,n);const c=$('upCount');if(!c){clearInterval(upTimer);return}
+      const done=n>=order.length;
+      c.innerHTML=shown.length+'<small>of 7</small>';
+      $('upRow').innerHTML=pieces(shown,done&&missing(),shown[shown.length-1]);
+      setChips(shown,done&&missing()?5:0,shown[shown.length-1]);
+      if(done){clearInterval(upTimer);$('upNote').innerHTML=missing()?pill('1 piece short','bad','warn'):pill('All 7 accounted for','good','check')}};
+    if(reduce){n=order.length-1;tick();return}
+    setChips([],0); upTimer=setInterval(tick,420);
   }
-  function next(){const l=active().length; if(i<l-1){i++;render()} else stop()}
-  function prev(){if(i>0){i--;render()}}
-  function play(){ if(timer){stop();return} if(i>=active().length-1){i=0;render()} $('play').textContent='Pause'; timer=setInterval(()=>{ if(i>=active().length-1){stop();return} next()}, cur().unpack?4200:3400)}
-  function stop(){clearInterval(timer);timer=null;$('play').textContent='Play'}
-  $('next').onclick=()=>{stop();next()}; $('prev').onclick=()=>{stop();prev()}; $('play').onclick=play;
-  function setScenario(v){scenario=v;$('scNormal').setAttribute('aria-pressed',v==='normal');$('scMissing').setAttribute('aria-pressed',v==='missing');
-    const idx=active().findIndex(s=>s.eyebrow.startsWith('Step 6 '));stop();i=idx;render()}
-  $('scNormal').onclick=()=>setScenario('normal'); $('scMissing').onclick=()=>setScenario('missing');
-  document.addEventListener('keydown',e=>{if(e.target.closest('button'))return; if(e.key==='ArrowRight'){stop();next()} if(e.key==='ArrowLeft'){stop();prev()} if(e.key===' '){e.preventDefault();play()}});
-  render();
-  if(!reduce) setTimeout(()=>{ if(!timer && i===0) play() }, 1200);
+  const dur=s=>s.unpack?5000:(s.alertOnly?4600:3800);
+  function go(n){const l=active().length;i=Math.max(0,Math.min(n,l-1));render();schedule()}
+  function schedule(){clearTimeout(timer);if(!playing)return;const l=active().length;if(i>=l-1){timer=setTimeout(()=>{playing=false;setIcon()},dur(cur()));return}timer=setTimeout(()=>go(i+1),dur(cur()))}
+  function setIcon(){const ended=!playing&&i>=active().length-1;$('playIcon').innerHTML=playing?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':(ended?'<path d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/>':'<path d="M7 4.5v15l13-7.5z"/>');$('play').setAttribute('aria-label',playing?'Pause':(ended?'Replay':'Play'))}
+  function play(){if(i>=active().length-1){lastI=-1;i=0}playing=true;setIcon();render();schedule()}
+  function pause(){playing=false;clearTimeout(timer);setIcon();document.querySelectorAll('.segs .run').forEach(b=>b.classList.remove('run'))}
+  $('play').onclick=()=>playing?pause():play();
+  function setScenario(v){scenario=v;$('scNormal').setAttribute('aria-pressed',v==='normal');$('scMissing').setAttribute('aria-pressed',v==='missing');moveThumb();
+    pause();lastI=-1;i=active().findIndex(s=>s.unpack);render();setIcon()}
+  function moveThumb(){const b=missing()?$('scMissing'):$('scNormal');const t=$('thumb');t.style.width=b.offsetWidth+'px';t.style.transform='translateX('+(b.offsetLeft-4)+'px)'}
+  $('scNormal').onclick=()=>setScenario('normal');$('scMissing').onclick=()=>setScenario('missing');
+  addEventListener('resize',moveThumb);
+  document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('button'))return;
+    if(e.key==='ArrowRight'){pause();go(i+1)} if(e.key==='ArrowLeft'){pause();go(i-1)} if(e.key===' '){e.preventDefault();playing?pause():play()}});
+  render();setIcon();moveThumb();
+  if(document.fonts)document.fonts.ready.then(moveThumb);
+  if(!reduce)setTimeout(()=>{if(!playing&&i===0&&lastI===0)play()},1400);
 })();
 </script>
 </body>
