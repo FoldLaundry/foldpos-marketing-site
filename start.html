@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Start here — Fold POS</title>
-<meta name="description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<meta name="description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
 <link rel="canonical" href="https://foldpos.com/start">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Start here — Fold POS">
-<meta property="og:description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<meta property="og:description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
 <meta property="og:image:width" content="1200">
@@ -20,94 +20,579 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Start here — Fold POS">
-<meta name="twitter:description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<meta name="twitter:description" content="Open on Fold POS today. Seven short steps, each one shown in motion: your account, hardware, prices, printers, staff, customer texts and your first order.">
 <meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
-<meta name="theme-color" content="#1e5eff">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
 <style>
-/* Same tokens as /setup; one column of sections, each a short lead and a table that scrolls sideways on phones. */
+/* Apple-style: one quiet column of big type; a single live "stage" stays in view and acts out whichever step you're on. */
 :root{
-  --ground:#f3f5f8; --card:#ffffff; --ink:#0b1b2b; --muted:#5c6975; --line:#dfe4ea;
-  --accent:#1e5eff; --accent-soft:#e9efff;
+  --paper:#fbfbfd; --surface:#ffffff; --ink:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7;
+  --blue:#1e5eff; --blue-soft:#e8efff; --green:#1f9d55; --green-soft:#e3f5ea; --tag:#fff6dc; --tag-ink:#5b4a12;
+  --stage:#f2f2f5; --shadow:0 30px 60px -30px rgba(29,29,31,.28);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Figtree","Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --ground:#0f1419; --card:#171d24; --ink:#e9eef3; --muted:#98a4b1; --line:#2a323c; --accent-soft:#12283f; color-scheme:dark;
-} }
-:root[data-theme="dark"]{ --ground:#0f1419; --card:#171d24; --ink:#e9eef3; --muted:#98a4b1; --line:#2a323c; --accent-soft:#12283f; color-scheme:dark; }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#000000; --surface:#1c1c1e; --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a;
+  --blue:#4d82ff; --blue-soft:#14244d; --green:#30d158; --green-soft:#0f2c1a; --tag:#3a321a; --tag-ink:#f3df9b;
+  --stage:#111113; --shadow:0 30px 60px -30px rgba(0,0,0,.8); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#000000; --surface:#1c1c1e; --ink:#f5f5f7; --muted:#a1a1a6; --line:#38383a;
+  --blue:#4d82ff; --blue-soft:#14244d; --green:#30d158; --green-soft:#0f2c1a; --tag:#3a321a; --tag-ink:#f3df9b;
+  --stage:#111113; --shadow:0 30px 60px -30px rgba(0,0,0,.8); color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
-.wrap{max-width:1040px;margin:0 auto;padding:28px 18px 60px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:inherit;text-decoration:none}
-.brand .pill{background:var(--accent);color:#fff;font-size:11px;padding:2px 7px;border-radius:999px;letter-spacing:.06em}
-.jump{display:flex;flex-wrap:wrap;gap:6px}
-.jump a{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--accent-soft);padding:5px 11px;border-radius:999px}
-h1{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:32px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
-.intro{max-width:65ch;margin:0 0 30px;font-size:17px}
-section{margin:0 0 34px}
-h2{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
-.lead{margin:0 0 14px;color:var(--muted);max-width:70ch}
-.lead a,td a,.know a{color:var(--accent);font-weight:600}
-.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
-table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
-thead th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--ground)}
-tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
-tbody th{font-weight:700;width:18%}
-.know{margin:0;padding-left:20px;max-width:75ch;display:grid;gap:8px}
-.note{color:var(--muted);font-size:14px;margin:14px 0 0}
-.help{margin:30px 0 0;font-size:14px;color:var(--muted)}
-.help a{color:var(--accent);font-weight:700;text-decoration:none}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-</style>
-<style>
-.steps{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:12px;counter-reset:s}
-.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 62px;position:relative}
-.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
-.steps h3{margin:0 0 4px;font-size:17px}
-.steps p{margin:0;color:var(--muted)}
-.steps a,.types a{color:var(--accent);font-weight:600}
-.time{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;vertical-align:2px}
-.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 34px}
-.types div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
-.types h3{margin:0 0 6px;font-size:17px}
-.types ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:4px}
+html,body{background:var(--paper)}
+body{margin:0;color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.47;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.bar-in{max-width:1080px;margin:0 auto;padding-block:12px;padding-inline:20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink)}
+.logo span{color:var(--blue)}
+.bar nav{display:flex;gap:18px;font-size:14px}
+.bar nav a{color:var(--muted)}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue);color:#fff;font-weight:600;font-size:15px}
+.cta:hover{text-decoration:none;filter:brightness(1.08)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.hero{text-align:center;padding-block:84px 40px}
+.hero h1{font-size:clamp(44px,8vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:700;margin:0 auto 18px;max-width:12ch;text-wrap:balance}
+.hero p{font-size:clamp(19px,2.2vw,24px);color:var(--muted);max-width:34ch;margin:0 auto 28px;line-height:1.35;text-wrap:balance}
+.hero .meta{font-size:15px;color:var(--muted);margin-top:16px}
+.progress{font-variant-numeric:tabular-nums}
+
+/* The tour: steps on the left, the stage sticks on the right. */
+.tour{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:56px;padding-block:40px 80px}
+.steps{display:flex;flex-direction:column}
+.step{padding-block:22vh;padding-inline:0;min-height:60vh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .45s ease}
+.step:first-child{padding-top:8vh}
+.step.on{opacity:1}
+.step .n{font-size:15px;font-weight:600;color:var(--blue);margin:0 0 8px;font-variant-numeric:tabular-nums}
+.step h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em;margin:0 0 12px;text-wrap:balance}
+.step p{margin:0 0 14px;color:var(--muted);max-width:46ch}
+.step .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.done{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.done .box{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:all .2s}
+.done[aria-pressed="true"]{border-color:var(--green);color:var(--green)}
+.done[aria-pressed="true"] .box{background:var(--green);border-color:var(--green)}
+.done[aria-pressed="true"] .box::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.time{font-size:14px;color:var(--muted)}
+.stage-col{position:relative}
+.stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px);aspect-ratio:16/12;max-height:72vh;width:100%;background:var(--stage);border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+.scene{position:absolute;inset:0;padding:28px;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.98);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.scene.show{opacity:1;transform:none;pointer-events:auto}
+.replay{position:absolute;right:16px;bottom:16px;z-index:5;min-height:36px;padding:0 14px;border-radius:999px;border:0;background:color-mix(in srgb,var(--surface) 86%,transparent);color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.caption{position:absolute;left:20px;bottom:20px;z-index:5;font-size:13px;color:var(--muted);max-width:60%}
+
+/* Shared scene pieces */
+.win{background:var(--surface);border-radius:18px;box-shadow:0 12px 30px -14px rgba(0,0,0,.25);width:min(100%,460px);padding:20px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.win h4{margin:0 0 12px;font-size:16px;letter-spacing:-.01em}
+.f{height:38px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;padding:0 12px;font-size:14px;margin-bottom:8px;background:var(--paper);overflow:hidden;white-space:nowrap}
+.f.focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.f .ph{color:var(--muted)}
+.f.filled{animation:flash .6s ease}
+@keyframes flash{0%{background:var(--blue-soft)}100%{background:var(--paper)}}
+.caret{display:inline-block;width:1.5px;height:16px;background:var(--blue);margin-left:1px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.chip{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);transition:all .25s}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.sugg{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:-4px 0 8px;overflow:hidden;max-height:0;opacity:0;transition:max-height .35s ease,opacity .25s}
+.sugg.open{max-height:120px;opacity:1}
+.sugg div{padding:8px 12px;font-size:13px}
+.sugg div small{display:block;color:var(--muted)}
+.sugg .hi{background:var(--blue-soft)}
+.grid2{display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:6px}
+.pop{transform:scale(.6);opacity:0;transition:transform .45s cubic-bezier(.2,1.4,.4,1),opacity .3s}
+.pop.in{transform:none;opacity:1}
+.devices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(100%,460px)}
+.dev{background:var(--surface);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;position:relative;border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.dev svg{width:46px;height:46px}
+.dev b{font-size:15px}
+.dev small{color:var(--muted);font-size:13px;line-height:1.3}
+.tick{position:absolute;right:14px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--green);transform:scale(0);transition:transform .35s cubic-bezier(.2,1.5,.4,1)}
+.tick::after{content:"";position:absolute;left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.tick.in{transform:scale(1)}
+.sheet{display:flex;gap:18px;align-items:center;width:100%;justify-content:center}
+.csv{background:var(--surface);border-radius:14px;padding:12px;font-size:13px;width:190px;border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.csv div{display:flex;justify-content:space-between;padding:5px 4px;border-bottom:1px solid var(--line);transition:opacity .3s,transform .5s}
+.csv div:last-child{border-bottom:0}
+.csv .fn{margin:0 4px 6px;font-weight:600;color:var(--muted);transition:color .3s}
+.csv.ok .fn{color:var(--green)}
+.csv div.gone{opacity:0;transform:translateX(40px)}
+.cards{display:grid;grid-template-columns:repeat(2,96px);gap:10px}
+.card{background:var(--surface);border-radius:14px;padding:12px 10px;border:1px solid var(--line);font-size:13px;min-height:74px;display:flex;flex-direction:column;justify-content:space-between}
+.card b{font-size:16px;font-variant-numeric:tabular-nums}
+.arrow{font-size:28px;color:var(--muted)}
+.printer{position:relative;width:240px;display:flex;flex-direction:column;align-items:center}
+.pbody{width:240px;height:96px;border-radius:22px;background:linear-gradient(180deg,#3a3a3c,#1d1d1f);position:relative;z-index:2}
+.pbody::after{content:"";position:absolute;left:40px;right:40px;top:20px;height:6px;border-radius:4px;background:#0d0d0e}
+.paper{width:160px;background:#fff;color:#1d1d1f;font-size:11px;line-height:1.5;padding:0 12px;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:0;overflow:hidden;transition:height 1.6s cubic-bezier(.3,.7,.3,1);margin-top:-70px;padding-top:0;z-index:1;font-family:ui-monospace,Menlo,monospace}
+.paper.out{height:178px;margin-top:-70px;padding-top:80px}
+.tags{display:flex;gap:6px;margin-top:16px}
+.tagp{width:92px;height:34px;background:var(--tag);color:var(--tag-ink);border-radius:4px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:600;transform:translateY(-14px);opacity:0;transition:all .4s;font-variant-numeric:tabular-nums}
+.tagp.in{transform:none;opacity:1}
+.team{display:flex;flex-direction:column;align-items:center;gap:18px}
+.avatars{display:flex;gap:10px}
+.av{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;transition:transform .3s,box-shadow .3s}
+.av.sel{transform:scale(1.15);box-shadow:0 0 0 3px var(--paper),0 0 0 6px var(--blue)}
+.dots{display:flex;gap:14px}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--muted);transition:all .2s}
+.dot.on{background:var(--ink);border-color:var(--ink)}
+.pad{display:grid;grid-template-columns:repeat(3,56px);gap:10px}
+.key{height:56px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid var(--line);transition:background .15s}
+.key.press{background:var(--blue-soft)}
+.hello{font-size:15px;color:var(--muted);min-height:22px;transition:color .3s}
+.hello.ok{color:var(--green);font-weight:600}
+.phone{width:240px;height:400px;border-radius:40px;background:var(--surface);border:10px solid #1d1d1f;padding:34px 12px 12px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;position:relative}
+.phone::before{content:"";position:absolute;top:8px;left:50%;width:70px;height:18px;border-radius:12px;background:#1d1d1f;transform:translateX(-50%)}
+.from{position:absolute;top:36px;left:0;right:0;text-align:center;font-size:12px;color:var(--muted)}
+.bub{align-self:flex-start;max-width:85%;background:var(--stage);color:var(--ink);border-radius:18px 18px 18px 6px;padding:9px 12px;font-size:13px;line-height:1.35;opacity:0;transform:translateY(10px) scale(.96);transition:all .35s}
+.bub.me{align-self:flex-end;background:var(--blue);color:#fff;border-radius:18px 18px 6px 18px}
+.bub.in{opacity:1;transform:none}
+.typing{align-self:flex-start;background:var(--stage);border-radius:18px;padding:10px 12px;display:none;gap:4px}
+.typing.in{display:flex}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+.counter{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;width:min(100%,480px)}
+.gar{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.g{background:var(--surface);border-radius:14px;border:1px solid var(--line);padding:12px 8px;text-align:center;font-size:13px;transition:transform .15s,border-color .2s,background .2s}
+.g svg{width:34px;height:34px;display:block;margin:0 auto 6px}
+.g.tap{transform:scale(.94);border-color:var(--blue);background:var(--blue-soft)}
+.ticket{background:var(--surface);border-radius:14px;border:1px solid var(--line);padding:12px;font-size:13px;display:flex;flex-direction:column;gap:6px;font-variant-numeric:tabular-nums}
+.ticket .li{display:flex;justify-content:space-between;opacity:0;transform:translateX(-8px);transition:all .3s}
+.ticket .li.in{opacity:1;transform:none}
+.ticket .tot{border-top:1px solid var(--line);padding-top:6px;margin-top:auto;display:flex;justify-content:space-between;font-weight:700;font-size:16px}
+.pay{margin-top:6px;height:38px;border-radius:10px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;transition:transform .15s,background .3s}
+.pay.press{transform:scale(.95)}
+.pay.paid{background:var(--green)}
+
+/* Shop types */
+.types{padding-block:40px 100px;text-align:center}
+.types h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.04em;line-height:1.05;margin:0 0 12px}
+.types > p{color:var(--muted);font-size:19px;margin:0 auto 28px;max-width:40ch}
+.seg{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:4px;border-radius:999px;background:var(--stage);margin-bottom:24px}
+.seg button{border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:40px}
+.seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.tstage{position:relative;aspect-ratio:16/8;max-width:900px;margin:0 auto;background:var(--stage);border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+.tlist{max-width:640px;margin:22px auto 0;text-align:left;display:grid;gap:8px;padding:0;list-style:none}
+.tlist li{display:flex;gap:10px;align-items:baseline;color:var(--ink)}
+.tlist li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--blue);transform:translateY(-2px)}
+.road{position:absolute;left:8%;right:8%;top:74%;height:4px;background:var(--line);border-radius:4px}
+.place{position:absolute;top:28%;width:var(--pw);text-align:center;font-size:14px;font-weight:600}
+.place .bld{height:84px;border-radius:16px;background:var(--surface);border:1px solid var(--line);margin-bottom:8px;display:flex;align-items:center;justify-content:center}
+.scene[data-name=plant]{--pw:120px}
+.bag{position:absolute;top:calc(74% - 50px);left:calc(6% + var(--pw)/2 - 23px);width:46px;height:52px;transition:left 2.2s cubic-bezier(.5,0,.3,1)}
+.ping{position:absolute;top:22%;font-size:12px;font-weight:600;color:var(--green);background:var(--green-soft);padding:4px 10px;border-radius:999px;opacity:0;transform:translate(-50%,6px);transition:all .3s;white-space:nowrap}
+.ping.in{opacity:1;transform:translate(-50%,0)}
+.floor{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;width:min(90%,620px)}
+.m{aspect-ratio:1;border-radius:18px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:var(--muted);transition:all .3s;font-variant-numeric:tabular-nums}
+.m .drum{width:46%;aspect-ratio:1;border-radius:50%;border:3px solid var(--line);transition:border-color .3s}
+.m.run{color:var(--ink)}
+.m.run .drum{border-color:var(--blue);border-top-color:transparent;animation:spin 1.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.map{position:absolute;inset:0}
+.map svg{width:100%;height:100%}
+.find{display:flex;flex-direction:column;gap:12px;width:min(90%,560px)}
+.find .f{height:46px;font-size:16px}
+.pieces{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;font-size:12px;transition:all .3s}
+.pc b{display:block;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.pc.hit{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);transform:translateY(-4px)}
+.help{border-top:1px solid var(--line);padding-block:48px 72px;text-align:center;color:var(--muted)}
+.help h2{color:var(--ink);font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+
+@media (max-width:860px){
+  .bar nav{display:none}
+  .tour{grid-template-columns:minmax(0,1fr);gap:0}
+  .stage-col{order:-1;position:sticky;top:calc(env(safe-area-inset-top,0px) + 62px);z-index:10;padding-block:8px;background:var(--paper)}
+  .stage{position:relative;top:0;aspect-ratio:16/11;border-radius:24px}
+  .scene{padding:14px;transform-origin:center}
+  .scene > *{zoom:.62}
+  .step{padding-block:12vh;min-height:50vh}
+  .tstage{aspect-ratio:4/3;border-radius:24px}
+  .tstage .scene > *{zoom:.8}
+  .tstage .scene[data-name=plant] > *{zoom:1}
+  .scene[data-name=plant]{--pw:88px}
+  .place .bld{height:52px}
+  .place{font-size:13px;top:22%}
+  .ping{font-size:10px;padding:3px 7px;top:7%}
+  .scene[data-name=plant] .road{top:72%}
+  .scene[data-name=plant] .bag{top:calc(72% - 50px)}
+  .seg{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;justify-content:flex-start;scrollbar-width:none}
+  .seg button{flex:none;font-size:14px;padding:8px 12px}
+  .caption{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Start here</a>
-  <nav class="jump" aria-label="Sections"><a href="#first-week">Your first week</a><a href="#your-shop">Your kind of shop</a><a href="#help">Help</a></nav>
-</header>
-<h1>Welcome to Fold POS</h1>
-<p class="intro">Here is everything to get your shop running, in order. Most stores are taking real orders the same day; the times are rough guides.</p>
-<section id="first-week"><h2>Your first week</h2><ol class="steps">
-<li><h3>Create your account<span class="time">2 min</span></h3><p>Sign up at <a href="https://pos.foldpos.com/signup">pos.foldpos.com/signup</a>. Pick everything your shop does (laundromat, wash &amp; fold, dry cleaning, alterations); the POS shows you only what fits.</p></li>
-<li><h3>Check your hardware<span class="time">5 min</span></h3><p>Most shops already have what they need. The <a href="/hardware">hardware guide</a> lists what each kind of shop adds and where to buy it.</p></li>
-<li><h3>Set up your store<span class="time">20 min</span></h3><p>The <a href="/setup">seven-step setup guide</a> walks through the browser, your price list, the printer, staff, customer texts and your first order.</p></li>
-<li><h3>Connect your printers<span class="time">10 min</span></h3><p>Receipt and tag printers work through Chrome, or through the free <a href="/download">Fold print helper</a> on Windows and other browsers. See <a href="/printers">printers that work</a>.</p></li>
-<li><h3>Bring your data over<span class="time">15 min</span></h3><p>Import your price list and customers in Settings › Import data, from Cents, CleanCloud or a spreadsheet. Rather we do it? Email us the export and we’ll import it for you.</p></li>
-<li><h3>Add your staff<span class="time">10 min</span></h3><p>Add each employee in Employees with their own login, and give each a 4-digit code so they can unlock the counter between customers.</p></li>
-<li><h3>Turn on customer texts<span class="time">5 min</span></h3><p>Customers get a text when their order is ready, and can book pickups by text or online. Set it up in Settings › Customer texts.</p></li>
-<li><h3>Take your first real order<span class="time">5 min</span></h3><p>Check in a garment, print the ticket and tags, and check it out. The first-login tour shows you around the screens.</p></li>
-</ol></section>
-<section id="your-shop"><h2>For your kind of shop</h2><p class="lead">Do these once the basics are in place. Skip what doesn’t apply.</p><div class="types">
-<div><h3>Dry cleaners</h3><ul>
-<li>Set up the tag printer and run <b>Calibrate cutter</b> once (Settings › Receipts).</li>
-<li>Every order has a <b>Pieces</b> view; <b>Find a piece</b> on Orders finds any tag.</li></ul></div>
-<div><h3>Laundromats</h3><ul>
-<li>Add your machines and lay out the floor in Machine management.</li>
-<li>Connect your machine payment system if you use one.</li></ul></div>
-<div><h3>Plants and drop stores</h3><ul>
-<li>Link your shops in Settings › Plant &amp; drop stores, and set the plant’s rates.</li>
-<li>See how bags move: <a href="/follow-the-bag">Follow the bag</a>.</li>
-<li>Drivers install the Fold POS Driver app on their phone.</li></ul></div>
-<div><h3>Pickup &amp; delivery</h3><ul>
-<li>Set your service area and pickup windows.</li>
-<li>Read <a href="/pickup-delivery">how delivery works</a>; drivers use the Fold POS Driver app.</li></ul></div>
-</div></section>
-<section id="help"><h2>Help</h2><p class="lead">Answers to common questions are in the <a href="/help">help center</a>. Stuck on anything? Email <a href="mailto:contact@foldpos.com?subject=Getting%20started%20with%20Fold%20POS">contact@foldpos.com</a> and we’ll do it with you.</p></section>
-</div>
+
+
+<header class="bar"><div class="bar-in">
+  <a class="logo" href="https://foldpos.com/">Fold <span>POS</span></a>
+  <nav aria-label="Page"><a href="#tour">First day</a><a href="#types">Your kind of shop</a><a href="/hardware">Hardware</a><a href="#help">Help</a></nav>
+  <a class="cta" href="https://pos.foldpos.com/signup">Create your account</a>
+</div></header>
+
+<main>
+<section class="hero wrap">
+  <h1>Open on Fold POS today.</h1>
+  <p>Seven short steps from sign-up to your first real order. Watch each one, then do it.</p>
+  <a class="cta" href="#tour">Start the tour</a>
+  <div class="meta">About an hour in all · <span class="progress" id="progress">0 of 7 done</span></div>
+</section>
+
+<section class="tour wrap" id="tour" aria-label="Your first day, step by step">
+  <div class="steps" id="steps">
+    <article class="step" data-scene="account">
+      <p class="n">Step 1 of 7</p>
+      <h2>Create your account.</h2>
+      <p>Your name, your shop and what it does. Start typing the address and pick it from the list: street, city, state and ZIP fill themselves.</p>
+      <div class="row"><a href="https://pos.foldpos.com/signup">Sign up</a><span class="time">2 minutes</span><button class="done" type="button" data-step="1"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="hardware">
+      <p class="n">Step 2 of 7</p>
+      <h2>Check what you already have.</h2>
+      <p>A computer with Chrome, a receipt printer, a cash drawer and your card terminal. Most shops own all four. Dry cleaners add a tag printer and a scanner.</p>
+      <div class="row"><a href="/hardware">See the hardware guide</a><span class="time">5 minutes</span><button class="done" type="button" data-step="2"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="prices">
+      <p class="n">Step 3 of 7</p>
+      <h2>Bring your price list over.</h2>
+      <p>Import it from Cents, CleanCloud or a spreadsheet in Settings › Import data. Every garment becomes a button at the counter.</p>
+      <div class="row"><a href="mailto:contact@foldpos.com?subject=Import%20my%20prices">Or have us do it</a><span class="time">15 minutes</span><button class="done" type="button" data-step="3"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="printers">
+      <p class="n">Step 4 of 7</p>
+      <h2>Connect your printers.</h2>
+      <p>Plug in the receipt printer and print a test. Tag printers cut one 1 × 3 in tag per piece. On Windows, Edge, Firefox or Safari, the free print helper does the connecting.</p>
+      <div class="row"><a href="/download">Get the print helper</a><span class="time">10 minutes</span><button class="done" type="button" data-step="4"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="staff">
+      <p class="n">Step 5 of 7</p>
+      <h2>Add your staff.</h2>
+      <p>Everyone gets their own login and a 4-digit code. Between customers, a code unlocks the counter as that person, so every order shows who took it.</p>
+      <div class="row"><span class="time">10 minutes</span><button class="done" type="button" data-step="5"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="texts">
+      <p class="n">Step 6 of 7</p>
+      <h2>Let customers know it's ready.</h2>
+      <p>Turn on customer texts in Settings › Customer texts. Customers hear the moment their order is ready, and can book a pickup by text.</p>
+      <div class="row"><span class="time">5 minutes</span><button class="done" type="button" data-step="6"><span class="box"></span>Done</button></div>
+    </article>
+    <article class="step" data-scene="order">
+      <p class="n">Step 7 of 7</p>
+      <h2>Take your first real order.</h2>
+      <p>Tap the garments, take payment, and the ticket and tags print. That's a normal day from here on.</p>
+      <div class="row"><a href="https://pos.foldpos.com/">Open the POS</a><span class="time">5 minutes</span><button class="done" type="button" data-step="7"><span class="box"></span>Done</button></div>
+    </article>
+  </div>
+  <div class="stage-col"><div class="stage" id="stage" role="img" aria-label="Animated example of the current step">
+
+    <div class="scene" data-name="account"><div class="win">
+      <h4>Tell us about your shop</h4>
+      <div class="f" data-type="Sonia's Cleaners" data-k="shop"><span class="ph">Shop name</span></div>
+      <div class="chips"><span class="chip" data-c="1">Laundromat</span><span class="chip" data-c="2">Wash &amp; fold</span><span class="chip" data-c="3">Dry cleaning</span><span class="chip" data-c="4">Alterations</span></div>
+      <div class="f" data-type="4721 Gea" data-k="addr"><span class="ph">Where is your shop?</span></div>
+      <div class="sugg"><div class="hi">4721 Geary Blvd<small>San Francisco, CA</small></div><div>4721 Geary Way<small>Mountain View, CA</small></div></div>
+      <div class="f" data-k="street"><span class="ph">Street address</span></div>
+      <div class="grid2"><div class="f" data-k="city"><span class="ph">City</span></div><div class="f" data-k="state"><span class="ph">State</span></div><div class="f" data-k="zip"><span class="ph">ZIP</span></div></div>
+    </div></div>
+
+    <div class="scene" data-name="hardware"><div class="devices">
+      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="5" y="9" width="38" height="24" rx="3"/><path d="M18 41h12M24 33v8"/></svg><b>Computer with Chrome</b><small>Any PC or Mac from the last 5 years</small></div>
+      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="7" y="18" width="34" height="16" rx="4"/><path d="M15 18V8h18v10M15 34v6h18v-6"/></svg><b>Receipt printer</b><small>Thermal, 80 mm. Epson, Star, Bixolon</small></div>
+      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="6" y="20" width="36" height="18" rx="3"/><path d="M6 28h36M20 33h8"/></svg><b>Cash drawer</b><small>Plugs into the receipt printer</small></div>
+      <div class="dev pop"><span class="tick"></span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="13" y="5" width="22" height="38" rx="4"/><path d="M18 13h12v8H18zM18 28h2M23 28h2M28 28h2M18 33h2M23 33h2M28 33h2"/></svg><b>Card terminal</b><small>The one you already use</small></div>
+    </div></div>
+
+    <div class="scene" data-name="prices"><div class="sheet">
+      <div class="csv"><p class="fn">prices.csv</p><div><span>Dress shirt</span><span>4.50</span></div><div><span>2-piece suit</span><span>16.00</span></div><div><span>Pants</span><span>7.25</span></div><div><span>Dress</span><span>14.00</span></div></div>
+      <span class="arrow" aria-hidden="true">›</span>
+      <div class="cards"><div class="card pop">Dress shirt<b>$4.50</b></div><div class="card pop">2-piece suit<b>$16.00</b></div><div class="card pop">Pants<b>$7.25</b></div><div class="card pop">Dress<b>$14.00</b></div></div>
+    </div></div>
+
+    <div class="scene" data-name="printers"><div class="printer">
+      <div class="pbody"></div>
+      <div class="paper"><b>SONIA'S CLEANERS</b><br>DC-0001 · Dana W.<br>Dress shirt ×2 &nbsp; 9.00<br>Pants &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7.25<br><b>Ready Fri after 5 PM</b></div>
+      <div class="tags"><div class="tagp">DC-0001 1/3</div><div class="tagp">DC-0001 2/3</div><div class="tagp">DC-0001 3/3</div></div>
+    </div></div>
+
+    <div class="scene" data-name="staff"><div class="team">
+      <div class="avatars"><span class="av" style="background:#ff9f0a">S</span><span class="av" style="background:#30b0c7">M</span><span class="av" style="background:#af52de">J</span><span class="av" style="background:#34c759">R</span></div>
+      <div class="hello">Enter your code</div>
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="pad"><span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span><span class="key">5</span><span class="key">6</span><span class="key">7</span><span class="key">8</span><span class="key">9</span></div>
+    </div></div>
+
+    <div class="scene" data-name="texts"><div class="phone">
+      <div class="from">Sonia's Cleaners</div>
+      <div class="bub">Hi Dana, we got your order DC-0001: 3 pieces, ready Fri after 5 PM.</div>
+      <div class="typing"><i></i><i></i><i></i></div>
+      <div class="bub">Your order DC-0001 is ready for pickup. See you soon!</div>
+      <div class="bub me">Thank you! Coming at 6</div>
+    </div></div>
+
+    <div class="scene" data-name="order"><div class="counter">
+      <div class="gar">
+        <div class="g" data-i="0"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 6l6 4 6-4 8 5-3 7-4-2v18H13V16l-4 2-3-7z"/></svg>Dress shirt</div>
+        <div class="g" data-i="1"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 6h16l2 28h-7l-3-18-3 18h-7z"/></svg>Pants</div>
+        <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M15 5h10l-2 7 9 22H8l9-22z"/></svg>Dress</div>
+        <div class="g"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 6l7 6 7-6 7 6-2 22H8L6 12z"/></svg>Blazer</div>
+      </div>
+      <div class="ticket">
+        <b>New order</b>
+        <div class="li"><span>Dress shirt</span><span>4.50</span></div>
+        <div class="li"><span>Dress shirt</span><span>4.50</span></div>
+        <div class="li"><span>Pants</span><span>7.25</span></div>
+        <div class="tot"><span>Total</span><span class="sum">$0.00</span></div>
+        <div class="pay">Pay</div>
+      </div>
+    </div></div>
+
+    <button class="replay" type="button" id="replay">Replay</button>
+  </div></div>
+</section>
+
+<section class="types wrap" id="types" aria-labelledby="types-h">
+  <h2 id="types-h">Made for your kind of shop.</h2>
+  <p>Once the basics are in, set up what's yours.</p>
+  <div class="seg" role="tablist" aria-label="Kind of shop">
+    <button role="tab" aria-selected="true" aria-controls="tstage" data-t="dry" id="t-dry">Dry cleaners</button>
+    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="laundromat" id="t-laundromat">Laundromats</button>
+    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="plant" id="t-plant">Plants &amp; drop stores</button>
+    <button role="tab" aria-selected="false" aria-controls="tstage" data-t="delivery" id="t-delivery">Pickup &amp; delivery</button>
+  </div>
+  <div class="tstage" id="tstage" role="tabpanel">
+    <div class="scene" data-name="dry"><div class="find">
+      <div class="f focus" data-type="DC-0042-3"><span class="ph">Find a piece: scan a tag or type it</span></div>
+      <div class="pieces"><div class="pc"><b>1/4</b>Dress shirt</div><div class="pc"><b>2/4</b>Dress shirt</div><div class="pc"><b>3/4</b>Blazer · navy</div><div class="pc"><b>4/4</b>Pants</div></div>
+    </div></div>
+    <div class="scene" data-name="laundromat"><div class="floor">
+      <div class="m"><span class="drum"></span>W1</div><div class="m"><span class="drum"></span>W2</div><div class="m"><span class="drum"></span>W3</div><div class="m"><span class="drum"></span>W4</div><div class="m"><span class="drum"></span>D1</div><div class="m"><span class="drum"></span>D2</div>
+      <div class="m"><span class="drum"></span>W5</div><div class="m"><span class="drum"></span>W6</div><div class="m"><span class="drum"></span>W7</div><div class="m"><span class="drum"></span>W8</div><div class="m"><span class="drum"></span>D3</div><div class="m"><span class="drum"></span>D4</div>
+    </div></div>
+    <div class="scene" data-name="plant">
+      <div class="road"></div>
+      <div class="place" style="left:6%"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 18h32v20H6zM4 18l4-10h28l4 10"/></svg></div>Drop store</div>
+      <div class="place" style="left:calc(50% - var(--pw)/2)"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 30V14h22v16M26 20h8l6 6v4H26"/><circle cx="12" cy="32" r="4"/><circle cx="32" cy="32" r="4"/></svg></div>Driver</div>
+      <div class="place" style="right:6%"><div class="bld"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 38V20l10-6v6l10-6v6l10-6v24z"/></svg></div>Plant</div>
+      <svg class="bag" viewBox="0 0 46 52" aria-hidden="true"><path d="M9 16h28l4 32H5z" fill="var(--blue)"/><path d="M16 16c0-10 14-10 14 0" stroke="var(--blue)" stroke-width="3" fill="none"/><rect x="14" y="26" width="18" height="12" rx="2" fill="#fff"/></svg>
+      <div class="ping" style="left:calc(6% + var(--pw)/2)">Sealed · 6 pieces</div>
+      <div class="ping" style="left:50%">Picked up</div>
+      <div class="ping" style="left:calc(94% - var(--pw)/2)">Received · 6 of 6</div>
+    </div>
+    <div class="scene" data-name="delivery"><div class="map"><svg viewBox="0 0 900 450" aria-hidden="true">
+      <g stroke="var(--line)" stroke-width="10" fill="none"><path d="M0 120h900M0 300h900M200 0v450M520 0v450M760 0v450"/></g>
+      <path id="route" d="M120 300H200V120H520V300H760V120" fill="none" stroke="var(--blue)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1700" stroke-dashoffset="1700"/>
+      <g font-size="15" font-weight="600" fill="var(--ink)" font-family="inherit">
+        <circle cx="120" cy="300" r="12" fill="var(--ink)"/><text x="80" y="340">Shop</text>
+        <circle cx="200" cy="180" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="215" y="185">1 · Pickup</text>
+        <circle cx="440" cy="120" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="400" y="100">2 · Delivery</text>
+        <circle cx="520" cy="260" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="535" y="265">3 · Pickup</text>
+        <circle cx="760" cy="160" r="10" fill="var(--surface)" stroke="var(--blue)" stroke-width="4"/><text x="680" y="100">4 · Delivery</text>
+      </g>
+    </svg></div></div>
+    <button class="replay" type="button" id="treplay">Replay</button>
+  </div>
+  <ul class="tlist" id="tlist"></ul>
+</section>
+
+<section class="help wrap" id="help">
+  <h2>Stuck on anything?</h2>
+  <p>Answers are in the <a href="/help">help center</a>. Or email <a href="mailto:contact@foldpos.com?subject=Getting%20started%20with%20Fold%20POS">contact@foldpos.com</a> and we'll do it with you. Watch how bags move between a plant and its stores in <a href="/follow-the-bag">Follow the bag</a>.</p>
+</section>
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Each stage keeps its own timer list, so the tour and the shop-type demo never cancel each other.
+  var timers = [];
+  function later(ms, fn){ timers.push(setTimeout(fn, reduce ? 0 : ms)); }
+  function $(root, s){ return root.querySelector(s); }
+  function $$(root, s){ return Array.prototype.slice.call(root.querySelectorAll(s)); }
+
+  // Type text into a fake field, one character at a time.
+  function type(field, text, start, speed, done){
+    var t = start;
+    field.classList.add('focus');
+    for (var i = 1; i <= text.length; i++) (function(n){
+      later(t, function(){ field.innerHTML = text.slice(0, n).replace(/&/g,'&amp;').replace(/</g,'&lt;') + '<span class="caret"></span>'; });
+      t += speed;
+    })(i);
+    later(t + 150, function(){ field.innerHTML = field.textContent; field.classList.remove('focus'); if (done) done(); });
+    return t + 150;
+  }
+  function fill(field, text){ field.textContent = text; field.classList.remove('filled'); void field.offsetWidth; field.classList.add('filled'); }
+
+  var scenes = {
+    account: function(s){
+      var shop = $(s,'[data-k=shop]'), addr = $(s,'[data-k=addr]'), sugg = $(s,'.sugg');
+      var ph = {shop:'Shop name', addr:'Where is your shop?', street:'Street address', city:'City', state:'State', zip:'ZIP'};
+      $$(s,'.f').forEach(function(f){ f.innerHTML = '<span class="ph">'+ph[f.dataset.k]+'</span>'; f.className='f'; });
+      $$(s,'.chip').forEach(function(c){ c.classList.remove('on'); }); sugg.classList.remove('open');
+      var t = type(shop, "Sonia's Cleaners", 300, 55);
+      later(t + 200, function(){ $(s,'[data-c="2"]').classList.add('on'); });
+      later(t + 500, function(){ $(s,'[data-c="3"]').classList.add('on'); });
+      later(t + 800, function(){ $(s,'[data-c="4"]').classList.add('on'); });
+      var t2 = type(addr, '4721 Gea', t + 1200, 90);
+      later(t2, function(){ addr.classList.add('focus'); sugg.classList.add('open'); });
+      later(t2 + 1100, function(){
+        sugg.classList.remove('open'); addr.classList.remove('focus');
+        addr.textContent = '4721 Geary Blvd, San Francisco, CA';
+        fill($(s,'[data-k=street]'), '4721 Geary Boulevard');
+      });
+      later(t2 + 1300, function(){ fill($(s,'[data-k=city]'), 'San Francisco'); });
+      later(t2 + 1500, function(){ fill($(s,'[data-k=state]'), 'California'); });
+      later(t2 + 1700, function(){ fill($(s,'[data-k=zip]'), '94118'); });
+    },
+    hardware: function(s){
+      var d = $$(s,'.dev'); d.forEach(function(x){ x.classList.remove('in'); $(x,'.tick').classList.remove('in'); });
+      d.forEach(function(x,i){ later(200 + i*220, function(){ x.classList.add('in'); }); later(1300 + i*300, function(){ $(x,'.tick').classList.add('in'); }); });
+    },
+    prices: function(s){
+      var rows = $$(s,'.csv div'), cards = $$(s,'.card');
+      var csv = $(s,'.csv'), fn = $(s,'.fn'); csv.classList.remove('ok'); fn.textContent = 'prices.csv';
+      rows.forEach(function(r){ r.classList.remove('gone'); }); cards.forEach(function(c){ c.classList.remove('in'); });
+      later(600 + rows.length*450, function(){ csv.classList.add('ok'); fn.textContent = 'prices.csv · 4 imported'; });
+      rows.forEach(function(r,i){ later(600 + i*450, function(){ r.classList.add('gone'); cards[i].classList.add('in'); }); });
+    },
+    printers: function(s){
+      var p = $(s,'.paper'), tags = $$(s,'.tagp');
+      p.classList.remove('out'); tags.forEach(function(t){ t.classList.remove('in'); });
+      later(400, function(){ p.classList.add('out'); });
+      tags.forEach(function(t,i){ later(2200 + i*500, function(){ t.classList.add('in'); }); });
+    },
+    staff: function(s){
+      var av = $$(s,'.av'), dots = $$(s,'.dot'), keys = $$(s,'.key'), hello = $(s,'.hello');
+      av.forEach(function(a){ a.classList.remove('sel'); }); dots.forEach(function(d){ d.classList.remove('on'); });
+      hello.textContent = 'Enter your code'; hello.classList.remove('ok');
+      [3,7,1,9].forEach(function(k,i){
+        later(500 + i*420, function(){ keys[k-1].classList.add('press'); dots[i].classList.add('on'); });
+        later(700 + i*420, function(){ keys[k-1].classList.remove('press'); });
+      });
+      later(2400, function(){ av[1].classList.add('sel'); hello.textContent = 'Unlocked. Hi, Maria'; hello.classList.add('ok'); });
+    },
+    texts: function(s){
+      var b = $$(s,'.bub'), ty = $(s,'.typing');
+      b.forEach(function(x){ x.classList.remove('in'); }); ty.classList.remove('in');
+      later(400, function(){ b[0].classList.add('in'); });
+      later(1600, function(){ ty.classList.add('in'); });
+      later(2600, function(){ ty.classList.remove('in'); b[1].classList.add('in'); });
+      later(3700, function(){ b[2].classList.add('in'); });
+    },
+    order: function(s){
+      var g = $$(s,'.g'), li = $$(s,'.li'), sum = $(s,'.sum'), pay = $(s,'.pay');
+      li.forEach(function(l){ l.classList.remove('in'); }); sum.textContent = '$0.00'; pay.textContent = 'Pay'; pay.classList.remove('paid');
+      var totals = ['$4.50','$9.00','$16.25'];
+      [0,0,1].forEach(function(gi,i){
+        later(500 + i*650, function(){ g[gi].classList.add('tap'); li[i].classList.add('in'); sum.textContent = totals[i]; });
+        later(700 + i*650, function(){ g[gi].classList.remove('tap'); });
+      });
+      later(2700, function(){ pay.classList.add('press'); });
+      later(2850, function(){ pay.classList.remove('press'); pay.classList.add('paid'); pay.textContent = 'Paid · tickets printing'; });
+    },
+    dry: function(s){
+      var f = $(s,'.f'), pcs = $$(s,'.pc');
+      f.innerHTML = '<span class="ph">Find a piece: scan a tag or type it</span>'; pcs.forEach(function(p){ p.classList.remove('hit'); });
+      var t = type(f, 'DC-0042-3', 400, 70);
+      later(t + 200, function(){ pcs[2].classList.add('hit'); });
+    },
+    laundromat: function(s){
+      var m = $$(s,'.m'); m.forEach(function(x){ x.classList.remove('run'); });
+      [0,2,3,5,6,9,10].forEach(function(i,n){ later(300 + n*260, function(){ m[i].classList.add('run'); }); });
+    },
+    plant: function(s){
+      var bag = $(s,'.bag'), p = $$(s,'.ping');
+      bag.style.transition = 'none'; bag.style.left = ''; void bag.offsetWidth; bag.style.transition = '';
+      p.forEach(function(x){ x.classList.remove('in'); });
+      later(300, function(){ p[0].classList.add('in'); });
+      later(1300, function(){ bag.style.left = 'calc(50% - 23px)'; });
+      later(3500, function(){ p[1].classList.add('in'); });
+      later(4300, function(){ bag.style.left = 'calc(94% - var(--pw)/2 - 23px)'; });
+      later(6500, function(){ p[2].classList.add('in'); });
+    },
+    delivery: function(s){
+      var r = $(s,'#route');
+      r.style.transition = 'none'; r.style.strokeDashoffset = 1700; void r.getBoundingClientRect();
+      later(300, function(){ r.style.transition = 'stroke-dashoffset 4s ease-in-out'; r.style.strokeDashoffset = 0; });
+    }
+  };
+
+  function show(stageEl, name){
+    (stageEl._timers || []).forEach(clearTimeout);
+    timers = stageEl._timers = [];
+    $$(stageEl,'.scene').forEach(function(sc){ sc.classList.toggle('show', sc.dataset.name === name); });
+    var sc = $(stageEl,'.scene[data-name="'+name+'"]');
+    if (sc && scenes[name]) scenes[name](sc);
+  }
+
+  // Tour: the step in the middle of the screen drives the stage.
+  var stage = document.getElementById('stage'), steps = $$(document,'.step'), current = null;
+  function activate(step){
+    if (step === current) return;
+    current = step;
+    steps.forEach(function(x){ x.classList.toggle('on', x === step); });
+    show(stage, step.dataset.scene);
+  }
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) activate(e.target); });
+    }, {rootMargin:'-45% 0px -45% 0px'});
+    steps.forEach(function(s){ io.observe(s); });
+  }
+  activate(steps[0]);
+  document.getElementById('replay').addEventListener('click', function(){ current && show(stage, current.dataset.scene); });
+
+  // Done buttons, remembered in this browser only.
+  var KEY = 'foldpos-start-done', done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ done = {}; }
+  var btns = $$(document,'.done'), prog = document.getElementById('progress');
+  function render(){
+    var n = 0;
+    btns.forEach(function(b){ var on = !!done[b.dataset.step]; b.setAttribute('aria-pressed', on); b.lastChild.textContent = on ? 'Done' : 'Mark done'; if (on) n++; });
+    prog.textContent = n + ' of 7 done';
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){
+    done[b.dataset.step] = !done[b.dataset.step];
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+    render();
+  }); });
+  render();
+
+  // Shop types
+  var tstage = document.getElementById('tstage'), tabs = $$(document,'.seg button'), tlist = document.getElementById('tlist'), curT = 'dry';
+  var lists = {
+    dry: ['Set up the tag printer and run <b>Calibrate cutter</b> once in Settings › Receipts.','Every order has a <b>Pieces</b> view. <b>Find a piece</b> on Orders finds any tag in seconds.'],
+    laundromat: ['Add your machines and lay out the floor in Machine management.','Connect your machine payment system if you use one, and see which machines are running at a glance.'],
+    plant: ['Link your shops in Settings › Plant &amp; drop stores, and set the plant’s rates.','Drivers scan each bag with the Fold POS Driver app. <a href="/follow-the-bag">Follow the bag</a> shows the whole trip.'],
+    delivery: ['Set your service area and pickup windows; customers can book online or by text.','Routes build themselves on the map, and drivers follow them in the Fold POS Driver app. <a href="/pickup-delivery">How delivery works</a>.']
+  };
+  function setT(t){
+    curT = t;
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.t === t); });
+    tstage.setAttribute('aria-labelledby', 't-' + t);
+    tlist.innerHTML = lists[t].map(function(x){ return '<li><span>'+x+'</span></li>'; }).join('');
+    show(tstage, t);
+  }
+  tabs.forEach(function(b,i){
+    b.addEventListener('click', function(){ setT(b.dataset.t); });
+    b.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); setT(n.dataset.t); }
+    });
+  });
+  document.getElementById('treplay').addEventListener('click', function(){ show(tstage, curT); });
+  // The shop-type stage replays when it scrolls into view.
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) show(tstage, curT); }); }, {threshold:.5}).observe(tstage);
+  }
+  setT('dry');
+})();
+</script>
+
 </body>
 </html>
