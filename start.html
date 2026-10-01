@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Start here — Fold POS</title>
+<meta name="description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<link rel="canonical" href="https://foldpos.com/start">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Start here — Fold POS">
+<meta property="og:description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/start">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start here — Fold POS">
+<meta name="twitter:description" content="Your first week on Fold POS, in order: account, hardware, store setup, printers, your data, staff, customer texts, and what to set up for your kind of shop.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta name="theme-color" content="#1e5eff">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Same tokens as /setup; one column of sections, each a short lead and a table that scrolls sideways on phones. */
+:root{
+  --ground:#f3f5f8; --card:#ffffff; --ink:#0b1b2b; --muted:#5c6975; --line:#dfe4ea;
+  --accent:#1e5eff; --accent-soft:#e9efff;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#0f1419; --card:#171d24; --ink:#e9eef3; --muted:#98a4b1; --line:#2a323c; --accent-soft:#12283f; color-scheme:dark;
+} }
+:root[data-theme="dark"]{ --ground:#0f1419; --card:#171d24; --ink:#e9eef3; --muted:#98a4b1; --line:#2a323c; --accent-soft:#12283f; color-scheme:dark; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 18px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:inherit;text-decoration:none}
+.brand .pill{background:var(--accent);color:#fff;font-size:11px;padding:2px 7px;border-radius:999px;letter-spacing:.06em}
+.jump{display:flex;flex-wrap:wrap;gap:6px}
+.jump a{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--accent-soft);padding:5px 11px;border-radius:999px}
+h1{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:32px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+.intro{max-width:65ch;margin:0 0 30px;font-size:17px}
+section{margin:0 0 34px}
+h2{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+.lead{margin:0 0 14px;color:var(--muted);max-width:70ch}
+.lead a,td a,.know a{color:var(--accent);font-weight:600}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+thead th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--ground)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+tbody th{font-weight:700;width:18%}
+.know{margin:0;padding-left:20px;max-width:75ch;display:grid;gap:8px}
+.note{color:var(--muted);font-size:14px;margin:14px 0 0}
+.help{margin:30px 0 0;font-size:14px;color:var(--muted)}
+.help a{color:var(--accent);font-weight:700;text-decoration:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+</style>
+<style>
+.steps{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 62px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.steps h3{margin:0 0 4px;font-size:17px}
+.steps p{margin:0;color:var(--muted)}
+.steps a,.types a{color:var(--accent);font-weight:600}
+.time{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;vertical-align:2px}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 34px}
+.types div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.types h3{margin:0 0 6px;font-size:17px}
+.types ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Start here</a>
+  <nav class="jump" aria-label="Sections"><a href="#first-week">Your first week</a><a href="#your-shop">Your kind of shop</a><a href="#help">Help</a></nav>
+</header>
+<h1>Welcome to Fold POS</h1>
+<p class="intro">Here is everything to get your shop running, in order. Most stores are taking real orders the same day; the times are rough guides.</p>
+<section id="first-week"><h2>Your first week</h2><ol class="steps">
+<li><h3>Create your account<span class="time">2 min</span></h3><p>Sign up at <a href="https://pos.foldpos.com/signup">pos.foldpos.com/signup</a>. Pick everything your shop does (laundromat, wash &amp; fold, dry cleaning, alterations); the POS shows you only what fits.</p></li>
+<li><h3>Check your hardware<span class="time">5 min</span></h3><p>Most shops already have what they need. The <a href="/hardware">hardware guide</a> lists what each kind of shop adds and where to buy it.</p></li>
+<li><h3>Set up your store<span class="time">20 min</span></h3><p>The <a href="/setup">seven-step setup guide</a> walks through the browser, your price list, the printer, staff, customer texts and your first order.</p></li>
+<li><h3>Connect your printers<span class="time">10 min</span></h3><p>Receipt and tag printers work through Chrome, or through the free <a href="/download">Fold print helper</a> on Windows and other browsers. See <a href="/printers">printers that work</a>.</p></li>
+<li><h3>Bring your data over<span class="time">15 min</span></h3><p>Import your price list and customers in Settings › Import data, from Cents, CleanCloud or a spreadsheet. Rather we do it? Email us the export and we’ll import it for you.</p></li>
+<li><h3>Add your staff<span class="time">10 min</span></h3><p>Add each employee in Employees with their own login, and give each a 4-digit code so they can unlock the counter between customers.</p></li>
+<li><h3>Turn on customer texts<span class="time">5 min</span></h3><p>Customers get a text when their order is ready, and can book pickups by text or online. Set it up in Settings › Customer texts.</p></li>
+<li><h3>Take your first real order<span class="time">5 min</span></h3><p>Check in a garment, print the ticket and tags, and check it out. The first-login tour shows you around the screens.</p></li>
+</ol></section>
+<section id="your-shop"><h2>For your kind of shop</h2><p class="lead">Do these once the basics are in place. Skip what doesn’t apply.</p><div class="types">
+<div><h3>Dry cleaners</h3><ul>
+<li>Set up the tag printer and run <b>Calibrate cutter</b> once (Settings › Receipts).</li>
+<li>Every order has a <b>Pieces</b> view; <b>Find a piece</b> on Orders finds any tag.</li></ul></div>
+<div><h3>Laundromats</h3><ul>
+<li>Add your machines and lay out the floor in Machine management.</li>
+<li>Connect your machine payment system if you use one.</li></ul></div>
+<div><h3>Plants and drop stores</h3><ul>
+<li>Link your shops in Settings › Plant &amp; drop stores, and set the plant’s rates.</li>
+<li>See how bags move: <a href="/follow-the-bag">Follow the bag</a>.</li>
+<li>Drivers install the Fold POS Driver app on their phone.</li></ul></div>
+<div><h3>Pickup &amp; delivery</h3><ul>
+<li>Set your service area and pickup windows.</li>
+<li>Read <a href="/pickup-delivery">how delivery works</a>; drivers use the Fold POS Driver app.</li></ul></div>
+</div></section>
+<section id="help"><h2>Help</h2><p class="lead">Answers to common questions are in the <a href="/help">help center</a>. Stuck on anything? Email <a href="mailto:contact@foldpos.com?subject=Getting%20started%20with%20Fold%20POS">contact@foldpos.com</a> and we’ll do it with you.</p></section>
+</div>
+</body>
+</html>
