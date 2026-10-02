@@ -36,12 +36,12 @@ Dos recibos, un toque: una copia para el cliente y otra para la tienda se imprim
 
 ### Área de autoservicio
 
-**Su local se convierte en un mapa en vivo. Cada máquina guarda su historial.** Cada lavadora y secadora aparece en un plano que muestra cuál está libre, cuál está en uso y cuánto le falta — para su personal en el mostrador y para el cliente que pregunta "¿está libre la 12?". Toque cualquier máquina y ahí está toda su historia: ciclos, reparaciones, el técnico que la arregló la última vez.
+**Su local se convierte en un mapa en vivo. Cada máquina guarda su historial.** Cada lavadora y secadora aparece en un plano. Asigne una máquina desde el mostrador y el plano muestra cuál está libre, cuál está en uso y cuánto le falta — para su personal y para el cliente que pregunta "¿está libre la 12?". Toque cualquier máquina y ahí está toda su historia: ciclos, reparaciones, el técnico que la arregló la última vez.
 
 - Plano armado con sus marcas, tamaños, torres y zonas reales
 - Ciclos por máquina por día — vea qué máquinas se pagan solas
-- Encienda una máquina con un código QR o una ficha; agregue tiempo desde el mostrador
-- Las cargas de lavado y doblado muestran qué pedido está en cada máquina
+- Asigne una máquina desde el mostrador con el tiempo y el tipo de lavado; agregue 15 minutos o termínela desde la misma pantalla
+- Cada máquina en uso muestra de quién es la carga
 - Historial de reparaciones por máquina con costo y tiempo fuera de servicio; agende al técnico desde la misma pantalla
 - Recordatorios de mantenimiento preventivo según los ciclos realizados, no solo por calendario
 

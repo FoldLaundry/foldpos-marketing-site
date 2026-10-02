@@ -30,6 +30,7 @@ Choose "Dry cleaner" at sign-up and this is the POS you see — the tools below 
 - Heat-seal tags numbered 1/8 … 8/8 with lot number and due day
 - Conveyor slot assigned at check-in, freed at hand-over; find any order by scanning its ticket
 - Alterations priced per task on the same ticket
+- Sending work to a plant? [Every piece is counted there and back](https://foldpos.com/plants.md)
 
 ### Wash & fold — drop-off laundry
 

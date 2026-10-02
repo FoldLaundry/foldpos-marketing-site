@@ -30,6 +30,7 @@ Elija "Tintorería" al registrarse y este es el POS que verá: las herramientas 
 - Etiquetas termoadhesivas numeradas 1/8 … 8/8 con número de lote y día de entrega
 - Espacio en el transportador asignado en la recepción y liberado en la entrega; encuentre cualquier pedido escaneando su ticket
 - Arreglos con precio por tarea en el mismo ticket
+- ¿Envía trabajo a una planta? [Cada pieza se cuenta a la ida y a la vuelta](https://foldpos.com/es/plants.md)
 
 ### Lavado y doblado — ropa por encargo
 
