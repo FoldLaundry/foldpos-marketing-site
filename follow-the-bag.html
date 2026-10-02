@@ -36,7 +36,7 @@
   --frame:#0d1526; --screen:#f7f9fc;
   --sky-top:#d9e4fb; --sky-bot:#f6f8fd; --hill:#e3e9f5; --ground:#e9eef6; --road:#d3dbe8; --dash:#ffffff;
   --bldg:#ffffff; --edge:#d3dbe9; --glass:#e9f0fd; --roof:#c9d3e4; --tire:#0d1526; --hub:#c9d3e4;
-  --paper:#fffdf8; --label:#ffffff; --bars:#0d1526;
+  --paper:#fffdf8; --label:#ffffff; --bars:#0d1526; --sun:#ffd465; --skin:#e9b48c;
   --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
   --body:"Figtree","Segoe UI",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
@@ -50,7 +50,7 @@
   --frame:#2b3753; --screen:#0b111e;
   --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
   --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
-  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; color-scheme:dark}}
+  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; --sun:#aebff0; --skin:#c99873; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#05080f; --surface:#0e1524; --ink:#eef2fb; --muted:#97a3bc; --hair:#1e2a40;
   --accent:#6f9bff; --accent-2:#a78bff; --accent-soft:#16264a;
@@ -58,8 +58,9 @@
   --frame:#2b3753; --screen:#0b111e;
   --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
   --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
-  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; color-scheme:dark}
+  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; --sun:#aebff0; --skin:#c99873; color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font:17px/1.5 var(--body);margin:0;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:56px 72px;display:grid;gap:28px}
 button{font:inherit;color:inherit}
@@ -86,7 +87,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
   background:color-mix(in srgb,var(--surface) 72%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
   box-shadow:0 1px 0 rgb(255 255 255 / .25) inset,0 6px 20px -10px rgb(13 21 38 / .4)}
 .glass .t{font:600 12px var(--mono);color:var(--muted)}
-.glass.alert{color:var(--bad)}
+.glass.alert{color:var(--bad)} .glass.warn{color:var(--bad)} .hudr{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .live{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 0 var(--good);animation:live 2s infinite}
 .glass.alert .live{background:var(--bad)}
 @keyframes live{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
@@ -112,7 +113,8 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 .drive .dash{animation:road 1.6s var(--ease)}
 .drive.back .dash{animation-name:roadback}
 @keyframes road{to{stroke-dashoffset:-208}} @keyframes roadback{to{stroke-dashoffset:208}}
-#van,#bagPos,#tagPos{transition:transform 1.6s var(--ease),opacity .5s ease}
+#van{transition:transform 1.6s var(--ease)}
+#bagPos,#tagPos{transition:transform 1.2s var(--ease),opacity .5s ease}
 .wheel{transform-box:fill-box;transform-origin:center}
 #van.moving .wheel{animation:spin .5s linear 3}
 #van.moving.left .wheel{animation-direction:reverse}
@@ -122,7 +124,28 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 @keyframes steam{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.8}100%{opacity:0;transform:translate(26px,-70px) scale(1.8)}}
 .cloud{fill:var(--surface);opacity:.7;animation:drift 60s linear infinite alternate}
 @keyframes drift{to{transform:translateX(80px)}}
-#chips{transition:opacity .5s ease,transform .6s var(--spring);transform-box:fill-box;transform-origin:center}
+#sun{transition:transform 2.4s var(--ease)} .sun{fill:var(--sun)} .sunglow{fill:var(--sun);opacity:.22}
+#tint{transition:opacity 2s ease,fill 2s ease;pointer-events:none;mix-blend-mode:multiply}
+#dana{transition:opacity .6s ease} .f-skin{fill:var(--skin)} .f-accent2{fill:var(--accent-2)}
+#panel{transition:transform .9s var(--ease),opacity .5s ease}
+.panelbg{stroke:var(--edge);opacity:.94}
+.slot{fill:none;stroke:var(--edge);stroke-width:1.2;stroke-dasharray:3 4;transition:stroke .3s,fill .3s}
+.slot.miss{stroke:var(--bad);fill:var(--bad-soft);stroke-dasharray:5 3;stroke-width:1.8;animation:blink 1.2s ease-in-out infinite}
+.slot.out{stroke:var(--muted);stroke-dasharray:5 3}
+@keyframes blink{50%{opacity:.45}}
+.gar{transition:transform .75s var(--ease),opacity .45s ease}
+.gshape{stroke:color-mix(in srgb,var(--ink) 38%,transparent);stroke-width:1;stroke-linejoin:round}
+.gtag{opacity:0;transition:opacity .3s}
+.gtag rect{fill:var(--surface);stroke:var(--edge);transition:fill .3s,stroke .3s} .gtag text{fill:var(--muted);transition:fill .3s}
+.gar.tagged .gtag,.gar.ok .gtag,.gar.found .gtag{opacity:1}
+.gar.ok .gtag rect,.gar.found .gtag rect{fill:var(--good-soft);stroke:var(--good)} .gar.ok .gtag text,.gar.found .gtag text{fill:var(--good)}
+.gar.pop .gtag{animation:pop .45s var(--spring)}
+#foundRing{fill:none;stroke:var(--good);stroke-width:3;opacity:0;transform-box:fill-box;transform-origin:center}
+#foundRing.on{animation:found 1.6s ease-out infinite}
+@keyframes found{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(1.5)}}
+.drum{transform-box:fill-box;transform-origin:center;stroke-dasharray:14 9}
+.cleaning .drum{animation:spin 1.1s linear infinite}
+#seal{transition:opacity .3s}
 .chip rect{transition:fill .3s ease,stroke .3s ease}
 .chip.ok rect{fill:var(--good-soft);stroke:var(--good)} .chip.ok text{fill:var(--good)}
 .chip.miss rect{fill:var(--bad-soft);stroke:var(--bad);stroke-dasharray:4 3} .chip.miss text{fill:var(--bad)}
@@ -193,13 +216,44 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 .spacer{flex:1}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 
+/* Device details */
+.plist{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--hair)}
+.plist li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--hair);font:500 14px var(--body)}
+.plist .sw{width:12px;height:12px;border-radius:4px;border:1px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.plist .pi em{font-style:normal;color:var(--muted);margin-left:6px;font-size:13px}
+.plist .tg{font:600 11px var(--mono);color:var(--muted);opacity:.45}
+.plist .tg.on{opacity:1;color:var(--ink)}
+.tagstrip{border:1px dashed color-mix(in srgb,var(--ink) 35%,transparent);background:var(--paper);color:#0d1526;border-radius:6px;padding:10px 12px;font:600 13px/1.5 var(--mono);display:grid;gap:2px}
+.tagstrip .l1{display:flex;gap:12px;flex-wrap:wrap;font-size:15px}
+.baglabel{background:#fff;color:#0d1526;border-radius:10px;padding:14px;display:grid;gap:8px;justify-items:center;box-shadow:0 8px 24px -14px rgb(13 21 38 / .5);border:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+.baglabel .route{font:700 12px var(--body);letter-spacing:.06em}
+.baglabel .bars{width:min(220px,100%);height:44px;background:repeating-linear-gradient(90deg,#0d1526 0 2px,transparent 2px 5px,#0d1526 5px 9px,transparent 9px 11px,#0d1526 11px 12px,transparent 12px 15px)}
+.baglabel .bcode{font:600 17px var(--mono);letter-spacing:.12em}
+.baglabel .bmeta{font:500 12px var(--body);color:#5d6880}
+.kv{margin:0;display:grid;gap:0}
+.kv div{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:10px;padding:7px 0;border-bottom:1px solid var(--hair);font-size:14px}
+.kv div:last-child{border-bottom:0}
+.kv dt{color:var(--muted);font-weight:500} .kv dd{margin:0;font-weight:600;text-align:right;overflow-wrap:anywhere}
+.mini{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.mini div{border-radius:10px;padding:8px 6px;background:color-mix(in srgb,var(--ink) 5%,transparent);display:grid;gap:2px}
+.mini div.on{background:var(--accent-soft);outline:1.5px solid var(--accent)}
+.mini b{font:800 20px/1 var(--display)} .mini span{font:600 10px/1.2 var(--body);color:var(--muted)}
+.piece.out{border:1px dashed var(--muted);color:var(--muted);background:none}
+.anat{margin:18px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:14px;overflow:hidden}
+.anat div{background:var(--surface);padding:10px 10px 11px;min-width:0}
+.anat dt{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.anat dd{margin:3px 0 0;font:600 13px/1.3 var(--body);overflow-wrap:anywhere}
+.anat.bad dd{color:var(--bad)}
+@media (max-width:560px){.anat{grid-template-columns:repeat(2,minmax(0,1fr))} .anat div:last-child{grid-column:1/-1}}
+.logcount{font:600 12px var(--mono);color:var(--muted);margin:14px 0 0}
+
 /* Record + tracker */
 .duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
 @media (max-width:860px){.duo{grid-template-columns:minmax(0,1fr)}}
 .panel{background:var(--surface);border-radius:24px;padding:26px;min-width:0}
 .panel h3{font:800 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 6px}
 .panel .sub{color:var(--muted);margin:0;font-size:15px;max-width:44ch}
-.log{list-style:none;margin:18px 0 0;padding:0;position:relative;max-height:390px;overflow:auto}
+.log{list-style:none;margin:6px 0 0;padding:0;position:relative;max-height:390px;overflow:auto}
 .log li{display:grid;grid-template-columns:20px 54px minmax(0,1fr);gap:10px;padding:9px 0;font-size:15px;align-items:baseline;position:relative}
 .log li::before{content:"";grid-column:1;justify-self:center;width:9px;height:9px;border-radius:50%;background:color-mix(in srgb,var(--ink) 25%,transparent);transform:translateY(-1px)}
 .log li:first-child::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
@@ -269,6 +323,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
       </defs>
       <rect width="1200" height="560" fill="url(#sky)"/>
       <g id="world">
+        <g id="sun" style="transform:translate(240px,90px)"><circle r="48" class="sunglow"/><circle r="22" class="sun"/></g>
         <!-- far layer -->
         <ellipse class="cloud" cx="220" cy="90" rx="70" ry="16"/><ellipse class="cloud" cx="660" cy="60" rx="90" ry="18"/><ellipse class="cloud" cx="980" cy="110" rx="60" ry="13"/>
         <path class="f-hill" d="M0 400 Q150 330 320 380 T640 360 T960 350 T1200 370 V460 H0 Z"/>
@@ -299,8 +354,8 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
           <rect class="f-bldg" x="840" y="226" width="320" height="214" rx="6"/>
           <text class="svgl f-muted" x="1000" y="150" text-anchor="middle">PLANT</text>
           <text class="svgt f-ink" x="1000" y="262" text-anchor="middle" font-size="18" letter-spacing="1">FOLD CLEANING PLANT</text>
-          <g><circle class="f-glass" cx="902" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="902" cy="338" r="18" fill="none" class="st-accent" stroke-width="4"/></g>
-          <g><circle class="f-glass" cx="986" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="986" cy="338" r="18" fill="none" class="st-accent" stroke-width="4"/></g>
+          <g><circle class="f-glass" cx="902" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="902" cy="338" r="18" fill="none" class="st-accent drum" stroke-width="4"/></g>
+          <g><circle class="f-glass" cx="986" cy="338" r="34" stroke="var(--edge)" stroke-width="3"/><circle cx="986" cy="338" r="18" fill="none" class="st-accent drum" stroke-width="4"/></g>
           <rect class="f-glass" x="1046" y="296" width="94" height="144" rx="3"/>
           <g id="rollerLines"></g>
         </g>
@@ -314,6 +369,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
             <line x1="0" y1="-92" x2="0" y2="-70" class="st-ink" stroke-width="1.5" stroke-dasharray="3 3"/>
             <rect class="f-label" x="-23" y="-64" width="46" height="30" rx="3"/>
             <g id="bars"></g>
+            <g id="seal" opacity="0"><rect x="-7" y="-101" width="14" height="6" rx="2" class="f-bad"/><path d="M5 -98 l9 5" class="st-ink" stroke-width="1.5" stroke="var(--bad)"/></g>
             <rect id="laser" x="-27" y="-63" width="54" height="2.5" rx="1" fill="#ff4040" opacity="0"/>
           </g>
         </g>
@@ -342,15 +398,27 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
           <g id="check" opacity="0"><circle cx="86" cy="0" r="13" class="f-good"/><path d="M80 0 l4 4 l8 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
         </g>
 
-        <!-- unpacking count, floats over the plant -->
-        <g id="chips" opacity="0" transform="translate(890 196)">
-          <rect class="f-surface" x="-156" y="-30" width="312" height="60" rx="18" stroke="var(--edge)"/>
+        <!-- Dana, at the counter door -->
+        <g id="dana" style="opacity:0;transform:translate(346px,440px)">
+          <ellipse class="f-shadow" cx="0" cy="2" rx="16" ry="4"/>
+          <rect x="-11" y="-46" width="22" height="46" rx="10" class="f-accent2"/>
+          <circle cx="0" cy="-58" r="10" class="f-skin"/>
+          <text class="svgl f-muted" x="0" y="-76" text-anchor="middle" style="font-size:10px">DANA</text>
         </g>
-      </g>
+
+        <!-- the seven pieces: a floating shelf, and the garments that fly between it and the bag -->
+        <g id="panel" style="transform:translate(560px,250px);opacity:0">
+          <rect class="f-surface panelbg" x="-152" y="-46" width="304" height="92" rx="20"/>
+          <g id="slots"></g>
+        </g>
+        <g id="gar"></g>
+        <circle id="foundRing" cx="163" cy="356" r="30"/>
+            </g>
+      <rect id="tint" width="1200" height="560" style="fill:#ffd9a8;opacity:0"/>
     </svg>
     <div class="hud" aria-hidden="true">
       <span class="glass" id="hudL"><span class="live"></span><span id="hudPlace">Drop store</span><span class="t" id="hudTime">8:02</span></span>
-      <span class="glass right" id="hudR">Order DC-0042</span>
+      <span class="hudr"><span class="glass right warn" id="nosig" hidden>No signal · scans saved on the phone</span><span class="glass right" id="hudR">Order DC-0042 · 7 pieces</span></span>
     </div>
     <div class="cap"><p id="cap" aria-live="polite"></p></div>
   </section>
@@ -373,7 +441,9 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
   <div class="duo">
     <section class="panel">
       <h3>Every scan adds a line.</h3>
-      <p class="sub">Who, when, where, which bag, how many. The top line is where the order is right now.</p>
+      <p class="sub">This is what the latest scan wrote down. The top line of the record is where the order is right now.</p>
+      <dl class="anat" id="anat"></dl>
+      <p class="logcount" id="logCount"></p>
       <ol class="log" id="log"></ol>
     </section>
     <section class="panel">
@@ -397,107 +467,231 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
   const W=1200,H=560;
   const BAG1='BK7Q2M9X', BAG2='BM3X8K2P';
   const STAGES=[['waiting','Waiting at store'],['to_plant','To the plant'],['at_plant','At the plant'],['to_store','On the way back'],['back','Back at store']];
-  const SHOTS={wide:[600,280,1],store:[250,330,1.6],plant:[930,330,1.6],unpack:[960,300,1.75]};
-  const VANX={offL:-320,store:360,plant:600,offR:1320};
-  const BAGP={store:[285,440],plant:[965,440],vanStore:[470,436],vanPlant:[715,436],gone:[205,440]};
-  const ICON={check:'<svg viewBox="0 0 16 16"><path d="M6.2 11.6 2.8 8.2l1.1-1.1 2.3 2.3 5.9-5.9 1.1 1.1z"/></svg>',warn:'<svg viewBox="0 0 16 16"><path d="M8 1 15 14H1zm-.8 5v4h1.6V6zm0 5v1.6h1.6V11z"/></svg>'};
+  const SHOTS={wide:[600,280,1],store:[330,310,1.6],rack:[200,350,2.2],plant:[840,310,1.6],unpack:[840,290,1.7]};
+  const VANX={offL:-320,store:360,mid:480,plant:600,offR:1320};
+  const BAGP={store:[285,440],plant:[965,440],vanStore:[470,436],vanMid:[590,436],vanPlant:[715,436],gone:[285,440]};
+  const PANEL={store:[560,250],plant:[690,250]};
+  const PIECES=[
+    {n:1,item:'Dress shirt',color:'White',fill:'#f6f8fc',t:'shirt'},
+    {n:2,item:'Dress shirt',color:'White',fill:'#f6f8fc',t:'shirt'},
+    {n:3,item:'Dress shirt',color:'Light blue',fill:'#a9c4f5',t:'shirt'},
+    {n:4,item:'Trousers',color:'Grey',fill:'#8d96a8',t:'trousers'},
+    {n:5,item:'Blazer',color:'Blue',fill:'#2f55b8',t:'blazer'},
+    {n:6,item:'Trousers',color:'Navy',fill:'#26345c',t:'trousers'},
+    {n:7,item:'Dress',color:'Green',fill:'#3f9a78',t:'dress'},
+  ];
+  const SHAPE={
+    shirt:'M-12 -13 L-5 -16 Q0 -12 5 -16 L12 -13 L17 -5 L12 -2 L10 -5 L10 15 L-10 15 L-10 -5 L-12 -2 L-17 -5 Z',
+    trousers:'M-9 -16 H9 L11 16 H3 L0 -3 L-3 16 H-11 Z',
+    blazer:'M-13 -13 L-5 -16 L0 -6 L5 -16 L13 -13 L18 -3 L13 0 L11 -4 L11 16 L-11 16 L-11 -4 L-13 0 L-18 -3 Z',
+    dress:'M-7 -16 L-3 -16 Q0 -12 3 -16 L7 -16 L5 -5 L13 16 H-13 L-5 -5 Z',
+  };
+  const ICON={check:'<svg viewBox="0 0 16 16"><path d="M6.2 11.6 2.8 8.2l1.1-1.1 2.3 2.3 5.9-5.9 1.1 1.1z"/></svg>',warn:'<svg viewBox="0 0 16 16"><path d="M8 1 15 14H1zm-.8 5v4h1.6V6zm0 5v1.6h1.6V11z"/></svg>',
+    off:'<svg viewBox="0 0 16 16"><path d="M2 2l12 12-1 1-3.1-3.1H4.5a3 3 0 0 1-.6-5.9L1 3zm6-.5a4.5 4.5 0 0 1 4.4 3.6A3 3 0 0 1 13.6 11L6 3.3a4.5 4.5 0 0 1 2-.8z"/></svg>'};
   const missing=()=>scenario==='missing';
+  const ALL=[1,2,3,4,5,6,7], SIX=[1,2,3,4,6,7];
+  const have=()=>missing()?SIX:ALL;
   const pill=(t,k,ic)=>'<span class="pill '+(k||'')+'">'+(ic?ICON[ic]:'')+t+'</span>';
-  const pieces=(ok,miss,popN)=>{let h='<div class="pieces">';for(let n=1;n<=7;n++){const m=miss&&n===5;const isOk=Array.isArray(ok)?ok.includes(n):n<=ok;h+='<div class="piece '+(m?'miss':(isOk?'ok':''))+(n===popN?' pop':'')+'">'+n+'/7</div>'}return h+'</div>'};
+  const pieces=(ok,missN,popN,outN)=>{let h='<div class="pieces">';for(let n=1;n<=7;n++){const isOk=Array.isArray(ok)?ok.includes(n):n<=ok;h+='<div class="piece '+(n===missN?'miss':(n===outN?'out':(isOk?'ok':'')))+(n===popN?' pop':'')+'">'+n+'/7</div>'}return h+'</div>'};
   const counter=(who,code,body)=>'<div><div class="counter"><div class="scr"><div class="app-top"><span>'+who+'</span><span class="code">'+code+'</span></div>'+body+'</div></div><div class="stand"></div></div>';
   const phone=(who,code,body)=>'<div class="phone"><div class="scr"><div class="app-top"><span>'+who+'</span><span class="code">'+code+'</span></div>'+body+'</div></div>';
+  const camView=(code)=>'<div class="camera"><div class="lbl"><i></i><span>'+code+'</span></div><div class="reticle"></div><div class="laser"></div></div>';
+  const pieceList=(tagged)=>'<ul class="plist">'+PIECES.map(p=>'<li><span class="sw" style="background:'+p.fill+'"></span><span class="pi">'+p.item+'<em>'+p.color+'</em></span><span class="tg'+(tagged?' on':'')+'" data-n="'+p.n+'">DC-0042-'+p.n+'</span></li>').join('')+'</ul>';
+  const tagStrip=(n)=>{const p=PIECES[n-1];return '<div class="tagstrip"><div class="l1"><span>DC-0042</span><span>'+n+'/7</span><span>DANA</span><span>THU 10/01</span></div><div class="l2">'+p.item+' · Dry cleaning</div></div>'};
+  const bagLabel=(code,from,to,count)=>'<div class="baglabel"><div class="route">'+from+' <b>→</b> '+to+'</div><div class="bars"></div><div class="bcode">'+code+'</div><div class="bmeta">Bag 1 of 1 · '+count+' pieces · Thu 10/01</div></div>';
+  const kv=(rows)=>'<dl class="kv">'+rows.map(([k,v])=>'<div><dt>'+k+'</dt><dd>'+v+'</dd></div>').join('')+'</dl>';
+  const miniBoard=(stage)=>'<div class="mini">'+STAGES.map(([k,l])=>'<div class="'+(k===stage?'on':'')+'"><b>'+(k===stage?1:0)+'</b><span>'+l+'</span></div>').join('')+'</div>';
 
+  // Each step: camera shot, where the van and the bag are, what the pieces are doing, the words, the screen, and the scan it records (if any).
   const steps=[
-    {shot:'wide',van:'offL',face:'R',bag:'store',code:BAG1,stage:'waiting',place:'Drop store',t:'8:02',
-     eyebrow:'Intake',title:'Tag every piece. Bag it. Print the label.',
-     desc:'Seven pieces get tags <strong>DC-0042-1</strong> to <strong>7</strong>. The counter puts the order in a new bag and prints its label. The bag knows exactly what is inside.',
-     cap:'Bag '+BAG1+' is created at the drop store.',
-     device:()=>counter('Drop store · counter',BAG1,'<p class="app-h">New bag</p><div class="big">7<small>pieces</small></div><div class="meta">Order <span class="mono">DC-0042</span> · Dana R.</div>'+pieces(7)+'<div class="row">'+pill('Label printed','good','check')+'</div>'),
-     log:{w:'Drop store',x:'Bag '+BAG1+' created · 7 pieces'}},
-    {shot:'store',van:'store',face:'R',bag:'store',code:BAG1,scan:true,stage:'waiting',place:'Drop store',t:'8:05',
+    {id:'drop',shot:'store',van:'offL',face:'R',bag:'none',code:BAG1,stage:'waiting',place:'Drop store',t:'8:02',dana:true,
+     pz:{panel:'store',at:'panel',cls:''},
+     eyebrow:'Drop-off',title:'Dana drops off seven pieces.',
+     desc:'The counter rings up order <strong>DC-0042</strong>. Every piece is on the order from the first minute: what it is, what colour, what service.',
+     cap:'Seven pieces come in at Blvd Cleaners.',
+     device:()=>counter('Drop store · check in','DC-0042','<p class="app-h">Dana R. · 7 pieces</p>'+pieceList(false)+'<div class="meta">Dry cleaning · ready today after 5 PM</div>'),
+     scan:{w:'Drop store',x:'Order DC-0042 checked in · 7 pieces',where:'Blvd Cleaners · counter',what:'Order DC-0042',count:'7 pieces'}},
+    {id:'tag',shot:'store',van:'offL',face:'R',bag:'none',code:BAG1,stage:'waiting',place:'Drop store',t:'8:03',
+     pz:{panel:'store',at:'panel',cls:'tagged',seq:true},
+     eyebrow:'Tag',title:'Every piece gets its own tag.',
+     desc:'Tags <strong>DC-0042-1</strong> to <strong>7</strong> print at the counter, one per garment. Heat-seal or paper, your choice: the tag is what the plant scans later.',
+     cap:'Seven tags, 1/7 to 7/7.',
+     device:()=>counter('Drop store · tag printer','DC-0042','<p class="app-h">Printing tags</p><div id="tagPrev">'+tagStrip(1)+'</div><div class="big" id="tagCount">0<small>of 7 printed</small></div>'+'<div id="tagRow">'+pieces(0)+'</div>'),
+     tick:(shown)=>{const n=shown[shown.length-1];const c=$('tagCount');if(!c)return;c.innerHTML=shown.length+'<small>of 7 printed</small>';$('tagPrev').innerHTML=tagStrip(n);$('tagRow').innerHTML=pieces(shown,0,n)},
+     scan:null},
+    {id:'bag',shot:'store',van:'offL',face:'R',bag:'store',code:BAG1,stage:'waiting',place:'Drop store',t:'8:04',
+     pz:{panel:'store',at:'bagStore',cls:'tagged',seq:true,m5:'rack'},
+     eyebrow:'Bag',title:'Into the bag. The label prints.',
+     desc:'The counter adds the order to a new bag and prints one label. The list of what is inside is saved in Fold, so the bag knows its seven pieces without anyone writing them down.',
+     cap:'Bag '+BAG1+' is created.',
+     device:()=>counter('Drop store · bags',BAG1,'<p class="app-h">New bag for the plant</p>'+bagLabel(BAG1,'BLVD CLEANERS','FOLD PLANT',7)+'<div class="row">'+pill('Label printed','good','check')+pill('7 pieces on the list','')+'</div>'),
+     scan:{w:'Drop store',x:'Bag '+BAG1+' created · 7 pieces',where:'Blvd Cleaners · counter',what:'Bag '+BAG1,count:'7 pieces'}},
+    {id:'seal',shot:'store',van:'offL',face:'R',bag:'store',sealed:true,code:BAG1,fx:true,stage:'waiting',place:'Drop store',t:'8:05',
+     pz:{panel:null,at:'bagStore',cls:'tagged',m5:'rack'},
      eyebrow:'Seal',title:'One scan seals the bag.',
      desc:'From here on, nothing can go in or come out without it showing up in the record.',
      cap:'Sealed. Waiting for the driver.',
-     device:()=>counter('Drop store · scanner',BAG1,'<p class="app-h">Bag '+BAG1+'</p><div class="row">'+pill('Sealed','good','check')+'</div><div class="meta">7 pieces · ready for pickup</div><div class="spacer"></div><div class="meta">Driver Maria is 4 minutes away.</div>'),
-     log:{w:'Drop store',x:'Bag '+BAG1+' sealed'}},
-    {shot:'store',van:'store',face:'R',bag:'vanStore',code:BAG1,scan:true,stage:'to_plant',place:'With the driver',t:'8:41',
+     device:()=>counter('Drop store · scanner',BAG1,'<p class="app-h">Bag '+BAG1+'</p><div class="row">'+pill('Sealed','good','check')+'</div>'+kv([['Pieces','7'],['Going to','Fold Cleaning Plant'],['Pickup','Driver Maria · about 8:40']])),
+     scan:{w:'Drop store',x:'Bag '+BAG1+' sealed',where:'Blvd Cleaners · counter',what:'Bag '+BAG1,count:'7 pieces'}},
+    {id:'pickup',shot:'store',van:'store',face:'R',bag:'vanStore',sealed:true,bagDelay:1500,code:BAG1,fx:true,stage:'to_plant',place:'With the driver',t:'8:41',
+     pz:{panel:null,at:'bagStore',cls:'tagged',m5:'rack'},
      eyebrow:'Pickup',title:'The driver scans it with a phone.',
-     desc:'The Fold Driver app reads the label with the camera and shows the count for this stop. Time and location are saved, <strong>even with no signal</strong>.',
+     desc:'The Fold Driver app reads the label with the camera and shows the count for this stop before the van leaves. Time and location are saved, <strong>even with no signal</strong>.',
      cap:'In the van. 1 of 1 bags.',
-     device:()=>phone('Fold Driver · pickup',BAG1,'<div class="camera"><div class="lbl"><i></i><span>'+BAG1+'</span></div><div class="reticle"></div><div class="laser"></div></div><div class="big">1<small>of 1 bags</small></div><div class="meta">Blvd Cleaners · 8:41<br><span class="mono">34.0195, −118.4912</span></div>'+pill('Uploaded','good','check')),
-     log:{w:'Driver Maria',x:'Picked up '+BAG1+' at the drop store'}},
-    {shot:'plant',van:'plant',face:'R',bag:'plant',code:BAG1,scan:true,stage:'to_plant',place:'Plant door',t:'9:18',
+     device:()=>phone('Fold Driver · pickup',BAG1,camView(BAG1)+'<div class="big">1<small>of 1 bags</small></div><div class="meta">Blvd Cleaners · 8:41<br><span class="mono">34.0195, −118.4912</span></div>'+pill('Saved','good','check')),
+     scan:{w:'Driver Maria',x:'Picked up '+BAG1+' at the drop store',where:'34.0195, −118.4912',what:'Bag '+BAG1,count:'1 of 1 bags'}},
+    {id:'road',shot:'wide',van:'mid',face:'R',bag:'vanMid',sealed:true,code:BAG1,stage:'to_plant',place:'On the road',t:'8:58',nosignal:true,
+     pz:{panel:null,at:'bagStore',cls:'tagged',m5:'rack'},
+     eyebrow:'On the road',title:'Back at the store, you already know.',
+     desc:'Your board shows the order is with the driver and when it was last scanned. If the van hits a dead zone, the scans wait on the phone and upload when the signal returns.',
+     cap:'With Driver Maria. Last scan 8:41.',
+     device:()=>counter('Drop store · Plant & bags','DC-0042','<p class="app-h">Where is DC-0042?</p>'+miniBoard('to_plant')+kv([['Now with','Driver Maria'],['Last scan','8:41 · picked up at Blvd Cleaners'],['Bag',BAG1+' · 7 pieces']])),
+     scan:null},
+    {id:'dropoff',shot:'plant',van:'plant',face:'R',bag:'plant',sealed:true,bagDelay:1400,code:BAG1,fx:true,stage:'to_plant',place:'Plant door',t:'9:18',
+     pz:{panel:null,at:'bagPlant',cls:'tagged',m5:'rack'},
      eyebrow:'Drop-off',title:'Scanned again at the plant door.',
-     desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own.',
+     desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own, so both sides of the hand-off are on record.',
      cap:'Dropped off at the plant.',
-     device:()=>phone('Fold Driver · drop-off',BAG1,'<p class="app-h">Fold Cleaning Plant</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Scanned 9:18</div><div class="spacer"></div>'+pill('Uploaded','good','check')+'<div class="meta">Next stop: Westside Cleaners</div>'),
-     log:{w:'Driver Maria',x:'Dropped off '+BAG1+' at the plant'}},
-    {shot:'plant',van:'offR',face:'R',bag:'plant',code:BAG1,scan:true,stage:'at_plant',place:'Plant',t:'9:22',
+     device:()=>phone('Fold Driver · drop-off',BAG1,'<p class="app-h">Fold Cleaning Plant</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Scanned 9:18</div><div class="spacer"></div>'+pill('Uploaded · 2 scans','good','check')+'<div class="meta">Next stop: Westside Cleaners</div>'),
+     scan:{w:'Driver Maria',x:'Dropped off '+BAG1+' at the plant',where:'Fold Cleaning Plant · door',what:'Bag '+BAG1,count:'1 of 1 bags'}},
+    {id:'receive',shot:'plant',van:'offR',face:'R',bag:'plant',sealed:true,code:BAG1,fx:true,stage:'at_plant',place:'Plant',t:'9:22',
+     pz:{panel:null,at:'bagPlant',cls:'tagged',m5:'rack'},
      eyebrow:'Receive',title:'The plant scans it in.',
-     desc:'One scan confirms the hand-off. The plant now holds the bag, and the drop store sees that on its own board.',
+     desc:'One scan confirms the hand-off and checks the count against what was expected today. The plant now holds the bag, and the drop store sees that on its own board.',
      cap:'Received at the plant. 1 of 1 bags.',
-     device:()=>counter('Plant · receiving',BAG1,'<p class="app-h">Receive</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Expected from Blvd Cleaners today: 1</div><div class="row">'+pill('Received','good','check')+'</div>'),
-     log:{w:'Plant',x:'Received '+BAG1+' · 1 of 1 bags'}},
-    {shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,unpack:true,chips:true,stage:'at_plant',place:'Unpacking table',t:'9:31',
+     device:()=>counter('Plant · receiving',BAG1,'<p class="app-h">Receive from Blvd Cleaners</p><div class="big">1<small>of 1 bags</small></div>'+kv([['Expected today','1 bag · 7 pieces'],['Received','1 bag'],['From','Driver Maria · 9:18']])+'<div class="row">'+pill('Received','good','check')+'</div>'),
+     scan:{w:'Plant',x:'Received '+BAG1+' · 1 of 1 bags',where:'Fold Cleaning Plant · receiving',what:'Bag '+BAG1,count:'1 of 1 bags'}},
+    {id:'unpack',shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,stage:'at_plant',place:'Unpacking table',t:'9:31',unpack:true,
+     pz:{panel:'plant',at:'panel',cls:'ok',seq:true,m5:'rack',slot5:'miss'},
      eyebrow:'Unpack',title:'Open the bag. Scan each piece once.',
      desc:'This is the one place pieces are counted after intake. The screen checks what came out against what the bag says went in.',
      cap:'Unpacking '+BAG1+'.',
      device:()=>counter('Plant · unpacking table',BAG1,'<p class="app-h">Unpack</p><div class="big" id="upCount">0<small>of 7</small></div><div id="upRow">'+pieces(0)+'</div><div id="upNote" class="row"></div>'),
-     log:()=>missing()?{w:'Plant',x:'Unpacked '+BAG1+' · 6 of 7 pieces',bad:true}:{w:'Plant',x:'Unpacked '+BAG1+' · 7 of 7 pieces'}},
-    {alertOnly:true,shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,chips:true,stage:'at_plant',place:'Alert',t:'9:31',bad:true,
+     tick:(shown,done)=>{const c=$('upCount');if(!c)return;c.innerHTML=shown.length+'<small>of 7</small>';$('upRow').innerHTML=pieces(shown,done&&missing()?5:0,shown[shown.length-1]);if(done)$('upNote').innerHTML=missing()?pill('1 piece short','bad','warn'):pill('All 7 accounted for','good','check')},
+     scan:()=>missing()?{w:'Plant',x:'Unpacked '+BAG1+' · 6 of 7 pieces',bad:true,where:'Fold Cleaning Plant · unpacking',what:'Bag '+BAG1,count:'6 of 7 pieces'}:{w:'Plant',x:'Unpacked '+BAG1+' · 7 of 7 pieces',where:'Fold Cleaning Plant · unpacking',what:'Bag '+BAG1,count:'7 of 7 pieces'}},
+    {id:'alert',only:'missing',shot:'unpack',van:'offR',face:'R',bag:'plant',code:BAG1,stage:'at_plant',place:'Alert',t:'9:31',bad:true,
+     pz:{panel:'plant',at:'panel',cls:'ok',m5:'rack',slot5:'miss'},
      eyebrow:'The gap is flagged',title:'A short count raises an alert. Right away.',
-     desc:'The plant and the drop store both see it, 13 minutes after drop-off. Most missing pieces turn up the same day: still in the van, or on the store rack.',
+     desc:'The plant and the drop store both see it, 13 minutes after drop-off, with the last place the piece was scanned. Most missing pieces are not lost. They are in the wrong place.',
      cap:'DC-0042-5 is missing.',
-     device:()=>counter('Plant & bags · Alerts',BAG1,'<div class="row">'+pill('Count mismatch','bad','warn')+'</div><p class="app-h">6 of 7 pieces in '+BAG1+'</p><div class="meta"><span class="mono">DC-0042-5</span> · blue blazer · last scanned at intake, 8:02</div>'+pieces([1,2,3,4,6,7],true)+'<div class="meta">Resolve with: “Found on the store rack, sent in bag <span class="mono">'+BAG2+'</span>”</div>'),
-     log:{w:'Fold',x:'Alert: DC-0042-5 missing from '+BAG1,bad:true}},
-    {shot:'plant',van:'offR',face:'R',bag:'plant',code:BAG2,scan:true,chips:true,stage:'at_plant',place:'Assembly',t:'15:40',
-     eyebrow:'Clean, assemble, re-bag',title:'Assembled, then into a new bag.',
-     desc:'Assembly scans every piece. The order goes home in a return bag with a label of its own.',
-     cap:'Assembled. New bag '+BAG2+'.',
-     device:()=>counter('Plant · assembly',BAG2,'<p class="app-h">Assemble DC-0042</p><div class="big">'+(missing()?'6':'7')+'<small>of 7</small></div>'+pieces(missing()?[1,2,3,4,6,7]:7,missing())+'<div class="meta">'+(missing()?'Piece 5 follows once the store finds it.':'All pieces assembled. Return bag sealed.')+'</div>'),
-     log:{w:'Plant',x:'Assembled DC-0042 · bag '+BAG2+' created and sealed'}},
-    {shot:'plant',van:'plant',face:'L',bag:'vanPlant',code:BAG2,scan:true,stage:'to_store',place:'With the driver',t:'16:05',
+     device:()=>counter('Plant & bags · Alerts',BAG1,'<div class="row">'+pill('Count mismatch','bad','warn')+'</div><p class="app-h">6 of 7 pieces in '+BAG1+'</p>'+kv([['Missing','DC-0042-5 · Blazer · Blue'],['Last scanned','8:03 · tagged at Blvd Cleaners'],['Bag sealed','8:05 by the drop store'],['Tell','Blvd Cleaners · Plant manager']])+pieces(SIX,5)),
+     scan:{w:'Fold',x:'Alert: DC-0042-5 missing from '+BAG1,bad:true,where:'Sent to Blvd Cleaners and the plant',what:'Piece DC-0042-5',count:'6 of 7 pieces'}},
+    {id:'found',only:'missing',shot:'rack',van:'offL',face:'R',bag:'plant',code:BAG1,stage:'at_plant',place:'Drop store',t:'9:52',found:true,
+     pz:{panel:'plant',at:'panel',cls:'ok',m5:'rack',m5cls:'found',slot5:'out'},
+     eyebrow:'Found',title:'Found on the store rack, 21 minutes later.',
+     desc:'The store checks where the piece was last scanned, finds the blazer on its own rack and scans it. The alert closes with a reason, and the blazer goes out in the next bag.',
+     cap:'DC-0042-5 found at the drop store.',
+     device:()=>counter('Drop store · Alerts','DC-0042-5','<div class="row">'+pill('Resolved','good','check')+'</div><p class="app-h">Blazer · Blue</p>'+kv([['Found','9:52 · on the store rack'],['Reason','Left out of the bag at the counter'],['Next','Goes to the plant in the next bag'],['Closed by','Blvd Cleaners']])),
+     scan:{w:'Drop store',x:'Found DC-0042-5 on the store rack · alert closed',where:'Blvd Cleaners · rack',what:'Piece DC-0042-5',count:'1 piece'}},
+    {id:'clean',shot:'plant',van:'offR',face:'R',bag:'none',code:BAG1,stage:'at_plant',place:'Plant',t:'11:10',cleaning:true,
+     pz:{panel:'plant',at:'panel',cls:'tagged',m5:'rack',m5cls:'found',slot5:'out'},
+     eyebrow:'Clean',title:'The plant sees the work, not your customer.',
+     desc:'The plant gets the order number, a first name, the pieces, the service, the instructions and the due time. <strong>Phone, address and history stay with the drop store.</strong>',
+     cap:'Cleaning order DC-0042.',
+     device:()=>counter('Plant · order','DC-0042','<p class="app-h">DC-0042 · Dana</p>'+kv([['From','Blvd Cleaners'],['Pieces',(missing()?'6 here, 1 to follow':'7')],['Service','Dry cleaning'],['Instructions','Light starch on shirts'],['Due back','Today 5:00 PM'],['Phone and address','Kept by the drop store']])),
+     scan:null},
+    {id:'assemble',shot:'unpack',van:'offR',face:'R',bag:'none',code:BAG1,stage:'at_plant',place:'Assembly',t:'15:32',
+     pz:{panel:'plant',at:'panel',cls:'ok',seq:true,from:'tagged',m5:'rack',m5cls:'found',slot5:'out'},
+     eyebrow:'Assemble',title:'Assembly scans every piece back together.',
+     desc:'Each clean piece is scanned onto the order. The screen says which are done and which are still out, and the last scan finishes the order.',
+     cap:'Assembling DC-0042.',
+     device:()=>counter('Plant · assembly','DC-0042','<p class="app-h">Assemble DC-0042</p><div class="big" id="asCount">0<small>of 7</small></div><div id="asRow">'+pieces(0,0,0,missing()?5:0)+'</div><div class="meta" id="asNote">Scan each piece.</div>'),
+     tick:(shown,done)=>{const c=$('asCount');if(!c)return;c.innerHTML=shown.length+'<small>of 7</small>';$('asRow').innerHTML=pieces(shown,0,shown[shown.length-1],missing()?5:0);if(done)$('asNote').textContent=missing()?'7 pieces: 6 assembled, 1 out. Piece 5 follows in the next bag.':'7 pieces: 7 assembled.'},
+     scan:()=>({w:'Plant',x:'Assembled DC-0042 · '+(missing()?'6 of 7 pieces, 1 out':'7 of 7 pieces'),where:'Fold Cleaning Plant · assembly',what:'Order DC-0042',count:(missing()?'6 of 7 pieces':'7 of 7 pieces')})},
+    {id:'rebag',shot:'plant',van:'offR',face:'R',bag:'plant',sealed:true,code:BAG2,fx:true,stage:'at_plant',place:'Plant',t:'15:40',
+     pz:{panel:'plant',at:'bagPlant',cls:'ok',seq:true,m5:'hide',slot5:'out'},
+     eyebrow:'Re-bag',title:'A new bag for the trip home.',
+     desc:'The order goes into a return bag with a label of its own. Same rule on the way back: the bag knows what is inside.',
+     cap:'Return bag '+BAG2+', sealed.',
+     device:()=>counter('Plant · bags',BAG2,'<p class="app-h">Return bag</p>'+bagLabel(BAG2,'FOLD PLANT','BLVD CLEANERS',missing()?6:7)+'<div class="row">'+pill('Sealed','good','check')+'</div>'),
+     scan:()=>({w:'Plant',x:'Bag '+BAG2+' created and sealed · '+(missing()?6:7)+' pieces',where:'Fold Cleaning Plant · dispatch',what:'Bag '+BAG2,count:(missing()?6:7)+' pieces'})},
+    {id:'return',shot:'plant',van:'plant',face:'L',bag:'vanPlant',sealed:true,bagDelay:1500,code:BAG2,fx:true,stage:'to_store',place:'With the driver',t:'16:05',
+     pz:{panel:null,at:'bagPlant',cls:'ok',m5:'hide'},
      eyebrow:'On the way back',title:'Same scan. Other direction.',
      desc:'The pickup scan at the plant tells the drop store its order is on the way back.',
      cap:'Heading back. 1 of 1 bags.',
-     device:()=>phone('Fold Driver · pickup',BAG2,'<div class="camera"><div class="lbl"><i></i><span>'+BAG2+'</span></div><div class="reticle"></div><div class="laser"></div></div><div class="big">1<small>of 1 bags</small></div><div class="meta">Fold Cleaning Plant · 16:05</div>'+pill('Uploaded','good','check')),
-     log:{w:'Driver Maria',x:'Picked up '+BAG2+' at the plant'}},
-    {shot:'store',van:'store',face:'L',bag:'store',code:BAG2,scan:true,stage:'back',place:'Drop store',t:'16:44',
+     device:()=>phone('Fold Driver · pickup',BAG2,camView(BAG2)+'<div class="big">1<small>of 1 bags</small></div><div class="meta">Fold Cleaning Plant · 16:05</div>'+pill('Uploaded','good','check')),
+     scan:{w:'Driver Maria',x:'Picked up '+BAG2+' at the plant',where:'Fold Cleaning Plant · door',what:'Bag '+BAG2,count:'1 of 1 bags'}},
+    {id:'back',shot:'store',van:'store',face:'L',bag:'store',sealed:true,bagDelay:1400,code:BAG2,fx:true,stage:'back',place:'Drop store',t:'16:44',
+     pz:{panel:null,at:'bagStore',cls:'ok',m5:'hide'},
      eyebrow:'Back at the store',title:'Scanned in. Your customer gets a text.',
      desc:'Receiving the bag makes the order Ready and sends the usual ready text. <strong>The plant never appears to the customer.</strong>',
      cap:'Back at the store. Order ready.',
-     device:()=>phone('Messages',BAG2,'<div class="from">Blvd Cleaners · Today 4:44 PM</div><div class="bubble">Hi Dana, your order DC-0042 is ready for pickup at Blvd Cleaners. We’re open until 7 PM.</div><div class="spacer"></div>'),
-     log:{w:'Drop store',x:'Received '+BAG2+' · DC-0042 ready'}},
-    {shot:'wide',van:'offL',face:'L',bag:'gone',code:BAG2,stage:'back',place:'Collected',t:'18:10',done:true,
+     device:()=>phone('Messages','DC-0042','<div class="from">Blvd Cleaners · Today 4:44 PM</div><div class="bubble">Hi Dana, your order DC-0042 is ready for pickup at Blvd Cleaners. We’re open until 7 PM.</div><div class="spacer"></div>'),
+     scan:{w:'Drop store',x:'Received '+BAG2+' · DC-0042 ready',where:'Blvd Cleaners · counter',what:'Bag '+BAG2,count:'1 of 1 bags'}},
+    {id:'collect',shot:'store',van:'offL',face:'L',bag:'none',code:BAG2,stage:'back',place:'Collected',t:'18:10',done:true,dana:true,
+     pz:{panel:'store',at:'panel',cls:'ok',m5:'hide',slot5:'out'},
      eyebrow:'Handed back',title:'Collected. The record is complete.',
-     desc:'If a question ever comes up, every hand-off is there with a time, a person and a place.',
-     cap:'Collected by Dana. Record complete.',
-     device:()=>counter('Drop store · counter',BAG2,'<p class="app-h">Order DC-0042</p><div class="row">'+pill('Collected','good','check')+'</div><div class="big">'+(missing()?'6':'7')+'<small>pieces handed back</small></div><div class="meta">6 hand-offs · every one scanned · '+(missing()?'1 open alert (DC-0042-5)':'0 open alerts')+'</div>'),
-     log:{w:'Drop store',x:'Handed back to Dana · pieces released'}},
+     desc:'Each piece is marked handed back. If a question ever comes up, every hand-off is there with a time, a person and a place.',
+     cap:'Collected by Dana.',
+     device:()=>counter('Drop store · counter','DC-0042','<p class="app-h">Order DC-0042</p><div class="row">'+pill('Collected','good','check')+'</div><div class="big">'+(missing()?'6':'7')+'<small>pieces handed back</small></div><div class="meta">6 hand-offs · every one scanned · '+(missing()?'piece 5 is at the plant, ready tomorrow':'0 open alerts')+'</div>'),
+     scan:()=>({w:'Drop store',x:'Handed back to Dana · '+(missing()?6:7)+' pieces released',where:'Blvd Cleaners · counter',what:'Order DC-0042',count:(missing()?'6 of 7 pieces':'7 of 7 pieces')})},
   ];
 
-  let scenario='normal', i=0, playing=false, timer=null, upTimer=null, lastI=-1;
+  let scenario='normal', i=0, playing=false, timer=null, lastI=-1, seq=[], touched=false;
   const $=id=>document.getElementById(id);
   const NS='http://www.w3.org/2000/svg';
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const active=()=>steps.filter(s=>!s.alertOnly||missing());
+  const active=()=>steps.filter(s=>!s.only||s.only===scenario);
   const cur=()=>active()[i];
+  const scanOf=s=>typeof s.scan==='function'?s.scan():s.scan;
   const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e};
+  const later=(fn,ms)=>{const t=setTimeout(fn,ms);seq.push(t)};
 
-  // static scenery details
+  // static scenery and the seven garments
   (function(){
     const g=$('bars');let x=-19;[2,1,1,2,3,1,1,2,1,3,2,1,1,1,2,2,1,3,1,1,2,1].forEach((v,k)=>{if(k%2===0)el('rect',{x:x,y:-60,width:v*.9,height:20,class:'f-bars'},g);x+=v*.9+.45});
-    const rack=$('rack');[[110,'#9fb6e8'],[136,'#e8c39f'],[162,'#b9d9c8'],[188,'#d9b9d6'],[212,'#c8cfe0']].forEach(([cx,c])=>{el('path',{d:'M'+cx+' 318 l0 6 M'+(cx-10)+' 330 l10 -6 l10 6 l2 44 l-24 0 z',fill:c,stroke:'none',opacity:.85},rack)});
+    const rack=$('rack');[[112,'#9fb6e8'],[138,'#e8c39f'],[188,'#d9b9d6'],[212,'#c8cfe0']].forEach(([cx,c])=>{el('path',{d:'M'+cx+' 318 l0 6 M'+(cx-10)+' 330 l10 -6 l10 6 l2 44 l-24 0 z',fill:c,stroke:'none',opacity:.8},rack)});
     const rl=$('rollerLines');for(let y=312;y<440;y+=14)el('line',{x1:1048,y1:y,x2:1138,y2:y,class:'st-edge','stroke-width':2},rl);
-    const chips=$('chips');for(let n=1;n<=7;n++){const g=el('g',{class:'chip',id:'chip'+n},chips);const x=-140+(n-1)*40;el('rect',{x:x,y:-17,width:34,height:34,rx:9,class:'f-surface',stroke:'var(--edge)','stroke-width':1.5},g);const t=el('text',{x:x+17,y:5,'text-anchor':'middle','font-size':11,class:'mono f-muted'},g);t.textContent=n+'/7'}
+    const slots=$('slots');for(let n=1;n<=7;n++)el('rect',{id:'slot'+n,class:'slot',x:-137+(n-1)*40,y:-34,width:34,height:68,rx:10},slots);
+    const gar=$('gar');PIECES.forEach(p=>{const g=el('g',{class:'gar',id:'gar'+p.n},gar);
+      el('path',{d:'M0 -16 V-20 Q0 -24 4 -24',fill:'none',class:'st-ink','stroke-width':1.4,'stroke-linecap':'round'},g);
+      el('path',{d:SHAPE[p.t],fill:p.fill,class:'gshape'},g);
+      if(p.t==='blazer')el('path',{d:'M-5 -16 L0 -2 L5 -16 M0 -2 V16',fill:'none',stroke:'#16224a','stroke-width':1.2},g);
+      if(p.t==='shirt')el('path',{d:'M0 -12 V15',fill:'none',stroke:'#0d1526','stroke-opacity':.18,'stroke-width':1},g);
+      const tg=el('g',{class:'gtag'},g);el('rect',{x:-15,y:20,width:30,height:14,rx:4},tg);const t=el('text',{x:0,y:30.5,'text-anchor':'middle','font-size':9,class:'mono'},tg);t.textContent=p.n+'/7'});
   })();
-
-  function setChips(okList,missN,popN){for(let n=1;n<=7;n++){const c=$('chip'+n);c.setAttribute('class','chip'+(n===missN?' miss':(okList.includes(n)?' ok':''))+(n===popN?' pop':''))}}
 
   function camera(shot){let [cx,cy,s]=SHOTS[shot];let tx=W/2-s*cx,ty=H/2-s*cy;tx=Math.min(0,Math.max(W-W*s,tx));ty=Math.min(0,Math.max(H-H*s,ty));$('world').style.transform='translate('+tx+'px,'+ty+'px) scale('+s+')'}
 
-  function place(s,prev){
-    camera(s.shot);
+  // where one garment sits for a step
+  function pieceTarget(s,n){
+    const z=s.pz; let at=z.at, cls=z.cls;
+    if(n===5&&missing()&&z.m5){at=z.m5;cls=z.m5cls||'tagged'}
+    if(at==='panel'){const c=PANEL[z.panel];return {x:c[0]-120+(n-1)*40,y:c[1]-8,s:1,o:1,cls:cls}}
+    if(at==='rack')return {x:163,y:356,s:.95,o:1,cls:cls};
+    if(at==='hide')return {x:163,y:356,s:.3,o:0,cls:cls};
+    const b=at==='bagPlant'?BAGP.plant:BAGP.store;return {x:b[0],y:b[1]-48,s:.25,o:0,cls:cls};
+  }
+  function setPiece(n,t){const g=$('gar'+n);g.style.transform='translate('+t.x+'px,'+t.y+'px) scale('+t.s+')';g.style.opacity=t.o;g.setAttribute('class','gar '+(t.cls||''))}
+  function placePieces(s,animate){
+    const z=s.pz, pan=$('panel');
+    if(z.panel){const c=PANEL[z.panel];pan.style.transform='translate('+c[0]+'px,'+c[1]+'px)';pan.style.opacity=1}else pan.style.opacity=0;
+    const slot=$('slot5');slot.setAttribute('class','slot');
+    const endSlot=()=>{if(missing()&&z.slot5)slot.setAttribute('class','slot '+z.slot5)};
+    const order=have();
+    if(missing())setPiece(5,pieceTarget(s,5));
+    if(z.seq&&animate&&!reduce){
+      // start from the "before" look, then move one garment at a time
+      if(z.from)order.forEach(n=>{const t=pieceTarget(s,n);t.cls=z.from;setPiece(n,t)});
+      const step=s.unpack?430:(s.id==='rebag'||s.id==='bag'?150:300), lead=s.id==='tag'?500:900;
+      order.forEach((n,k)=>later(()=>{setPiece(n,pieceTarget(s,n));const g=$('gar'+n);g.classList.add('pop');const done=k===order.length-1;if(s.tick)s.tick(order.slice(0,k+1),done);if(done)endSlot()},lead+k*step));
+    }else{
+      order.forEach(n=>setPiece(n,pieceTarget(s,n)));endSlot();
+      if(s.tick)s.tick(order,true);
+    }
+  }
+
+  function daylight(t){
+    const [h,m]=t.split(':').map(Number), hr=h+m/60, f=Math.max(0,Math.min(1,(hr-6)/14));
+    $('sun').style.transform='translate('+(100+1000*f)+'px,'+(175-125*Math.sin(Math.PI*f))+'px)';
+    const tint=$('tint');let c='#ffd9a8',o=0;
+    if(hr<9){c='#ffd9a8';o=.2}else if(hr>=17.5){c='#ff9c7a';o=.2}else if(hr>=15){c='#ffcc8f';o=.16}
+    tint.style.fill=c;tint.style.opacity=o;
+  }
+
+  function place(s,prev,animate){
+    camera(s.shot);daylight(s.t);
     const van=$('van'), vx=VANX[s.van], flip=$('vanFlip');
     const pvx=prev?VANX[prev.van]:vx;
     flip.setAttribute('transform',s.face==='L'?'translate(238 0) scale(-1 1)':'');
@@ -505,32 +699,38 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
     van.style.transform='translate('+vx+'px,0)';
     if(!reduce&&prev&&pvx!==vx){van.classList.remove('moving','left');void van.getBBox();van.classList.add('moving');if(vx<pvx)van.classList.add('left');
       const w=$('world');w.classList.remove('drive','back');void w.getBBox();w.classList.add('drive');if(vx<pvx)w.classList.add('back')}
-    const [bx,by]=BAGP[s.bag];
-    $('bagPos').style.transform='translate('+bx+'px,'+by+'px)';
-    $('bagPos').style.opacity=(s.bag==='vanStore'||s.bag==='vanPlant'||s.bag==='gone')?0:1;
-    const ty=(s.bag==='vanStore'||s.bag==='vanPlant')?300:by-150;
-    $('tagPos').style.transform='translate('+bx+'px,'+ty+'px)';
-    $('tagPos').style.opacity=s.bag==='gone'?0:1;
+    const inVan=s.bag.indexOf('van')===0, none=s.bag==='none';
+    const [bx,by]=none?(s.shot==='store'?BAGP.store:BAGP.plant):BAGP[s.bag];
+    const bp=$('bagPos'), tp=$('tagPos'), d=(animate&&!reduce&&s.bagDelay)?s.bagDelay+'ms':'0ms';
+    bp.style.transitionDelay=d;tp.style.transitionDelay=d;
+    bp.style.transform='translate('+bx+'px,'+by+'px)';
+    bp.style.opacity=(inVan||none)?0:1;
+    tp.style.transform='translate('+bx+'px,'+(inVan?300:by-150)+'px)';
+    tp.style.opacity=none?0:1;
     $('tagText').textContent=s.code;
-    $('tagDot').setAttribute('class',s.bad?'f-bad':(s.done||s.stage==='back'?'f-good':'f-accent'));
+    $('tagDot').setAttribute('class',s.bad?'f-bad':(s.stage==='back'?'f-good':'f-accent'));
+    $('seal').setAttribute('opacity',s.sealed?1:0);
     $('check').setAttribute('opacity',0);
-    const chips=$('chips');chips.setAttribute('opacity',s.chips?1:0);
-    if(s.chips&&!s.unpack){ if(missing()) setChips([1,2,3,4,6,7],5); else setChips([1,2,3,4,5,6,7]) }
-    if(!s.chips) setChips([],0);
-    if(s.scan) scanFx(s);
+    $('dana').style.opacity=s.dana?1:0;
+    $('plant').setAttribute('class',s.cleaning?'cleaning':'');
+    $('foundRing').setAttribute('class',s.found?'on':'');
+    $('nosig').hidden=!s.nosignal;
+    placePieces(s,animate);
+    if(s.fx)scanFx(s,(animate&&s.bagDelay)||0);
   }
-  function scanFx(s){
+  function scanFx(s,extra){
     if(reduce){$('check').setAttribute('opacity',1);return}
-    const delay=1250;
-    if(s.bag==='store'||s.bag==='plant'){$('laser').animate([{opacity:0,transform:'translateY(0)'},{opacity:1,offset:.15},{opacity:1,transform:'translateY(28px)',offset:.85},{opacity:0,transform:'translateY(28px)'}],{duration:650,delay:delay,easing:'ease-in-out'})}
+    const delay=1250+(extra?600:0);
+    if(s.bag==='store'||s.bag==='plant'){$('laser').animate([{opacity:0,transform:'translateY(0)'},{opacity:1,offset:.15},{opacity:1,transform:'translateY(28px)',offset:.85},{opacity:0,transform:'translateY(28px)'}],{duration:650,delay:delay+(extra||0),easing:'ease-in-out'})}
     const r=$('ringFx');r.style.transformBox='fill-box';r.style.transformOrigin='center';
     r.animate([{opacity:.9,transform:'scale(.3)'},{opacity:0,transform:'scale(2.2)'}],{duration:800,delay:delay+500,easing:'cubic-bezier(.2,.7,.3,1)'});
     const c=$('check');c.style.transformBox='fill-box';c.style.transformOrigin='center';
-    setTimeout(()=>{if(cur()===s)c.setAttribute('opacity',1)},delay+500);
+    later(()=>{if(cur()===s)c.setAttribute('opacity',1)},delay+500);
     c.animate([{transform:'scale(0)'},{transform:'scale(1.25)',offset:.6},{transform:'scale(1)'}],{duration:450,delay:delay+500,easing:'ease-out',fill:'backwards'});
   }
 
-  function render(){
+  function render(animate){
+    seq.forEach(clearTimeout);seq=[];
     const list=active(); i=Math.max(0,Math.min(i,list.length-1)); const s=list[i];
     const prev=lastI>=0?(list[lastI]||null):null;
     const k=$('eyebrow');k.textContent=s.eyebrow;k.className='eyebrow'+(s.bad?' bad':'');
@@ -543,56 +743,48 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
     // chapter segments
     const sg=$('segs');sg.innerHTML='';
     list.forEach((st,n)=>{const b=document.createElement('button');b.className=(n<i?'done':(n===i?'on':''))+(st.bad?' bad':'')+(n===i&&playing?' run':'');
-      b.style.setProperty('--dur',dur(st)+'ms');b.setAttribute('aria-label','Chapter '+(n+1)+': '+st.eyebrow);if(n===i)b.setAttribute('aria-current','step');
+      b.style.setProperty('--dur',dur(st)+'ms');b.setAttribute('aria-label','Chapter '+(n+1)+': '+st.eyebrow);b.title=st.eyebrow;if(n===i)b.setAttribute('aria-current','step');
       b.innerHTML='<i><b></b></i>';b.onclick=()=>{pause();go(n)};sg.appendChild(b)});
-    // custody record
-    const log=$('log');log.innerHTML='';
-    list.slice(0,i+1).forEach((st,n)=>{const L=typeof st.log==='function'?st.log():st.log;const li=document.createElement('li');li.className=(L.bad?'bad':'')+(n===i?' new':'');
+    // custody record: one line per scan so far, newest on top
+    const log=$('log');log.innerHTML='';let last=null,lastStep=null;
+    list.slice(0,i+1).forEach((st,n)=>{const L=scanOf(st);if(!L)return;last=L;lastStep=st;const li=document.createElement('li');li.className=(L.bad?'bad':'')+(n===i?' new':'');
       li.innerHTML='<time>'+st.t+'</time><span><b>'+L.w+'</b> · '+L.x+'</span>';log.prepend(li)});
+    // what the latest scan recorded
+    $('anat').innerHTML=[['Who',last.w],['When','Thu Oct 1 · '+lastStep.t],['Where',last.where],['What',last.what],['Count',last.count]].map(([a,b])=>'<div><dt>'+a+'</dt><dd>'+b+'</dd></div>').join('');
+    $('anat').className='anat'+(last.bad?' bad':'');
+    $('logCount').textContent=log.children.length+(log.children.length===1?' scan':' scans')+' so far';
     // tracker
     const idx=STAGES.findIndex(([k])=>k===s.stage), pct=idx/(STAGES.length-1)*100;
     $('fill').style.width=pct+'%';$('dot').style.left=pct+'%';
     $('stops').innerHTML=STAGES.map(([k,l],n)=>'<div class="'+(n===idx?'on':'')+'">'+l+'</div>').join('');
-    $('whereBig').textContent=s.bad?'At the plant · 1 piece short':STAGES[idx][1];
-    $('whereMeta').textContent='Last scan '+s.t+' · '+s.place+' · bag '+s.code;
+    $('whereBig').textContent=s.bad?'At the plant · 1 piece short':(s.done?'Collected':STAGES[idx][1]);
+    $('whereMeta').textContent='Last scan '+lastStep.t+' · '+last.w+' · '+last.what;
     numbers();
-    place(s,prev); lastI=i;
-    clearInterval(upTimer); if(s.unpack) runUnpack();
+    place(s,prev,animate!==false); lastI=i;
   }
   function numbers(){
     const N=missing()
-      ?[['13 min','from drop-off to the missing-piece alert',true],['6','hand-offs, every one scanned'],['8:02','the last time DC-0042-5 was seen, so you know where to look',true]]
+      ?[['13 min','from drop-off to the missing-piece alert',true],['21 min','from the alert to the blazer being found, on the store rack'],['0','pieces lost. One was in the wrong place, and the record said where to look']]
       :[['7 of 7','pieces home, each one accounted for'],['6','hand-offs, every one scanned'],['0','arguments about who had it last']];
     $('numbers').innerHTML=N.map(([v,l,b])=>'<div class="num'+(b?' bad':'')+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>').join('');
   }
-  function runUnpack(){
-    const order=missing()?[1,2,3,4,6,7]:[1,2,3,4,5,6,7]; let n=0;
-    const tick=()=>{n++;const shown=order.slice(0,n);const c=$('upCount');if(!c){clearInterval(upTimer);return}
-      const done=n>=order.length;
-      c.innerHTML=shown.length+'<small>of 7</small>';
-      $('upRow').innerHTML=pieces(shown,done&&missing(),shown[shown.length-1]);
-      setChips(shown,done&&missing()?5:0,shown[shown.length-1]);
-      if(done){clearInterval(upTimer);$('upNote').innerHTML=missing()?pill('1 piece short','bad','warn'):pill('All 7 accounted for','good','check')}};
-    if(reduce){n=order.length-1;tick();return}
-    setChips([],0); upTimer=setInterval(tick,420);
-  }
-  const dur=s=>s.unpack?5000:(s.alertOnly?4600:3800);
-  function go(n){const l=active().length;i=Math.max(0,Math.min(n,l-1));render();schedule()}
+  const dur=s=>s.unpack?5600:(s.pz.seq?4800:(s.only?5200:(s.bagDelay?4600:4000)));
+  function go(n){touched=true;const l=active().length;i=Math.max(0,Math.min(n,l-1));render();schedule()}
   function schedule(){clearTimeout(timer);if(!playing)return;const l=active().length;if(i>=l-1){timer=setTimeout(()=>{playing=false;setIcon()},dur(cur()));return}timer=setTimeout(()=>go(i+1),dur(cur()))}
   function setIcon(){const ended=!playing&&i>=active().length-1;$('playIcon').innerHTML=playing?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':(ended?'<path d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/>':'<path d="M7 4.5v15l13-7.5z"/>');$('play').setAttribute('aria-label',playing?'Pause':(ended?'Replay':'Play'))}
   function play(){if(i>=active().length-1){lastI=-1;i=0}playing=true;setIcon();render();schedule()}
   function pause(){playing=false;clearTimeout(timer);setIcon();document.querySelectorAll('.segs .run').forEach(b=>b.classList.remove('run'))}
-  $('play').onclick=()=>playing?pause():play();
-  function setScenario(v){scenario=v;$('scNormal').setAttribute('aria-pressed',v==='normal');$('scMissing').setAttribute('aria-pressed',v==='missing');moveThumb();
+  $('play').onclick=()=>{touched=true;playing?pause():play()};
+  function setScenario(v){touched=true;scenario=v;$('scNormal').setAttribute('aria-pressed',v==='normal');$('scMissing').setAttribute('aria-pressed',v==='missing');moveThumb();
     pause();lastI=-1;i=active().findIndex(s=>s.unpack);render();setIcon()}
   function moveThumb(){const b=missing()?$('scMissing'):$('scNormal');const t=$('thumb');t.style.width=b.offsetWidth+'px';t.style.transform='translateX('+(b.offsetLeft-4)+'px)'}
   $('scNormal').onclick=()=>setScenario('normal');$('scMissing').onclick=()=>setScenario('missing');
   addEventListener('resize',moveThumb);
   document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('button'))return;
     if(e.key==='ArrowRight'){pause();go(i+1)} if(e.key==='ArrowLeft'){pause();go(i-1)} if(e.key===' '){e.preventDefault();playing?pause():play()}});
-  render();setIcon();moveThumb();
+  render(false);setIcon();moveThumb();
   if(document.fonts)document.fonts.ready.then(moveThumb);
-  if(!reduce)setTimeout(()=>{if(!playing&&i===0&&lastI===0)play()},1400);
+  if(!reduce)setTimeout(()=>{if(!touched&&!playing&&i===0&&lastI===0)play()},1600);
 })();
 </script>
 </body>
