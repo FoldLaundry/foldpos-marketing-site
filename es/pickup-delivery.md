@@ -4,7 +4,7 @@
 
 Sus repartidores, los marketplaces asociados y los mensajeros bajo demanda, en un solo calendario y en la misma pantalla que su mostrador.
 
-- **En Growth y Pro**: Rutas de recogida y entrega desde $59 al mes. Optimización de rutas en Pro.
+- **En Growth y Pro**: Rutas de recogida y entrega desde $149 al mes. Optimización de rutas en Pro.
 - **Clientes avisados en cada paso**: Al recoger, cuando está listo y cuando sale a entrega, con el nombre de su tienda.
 - **En español o en inglés**: Los mensajes que reciben sus clientes funcionan en los dos idiomas.
 
@@ -52,7 +52,7 @@ Active un marketplace de entregas (Fold, Laundryheap o Rinse), entréguele la cl
 
 ## Qué planes lo incluyen
 
-La recogida y entrega viene con Growth ($59 al mes) y Pro ($79 al mes), en dólares estadounidenses (USD). La optimización de rutas está en Pro. Todos los planes son mes a mes, con 14 días gratis.
+La recogida y entrega viene con Growth ($149 al mes) y Pro ($249 al mes), en dólares estadounidenses (USD). La optimización de rutas está en Pro. Todos los planes son mes a mes, con 14 días gratis.
 
 - Rutas de recogida y entrega: Growth, Pro
 - Optimización de rutas: Pro
@@ -75,7 +75,7 @@ Vea todo lo que incluye cada plan: https://foldpos.com/es/pricing
 
 - [Ayuda de recogida y entrega](https://foldpos.com/es/help#delivery): Dónde está en el POS, las rutas, la app para repartidores y la pestaña Mensajería.
 - [Preguntas sobre entregas](https://foldpos.com/es/faq#delivery): Sus propios repartidores, Uber Direct y qué plan lo incluye.
-- [Precios](https://foldpos.com/es/pricing): Starter $39, Growth $59, Pro $79. Mes a mes.
+- [Precios](https://foldpos.com/es/pricing): Starter $79, Growth $149, Pro $249. Mes a mes.
 - [Hable con nosotros](https://foldpos.com/es/contact): ¿Preguntas sobre cómo manejar entregas con Fold POS? Escríbanos.
 
 ## Más

@@ -68,7 +68,7 @@ Las etiquetas de prendas y los mensajes al cliente salen después de sincronizar
 
 ## Siga por aquí
 
-- [Precios](https://foldpos.com/es/pricing): Starter $39, Growth $59, Pro $79. Mes a mes.
+- [Precios](https://foldpos.com/es/pricing): Starter $79, Growth $149, Pro $249. Mes a mes.
 - [Impresoras](https://foldpos.com/es/printers): Recibos, etiquetas y los reportes que se imprimen en ellas.
 - [Todas las funciones](https://foldpos.com/es/features): El mostrador, el tablero de pedidos, el local y la administración.
 - [Hable con nosotros](https://foldpos.com/es/contact): ¿Preguntas sobre su mostrador? Escríbanos.

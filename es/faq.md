@@ -18,7 +18,7 @@
 
 ## Precios y facturación
 
-**¿Cuánto cuesta?** Starter cuesta $39 al mes para un mostrador, Growth ($59) suma entregas y personal, y Pro ($79) es para más de una sucursal. Los precios son en dólares estadounidenses (USD). Vea los precios para conocer todo lo que incluye cada plan.
+**¿Cuánto cuesta?** Starter cuesta $79 al mes para un mostrador, Growth ($149) suma entregas y personal, y Pro ($249) es para más de una sucursal. Los precios son en dólares estadounidenses (USD). Vea los precios para conocer todo lo que incluye cada plan.
 
 **¿Hay prueba gratis?** 14 días gratis, sin tarjeta para empezar.
 

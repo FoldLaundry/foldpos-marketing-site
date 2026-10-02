@@ -42,9 +42,9 @@ Su propio servicio a domicilio, manejado desde el mostrador: sus repartidores, l
 
 Mes a mes, prueba gratis de 14 días, sin tarjeta por adelantado. Cambie o cancele desde Ajustes. Precios en dólares estadounidenses (USD).
 
-- **Starter: $39/mes, un mostrador.** Recepción, pedidos y pagos; cuentas e historial de clientes; recibos, etiquetas e impresión; informes diarios; registro de mantenimiento de máquinas; Hey Fold.
-- **Growth: $59/mes, suma entregas y personal.** Todo lo de Starter, rutas de recogida y entrega, turnos y registro de entrada del personal, precios exprés y por suscripción, marketing y recordatorios de pedidos, inventario de insumos y sugerencias de reabastecimiento.
-- **Pro: $79/mes, más de una sucursal.** Todo lo de Growth, informes de varias sucursales, optimización de rutas, permisos por rol, soporte prioritario.
+- **Starter: $79/mes, un mostrador.** Recepción, pedidos y pagos; cuentas e historial de clientes; recibos, etiquetas e impresión; informes diarios; registro de mantenimiento de máquinas; Hey Fold.
+- **Growth: $149/mes, suma entregas y personal.** Todo lo de Starter, rutas de recogida y entrega, turnos y registro de entrada del personal, precios exprés y por suscripción, marketing y recordatorios de pedidos, inventario de insumos y sugerencias de reabastecimiento.
+- **Pro: $249/mes, más de una sucursal.** Todo lo de Growth, informes de varias sucursales, optimización de rutas, permisos por rol, soporte prioritario.
 
 Creado en los mostradores de Fold, porque nada de lo que podíamos comprar sabía lo que era un edredón.
 

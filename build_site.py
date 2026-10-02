@@ -169,105 +169,6 @@ def md_footer():
             ' · [Plants & drop stores](/plants.md)\n')
 
 
-# ════════════════════════════ PRICING ════════════════════════════
-PLANS = [
-    ('Starter', 39, 'One counter.', False, [
-        'Check-in, orders board and payments', 'Customer accounts and history',
-        'Receipts, tags and printing', 'Daily reporting', 'Machine maintenance log', 'Hey Fold']),
-    ('Growth', 59, 'Adding delivery and staff.', True, [
-        'Everything in Starter', 'Pickup &amp; delivery routing', 'Staff shifts and clock-in',
-        'Express and subscription pricing', 'Marketing and order reminders', 'Supply inventory and reorder suggestions']),
-    ('Pro', 79, 'More than one location.', False, [
-        'Everything in Growth', 'Multi-location reporting', 'Route optimization',
-        'Role-based staff permissions', 'Priority support']),
-]
-ROWS = [
-    ('The counter', None),
-    ('Check-in by the pound, the piece or the job', 'SGP'), ('Orders board, stations and shelf spots', 'SGP'),
-    ('Payments on your own processor', 'SGP'), ('Customer accounts and history', 'SGP'),
-    ('Receipts and 1 × 3 in tags on Epson, Star, Bixolon and Zebra', 'SGP'), ('Ready texts in English and Spanish', 'SGP'),
-    ('Hey Fold, the counter that listens', 'SGP'), ('Daily reporting', 'SGP'), ('Machine maintenance log', 'SGP'),
-    ('Growing the shop', None),
-    ('Pickup &amp; delivery routing', 'GP'), ('Staff shifts and clock-in', 'GP'),
-    ('Express and subscription pricing', 'GP'), ('Marketing and order reminders', 'GP'),
-    ('Supply inventory and reorder suggestions', 'GP'),
-    ('More than one door', None),
-    ('Multi-location reporting', 'P'), ('Route optimization', 'P'),
-    ('Role-based staff permissions', 'P'), ('Priority support', 'P'),
-]
-PRICING_FAQ = [
-    ('Is there a contract?', 'No. Every plan is month to month. Change plans or cancel any time from Settings.'),
-    ('Do I need a card to start the trial?', 'No. The first 14 days are free and we don’t ask for a card.'),
-    ('What happens when the trial ends?', 'You pick a plan in Settings › Plan &amp; billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.'),
-    ('Can I use my own card processor?', 'Yes. Card, cash, check, store credit and split payments, on your processor at your rates.'),
-    ('Is Hey Fold extra?', 'No. Hey Fold is built into every plan.'),
-    ('What if we have more than five locations?', 'Email <a href="mailto:contact@foldpos.com?subject=More%20than%20five%20locations">contact@foldpos.com</a> and we’ll set it up with you.'),
-]
-
-
-def pricing():
-    cards = ''
-    for name, price, who, pop, feats in PLANS:
-        lis = ''.join(f'<li>{ic("check")}<span>{f}</span></li>' for f in feats)
-        cls = 'plan pop' if pop else 'plan'
-        badge = '<span class="badge">Most popular</span>' if pop else ''
-        btn = 'btn btn-primary' if pop else 'btn btn-ghost'
-        cards += (f'<div class="{cls}">{badge}<h3>{name}</h3><div class="for">{who}</div>'
-                  f'<div class="price">${price}<small> / month</small></div><ul>{lis}</ul>'
-                  f'<a class="{btn}" href="https://pos.foldpos.com/signup">Start free</a></div>')
-    trs = ''
-    for label, has in ROWS:
-        if has is None:
-            trs += f'<tr><td class="group" colspan="4">{label}</td></tr>'
-            continue
-        cells = ''.join(f'<td>{ic("check", "i y")}<span class="visually-hidden">Included</span></td>' if k in has
-                        else '<td><span class="n" aria-hidden="true">—</span><span class="visually-hidden">Not included</span></td>' for k in 'SGP')
-        trs += f'<tr><td>{label}</td>{cells}</tr>'
-    faq = ''.join(f'<details class="qa"><summary>{q}</summary><div class="a"><p>{a}</p></div></details>' for q, a in PRICING_FAQ)
-    body = head_block('Pricing', 'One price a month. No surprises.',
-                      'Month to month, 14 days free, no card up front. Change or cancel from Settings.', 'Pricing') + f'''
-<section class="section"><div class="wrap">
-  <h2 class="visually-hidden">Plans</h2>
-  <div class="plans">{cards}</div>
-</div></section>
-<section class="section" style="padding-top:8px"><div class="wrap">
-  <div class="facts">
-    <div class="fact">{ic("card")}<div><b>Your processor, your rates</b><span>Card, cash, check, store credit and split payments.</span></div></div>
-    <div class="fact">{ic("mic")}<div><b>Hey Fold on every plan</b><span>Say the order. It’s typed, priced and printing.</span></div></div>
-    <div class="fact">{ic("history")}<div><b>No contract</b><span>Month to month. Your data comes with you if you leave.</span></div></div>
-  </div>
-</div></section>
-<section class="section" id="compare"><div class="wrap">
-  <h2>Compare plans</h2>
-  <p class="sub">Every plan has the whole counter. Growth adds delivery and staff; Pro adds more locations.</p>
-  <div class="table-scroll"><table class="compare">
-    <thead><tr><th scope="col">What you get</th><th scope="col">Starter<small>$39 / month</small></th><th scope="col">Growth<small>$59 / month</small></th><th scope="col">Pro<small>$79 / month</small></th></tr></thead>
-    <tbody>{trs}</tbody>
-  </table></div>
-</div></section>
-<section class="section" id="questions"><div class="wrap narrow">
-  <h2>Pricing questions</h2>
-  <div style="margin-top:12px">{faq}</div>
-  <p class="muted" style="margin-top:20px">More in the <a href="/faq">FAQ</a>.</p>
-</div></section>'''
-    offers = {"@context": "https://schema.org", "@type": "Product", "name": "Fold POS",
-              "description": "Point of sale for laundromats, dry cleaners and tailors.",
-              "brand": {"@type": "Brand", "name": "Fold POS"},
-              "offers": [{"@type": "Offer", "name": n, "price": f'{p}.00', "priceCurrency": "USD",
-                          "url": "https://pos.foldpos.com/signup", "description": strip_tags(w)} for n, p, w, _, _ in PLANS]}
-    html_ = page('pricing', 'Pricing — Fold POS', 'Fold POS pricing: Starter $39, Growth $59 and Pro $79 a month. Month to month, 14-day free trial, no card up front, your own card processor, Hey Fold on every plan.',
-                 'Fold POS pricing', 'Pricing', body, [offers])
-    md = ['# Fold POS pricing', '', '> Canonical page: https://foldpos.com/pricing · Markdown mirror.', '',
-          'Month to month, 14-day free trial, no card up front. Change or cancel any time from Settings.', '',
-          'Start a free trial: https://pos.foldpos.com/signup', '']
-    for name, price, who, pop, feats in PLANS:
-        md += [f'## {name} — ${price}/month' + (' (most popular)' if pop else ''), '', md_text(who), '']
-        md += [f'- {md_text(f)}' for f in feats] + ['']
-    md += ['## Everything else about the money', '']
-    md += [f'- **{md_text(q)}** {md_text(a)}' for q, a in PRICING_FAQ]
-    return html_, '\n'.join(md) + md_footer()
-
-
 # ════════════════════════════ FAQ ════════════════════════════
 FAQ = [
     ('start', 'Getting started', 'flow', [
@@ -279,7 +180,7 @@ FAQ = [
         ('Can I use Fold POS outside the United States?', '<p>Yes. Shops anywhere in the Americas except Cuba can sign up and run on Fold POS. Plans are billed in US dollars (USD), the counter, Hey Fold and your customer texts work in English and Spanish, and you take payments on your own processor. This site is also <a href="/es/faq" hreflang="es" lang="es">in Spanish</a>.</p>'),
     ]),
     ('pricing', 'Pricing &amp; billing', 'card', [
-        ('How much does it cost?', '<p>Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See <a href="/pricing">pricing</a> for everything in each plan.</p>'),
+        ('How much does it cost?', '<p>Starter is $79 a month for one counter, Growth $149 adds delivery and staff, and Pro $249 is for more than one location. See <a href="/pricing">pricing</a> for everything in each plan.</p>'),
         ('Is there a free trial?', '<p>14 days free, with no card up front.</p>'),
         ('Is there a contract?', '<p>No. Every plan is month to month. Change plans or cancel from Settings.</p>'),
         ('What happens after the trial?', '<p>You pick a plan in Settings › Plan &amp; billing. If you don’t, the POS goes read-only: everything you entered stays, and choosing a plan brings it right back.</p>'),
@@ -786,6 +687,7 @@ def main():
     from pages_heyfold import hey_fold
     from pages_delivery import pickup_delivery
     from pages_more import counter_money, plants
+    from pages_pricing import pricing
     for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers),
                      ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery),
                      ('counter-money', counter_money), ('plants', plants)):

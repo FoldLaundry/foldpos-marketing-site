@@ -76,7 +76,7 @@ EN = {
     'more': [
         ('/#heyfold', 'mic', 'The live demo', 'Say or type an order on the homepage.'),
         ('/help#heyfold', 'flow', 'Use Hey Fold', 'The three steps in the help center.'),
-        ('/pricing', 'card', 'Pricing', 'Starter $39, Growth $59, Pro $79. Hey Fold is in all three.'),
+        ('/pricing', 'card', 'Pricing', 'Starter $79, Growth $149, Pro $249. Hey Fold is in all three.'),
         ('/contact', 'mail', 'Talk to us', 'See it on your own counter.'),
     ],
     'md_title': '# Hey Fold: the counter that listens',
@@ -138,7 +138,7 @@ ES = {
     'more': [
         ('/es/#heyfold', 'mic', 'La demostración en vivo', 'Diga o escriba un pedido en la página de inicio.'),
         ('/es/help#heyfold', 'flow', 'Usar Hey Fold', 'Los tres pasos en el centro de ayuda.'),
-        ('/es/pricing', 'card', 'Precios', 'Starter $39, Growth $59, Pro $79 (USD). Hey Fold viene en los tres.'),
+        ('/es/pricing', 'card', 'Precios', 'Starter $79, Growth $149, Pro $249 (USD). Hey Fold viene en los tres.'),
         ('/es/contact', 'mail', 'Hable con nosotros', 'Véalo en su propio mostrador.'),
     ],
     'md_title': '# Hey Fold: el mostrador que escucha',

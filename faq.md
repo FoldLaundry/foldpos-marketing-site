@@ -18,7 +18,7 @@
 
 ## Pricing & billing
 
-**How much does it cost?** Starter is $39 a month for one counter, Growth $59 adds delivery and staff, and Pro $79 is for more than one location. See [pricing](https://foldpos.com/pricing) for everything in each plan.
+**How much does it cost?** Starter is $79 a month for one counter, Growth $149 adds delivery and staff, and Pro $249 is for more than one location. See [pricing](https://foldpos.com/pricing) for everything in each plan.
 
 **Is there a free trial?** 14 days free, with no card up front.
 

@@ -254,7 +254,7 @@ If Windows shows "Windows protected your PC", that is because the helper is new 
 
 Pick the plan that matches how many doors you run. Every plan is month-to-month with a 14-day free trial and no card up front. Change or cancel any time from Settings.
 
-### Starter — $39/month — for a single counter
+### Starter — $79/month — for a single counter
 - Check-in, orders board & payments
 - Customer accounts & history
 - Receipts, tags & printing
@@ -262,7 +262,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Machine maintenance log
 - Hey Fold
 
-### Growth — $59/month — for shops adding delivery & staff (most popular)
+### Growth — $149/month — for shops adding delivery & staff (most popular)
 - Everything in Starter
 - Pickup & delivery routing
 - Staff shifts & clock-in/out
@@ -270,7 +270,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Marketing & order reminders
 - Supply inventory & reorder suggestions
 
-### Pro — $79/month — for multi-location shops
+### Pro — $249/month — for multi-location shops
 - Everything in Growth
 - Multi-location reporting
 - Route optimization

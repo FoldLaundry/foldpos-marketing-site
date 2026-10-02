@@ -34,7 +34,7 @@ EN = {
     'h1': 'Your own delivery service, run from the counter.',
     'lede': 'Your drivers, partner marketplaces and on-demand couriers, in one schedule, in the same screen as your counter.',
     'facts': [
-        ('car', 'On Growth and Pro', 'Pickup &amp; delivery routing from $59 a month. Route optimization on Pro.'),
+        ('car', 'On Growth and Pro', 'Pickup &amp; delivery routing from $149 a month. Route optimization on Pro.'),
         ('chat', 'Customers texted at each step', 'Picked up, ready and out for delivery, in your shop’s name.'),
         ('globe', 'English or Spanish', 'The texts your customers get work in both.'),
     ],
@@ -83,7 +83,7 @@ EN = {
     'partners_h2': 'Partner jobs land in the same schedule.',
     'partners': 'Turn on a delivery marketplace (Fold, Laundryheap or Rinse), give it the API key, and its jobs land in your schedule with status updates flowing back.',
     'plans_h2': 'Which plans have it',
-    'plans_sub': 'Pickup &amp; delivery comes with Growth ($59 a month) and Pro ($79 a month). Route optimization is on Pro. Every plan is month to month, with 14 days free.',
+    'plans_sub': 'Pickup &amp; delivery comes with Growth ($149 a month) and Pro ($249 a month). Route optimization is on Pro. Every plan is month to month, with 14 days free.',
     'plans_head': ('What you get', 'Starter', 'Growth', 'Pro', '/ month'),
     'plans_rows': [('Pickup &amp; delivery routing', 'GP'), ('Route optimization', 'P')],
     'inc': 'Included', 'notinc': 'Not included',
@@ -101,7 +101,7 @@ EN = {
     'more': [
         ('/help#delivery', 'check', 'Pickup &amp; delivery help', 'Where it is in the POS, routes, the driver app and the Courier tab.'),
         ('/faq#delivery', 'chat', 'Delivery FAQ', 'Your own drivers, Uber Direct and which plan has it.'),
-        ('/pricing', 'card', 'Pricing', 'Starter $39, Growth $59, Pro $79. Month to month.'),
+        ('/pricing', 'card', 'Pricing', 'Starter $79, Growth $149, Pro $249. Month to month.'),
         ('/contact', 'mail', 'Talk to us', 'Questions about running delivery on Fold POS? Write to us.'),
     ],
     'md_title': '# Pickup & delivery with Fold POS',
@@ -121,7 +121,7 @@ ES = {
     'h1': 'Su propio servicio a domicilio, desde el mostrador.',
     'lede': 'Sus repartidores, los marketplaces asociados y los mensajeros bajo demanda, en un solo calendario y en la misma pantalla que su mostrador.',
     'facts': [
-        ('car', 'En Growth y Pro', 'Rutas de recogida y entrega desde $59 al mes. Optimización de rutas en Pro.'),
+        ('car', 'En Growth y Pro', 'Rutas de recogida y entrega desde $149 al mes. Optimización de rutas en Pro.'),
         ('chat', 'Clientes avisados en cada paso', 'Al recoger, cuando está listo y cuando sale a entrega, con el nombre de su tienda.'),
         ('globe', 'En español o en inglés', 'Los mensajes que reciben sus clientes funcionan en los dos idiomas.'),
     ],
@@ -170,7 +170,7 @@ ES = {
     'partners_h2': 'Los pedidos de socios llegan al mismo calendario.',
     'partners': 'Active un marketplace de entregas (Fold, Laundryheap o Rinse), entréguele la clave de API y sus trabajos llegan a su calendario, con actualizaciones de estado de ida y vuelta.',
     'plans_h2': 'Qué planes lo incluyen',
-    'plans_sub': 'La recogida y entrega viene con Growth ($59 al mes) y Pro ($79 al mes), en dólares estadounidenses (USD). La optimización de rutas está en Pro. Todos los planes son mes a mes, con 14 días gratis.',
+    'plans_sub': 'La recogida y entrega viene con Growth ($149 al mes) y Pro ($249 al mes), en dólares estadounidenses (USD). La optimización de rutas está en Pro. Todos los planes son mes a mes, con 14 días gratis.',
     'plans_head': ('Qué incluye', 'Starter', 'Growth', 'Pro', '/ mes'),
     'plans_rows': [('Rutas de recogida y entrega', 'GP'), ('Optimización de rutas', 'P')],
     'inc': 'Incluido', 'notinc': 'No incluido',
@@ -188,7 +188,7 @@ ES = {
     'more': [
         ('/es/help#delivery', 'check', 'Ayuda de recogida y entrega', 'Dónde está en el POS, las rutas, la app para repartidores y la pestaña Mensajería.'),
         ('/es/faq#delivery', 'chat', 'Preguntas sobre entregas', 'Sus propios repartidores, Uber Direct y qué plan lo incluye.'),
-        ('/es/pricing', 'card', 'Precios', 'Starter $39, Growth $59, Pro $79. Mes a mes.'),
+        ('/es/pricing', 'card', 'Precios', 'Starter $79, Growth $149, Pro $249. Mes a mes.'),
         ('/es/contact', 'mail', 'Hable con nosotros', '¿Preguntas sobre cómo manejar entregas con Fold POS? Escríbanos.'),
     ],
     'md_title': '# Recogida y entrega con Fold POS',
@@ -269,7 +269,7 @@ def _build(t):
   <h2>{t['plans_h2']}</h2>
   <p class="sub">{t['plans_sub']}</p>
   <div class="table-scroll"><table class="compare" style="min-width:0">
-    <thead><tr><th scope="col">{h[0]}</th><th scope="col">{h[1]}<small>$39 {h[4]}</small></th><th scope="col">{h[2]}<small>$59 {h[4]}</small></th><th scope="col">{h[3]}<small>$79 {h[4]}</small></th></tr></thead>
+    <thead><tr><th scope="col">{h[0]}</th><th scope="col">{h[1]}<small>$79 {h[4]}</small></th><th scope="col">{h[2]}<small>$149 {h[4]}</small></th><th scope="col">{h[3]}<small>$249 {h[4]}</small></th></tr></thead>
     <tbody>{trs}</tbody>
   </table></div>
   <p style="margin-top:22px"><a class="btn btn-ghost" href="{pre}/pricing">{t['plans_link']}</a></p>

@@ -68,7 +68,7 @@ Garment tags and customer texts go out after the sync. Discounts, store credit, 
 
 ## Where to next
 
-- [Pricing](https://foldpos.com/pricing): Starter $39, Growth $59, Pro $79. Month to month.
+- [Pricing](https://foldpos.com/pricing): Starter $79, Growth $149, Pro $249. Month to month.
 - [Printers](https://foldpos.com/printers): Receipts, tags and the reports that print on them.
 - [All features](https://foldpos.com/features): The counter, the orders board, the floor and the back office.
 - [Talk to us](https://foldpos.com/contact): Questions about your counter? Write to us.

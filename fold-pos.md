@@ -42,9 +42,9 @@ Your own delivery service, run from the counter: your drivers, partner marketpla
 
 Month to month, 14-day free trial, no card up front. Change or cancel from Settings.
 
-- **Starter — $39/month, one counter.** Check-in, orders and payments; customer accounts and history; receipts, tags and printing; daily reporting; machine maintenance log; Hey Fold.
-- **Growth — $59/month, adding delivery and staff.** Everything in Starter, pickup & delivery routing, staff shifts and clock-in, express and subscription pricing, marketing and order reminders, supply inventory and reorder suggestions.
-- **Pro — $79/month, more than one location.** Everything in Growth, multi-location reporting, route optimization, role-based permissions, priority support.
+- **Starter — $79/month, one counter.** Check-in, orders and payments; customer accounts and history; receipts, tags and printing; daily reporting; machine maintenance log; Hey Fold.
+- **Growth — $149/month, adding delivery and staff.** Everything in Starter, pickup & delivery routing, staff shifts and clock-in, express and subscription pricing, marketing and order reminders, supply inventory and reorder suggestions.
+- **Pro — $249/month, more than one location.** Everything in Growth, multi-location reporting, route optimization, role-based permissions, priority support.
 
 Built at Fold’s own counters, because nothing we could buy knew what a comforter was.
 

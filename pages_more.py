@@ -159,7 +159,7 @@ MONEY_EN = {
     'faq_more': 'More in the <a href="/faq#payments">FAQ</a>.',
     'more_h2': 'Where to next',
     'more': [
-        ('/pricing', 'card', 'Pricing', 'Starter $39, Growth $59, Pro $79. Month to month.'),
+        ('/pricing', 'card', 'Pricing', 'Starter $79, Growth $149, Pro $249. Month to month.'),
         ('/printers', 'printer', 'Printers', 'Receipts, tags and the reports that print on them.'),
         ('/features', 'layers', 'All features', 'The counter, the orders board, the floor and the back office.'),
         ('/contact', 'mail', 'Talk to us', 'Questions about your counter? Write to us.'),
@@ -243,7 +243,7 @@ MONEY_ES = {
     'faq_more': 'Más en las <a href="/es/faq#payments">preguntas frecuentes</a>.',
     'more_h2': 'Siga por aquí',
     'more': [
-        ('/es/pricing', 'card', 'Precios', 'Starter $39, Growth $59, Pro $79. Mes a mes.'),
+        ('/es/pricing', 'card', 'Precios', 'Starter $79, Growth $149, Pro $249. Mes a mes.'),
         ('/es/printers', 'printer', 'Impresoras', 'Recibos, etiquetas y los reportes que se imprimen en ellas.'),
         ('/es/features', 'layers', 'Todas las funciones', 'El mostrador, el tablero de pedidos, el local y la administración.'),
         ('/es/contact', 'mail', 'Hable con nosotros', '¿Preguntas sobre su mostrador? Escríbanos.'),

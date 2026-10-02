@@ -50,7 +50,7 @@ The homepage has a live demo. Type an order, or press Caps Lock and say one, and
 
 - [The live demo](https://foldpos.com/#heyfold): Say or type an order on the homepage.
 - [Use Hey Fold](https://foldpos.com/help#heyfold): The three steps in the help center.
-- [Pricing](https://foldpos.com/pricing): Starter $39, Growth $59, Pro $79. Hey Fold is in all three.
+- [Pricing](https://foldpos.com/pricing): Starter $79, Growth $149, Pro $249. Hey Fold is in all three.
 - [Talk to us](https://foldpos.com/contact): See it on your own counter.
 
 ## More

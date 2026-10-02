@@ -84,9 +84,9 @@ Every plan is month-to-month with a 14-day free trial and no card up front.
 
 | Plan | For | Price |
 | --- | --- | --- |
-| Starter | A single counter | $39/month |
-| Growth (most popular) | Shops adding delivery & staff | $59/month |
-| Pro | Multi-location shops | $79/month |
+| Starter | A single counter | $79/month |
+| Growth (most popular) | Shops adding delivery & staff | $149/month |
+| Pro | Multi-location shops | $249/month |
 
 Payments on your own processor, at your rates. Running more than 5 locations? Talk to sales. Full plan contents: [pricing.md](/pricing.md)
 

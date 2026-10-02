@@ -84,9 +84,9 @@ Todos los planes son mes a mes, con prueba gratis de 14 días y sin tarjeta por 
 
 | Plan | Para | Precio |
 | --- | --- | --- |
-| Starter | Un solo mostrador | $39/mes |
-| Growth (más popular) | Negocios que suman entregas y personal | $59/mes |
-| Pro | Negocios con varias sucursales | $79/mes |
+| Starter | Un solo mostrador | $79/mes |
+| Growth (más popular) | Negocios que suman entregas y personal | $149/mes |
+| Pro | Negocios con varias sucursales | $249/mes |
 
 Pagos con su propio procesador, a sus tarifas. ¿Tiene más de 5 sucursales? Hable con ventas. Contenido completo de los planes: [pricing.md](/es/pricing.md)
 

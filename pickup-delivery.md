@@ -4,7 +4,7 @@
 
 Your drivers, partner marketplaces and on-demand couriers, in one schedule, in the same screen as your counter.
 
-- **On Growth and Pro**: Pickup & delivery routing from $59 a month. Route optimization on Pro.
+- **On Growth and Pro**: Pickup & delivery routing from $149 a month. Route optimization on Pro.
 - **Customers texted at each step**: Picked up, ready and out for delivery, in your shop’s name.
 - **English or Spanish**: The texts your customers get work in both.
 
@@ -52,7 +52,7 @@ Turn on a delivery marketplace (Fold, Laundryheap or Rinse), give it the API key
 
 ## Which plans have it
 
-Pickup & delivery comes with Growth ($59 a month) and Pro ($79 a month). Route optimization is on Pro. Every plan is month to month, with 14 days free.
+Pickup & delivery comes with Growth ($149 a month) and Pro ($249 a month). Route optimization is on Pro. Every plan is month to month, with 14 days free.
 
 - Pickup & delivery routing: Growth, Pro
 - Route optimization: Pro
@@ -75,7 +75,7 @@ See everything in each plan: https://foldpos.com/pricing
 
 - [Pickup & delivery help](https://foldpos.com/help#delivery): Where it is in the POS, routes, the driver app and the Courier tab.
 - [Delivery FAQ](https://foldpos.com/faq#delivery): Your own drivers, Uber Direct and which plan has it.
-- [Pricing](https://foldpos.com/pricing): Starter $39, Growth $59, Pro $79. Month to month.
+- [Pricing](https://foldpos.com/pricing): Starter $79, Growth $149, Pro $249. Month to month.
 - [Talk to us](https://foldpos.com/contact): Questions about running delivery on Fold POS? Write to us.
 
 ## More

@@ -10,7 +10,7 @@ Terminology (use consistently):
 - pickup & delivery → recogida y entrega; driver → repartidor / conductor; courier (Uber Direct) → mensajero de Uber Direct
 - point of sale / POS → punto de venta (POS)
 - "Start free" → "Empiece gratis"; "Log in" → "Iniciar sesión"; free trial → prueba gratis
-Never translate: Fold POS, Fold, Fold Laundry, Hey Fold, Fold Driver, Uber Direct, Epson/Star/Bixolon/Zebra, Cents, CleanCloud, Chrome/Edge/Safari/Firefox, Caps Lock (write "Bloq Mayús (Caps Lock)" the first time), code, URLs, email addresses, prices ($39 etc. stay in US dollars; say "dólares estadounidenses (USD)" once where pricing is explained).
+Never translate: Fold POS, Fold, Fold Laundry, Hey Fold, Fold Driver, Uber Direct, Epson/Star/Bixolon/Zebra, Cents, CleanCloud, Chrome/Edge/Safari/Firefox, Caps Lock (write "Bloq Mayús (Caps Lock)" the first time), code, URLs, email addresses, prices ($79 etc. stay in US dollars; say "dólares estadounidenses (USD)" once where pricing is explained).
 App menu paths (e.g. "Settings › Receipts"): look up the exact Spanish label in /mnt/user-data/uploads/Developer/fold-pos-build/lib/l10n/arb/app_es.arb by finding the English value in app_en.arb with the same key. If you can't find it, translate naturally.
 
 HTML rules:
