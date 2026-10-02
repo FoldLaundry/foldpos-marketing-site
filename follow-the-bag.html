@@ -81,7 +81,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 /* Stage */
 .stage{position:relative;border-radius:28px;overflow:hidden;background:var(--sky-bot);box-shadow:0 30px 80px -40px rgb(13 21 38 / .35);isolation:isolate}
 .scene{display:block;width:100%;height:auto}
-#world{transition:transform 1.25s var(--ease)}
+#world{transition:transform .9s var(--ease)}
 .hud{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}
 .glass{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font:600 13px var(--body);color:var(--ink);
   background:color-mix(in srgb,var(--surface) 72%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
@@ -110,13 +110,13 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 .svgl{font:600 13px var(--body);letter-spacing:.14em}
 .mono{font-family:var(--mono);font-weight:600}
 .dash{stroke:var(--dash);stroke-width:4;stroke-dasharray:28 24}
-.drive .dash{animation:road 1.25s var(--ease)}
+.drive .dash{animation:road .9s var(--ease)}
 .drive.back .dash{animation-name:roadback}
 @keyframes road{to{stroke-dashoffset:-208}} @keyframes roadback{to{stroke-dashoffset:208}}
-#van{transition:transform 1.25s var(--ease)}
-#bagPos,#tagPos{transition:transform .95s var(--ease),opacity .4s ease}
+#van{transition:transform .9s var(--ease)}
+#bagPos,#tagPos{transition:transform .7s var(--ease),opacity .3s ease}
 .wheel{transform-box:fill-box;transform-origin:center}
-#van.moving .wheel{animation:spin .42s linear 3}
+#van.moving .wheel{animation:spin .3s linear 3}
 #van.moving.left .wheel{animation-direction:reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
 .steam circle{fill:var(--edge);transform-box:fill-box;transform-origin:center;animation:steam 5s ease-out infinite;opacity:0}
@@ -124,8 +124,8 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 @keyframes steam{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.8}100%{opacity:0;transform:translate(26px,-70px) scale(1.8)}}
 .cloud{fill:var(--surface);opacity:.7;animation:drift 60s linear infinite alternate}
 @keyframes drift{to{transform:translateX(80px)}}
-#sun{transition:transform 2.4s var(--ease)} .sun{fill:var(--sun)} .sunglow{fill:var(--sun);opacity:.22}
-#tint{transition:opacity 2s ease,fill 2s ease;pointer-events:none;mix-blend-mode:multiply}
+#sun{transition:transform 1.4s var(--ease)} .sun{fill:var(--sun)} .sunglow{fill:var(--sun);opacity:.22}
+#tint{transition:opacity 1.2s ease,fill 1.2s ease;pointer-events:none;mix-blend-mode:multiply}
 #dana{transition:opacity .6s ease} .f-skin{fill:var(--skin)} .f-accent2{fill:var(--accent-2)}
 #panel{transition:transform .9s var(--ease),opacity .5s ease}
 .panelbg{stroke:var(--edge);opacity:.94}
@@ -133,7 +133,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 .slot.miss{stroke:var(--bad);fill:var(--bad-soft);stroke-dasharray:5 3;stroke-width:1.8;animation:blink 1.2s ease-in-out infinite}
 .slot.out{stroke:var(--muted);stroke-dasharray:5 3}
 @keyframes blink{50%{opacity:.45}}
-.gar{transition:transform .6s var(--ease),opacity .35s ease}
+.gar{transition:transform .45s var(--ease),opacity .28s ease}
 .gshape{stroke:color-mix(in srgb,var(--ink) 38%,transparent);stroke-width:1;stroke-linejoin:round}
 .gtag{opacity:0;transition:opacity .3s}
 .gtag rect{fill:var(--surface);stroke:var(--edge);transition:fill .3s,stroke .3s} .gtag text{fill:var(--muted);transition:fill .3s}
@@ -533,7 +533,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
      cap:'Sealed. Waiting for the driver.',
      device:()=>counter('Drop store · scanner',BAG1,'<p class="app-h">Bag '+BAG1+'</p><div class="row">'+pill('Sealed','good','check')+'</div>'+kv([['Pieces','7'],['Going to','Fold Cleaning Plant'],['Pickup','Driver Maria · about 8:40']])),
      scan:{w:'Drop store',x:'Bag '+BAG1+' sealed',where:'Blvd Cleaners · counter',what:'Bag '+BAG1,count:'7 pieces'}},
-    {id:'pickup',shot:'store',van:'store',face:'R',bag:'vanStore',sealed:true,bagDelay:1150,code:BAG1,fx:true,stage:'to_plant',place:'With the driver',t:'8:41',
+    {id:'pickup',shot:'store',van:'store',face:'R',bag:'vanStore',sealed:true,bagDelay:800,code:BAG1,fx:true,stage:'to_plant',place:'With the driver',t:'8:41',
      pz:{panel:null,at:'bagStore',cls:'tagged',m5:'rack'},
      eyebrow:'Pickup',title:'The driver scans it with a phone.',
      desc:'The Fold Driver app reads the label with the camera and shows the count for this stop before the van leaves. Time and location are saved, <strong>even with no signal</strong>.',
@@ -547,7 +547,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
      cap:'With Driver Maria. Last scan 8:41.',
      device:()=>counter('Drop store · Plant & bags','DC-0042','<p class="app-h">Where is DC-0042?</p>'+miniBoard('to_plant')+kv([['Now with','Driver Maria'],['Last scan','8:41 · picked up at Blvd Cleaners'],['Bag',BAG1+' · 7 pieces']])),
      scan:null},
-    {id:'dropoff',shot:'plant',van:'plant',face:'R',bag:'plant',sealed:true,bagDelay:1050,code:BAG1,fx:true,stage:'to_plant',place:'Plant door',t:'9:18',
+    {id:'dropoff',shot:'plant',van:'plant',face:'R',bag:'plant',sealed:true,bagDelay:750,code:BAG1,fx:true,stage:'to_plant',place:'Plant door',t:'9:18',
      pz:{panel:null,at:'bagPlant',cls:'tagged',m5:'rack'},
      eyebrow:'Drop-off',title:'Scanned again at the plant door.',
      desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own, so both sides of the hand-off are on record.',
@@ -605,14 +605,14 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
      cap:'Return bag '+BAG2+', sealed.',
      device:()=>counter('Plant · bags',BAG2,'<p class="app-h">Return bag</p>'+bagLabel(BAG2,'FOLD PLANT','BLVD CLEANERS',missing()?6:7)+'<div class="row">'+pill('Sealed','good','check')+'</div>'),
      scan:()=>({w:'Plant',x:'Bag '+BAG2+' created and sealed · '+(missing()?6:7)+' pieces',where:'Fold Cleaning Plant · dispatch',what:'Bag '+BAG2,count:(missing()?6:7)+' pieces'})},
-    {id:'return',shot:'plant',van:'plant',face:'L',bag:'vanPlant',sealed:true,bagDelay:1150,code:BAG2,fx:true,stage:'to_store',place:'With the driver',t:'16:05',
+    {id:'return',shot:'plant',van:'plant',face:'L',bag:'vanPlant',sealed:true,bagDelay:800,code:BAG2,fx:true,stage:'to_store',place:'With the driver',t:'16:05',
      pz:{panel:null,at:'bagPlant',cls:'ok',m5:'hide'},
      eyebrow:'On the way back',title:'Same scan. Other direction.',
      desc:'The pickup scan at the plant tells the drop store its order is on the way back.',
      cap:'Heading back. 1 of 1 bags.',
      device:()=>phone('Fold Driver · pickup',BAG2,camView(BAG2)+'<div class="big">1<small>of 1 bags</small></div><div class="meta">Fold Cleaning Plant · 16:05</div>'+pill('Uploaded','good','check')),
      scan:{w:'Driver Maria',x:'Picked up '+BAG2+' at the plant',where:'Fold Cleaning Plant · door',what:'Bag '+BAG2,count:'1 of 1 bags'}},
-    {id:'back',shot:'store',van:'store',face:'L',bag:'store',sealed:true,bagDelay:1050,code:BAG2,fx:true,stage:'back',place:'Drop store',t:'16:44',
+    {id:'back',shot:'store',van:'store',face:'L',bag:'store',sealed:true,bagDelay:750,code:BAG2,fx:true,stage:'back',place:'Drop store',t:'16:44',
      pz:{panel:null,at:'bagStore',cls:'ok',m5:'hide'},
      eyebrow:'Back at the store',title:'Scanned in. Your customer gets a text.',
      desc:'Receiving the bag makes the order Ready and sends the usual ready text. <strong>The plant never appears to the customer.</strong>',
@@ -674,7 +674,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
     if(z.seq&&animate&&!reduce){
       // start from the "before" look, then move one garment at a time
       if(z.from)order.forEach(n=>{const t=pieceTarget(s,n);t.cls=z.from;setPiece(n,t)});
-      const step=s.unpack?330:(s.id==='rebag'||s.id==='bag'?115:230), lead=s.id==='tag'?350:650;
+      const step=s.unpack?230:(s.id==='rebag'||s.id==='bag'?80:150), lead=s.id==='tag'?250:450;
       order.forEach((n,k)=>later(()=>{setPiece(n,pieceTarget(s,n));const g=$('gar'+n);g.classList.add('pop');const done=k===order.length-1;if(s.tick)s.tick(order.slice(0,k+1),done);if(done)endSlot()},lead+k*step));
     }else{
       order.forEach(n=>setPiece(n,pieceTarget(s,n)));endSlot();
@@ -720,13 +720,13 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
   }
   function scanFx(s,extra){
     if(reduce){$('check').setAttribute('opacity',1);return}
-    const delay=950+(extra?450:0);
-    if(s.bag==='store'||s.bag==='plant'){$('laser').animate([{opacity:0,transform:'translateY(0)'},{opacity:1,offset:.15},{opacity:1,transform:'translateY(28px)',offset:.85},{opacity:0,transform:'translateY(28px)'}],{duration:520,delay:delay+(extra||0),easing:'ease-in-out'})}
+    const delay=650+(extra?300:0);
+    if(s.bag==='store'||s.bag==='plant'){$('laser').animate([{opacity:0,transform:'translateY(0)'},{opacity:1,offset:.15},{opacity:1,transform:'translateY(28px)',offset:.85},{opacity:0,transform:'translateY(28px)'}],{duration:400,delay:delay+(extra||0),easing:'ease-in-out'})}
     const r=$('ringFx');r.style.transformBox='fill-box';r.style.transformOrigin='center';
-    r.animate([{opacity:.9,transform:'scale(.3)'},{opacity:0,transform:'scale(2.2)'}],{duration:800,delay:delay+500,easing:'cubic-bezier(.2,.7,.3,1)'});
+    r.animate([{opacity:.9,transform:'scale(.3)'},{opacity:0,transform:'scale(2.2)'}],{duration:600,delay:delay+350,easing:'cubic-bezier(.2,.7,.3,1)'});
     const c=$('check');c.style.transformBox='fill-box';c.style.transformOrigin='center';
-    later(()=>{if(cur()===s)c.setAttribute('opacity',1)},delay+500);
-    c.animate([{transform:'scale(0)'},{transform:'scale(1.25)',offset:.6},{transform:'scale(1)'}],{duration:450,delay:delay+500,easing:'ease-out',fill:'backwards'});
+    later(()=>{if(cur()===s)c.setAttribute('opacity',1)},delay+350);
+    c.animate([{transform:'scale(0)'},{transform:'scale(1.25)',offset:.6},{transform:'scale(1)'}],{duration:350,delay:delay+350,easing:'ease-out',fill:'backwards'});
   }
 
   function render(animate){
@@ -768,7 +768,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
       :[['7 of 7','pieces home, each one accounted for'],['6','hand-offs, every one scanned'],['0','arguments about who had it last']];
     $('numbers').innerHTML=N.map(([v,l,b])=>'<div class="num'+(b?' bad':'')+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>').join('');
   }
-  const dur=s=>s.unpack?4300:(s.pz.seq?3700:(s.only?4200:(s.bagDelay?3600:3100)));
+  const dur=s=>s.unpack?3000:(s.pz.seq?2500:(s.only?2900:(s.bagDelay?2400:2000)));
   function go(n){touched=true;const l=active().length;i=Math.max(0,Math.min(n,l-1));render();schedule()}
   function schedule(){clearTimeout(timer);if(!playing)return;const l=active().length;if(i>=l-1){timer=setTimeout(()=>{playing=false;setIcon()},dur(cur()));return}timer=setTimeout(()=>go(i+1),dur(cur()))}
   function setIcon(){const ended=!playing&&i>=active().length-1;$('playIcon').innerHTML=playing?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':(ended?'<path d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/>':'<path d="M7 4.5v15l13-7.5z"/>');$('play').setAttribute('aria-label',playing?'Pause':(ended?'Replay':'Play'))}
@@ -784,7 +784,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
     if(e.key==='ArrowRight'){pause();go(i+1)} if(e.key==='ArrowLeft'){pause();go(i-1)} if(e.key===' '){e.preventDefault();playing?pause():play()}});
   render(false);setIcon();moveThumb();
   if(document.fonts)document.fonts.ready.then(moveThumb);
-  if(!reduce)setTimeout(()=>{if(!touched&&!playing&&i===0&&lastI===0)play()},1100);
+  if(!reduce)setTimeout(()=>{if(!touched&&!playing&&i===0&&lastI===0)play()},800);
 })();
 </script>
 </body>
