@@ -61,6 +61,34 @@ Paso 6 de la configuración: https://foldpos.com/setup
 
 Preguntas sobre entregas: https://foldpos.com/es/faq#delivery
 
+## Reembolsos, caja e impuestos
+
+- Reembolso: abra el pedido o la pantalla Entrega, pulse Reembolsar, escriba el código del propietario o de un administrador y elija un motivo.
+- Caja: toque el indicador de caja en la pantalla Entrega para abrir la caja, registrar una entrada o salida de efectivo y contarla al cerrar.
+- Cierre del día: Caja › Cierre del día (Z), y luego imprima.
+- Impuesto: Configuración › Pago › Impuesto sobre las ventas.
+- Sin internet: siga tomando pedidos nuevos; se sincronizan cuando vuelve la conexión.
+
+El dinero en el mostrador: https://foldpos.com/es/counter-money
+
+## Reservas en línea
+
+- Configuración › Horario y tiempos de entrega: defina su área de servicio y sus horarios de recogida.
+- Active Aceptar reservas en línea.
+- Comparta el enlace, el botón para su sitio web o el código QR.
+- Las reservas aparecen en Recogida y entrega, marcadas En línea.
+
+Cómo funcionan las reservas en línea: https://foldpos.com/es/pickup-delivery#booking
+
+## Plantas y tiendas de recepción
+
+- Configuración › Planta y tiendas de recepción vincula las tiendas. Solo lo ve el propietario.
+- Planta y bolsas, en el menú de la izquierda: Enviar, Recibir, Ensamblar y Alertas.
+- Busque una pieza por su etiqueta, el número de pedido o el código de la bolsa.
+- Las tarifas y el estado de cuenta mensual están en cada vínculo, en Configuración.
+
+Plantas y tiendas de recepción: https://foldpos.com/es/plants
+
 ## Plan y facturación
 
 - Ajustes › Plan y facturación para elegir, cambiar o cancelar un plan.

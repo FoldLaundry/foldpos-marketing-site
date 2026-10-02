@@ -298,6 +298,10 @@ FAQ = [
     ('payments', 'Payments', 'split', [
         ('Can I use my own card processor?', '<p>Yes. Card, cash, check, store credit and split payments, on your processor at your rates.</p>'),
         ('Can business accounts pay monthly?', '<p>Yes. Monthly invoicing for accounts, with the card on file or however they pay.</p>'),
+        ('Can I give a refund?', '<p>Yes: the whole order, an amount, or one piece. A refund needs an owner or admin code and a reason, and it can’t go over what was paid. <a href="/counter-money#refunds">How refunds work</a>.</p>'),
+        ('Is there a cash drawer and an end-of-day report?', '<p>Yes. Open the drawer with a float, record paid in and paid out, and count it at close; Fold shows over or short. X and Z reports print on your receipt printer. <a href="/counter-money#drawer">Cash drawer and end of day</a>.</p>'),
+        ('How does sales tax work?', '<p>You set one rate for the store and choose what’s taxable. Fold charges it, shows it on the receipt and reports what was collected. Fold doesn’t look the rate up or file for you. <a href="/counter-money#tax">Sales tax</a>.</p>'),
+        ('What happens if the internet goes down?', '<p>The counter keeps taking new orders, with payment in cash, by check, on your own card terminal or on collection. They sync by themselves when the connection is back. <a href="/counter-money#offline">What works offline</a>.</p>'),
     ]),
     ('heyfold', 'Hey Fold', 'mic', [
         ('What is Hey Fold?', '<p>Fold’s voice. Say the customer, the pieces and when it’s due, and the order is typed, priced and printing. Fold reads it back and waits for your “yes” before anything happens.</p>'),
@@ -308,7 +312,12 @@ FAQ = [
     ('delivery', 'Pickup &amp; delivery', 'car', [
         ('Can I run my own delivery service?', '<p>Yes. Today’s pickups and drop-offs with who’s on each, routes built on a map, and the Fold Driver app for your drivers: today’s stops, navigation, and a photo or signature at the door.</p>'),
         ('What if no driver is free?', '<p>Send it with an Uber Direct courier, booked on your store’s own Uber account from the counter.</p>'),
+        ('Can customers book a pickup online?', '<p>Yes. Turn on Take bookings online and your shop has its own booking page, with a link, a button for your website and a QR code. Bookings land in your schedule marked Online. <a href="/pickup-delivery#booking">Online booking</a>.</p>'),
         ('Which plan has delivery?', '<p>Growth and Pro. Route optimization is on Pro.</p>'),
+    ]),
+    ('plants', 'Plants &amp; drop stores', 'stores', [
+        ('Can my drop stores send work to a plant?', '<p>Yes. Link the shops in Settings, then bags are scanned at every hand-off and every piece is counted in and out. The shops can belong to you or to a partner. <a href="/plants">Plants &amp; drop stores</a>.</p>'),
+        ('What happens when a piece goes missing?', '<p>The bag closes short and Fold raises a Count mismatch alert that stays open until someone resolves it with a note. You can find a piece by its tag, the order number or the bag code.</p>'),
     ]),
     ('fold', 'About Fold', 'store', [
         ('How is Fold POS related to Fold?', '<p>Fold POS is built by Fold Laundry, a laundry and dry-cleaning service. We run our own counters on it. <a href="/about">Our story</a>.</p>'),
@@ -323,7 +332,7 @@ def faq():
     for k, t, icon, qs in FAQ:
         items = ''.join(f'<details class="qa"><summary>{q}</summary><div class="a">{a}</div></details>' for q, a in qs)
         groups += f'<div class="faq-group" id="{k}"><h2>{ic(icon)}{t}</h2>{items}</div>'
-    body = head_block('FAQ', 'Questions owners ask.', 'Pricing, printers, switching over, Hey Fold and delivery. Can’t find it? <a href="/contact">Ask us</a>.', 'FAQ') + f'''
+    body = head_block('FAQ', 'Questions owners ask.', 'Pricing, printers, switching over, payments, Hey Fold and delivery. Can’t find it? <a href="/contact">Ask us</a>.', 'FAQ') + f'''
 <section class="section"><div class="wrap"><div class="faq-layout">
   <nav class="faq-toc" aria-label="FAQ topics">{toc}</nav>
   <div>{groups}</div>
@@ -331,7 +340,7 @@ def faq():
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}}
         for _, _, _, qs in FAQ for q, a in qs]}
-    html_ = page('faq', 'FAQ — Fold POS', 'Answers about Fold POS: pricing and the free trial, printers and the print helper, switching from Cents or CleanCloud, payments, Hey Fold, and pickup & delivery.',
+    html_ = page('faq', 'FAQ — Fold POS', 'Answers about Fold POS: pricing and the free trial, printers and the print helper, switching from Cents or CleanCloud, payments, refunds and sales tax, Hey Fold, pickup & delivery, and plants.',
                  'Fold POS FAQ', 'FAQ', body, [ld])
     md = ['# Fold POS FAQ', '', '> Canonical page: https://foldpos.com/faq · Markdown mirror. Anything else: contact@foldpos.com.', '']
     for _, t, _, qs in FAQ:
@@ -364,6 +373,15 @@ TOPICS = [
     ('delivery', 'car', 'Pickup &amp; delivery', 'delivery pickup driver app routes uber courier map',
      '<ul><li>Pickup &amp; delivery in the left menu shows today’s runs and who’s on each.</li><li>Build routes on the map; drivers use the Fold Driver app.</li><li>No driver free? Send it with Uber Direct from the Courier tab.</li></ul>',
      '/faq#delivery', 'Delivery questions'),
+    ('money', 'ledger', 'Refunds, cash drawer &amp; sales tax', 'refund refunds cash drawer float paid in paid out z report x report end of day close sales tax offline no internet',
+     '<ul><li><b>Refund:</b> open the order or Check out, press Refund, enter the owner or admin code and pick a reason.</li><li><b>Cash drawer:</b> tap the drawer chip on Check out to open the drawer, record paid in or paid out, and count it at close.</li><li><b>End of day:</b> Cash drawer › End of day (Z), then print.</li><li><b>Sales tax:</b> Settings › Payment › Sales tax.</li><li><b>No internet:</b> keep taking new orders; they sync when the connection is back.</li></ul>',
+     '/counter-money', 'Money at the counter'),
+    ('booking', 'browser', 'Online booking', 'online booking book pickup customers booking page link qr code website button weekly pickups',
+     '<ol><li>Settings › Hours &amp; turnaround: set your service area and your pickup windows.</li><li>Turn on Take bookings online.</li><li>Share the link, the button for your website or the QR code.</li><li>Bookings show in Pickup &amp; delivery, marked Online.</li></ol>',
+     '/pickup-delivery#booking', 'How online booking works'),
+    ('plants', 'stores', 'Plants &amp; drop stores', 'plant drop store bag bags pieces piece tracking scan missing statement rates',
+     '<ul><li>Settings › Plant &amp; drop stores links the shops. Only the owner sees it.</li><li>Plant &amp; bags in the left menu: Send, Receive, Assemble and Alerts.</li><li>Find a piece by its tag, the order number or the bag code.</li><li>Rates and the monthly statement are on each link in Settings.</li></ul>',
+     '/plants', 'Plants &amp; drop stores'),
     ('billing', 'card', 'Plan &amp; billing', 'billing plan trial cancel upgrade downgrade invoice subscription price',
      '<ul><li>Settings › Plan &amp; billing to pick, change or cancel a plan.</li><li>After the 14-day trial without a plan, the POS goes read-only; your data stays.</li></ul>',
      '/pricing', 'See the plans'),
@@ -404,7 +422,7 @@ def help_():
   q.addEventListener('input',run);
 })();
 </script>'''
-    html_ = page('help', 'Help center — Fold POS', 'Fold POS help: set up your store, connect a receipt or tag printer, import from Cents or CleanCloud, use Hey Fold, add staff, customer texts, delivery and billing.',
+    html_ = page('help', 'Help center — Fold POS', 'Fold POS help: set up your store, connect a receipt or tag printer, import from Cents or CleanCloud, use Hey Fold, add staff, customer texts, delivery, refunds and the cash drawer, online booking and billing.',
                  'Fold POS help center', 'Help', body, script=script)
     md = ['# Fold POS help center', '', '> Canonical page: https://foldpos.com/help · Markdown mirror. Still stuck? contact@foldpos.com and we’ll do it with you.', '']
     for k, icon, t, kw, content, href, more in TOPICS:
@@ -753,13 +771,14 @@ def put_chrome(fname):
     i = s.rindex('</body>')
     s = s[:i] + fb + '\n' + s[i:]
     s = re.sub(r'<link rel="stylesheet" href="/assets/css/chrome\.css(?:\?v=\w+)?">', lambda m: CHROME_CSS, s)
-    s = re.sub(r'<script src="/assets/js/chrome\.js(?:\?v=\w+)?" defer></script>', lambda m: CHROME_JS, s)
     if CHROME_CSS not in s:
         s = s.replace('</head>', CHROME_CSS + '\n</head>', 1)
     if 'fonts.googleapis.com/css2?family=Sora' not in s:
         s = s.replace(CHROME_CSS, FONTS + '\n' + CHROME_CSS, 1)
-    if CHROME_JS not in s:
-        s = s.replace('</body>', CHROME_JS + '\n</body>', 1)
+    # chrome.js always sits last in <body>, after the footer, so running this twice changes nothing.
+    s = re.sub(r'\n?<script src="/assets/js/chrome\.js(?:\?v=\w+)?" defer></script>', '', s)
+    i = s.rindex('</body>')
+    s = s[:i].rstrip('\n') + '\n' + CHROME_JS + '\n' + s[i:]
     open(fname, 'w', encoding='utf-8').write(s)
 
 

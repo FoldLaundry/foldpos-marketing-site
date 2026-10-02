@@ -50,6 +50,14 @@
 
 **¿Las cuentas de empresas pueden pagar mensualmente?** Sí. Facturación mensual para cuentas, con la tarjeta registrada o como ellas prefieran pagar.
 
+**¿Puedo hacer un reembolso?** Sí: todo el pedido, un importe o una sola pieza. Un reembolso necesita el código del propietario o de un administrador y un motivo, y no puede pasar de lo que se pagó. [Cómo funcionan los reembolsos](https://foldpos.com/es/counter-money#refunds).
+
+**¿Hay caja y reporte de cierre del día?** Sí. Abra la caja con un fondo, registre las entradas y salidas de efectivo y cuéntela al cerrar; Fold muestra lo que sobra o falta. Los reportes X y Z se imprimen en su impresora de recibos. [Caja y cierre del día](https://foldpos.com/es/counter-money#drawer).
+
+**¿Cómo funciona el impuesto sobre las ventas?** Usted pone una tasa para la tienda y elige qué lleva impuesto. Fold lo cobra, lo muestra en el recibo e informa lo que se cobró. Fold no busca la tasa ni presenta declaraciones por usted. [Impuesto sobre las ventas](https://foldpos.com/es/counter-money#tax).
+
+**¿Qué pasa si se cae el internet?** El mostrador sigue tomando pedidos nuevos y cobrándolos en efectivo, con cheque, en su propia terminal de tarjetas o al recoger. Se sincronizan solos cuando vuelve la conexión. [Qué funciona sin conexión](https://foldpos.com/es/counter-money#offline).
+
 ## Hey Fold
 
 **¿Qué es Hey Fold?** La voz de Fold. Diga el cliente, las piezas y para cuándo es, y el pedido queda escrito, con precio y ya se está imprimiendo. Fold se lo repite y espera su “sí” antes de hacer nada.
@@ -66,7 +74,15 @@
 
 **¿Y si no hay ningún repartidor libre?** Envíelo con un mensajero de Uber Direct, reservado desde el mostrador con la propia cuenta de Uber de su tienda.
 
+**¿Mis clientes pueden reservar una recogida en línea?** Sí. Active Aceptar reservas en línea y su tienda tiene su propia página de reservas, con un enlace, un botón para su sitio web y un código QR. Las reservas llegan a su calendario marcadas En línea. [Reservas en línea](https://foldpos.com/es/pickup-delivery#booking).
+
 **¿Qué plan incluye entregas?** Growth y Pro. La optimización de rutas está en Pro.
+
+## Plantas y tiendas de recepción
+
+**¿Mis tiendas de recepción pueden enviar trabajo a una planta?** Sí. Vincule las tiendas en Configuración; después las bolsas se escanean en cada entrega y cada pieza se cuenta al salir y al llegar. Las tiendas pueden ser suyas o de un socio. [Plantas y tiendas de recepción](https://foldpos.com/es/plants).
+
+**¿Qué pasa cuando falta una pieza?** La bolsa se cierra incompleta y Fold genera una alerta de Conteo no coincide, que sigue abierta hasta que alguien la resuelve con una nota. Puede buscar una pieza por su etiqueta, el número de pedido o el código de la bolsa.
 
 ## Sobre Fold
 

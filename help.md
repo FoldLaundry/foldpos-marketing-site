@@ -61,6 +61,34 @@ Setup step 6: https://foldpos.com/setup
 
 Delivery questions: https://foldpos.com/faq#delivery
 
+## Refunds, cash drawer & sales tax
+
+- Refund: open the order or Check out, press Refund, enter the owner or admin code and pick a reason.
+- Cash drawer: tap the drawer chip on Check out to open the drawer, record paid in or paid out, and count it at close.
+- End of day: Cash drawer › End of day (Z), then print.
+- Sales tax: Settings › Payment › Sales tax.
+- No internet: keep taking new orders; they sync when the connection is back.
+
+Money at the counter: https://foldpos.com/counter-money
+
+## Online booking
+
+- Settings › Hours & turnaround: set your service area and your pickup windows.
+- Turn on Take bookings online.
+- Share the link, the button for your website or the QR code.
+- Bookings show in Pickup & delivery, marked Online.
+
+How online booking works: https://foldpos.com/pickup-delivery#booking
+
+## Plants & drop stores
+
+- Settings › Plant & drop stores links the shops. Only the owner sees it.
+- Plant & bags in the left menu: Send, Receive, Assemble and Alerts.
+- Find a piece by its tag, the order number or the bag code.
+- Rates and the monthly statement are on each link in Settings.
+
+Plants & drop stores: https://foldpos.com/plants
+
 ## Plan & billing
 
 - Settings › Plan & billing to pick, change or cancel a plan.

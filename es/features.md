@@ -96,6 +96,9 @@ Fold POS es el sistema operativo de una lavandería o tintorería: recepción de
 - **Pagos integrados** — cobre en efectivo, con tarjeta o contra entrega, con su propio procesador de pagos y a sus tarifas.
 - **Cuentas de clientes** — el historial de pedidos, los datos de contacto y las preferencias de cada cliente, guardados y fáciles de buscar desde el mostrador.
 - **Informes que se entienden** — ingresos, volumen de pedidos y mezcla de servicios por día, semana o sucursal, sin exportar hojas de cálculo.
+- **Reembolsos, caja e impuestos** — reembolsos que piden el código del propietario, una caja que se cuenta al cerrar con reportes X y Z, y un impuesto que se configura una sola vez. [El dinero en el mostrador](https://foldpos.com/es/counter-money.md).
+- **Sigue sin conexión** — cuando se cae el internet, el mostrador sigue tomando pedidos nuevos y los sincroniza solo.
+- **Plantas y tiendas de recepción** — bolsas escaneadas en cada entrega, cada pieza contada al salir y al llegar, y un estado de cuenta mensual por tienda. [Plantas y tiendas de recepción](https://foldpos.com/es/plants.md).
 
 ## Más
 

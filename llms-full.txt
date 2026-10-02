@@ -164,6 +164,29 @@ Two receipts, one tap: a customer copy and a store copy print the moment you sub
 - The Fold Driver app for your drivers: the day's stops, navigation, and a photo or signature at the door
 - No driver free? Book an Uber Direct courier from the counter, on the store's own Uber account
 
+### Online booking
+
+On Growth and Pro, a shop can turn on "Take bookings online" (Settings › Hours & turnaround) and get its own booking page. A customer enters the address, picks a pickup window and how the order comes back, and confirms with a code texted to their phone — no account, no password, no card; they pay when the shop has their clothes. The owner sets the service area by postal code, pickup and delivery windows, turnaround, the cutoff and how far ahead. Bookings land in Pickup & delivery marked Online. Customers can ask for a weekly pickup and cancel from the link in the confirmation text. The shop shares a link, a button for its own website and a QR code. The page works in English and Spanish. Online booking needs customer texts set up for the shop.
+
+## Money at the counter
+
+On every plan. Page: https://foldpos.com/counter-money
+
+- **Refunds** — the whole order, an amount, or one piece (a piece gives back its share of the discount and tax). A refund needs an owner or admin code and a reason, can't exceed what was paid on that tender, and goes back as cash, check, card or store credit. A refund ticket prints. When the card was taken on the shop's own terminal, Fold records the refund and the shop runs it on the terminal.
+- **Cash drawer and end of day** — open with a starting float, record paid in, paid out, safe drops and no-sales, and count at close; Fold shows balanced, over or short, and more than $5.00 off needs an owner or admin code. X report mid-shift; the Z report closes the day with sales, discounts, tax, refunds, tenders, employees and each drawer counted against what it should hold. Both print on the receipt printer.
+- **Sales tax** — the owner sets one rate for the store (a percentage or a fixed amount) and what is taxable: services, the express fee, the delivery fee, and single items. Tax-exempt customers with reason and certificate number. A sales tax report by day. Fold does not look up rates or file returns.
+- **Offline** — with no internet the counter keeps taking new orders, priced from the price list saved on the terminal, paid in cash, by check, on the shop's own card terminal or on collection. The customer gets a ticket with a temporary number and barcode. Orders sync by themselves when the connection returns. Garment tags and customer texts go out after the sync; discounts, store credit, courier bookings and checking out or refunding existing orders need the connection.
+
+## Plants and drop stores
+
+Page: https://foldpos.com/plants · Walkthrough: https://foldpos.com/follow-the-bag
+
+- **Linking** — the owner links a plant and its drop stores in Settings › Plant & drop stores. Shops in the same group link in one step; a partner shop joins with a one-time code. A partner plant sees only the customer's first name.
+- **Bags** — staff scan orders into a bag, print its label and seal it. At the other end they scan the bag, then each piece out of it, and Fold reports how many pieces arrived of those sent.
+- **Stages** — waiting for pickup, on the way to the plant, at the plant, on the way back, back at the store. Find a piece by its tag, garment label, order number or bag code; each order keeps a timeline of scans. At assembly the order turns Ready when the last piece is scanned.
+- **Alerts** — count mismatch (needs a note to resolve), overdue (12 hours by default), not assembled, unknown scan. Alerts show in Fold POS; they do not send texts or emails.
+- **Rates and statements** — rates per link by the piece, the pound or the order; a statement per calendar month with every order, pieces, pounds and amount, exportable as CSV. Fold does not bill the drop store.
+
 ## Marketing
 
 **Reach customers before they think to call.** Automated flows that fire on their own — a thank-you after the first order, a nudge at 45 days quiet, a birthday treat — plus SMS, email and push campaigns to segments Fold POS builds for you.

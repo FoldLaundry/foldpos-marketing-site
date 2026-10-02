@@ -50,6 +50,14 @@
 
 **Can business accounts pay monthly?** Yes. Monthly invoicing for accounts, with the card on file or however they pay.
 
+**Can I give a refund?** Yes: the whole order, an amount, or one piece. A refund needs an owner or admin code and a reason, and it can’t go over what was paid. [How refunds work](https://foldpos.com/counter-money#refunds).
+
+**Is there a cash drawer and an end-of-day report?** Yes. Open the drawer with a float, record paid in and paid out, and count it at close; Fold shows over or short. X and Z reports print on your receipt printer. [Cash drawer and end of day](https://foldpos.com/counter-money#drawer).
+
+**How does sales tax work?** You set one rate for the store and choose what’s taxable. Fold charges it, shows it on the receipt and reports what was collected. Fold doesn’t look the rate up or file for you. [Sales tax](https://foldpos.com/counter-money#tax).
+
+**What happens if the internet goes down?** The counter keeps taking new orders, with payment in cash, by check, on your own card terminal or on collection. They sync by themselves when the connection is back. [What works offline](https://foldpos.com/counter-money#offline).
+
 ## Hey Fold
 
 **What is Hey Fold?** Fold’s voice. Say the customer, the pieces and when it’s due, and the order is typed, priced and printing. Fold reads it back and waits for your “yes” before anything happens.
@@ -66,7 +74,15 @@
 
 **What if no driver is free?** Send it with an Uber Direct courier, booked on your store’s own Uber account from the counter.
 
+**Can customers book a pickup online?** Yes. Turn on Take bookings online and your shop has its own booking page, with a link, a button for your website and a QR code. Bookings land in your schedule marked Online. [Online booking](https://foldpos.com/pickup-delivery#booking).
+
 **Which plan has delivery?** Growth and Pro. Route optimization is on Pro.
+
+## Plants & drop stores
+
+**Can my drop stores send work to a plant?** Yes. Link the shops in Settings, then bags are scanned at every hand-off and every piece is counted in and out. The shops can belong to you or to a partner. [Plants & drop stores](https://foldpos.com/plants).
+
+**What happens when a piece goes missing?** The bag closes short and Fold raises a Count mismatch alert that stays open until someone resolves it with a note. You can find a piece by its tag, the order number or the bag code.
 
 ## About Fold
 

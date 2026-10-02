@@ -96,6 +96,9 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 - **Payments built in** — take cash, card, or pay-on-delivery, on your own card processor at your rates.
 - **Customer accounts** — every customer's order history, contact info, and preferences saved and searchable right at the counter.
 - **Reporting that's actually readable** — revenue, order volume, and service mix by day, week, or location — no spreadsheet exports required.
+- **Refunds, cash drawer and sales tax** — refunds that need an owner code, a drawer counted at close with X and Z reports, and sales tax you set once. [Money at the counter](https://foldpos.com/counter-money.md).
+- **Keeps going offline** — when the internet drops, the counter keeps taking new orders and syncs them by itself.
+- **Plants and drop stores** — bags scanned at every hand-off, every piece counted in and out, and a monthly statement for each store. [Plants & drop stores](https://foldpos.com/plants.md).
 
 ## More
 
