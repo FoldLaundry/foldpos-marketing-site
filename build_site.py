@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build the inner pages (pricing, FAQ, help, contact, about, printers) and put the shared
+"""Build the inner pages (pricing, FAQ, help, contact, about, printers, Hey Fold, pickup &
+delivery, money at the counter, plants & drop stores) and put the shared
 header and footer on every page of foldpos.com.
 
 Run from the repository root after editing anything here, partials/ or
@@ -44,7 +45,7 @@ def scene_for(lang):
     return s
 FOOTER = FOOTER.replace('{{SCENE}}', scene_for('en'))
 FOOTER_ES = FOOTER_ES.replace('{{SCENE}}', scene_for('es'))
-LASTMOD = '2026-09-23'   # bump when the site content changes
+LASTMOD = '2026-10-02'   # bump when the site content changes
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700'
@@ -164,7 +165,8 @@ def md_footer():
     return ('\n## More\n\n- [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md)'
             ' · [Contact](/contact.md) · [About](/about.md)\n- [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md)'
             ' · [All features](/features.md) · [Developers & AI](/developers.md)'
-            '\n- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md)\n')
+            '\n- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md) · [Money at the counter](/counter-money.md)'
+            ' · [Plants & drop stores](/plants.md)\n')
 
 
 # ════════════════════════════ PRICING ════════════════════════════
@@ -680,13 +682,14 @@ def put_lang(fname):
 
 
 SITEMAP_PAGES = [('index.html', '1.0'), ('laundromats.html', '0.9'), ('dry-cleaners.html', '0.9'), ('alterations.html', '0.9'),
-                 ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
+                 ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'),
+                 ('counter-money.html', '0.8'), ('plants.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
                  ('contact.html', '0.6'), ('about.html', '0.5'), ('printers.html', '0.7'), ('developers.html', '0.6'),
                  ('download.html', '0.5'),
                  ('privacy.html', '0.3'), ('terms.html', '0.3')]
 SITEMAP_MD = ['fold-pos.md', 'laundromats.md', 'dry-cleaners.md', 'alterations.md', 'features.md', 'pricing.md', 'faq.md',
               'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md',
-              'hey-fold.md', 'pickup-delivery.md']
+              'hey-fold.md', 'pickup-delivery.md', 'counter-money.md', 'plants.md']
 
 
 def sitemap():
@@ -763,8 +766,10 @@ def put_chrome(fname):
 def main():
     from pages_heyfold import hey_fold
     from pages_delivery import pickup_delivery
+    from pages_more import counter_money, plants
     for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers),
-                     ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery)):
+                     ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery),
+                     ('counter-money', counter_money), ('plants', plants)):
         h, md = fn()
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')

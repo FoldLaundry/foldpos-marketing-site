@@ -9,8 +9,9 @@ pickup_delivery_es() below, so run `python3 pages_delivery.py --es` after changi
 here to rewrite it, then build_site.py (header, footer, hreflang) and check_seo.py.
 
 Every claim comes from the site's own copy (index.html #delivery, fold-pos.md, features.md,
-faq.md #delivery, help.md, llms-full.txt, pricing.md). Nothing here about customers
-booking online: that feature is not built yet.
+faq.md #delivery, help.md, llms-full.txt, pricing.md). The online booking section was
+checked against the app and the API on 2 Oct 2026; it does not claim rescheduling, paying
+online or customer accounts, because those are not built.
 """
 import os
 import sys
@@ -26,7 +27,7 @@ LABEL_STYLE = 'display:flex;gap:8px;align-items:center;font-weight:700;font-size
 EN = {
     'lang': 'en', 'home': '/', 'pre': '',
     'title': 'Pickup & delivery — Fold POS',
-    'desc': 'Run pickup & delivery from your Fold POS counter: today’s runs, routes on a map, the Fold Driver app, Uber Direct couriers and cost per stop.',
+    'desc': 'Run pickup & delivery from your Fold POS counter: today’s runs, routes on a map, the Fold Driver app, Uber Direct couriers, online booking and cost per stop.',
     'og': 'Pickup & delivery with Fold POS',
     'crumb': 'Pickup & delivery',
     'kicker': 'Pickup &amp; delivery',
@@ -55,6 +56,19 @@ EN = {
          'Your drivers and the couriers sit in the same schedule.',
          'pd-courier', 'Fold POS Courier tab: Uber Direct couriers on the road with the order and status of each, and a Send with Uber button for an order with no driver free.'),
     ],
+    'booking': {
+        'label': 'Online booking', 'h2': 'Customers book their own pickup.',
+        'sub': 'Turn on Take bookings online and your shop has its own booking page. A customer types the address, picks a pickup window and how the order comes back, and confirms with a code texted to their phone. No account, no password, no card.',
+        'items': [
+            ('flow', 'You set the rules', 'Your service area by postal code, the pickup and delivery windows and how many stops each one takes, turnaround, the cutoff and how far ahead. It’s in Settings › Hours &amp; turnaround.'),
+            ('car', 'It lands in your schedule', 'A booking shows in Pickup &amp; delivery as a stop marked Online, next to the runs you entered yourself.'),
+            ('history', 'Weekly pickups', 'A customer can ask for the same pickup every week, and you can add one from the Weekly tab. Stop it any time.'),
+            ('chat', 'One tap to book again', 'The confirmation text has a link to view or cancel the pickup. The thank-you text has a link to book the next one, already filled in.'),
+            ('browser', 'A link, a button and a QR code', 'Share the link, put the button on your own website, and print the QR code on receipts, bags and door hangers.'),
+            ('globe', 'English or Spanish', 'The booking page and its texts work in both.'),
+        ],
+        'note': 'Customers pay when you have their clothes. Online booking needs customer texts set up for your shop, because the code arrives by text.',
+    },
     'loop_label': 'Texts and checkout',
     'loop_h2': 'The customer hears from you. The fee is on the order.',
     'loop': [
@@ -78,6 +92,7 @@ EN = {
     'faq': [
         ('Can I run my own delivery service?', 'Yes. Today’s pickups and drop-offs with who’s on each, routes built on a map, and the Fold Driver app for your drivers: today’s stops, navigation, and a photo or signature at the door.'),
         ('What if no driver is free?', 'Send it with an Uber Direct courier, booked on your store’s own Uber account from the counter.'),
+        ('Can customers book a pickup online?', 'Yes. Turn on Take bookings online in Settings › Hours &amp; turnaround and your shop has its own booking page, with a link, a button for your website and a QR code. Bookings land in your schedule marked Online.'),
         ('Which plan has delivery?', 'Growth and Pro. Route optimization is on Pro.'),
         ('Is it in Spanish?', 'Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.'),
     ],
@@ -99,7 +114,7 @@ EN = {
 ES = {
     'lang': 'es', 'home': '/es/', 'pre': '/es',
     'title': 'Recogida y entrega — Fold POS',
-    'desc': 'Maneje la recogida y entrega desde el mostrador de Fold POS: recorridos del día, rutas en un mapa, la app Fold Driver, mensajeros de Uber Direct y costos.',
+    'desc': 'Maneje la recogida y entrega desde el mostrador de Fold POS: recorridos del día, rutas en un mapa, la app Fold Driver, mensajeros de Uber Direct, reservas en línea y costos.',
     'og': 'Recogida y entrega con Fold POS',
     'crumb': 'Recogida y entrega',
     'kicker': 'Recogida y entrega',
@@ -128,6 +143,19 @@ ES = {
          'Sus repartidores y los mensajeros quedan en el mismo calendario.',
          'pd-courier', 'Pestaña Mensajería de Fold POS: mensajeros de Uber Direct en camino con el pedido y el estado de cada uno, y un botón para enviar con Uber un pedido sin repartidor libre.'),
     ],
+    'booking': {
+        'label': 'Reservas en línea', 'h2': 'Sus clientes reservan su propia recogida.',
+        'sub': 'Active Aceptar reservas en línea y su tienda tiene su propia página de reservas. El cliente escribe la dirección, elige un horario de recogida y cómo regresa el pedido, y confirma con un código que le llega por mensaje de texto. Sin cuenta, sin contraseña, sin tarjeta.',
+        'items': [
+            ('flow', 'Usted pone las reglas', 'Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.'),
+            ('car', 'Llega a su calendario', 'La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.'),
+            ('history', 'Recogidas semanales', 'El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.'),
+            ('chat', 'Un toque para volver a reservar', 'El mensaje de confirmación trae un enlace para ver o cancelar la recogida. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.'),
+            ('browser', 'Un enlace, un botón y un código QR', 'Comparta el enlace, ponga el botón en su propio sitio web e imprima el código QR en recibos, bolsas y colgantes de puerta.'),
+            ('globe', 'En español o en inglés', 'La página de reservas y sus mensajes funcionan en los dos idiomas.'),
+        ],
+        'note': 'El cliente paga cuando usted ya tiene su ropa. Las reservas en línea necesitan que los mensajes al cliente estén configurados para su tienda, porque el código llega por mensaje de texto.',
+    },
     'loop_label': 'Mensajes y cobro',
     'loop_h2': 'El cliente sabe de usted. El cargo va en el pedido.',
     'loop': [
@@ -151,6 +179,7 @@ ES = {
     'faq': [
         ('¿Puedo tener mi propio servicio de entregas?', 'Sí. Las recogidas y entregas del día con quién va en cada una, rutas armadas en un mapa y la app Fold Driver para sus repartidores: las paradas del día, navegación y una foto o firma en la puerta.'),
         ('¿Y si no hay ningún repartidor libre?', 'Envíelo con un mensajero de Uber Direct, reservado desde el mostrador con la propia cuenta de Uber de su tienda.'),
+        ('¿Mis clientes pueden reservar una recogida en línea?', 'Sí. Active Aceptar reservas en línea en Configuración › Horario y tiempos de entrega y su tienda tiene su propia página de reservas, con un enlace, un botón para su sitio web y un código QR. Las reservas llegan a su calendario marcadas En línea.'),
         ('¿Qué plan incluye entregas?', 'Growth y Pro. La optimización de rutas está en Pro.'),
         ('¿Está en español?', 'Sí. El mostrador, Hey Fold y los mensajes que reciben sus clientes funcionan en español e inglés.'),
     ],
@@ -177,7 +206,9 @@ BAND_ES = '''<section class="band"><div class="wrap"><div class="in">
 
 MD_FOOTER_ES = ('\n## Más\n\n- [Inicio](/es/fold-pos.md) · [Precios](/es/pricing.md) · [Preguntas frecuentes](/es/faq.md) · [Ayuda](/es/help.md)'
                 ' · [Contacto](/es/contact.md) · [Nosotros](/es/about.md)\n- [Impresoras](/es/printers.md) · [Configuración de la tienda](/setup.md)'
-                ' · [Asistente de impresión](/es/download.md) · [Todas las funciones](/es/features.md) · [Desarrolladores e IA](/es/developers.md)\n')
+                ' · [Asistente de impresión](/es/download.md) · [Todas las funciones](/es/features.md) · [Desarrolladores e IA](/es/developers.md)'
+                '\n- [Hey Fold](/es/hey-fold.md) · [Recogida y entrega](/es/pickup-delivery.md) · [El dinero en el mostrador](/es/counter-money.md)'
+                ' · [Plantas y tiendas de recepción](/es/plants.md)\n')
 
 
 def _label(icon, text):
@@ -195,6 +226,8 @@ def _split(key, icon, label, h2, sub, note, img, alt):
 def _build(t):
     facts = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in t['facts'])
     steps = '\n'.join(_split(*s) for s in t['steps'])
+    bk = t['booking']
+    booking = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in bk['items'])
     loop = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in t['loop'])
     h = t['plans_head']
     trs = ''
@@ -217,6 +250,12 @@ def _build(t):
   <div class="facts">{facts}</div>
 </div></section>
 {steps}
+<section class="section" id="booking"><div class="wrap">
+  {_label('browser', bk['label'])}<h2>{bk['h2']}</h2>
+  <p class="sub">{bk['sub']}</p>
+  <div class="facts">{booking}</div>
+  <p class="muted" style="margin-top:18px;font-size:14.5px;max-width:70ch">{bk['note']}</p>
+</div></section>
 <section class="section" id="texts"><div class="wrap">
   {_label('chat', t['loop_label'])}<h2>{t['loop_h2']}</h2>
   <div class="values" style="margin-top:20px">{loop}</div>
@@ -259,6 +298,8 @@ def _build(t):
     md += [f'- **{md_text(b)}**: {md_text(s)}' for i, b, s in t['facts']] + ['']
     for key, icon, label, h2, sub, note, img, alt in t['steps']:
         md += [f'## {md_text(label)}: {md_text(h2)}', '', f'{md_text(sub)} {md_text(note)}', '']
+    md += [f'## {md_text(bk["label"])}: {md_text(bk["h2"])}', '', md_text(bk['sub']), '']
+    md += [f'- **{md_text(b)}**: {md_text(s)}' for i, b, s in bk['items']] + ['', md_text(bk['note']), '']
     md += [f'## {md_text(t["loop_label"])}: {md_text(t["loop_h2"])}', '']
     md += [f'- **{md_text(b)}**: {md_text(s)}' for i, b, s in t['loop']] + ['']
     key, icon, label, h2, sub, note, img, alt = t['cost']

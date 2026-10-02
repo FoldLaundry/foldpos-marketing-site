@@ -24,6 +24,19 @@ Sus repartidores usan la app Fold Driver en su teléfono: las paradas del día, 
 
 Reserve un mensajero de Uber Direct desde el mostrador, con la propia cuenta de Uber de su tienda. Está en la pestaña Mensajería de Recogida y entrega. Sus repartidores y los mensajeros quedan en el mismo calendario.
 
+## Reservas en línea: Sus clientes reservan su propia recogida.
+
+Active Aceptar reservas en línea y su tienda tiene su propia página de reservas. El cliente escribe la dirección, elige un horario de recogida y cómo regresa el pedido, y confirma con un código que le llega por mensaje de texto. Sin cuenta, sin contraseña, sin tarjeta.
+
+- **Usted pone las reglas**: Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.
+- **Llega a su calendario**: La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.
+- **Recogidas semanales**: El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.
+- **Un toque para volver a reservar**: El mensaje de confirmación trae un enlace para ver o cancelar la recogida. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.
+- **Un enlace, un botón y un código QR**: Comparta el enlace, ponga el botón en su propio sitio web e imprima el código QR en recibos, bolsas y colgantes de puerta.
+- **En español o en inglés**: La página de reservas y sus mensajes funcionan en los dos idiomas.
+
+El cliente paga cuando usted ya tiene su ropa. Las reservas en línea necesitan que los mensajes al cliente estén configurados para su tienda, porque el código llega por mensaje de texto.
+
 ## Mensajes y cobro: El cliente sabe de usted. El cargo va en el pedido.
 
 - **Mensajes de estado**: Sus clientes reciben mensajes automáticos cuando su pedido se recoge, cuando está listo y cuando sale a entrega. Con el nombre de su tienda, en español o en inglés.
@@ -52,6 +65,8 @@ Vea todo lo que incluye cada plan: https://foldpos.com/es/pricing
 
 **¿Y si no hay ningún repartidor libre?** Envíelo con un mensajero de Uber Direct, reservado desde el mostrador con la propia cuenta de Uber de su tienda.
 
+**¿Mis clientes pueden reservar una recogida en línea?** Sí. Active Aceptar reservas en línea en Configuración › Horario y tiempos de entrega y su tienda tiene su propia página de reservas, con un enlace, un botón para su sitio web y un código QR. Las reservas llegan a su calendario marcadas En línea.
+
 **¿Qué plan incluye entregas?** Growth y Pro. La optimización de rutas está en Pro.
 
 **¿Está en español?** Sí. El mostrador, Hey Fold y los mensajes que reciben sus clientes funcionan en español e inglés.
@@ -67,3 +82,4 @@ Vea todo lo que incluye cada plan: https://foldpos.com/es/pricing
 
 - [Inicio](/es/fold-pos.md) · [Precios](/es/pricing.md) · [Preguntas frecuentes](/es/faq.md) · [Ayuda](/es/help.md) · [Contacto](/es/contact.md) · [Nosotros](/es/about.md)
 - [Impresoras](/es/printers.md) · [Configuración de la tienda](/setup.md) · [Asistente de impresión](/es/download.md) · [Todas las funciones](/es/features.md) · [Desarrolladores e IA](/es/developers.md)
+- [Hey Fold](/es/hey-fold.md) · [Recogida y entrega](/es/pickup-delivery.md) · [El dinero en el mostrador](/es/counter-money.md) · [Plantas y tiendas de recepción](/es/plants.md)

@@ -24,6 +24,19 @@ Your drivers use the Fold Driver app on their phone: today’s stops, navigation
 
 Book an Uber Direct courier from the counter, on your store’s own Uber account. It’s the Courier tab in Pickup & delivery. Your drivers and the couriers sit in the same schedule.
 
+## Online booking: Customers book their own pickup.
+
+Turn on Take bookings online and your shop has its own booking page. A customer types the address, picks a pickup window and how the order comes back, and confirms with a code texted to their phone. No account, no password, no card.
+
+- **You set the rules**: Your service area by postal code, the pickup and delivery windows and how many stops each one takes, turnaround, the cutoff and how far ahead. It’s in Settings › Hours & turnaround.
+- **It lands in your schedule**: A booking shows in Pickup & delivery as a stop marked Online, next to the runs you entered yourself.
+- **Weekly pickups**: A customer can ask for the same pickup every week, and you can add one from the Weekly tab. Stop it any time.
+- **One tap to book again**: The confirmation text has a link to view or cancel the pickup. The thank-you text has a link to book the next one, already filled in.
+- **A link, a button and a QR code**: Share the link, put the button on your own website, and print the QR code on receipts, bags and door hangers.
+- **English or Spanish**: The booking page and its texts work in both.
+
+Customers pay when you have their clothes. Online booking needs customer texts set up for your shop, because the code arrives by text.
+
 ## Texts and checkout: The customer hears from you. The fee is on the order.
 
 - **Status texts**: Customers get automatic texts as their order is picked up, ready and out for delivery. In your shop’s name, in English or Spanish.
@@ -52,6 +65,8 @@ See everything in each plan: https://foldpos.com/pricing
 
 **What if no driver is free?** Send it with an Uber Direct courier, booked on your store’s own Uber account from the counter.
 
+**Can customers book a pickup online?** Yes. Turn on Take bookings online in Settings › Hours & turnaround and your shop has its own booking page, with a link, a button for your website and a QR code. Bookings land in your schedule marked Online.
+
 **Which plan has delivery?** Growth and Pro. Route optimization is on Pro.
 
 **Is it in Spanish?** Yes. The counter, Hey Fold and the texts your customers get all work in English and Spanish.
@@ -67,4 +82,4 @@ See everything in each plan: https://foldpos.com/pricing
 
 - [Home](/fold-pos.md) · [Pricing](/pricing.md) · [FAQ](/faq.md) · [Help](/help.md) · [Contact](/contact.md) · [About](/about.md)
 - [Printers](/printers.md) · [Store setup](/setup.md) · [Print helper](/download.md) · [All features](/features.md) · [Developers & AI](/developers.md)
-- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md)
+- [Hey Fold](/hey-fold.md) · [Pickup & delivery](/pickup-delivery.md) · [Money at the counter](/counter-money.md) · [Plants & drop stores](/plants.md)

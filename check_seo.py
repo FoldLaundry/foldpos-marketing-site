@@ -138,6 +138,7 @@ def canonical_for(fname):
     return SITE + '/' + fname[:-len('.html')]
 
 
+NOINDEX = set()   # pages with <meta name="robots" content="noindex">: not in the sitemap
 HREFLANG = {}   # fname -> {hreflang: href}, checked for reciprocity in main()
 
 
@@ -174,7 +175,10 @@ def check_page(fname):
     if canon and p.meta.get('og:url') and p.meta['og:url'] != canon:
         err(fname, 'og:url %r does not match canonical %r' % (p.meta['og:url'], canon))
 
-    if not p.jsonld:
+    noindex = 'noindex' in p.meta.get('robots', '').lower()   # helper pages kept out of search
+    if noindex:
+        NOINDEX.add(fname)
+    if not p.jsonld and not noindex:
         err(fname, 'no JSON-LD on the page')
     for i, block in enumerate(p.jsonld):
         try:
@@ -189,7 +193,7 @@ def check_page(fname):
     if md:
         if not exists(md.lstrip('/')):
             err(fname, 'markdown alternate %r does not exist' % md)
-    elif fname not in ('privacy.html', 'terms.html', '404.html'):
+    elif fname not in ('privacy.html', 'terms.html', '404.html') and not noindex:
         err(fname, 'missing <link rel="alternate" type="text/markdown">')
 
     for href in p.hrefs:
@@ -270,7 +274,10 @@ def main():
             if not alt.startswith(SITE) or resolve(alt[len(SITE):]) is None:
                 err('sitemap.xml', 'alternate %s does not map to a file' % alt)
         for f in pages:
-            if canonical_for(f) not in locs and f not in ('setup.html', '404.html'):   # both noindex
+            if f in NOINDEX:
+                if canonical_for(f) in locs:
+                    err('sitemap.xml', '%s is noindex and must not be listed' % canonical_for(f))
+            elif canonical_for(f) not in locs and f not in ('setup.html', '404.html'):   # both noindex
                 err('sitemap.xml', '%s (%s) is not listed' % (canonical_for(f), f))
         if 'setup' in [urlsplit(l).path.strip('/') for l in locs]:
             err('sitemap.xml', '/setup is noindex and must not be listed')
