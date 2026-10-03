@@ -16,7 +16,7 @@ One counter.
 - Refunds, cash drawer and sales tax
 - Keeps taking orders offline
 - Daily reporting and the machine maintenance log
-- Hey Fold
+- Hey Fold, 600 requests a month
 - 500 customer texts a month
 
 ## Growth — $149/month (most popular)
@@ -30,6 +30,7 @@ Adding delivery and staff.
 - Express and subscription pricing
 - Marketing and order reminders
 - Supply inventory and reorder suggestions
+- 1,200 Hey Fold requests a month
 - 1,500 customer texts a month
 
 ## Pro — $249/month
@@ -64,7 +65,7 @@ Only if you need them. Write to [contact@foldpos.com](mailto:contact@foldpos.com
 - **What counts as a customer text?** Each text Fold sends for your shop: order ready, pickup and delivery updates, booking codes and reminders. Texts your customers send you don’t count.
 - **What if I need more texts?** Add 1,000 more a month for $20. Your customers’ texts don’t stop without warning; we write to you first.
 - **Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.
-- **Is Hey Fold extra?** No. Hey Fold is built into every plan.
+- **Is Hey Fold extra?** No. Hey Fold is built into every plan: 600 spoken requests a month on Starter and 1,200 on Growth and Pro. If a store uses them all, Hey Fold keeps answering simpler commands on its own until the 1st.
 - **What if we have more than five locations?** Email [contact@foldpos.com](mailto:contact@foldpos.com?subject=More%20than%20five%20locations) and we’ll set it up with you.
 ## More
 

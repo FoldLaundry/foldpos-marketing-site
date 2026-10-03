@@ -52,11 +52,11 @@ EN = {
         ('S', 'Starter', 'One counter.', False, [
             'Check-in, orders board and payments', 'Customer accounts and history', 'Receipts, tags and printing',
             'Refunds, cash drawer and sales tax', 'Keeps taking orders offline', 'Daily reporting and the machine maintenance log',
-            'Hey Fold', '500 customer texts a month']),
+            'Hey Fold, 600 requests a month', '500 customer texts a month']),
         ('G', 'Growth', 'Adding delivery and staff.', True, [
             'Everything in Starter', 'Pickup &amp; delivery routing', 'Online booking and weekly pickups', 'Staff shifts and clock-in',
             'Express and subscription pricing', 'Marketing and order reminders', 'Supply inventory and reorder suggestions',
-            '1,500 customer texts a month']),
+            '1,200 Hey Fold requests a month', '1,500 customer texts a month']),
         ('P', 'Pro', 'More than one door.', False, [
             'Everything in Growth', 'Multi-location reporting', 'Plants &amp; drop stores', 'Route optimization',
             'Role-based staff permissions', 'Priority support', '3,000 customer texts a month']),
@@ -104,7 +104,7 @@ EN = {
         ('What counts as a customer text?', 'Each text Fold sends for your shop: order ready, pickup and delivery updates, booking codes and reminders. Texts your customers send you don’t count.'),
         ('What if I need more texts?', 'Add 1,000 more a month for $20. Your customers’ texts don’t stop without warning; we write to you first.'),
         ('Can I use my own card processor?', 'Yes. Card, cash, check, store credit and split payments, on your processor at your rates.'),
-        ('Is Hey Fold extra?', 'No. Hey Fold is built into every plan.'),
+        ('Is Hey Fold extra?', 'No. Hey Fold is built into every plan: 600 spoken requests a month on Starter and 1,200 on Growth and Pro. If a store uses them all, Hey Fold keeps answering simpler commands on its own until the 1st.'),
         ('What if we have more than five locations?', 'Email <a href="mailto:contact@foldpos.com?subject=More%20than%20five%20locations">contact@foldpos.com</a> and we’ll set it up with you.'),
     ],
     'faq_more': 'More in the <a href="/faq">FAQ</a>.',
@@ -127,11 +127,11 @@ ES = {
         ('S', 'Starter', 'Un mostrador.', False, [
             'Recepción, tablero de pedidos y cobros', 'Cuentas de clientes e historial', 'Recibos, etiquetas e impresión',
             'Reembolsos, caja e impuesto sobre las ventas', 'Sigue tomando pedidos sin conexión', 'Informes diarios y registro de mantenimiento de máquinas',
-            'Hey Fold', '500 mensajes a clientes al mes']),
+            'Hey Fold, 600 solicitudes al mes', '500 mensajes a clientes al mes']),
         ('G', 'Growth', 'Para sumar entregas y personal.', True, [
             'Todo lo de Starter', 'Rutas de recogida y entrega', 'Reservas en línea y recogidas semanales', 'Turnos y registro de entrada del personal',
             'Precios exprés y por suscripción', 'Marketing y recordatorios de pedidos', 'Inventario de insumos y sugerencias de reabastecimiento',
-            '1,500 mensajes a clientes al mes']),
+            '1,200 solicitudes de Hey Fold al mes', '1,500 mensajes a clientes al mes']),
         ('P', 'Pro', 'Más de una sucursal.', False, [
             'Todo lo de Growth', 'Informes de varias sucursales', 'Plantas y tiendas de recepción', 'Optimización de rutas',
             'Permisos del personal por rol', 'Soporte prioritario', '3,000 mensajes a clientes al mes']),
@@ -179,7 +179,7 @@ ES = {
         ('¿Qué cuenta como un mensaje a clientes?', 'Cada mensaje de texto que Fold envía por su tienda: pedido listo, avisos de recogida y entrega, códigos de reserva y recordatorios. Los mensajes que sus clientes le envían no cuentan.'),
         ('¿Y si necesito más mensajes?', 'Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.'),
         ('¿Puedo usar mi propio procesador de tarjetas?', 'Sí. Tarjeta, efectivo, cheque, crédito de la tienda y pagos divididos, con su procesador y a sus tarifas.'),
-        ('¿Hey Fold se cobra aparte?', 'No. Hey Fold viene incluido en todos los planes.'),
+        ('¿Hey Fold se cobra aparte?', 'No. Hey Fold viene incluido en todos los planes: 600 solicitudes habladas al mes en Starter y 1,200 en Growth y Pro. Si una tienda las usa todas, Hey Fold sigue respondiendo por su cuenta los comandos más simples hasta el día 1.'),
         ('¿Y si tenemos más de cinco sucursales?', 'Escriba a <a href="mailto:contact@foldpos.com?subject=M%C3%A1s%20de%20cinco%20sucursales">contact@foldpos.com</a> y lo configuramos con usted.'),
     ],
     'faq_more': 'Más en las <a href="/es/faq">preguntas frecuentes</a>.',

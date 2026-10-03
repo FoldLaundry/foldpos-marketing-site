@@ -16,7 +16,7 @@ Un mostrador.
 - Reembolsos, caja e impuesto sobre las ventas
 - Sigue tomando pedidos sin conexión
 - Informes diarios y registro de mantenimiento de máquinas
-- Hey Fold
+- Hey Fold, 600 solicitudes al mes
 - 500 mensajes a clientes al mes
 
 ## Growth — $149/mes (el más popular)
@@ -30,6 +30,7 @@ Para sumar entregas y personal.
 - Precios exprés y por suscripción
 - Marketing y recordatorios de pedidos
 - Inventario de insumos y sugerencias de reabastecimiento
+- 1,200 solicitudes de Hey Fold al mes
 - 1,500 mensajes a clientes al mes
 
 ## Pro — $249/mes
@@ -64,7 +65,7 @@ Solo si los necesita. Escriba a [contact@foldpos.com](mailto:contact@foldpos.com
 - **¿Qué cuenta como un mensaje a clientes?** Cada mensaje de texto que Fold envía por su tienda: pedido listo, avisos de recogida y entrega, códigos de reserva y recordatorios. Los mensajes que sus clientes le envían no cuentan.
 - **¿Y si necesito más mensajes?** Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.
 - **¿Puedo usar mi propio procesador de tarjetas?** Sí. Tarjeta, efectivo, cheque, crédito de la tienda y pagos divididos, con su procesador y a sus tarifas.
-- **¿Hey Fold se cobra aparte?** No. Hey Fold viene incluido en todos los planes.
+- **¿Hey Fold se cobra aparte?** No. Hey Fold viene incluido en todos los planes: 600 solicitudes habladas al mes en Starter y 1,200 en Growth y Pro. Si una tienda las usa todas, Hey Fold sigue respondiendo por su cuenta los comandos más simples hasta el día 1.
 - **¿Y si tenemos más de cinco sucursales?** Escriba a [contact@foldpos.com](mailto:contact@foldpos.com?subject=M%C3%A1s%20de%20cinco%20sucursales) y lo configuramos con usted.
 ## Más
 
