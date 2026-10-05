@@ -96,9 +96,19 @@ Plantas y tiendas de recepción: https://foldpos.com/es/plants
 
 Vea los planes: https://foldpos.com/es/pricing
 
+## Conecte un asistente de IA
+
+- Deje que su propio asistente de IA, como Claude, responda preguntas sobre sus ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal.
+- Solo un propietario puede conectar uno. Solo mira, salvo que usted encienda tres cambios pequeños.
+- Configuración › Asistentes: cree un token, pause todos los asistentes o quite uno, y vea la lista de actividad.
+- ¿Cree que alguien más entró? Quite la conexión y luego cambie su contraseña.
+
+Conecte un asistente de IA a su tienda: https://foldpos.com/es/assistants
+
 ## Desarrolladores e IA
 
 - Copias en Markdown de cada página, llms.txt y un servidor MCP público de solo lectura.
+- Dos servidores MCP más: uno para el asistente del propietario de una tienda y otro para que el asistente de un cliente reserve una recogida.
 - Acceso a la API para dueños de tiendas: escríbanos.
 
 Desarrolladores e IA: https://foldpos.com/es/developers

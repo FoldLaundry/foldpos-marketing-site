@@ -14,7 +14,8 @@ Every claim was checked against the app (fold_pos develop) and the API (master) 
 2 Oct 2026. Deliberately NOT claimed, because it is not true today:
   counter-money: card refunds going back by themselves on a standalone terminal; a looked-up
       tax rate, tax filing, more than one rate; offline discounts, store credit, couriers,
-      tags or texts; exporting the Z report.
+      tags or texts.
+  Added 5 Oct 2026 after they shipped: the Z report CSV export and the drawer rules screen.
   plants: drivers scanning bags, billing the drop store, texts on alerts, rack locations.
 The drawings on these pages are examples drawn in HTML, not screenshots.
 
@@ -117,8 +118,9 @@ MONEY_EN = {
           'Paid in, paid out with a reason, safe drop and no sale, each under the clerk’s name.',
           'At close, Fold shows balanced, over or short. More than $5.00 off needs an owner or admin code.',
           'An X report any time in the shift. The Z report closes the day: sales, discounts, tax, refunds, each tender, each employee, and every drawer counted against what it should hold.',
-          'The drawer opens after a cash sale. More than one register? Each terminal picks its own.'],
-         'X and Z reports print on your receipt printer. The Z report is for staff with access to Reports.',
+          'The drawer opens after a cash sale. More than one register? Each terminal picks its own.',
+          'The owner sets the rules on the same page: a blind close, how far off needs a code, the usual starting cash, and the registers.'],
+         'X and Z reports print on your receipt printer, and the Z report also exports as a CSV for your bookkeeper. The Z report is for staff with access to Reports.',
          lambda t: _art('Example end-of-day Z report', _rc('END OF DAY (Z)', 'Fri, Oct 2 · Register 1', [
              ('Orders', '42'), ('Gross sales', '$1,912.50'), ('Discounts', '−$64.00'), ('Net sales', '$1,848.50', True),
              ('Tax collected', '$87.80'), ('Refunds', '−$23.00'), '-',
@@ -201,8 +203,9 @@ MONEY_ES = {
           'Entrada de efectivo, salida de efectivo con su motivo, depósito a caja fuerte y sin venta, cada uno con el nombre del empleado.',
           'Al cerrar, Fold muestra si cuadra, sobra o falta. Más de $5.00 de diferencia necesita el código del propietario o de un administrador.',
           'Un Reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.',
-          'La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.'],
-         'Los reportes X y Z se imprimen en su impresora de recibos. El reporte Z es para el personal con acceso a Informes.',
+          'La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.',
+          'El propietario pone las reglas en la misma página: cierre a ciegas, cuánta diferencia necesita un código, el fondo habitual y las cajas registradoras.'],
+         'Los reportes X y Z se imprimen en su impresora de recibos, y el reporte Z también se exporta como CSV para su contador. El reporte Z es para el personal con acceso a Informes.',
          lambda t: _art('Ejemplo de reporte Z de cierre del día', _rc('CIERRE DEL DÍA (Z)', 'Vie, 2 oct · Caja 1', [
              ('Pedidos', '42'), ('Ventas brutas', '$1,912.50'), ('Descuentos', '−$64.00'), ('Ventas netas', '$1,848.50', True),
              ('Impuesto cobrado', '$87.80'), ('Reembolsos', '−$23.00'), '-',

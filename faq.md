@@ -52,7 +52,7 @@
 
 **Can I give a refund?** Yes: the whole order, an amount, or one piece. A refund needs an owner or admin code and a reason, and it can’t go over what was paid. [How refunds work](https://foldpos.com/counter-money#refunds).
 
-**Is there a cash drawer and an end-of-day report?** Yes. Open the drawer with a float, record paid in and paid out, and count it at close; Fold shows over or short. X and Z reports print on your receipt printer. [Cash drawer and end of day](https://foldpos.com/counter-money#drawer).
+**Is there a cash drawer and an end-of-day report?** Yes. Open the drawer with a float, record paid in and paid out, and count it at close; Fold shows over or short. X and Z reports print on your receipt printer, and the Z report exports as a CSV. [Cash drawer and end of day](https://foldpos.com/counter-money#drawer).
 
 **How does sales tax work?** You set one rate for the store and choose what’s taxable. Fold charges it, shows it on the receipt and reports what was collected. Fold doesn’t look the rate up or file for you. [Sales tax](https://foldpos.com/counter-money#tax).
 

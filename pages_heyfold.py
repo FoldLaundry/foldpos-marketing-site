@@ -9,7 +9,8 @@ hey_fold_es() below, so run `python3 pages_heyfold.py --es` after changing the S
 copy here, then build_site.py (header, footer, hreflang) and check_seo.py.
 
 Every claim comes from the site's own copy: faq.md #heyfold, help.md (Use Hey Fold),
-fold-pos.md, pricing.md and the homepage demo. The live demo itself stays on the
+fold-pos.md, pricing.md and the homepage demo. The owner briefings (#briefings) come from
+the API's docs/STORE-MCP.md, "How a tool is run"; they need the app release that adds them. The live demo itself stays on the
 homepage (#heyfold); this page links to it rather than carrying a second copy.
 """
 import os
@@ -53,6 +54,14 @@ EN = {
         ('“Dos bolsas y un edredón, urgente.”', 'The same order as the first one, said in Spanish.'),
     ],
     'say_note': 'Prices come from your own price list.',
+    'brief_h2': 'Three questions for the owner',
+    'brief_sub': 'Ask out loud and Hey Fold answers from your store’s records. It only looks; nothing changes.',
+    'brief': [
+        ('bell', '“What needs me?”', 'The short list of what needs somebody, most pressing first.'),
+        ('users', '“Who’s on shift?”', 'Who is clocked in, on a break or late. Needs staff shifts on your plan.'),
+        ('rack', '“What’s been sitting on the rack?”', 'Finished orders still waiting for the customer, longest wait first.'),
+    ],
+    'brief_note': 'These three are for the owner only, in English or Spanish. Your own AI assistant can ask the same questions from wherever you are: <a href="/assistants">connect an AI assistant to your store</a>.',
     'try_h2': 'Try it now',
     'try_sub': 'The homepage has a live demo. Type an order, or press Caps Lock and say one, and watch it get rung up.',
     'try_btn': 'Try the live demo',
@@ -115,6 +124,14 @@ ES = {
         ('“Two bags and a comforter, rush it.”', 'El mismo pedido que el primero, dicho en inglés.'),
     ],
     'say_note': 'Los precios salen de su propia lista de precios.',
+    'brief_h2': 'Tres preguntas para el propietario',
+    'brief_sub': 'Pregunte en voz alta y Hey Fold le responde con los registros de su tienda. Solo mira; no cambia nada.',
+    'brief': [
+        ('bell', '“¿Qué necesita mi atención?”', 'La lista corta de lo que necesita a alguien, primero lo más urgente.'),
+        ('users', '“¿Quién está en turno?”', 'Quién marcó entrada, quién está en descanso y quién llegó tarde. Necesita turnos del personal en su plan.'),
+        ('rack', '“¿Qué lleva días en el rack?”', 'Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.'),
+    ],
+    'brief_note': 'Estas tres son solo para el propietario, en español o inglés. Su propio asistente de IA puede hacer las mismas preguntas desde donde usted esté: <a href="/es/assistants">conecte un asistente de IA a su tienda</a>.',
     'try_h2': 'Pruébelo ahora',
     'try_sub': 'La página de inicio tiene una demostración en vivo. Escriba un pedido, o presione Bloq Mayús y dígalo, y vea cómo se registra.',
     'try_btn': 'Probar la demostración',
@@ -161,6 +178,7 @@ def _build(t):
     facts = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in t['facts'])
     steps = ''.join(f'<li><b>{b}</b>{s}</li>' for b, s in t['steps'])
     rows = ''.join(f'<tr><td style="text-align:left">{a}</td><td style="text-align:left">{b}</td></tr>' for a, b in t['say'])
+    brief = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in t['brief'])
     quiet = ''.join(f'<div class="fact">{ic(i)}<div><b>{b}</b><span>{s}</span></div></div>' for i, b, s in t['quiet'])
     faq = ''.join(f'<details class="qa"><summary>{q}</summary><div class="a"><p>{a}</p></div></details>' for q, a in t['faq'])
     more = ''.join(f'<a class="route" href="{h}"><div class="ic">{ic(i)}</div><div><b>{b}</b><span>{s}</span></div></a>' for h, i, b, s in t['more'])
@@ -187,6 +205,12 @@ def _build(t):
     <tbody>{rows}</tbody>
   </table></div>
   <p class="muted" style="margin-top:14px">{t['say_note']}</p>
+</div></section>
+<section class="section" id="briefings"><div class="wrap">
+  <h2>{t['brief_h2']}</h2>
+  <p class="sub">{t['brief_sub']}</p>
+  <div class="facts">{brief}</div>
+  <p class="muted" style="margin-top:14px">{t['brief_note']}</p>
 </div></section>
 <section class="section" id="try"><div class="wrap narrow">
   <h2>{t['try_h2']}</h2>
@@ -226,6 +250,8 @@ def _build(t):
     md += [f'{n}. **{md_text(b)}** {md_text(s)}' for n, (b, s) in enumerate(t['steps'], 1)] + ['']
     md += [f'## {md_text(t["say_h2"])}', '', f'| {t["say_head"][0]} | {t["say_head"][1]} |', '| --- | --- |']
     md += [f'| {md_text(a)} | {md_text(b)} |' for a, b in t['say']] + ['', md_text(t['say_note']), '']
+    md += [f'## {md_text(t["brief_h2"])}', '', md_text(t['brief_sub']), '']
+    md += [f'- **{md_text(b)}**: {md_text(s)}' for i, b, s in t['brief']] + ['', md_text(t['brief_note']), '']
     md += [f'## {md_text(t["try_h2"])}', '', f'{md_text(t["try_sub"])} {SITE}{t["try_href"]}', '']
     md += [f'## {md_text(t["quiet_h2"])}', ''] + [f'- **{md_text(b)}**: {md_text(s)}' for i, b, s in t['quiet']] + ['']
     md += [f'## {md_text(t["faq_h2"])}', ''] + [f'**{md_text(q)}** {md_text(a)}\n' for q, a in t['faq']]

@@ -52,7 +52,7 @@
 
 **¿Puedo hacer un reembolso?** Sí: todo el pedido, un importe o una sola pieza. Un reembolso necesita el código del propietario o de un administrador y un motivo, y no puede pasar de lo que se pagó. [Cómo funcionan los reembolsos](https://foldpos.com/es/counter-money#refunds).
 
-**¿Hay caja y reporte de cierre del día?** Sí. Abra la caja con un fondo, registre las entradas y salidas de efectivo y cuéntela al cerrar; Fold muestra lo que sobra o falta. Los reportes X y Z se imprimen en su impresora de recibos. [Caja y cierre del día](https://foldpos.com/es/counter-money#drawer).
+**¿Hay caja y reporte de cierre del día?** Sí. Abra la caja con un fondo, registre las entradas y salidas de efectivo y cuéntela al cerrar; Fold muestra lo que sobra o falta. Los reportes X y Z se imprimen en su impresora de recibos, y el reporte Z se exporta como CSV. [Caja y cierre del día](https://foldpos.com/es/counter-money#drawer).
 
 **¿Cómo funciona el impuesto sobre las ventas?** Usted pone una tasa para la tienda y elige qué lleva impuesto. Fold lo cobra, lo muestra en el recibo e informa lo que se cobró. Fold no busca la tasa ni presenta declaraciones por usted. [Impuesto sobre las ventas](https://foldpos.com/es/counter-money#tax).
 

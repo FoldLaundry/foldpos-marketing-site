@@ -25,6 +25,16 @@ Diga el cliente, las piezas y para cuándo es. El pedido queda escrito, con prec
 
 Los precios salen de su propia lista de precios.
 
+## Tres preguntas para el propietario
+
+Pregunte en voz alta y Hey Fold le responde con los registros de su tienda. Solo mira; no cambia nada.
+
+- **“¿Qué necesita mi atención?”**: La lista corta de lo que necesita a alguien, primero lo más urgente.
+- **“¿Quién está en turno?”**: Quién marcó entrada, quién está en descanso y quién llegó tarde. Necesita turnos del personal en su plan.
+- **“¿Qué lleva días en el rack?”**: Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.
+
+Estas tres son solo para el propietario, en español o inglés. Su propio asistente de IA puede hacer las mismas preguntas desde donde usted esté: [conecte un asistente de IA a su tienda](https://foldpos.com/es/assistants).
+
 ## Pruébelo ahora
 
 La página de inicio tiene una demostración en vivo. Escriba un pedido, o presione Bloq Mayús y dígalo, y vea cómo se registra. https://foldpos.com/es/#heyfold

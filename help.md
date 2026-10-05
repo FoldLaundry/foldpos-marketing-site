@@ -96,9 +96,19 @@ Plants & drop stores: https://foldpos.com/plants
 
 See the plans: https://foldpos.com/pricing
 
+## Connect an AI assistant
+
+- Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, pickups and deliveries, and staff.
+- Only an owner can connect one. It only looks, unless you switch on three small changes.
+- Settings › Assistants: create a token, pause every assistant or remove one, and see the activity list.
+- Think someone else got in? Remove the connection, then change your password.
+
+Connect an AI assistant to your store: https://foldpos.com/assistants
+
 ## Developers & AI
 
 - Markdown copies of every page, llms.txt, and a public read-only MCP server.
+- Two more MCP servers: one for a store owner’s own assistant, one for a customer’s assistant to book a pickup.
 - Access to the store-owner API: email us.
 
 Developers & AI: https://foldpos.com/developers

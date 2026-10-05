@@ -28,8 +28,9 @@ El indicador de caja en la pantalla Entrega abre Caja. Cada turno empieza con el
 - Al cerrar, Fold muestra si cuadra, sobra o falta. Más de $5.00 de diferencia necesita el código del propietario o de un administrador.
 - Un Reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.
 - La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.
+- El propietario pone las reglas en la misma página: cierre a ciegas, cuánta diferencia necesita un código, el fondo habitual y las cajas registradoras.
 
-Los reportes X y Z se imprimen en su impresora de recibos. El reporte Z es para el personal con acceso a Informes.
+Los reportes X y Z se imprimen en su impresora de recibos, y el reporte Z también se exporta como CSV para su contador. El reporte Z es para el personal con acceso a Informes.
 
 ## Impuesto sobre las ventas: Configure la tasa una vez. Va en cada ticket.
 

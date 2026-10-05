@@ -261,8 +261,8 @@ code{overflow-wrap:anywhere}
   <section class="card">
     <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-5-6 5-6M15 6l5 6-5 6"/></svg></div>
     <h1>Fold POS for developers and AI agents</h1>
-    <p class="lead">Fold POS is point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. This page is the machine-readable entrance: a site map for language models, markdown copies of every page, and a public MCP server that answers questions about the product.</p>
-    <p class="muted">Everything here is read-only and public. Nothing on this page needs an account.</p>
+    <p class="lead">Fold POS is point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. This page is the machine-readable entrance: a site map for language models, markdown copies of every page, and a public MCP server that answers questions about the product. Two more MCP servers are for people’s own AI assistants: <a href="#store-mcp">one for a store owner</a>, and <a href="#booking-mcp">one for a customer booking a pickup</a>.</p>
+    <p class="muted">The files and the public MCP server are read-only and need no account. The store server needs the owner’s sign-in or a token. The booking server needs no sign-in, only a code texted to the customer’s phone.</p>
   </section>
 
   <section class="card">
@@ -351,9 +351,139 @@ code{overflow-wrap:anywhere}
 }</code></pre>
   </section>
 
+  <section class="card" id="store-mcp">
+    <h2>The store server: an owner’s own assistant</h2>
+    <p>A second Model Context Protocol server lets a store owner’s own AI assistant, such as Claude, answer questions about one store: sales, orders, customers, machines, supplies, pickups and deliveries, and staff. It only looks, unless the owner switches on three small changes.</p>
+    <p><b>Who it is for:</b> the owner of a store on Fold POS, and the people who build the assistants owners use. Only an owner can connect an assistant. Staff cannot.</p>
+    <ul class="plain">
+      <li><span>Endpoint: <code>https://app.foldpos.com/v1/mcp/store</code></span></li>
+      <li><span>Transport: HTTP (<code>"type": "http"</code> in a client’s config). Each request stands on its own; there is no session.</span></li>
+      <li><span>Auth: required. The owner signs in and approves inside Fold POS (OAuth 2.1 with PKCE), or sends a personal token as a Bearer header.</span></li>
+      <li><span>Scope: one store. Look-only by default.</span></li>
+    </ul>
+
+    <h3>Connect by signing in</h3>
+    <ol>
+      <li>In your assistant’s settings, add a custom connector (some call it an MCP server) with this address: <code>https://app.foldpos.com/v1/mcp/store</code></li>
+      <li>The assistant sends you to Fold POS. Sign in the way you always do.</li>
+      <li>Fold POS shows the name of the app, where you will be sent back to, and the store. Choose whether the assistant may make changes, then approve.</li>
+    </ol>
+    <p class="muted">For client builders: a call with no token gets a 401 whose <code>WWW-Authenticate</code> header names the discovery document. Clients register themselves at <code>/v1/oauth/register</code>, PKCE with S256 is mandatory, the scopes are <code>read</code> and <code>write</code>, and an access token lasts one hour and is renewed with a refresh token.</p>
+
+    <h3>Connect with a token</h3>
+    <p>Some apps ask for a token instead. The owner creates one in Fold POS under <b>Settings › Assistants</b>, and it is shown once. The assistant sends it as a Bearer header:</p>
+    <pre><code>Authorization: Bearer fpos_pat_…</code></pre>
+    <p>Clients that take a JSON config:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos-store": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp/store",
+      "headers": { "Authorization": "Bearer fpos_pat_…" }
+    }
+  }
+}</code></pre>
+    <p class="note">Treat a token like a password. Anyone who has it can read the store’s orders, customers and sales.</p>
+
+    <h3>Tools</h3>
+    <p>Sixteen tools: thirteen that read and three that change something. A look-only connection is not shown the three that change.</p>
+    <table>
+      <thead><tr><th>Tool</th><th>What it answers</th></tr></thead>
+      <tbody>
+        <tr><td><code>store_overview</code></td><td>Which store this is: name, what it does, time zone and today’s date there, currency, plan, and whether this connection may change anything.</td></tr>
+        <tr><td><code>today</code></td><td>One day in one answer: sales and how they were paid, orders taken in, due and late, orders waiting, stops, machine income, who is clocked in.</td></tr>
+        <tr><td><code>needs_attention</code></td><td>The short list of what needs somebody, most pressing first.</td></tr>
+        <tr><td><code>find_orders</code></td><td>Orders by customer, state or date.</td></tr>
+        <tr><td><code>order_detail</code></td><td>One order in full: customer, lines, money, payments, where it is, tagged pieces, notes and messages.</td></tr>
+        <tr><td><code>ready_not_picked_up</code></td><td>Finished orders still waiting for the customer, longest wait first.</td></tr>
+        <tr><td><code>find_customers</code></td><td>Customers by name, phone or email, or a list by recency, name or spend.</td></tr>
+        <tr><td><code>customer_detail</code></td><td>One customer in full: contact details, totals, store credit, preferences, addresses, last 5 orders, last 10 staff notes.</td></tr>
+        <tr><td><code>sales_report</code></td><td>Sales over a period: totals, refunds, by service, by payment type, sales tax, day by day.</td></tr>
+        <tr><td><code>machines</code></td><td>Counts, what is out of service, what is running, maintenance due, open repair requests.</td></tr>
+        <tr><td><code>supplies_low</code></td><td>Supplies at or below their minimum, and what to reorder.</td></tr>
+        <tr><td><code>deliveries</code></td><td>One day’s pickup and delivery stops: routes, drivers, every stop in order, stops on no route. Needs pickup &amp; delivery on the store’s plan.</td></tr>
+        <tr><td><code>staff_on_shift</code></td><td>Who is clocked in, on a break, late, scheduled, done or missed, and hours per person over a range. Needs staff shifts on the store’s plan.</td></tr>
+        <tr><td><code>mark_order_ready</code></td><td>A change. Marks one order ready, as the Ready button on the Orders screen does.</td></tr>
+        <tr><td><code>add_order_note</code></td><td>A change. Adds an internal staff note to one order.</td></tr>
+        <tr><td><code>add_customer_note</code></td><td>A change. Adds a staff note to one customer’s file.</td></tr>
+      </tbody>
+    </table>
+    <p>Every answer is a short summary followed by the same facts as JSON. A tool that fails says so. It never answers with a zero or an empty list in place of something it could not read. The tools answer in English; the assistant is asked to answer in the language of the person it works for.</p>
+
+    <h3>Safety rules</h3>
+    <ul class="plain">
+      <li><span><b>Owner only.</b> Only an owner can connect an assistant, see the list or remove one.</span></li>
+      <li><span><b>Look-only by default.</b> Changes are off until the owner switches them on, and each assistant also needs the owner’s permission to make them.</span></li>
+      <li><span><b>Changes are previewed first.</b> The first call describes the change and changes nothing. The change is made only when the assistant calls again with the code from the preview. The code works once, for five minutes.</span></li>
+      <li><span><b>Money never moves.</b> No tool charges, refunds, discounts, pays out, cancels, deletes, sends a message of its own or changes a setting.</span></li>
+      <li><span><b>An activity list.</b> Every question and every change shows in the owner’s activity list, kept for 90 days. The answers are not kept.</span></li>
+      <li><span><b>Pause or remove at any time.</b> One switch pauses every assistant. A removed connection stops working straight away.</span></li>
+      <li><span><b>Personal details.</b> In lists, customers’ phone numbers and emails are partly hidden. Card numbers are never shown; Fold POS does not store them.</span></li>
+    </ul>
+    <p>For store owners: <a href="/assistants">Connect an AI assistant to your store</a>.</p>
+    <p class="muted">The endpoint is for AI apps, not for a browser. Opening it in a browser brings you back to this section.</p>
+  </section>
+
+  <section class="card" id="booking-mcp">
+    <h2>The booking server: a customer’s own assistant</h2>
+    <p>A third server lets a customer’s own AI assistant book a laundry pickup with a shop that has online booking switched on. It does what the shop’s booking page does, with the same rules, times and prices.</p>
+    <p><b>Who it is for:</b> customers of shops that run on Fold POS, and the people who build the assistants they use. Only shops with online booking switched on can be reached.</p>
+    <ul class="plain">
+      <li><span>Endpoint: <code>https://app.foldpos.com/v1/mcp/book</code></span></li>
+      <li><span>Transport: HTTP (<code>"type": "http"</code> in a client’s config). Each request stands on its own; there is no session.</span></li>
+      <li><span>Auth: none. There is no sign-in, like the booking page. Nothing is written until the customer proves their phone with a texted code.</span></li>
+      <li><span>Payment: nothing is charged at booking. The customer pays the shop when the order is collected or delivered.</span></li>
+    </ul>
+
+    <h3>Connect</h3>
+    <ol>
+      <li>In your assistant’s settings, add a custom connector (some call it an MCP server) with this address: <code>https://app.foldpos.com/v1/mcp/book</code></li>
+      <li>It needs no login.</li>
+      <li>Ask the assistant to book a pickup. The shop texts a 6-digit code to your phone. Read it to the assistant to confirm the booking.</li>
+    </ol>
+    <p>Clients that take a JSON config:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos-booking": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp/book"
+    }
+  }
+}</code></pre>
+
+    <h3>Tools</h3>
+    <p>Ten tools.</p>
+    <table>
+      <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>find_shop</code></td><td>Finds shops that take bookings, by name, town, ZIP or booking name. Up to 5.</td></tr>
+        <tr><td><code>shop_info</code></td><td>Name, phone, address, hours, services, how far ahead it books, delivery fee, free-delivery amount, minimum order, how payment works.</td></tr>
+        <tr><td><code>pickup_times</code></td><td>Free pickup times at an address, after checking the address is in the shop’s area.</td></tr>
+        <tr><td><code>return_options</code></td><td>When the order will be ready and which delivery times go with a pickup time.</td></tr>
+        <tr><td><code>send_booking_code</code></td><td>Asks the shop to text a 6-digit code to the customer’s phone.</td></tr>
+        <tr><td><code>book_pickup</code></td><td>Makes the booking. Needs the code.</td></tr>
+        <tr><td><code>my_booking</code></td><td>A booking’s times, and whether it can still be moved or cancelled here.</td></tr>
+        <tr><td><code>booking_move_times</code></td><td>The times a booking can move to.</td></tr>
+        <tr><td><code>move_booking</code></td><td>Moves a booking.</td></tr>
+        <tr><td><code>cancel_booking</code></td><td>Cancels a booking.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Safety rules</h3>
+    <ul class="plain">
+      <li><span><b>The code from the customer’s phone.</b> A booking needs the 6-digit code the shop texts. Only the person holding the phone can read it out. A code lasts 10 minutes.</span></li>
+      <li><span><b>Nothing is charged.</b> The customer pays the shop when the order is collected or delivered.</span></li>
+      <li><span><b>Only shops that take bookings.</b> A shop with online booking switched off cannot be reached.</span></li>
+      <li><span><b>The shop is told at once.</b> A new booking shows under the bell at the counter, marked as booked through an assistant.</span></li>
+      <li><span><b>A failure is a failure.</b> A tool that fails says so. It is never shown as “no times available”.</span></li>
+    </ul>
+    <p>For store owners: <a href="/assistants#questions">Can my customers use an assistant too?</a> and <a href="/pickup-delivery#booking">how online booking works</a>.</p>
+    <p class="muted">The endpoint is for AI apps, not for a browser. Opening it in a browser brings you back to this section.</p>
+  </section>
+
   <section class="card">
     <h2>The store-owner API</h2>
-    <p class="note">The API that reaches a store's own customers, orders and reporting is <b>private</b>. It is not part of the public MCP server and has no public documentation.</p>
+    <p class="note">The API that reaches a store's own customers, orders and reporting is <b>private</b>. It is not part of the public MCP server and has no public documentation. A store owner’s own AI assistant does not use it: it connects through <a href="#store-mcp">the store server</a> above.</p>
     <p class="muted">If you are a Fold POS customer or a partner who needs programmatic access to a store's data, email <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20API">contact@foldpos.com</a> and tell us what you are building.</p>
     <p class="muted">Delivery marketplaces are a separate path: Fold, Laundryheap and Rinse connect from inside the POS — turn the partner on, give them the API key, and their jobs land in the store's schedule with status updates flowing back.</p>
   </section>

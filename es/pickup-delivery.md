@@ -31,7 +31,7 @@ Active Aceptar reservas en línea y su tienda tiene su propia página de reserva
 - **Usted pone las reglas**: Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.
 - **Llega a su calendario**: La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.
 - **Recogidas semanales**: El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.
-- **Un toque para volver a reservar**: El mensaje de confirmación trae un enlace para ver o cancelar la recogida. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.
+- **Un toque para volver a reservar**: El mensaje de confirmación trae un enlace para ver la recogida, cambiarle la hora o cancelarla. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.
 - **Un enlace, un botón y un código QR**: Comparta el enlace, ponga el botón en su propio sitio web e imprima el código QR en recibos, bolsas y colgantes de puerta.
 - **En español o en inglés**: La página de reservas y sus mensajes funcionan en los dos idiomas.
 

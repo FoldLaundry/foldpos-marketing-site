@@ -25,6 +25,16 @@ Say the customer, the pieces and when it’s due. The order is typed, priced and
 
 Prices come from your own price list.
 
+## Three questions for the owner
+
+Ask out loud and Hey Fold answers from your store’s records. It only looks; nothing changes.
+
+- **“What needs me?”**: The short list of what needs somebody, most pressing first.
+- **“Who’s on shift?”**: Who is clocked in, on a break or late. Needs staff shifts on your plan.
+- **“What’s been sitting on the rack?”**: Finished orders still waiting for the customer, longest wait first.
+
+These three are for the owner only, in English or Spanish. Your own AI assistant can ask the same questions from wherever you are: [connect an AI assistant to your store](https://foldpos.com/assistants).
+
 ## Try it now
 
 The homepage has a live demo. Type an order, or press Caps Lock and say one, and watch it get rung up. https://foldpos.com/#heyfold

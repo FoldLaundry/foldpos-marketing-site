@@ -10,8 +10,9 @@ here to rewrite it, then build_site.py (header, footer, hreflang) and check_seo.
 
 Every claim comes from the site's own copy (index.html #delivery, fold-pos.md, features.md,
 faq.md #delivery, help.md, llms-full.txt, pricing.md). The online booking section was
-checked against the app and the API on 2 Oct 2026; it does not claim rescheduling, paying
-online or customer accounts, because those are not built.
+checked against the app and the API on 2 Oct 2026; it does not claim paying online or
+customer accounts, because those are not built. Changing the time of a booked pickup from
+the text link was added on 5 Oct 2026, after it shipped.
 """
 import os
 import sys
@@ -63,7 +64,7 @@ EN = {
             ('flow', 'You set the rules', 'Your service area by postal code, the pickup and delivery windows and how many stops each one takes, turnaround, the cutoff and how far ahead. It’s in Settings › Hours &amp; turnaround.'),
             ('car', 'It lands in your schedule', 'A booking shows in Pickup &amp; delivery as a stop marked Online, next to the runs you entered yourself.'),
             ('history', 'Weekly pickups', 'A customer can ask for the same pickup every week, and you can add one from the Weekly tab. Stop it any time.'),
-            ('chat', 'One tap to book again', 'The confirmation text has a link to view or cancel the pickup. The thank-you text has a link to book the next one, already filled in.'),
+            ('chat', 'One tap to book again', 'The confirmation text has a link to view the pickup, change its time or cancel it. The thank-you text has a link to book the next one, already filled in.'),
             ('browser', 'A link, a button and a QR code', 'Share the link, put the button on your own website, and print the QR code on receipts, bags and door hangers.'),
             ('globe', 'English or Spanish', 'The booking page and its texts work in both.'),
         ],
@@ -150,7 +151,7 @@ ES = {
             ('flow', 'Usted pone las reglas', 'Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.'),
             ('car', 'Llega a su calendario', 'La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.'),
             ('history', 'Recogidas semanales', 'El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.'),
-            ('chat', 'Un toque para volver a reservar', 'El mensaje de confirmación trae un enlace para ver o cancelar la recogida. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.'),
+            ('chat', 'Un toque para volver a reservar', 'El mensaje de confirmación trae un enlace para ver la recogida, cambiarle la hora o cancelarla. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.'),
             ('browser', 'Un enlace, un botón y un código QR', 'Comparta el enlace, ponga el botón en su propio sitio web e imprima el código QR en recibos, bolsas y colgantes de puerta.'),
             ('globe', 'En español o en inglés', 'La página de reservas y sus mensajes funcionan en los dos idiomas.'),
         ],

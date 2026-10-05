@@ -31,7 +31,7 @@ Turn on Take bookings online and your shop has its own booking page. A customer 
 - **You set the rules**: Your service area by postal code, the pickup and delivery windows and how many stops each one takes, turnaround, the cutoff and how far ahead. It’s in Settings › Hours & turnaround.
 - **It lands in your schedule**: A booking shows in Pickup & delivery as a stop marked Online, next to the runs you entered yourself.
 - **Weekly pickups**: A customer can ask for the same pickup every week, and you can add one from the Weekly tab. Stop it any time.
-- **One tap to book again**: The confirmation text has a link to view or cancel the pickup. The thank-you text has a link to book the next one, already filled in.
+- **One tap to book again**: The confirmation text has a link to view the pickup, change its time or cancel it. The thank-you text has a link to book the next one, already filled in.
 - **A link, a button and a QR code**: Share the link, put the button on your own website, and print the QR code on receipts, bags and door hangers.
 - **English or Spanish**: The booking page and its texts work in both.
 

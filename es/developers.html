@@ -261,8 +261,8 @@ code{overflow-wrap:anywhere}
   <section class="card">
     <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-5-6 5-6M15 6l5 6-5 6"/></svg></div>
     <h1>Fold POS para desarrolladores y agentes de IA</h1>
-    <p class="lead">Fold POS es un software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías, creado por Fold Laundry. Esta página es la entrada legible por máquinas: un mapa del sitio para modelos de lenguaje, copias en markdown de cada página y un servidor MCP público que responde preguntas sobre el producto.</p>
-    <p class="muted">Todo lo que hay aquí es público y de solo lectura. Nada en esta página requiere una cuenta.</p>
+    <p class="lead">Fold POS es un software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías, creado por Fold Laundry. Esta página es la entrada legible por máquinas: un mapa del sitio para modelos de lenguaje, copias en markdown de cada página y un servidor MCP público que responde preguntas sobre el producto. Hay dos servidores MCP más, para los asistentes de IA de cada persona: <a href="#store-mcp">uno para el propietario de una tienda</a> y <a href="#booking-mcp">otro para un cliente que reserva una recogida</a>.</p>
+    <p class="muted">Los archivos y el servidor MCP público son de solo lectura y no requieren una cuenta. El servidor de la tienda requiere el inicio de sesión del propietario o un token. El servidor de reservas no requiere inicio de sesión, solo un código que el cliente recibe por mensaje de texto.</p>
   </section>
 
   <section class="card">
@@ -364,9 +364,139 @@ code{overflow-wrap:anywhere}
 }</code></pre>
   </section>
 
+  <section class="card" id="store-mcp">
+    <h2>El servidor de la tienda: el asistente del propietario</h2>
+    <p>Un segundo servidor de Model Context Protocol permite que el asistente de IA del propietario de una tienda, como Claude, responda preguntas sobre una tienda: ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal. Solo mira, salvo que el propietario encienda tres cambios pequeños.</p>
+    <p><b>Para quién es:</b> el propietario de una tienda en Fold POS y quienes crean los asistentes que usan los propietarios. Solo un propietario puede conectar un asistente. El personal no puede.</p>
+    <ul class="plain">
+      <li><span>Endpoint: <code>https://app.foldpos.com/v1/mcp/store</code></span></li>
+      <li><span>Transporte: HTTP (<code>"type": "http"</code> en la configuración del cliente). Cada solicitud es independiente; no hay sesión.</span></li>
+      <li><span>Autenticación: obligatoria. El propietario inicia sesión y aprueba dentro de Fold POS (OAuth 2.1 con PKCE), o envía un token personal como encabezado Bearer.</span></li>
+      <li><span>Alcance: una sola tienda. De solo lectura de forma predeterminada.</span></li>
+    </ul>
+
+    <h3>Conectar iniciando sesión</h3>
+    <ol>
+      <li>En la configuración de su asistente, agregue un conector personalizado (algunos lo llaman servidor MCP) con esta dirección: <code>https://app.foldpos.com/v1/mcp/store</code></li>
+      <li>El asistente lo envía a Fold POS. Inicie sesión como siempre.</li>
+      <li>Fold POS muestra el nombre de la app, adónde regresará usted y la tienda. Elija si el asistente puede hacer cambios y luego apruebe.</li>
+    </ol>
+    <p class="muted">Para quienes crean clientes: una llamada sin token recibe un 401 cuyo encabezado <code>WWW-Authenticate</code> indica el documento de descubrimiento. Los clientes se registran solos en <code>/v1/oauth/register</code>, PKCE con S256 es obligatorio, los alcances son <code>read</code> y <code>write</code>, y un token de acceso dura una hora y se renueva con un token de actualización.</p>
+
+    <h3>Conectar con un token</h3>
+    <p>Algunas apps piden un token. El propietario lo crea en Fold POS, en <b>Configuración › Asistentes</b>, y se muestra una sola vez. El asistente lo envía como encabezado Bearer:</p>
+    <pre><code>Authorization: Bearer fpos_pat_…</code></pre>
+    <p>Para los clientes que usan una configuración JSON:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos-store": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp/store",
+      "headers": { "Authorization": "Bearer fpos_pat_…" }
+    }
+  }
+}</code></pre>
+    <p class="note">Trate un token como una contraseña. Quien lo tenga puede leer los pedidos, los clientes y las ventas de la tienda.</p>
+
+    <h3>Herramientas</h3>
+    <p>Dieciséis herramientas: trece que leen y tres que cambian algo. Una conexión de solo lectura no ve las tres que cambian.</p>
+    <table>
+      <thead><tr><th>Herramienta</th><th>Qué responde</th></tr></thead>
+      <tbody>
+        <tr><td><code>store_overview</code></td><td>Qué tienda es: nombre, a qué se dedica, zona horaria y la fecha de hoy allí, moneda, plan y si esta conexión puede cambiar algo.</td></tr>
+        <tr><td><code>today</code></td><td>Un día en una sola respuesta: ventas y cómo se pagaron, pedidos recibidos, por entregar y atrasados, pedidos en espera, paradas, ingresos de las máquinas y quién marcó entrada.</td></tr>
+        <tr><td><code>needs_attention</code></td><td>La lista corta de lo que necesita a alguien, primero lo más urgente.</td></tr>
+        <tr><td><code>find_orders</code></td><td>Pedidos por cliente, estado o fecha.</td></tr>
+        <tr><td><code>order_detail</code></td><td>Un pedido completo: cliente, líneas, importes, pagos, dónde está, piezas etiquetadas, notas y mensajes.</td></tr>
+        <tr><td><code>ready_not_picked_up</code></td><td>Pedidos terminados que siguen esperando al cliente, primero el que más lleva.</td></tr>
+        <tr><td><code>find_customers</code></td><td>Clientes por nombre, teléfono o correo, o una lista por fecha reciente, nombre o gasto.</td></tr>
+        <tr><td><code>customer_detail</code></td><td>Un cliente completo: datos de contacto, totales, crédito de tienda, preferencias, direcciones, los últimos 5 pedidos y las últimas 10 notas del personal.</td></tr>
+        <tr><td><code>sales_report</code></td><td>Ventas de un periodo: totales, reembolsos, por servicio, por forma de pago, impuesto sobre las ventas y día por día.</td></tr>
+        <tr><td><code>machines</code></td><td>Conteos, qué está fuera de servicio, qué está en uso, mantenimiento pendiente y solicitudes de reparación abiertas.</td></tr>
+        <tr><td><code>supplies_low</code></td><td>Insumos en su mínimo o por debajo, y qué volver a pedir.</td></tr>
+        <tr><td><code>deliveries</code></td><td>Las paradas de recogida y entrega de un día: rutas, repartidores, cada parada en orden y las paradas sin ruta. Necesita recogida y entrega en el plan de la tienda.</td></tr>
+        <tr><td><code>staff_on_shift</code></td><td>Quién marcó entrada, está en descanso, llegó tarde, está programado, terminó o faltó, y las horas por persona en un periodo. Necesita turnos del personal en el plan de la tienda.</td></tr>
+        <tr><td><code>mark_order_ready</code></td><td>Un cambio. Marca un pedido como listo, igual que el botón Listo de la pantalla Pedidos.</td></tr>
+        <tr><td><code>add_order_note</code></td><td>Un cambio. Agrega una nota interna del personal a un pedido.</td></tr>
+        <tr><td><code>add_customer_note</code></td><td>Un cambio. Agrega una nota del personal al expediente de un cliente.</td></tr>
+      </tbody>
+    </table>
+    <p>Cada respuesta es un resumen corto seguido de los mismos datos en JSON. Una herramienta que falla lo dice. Nunca responde con un cero o una lista vacía en lugar de algo que no pudo leer. Las herramientas responden en inglés; al asistente se le pide responder en el idioma de la persona para quien trabaja.</p>
+
+    <h3>Reglas de seguridad</h3>
+    <ul class="plain">
+      <li><span><b>Solo el propietario.</b> Solo un propietario puede conectar un asistente, ver la lista o quitar uno.</span></li>
+      <li><span><b>De solo lectura de forma predeterminada.</b> Los cambios están apagados hasta que el propietario los enciende, y cada asistente necesita además el permiso del propietario para hacerlos.</span></li>
+      <li><span><b>Los cambios se muestran antes.</b> La primera llamada describe el cambio y no cambia nada. El cambio se hace solo cuando el asistente vuelve a llamar con el código de la vista previa. El código sirve una vez, durante cinco minutos.</span></li>
+      <li><span><b>El dinero nunca se mueve.</b> Ninguna herramienta cobra, reembolsa, descuenta, paga, cancela, elimina, envía un mensaje por su cuenta ni cambia una configuración.</span></li>
+      <li><span><b>Una lista de actividad.</b> Cada pregunta y cada cambio aparece en la lista de actividad del propietario, que se conserva 90 días. Las respuestas no se guardan.</span></li>
+      <li><span><b>Pausar o quitar en cualquier momento.</b> Un interruptor pausa todos los asistentes. Una conexión que se quita deja de funcionar de inmediato.</span></li>
+      <li><span><b>Datos personales.</b> En las listas, los teléfonos y correos de los clientes aparecen parcialmente ocultos. Los números de tarjeta nunca se muestran; Fold POS no los guarda.</span></li>
+    </ul>
+    <p>Para propietarios de tiendas: <a href="/es/assistants">Conecte un asistente de IA a su tienda</a>.</p>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.</p>
+  </section>
+
+  <section class="card" id="booking-mcp">
+    <h2>El servidor de reservas: el asistente del cliente</h2>
+    <p>Un tercer servidor permite que el asistente de IA de un cliente reserve una recogida de ropa en una tienda que tenga activadas las reservas en línea. Hace lo mismo que la página de reservas de la tienda, con las mismas reglas, horarios y precios.</p>
+    <p><b>Para quién es:</b> los clientes de las tiendas que trabajan con Fold POS y quienes crean los asistentes que ellos usan. Solo se puede llegar a las tiendas que tienen activadas las reservas en línea.</p>
+    <ul class="plain">
+      <li><span>Endpoint: <code>https://app.foldpos.com/v1/mcp/book</code></span></li>
+      <li><span>Transporte: HTTP (<code>"type": "http"</code> en la configuración del cliente). Cada solicitud es independiente; no hay sesión.</span></li>
+      <li><span>Autenticación: ninguna. No hay inicio de sesión, igual que en la página de reservas. No se guarda nada hasta que el cliente comprueba su teléfono con un código que recibe por mensaje de texto.</span></li>
+      <li><span>Pago: no se cobra nada al reservar. El cliente le paga a la tienda cuando recoge el pedido o cuando se lo entregan.</span></li>
+    </ul>
+
+    <h3>Conectar</h3>
+    <ol>
+      <li>En la configuración de su asistente, agregue un conector personalizado (algunos lo llaman servidor MCP) con esta dirección: <code>https://app.foldpos.com/v1/mcp/book</code></li>
+      <li>No necesita inicio de sesión.</li>
+      <li>Pídale al asistente que reserve una recogida. La tienda envía un código de 6 dígitos a su teléfono por mensaje de texto. Dígaselo al asistente para confirmar la reserva.</li>
+    </ol>
+    <p>Para los clientes que usan una configuración JSON:</p>
+    <pre><code>{
+  "mcpServers": {
+    "fold-pos-booking": {
+      "type": "http",
+      "url": "https://app.foldpos.com/v1/mcp/book"
+    }
+  }
+}</code></pre>
+
+    <h3>Herramientas</h3>
+    <p>Diez herramientas.</p>
+    <table>
+      <thead><tr><th>Herramienta</th><th>Qué hace</th></tr></thead>
+      <tbody>
+        <tr><td><code>find_shop</code></td><td>Busca tiendas que aceptan reservas, por nombre, ciudad, código postal o nombre de reserva. Hasta 5.</td></tr>
+        <tr><td><code>shop_info</code></td><td>Nombre, teléfono, dirección, horario, servicios, con cuánta anticipación reserva, cargo de entrega, importe para entrega gratis, pedido mínimo y cómo se paga.</td></tr>
+        <tr><td><code>pickup_times</code></td><td>Horarios de recogida libres en una dirección, después de comprobar que la dirección está en el área de la tienda.</td></tr>
+        <tr><td><code>return_options</code></td><td>Cuándo estará listo el pedido y qué horarios de entrega corresponden a un horario de recogida.</td></tr>
+        <tr><td><code>send_booking_code</code></td><td>Le pide a la tienda que envíe un código de 6 dígitos al teléfono del cliente por mensaje de texto.</td></tr>
+        <tr><td><code>book_pickup</code></td><td>Hace la reserva. Necesita el código.</td></tr>
+        <tr><td><code>my_booking</code></td><td>Los horarios de una reserva, y si todavía se puede mover o cancelar aquí.</td></tr>
+        <tr><td><code>booking_move_times</code></td><td>Los horarios a los que se puede mover una reserva.</td></tr>
+        <tr><td><code>move_booking</code></td><td>Mueve una reserva.</td></tr>
+        <tr><td><code>cancel_booking</code></td><td>Cancela una reserva.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Reglas de seguridad</h3>
+    <ul class="plain">
+      <li><span><b>El código del teléfono del cliente.</b> Una reserva necesita el código de 6 dígitos que envía la tienda. Solo quien tiene el teléfono en la mano puede leerlo. Un código dura 10 minutos.</span></li>
+      <li><span><b>No se cobra nada.</b> El cliente le paga a la tienda cuando recoge el pedido o cuando se lo entregan.</span></li>
+      <li><span><b>Solo tiendas que aceptan reservas.</b> No se puede llegar a una tienda que tiene apagadas las reservas en línea.</span></li>
+      <li><span><b>La tienda se entera de inmediato.</b> Una reserva nueva aparece bajo la campana en el mostrador, marcada como hecha por medio de un asistente.</span></li>
+      <li><span><b>Una falla es una falla.</b> Una herramienta que falla lo dice. Nunca se presenta como “no hay horarios disponibles”.</span></li>
+    </ul>
+    <p>Para propietarios de tiendas: <a href="/es/assistants#questions">¿Mis clientes también pueden usar un asistente?</a> y <a href="/es/pickup-delivery#booking">cómo funcionan las reservas en línea</a>.</p>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.</p>
+  </section>
+
   <section class="card">
     <h2>La API para dueños de tienda</h2>
-    <p class="note">La API que accede a los clientes, pedidos e informes de una tienda es <b>privada</b>. No forma parte del servidor MCP público y no tiene documentación pública.</p>
+    <p class="note">La API que accede a los clientes, pedidos e informes de una tienda es <b>privada</b>. No forma parte del servidor MCP público y no tiene documentación pública. El asistente de IA del propietario de una tienda no la usa: se conecta por <a href="#store-mcp">el servidor de la tienda</a>, más arriba.</p>
     <p class="muted">Si es cliente de Fold POS o un socio que necesita acceso programático a los datos de una tienda, escriba a <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20API">contact@foldpos.com</a> y cuéntenos qué está creando.</p>
     <p class="muted">Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan a la agenda de la tienda, con actualizaciones de estado de ida y vuelta.</p>
   </section>

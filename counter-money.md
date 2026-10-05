@@ -28,8 +28,9 @@ The drawer chip on Check out opens Cash drawer. Each shift starts with the cash 
 - At close, Fold shows balanced, over or short. More than $5.00 off needs an owner or admin code.
 - An X report any time in the shift. The Z report closes the day: sales, discounts, tax, refunds, each tender, each employee, and every drawer counted against what it should hold.
 - The drawer opens after a cash sale. More than one register? Each terminal picks its own.
+- The owner sets the rules on the same page: a blind close, how far off needs a code, the usual starting cash, and the registers.
 
-X and Z reports print on your receipt printer. The Z report is for staff with access to Reports.
+X and Z reports print on your receipt printer, and the Z report also exports as a CSV for your bookkeeper. The Z report is for staff with access to Reports.
 
 ## Sales tax: Set the rate once. It’s on every ticket.
 
