@@ -101,6 +101,7 @@ See the plans: https://foldpos.com/pricing
 - Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, pickups and deliveries, and staff.
 - Only an owner can connect one. It only looks, unless you switch on three small changes.
 - Settings › Assistants: create a token, pause every assistant or remove one, and see the activity list.
+- Settings › Assistants › Briefings and alerts: a morning briefing and alerts by email, off until you turn it on.
 - Think someone else got in? Remove the connection, then change your password.
 
 Connect an AI assistant to your store: https://foldpos.com/assistants

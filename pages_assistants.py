@@ -2,8 +2,8 @@
 """The help article "Connect an AI assistant to your store", in English and Spanish:
 
     /assistants      what a connected assistant can and cannot do, connecting by sign-in or
-                     with a token, pausing and removing, the activity list, and what to do
-                     if you think someone else got in
+                     with a token, pausing and removing, the activity list, briefings and alerts by email,
+                     and what to do if you think someone else got in
 
     from pages_assistants import assistants     # -> (html, md), English
 
@@ -14,7 +14,8 @@ check_seo.py. The page is built by pages_more._build, so it uses that page's mar
 styles and adds none of its own.
 
 Every claim comes from the API's docs/STORE-MCP-OWNER-GUIDE.md and docs/STORE-MCP.md
-(5 Oct 2026). Deliberately NOT said, because those documents do not say it: any assistant
+(5 Oct 2026); the briefings section from docs/OWNER-BRIEFINGS.md (live 7 Oct 2026, by email:
+it says nothing about texts beyond what the card itself shows). Deliberately NOT said, because those documents do not say it: any assistant
 by name other than "such as Claude", a listing in anybody's directory, a plan or a price
 for the feature, and anything an assistant can do beyond the list here.
 
@@ -101,6 +102,16 @@ EN = {
           '<b>Activity.</b> A list of what each assistant asked and what it changed, newest first, kept for 90 days. It shows which tool was used and when. It does not keep the answers, and it does not keep names, phone numbers or the text of notes.',
           '<b>An email each time.</b> Whenever an assistant is connected to your store, the person who connected it gets an email saying so.'],
          'A store can have 20 assistants connected at a time.', None),
+        ('briefings', 'mail', 'Briefings and alerts', 'Or let Fold POS write to you.',
+         'You do not need a connected assistant for this. Fold POS itself can send you a short message about your store.',
+         ['<b>A morning briefing.</b> Yesterday’s sales and what needs you, at the time and on the days you pick.',
+          '<b>Alerts.</b> A machine goes out of service, an order is two days late, or a supply runs low. Each one is announced once.',
+          '<b>Where to switch it on.</b> Settings › Assistants › Briefings and alerts. It is off until you turn it on, and only an owner can.',
+          '<b>Where it goes.</b> To the email on your account. The card shows where the next message will go, and “Send me a test” sends today’s briefing there now.',
+          '<b>Limits.</b> At most 5 messages a day. No alerts between 9 pm and 7 am at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.',
+          '<b>What a message contains.</b> Counts, machine and supply names, and order numbers. Never a customer’s name, phone number or address.',
+          '<b>Language.</b> English or Spanish, your choice.'],
+         'Your store needs its time zone set in Settings › Business first, so the morning briefing arrives in your morning. The card also lets you choose text messages; until texting to owners is switched on, those go to your email as well, and the card says so.', None),
         ('security', 'bell', 'If someone else got in', 'If you think someone else got in.',
          'Do these in order.',
          ['<b>Step 1.</b> Open Settings › Assistants and remove any connection you do not recognise. If you are not sure which, pause all of them first.',
@@ -199,6 +210,16 @@ ES = {
           '<b>Actividad.</b> Una lista de lo que preguntó cada asistente y lo que cambió, de lo más reciente a lo más antiguo, que se conserva 90 días. Muestra qué herramienta se usó y cuándo. No guarda las respuestas, ni nombres, teléfonos o el texto de las notas.',
           '<b>Un correo cada vez.</b> Cada vez que se conecta un asistente a su tienda, la persona que lo conectó recibe un correo que lo avisa.'],
          'Una tienda puede tener 20 asistentes conectados a la vez.', None),
+        ('briefings', 'mail', 'Resúmenes y alertas', 'O deje que Fold POS le escriba.',
+         'Para esto no necesita un asistente conectado. El propio Fold POS puede enviarle un mensaje corto sobre su tienda.',
+         ['<b>Un resumen por la mañana.</b> Las ventas de ayer y lo que necesita su atención, a la hora y en los días que usted elija.',
+          '<b>Alertas.</b> Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando. Cada una se avisa una sola vez.',
+          '<b>Dónde se enciende.</b> Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo enciende, y solo un propietario puede hacerlo.',
+          '<b>Adónde llega.</b> Al correo de su cuenta. La tarjeta muestra adónde irá el próximo mensaje, y “Enviarme una prueba” envía allí el resumen de hoy en ese momento.',
+          '<b>Límites.</b> Como máximo 5 mensajes al día. No hay alertas entre las 9 p. m. y las 7 a. m. en su tienda; lo que siga siendo cierto sale por la mañana. Varias alertas a la vez llegan en un solo mensaje.',
+          '<b>Qué contiene un mensaje.</b> Cantidades, nombres de máquinas y de insumos, y números de pedido. Nunca el nombre, el teléfono ni la dirección de un cliente.',
+          '<b>Idioma.</b> Inglés o español, a su elección.'],
+         'Su tienda necesita tener su zona horaria en Configuración › Negocio, para que el resumen llegue en su mañana. La tarjeta también permite elegir mensajes de texto; hasta que se enciendan los mensajes de texto para propietarios, esos también llegan a su correo, y la tarjeta lo dice.', None),
         ('security', 'bell', 'Si alguien más entró', 'Si cree que alguien más entró.',
          'Haga esto en orden.',
          ['<b>Paso 1.</b> Abra Configuración › Asistentes y quite cualquier conexión que no reconozca. Si no está seguro de cuál, primero pause todas.',

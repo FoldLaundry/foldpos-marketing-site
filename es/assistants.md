@@ -86,6 +86,20 @@ Todo está en Configuración › Asistentes.
 
 Una tienda puede tener 20 asistentes conectados a la vez.
 
+## Resúmenes y alertas: O deje que Fold POS le escriba.
+
+Para esto no necesita un asistente conectado. El propio Fold POS puede enviarle un mensaje corto sobre su tienda.
+
+- Un resumen por la mañana. Las ventas de ayer y lo que necesita su atención, a la hora y en los días que usted elija.
+- Alertas. Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando. Cada una se avisa una sola vez.
+- Dónde se enciende. Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo enciende, y solo un propietario puede hacerlo.
+- Adónde llega. Al correo de su cuenta. La tarjeta muestra adónde irá el próximo mensaje, y “Enviarme una prueba” envía allí el resumen de hoy en ese momento.
+- Límites. Como máximo 5 mensajes al día. No hay alertas entre las 9 p. m. y las 7 a. m. en su tienda; lo que siga siendo cierto sale por la mañana. Varias alertas a la vez llegan en un solo mensaje.
+- Qué contiene un mensaje. Cantidades, nombres de máquinas y de insumos, y números de pedido. Nunca el nombre, el teléfono ni la dirección de un cliente.
+- Idioma. Inglés o español, a su elección.
+
+Su tienda necesita tener su zona horaria en Configuración › Negocio, para que el resumen llegue en su mañana. La tarjeta también permite elegir mensajes de texto; hasta que se enciendan los mensajes de texto para propietarios, esos también llegan a su correo, y la tarjeta lo dice.
+
 ## Si alguien más entró: Si cree que alguien más entró.
 
 Haga esto en orden.

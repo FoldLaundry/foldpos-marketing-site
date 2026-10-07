@@ -86,6 +86,20 @@ All in Settings › Assistants.
 
 A store can have 20 assistants connected at a time.
 
+## Briefings and alerts: Or let Fold POS write to you.
+
+You do not need a connected assistant for this. Fold POS itself can send you a short message about your store.
+
+- A morning briefing. Yesterday’s sales and what needs you, at the time and on the days you pick.
+- Alerts. A machine goes out of service, an order is two days late, or a supply runs low. Each one is announced once.
+- Where to switch it on. Settings › Assistants › Briefings and alerts. It is off until you turn it on, and only an owner can.
+- Where it goes. To the email on your account. The card shows where the next message will go, and “Send me a test” sends today’s briefing there now.
+- Limits. At most 5 messages a day. No alerts between 9 pm and 7 am at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.
+- What a message contains. Counts, machine and supply names, and order numbers. Never a customer’s name, phone number or address.
+- Language. English or Spanish, your choice.
+
+Your store needs its time zone set in Settings › Business first, so the morning briefing arrives in your morning. The card also lets you choose text messages; until texting to owners is switched on, those go to your email as well, and the card says so.
+
 ## If someone else got in: If you think someone else got in.
 
 Do these in order.

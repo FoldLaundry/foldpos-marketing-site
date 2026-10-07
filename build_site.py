@@ -45,7 +45,7 @@ def scene_for(lang):
     return s
 FOOTER = FOOTER.replace('{{SCENE}}', scene_for('en'))
 FOOTER_ES = FOOTER_ES.replace('{{SCENE}}', scene_for('es'))
-LASTMOD = '2026-10-05'   # bump when the site content changes
+LASTMOD = '2026-10-07'   # bump when the site content changes
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700'
@@ -286,8 +286,8 @@ TOPICS = [
     ('billing', 'card', 'Plan &amp; billing', 'billing plan trial cancel upgrade downgrade invoice subscription price',
      '<ul><li>Settings › Plan &amp; billing to pick, change or cancel a plan.</li><li>After the 14-day trial without a plan, the POS goes read-only; your data stays.</li></ul>',
      '/pricing', 'See the plans'),
-    ('assistants', 'chat', 'Connect an AI assistant', 'ai assistant assistants claude connect connector mcp token pause remove activity owner',
-     '<ul><li>Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, pickups and deliveries, and staff.</li><li>Only an owner can connect one. It only looks, unless you switch on three small changes.</li><li>Settings › Assistants: create a token, pause every assistant or remove one, and see the activity list.</li><li>Think someone else got in? Remove the connection, then change your password.</li></ul>',
+    ('assistants', 'chat', 'Connect an AI assistant', 'ai assistant assistants claude connect connector mcp token pause remove activity owner briefing briefings alerts morning email summary',
+     '<ul><li>Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, pickups and deliveries, and staff.</li><li>Only an owner can connect one. It only looks, unless you switch on three small changes.</li><li>Settings › Assistants: create a token, pause every assistant or remove one, and see the activity list.</li><li>Settings › Assistants › Briefings and alerts: a morning briefing and alerts by email, off until you turn it on.</li><li>Think someone else got in? Remove the connection, then change your password.</li></ul>',
      '/assistants', 'Connect an AI assistant to your store'),
     ('developers', 'code', 'Developers &amp; AI', 'api mcp developers ai agents llms markdown integration',
      '<ul><li>Markdown copies of every page, llms.txt, and a public read-only MCP server.</li><li>Two more MCP servers: one for a store owner’s own assistant, one for a customer’s assistant to book a pickup.</li><li>Access to the store-owner API: email us.</li></ul>',
