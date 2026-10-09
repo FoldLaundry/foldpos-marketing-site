@@ -92,9 +92,10 @@ You do not need a connected assistant for this. Fold POS itself can send you a s
 
 - A morning briefing. Yesterday’s sales and what needs you, at the time and on the days you pick.
 - Alerts. A machine goes out of service, an order is two days late, or a supply runs low. Each one is announced once.
+- Regular reports. Also on a schedule, each its own message: last week’s sales against the week before, last month’s against the month before (with the sales tax collected), and the hours each person worked last week if your plan includes staff shifts. You pick the day and the time.
 - Where to switch it on. Settings › Assistants › Briefings and alerts. It is off until you turn it on, and only an owner can.
 - Where it goes. To the email on your account. The card shows where the next message will go, and “Send me a test” sends today’s briefing there now.
-- Limits. At most 5 messages a day. No alerts between 9 pm and 7 am at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.
+- Limits. At most 5 messages a day, reports included. No alerts between 9 pm and 7 am at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.
 - What a message contains. Counts, machine and supply names, and order numbers. Never a customer’s name, phone number or address.
 - Language. English or Spanish, your choice.
 

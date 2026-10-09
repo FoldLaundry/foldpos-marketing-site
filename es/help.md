@@ -101,7 +101,7 @@ Vea los planes: https://foldpos.com/es/pricing
 - Deje que su propio asistente de IA, como Claude, responda preguntas sobre sus ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal.
 - Solo un propietario puede conectar uno. Solo mira, salvo que usted encienda tres cambios pequeños.
 - Configuración › Asistentes: cree un token, pause todos los asistentes o quite uno, y vea la lista de actividad.
-- Configuración › Asistentes › Resúmenes y alertas: un resumen por la mañana y alertas por correo, apagado hasta que usted lo enciende.
+- Configuración › Asistentes › Resúmenes y alertas: un resumen por la mañana, alertas e informes semanales o mensuales por correo, apagados hasta que usted los enciende.
 - ¿Cree que alguien más entró? Quite la conexión y luego cambie su contraseña.
 
 Conecte un asistente de IA a su tienda: https://foldpos.com/es/assistants

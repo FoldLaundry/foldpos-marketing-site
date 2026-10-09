@@ -92,9 +92,10 @@ Para esto no necesita un asistente conectado. El propio Fold POS puede enviarle 
 
 - Un resumen por la mañana. Las ventas de ayer y lo que necesita su atención, a la hora y en los días que usted elija.
 - Alertas. Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando. Cada una se avisa una sola vez.
+- Informes periódicos. También con horario, cada uno en su propio mensaje: las ventas de la semana pasada frente a la anterior, las del mes pasado frente al anterior (con el impuesto sobre las ventas cobrado) y las horas que trabajó cada persona la semana pasada, si su plan incluye turnos del personal. Usted elige el día y la hora.
 - Dónde se enciende. Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo enciende, y solo un propietario puede hacerlo.
 - Adónde llega. Al correo de su cuenta. La tarjeta muestra adónde irá el próximo mensaje, y “Enviarme una prueba” envía allí el resumen de hoy en ese momento.
-- Límites. Como máximo 5 mensajes al día. No hay alertas entre las 9 p. m. y las 7 a. m. en su tienda; lo que siga siendo cierto sale por la mañana. Varias alertas a la vez llegan en un solo mensaje.
+- Límites. Como máximo 5 mensajes al día, informes incluidos. No hay alertas entre las 9 p. m. y las 7 a. m. en su tienda; lo que siga siendo cierto sale por la mañana. Varias alertas a la vez llegan en un solo mensaje.
 - Qué contiene un mensaje. Cantidades, nombres de máquinas y de insumos, y números de pedido. Nunca el nombre, el teléfono ni la dirección de un cliente.
 - Idioma. Inglés o español, a su elección.
 
