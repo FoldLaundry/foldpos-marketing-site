@@ -133,7 +133,7 @@ Treat a token like a password. Anyone who has it can read the store’s orders, 
 
 ### Tools
 
-Sixteen tools: thirteen that read and three that change something. A look-only connection is not shown the three that change.
+Seventeen tools: fourteen that read and three that change something. A look-only connection is not shown the three that change.
 
 | Tool | What it answers |
 | --- | --- |
@@ -146,6 +146,7 @@ Sixteen tools: thirteen that read and three that change something. A look-only c
 | `find_customers` | Customers by name, phone or email, or a list by recency, name or spend. |
 | `customer_detail` | One customer in full: contact details, totals, store credit, preferences, addresses, last 5 orders, last 10 staff notes. |
 | `sales_report` | Sales over a period: totals, refunds, by service, by payment type, sales tax, day by day. |
+| `cash_drawers` | Cash drawers over a day or a range: counted against expected, over or short, who closed them, which were beyond the store’s allowed difference, and the drawers open now. |
 | `machines` | Counts, what is out of service, what is running, maintenance due, open repair requests. |
 | `supplies_low` | Supplies at or below their minimum, and what to reorder. |
 | `deliveries` | One day’s pickup and delivery stops: routes, drivers, every stop in order, stops on no route. Needs pickup & delivery on the store’s plan. |

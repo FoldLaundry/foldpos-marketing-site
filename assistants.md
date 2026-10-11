@@ -17,6 +17,7 @@ A connected assistant can look at:
 - Customers: find one, see their details, orders, store credit and notes.
 - Machines: what is running, what is out of service, what maintenance is due.
 - Supplies that are running low and what to reorder.
+- Cash drawers: how each one closed against what it should have held, over or short, and who closed it.
 - The day’s pickups and deliveries, if your plan includes pickup & delivery.
 - Who is on shift and the hours people worked, if your plan includes staff shifts.
 - A short list of what needs your attention right now.
@@ -91,7 +92,7 @@ A store can have 20 assistants connected at a time.
 You do not need a connected assistant for this. Fold POS itself can send you a short message about your store.
 
 - A morning briefing. Yesterday’s sales and what needs you, at the time and on the days you pick.
-- Alerts. A machine goes out of service, an order is two days late, or a supply runs low. Each one is announced once.
+- Alerts. A machine goes out of service, an order is two days late, or a supply runs low; and, if you tick them, someone is late for their shift, a stop today is not on a route, or a cash drawer closes short or over by more than you allow. Each one is announced once.
 - Regular reports. Also on a schedule, each its own message: last week’s sales against the week before, last month’s against the month before (with the sales tax collected), and the hours each person worked last week if your plan includes staff shifts. You pick the day and the time.
 - Where to switch it on. Settings › Assistants › Briefings and alerts. It is off until you turn it on, and only an owner can.
 - Where it goes. To the email on your account. The card shows where the next message will go, and “Send me a test” sends today’s briefing there now.

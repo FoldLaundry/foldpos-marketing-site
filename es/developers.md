@@ -144,7 +144,7 @@ Trate un token como una contraseña. Quien lo tenga puede leer los pedidos, los 
 
 ### Herramientas
 
-Dieciséis herramientas: trece que leen y tres que cambian algo. Una conexión de solo lectura no ve las tres que cambian.
+Diecisiete herramientas: catorce que leen y tres que cambian algo. Una conexión de solo lectura no ve las tres que cambian.
 
 | Herramienta | Qué responde |
 | --- | --- |
@@ -157,6 +157,7 @@ Dieciséis herramientas: trece que leen y tres que cambian algo. Una conexión d
 | `find_customers` | Clientes por nombre, teléfono o correo, o una lista por fecha reciente, nombre o gasto. |
 | `customer_detail` | Un cliente completo: datos de contacto, totales, crédito de tienda, preferencias, direcciones, los últimos 5 pedidos y las últimas 10 notas del personal. |
 | `sales_report` | Ventas de un periodo: totales, reembolsos, por servicio, por forma de pago, impuesto sobre las ventas y día por día. |
+| `cash_drawers` | Las cajas de un día o de un periodo: lo contado frente a lo esperado, faltante o sobrante, quién las cerró, cuáles pasaron la diferencia permitida por la tienda, y las cajas abiertas ahora. |
 | `machines` | Conteos, qué está fuera de servicio, qué está en uso, mantenimiento pendiente y solicitudes de reparación abiertas. |
 | `supplies_low` | Insumos en su mínimo o por debajo, y qué volver a pedir. |
 | `deliveries` | Las paradas de recogida y entrega de un día: rutas, repartidores, cada parada en orden y las paradas sin ruta. Necesita recogida y entrega en el plan de la tienda. |

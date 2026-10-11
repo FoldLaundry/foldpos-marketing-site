@@ -98,7 +98,7 @@ See the plans: https://foldpos.com/pricing
 
 ## Connect an AI assistant
 
-- Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, pickups and deliveries, and staff.
+- Let your own AI assistant, such as Claude, answer questions about your sales, orders, customers, machines, supplies, cash drawers, pickups and deliveries, and staff.
 - Only an owner can connect one. It only looks, unless you switch on three small changes.
 - Settings › Assistants: create a token, pause every assistant or remove one, and see the activity list.
 - Settings › Assistants › Briefings and alerts: a morning briefing, alerts and weekly or monthly reports by email, off until you turn them on.

@@ -17,6 +17,7 @@ Un asistente conectado puede mirar:
 - Clientes: buscar uno, ver sus datos, pedidos, crédito de tienda y notas.
 - Máquinas: cuáles están en uso, cuáles están fuera de servicio y qué mantenimiento toca.
 - Los insumos que se están acabando y qué volver a pedir.
+- Las cajas: cómo cerró cada una frente a lo que debía tener, con faltante o sobrante, y quién la cerró.
 - Las recogidas y entregas del día, si su plan incluye recogida y entrega.
 - Quién está en turno y las horas que trabajó cada persona, si su plan incluye turnos del personal.
 - Una lista corta de lo que necesita su atención en este momento.
@@ -91,7 +92,7 @@ Una tienda puede tener 20 asistentes conectados a la vez.
 Para esto no necesita un asistente conectado. El propio Fold POS puede enviarle un mensaje corto sobre su tienda.
 
 - Un resumen por la mañana. Las ventas de ayer y lo que necesita su atención, a la hora y en los días que usted elija.
-- Alertas. Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando. Cada una se avisa una sola vez.
+- Alertas. Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando; y, si las marca, alguien llega tarde a su turno, una parada de hoy no está en ninguna ruta o una caja cierra con un faltante o sobrante mayor al que usted permite. Cada una se avisa una sola vez.
 - Informes periódicos. También con horario, cada uno en su propio mensaje: las ventas de la semana pasada frente a la anterior, las del mes pasado frente al anterior (con el impuesto sobre las ventas cobrado) y las horas que trabajó cada persona la semana pasada, si su plan incluye turnos del personal. Usted elige el día y la hora.
 - Dónde se enciende. Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo enciende, y solo un propietario puede hacerlo.
 - Adónde llega. Al correo de su cuenta. La tarjeta muestra adónde irá el próximo mensaje, y “Enviarme una prueba” envía allí el resumen de hoy en ese momento.
