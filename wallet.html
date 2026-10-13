@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fold Pay Wallet — Fold POS</title>
+<meta name="description" content="See how customers load a Fold Pay Wallet on your terminal, keep it in Apple Wallet or Google Wallet, and spend it a little at a time, so small orders don't each pay a card fee.">
+<link rel="canonical" href="https://foldpos.com/wallet">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Fold Pay Wallet — Fold POS">
+<meta property="og:description" content="See how customers load a Fold Pay Wallet on your terminal, keep it in Apple Wallet or Google Wallet, and spend it a little at a time, so small orders don't each pay a card fee.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://foldpos.com/wallet">
+<meta property="og:site_name" content="Fold POS">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fold Pay Wallet — Fold POS">
+<meta name="twitter:description" content="See how customers load a Fold Pay Wallet on your terminal, keep it in Apple Wallet or Google Wallet, and spend it a little at a time, so small orders don't each pay a card fee.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta name="theme-color" content="#1e5eff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  /* page */
+  --bg:#f5f7fc; --surface:#ffffff; --surface-2:#eef2fa; --ink:#0f1830; --ink-2:#465373; --muted:#76819c;
+  --line:#dfe5f1; --brand:#1e5eff; --brand-ink:#ffffff; --brand-soft:#e6edff; --focus:#1e5eff;
+  --shadow-1:rgba(18,38,92,.08); --shadow-2:rgba(18,38,92,.16);
+  /* illustration */
+  --il-line:#c6d0e4; --il-fill:#edf1f9; --il-fill-2:#e3e9f5; --il-top:#f8faff; --il-tag:#ffffff; --il-ring:#1e5eff;
+  /* device: phone page (light, as the real page) */
+  --ph-bg:#fbfbfd; --ph-card:#ffffff; --ph-ink:#111114; --ph-muted:#6b6b76; --ph-line:#e6e6ec;
+  --ph-brand:#2f5bea; --ph-ok:#12805c; --ph-bad:#c62828; --ph-meal:#8a4fff; --ph-rest:#0b7fa8;
+  --ph-ok-soft:#dcefe8; --ph-meal-soft:#ece2ff; --ph-rest-soft:#d9edf4;
+  --bezel:#0c0e13; --island:#000000;
+  --msg-in:#e9e9eb; --msg-link:#0a63d6; --banner:#f2f2f5;
+  /* device: POS (light, as the real app) */
+  --pos-bg:#f7f8fa; --pos-surface:#ffffff; --pos-ink:#1a1d21; --pos-muted:#6b7280; --pos-line:#e5e7eb;
+  --pos-muted-bg:#f3f4f6; --pos-brand:#1e5eff; --pos-brand-soft:#e8efff; --pos-rail:#ffffff;
+  --ok-text:#007a14; --ok-bg:#eaffee; --ok-border:#abdcb8;
+  --warn-text:#c75a17; --warn-bg:#fcf4ed; --warn-border:#ffd5bd;
+  --info-text:#075985; --info-bg:#f0f9ff; --info-border:#bae6fd;
+  --err-text:#e22d2d; --err-bg:#fcf1f1; --err-border:#ffc1c1;
+  --scrim:rgba(17,24,39,.32); --cam-bg:#111216; --selfie-a:#dfe6f3; --selfie-b:#c3cee6; --selfie-p:#8796b4;
+  --white:#ffffff; --black:#000000;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1020; --surface:#141b2e; --surface-2:#1a2238; --ink:#eef2fb; --ink-2:#b7c1d9; --muted:#8a95af;
+    --line:#26304a; --brand:#5b8cff; --brand-ink:#ffffff; --brand-soft:#1b2950; --focus:#7ea4ff;
+    --shadow-1:rgba(0,0,0,.35); --shadow-2:rgba(0,0,0,.55);
+    --il-line:#2c3756; --il-fill:#121a2d; --il-fill-2:#172038; --il-top:#1a2338; --il-tag:#f4f6fb; --il-ring:#7ea4ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1020; --surface:#141b2e; --surface-2:#1a2238; --ink:#eef2fb; --ink-2:#b7c1d9; --muted:#8a95af;
+  --line:#26304a; --brand:#5b8cff; --brand-ink:#ffffff; --brand-soft:#1b2950; --focus:#7ea4ff;
+  --shadow-1:rgba(0,0,0,.35); --shadow-2:rgba(0,0,0,.55);
+  --il-line:#2c3756; --il-fill:#121a2d; --il-fill-2:#172038; --il-top:#1a2338; --il-tag:#f4f6fb; --il-ring:#7ea4ff;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+.app{height:100vh;height:100dvh;min-height:640px;display:grid;grid-template-rows:auto minmax(380px,1fr) auto}
+
+/* ---------- header ---------- */
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 32px 6px}
+.wm{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
+.wm .mark{width:28px;height:28px;border-radius:8px;background:var(--brand);display:grid;place-items:center}
+.wm .mark svg{width:16px;height:16px}
+.wm .sub{font-weight:500;color:var(--muted)}
+.tools{display:flex;align-items:center;gap:10px}
+.tgl{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px 5px 6px;font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;min-height:36px}
+.tgl .sw{width:34px;height:20px;border-radius:999px;background:var(--line);position:relative;transition:background .25s}
+.tgl .sw::after{content:"";position:absolute;left:2px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--white);box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .25s}
+.tgl[aria-checked="true"] .sw{background:var(--brand)}
+.tgl[aria-checked="true"] .sw::after{transform:translateX(14px)}
+.seg2{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg2 button{border:0;background:none;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600;color:var(--ink-2);cursor:pointer;min-height:30px}
+.seg2 button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.seg2 .abbr{display:none}
+
+/* ---------- stage ---------- */
+.stage{position:relative;overflow:hidden}
+.canvas{position:absolute;left:0;top:0;width:1300px;height:660px;transform-origin:0 0;transition:transform .95s cubic-bezier(.45,0,.18,1)}
+.illus{position:absolute;left:-600px;top:-170px;width:2500px;height:1000px;pointer-events:none}
+.illus .g{transition:opacity .8s}
+.canvas[data-scene="home"] .il-store{opacity:0}
+.canvas:not([data-scene="home"]) .il-home{opacity:0}
+
+/* ---------- phone ---------- */
+.phone{position:absolute;left:900px;top:13px;width:317px;height:634px;border-radius:52px;background:var(--bezel);padding:9px;
+  box-shadow:0 0 0 1.5px #2a2e38 inset,0 30px 60px -20px var(--shadow-2),0 12px 24px -12px var(--shadow-2);
+  transition:transform .75s cubic-bezier(.45,0,.18,1),opacity .6s;z-index:3}
+.phone.off{opacity:0;transform:translateX(60px) scale(.97);pointer-events:none}
+.phone.tapping{transform:translate(64px,118px) rotate(11deg)}
+.ph-scr{width:299px;height:616px;border-radius:43px;overflow:hidden;position:relative;background:var(--ph-bg)}
+.ph-in{position:absolute;left:0;top:0;width:360px;height:742px;transform:scale(.83056);transform-origin:0 0;
+  font:17px/1.4 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ph-ink);background:var(--ph-bg)}
+.ph-status{position:absolute;left:0;right:0;top:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 40px;font-weight:600;font-size:17px;z-index:6;color:var(--ph-ink);pointer-events:none}
+.ph-status.dark{color:var(--white)}
+.ph-status .ic{display:flex;gap:6px;align-items:center}
+.ph-island{position:absolute;top:12px;left:50%;width:122px;height:36px;margin-left:-61px;border-radius:20px;background:var(--island);z-index:7}
+.ph-views{position:absolute;inset:0}
+.pv{position:absolute;inset:0;padding-top:54px;overflow:hidden;background:var(--ph-bg);transition:opacity .45s ease,transform .55s cubic-bezier(.3,0,.2,1)}
+.pv.enter{opacity:0;transform:translateY(14px) scale(.985)}
+.pv.leave{opacity:0;z-index:0}
+.pv.dark{background:var(--cam-bg)}
+
+/* the real page (clock.css), scoped */
+.pv .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px}
+.pv .brand{font-weight:700;letter-spacing:-.01em}
+.pv .brand span{color:var(--ph-brand)}
+.pv .store{color:var(--ph-muted);font-size:15px;text-align:right;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pv main{max-width:480px;margin:0 auto;padding:8px 16px 24px}
+.pv .view{display:flex;flex-direction:column;gap:14px}
+.pv .center{align-items:center;text-align:center;padding-top:88px}
+.pv h1{font-size:28px;line-height:1.15;margin:8px 0 0;letter-spacing:-.02em;font-weight:700}
+.pv p{margin:0}
+.pv .muted{color:var(--ph-muted)}
+.pv .small{font-size:14px}
+.pv .card{background:var(--ph-card);border:1px solid var(--ph-line);border-radius:18px;padding:18px}
+.pv .state{display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--ph-line);font-size:15px;align-self:flex-start}
+.pv .center .state{align-self:center}
+.pv .state.in{background:var(--ph-ok-soft);color:var(--ph-ok)}
+.pv .state.meal{background:var(--ph-meal-soft);color:var(--ph-meal)}
+.pv .state.rest{background:var(--ph-rest-soft);color:var(--ph-rest)}
+.pv .dot{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+.pv .btn{display:block;border:0;border-radius:16px;padding:18px;font-weight:650;font-size:19px;width:100%;text-align:center;transition:transform .15s,filter .15s}
+.pv .primary{background:var(--ph-brand);color:var(--white)}
+.pv .secondary{background:var(--ph-card);color:var(--ph-ink);border:1px solid var(--ph-line)}
+.pv .meal-btn{background:var(--ph-meal);color:var(--white)}
+.pv .rest-btn{background:var(--ph-rest);color:var(--white)}
+.pv .link{background:none;color:var(--ph-brand);padding:8px;font-size:16px;font-weight:600;width:auto;display:inline-block}
+.pv .big-check{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:var(--ph-ok);color:var(--white);font-size:44px;line-height:1}
+.pv .big-x{background:var(--ph-bad);font-weight:500}
+.pv .pop{animation:pop .5s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.pv .time{font-size:44px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.pv .code{font-size:32px;letter-spacing:.4em;text-align:center;width:100%;padding:14px;border-radius:14px;border:1px solid var(--ph-line);background:var(--ph-card);min-height:68px;display:flex;justify-content:center;align-items:center}
+.pv .code.focus{border-color:#e0a106;box-shadow:0 0 0 1px #e0a106}
+.pv .code .caret{width:2px;height:34px;background:var(--ph-brand);margin-left:-.3em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.pv .spinner{width:34px;height:34px;border-radius:50%;border:3px solid var(--ph-line);border-top-color:var(--ph-brand);animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pv .note{font-size:14px;color:var(--ph-muted);border-top:1px solid var(--ph-line);padding-top:12px}
+.pv .tabs{display:flex;gap:8px}
+.pv .small-btn{padding:10px;font-size:15px;border-radius:12px}
+.pv .totals{display:flex;justify-content:space-between;gap:8px;text-align:center}
+.pv .totals div{display:flex;flex-direction:column;gap:2px;flex:1}
+.pv .totals b{font-size:22px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pv .day{padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.pv .dayhead{display:flex;justify-content:space-between}
+.pv .scrollvp{height:640px;overflow:hidden}
+.pv .scroller{transition:transform 1.2s cubic-bezier(.45,0,.2,1)}
+.pv .undo{display:flex;justify-content:center}
+.pv .appr{opacity:0;transform:translateY(-6px);transition:opacity .5s,transform .5s;align-self:flex-start}
+.pv .appr.show{opacity:1;transform:none}
+
+/* messages app */
+.msg-h{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 0 12px;border-bottom:1px solid #e3e3e8;background:#f7f7f9;position:relative}
+.msg-h .back{position:absolute;left:14px;top:22px;color:var(--msg-link);font-size:30px;line-height:1}
+.msg-h .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(#a4abb9,#868d9c);display:grid;place-items:center}
+.msg-h .nm{font-size:14px;color:var(--ph-ink)}
+.thread{padding:14px 14px;display:flex;flex-direction:column;gap:8px}
+.ts{font-size:14px;color:#8a8a8e;text-align:center;margin:4px 0 6px}
+.ts b{font-weight:600}
+.bub{align-self:flex-start;max-width:82%;background:var(--msg-in);color:var(--ph-ink);border-radius:20px;padding:10px 14px;font-size:17px;line-height:1.32;word-break:break-word}
+.bub a{color:var(--msg-link);text-decoration:underline}
+.bub.drop{animation:drop .6s cubic-bezier(.25,1.3,.5,1) both}
+@keyframes drop{from{opacity:0;transform:translateY(-26px) scale(.92)}to{opacity:1;transform:none}}
+.lnk{display:inline}
+.banner{position:absolute;left:9px;right:9px;top:54px;z-index:8;background:var(--banner);border-radius:24px;padding:12px 14px 13px;box-shadow:0 10px 28px rgba(0,0,0,.18);display:flex;gap:11px;
+  transform:translateY(-170%);opacity:0;transition:transform .6s cubic-bezier(.25,1.2,.45,1),opacity .35s}
+.banner.show{transform:none;opacity:1}
+.banner .appic{width:38px;height:38px;border-radius:9px;background:linear-gradient(#5df46f,#16c52f);flex:none;display:grid;place-items:center}
+.banner .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:650}
+.banner .bt span{font-weight:400;color:#7c7c82;font-size:14px}
+.banner .bb{font-size:15px;line-height:1.3;margin-top:2px}
+.camui{position:absolute;inset:0;background:var(--cam-bg);display:flex;flex-direction:column;align-items:center}
+.camui .vf{margin-top:96px;width:330px;height:440px;border-radius:6px;overflow:hidden;position:relative}
+.camui .shutter{margin-top:58px;width:76px;height:76px;border-radius:50%;border:5px solid var(--white);display:grid;place-items:center;transition:transform .15s}
+.camui .shutter i{width:58px;height:58px;border-radius:50%;background:var(--white);display:block}
+.camui .flash{position:absolute;inset:0;background:var(--white);opacity:0;pointer-events:none}
+.camui .flash.go{animation:flash .5s ease-out}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+
+/* ---------- POS window ---------- */
+.pos{position:absolute;left:30px;top:30px;width:800px;height:600px;border-radius:16px;background:var(--pos-bg);overflow:hidden;
+  box-shadow:0 0 0 1px rgba(15,24,48,.08),0 30px 60px -24px var(--shadow-2),0 10px 22px -12px var(--shadow-1);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--pos-ink);font-size:14px;
+  display:grid;grid-template-columns:60px 1fr;container-type:inline-size;transition:opacity .6s,transform .75s cubic-bezier(.45,0,.18,1);z-index:2}
+.m .pos{width:440px;grid-template-columns:1fr}
+.m .pos .rail{display:none}
+.pos.off{opacity:0;transform:translateX(-50px) scale(.98);pointer-events:none}
+.rail{background:var(--pos-rail);border-right:1px solid var(--pos-line);display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 0}
+.rail .lg{width:34px;height:34px;border-radius:10px;background:var(--pos-brand);display:grid;place-items:center;margin-bottom:10px}
+.rail .ri{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;color:#8a93a3}
+.rail .ri.on{background:var(--pos-brand-soft);color:var(--pos-brand)}
+.rail svg{width:20px;height:20px}
+.pmain{display:flex;flex-direction:column;min-width:0;min-height:0}
+.ptop{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 4px}
+.ptitle{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.pstore{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--pos-muted);font-weight:500}
+.pstore .av{width:28px;height:28px;border-radius:50%;background:var(--pos-brand-soft);color:var(--pos-brand);display:grid;place-items:center;font-size:12px;font-weight:700}
+.psegs{padding:8px 20px 0;display:flex;flex-direction:column;gap:10px}
+.pseg{display:inline-flex;align-self:flex-start;background:var(--pos-muted-bg);border:1px solid var(--pos-line);border-radius:10px;padding:3px;gap:2px;max-width:100%;overflow:hidden;white-space:nowrap}
+.pseg span{padding:6px 12px;border-radius:7px;font-size:13px;font-weight:500;color:var(--pos-muted);flex:none}
+.pseg span.on{background:var(--pos-surface);color:var(--pos-ink);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.pbody{flex:1;min-height:0;overflow:hidden;position:relative;padding:14px 20px 20px}
+.pscroll{transition:transform 1s cubic-bezier(.45,0,.2,1)}
+.pfade{animation:pfade .5s ease both}
+@keyframes pfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.pcard{background:var(--pos-surface);border:1px solid var(--pos-line);border-radius:14px;padding:16px 18px}
+.pcard-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.pcard-h h3{margin:0;font-size:16px;font-weight:650}
+.pact{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pb{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;border:1px solid transparent;white-space:nowrap;transition:transform .15s,filter .15s,background .3s,color .3s}
+.pb svg{width:15px;height:15px}
+.pb.fill{background:var(--pos-brand);color:var(--white)}
+.pb.out{background:var(--pos-surface);border-color:var(--pos-line);color:var(--pos-ink)}
+.pb.txt{background:none;color:var(--pos-brand);padding:6px 8px}
+.pmuted{color:var(--pos-muted);font-size:12px}
+.plabel{font-size:12px;font-weight:600;color:var(--pos-ink)}
+.prow{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--pos-line)}
+.prow:first-of-type{border-top:0}
+.pname{font-weight:600;font-size:14px}
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;border:1px solid;white-space:nowrap}
+.pill.ok{background:var(--ok-bg);border-color:var(--ok-border);color:var(--ok-text)}
+.pill.warn{background:var(--warn-bg);border-color:var(--warn-border);color:var(--warn-text)}
+.pill.info{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}
+.pill.mute{background:var(--pos-muted-bg);border-color:var(--pos-line);color:var(--pos-muted)}
+.pill.err{background:var(--err-bg);border-color:var(--err-border);color:var(--err-text)}
+.fact{display:flex;flex-direction:column;gap:2px;min-width:0}
+.fact .fl{font-size:12px;color:var(--pos-muted)}
+.fact .fv{font-size:13px;font-variant-numeric:tabular-nums;font-weight:500}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px}
+.who{display:grid;grid-template-columns:3fr 4fr 2fr 2fr 96px;align-items:center;gap:10px;padding:13px 0;border-top:1px solid var(--pos-line)}
+.who:first-child{border-top:0}
+.who .stw{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.slidein{animation:slidein .55s cubic-bezier(.3,0,.2,1) both}
+@keyframes slidein{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.hl{position:relative}
+.hl::before{content:"";position:absolute;inset:-4px -10px;border-radius:10px;background:var(--pos-brand-soft);z-index:-1;opacity:0;transition:opacity .5s}
+.hl.on::before{opacity:1}
+.swrow{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--pos-line)}
+.swrow:first-child{border-top:0}
+.swrow .t{font-size:14px;font-weight:500}
+.swrow .h{font-size:12px;color:var(--pos-muted);margin-top:2px;max-width:470px}
+.psw{flex:none;width:44px;height:26px;border-radius:999px;background:#d1d5db;position:relative;transition:background .3s;margin-top:2px;cursor:pointer;border:0;padding:0}
+.psw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .3s}
+.psw.on{background:var(--pos-brand)}
+.psw.on::after{transform:translateX(18px)}
+.psw.ping{box-shadow:0 0 0 0 rgba(30,94,255,.5);animation:ping 1.6s ease-out 2}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(30,94,255,.45)}100%{box-shadow:0 0 0 14px rgba(30,94,255,0)}}
+.pdlg-wrap{position:absolute;inset:0;background:var(--scrim);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .35s;z-index:5}
+.pdlg-wrap.show{opacity:1}
+.pdlg{width:400px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);overflow:hidden;background:var(--pos-surface);border-radius:20px;padding:22px 22px 14px;box-shadow:0 24px 50px rgba(0,0,0,.22);transform:translateY(10px) scale(.97);transition:transform .45s cubic-bezier(.3,1.2,.5,1)}
+.pdlg-wrap.show .pdlg{transform:none}
+.pdlg h4{margin:0 0 12px;font-size:19px;font-weight:650}
+.pdlg .acts{display:flex;justify-content:flex-end;gap:6px;margin-top:14px}
+.field{border:1px solid #cfd4dc;border-radius:10px;padding:10px 12px;font-size:14px;display:flex;justify-content:space-between;align-items:center;margin:6px 0 12px}
+.field.ph{color:#9aa1ad}
+.bigcode{font-size:34px;font-weight:700;letter-spacing:.18em;font-variant-numeric:tabular-nums;margin:2px 0 8px}
+.qrrow{display:flex;gap:14px;align-items:center;margin:2px 0 10px}
+.qr{width:116px;height:116px;flex:none;border:1px solid var(--pos-line);border-radius:8px;padding:6px;background:var(--white)}
+.linkbox{display:flex;align-items:center;gap:8px;margin:6px 0 10px}
+.linkbox code{flex:1;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;background:var(--pos-muted-bg);border-radius:8px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.flag{border:1px solid var(--pos-line);background:var(--pos-muted-bg);border-radius:10px;padding:10px 12px;margin-top:6px;transition:background .4s,border-color .4s}
+.flag.hot{background:var(--err-bg);border-color:var(--err-border)}
+.flag .fw{font-size:13px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{border:1px solid #cfd4dc;border-radius:8px;padding:6px 12px;font-size:13px;font-weight:500;background:var(--pos-surface);transition:background .3s,color .3s,border-color .3s,transform .15s}
+.chip.sel{background:var(--pos-brand-soft);border-color:var(--pos-brand);color:var(--pos-brand);font-weight:600}
+.chip.sel::before{content:"✓ "}
+.punch{display:grid;grid-template-columns:78px 1fr auto;gap:8px;align-items:center;padding:4px 0;font-size:13px}
+.punch .src{color:var(--pos-muted);font-size:12px}
+.punch .mv{color:var(--pos-brand);font-size:12px;font-weight:600}
+.dayh{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;margin-bottom:6px}
+.divd{height:1px;background:var(--pos-line);margin:14px 0}
+.selfie-btn{display:inline-flex;align-items:center;gap:6px;color:var(--pos-brand);font-weight:600;font-size:13px;padding:6px 8px;border-radius:8px;transition:transform .15s,filter .15s}
+.photo{width:180px;height:240px;border-radius:12px;overflow:hidden;margin:0 auto 12px}
+
+/* container: narrow POS (the app's own narrow layout) */
+@container (max-width:520px){
+  .who{grid-template-columns:1fr 1fr;gap:6px 10px}
+  .who .c-name{grid-column:1/-1}
+  .who .c-state{grid-column:1/-1}
+  .who .c-photo{grid-column:1/-1}
+  .swrow .h{max-width:none}
+}
+
+/* ---------- pointer, ripple, callouts ---------- */
+.pressed{transform:scale(.97);filter:brightness(.9)}
+#finger{position:absolute;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;background:rgba(255,255,255,.55);border:2px solid rgba(30,94,255,.65);
+  box-shadow:0 6px 16px rgba(10,20,50,.25);opacity:0;z-index:20;pointer-events:none;transition:left .5s cubic-bezier(.4,0,.2,1),top .5s cubic-bezier(.4,0,.2,1),opacity .3s,transform .16s}
+#finger.on{opacity:1}
+#finger.down{transform:scale(.78);background:rgba(30,94,255,.3)}
+#finger::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(30,94,255,.6);opacity:0}
+#finger.down::after{animation:fr .6s ease-out}
+@keyframes fr{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2.4)}}
+#ripple{position:absolute;left:1262px;top:470px;width:0;height:0;z-index:15;pointer-events:none}
+#ripple i{position:absolute;left:-34px;top:-34px;width:68px;height:68px;border-radius:50%;border:3px solid var(--il-ring);opacity:0}
+#ripple.go i{animation:rip 1.5s cubic-bezier(.2,.6,.3,1) forwards}
+#ripple.go i:nth-child(2){animation-delay:.22s}
+#ripple.go i:nth-child(3){animation-delay:.44s}
+@keyframes rip{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(2.6)}}
+.co{position:absolute;z-index:12;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:15px;font-weight:600;line-height:1.3;
+  box-shadow:0 10px 24px -8px var(--shadow-2);opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s;max-width:280px}
+.co.show{opacity:1;transform:none}
+.co .k{display:block;font-size:12px;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+
+/* ---------- caption & controls ---------- */
+.cap{width:100%;max-width:1200px;margin:0 auto;padding:10px 32px 22px}
+.caprow{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
+.captext{min-height:106px;transition:opacity .35s}
+.captext.fade{opacity:0}
+.eyebrow{font-size:13px;font-weight:600;color:var(--brand);letter-spacing:.02em}
+.ctitle{font-size:27px;line-height:1.2;font-weight:700;letter-spacing:-.02em;margin:4px 0 6px;transition:opacity .4s}
+.csent{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:760px;margin:0}
+.capchips{display:none;flex-wrap:wrap;gap:6px;margin-top:8px}
+.capchips span{font-size:13px;font-weight:600;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.ctrls{display:flex;gap:10px;align-items:center;flex:none;padding-bottom:6px}
+.cb{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.cb svg{width:18px;height:18px}
+.cb.play{width:56px;height:56px;background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.cb.play svg{width:22px;height:22px}
+.cb:disabled{opacity:.4;cursor:default}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin:16px 0 0;padding:0}
+.steps button{width:100%;border:0;background:none;padding:6px 0 0;text-align:left;cursor:pointer;color:var(--muted);font-size:13px;font-weight:500;display:flex;flex-direction:column;gap:7px}
+.steps .bar{display:block;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.steps .bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:2px}
+.steps .lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.steps .lb b{font-weight:600;margin-right:4px}
+.steps button[aria-current="step"]{color:var(--ink)}
+.steps button.done .bar i{width:100%}
+
+/* ---------- phone-width page ---------- */
+@media (max-width:700px){
+  .app{height:auto;min-height:0;grid-template-rows:auto auto auto}
+  .hdr{padding:10px 16px 2px}
+  .wm{font-size:16px;gap:8px}
+  .wm .sub{display:none}
+  .seg2 .full{display:none}
+  .seg2 .abbr{display:inline}
+  .tools{gap:6px}
+  .tgl{font-size:13px;padding:4px 10px 4px 5px;min-height:34px}
+  .seg2 button{padding:5px 10px;font-size:13px}
+  .stage{height:min(510px,60vh);min-height:420px}
+  .cap{padding:6px 16px 18px}
+  .caprow{flex-direction:column;align-items:stretch;gap:12px}
+  .captext{min-height:0}
+  .ctitle{font-size:22px}
+  .csent{font-size:16px}
+  .capchips{display:flex}
+  .co{display:none}
+  .ctrls{justify-content:center;padding:0}
+  .cb{width:42px;height:42px}
+  .cb.play{width:50px;height:50px}
+  .steps{gap:4px;margin-top:12px}
+  .steps button{align-items:center;padding:10px 0;min-height:30px}
+  .steps .lb{display:none}
+  .steps .bar{width:100%}
+}
+
+/* ---------- motion ---------- */
+.instant, .instant *, .instant *::before, .instant *::after{transition:none!important;animation-duration:0s!important;animation-delay:0s!important}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .pv .spinner,.pv .code .caret{animation:none!important}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Fold Pay Wallet additions (same system as Fold Time Clock) ---------- */
+:root{
+  --aur-ground:#1a1433; --aur-purple:#7c5cff; --aur-light:#c4b5fd; --aur-green:#12a86f; --aur-mint:#8ef0c4;
+  --wp-bg:#f5f6f8; --wp-ink:#161a23; --wp-muted:#667085; --wp-line:#e4e7ec; --wp-blue:#1e5eff; --wp-blue-soft:#eaf0ff; --wp-ok:#12805c;
+  --term-body:#24272e; --term-edge:#3a3e48; --term-screen:#f7f8fb; --term-ink:#111318; --term-ok:#0f8a5f;
+  --ios-bg:#f2f2f7; --ios-blue:#0a84ff; --lock-a:#3b2f7a; --lock-b:#0f3b3a; --notif:rgba(245,245,250,.82);
+  --g-blue:#1a73e8; --g-bg:#ffffff;
+  --card-a:#2b4bd8; --card-b:#6c8cff;
+}
+.seg2 .dv{display:inline-flex;align-items:center;gap:6px}
+
+/* the counter card terminal */
+.term{position:absolute;left:930px;top:70px;width:250px;height:520px;border-radius:34px;background:var(--term-body);padding:16px 14px 0;
+  box-shadow:0 0 0 1.5px var(--term-edge) inset,0 30px 60px -20px var(--shadow-2),0 12px 24px -12px var(--shadow-2);z-index:3;
+  transition:opacity .6s,transform .75s cubic-bezier(.45,0,.18,1)}
+.term.off{opacity:0;transform:translateX(60px) scale(.97);pointer-events:none}
+.term .scr{height:300px;border-radius:16px;background:var(--term-screen);color:var(--term-ink);overflow:hidden;position:relative;
+  font:15px/1.35 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.term .tv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:18px;transition:opacity .4s}
+.term .tv.enter{opacity:0}
+.term .tshop{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:12px;font-weight:600;color:#6b7080;letter-spacing:.04em;text-transform:uppercase}
+.term .tamt{font-size:40px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.term .tsub{font-size:14px;color:#565b69}
+.term .tok{width:64px;height:64px;border-radius:50%;background:var(--term-ok);color:var(--white);display:grid;place-items:center;font-size:34px}
+.term .twait{width:30px;height:30px;border-radius:50%;border:3px solid #dde0e7;border-top-color:var(--brand);animation:spin .9s linear infinite}
+.term .keys{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:16px 10px 0}
+.term .keys i{height:26px;border-radius:8px;background:#353943;display:block}
+.term .keys i.g{background:#2f7d52}.term .keys i.r{background:#9a3434}.term .keys i.y{background:#a68a2c}
+.term .slot{position:absolute;left:50%;bottom:16px;width:120px;height:6px;margin-left:-60px;border-radius:3px;background:#15171c}
+.term .nfc{width:58px;height:58px;color:var(--brand)}
+.paycard{position:absolute;left:1150px;top:560px;width:150px;height:95px;border-radius:12px;background:linear-gradient(135deg,var(--card-a),var(--card-b));z-index:4;
+  box-shadow:0 14px 26px -10px rgba(10,20,60,.45);opacity:0;transition:transform .7s cubic-bezier(.45,0,.18,1),opacity .4s}
+.paycard::before{content:"";position:absolute;left:16px;top:30px;width:28px;height:21px;border-radius:5px;background:linear-gradient(135deg,#f3d27a,#c9a44a)}
+.paycard::after{content:"•••• 4242";position:absolute;left:16px;bottom:12px;color:rgba(255,255,255,.9);font:600 12px "Inter",sans-serif;letter-spacing:.08em}
+.paycard.show{opacity:1}
+.paycard.tap{transform:translate(-160px,-330px) rotate(-8deg)}
+#ripple.t{left:1055px;top:225px}
+
+/* the customer wallet page (foldpos.com/<shop>/wallet), scoped */
+.wp{position:absolute;inset:0;padding-top:54px;background:var(--wp-bg);color:var(--wp-ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",sans-serif;overflow:hidden}
+.wp .url{margin:2px 14px 0;height:34px;border-radius:12px;background:#e6e7eb;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;color:#3c3f47}
+.wp .url svg{width:11px;height:11px}
+.wp main{padding:14px 16px 40px}
+.wp header{display:flex;align-items:center;gap:12px;margin:2px 0 16px}
+.wp header .lg{width:44px;height:44px;border-radius:12px;background:var(--aur-ground);display:grid;place-items:center;flex:none}
+.wp header .lg svg{width:30px;height:30px}
+.wp header h1{font-size:19px;margin:0;line-height:1.2}
+.wp header p{margin:2px 0 0;color:var(--wp-muted);font-size:13px}
+.wp .lang{margin-left:auto;border:1px solid var(--wp-line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px}
+.wp .card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.06);margin-bottom:14px}
+.wp .card h2{font-size:15px;margin:0 0 6px}
+.wp .bal{background:var(--wp-blue);color:#fff}
+.wp .bal small{display:block;opacity:.85;font-size:13px}
+.wp .bal b{display:block;font-size:40px;line-height:1.1;margin:4px 0 2px;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.wp label{display:block;font-size:13px;color:var(--wp-muted);margin:10px 0 4px}
+.wp .in{border:1px solid var(--wp-line);border-radius:12px;padding:12px 14px;min-height:48px;background:#fff;display:flex;align-items:center}
+.wp .in.focus{outline:2px solid var(--wp-blue-soft);border-color:var(--wp-blue)}
+.wp .in .caret{width:2px;height:22px;background:var(--wp-blue);margin-left:1px;animation:blink 1s steps(1) infinite}
+.wp .primary{margin-top:14px;border-radius:12px;padding:14px;font-weight:600;background:var(--wp-blue);color:#fff;text-align:center;transition:transform .15s,filter .15s}
+.wp .dark{margin-top:10px;border-radius:12px;padding:12px;font-weight:600;background:#000;color:#fff;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;transition:transform .15s,filter .15s}
+.wp .link{color:var(--wp-blue);font-size:14px;padding:8px 0 0;display:block}
+.wp .note{font-size:13px;color:var(--wp-muted);margin:8px 0 0}
+.wp .qrc{display:flex;flex-direction:column;align-items:center;gap:6px}
+.wp .qrc svg.q{width:150px;height:150px}
+.wp .code{font:600 14px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+.wp .entries div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--wp-line);font-size:15px}
+.wp .entries div:last-child{border:0}
+.wp .entries span{color:var(--wp-muted);font-size:13px;display:block}
+.wp .plus{color:var(--wp-ok)}
+.wp .scroller{transition:transform 1.2s cubic-bezier(.45,0,.2,1)}
+
+/* iOS Add-pass sheet and the Wallet app */
+.ios{position:absolute;inset:0;padding-top:54px;background:var(--ios-bg);font:16px/1.35 -apple-system,BlinkMacSystemFont,"Inter",sans-serif;color:#111}
+.ios .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 14px;font-size:17px}
+.ios .bar b{font-weight:600}
+.ios .bar span{color:var(--ios-blue)}
+.ios .bar .add{font-weight:600;transition:transform .15s,filter .15s;padding:4px 6px;border-radius:8px}
+.ios .ttl{font-size:32px;font-weight:700;letter-spacing:-.02em;padding:4px 18px 12px}
+.ios .passwrap{padding:0 12px}
+.ios .sheetnote{font-size:13px;color:#6b6b72;text-align:center;padding:14px 26px 0}
+
+/* the Apple storeCard pass (Aurora Spin) */
+.pass{border-radius:14px;overflow:hidden;background:var(--aur-ground);color:#fff;box-shadow:0 10px 26px -10px rgba(10,8,30,.55);font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif}
+.pass .pt{display:flex;align-items:center;gap:8px;padding:12px 14px 10px}
+.pass .pt svg{width:28px;height:28px;flex:none}
+.pass .pt .lt{font-size:15px;font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pass .hf{text-align:right}
+.pass .lb{font-size:10px;font-weight:600;letter-spacing:.06em;color:var(--aur-light);text-transform:uppercase}
+.pass .hv{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;transition:color .4s}
+.pass .hv.flash{color:var(--aur-mint)}
+.pass .strip{display:block;width:100%;height:auto}
+.pass .sf{display:flex;justify-content:space-between;padding:10px 14px 4px}
+.pass .sv{font-size:17px}
+.pass .bc{margin:12px auto 14px;width:168px;background:#fff;border-radius:8px;padding:10px 10px 8px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pass .bc svg{width:132px;height:132px}
+.pass .bc span{font:11px ui-monospace,SFMono-Regular,Menlo,monospace;color:#111;letter-spacing:.04em}
+
+/* the Google loyalty pass */
+.gw{position:absolute;inset:0;padding-top:54px;background:var(--g-bg);font:15px/1.35 "Roboto","Inter",Arial,sans-serif;color:#1f1f1f}
+.gw .gbar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 12px}
+.gw .gbar b{font-size:18px;font-weight:500}
+.gw .gbtn{background:var(--g-blue);color:#fff;border-radius:20px;padding:8px 20px;font-weight:500;font-size:15px;transition:transform .15s,filter .15s}
+.gpass{margin:4px 14px 0;border-radius:20px;overflow:hidden;background:var(--aur-ground);color:#fff;box-shadow:0 8px 22px -10px rgba(10,8,30,.5)}
+.gpass .gh{display:flex;align-items:center;gap:10px;padding:14px 16px 6px}
+.gpass .gh .gl{width:34px;height:34px;border-radius:50%;background:var(--aur-ground);box-shadow:0 0 0 1px rgba(255,255,255,.18);display:grid;place-items:center;flex:none}
+.gpass .gh .gl svg{width:26px;height:26px}
+.gpass .gh span{font-size:15px}
+.gpass .gt{font-size:22px;padding:4px 16px 10px}
+.gpass .gf{display:flex;gap:30px;padding:0 16px 6px}
+.gpass .gf small{display:block;font-size:12px;opacity:.75}
+.gpass .gf b{font-size:18px;font-weight:500;font-variant-numeric:tabular-nums;transition:color .4s}
+.gpass .gf b.flash{color:var(--aur-mint)}
+.gpass .gq{margin:12px auto 12px;width:160px;background:#fff;border-radius:12px;padding:12px 12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.gpass .gq svg{width:126px;height:126px}
+.gpass .gq span{font:11px ui-monospace,Menlo,monospace;color:#222}
+.gpass .hero{display:block;width:100%;height:auto}
+
+/* lock screen */
+.lock{position:absolute;inset:0;background:linear-gradient(160deg,var(--lock-a),var(--lock-b));color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;text-align:center;padding-top:96px}
+.lock .ld{font-size:18px;font-weight:600;opacity:.9}
+.lock .lt{font-size:86px;font-weight:600;letter-spacing:-.02em;line-height:1;margin-top:2px}
+.lock .nt{margin:40px 12px 0;background:var(--notif);color:#111;border-radius:20px;padding:12px 14px;text-align:left;display:flex;gap:11px;
+  transform:translateY(30px);opacity:0;transition:transform .6s cubic-bezier(.25,1.2,.45,1),opacity .4s}
+.lock .nt.show{transform:none;opacity:1}
+.lock .nt .wi{width:38px;height:38px;border-radius:9px;background:#000;flex:none;display:grid;place-items:center}
+.lock .nt .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:600}
+.lock .nt .bt span{font-weight:400;color:#6c6c72;font-size:13px}
+.lock .nt .bb{font-size:15px;margin-top:1px}
+
+/* POS additions */
+.chips2{display:flex;gap:8px;flex-wrap:wrap}
+.amt{border:1px solid #cfd4dc;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;background:var(--pos-surface);transition:background .3s,color .3s,border-color .3s,transform .15s;font-variant-numeric:tabular-nums}
+.amt.sel{background:var(--pos-brand);border-color:var(--pos-brand);color:var(--white)}
+.amt.fixed{background:var(--pos-brand-soft);border-color:var(--pos-brand);color:var(--pos-brand)}
+.brk{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--pos-brand-soft);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.pnote{font-size:12px;color:var(--pos-muted);margin-top:8px;line-height:1.45}
+.wbal{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:6px 0 4px;flex-wrap:wrap}
+.wbal .v{font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;transition:color .4s}
+.wbal .v.up{color:var(--ok-text)}
+.subh{font-size:12px;font-weight:600;color:var(--pos-muted);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 2px}
+.erow{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--pos-line);font-size:13px;align-items:center}
+.erow:first-of-type{border-top:0}
+.erow .amtv{font-weight:600;font-variant-numeric:tabular-nums}
+.erow .amtv.p{color:var(--ok-text)}
+.okbar{display:flex;align-items:center;gap:8px;border:1px solid var(--ok-border);background:var(--ok-bg);color:var(--ok-text);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;margin-top:12px}
+.waitbar{display:flex;align-items:center;gap:10px;border:1px solid var(--info-border);background:var(--info-bg);color:var(--info-text);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;margin-top:12px}
+.waitbar i{width:16px;height:16px;border-radius:50%;border:2px solid var(--info-border);border-top-color:var(--info-text);animation:spin .9s linear infinite;flex:none}
+.cust{display:flex;align-items:center;gap:12px}
+.cust .av{width:40px;height:40px;border-radius:50%;background:var(--pos-brand-soft);color:var(--pos-brand);display:grid;place-items:center;font-weight:700;font-size:14px;flex:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{border:1px solid var(--pos-line);border-radius:12px;padding:12px 14px;background:var(--pos-surface)}
+.stat .sl{font-size:12px;color:var(--pos-muted);font-weight:500}
+.stat .sv{font-size:22px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:2px}
+.stat .ss{font-size:12px;color:var(--pos-muted);margin-top:2px;font-variant-numeric:tabular-nums}
+.stat.hero{background:var(--pos-brand-soft);border-color:transparent}
+.search{border:1px solid #cfd4dc;border-radius:10px;padding:10px 12px;font-size:14px;display:flex;align-items:center;gap:8px;background:var(--pos-surface)}
+.search .caret{width:2px;height:18px;background:var(--pos-brand);animation:blink 1s steps(1) infinite}
+.tenders{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+.ten{border:1px solid #cfd4dc;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:600;background:var(--pos-surface);transition:background .3s,color .3s,border-color .3s,transform .15s}
+.ten.sel{background:var(--pos-brand-soft);border-color:var(--pos-brand);color:var(--pos-brand)}
+
+
+a.wm{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <header class="hdr">
+    <a class="wm" href="/start" aria-label="Fold POS — back to Start here">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 2.5h8M4 2.5v11M4 8h6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+      <span>Fold POS</span><span class="sub" id="hdrSub">Fold Pay Wallet</span>
+    </a>
+    <div class="tools">
+      <div class="seg2" role="group" aria-label="Customer's phone" id="devSeg">
+        <button id="devApple" aria-pressed="true"><span class="full">iPhone</span><span class="abbr">iOS</span></button>
+        <button id="devGoogle" aria-pressed="false"><span class="full">Android</span><span class="abbr">And.</span></button>
+      </div>
+      <div class="seg2" role="group" aria-label="Language">
+        <button id="lenEn" aria-pressed="true" lang="en" aria-label="English"><span class="full">English</span><span class="abbr">EN</span></button>
+        <button id="lenEs" aria-pressed="false" lang="es" aria-label="Español"><span class="full">Español</span><span class="abbr">ES</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="stage" id="stage" aria-hidden="true">
+    <div class="canvas" id="canvas" data-scene="store">
+      <svg class="illus" viewBox="-600 -170 2500 1000" aria-hidden="true">
+        <g class="g il-store">
+          <g fill="var(--il-fill)" stroke="var(--il-line)" stroke-width="2">
+            <rect x="560" y="300" width="150" height="190" rx="14"/>
+            <rect x="560" y="300" width="150" height="30" rx="10" fill="var(--il-fill-2)"/>
+            <circle cx="635" cy="415" r="48" fill="var(--il-top)"/>
+            <circle cx="635" cy="415" r="34"/>
+            <rect x="726" y="300" width="150" height="190" rx="14"/>
+            <rect x="726" y="300" width="150" height="30" rx="10" fill="var(--il-fill-2)"/>
+            <circle cx="801" cy="415" r="48" fill="var(--il-top)"/>
+            <circle cx="801" cy="415" r="34"/>
+            <rect x="-260" y="300" width="150" height="190" rx="14"/>
+            <circle cx="-185" cy="415" r="48" fill="var(--il-top)"/>
+            <rect x="1460" y="300" width="150" height="190" rx="14"/>
+            <circle cx="1535" cy="415" r="48" fill="var(--il-top)"/>
+          </g>
+          <circle cx="690" cy="315" r="4" fill="var(--il-line)"/><circle cx="856" cy="315" r="4" fill="var(--il-line)"/>
+          <rect x="-620" y="566" width="2540" height="420" fill="var(--il-fill-2)" stroke="var(--il-line)" stroke-width="2"/>
+          <rect x="-620" y="540" width="2540" height="28" rx="8" fill="var(--il-top)" stroke="var(--il-line)" stroke-width="2"/>
+          <line x1="-620" y1="640" x2="1920" y2="640" stroke="var(--il-line)" stroke-width="1.5" stroke-dasharray="2 10" stroke-linecap="round"/>
+        </g>
+        <g class="g il-home">
+          <rect x="600" y="120" width="190" height="220" rx="10" fill="var(--il-fill)" stroke="var(--il-line)" stroke-width="2"/>
+          <line x1="695" y1="120" x2="695" y2="340" stroke="var(--il-line)" stroke-width="2"/>
+          <line x1="600" y1="230" x2="790" y2="230" stroke="var(--il-line)" stroke-width="2"/>
+          <rect x="520" y="420" width="340" height="120" rx="26" fill="var(--il-fill)" stroke="var(--il-line)" stroke-width="2"/>
+          <rect x="545" y="380" width="290" height="80" rx="22" fill="var(--il-top)" stroke="var(--il-line)" stroke-width="2"/>
+          <line x1="-620" y1="572" x2="1920" y2="572" stroke="var(--il-line)" stroke-width="2"/>
+          <path d="M1290 250 h70 l-14 -60 h-42 Z" fill="var(--il-top)" stroke="var(--il-line)" stroke-width="2"/>
+          <line x1="1325" y1="250" x2="1325" y2="570" stroke="var(--il-line)" stroke-width="3"/>
+          <ellipse cx="1325" cy="572" rx="34" ry="6" fill="var(--il-fill-2)" stroke="var(--il-line)" stroke-width="2"/>
+        </g>
+      </svg>
+
+      <div class="pos" id="pos">
+        <nav class="rail" aria-hidden="true">
+          <span class="lg"><svg viewBox="0 0 16 16" fill="none"><path d="M4 2.5h8M4 2.5v11M4 8h6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <span class="ri" data-r="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>
+          <span class="ri" data-r="checkout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+          <span class="ri" data-r="customers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.5 3.5 5.2"/></svg></span>
+          <span class="ri" data-r="reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <span class="ri" data-r="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span>
+        </nav>
+        <div class="pmain">
+          <div class="ptop"><div class="ptitle" id="pTitle">Settings</div><div class="pstore"><span>Mid City Wash</span><span class="av">SK</span></div></div>
+          <div class="psegs"><div class="pseg" id="pTabs"></div></div>
+          <div class="pbody"><div class="pscroll" id="pBody"></div></div>
+        </div>
+        <div class="pdlg-wrap" id="pDlg"><div class="pdlg" id="pDlgBox"></div></div>
+      </div>
+
+      <div class="term off" id="term" aria-hidden="true">
+        <div class="scr"><div class="tshop">Mid City Wash</div><div id="tv"></div></div>
+        <div class="keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="r"></i><i class="y"></i><i class="g"></i></div>
+        <div class="slot"></div>
+      </div>
+      <div class="paycard" id="paycard"></div>
+
+      <div class="phone" id="phone">
+        <div class="ph-scr"><div class="ph-in" id="phIn">
+          <div class="ph-status" id="phStatus"><span id="phTime">9:41</span>
+            <span class="ic"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="6" width="3" height="6" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="9" rx="2" fill="currentColor"/><rect x="24.5" y="4.5" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg></span>
+          </div>
+          <div class="ph-island"></div>
+          <div class="ph-views" id="phv"></div>
+        </div></div>
+      </div>
+
+      <div id="ripple"><i></i><i></i><i></i></div>
+      <div id="callouts"></div>
+      <div id="finger"></div>
+    </div>
+  </div>
+
+  <section class="cap" aria-label="Explainer">
+    <div class="caprow">
+      <div class="captext" id="capText" aria-live="polite">
+        <div class="eyebrow" id="capEye">Step 1 of 9</div>
+        <h2 class="ctitle" id="capTitle"></h2>
+        <p class="csent" id="capSent"></p>
+        <div class="capchips" id="capChips"></div>
+      </div>
+      <div class="ctrls">
+        <button class="cb" id="bBack" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="cb play" id="bPlay" aria-label="Pause"><svg id="icPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><svg id="icPause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4.2" height="15" rx="1.2"/><rect x="13.8" y="4.5" width="4.2" height="15" rx="1.2"/></svg><svg id="icReplay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.6"/><path d="M4 4v4.6h4.6"/></svg></button>
+        <button class="cb" id="bNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+</div>
+
+<script>
+(function(){
+'use strict';
+var lang = 'en', dev = 'apple';
+var root = document.documentElement;
+var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function esc(v){ return String(v == null ? '' : v).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function fmt(s, a){ return s.replace(/\{(\w+)\}/g, function(_, k){ return a && a[k] != null ? a[k] : ''; }); }
+function money(c){ return '$' + (c / 100).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function loc(){ return lang === 'es' ? 'es-US' : 'en-US'; }
+function tmShort(h, m){ return new Date(2026, 9, 13, h, m).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit'}).replace(/\s?[AaPp]\.?\s?[Mm]\.?$/, '').trim(); }
+function dshort(d){ return new Date(2026, 9, d, 12).toLocaleDateString(loc(), {month:'short', day:'numeric'}); }
+function dlong(d){ return new Date(2026, 9, d, 12).toLocaleDateString(loc(), {weekday:'long', month:'long', day:'numeric'}); }
+
+/* The POS app's own words (lib/l10n/arb app_en / app_es). */
+var POSW = {
+  en:{settings:'Settings', payment:'Payment', customers:'Customers', checkout:'Check out', reports:'Reports', sales:'Sales report',
+    wTitle:'Wallet', wSub:'Customers load the wallet once on the Fold Pay terminal and spend it a little at a time, so small orders don’t each pay a card fee. It is the same balance as store credit.',
+    wEnabled:'Offer wallet top-ups', wAmounts:'Top-up amounts', wStoreFee:'The store pays {fee} per top-up from its settlement.',
+    wRefundFee:'Refunding a top-up to its card keeps a {fee} refund fee for the store. Balances never expire.',
+    wCash:'Balances under $10.00 can be paid out in cash with no fee (California).', wNeeds:'Top-ups run on Fold Pay: they work once Fold Pay is approved and a terminal is on.',
+    wOn:'Wallet top-ups are on.', wOff:'Wallet top-ups are off.',
+    same:'The same balance as store credit — spend it with the Store credit tender at check-out.', balance:'Balance', topUp:'Top up', cashOut:'Cash out',
+    recent:'Recent activity', empty:'No wallet activity yet.', topUps:'Top-ups', topUpRow:'Top-up {amount}', refundToCard:'Refund to card',
+    kTopUp:'Wallet top-up', kSpent:'Store credit used', kRefund:'Top-up refunded to card',
+    tuTitle:'Top up the wallet', tuAmount:'Amount', tuBreak:'Wallet {wallet} · Load fee {fee} · Charge {charge}', tuNote:'The load fee is the same for every payment type and is not refunded.',
+    terminal:'Card terminal', termName:'Front counter', tuCharge:'Charge {amount} on the terminal', waiting:'Waiting for the customer on {terminal} · {amount}', approved:'{amount} added to the wallet.', done:'Done',
+    rfTitle:'Refund top-up to card', rfSum:'Refund to card {toCard} (refund fee {fee} kept by the store) · wallet goes down {walletDown}', rfNote:'The customer’s load fee is not refunded.', rfCard:'Card: {card}', rfGo:'Refund', cancel:'Cancel',
+    find:'Find the customer', findHint:'Name, phone or order number — or scan the claim ticket', custs:'Customers', ready:'Ready for pickup', pieces:'{count} pieces', due:'Balance due',
+    collect:'Collect payment', amountDue:'Amount due: {amount}', cash:'Cash', card:'Card', credit:'Store credit', creditAvail:'Store credit available: {balance}', received:'Amount received', record:'Record payment', paid:'Paid', collected:'Collected — hand it over',
+    sumTitle:'Wallet', sumSub:'Top-ups and spending for the period, and what customers hold now.', loaded:'Loaded', loads:'{count} top-ups', fees:'Load fees', feesSplit:'Customers {customer} · Store {store}',
+    spent:'Spent', refunded:'Refunded to cards', refundFees:'Refund fees kept {fee}', cashed:'Paid out in cash', held:'Held on wallets now', period:'This month', washFold:'Wash & fold'},
+  es:{settings:'Configuración', payment:'Pagos', customers:'Clientes', checkout:'Entrega', reports:'Informes', sales:'Informe de ventas',
+    wTitle:'Monedero', wSub:'Los clientes recargan el monedero una vez en la terminal Fold Pay y lo van gastando poco a poco, así los pedidos pequeños no pagan cada uno una comisión de tarjeta. Es el mismo saldo que el crédito en tienda.',
+    wEnabled:'Ofrecer recargas de monedero', wAmounts:'Montos de recarga', wStoreFee:'La tienda paga {fee} por recarga de su liquidación.',
+    wRefundFee:'Al reembolsar una recarga a su tarjeta, la tienda se queda con un cargo de reembolso de {fee}. Los saldos no vencen.',
+    wCash:'Los saldos menores de $10.00 se pueden pagar en efectivo sin cargo (California).', wNeeds:'Las recargas usan Fold Pay: funcionan cuando Fold Pay está aprobado y hay una terminal activa.',
+    wOn:'Las recargas de monedero están activadas.', wOff:'Las recargas de monedero están desactivadas.',
+    same:'Es el mismo saldo que el crédito en tienda: se usa con el pago Crédito en tienda al cobrar.', balance:'Saldo', topUp:'Recargar', cashOut:'Pagar en efectivo',
+    recent:'Actividad reciente', empty:'Aún no hay movimientos en el monedero.', topUps:'Recargas', topUpRow:'Recarga de {amount}', refundToCard:'Reembolsar a la tarjeta',
+    kTopUp:'Recarga de monedero', kSpent:'Crédito en tienda usado', kRefund:'Recarga reembolsada a la tarjeta',
+    tuTitle:'Recargar el monedero', tuAmount:'Monto', tuBreak:'Monedero {wallet} · Cargo de recarga {fee} · Cobro {charge}', tuNote:'El cargo de recarga es el mismo para cualquier forma de pago y no se reembolsa.',
+    terminal:'Terminal de tarjetas', termName:'Mostrador', tuCharge:'Cobrar {amount} en la terminal', waiting:'Esperando al cliente en {terminal} · {amount}', approved:'Se agregaron {amount} al monedero.', done:'Listo',
+    rfTitle:'Reembolsar la recarga a la tarjeta', rfSum:'Reembolso a la tarjeta {toCard} (la tienda se queda con el cargo de reembolso de {fee}) · el monedero baja {walletDown}', rfNote:'El cargo de recarga del cliente no se reembolsa.', rfCard:'Tarjeta: {card}', rfGo:'Reembolsar', cancel:'Cancelar',
+    find:'Buscar al cliente', findHint:'Nombre, teléfono o número de pedido, o escanea el ticket', custs:'Clientes', ready:'Listo para recoger', pieces:'{count} piezas', due:'Saldo pendiente',
+    collect:'Cobrar', amountDue:'Monto a pagar: {amount}', cash:'Efectivo', card:'Tarjeta', credit:'Crédito en tienda', creditAvail:'Crédito disponible: {balance}', received:'Monto recibido', record:'Registrar pago', paid:'Pagado', collected:'Entregado — entregue el pedido',
+    sumTitle:'Monedero', sumSub:'Recargas y consumo del período, y lo que tienen los clientes ahora.', loaded:'Recargado', loads:'{count} recargas', fees:'Cargos de recarga', feesSplit:'Clientes {customer} · Tienda {store}',
+    spent:'Consumido', refunded:'Reembolsado a tarjetas', refundFees:'Cargos de reembolso retenidos {fee}', cashed:'Pagado en efectivo', held:'Saldo en monederos ahora', period:'Este mes', washFold:'Lavado y doblado'}
+};
+function w(k, a){ return fmt(POSW[lang][k], a); }
+
+/* The customer wallet page's own words (src/customer-wallet/wallet-page.ts). */
+var PAGEW = {
+  en:{other:'Español', wallet:'Wallet', powered:'Wallet by', signIn:'See your balance', signInHint:'We will text you a code to check it is your phone.', phone:'Mobile number', sendCode:'Text me a code',
+    codeSent:'We texted a 6-digit code to {to}.', code:'Code', verify:'Open my wallet', resend:'Send a new code', balance:'Your balance', hi:'Hi {name}', showCode:'Show this at the counter',
+    apple:'Add to Apple Wallet', google:'Add to Google Wallet', topUp:'Top up', counterOnly:'Top up at the counter with your card or cash.', history:'Recent activity', kTopUp:'Added to wallet', after:'Balance {amt}'},
+  es:{other:'English', wallet:'Saldo', powered:'Saldo con', signIn:'Ver tu saldo', signInHint:'Te enviaremos un código por mensaje para confirmar que es tu teléfono.', phone:'Número de celular', sendCode:'Envíame un código',
+    codeSent:'Enviamos un código de 6 dígitos al {to}.', code:'Código', verify:'Abrir mi saldo', resend:'Enviar un código nuevo', balance:'Tu saldo', hi:'Hola {name}', showCode:'Muestra esto en el mostrador',
+    apple:'Agregar a Apple Wallet', google:'Agregar a Google Wallet', topUp:'Recargar', counterOnly:'Recarga en el mostrador con tarjeta o efectivo.', history:'Movimientos recientes', kTopUp:'Recarga', after:'Saldo {amt}'}
+};
+function pw(k, a){ return fmt(PAGEW[lang][k], a); }
+
+/* The explainer's own words. */
+var UI = {
+  en:{sub:'Fold Pay Wallet', step:'Step {n} of {t}', back:'Back', next:'Next', play:'Play', pause:'Pause', replay:'Play again', now:'now', today:'Today',
+    tTap:'Tap, insert or swipe card', tWait:'Processing…', tOk:'Approved', tThanks:'Thank you',
+    iCancel:'Cancel', iAdd:'Add', iWallet:'Wallet', iSheet:'This pass will be added to Wallet.', gSave:'Save', gTitle:'Save to Google Wallet', gWallet:'Google Wallet',
+    nTitle:'MID CITY WASH', nBody:'Your balance is now {amt}'},
+  es:{sub:'Monedero Fold Pay', step:'Paso {n} de {t}', back:'Atrás', next:'Siguiente', play:'Reproducir', pause:'Pausa', replay:'Ver de nuevo', now:'ahora', today:'Hoy',
+    tTap:'Acerque, inserte o deslice la tarjeta', tWait:'Procesando…', tOk:'Aprobado', tThanks:'Gracias',
+    iCancel:'Cancelar', iAdd:'Agregar', iWallet:'Wallet', iSheet:'Este pase se agregará a Wallet.', gSave:'Guardar', gTitle:'Guardar en Google Wallet', gWallet:'Google Wallet',
+    nTitle:'MID CITY WASH', nBody:'Your balance is now {amt}'}
+};
+function u(k, a){ return fmt(UI[lang][k], a); }
+
+var STORE = 'Mid City Wash', CUST = 'Rosa Diaz', FIRST = 'Rosa', PHONE = '(310) 555-0123', MASKED = '(•••) •••-0123';
+var WCODE = 'K7QE-2MVD-9RXA-4TNB', URL = 'foldpos.com/mid-city-wash/wallet';
+
+/* The real card art: assets/wallet-pass/src (Aurora Spin). */
+var MARK = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#A78BFA" stroke-width="9" stroke-linecap="round" stroke-dasharray="138 113" transform="rotate(-160 50 50)"/><circle cx="50" cy="50" r="27" fill="none" stroke="#8EF0C4" stroke-width="9" stroke-linecap="round" stroke-dasharray="105 65" transform="rotate(30 50 50)"/><circle cx="50" cy="50" r="7" fill="#FFFFFF"/></svg>';
+var STRIP = '<svg class="strip" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 144"><defs><radialGradient id="stsa1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.55"></stop><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"></stop></radialGradient><radialGradient id="stsa2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#12A86F" stop-opacity="0.4"></stop><stop offset="1" stop-color="#12A86F" stop-opacity="0"></stop></radialGradient><linearGradient id="stsl1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4B5FD"></stop><stop offset="1" stop-color="#7C5CFF"></stop></linearGradient><linearGradient id="stsl2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12A86F"></stop><stop offset="1" stop-color="#8EF0C4"></stop></linearGradient><linearGradient id="stsh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4B5FD" stop-opacity="0"></stop><stop offset="0.3" stop-color="#C4B5FD"></stop><stop offset="0.7" stop-color="#8EF0C4"></stop><stop offset="1" stop-color="#8EF0C4" stop-opacity="0"></stop></linearGradient></defs><rect width="375" height="144" fill="#1A1433"></rect><ellipse cx="187.5" cy="160" rx="230" ry="52" fill="url(#stsa2)"></ellipse><ellipse cx="187.5" cy="72" rx="120" ry="84" fill="url(#stsa1)"></ellipse><circle cx="187.5" cy="72" r="52" fill="none" stroke="url(#stsl1)" stroke-width="6" stroke-linecap="round" stroke-dasharray="180 147" transform="rotate(-160 187.5 72)"></circle><circle cx="187.5" cy="72" r="40" fill="none" stroke="url(#stsl2)" stroke-width="6" stroke-linecap="round" stroke-dasharray="156 95" transform="rotate(30 187.5 72)"></circle><circle cx="187.5" cy="72" r="28" fill="none" stroke="#C4B5FD" stroke-width="5" stroke-linecap="round" stroke-dasharray="102 74" transform="rotate(150 187.5 72)"></circle><circle cx="187.5" cy="72" r="15" fill="none" stroke="#8EF0C4" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="38 56" transform="rotate(-40 187.5 72)"></circle><circle cx="187.5" cy="72" r="3.5" fill="#FFFFFF" fill-opacity="0.9"></circle><rect x="0" y="142" width="375" height="2" fill="url(#stsh)"></rect></svg>';
+var HERO = '<svg class="hero" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1032 336"><defs><radialGradient id="ghsg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.55"></stop><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"></stop></radialGradient><radialGradient id="ghsg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#12A86F" stop-opacity="0.4"></stop><stop offset="1" stop-color="#12A86F" stop-opacity="0"></stop></radialGradient><linearGradient id="ghst1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4B5FD"></stop><stop offset="1" stop-color="#7C5CFF"></stop></linearGradient><linearGradient id="ghst2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12A86F"></stop><stop offset="1" stop-color="#8EF0C4"></stop></linearGradient><linearGradient id="ghsgh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4B5FD" stop-opacity="0"></stop><stop offset="0.3" stop-color="#C4B5FD"></stop><stop offset="0.7" stop-color="#8EF0C4"></stop><stop offset="1" stop-color="#8EF0C4" stop-opacity="0"></stop></linearGradient></defs><rect width="1032" height="336" fill="#1A1433"></rect><ellipse cx="516" cy="380" rx="580" ry="130" fill="url(#ghsg2)"></ellipse><ellipse cx="516" cy="168" rx="320" ry="196" fill="url(#ghsg1)"></ellipse><circle cx="516" cy="168" r="118" fill="none" stroke="url(#ghst1)" stroke-width="14" stroke-linecap="round" stroke-dasharray="408 333" transform="rotate(-160 516 168)"></circle><circle cx="516" cy="168" r="90" fill="none" stroke="url(#ghst2)" stroke-width="14" stroke-linecap="round" stroke-dasharray="351 215" transform="rotate(30 516 168)"></circle><circle cx="516" cy="168" r="62" fill="none" stroke="#C4B5FD" stroke-width="12" stroke-linecap="round" stroke-dasharray="226 164" transform="rotate(150 516 168)"></circle><circle cx="516" cy="168" r="33" fill="none" stroke="#8EF0C4" stroke-width="10" stroke-linecap="round" stroke-dasharray="83 124" transform="rotate(-40 516 168)"></circle><circle cx="516" cy="168" r="8" fill="#FFFFFF" fill-opacity="0.9"></circle><rect x="0" y="331" width="1032" height="5" fill="url(#ghsgh)"></rect></svg>';
+
+/* ================================================================ DOM */
+var $ = function(id){ return document.getElementById(id); };
+var stage = $('stage'), canvas = $('canvas'), posEl = $('pos'), phoneEl = $('phone'), phv = $('phv'), termEl = $('term'), tv = $('tv'), card = $('paycard');
+var pBody = $('pBody'), pDlg = $('pDlg'), pDlgBox = $('pDlgBox'), finger = $('finger'), ripple = $('ripple'), callouts = $('callouts');
+var INSTANT = false;
+
+/* An illustrative QR pattern (finder squares + fixed noise). It is not a real code. */
+var QR = (function(){
+  var n = 25, s = '', seed = 11;
+  function rnd(){ seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+  function finder(x, y){ return '<rect x="' + x + '" y="' + y + '" width="7" height="7" fill="#111"/><rect x="' + (x+1) + '" y="' + (y+1) + '" width="5" height="5" fill="#fff"/><rect x="' + (x+2) + '" y="' + (y+2) + '" width="3" height="3" fill="#111"/>'; }
+  for (var y = 0; y < n; y++) for (var x = 0; x < n; x++){
+    var inF = (x < 8 && y < 8) || (x > 16 && y < 8) || (x < 8 && y > 16);
+    if (!inF && rnd() > 0.52) s += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+  }
+  return '<svg class="q" viewBox="0 0 25 25" shape-rendering="crispEdges" aria-hidden="true"><rect width="25" height="25" fill="#fff"/><g fill="#111">' + s + '</g>' + finder(0,0) + finder(18,0) + finder(0,18) + '</svg>';
+})();
+
+/* ================================================================ phone views */
+function wpHead(){ return '<div class="url"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 5V3.6a3 3 0 0 1 6 0V5h.6c.5 0 .9.4.9.9v4.6c0 .5-.4.9-.9.9H2.4a.9.9 0 0 1-.9-.9V5.9c0-.5.4-.9.9-.9zm1.4 0h3.2V3.6a1.6 1.6 0 0 0-3.2 0z"/></svg>' + esc(URL) + '</div>' +
+  '<main><header><div class="lg">' + MARK + '</div><div><h1>' + esc(STORE) + '</h1><p>' + esc(pw('wallet')) + '</p></div><span class="lang">' + esc(pw('other')) + '</span></header>'; }
+var V = {
+  signin: function(phone, focus){
+    return '<div class="wp">' + wpHead() + '<section class="card"><h2>' + esc(pw('signIn')) + '</h2><p class="note" style="margin:0">' + esc(pw('signInHint')) + '</p>' +
+      '<label>' + esc(pw('phone')) + '</label><div class="in' + (focus ? ' focus' : '') + '" data-k="phone">' + esc(phone || '') + (focus ? '<span class="caret"></span>' : '') + '</div>' +
+      '<div class="primary" data-k="send">' + esc(pw('sendCode')) + '</div></section></main></div>';
+  },
+  code: function(code){
+    return '<div class="wp">' + wpHead() + '<section class="card"><h2>' + esc(pw('signIn')) + '</h2><p class="note" style="margin:0">' + esc(pw('codeSent', {to:MASKED})) + '</p>' +
+      '<label>' + esc(pw('code')) + '</label><div class="in focus" data-k="code">' + esc(code || '') + '<span class="caret"></span></div>' +
+      '<div class="primary" data-k="verify">' + esc(pw('verify')) + '</div><span class="link">' + esc(pw('resend')) + '</span></section></main></div>';
+  },
+  wallet: function(bal){
+    return '<div class="wp"><div class="scroller" data-k="scroll">' + wpHead() +
+      '<section class="card bal"><small>' + esc(pw('hi', {name:FIRST})) + '</small><b>' + money(bal) + '</b><small>' + esc(pw('balance')) + '</small></section>' +
+      '<section class="card qrc">' + QR + '<div class="code">' + esc(WCODE) + '</div><p class="note" style="margin:0">' + esc(pw('showCode')) + '</p>' +
+      '<div class="dark" data-k="apple">' + APPLE_GLYPH + esc(pw('apple')) + '</div><div class="dark" data-k="google">' + G_GLYPH + esc(pw('google')) + '</div></section>' +
+      '<section class="card"><h2>' + esc(pw('topUp')) + '</h2><p class="note" style="margin:0">' + esc(pw('counterOnly')) + '</p></section>' +
+      '<section class="card"><h2>' + esc(pw('history')) + '</h2><div class="entries"><div><p style="margin:0">' + esc(pw('kTopUp')) + '<span>' + esc(dshort(13)) + ' · ' + esc(pw('after', {amt:money(2000)})) + '</span></p><b class="plus">+' + money(2000) + '</b></div></div></section>' +
+      '</main></div></div>';
+  },
+  applePass: function(bal, flash){
+    return '<div class="pass"><div class="pt">' + MARK + '<span class="lt">' + esc(STORE) + '</span><div class="hf"><div class="lb">BALANCE</div><div class="hv' + (flash ? ' flash' : '') + '" data-k="bal">' + money(bal) + '</div></div></div>' +
+      STRIP + '<div class="sf"><div><div class="lb">CARDHOLDER</div><div class="sv">' + esc(FIRST) + '</div></div><div style="text-align:right"><div class="lb">SPEND AT</div><div class="sv">This store</div></div></div>' +
+      '<div class="bc">' + QR + '<span>' + esc(WCODE) + '</span></div></div>';
+  },
+  appleSheet: function(bal){
+    return '<div class="ios"><div class="bar"><span>' + esc(u('iCancel')) + '</span><b>' + esc(STORE) + '</b><span class="add" data-k="add">' + esc(u('iAdd')) + '</span></div>' +
+      '<div class="passwrap">' + V.applePass(bal) + '</div><p class="sheetnote">' + esc(u('iSheet')) + '</p></div>';
+  },
+  appleWallet: function(bal, flash){
+    return '<div class="ios"><div class="ttl">' + esc(u('iWallet')) + '</div><div class="passwrap">' + V.applePass(bal, flash) + '</div></div>';
+  },
+  googlePass: function(bal, flash){
+    return '<div class="gpass"><div class="gh"><span class="gl">' + MARK + '</span><span>' + esc(STORE) + '</span></div><div class="gt">Wallet</div>' +
+      '<div class="gf"><div><small>Balance</small><b class="' + (flash ? 'flash' : '') + '" data-k="bal">' + money(bal) + '</b></div><div><small>&nbsp;</small><b>' + esc(CUST) + '</b></div></div>' +
+      '<div class="gq">' + QR + '<span>' + esc(WCODE) + '</span></div>' + HERO + '</div>';
+  },
+  googleSheet: function(bal){
+    return '<div class="gw"><div class="gbar"><b>' + esc(u('gTitle')) + '</b><span class="gbtn" data-k="add">' + esc(u('gSave')) + '</span></div>' + V.googlePass(bal) + '</div>';
+  },
+  googleWallet: function(bal, flash){
+    return '<div class="gw"><div class="gbar"><b>' + esc(u('gWallet')) + '</b></div>' + V.googlePass(bal, flash) + '</div>';
+  },
+  lock: function(bal){
+    return '<div class="lock"><div class="ld">' + esc(dlong(13)) + '</div><div class="lt" data-k="clock">' + esc(tmShort(18, 5)) + '</div>' +
+      '<div class="nt" data-k="note"><span class="wi">' + WALLET_GLYPH + '</span><div style="flex:1;min-width:0"><div class="bt">' + esc(u('nTitle')) + ' <span>' + esc(u('now')) + '</span></div><div class="bb">' + esc(u('nBody', {amt:money(bal)})) + '</div></div></div></div>';
+  }
+};
+var APPLE_GLYPH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8s-1.9-.8-3.1-.8C6.8 7.3 5.3 8.2 4.5 9.7c-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.1.8c1.3 0 2.1-1.2 2.9-2.4.9-1.3 1.3-2.6 1.3-2.7 0 0-2.6-1-2.7-4.1zM14.1 5.5c.6-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>';
+var G_GLYPH = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#fff"/><path d="M3 9h18" stroke="#000" stroke-width="2"/></svg>';
+var WALLET_GLYPH = '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" fill="#2a2a2e"/><rect x="3" y="6" width="18" height="3" fill="#4c8ff7"/><rect x="3" y="9" width="18" height="3" fill="#f6b73c"/><rect x="3" y="12" width="18" height="3" fill="#ec5a52"/><rect x="3" y="13" width="18" height="7" rx="2" fill="#e9e9ee"/></svg>';
+
+function cur(){ return phv.lastElementChild; }
+function q(k){ var c = cur(); return c ? c.querySelector('[data-k="' + k + '"]') : null; }
+function phView(html, cls){
+  var v = document.createElement('div');
+  v.className = 'pv' + (cls ? ' ' + cls : '');
+  v.innerHTML = html;
+  if (INSTANT){ phv.innerHTML = ''; phv.appendChild(v); return v; }
+  Array.prototype.forEach.call(phv.children, function(o){ o.classList.add('leave'); setTimeout(function(){ if (o.parentNode) o.parentNode.removeChild(o); }, 500); });
+  v.classList.add('enter'); phv.appendChild(v); void v.offsetWidth; v.classList.remove('enter');
+  return v;
+}
+function setIn(k, val, caret){ var c = q(k); if (c) c.innerHTML = esc(val) + (caret === false ? '' : '<span class="caret"></span>'); }
+function phTime(h, m){ $('phTime').textContent = tmShort(h, m); }
+function phDark(on){ $('phStatus').classList.toggle('dark', !!on); }
+
+/* ================================================================ terminal */
+function tView(kind, amt){
+  var h;
+  if (kind === 'idle') h = '<div class="tsub">' + esc(STORE) + '</div>';
+  else if (kind === 'tap') h = '<div class="tamt">' + money(amt) + '</div><svg class="nfc" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 14a14 14 0 0 1 0 20"/><path d="M25 9a21 21 0 0 1 0 30"/><path d="M32 4a28 28 0 0 1 0 40" opacity=".5"/><path d="M11 19a7 7 0 0 1 0 10"/></svg><div class="tsub">' + esc(u('tTap')) + '</div>';
+  else if (kind === 'wait') h = '<div class="tamt">' + money(amt) + '</div><div class="twait"></div><div class="tsub">' + esc(u('tWait')) + '</div>';
+  else h = '<div class="tok pop">✓</div><div class="tamt" style="font-size:30px">' + money(amt) + '</div><div class="tsub"><b>' + esc(u('tOk')) + '</b> · ' + esc(u('tThanks')) + '</div>';
+  tv.innerHTML = '<div class="tv' + (INSTANT ? '' : ' enter') + '">' + h + '</div>';
+  if (!INSTANT){ var e = tv.firstChild; void e.offsetWidth; e.classList.remove('enter'); }
+}
+
+/* ================================================================ POS views */
+var RAIL = {settings:'settings', customers:'customers', checkout:'checkout', reports:'reports'};
+function posChrome(area, tab){
+  $('pTitle').textContent = w(area);
+  $('pTabs').innerHTML = tab ? '<span class="on">' + esc(w(tab)) + '</span>' : '';
+  $('pTabs').style.display = tab ? '' : 'none';
+  Array.prototype.forEach.call(posEl.querySelectorAll('.ri'), function(r){ r.classList.toggle('on', r.dataset.r === RAIL[area]); });
+}
+function posShow(area, tab, html){ posChrome(area, tab); pBody.innerHTML = html; pBody.style.transform = ''; }
+function dlg(html){ if (!html){ pDlg.classList.remove('show'); return; } pDlgBox.innerHTML = html; pDlg.classList.add('show'); }
+var AMTS = [1000, 2000, 3000, 5000];
+var P = {
+  settings: function(on){
+    return '<div class="pcard"><div class="pcard-h"><h3>' + esc(w('wTitle')) + '</h3><span class="pill ' + (on ? 'ok' : 'mute') + '" data-k="state">' + esc(w(on ? 'wOn' : 'wOff')) + '</span></div>' +
+      '<div class="pmuted" style="font-size:13px;line-height:1.5">' + esc(w('wSub')) + '</div>' +
+      '<div class="swrow" style="margin-top:10px"><div><div class="t">' + esc(w('wEnabled')) + '</div></div><span class="psw' + (on ? ' on' : '') + '" data-k="sw"></span></div>' +
+      '<div class="swrow" data-k="amts"><div style="flex:1"><div class="t">' + esc(w('wAmounts')) + '</div><div class="chips2" style="margin-top:8px">' +
+        AMTS.map(function(a){ return '<span class="amt fixed">' + money(a) + '</span>'; }).join('') + '</div></div></div>' +
+      '<div class="pnote" data-k="n1">' + esc(w('wStoreFee', {fee:money(25)})) + '</div><div class="pnote">' + esc(w('wNeeds')) + '</div></div>';
+  },
+  customer: function(st){
+    /* st: {bal, acts:[[kind, cents, day, balAfter]], topups:[[cents, day, refundable]], cash} */
+    var h = '<div class="pcard" style="margin-bottom:12px"><div class="cust"><span class="av">RD</span><div><div class="pname">' + esc(CUST) + '</div><div class="pmuted">' + esc(PHONE) + '</div></div></div></div>' +
+      '<div class="pcard"><div class="pcard-h" style="margin-bottom:4px"><h3>' + esc(w('wTitle')) + '</h3></div><div class="pmuted">' + esc(w('same')) + '</div>' +
+      '<div class="wbal"><div><div class="pmuted">' + esc(w('balance')) + '</div><div class="v" data-k="bal">' + money(st.bal) + '</div></div><div class="pact">' +
+      (st.cash ? '<span class="pb out">' + esc(w('cashOut')) + '</span>' : '') + '<span class="pb fill" data-k="topup">' + esc(w('topUp')) + '</span></div></div>' +
+      '<div class="subh">' + esc(w('recent')) + '</div><div data-k="acts">';
+    if (!st.acts.length) h += '<div class="pmuted" style="padding:8px 0">' + esc(w('empty')) + '</div>';
+    st.acts.forEach(function(a){ h += P.act(a); });
+    h += '</div>';
+    if (st.topups && st.topups.length){
+      h += '<div class="subh">' + esc(w('topUps')) + '</div>';
+      st.topups.forEach(function(t){ h += '<div class="erow"><span>' + esc(w('topUpRow', {amount:money(t[0])})) + ' <span class="pmuted">· ' + esc(dshort(t[1])) + '</span></span>' +
+        (t[2] ? '<span class="pb txt" data-k="refund">' + esc(w('refundToCard')) + '</span>' : '') + '</div>'; });
+    }
+    return h + '</div>';
+  },
+  act: function(a, anim){
+    var label = {top:w('kTopUp'), spent:w('kSpent')}[a[0]];
+    return '<div class="erow' + (anim ? ' slidein' : '') + '"><span>' + esc(label) + ' <span class="pmuted">· ' + esc(dshort(a[2])) + '</span></span><span class="amtv' + (a[1] > 0 ? ' p' : '') + '">' + (a[1] > 0 ? '+' : '−') + money(Math.abs(a[1])) + '</span></div>';
+  },
+  checkout: function(stage){
+    var h = '<div class="pcard" style="margin-bottom:12px"><div class="pcard-h" style="margin-bottom:6px"><h3>' + esc(w('find')) + '</h3></div><div class="pmuted" style="margin-bottom:8px">' + esc(w('findHint')) + '</div>' +
+      '<div class="search" data-k="search">' + (stage > 0 ? esc('Rosa') : '') + (stage < 2 ? '<span class="caret"></span>' : '') + '</div>';
+    if (stage >= 1) h += '<div class="subh">' + esc(w('custs')) + '</div><div class="prow' + (stage === 1 ? ' slidein' : '') + '" data-k="crow"><div class="cust"><span class="av">RD</span><div><div class="pname">' + esc(CUST) + '</div><div class="pmuted">' + esc(PHONE) + '</div></div></div></div>';
+    h += '</div>';
+    if (stage >= 2){
+      var paid = stage >= 4;
+      h += '<div class="pcard pfade"><div class="pcard-h"><h3>W1042 · ' + esc(w('washFold')) + '</h3><span class="pill ' + (paid ? 'ok' : 'info') + '" data-k="opill">' + esc(paid ? w('paid') : w('ready')) + '</span></div>' +
+        '<div class="facts">' + fact(w('washFold'), '12 lb') + fact(w('due'), paid ? money(0) : money(1450)) + '</div>' +
+        (paid ? '<div class="okbar">✓ ' + esc(w('collected')) + '</div>' : '<div class="pact" style="margin-top:12px"><span class="pb fill" data-k="collect">' + esc(w('collect')) + '</span></div>') + '</div>';
+    }
+    return h;
+  }
+};
+function fact(l, v){ return '<div class="fact"><span class="fl">' + esc(l) + '</span><span class="fv">' + esc(v) + '</span></div>'; }
+var D = {
+  topUp: function(sel, phase){
+    var h = '<h4>' + esc(w('tuTitle')) + '</h4><div class="plabel">' + esc(w('tuAmount')) + '</div><div class="chips2" style="margin-top:8px">' +
+      AMTS.map(function(a){ return '<span class="amt' + (a === sel ? ' sel' : '') + '" data-k="a' + a + '">' + money(a) + '</span>'; }).join('') + '</div>';
+    if (sel){
+      var fee = sel < 5000 ? 25 : 0;
+      h += '<div class="brk">' + esc(w('tuBreak', {wallet:money(sel), fee:money(fee), charge:money(sel + fee)})) + '</div><div class="pnote">' + esc(w('tuNote')) + '</div>' +
+        '<div class="plabel" style="margin-top:12px">' + esc(w('terminal')) + '</div><div class="chips2" style="margin-top:6px"><span class="ten sel">' + esc(w('termName')) + '</span></div>';
+      if (phase === 'wait') h += '<div class="waitbar"><i></i>' + esc(w('waiting', {terminal:w('termName'), amount:money(sel + fee)})) + '</div>';
+      if (phase === 'ok') h += '<div class="okbar">✓ ' + esc(w('approved', {amount:money(sel)})) + '</div>';
+    }
+    h += '<div class="acts">' + (phase === 'ok' ? '<span class="pb fill">' + esc(w('done')) + '</span>' :
+      '<span class="pb txt">' + esc(w('cancel')) + '</span>' + (sel && phase !== 'wait' ? '<span class="pb fill" data-k="charge">' + esc(w('tuCharge', {amount:money(sel + (sel < 5000 ? 25 : 0))})) + '</span>' : '')) + '</div>';
+    return h;
+  },
+  tender: function(sel, done){
+    return '<h4>' + esc(w('collect')) + '</h4><div style="font-size:14px;font-weight:600">' + esc(w('amountDue', {amount:money(1450)})) + '</div>' +
+      '<div class="tenders"><span class="ten">' + esc(w('cash')) + '</span><span class="ten">' + esc(w('card')) + '</span><span class="ten' + (sel ? ' sel' : '') + '" data-k="credit">' + esc(w('credit')) + '</span></div>' +
+      (sel ? '<div class="pmuted" style="color:var(--ok-text);font-weight:600">' + esc(w('creditAvail', {balance:money(2000)})) + '</div><div class="plabel" style="margin-top:10px">' + esc(w('received')) + '</div><div class="field"><span>' + money(1450) + '</span></div>' : '') +
+      '<div class="acts"><span class="pb txt">' + esc(w('cancel')) + '</span>' + (sel ? '<span class="pb fill" data-k="record">' + esc(w('record')) + '</span>' : '') + '</div>';
+  },
+  refund: function(){
+    return '<h4>' + esc(w('rfTitle')) + '</h4><div class="brk">' + esc(w('rfSum', {toCard:money(500), fee:money(50), walletDown:money(550)})) + '</div>' +
+      '<div class="pnote">' + esc(w('rfNote')) + '</div><div class="pnote" style="color:var(--pos-ink)">' + esc(w('rfCard', {card:'Visa •••• 4242'})) + '</div>' +
+      '<div class="acts"><span class="pb txt" data-k="cancel">' + esc(w('cancel')) + '</span><span class="pb fill">' + esc(w('rfGo')) + '</span></div>';
+  }
+};
+function report(){
+  var s = function(lbl, val, sub, k, hero){ return '<div class="stat' + (hero ? ' hero' : '') + '"><div class="sl">' + esc(lbl) + '</div><div class="sv"' + (k ? ' data-k="' + k + '"' : '') + '>' + esc(val) + '</div>' + (sub ? '<div class="ss">' + esc(sub) + '</div>' : '') + '</div>'; };
+  return '<div class="pcard"><div class="pcard-h" style="margin-bottom:4px"><h3>' + esc(w('sumTitle')) + '</h3><span class="pill mute">' + esc(w('period')) + '</span></div><div class="pmuted" style="margin-bottom:12px">' + esc(w('sumSub')) + '</div>' +
+    '<div class="grid2">' + s(w('loaded'), money(153000), w('loads', {count:62}), 'r1') + s(w('fees'), money(2775), w('feesSplit', {customer:money(1225), store:money(1550)}), 'r2') +
+    s(w('spent'), money(110240), '', 'r3') + s(w('held'), money(42760), '', 'r6', true) + '</div></div>';
+}
+
+/* ================================================================ stage helpers */
+var timers = [], tweens = [], tNow = 0;
+function later(ms, fn){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+function tween(dur, fn){ if (INSTANT){ fn(1); return; } tweens.push({start:tNow, dur:dur, fn:fn}); fn(0); }
+function ease(p){ return p < .5 ? 2*p*p : 1 - Math.pow(-2*p + 2, 2) / 2; }
+function devices(pos, phone, term){ posEl.classList.toggle('off', !pos); phoneEl.classList.toggle('off', !phone); termEl.classList.toggle('off', !term); }
+function scene(s){ canvas.dataset.scene = s; }
+function rip(){ if (INSTANT) return; ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go'); }
+function callout(label, text, x, y){
+  var el = document.createElement('div');
+  el.className = 'co'; el.style.left = x + 'px'; el.style.top = y + 'px';
+  el.innerHTML = (label ? '<span class="k">' + esc(label) + '</span>' : '') + esc(text);
+  callouts.appendChild(el);
+  var c = document.createElement('span'); c.textContent = text; $('capChips').appendChild(c);
+  if (INSTANT) el.classList.add('show'); else { void el.offsetWidth; el.classList.add('show'); }
+}
+function clearCallouts(){ callouts.innerHTML = ''; $('capChips').innerHTML = ''; }
+var camS = 1, camT = 'duo', camM = 'pos';
+function cam(tgt, mob){ camT = tgt; camM = mob || tgt; applyCam(); }
+function isMobile(){ return window.innerWidth <= 700; }
+function applyCam(){
+  var W = stage.clientWidth, H = stage.clientHeight, m = isMobile();
+  root.classList.toggle('m', m);
+  var PH = {x:900, y:13, w:317, h:634};
+  var POSR = m ? {x:30, y:30, w:440, h:600} : {x:30, y:30, w:800, h:600};
+  var tg = m ? camM : camT, r;
+  if (m && tg === 'duo') tg = 'pos';
+  if (tg === 'duo') r = {x:0, y:0, w:1300, h:660};
+  else if (tg === 'phone') r = m ? {x:PH.x - 12, y:PH.y - 8, w:PH.w + 24, h:PH.h + 16} : {x:PH.x + PH.w/2 - 450, y:0, w:900, h:660};
+  else r = m ? {x:POSR.x - 8, y:POSR.y - 8, w:POSR.w + 16, h:POSR.h + 16} : {x:POSR.x - 40, y:POSR.y - 18, w:POSR.w + 80, h:POSR.h + 36};
+  var s = Math.min(W / r.w, H / r.h);
+  if (!m) s = Math.min(s, 1.12);
+  var tx = W / 2 - (r.x + r.w / 2) * s, ty = H / 2 - (r.y + r.h / 2) * s;
+  camS = s;
+  canvas.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
+}
+function press(el, cb){
+  if (!el || INSTANT){ if (cb) cb(); return; }
+  var cr = canvas.getBoundingClientRect(), er = el.getBoundingClientRect();
+  var x = (er.left + er.width / 2 - cr.left) / camS, y = (er.top + er.height / 2 - cr.top) / camS;
+  if (!finger.classList.contains('on')){ finger.style.transition = 'none'; finger.style.left = (x + 40) + 'px'; finger.style.top = (y + 70) + 'px'; void finger.offsetWidth; finger.style.transition = ''; }
+  finger.classList.add('on'); finger.style.left = x + 'px'; finger.style.top = y + 'px';
+  later(480, function(){ finger.classList.add('down'); el.classList.add('pressed'); });
+  later(720, function(){ finger.classList.remove('down'); el.classList.remove('pressed'); if (cb) cb(); });
+  later(1300, function(){ finger.classList.remove('on'); });
+}
+function pq(k){ return posEl.querySelector('[data-k="' + k + '"]'); }
+function countTo(el, from, to, dur){ if (!el) return; tween(dur, function(p){ el.textContent = money(Math.round(from + (to - from) * ease(p))); }); }
+function typeInto(k, text, start, step, done){ for (var i = 1; i <= text.length; i++) (function(n){ later(start + n * step, function(){ setIn(k, text.slice(0, n)); }); })(i); if (done) later(start + text.length * step + 150, done); }
+
+/* ================================================================ captions */
+var STEPS = [];
+function S(o){ STEPS.push(o); }
+var C = {
+  en:[
+    ['Turn it on', 'Turn the wallet on.', 'In Settings › Payment, turn on Offer wallet top-ups. Customers load $10, $20, $30 or $50 on your Fold Pay terminal and spend it a little at a time.'],
+    ['Top up', 'Top up at the counter.', 'Open Rosa in Customers and tap Top up. She picks $20. Fold shows the whole charge before anything happens: $20.00 to her wallet, a 25¢ load fee, $20.25 on the card.'],
+    ['Tap to pay', 'One card sale, many small spends.', 'She taps her card on the terminal. The moment it’s approved, $20.00 is on her wallet, exactly once, even if the approval arrives twice.'],
+    ['Her page', 'Rosa checks her balance from her phone.', 'Your store’s wallet page lives at foldpos.com/your-store/wallet. She enters her number and the code Fold texts her. No app and no password.'],
+    ['Add to Wallet', ['Into Apple Wallet.', 'One tap adds a Fold Pay Wallet card to her iPhone, in Hey Fold’s aurora colors, with her balance at the top.'],
+                      ['Into Google Wallet.', 'One tap saves a Fold Pay Wallet card to her Android phone, in Hey Fold’s aurora colors, with her balance and her wallet code.']],
+    ['Pay with it', 'Pay with the wallet.', 'At pickup she shows her card. Find her in Check out, choose Store credit and record the payment. A $14.50 wash & fold, with no card fee on it.'],
+    ['Updates itself', ['The card keeps up.', 'Every time the balance changes, her iPhone gets the new balance on the card, with a notification.'],
+                       ['The card keeps up.', 'Every time the balance changes, Fold updates the card in her Google Wallet.']],
+    ['Reports', 'See it all in Reports.', 'The Sales report adds a Wallet card: what was loaded, the load fees, what was spent, and what your customers hold right now.'],
+    ['Why it pays', 'Load once. Spend small.', 'Small orders stop paying a card fee each time. Customers come back to spend what’s on the card in their pocket, and you see every dollar.', 'Load once. Spend small. Every time.']
+  ],
+  es:[
+    ['Activar', 'Activa el monedero.', 'En Configuración › Pagos, activa Ofrecer recargas de monedero. Tus clientes recargan $10, $20, $30 o $50 en tu terminal Fold Pay y lo van gastando poco a poco.'],
+    ['Recargar', 'Recarga en el mostrador.', 'Abre a Rosa en Clientes y toca Recargar. Elige $20. Fold muestra el cobro completo antes de hacer nada: $20.00 al monedero, 25¢ de cargo de recarga, $20.25 a la tarjeta.'],
+    ['Pagar', 'Un solo cobro con tarjeta, muchas compras pequeñas.', 'Acerca su tarjeta a la terminal. En cuanto se aprueba, tiene $20.00 en su monedero, una sola vez, aunque la aprobación llegue dos veces.'],
+    ['Su página', 'Rosa ve su saldo desde su teléfono.', 'La página del monedero de tu tienda está en foldpos.com/tu-tienda/wallet. Escribe su número y el código que Fold le envía. Sin app y sin contraseña.'],
+    ['A Wallet', ['A Apple Wallet.', 'Con un toque agrega una tarjeta Fold Pay Wallet a su iPhone, con los colores aurora de Hey Fold y su saldo arriba.'],
+                 ['A Google Wallet.', 'Con un toque guarda una tarjeta Fold Pay Wallet en su Android, con los colores aurora de Hey Fold, su saldo y su código.']],
+    ['Pagar con él', 'Paga con el monedero.', 'Al recoger, muestra su tarjeta. Búscala en Entrega, elige Crédito en tienda y registra el pago. Un lavado y doblado de $14.50, sin comisión de tarjeta.'],
+    ['Se actualiza', ['La tarjeta se mantiene al día.', 'Cada vez que cambia el saldo, su iPhone recibe el nuevo saldo en la tarjeta, con una notificación.'],
+                     ['La tarjeta se mantiene al día.', 'Cada vez que cambia el saldo, Fold actualiza la tarjeta en su Google Wallet.']],
+    ['Informes', 'Todo en Informes.', 'El Informe de ventas suma una tarjeta Monedero: lo recargado, los cargos de recarga, lo consumido y lo que tienen tus clientes ahora.'],
+    ['Por qué conviene', 'Recarga una vez. Gasta poco a poco.', 'Los pedidos pequeños dejan de pagar una comisión de tarjeta cada vez. Tus clientes vuelven a gastar lo que llevan en su tarjeta, y tú ves cada dólar.', 'Recarga una vez. Gasta poco a poco. Siempre.']
+  ]
+};
+var CO = {
+  en:{same:['Same balance', 'It’s store credit. Nothing new for staff to learn.'], fee:['Load fee', 'Under $50: 25¢ customer + 25¢ store.'], fee50:['$50 top-ups', '25¢, paid by the store. Nothing extra for the customer.'],
+      once:['Credited once', 'Even if the approval arrives twice.'], noapp:['No app', 'A web page. Sign in with a texted code.'], hdr:['Balance on top', 'Visible even when cards are stacked.'],
+      code:['Her wallet code', 'Under the QR, on every card.'], nofee:['No card fee', 'On this $14.50 order.'], push:['Automatic', 'No reprint, no new card.'],
+      never:['Never expires', 'Balances stay until they’re spent.'], ca:['California', 'Under $10: cash out, no fee.'], held:['Held now', 'Money your customers already paid you.']},
+  es:{same:['El mismo saldo', 'Es crédito en tienda. Nada nuevo que aprender.'], fee:['Cargo de recarga', 'Menos de $50: 25¢ cliente + 25¢ tienda.'], fee50:['Recargas de $50', '25¢ que paga la tienda. Nada extra para el cliente.'],
+      once:['Se acredita una vez', 'Aunque la aprobación llegue dos veces.'], noapp:['Sin app', 'Una página web. Entra con un código por mensaje.'], hdr:['Saldo arriba', 'Se ve aunque las tarjetas estén apiladas.'],
+      code:['Su código', 'Bajo el QR, en cada tarjeta.'], nofee:['Sin comisión', 'En este pedido de $14.50.'], push:['Automático', 'Sin reimprimir ni tarjeta nueva.'],
+      never:['No vence', 'El saldo queda hasta que se usa.'], ca:['California', 'Menos de $10: en efectivo, sin cargo.'], held:['Saldo actual', 'Dinero que tus clientes ya te pagaron.']}
+};
+function co(key, x, y){ var c = CO[lang][key]; callout(c[0], c[1], x, y); }
+
+/* ================================================================ the story */
+var ROSA0 = {bal:0, acts:[], topups:[]};
+var ROSA20 = {bal:2000, acts:[['top', 2000, 13]], topups:[[2000, 13, false]]};
+var ROSA550 = {bal:550, acts:[['spent', -1450, 13], ['top', 2000, 13]], topups:[[2000, 13, false]]};
+function walletPhoneFinal(bal, flash){ return dev === 'google' ? V.googleWallet(bal, flash) : V.appleWallet(bal, flash); }
+
+/* 1 — turn it on */
+S({dur:6400,
+  base:function(){ scene('store'); devices(true, false, false); cam('duo', 'pos'); dlg(null); posShow('settings', 'payment', P.settings(false)); },
+  frames:[
+    [700, function(){ press(pq('sw')); }],
+    [1250, function(){ var s = pq('sw'); if (s) s.classList.add('on'); var p = pq('state'); if (p){ p.className = 'pill ok'; p.textContent = w('wOn'); } }],
+    [1900, function(){ co('same', 880, 90); }],
+    [2900, function(){ co('fee', 880, 210); }],
+    [3700, function(){ co('fee50', 880, 320); }],
+    [4500, function(){ co('never', 880, 440); }]
+  ]});
+/* 2 — top up at the counter */
+S({dur:6200,
+  base:function(){ scene('store'); devices(true, false, false); cam('pos'); dlg(null); posShow('customers', null, P.customer(ROSA0)); },
+  frames:[
+    [600, function(){ press(pq('topup')); }],
+    [1250, function(){ dlg(D.topUp(null)); }],
+    [2000, function(){ press(pq('a2000')); }],
+    [2600, function(){ dlg(D.topUp(2000)); }],
+    [4300, function(){ press(pq('charge')); }],
+    [4950, function(){ dlg(D.topUp(2000, 'wait')); }]
+  ]});
+/* 3 — tap to pay on the terminal */
+S({dur:6600,
+  base:function(){ scene('store'); devices(true, false, true); cam('duo', 'phone'); posShow('customers', null, P.customer(ROSA0)); dlg(D.topUp(2000, 'wait')); tView('tap', 2025); card.className = 'paycard show'; },
+  frames:[
+    [700, function(){ if (!INSTANT) card.classList.add('tap'); else card.className = 'paycard'; }],
+    [1450, function(){ rip(); tView('wait', 2025); }],
+    [2400, function(){ card.className = 'paycard'; tView('ok', 2025); }],
+    [3000, function(){ cam('duo', 'pos'); dlg(D.topUp(2000, 'ok')); co('once', 280, 500); }],
+    [4300, function(){ dlg(null); posShow('customers', null, P.customer(ROSA20)); var b = pq('bal'); if (b){ b.classList.add('up'); countTo(b, 0, 2000, 900); } }]
+  ]});
+/* 4 — her wallet page */
+S({dur:6400,
+  base:function(){ scene('home'); devices(false, true, false); cam('phone'); dlg(null); phDark(false); phTime(17, 40); phView(V.signin('', true)); },
+  frames:[
+    [300, function(){ typeInto('phone', PHONE, 0, 70); }],
+    [1500, function(){ press(q('send')); }],
+    [2200, function(){ phView(V.code('')); }],
+    [2500, function(){ typeInto('code', '482913', 0, 110); }],
+    [3400, function(){ press(q('verify')); }],
+    [4100, function(){ phView(V.wallet(2000)); }],
+    [4400, function(){ co('noapp', 560, 200); }]
+  ]});
+/* 5 — add to Apple / Google Wallet */
+S({dur:6400,
+  base:function(){ scene('home'); devices(false, true, false); cam('phone'); dlg(null); phTime(17, 41); var v = phView(V.wallet(2000)); var s = v.querySelector('[data-k="scroll"]'); if (s) s.style.transform = 'translateY(-150px)'; },
+  frames:[
+    [600, function(){ press(q(dev === 'google' ? 'google' : 'apple')); }],
+    [1300, function(){ phView(dev === 'google' ? V.googleSheet(2000) : V.appleSheet(2000)); }],
+    [2700, function(){ press(q('add')); }],
+    [3400, function(){ phView(walletPhoneFinal(2000)); }],
+    [3700, function(){ co(dev === 'google' ? 'code' : 'hdr', 560, 160); }],
+    [4400, function(){ if (dev !== 'google') co('code', 560, 380); }]
+  ]});
+/* 6 — pay with the wallet */
+S({dur:7400,
+  base:function(){ scene('store'); devices(true, true, false); cam('duo', 'pos'); dlg(null); phTime(17, 58); phView(walletPhoneFinal(2000)); posShow('checkout', null, P.checkout(0)); },
+  frames:[
+    [300, function(){ 'Rosa'.split('').forEach(function(_, i){ later(i * 120, function(){ var e = pq('search'); if (e) e.innerHTML = esc('Rosa'.slice(0, i + 1)) + '<span class="caret"></span>'; }); }); }],
+    [1000, function(){ posShow('checkout', null, P.checkout(1)); }],
+    [1500, function(){ press(pq('crow')); }],
+    [2100, function(){ posShow('checkout', null, P.checkout(2)); }],
+    [2800, function(){ press(pq('collect')); }],
+    [3400, function(){ dlg(D.tender(false)); }],
+    [4000, function(){ press(pq('credit')); }],
+    [4500, function(){ dlg(D.tender(true)); }],
+    [5300, function(){ press(pq('record')); }],
+    [5900, function(){ dlg(null); posShow('checkout', null, P.checkout(4)); co('nofee', 300, 470); }]
+  ]});
+/* 7 — the card updates itself */
+S({dur:function(){ return dev === 'google' ? 4600 : 6000; },
+  base:function(){ scene('home'); devices(false, true, false); cam('phone'); dlg(null); phTime(18, 5);
+    if (dev === 'google'){ phDark(false); phView(V.googleWallet(2000)); } else { phDark(true); phView(V.lock(550), 'dark'); } },
+  frames:function(){ return dev === 'google' ? [
+    [900, function(){ var b = q('bal'); if (b){ b.classList.add('flash'); countTo(b, 2000, 550, 1000); } }],
+    [2000, function(){ co('push', 560, 220); }]
+  ] : [
+    [700, function(){ var n = q('note'); if (n) n.classList.add('show'); }],
+    [1800, function(){ co('push', 560, 220); }],
+    [2900, function(){ press(q('note')); }],
+    [3600, function(){ phDark(false); phView(V.appleWallet(550, true)); }]
+  ]; }});
+/* 8 — reports */
+S({dur:5200,
+  base:function(){ scene('store'); devices(true, false, false); cam('duo', 'pos'); dlg(null); posShow('reports', 'sales', report()); },
+  frames:[
+    [300, function(){ [['r1',153000],['r2',2775],['r3',110240],['r6',42760]].forEach(function(x){ countTo(pq(x[0]), 0, x[1], 1300); }); }],
+    [2200, function(){ co('held', 880, 420); }]
+  ]});
+/* 9 — why it pays */
+S({dur:5200,
+  base:function(){ scene('store'); devices(true, true, false); cam('duo', 'phone'); dlg(null); phDark(false); phTime(18, 6); phView(walletPhoneFinal(550)); posShow('customers', null, P.customer(ROSA550)); },
+  frames:[
+    [1200, function(){ closing(true); }]
+  ]});
+
+/* ================================================================ engine (as Fold Time Clock) */
+var idx = 0, playing = false, next = 0, frames = [], dur = 5000, lastTs = 0, ended = false;
+function stepDur(s){ return typeof s.dur === 'function' ? s.dur() : s.dur; }
+function stepFrames(s){ return typeof s.frames === 'function' ? s.frames() : s.frames; }
+function clearAll(){
+  timers.forEach(clearTimeout); timers = []; tweens = [];
+  finger.classList.remove('on', 'down'); ripple.classList.remove('go');
+  card.className = 'paycard';
+  posEl.querySelectorAll('.pressed').forEach(function(e){ e.classList.remove('pressed'); });
+  clearCallouts(); closing(false); phDark(false);
+}
+function load(i, mode){
+  idx = Math.max(0, Math.min(STEPS.length - 1, i));
+  var st = STEPS[idx];
+  clearAll();
+  var inst = mode === 'final' || mode === 'cut';
+  if (inst){ INSTANT = true; root.classList.add('instant'); }
+  st.base();
+  frames = stepFrames(st); dur = stepDur(st); next = 0; tNow = 0; ended = false;
+  if (mode === 'final'){ frames.forEach(function(f){ f[1](); }); next = frames.length; tNow = dur; }
+  if (inst){ void document.body.offsetWidth; INSTANT = false; requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.remove('instant'); }); }); }
+  renderCaption(); renderSteps();
+}
+function tick(ts){
+  var dt = lastTs ? Math.min(100, ts - lastTs) : 16; lastTs = ts;
+  if (playing){
+    tNow += dt;
+    while (next < frames.length && frames[next][0] <= tNow){ frames[next][1](); next++; }
+    tweens = tweens.filter(function(tw){ var p = Math.min(1, (tNow - tw.start) / tw.dur); tw.fn(p); return p < 1; });
+    if (tNow >= dur){
+      if (idx < STEPS.length - 1) load(idx + 1, reduced ? 'final' : 'play');
+      else { playing = false; ended = true; renderPlay(); }
+    }
+    updateBar();
+  }
+  requestAnimationFrame(tick);
+}
+function play(){ if (ended || (idx === STEPS.length - 1 && tNow >= dur)){ load(0, reduced ? 'final' : 'cut'); } else if (tNow >= dur && !reduced){ load(idx, 'cut'); } playing = true; ended = false; renderPlay(); }
+function pause(){ playing = false; renderPlay(); }
+function go(i){ var was = playing; if (was && !reduced) load(i, 'cut'); else load(i, 'final'); renderPlay(); }
+
+/* ================================================================ caption & controls */
+function capFor(i){
+  var c = C[lang][i], title, sent;
+  if (Array.isArray(c[1])){ var v = dev === 'google' ? c[2] : c[1]; title = v[0]; sent = v[1]; }
+  else { title = c[1]; sent = c[2]; }
+  return {label:c[0], title:title, sent:sent};
+}
+var closingOn = false, LAST = 8;
+function closing(on){ closingOn = on; var el = $('capTitle'); if (!el) return; var c = capFor(idx); el.textContent = on && idx === LAST ? C[lang][LAST][3] : c.title; el.style.color = on && idx === LAST ? 'var(--brand)' : ''; }
+function renderCaption(){
+  var c = capFor(idx);
+  $('capEye').textContent = u('step', {n:idx + 1, t:STEPS.length});
+  $('capTitle').textContent = closingOn && idx === LAST ? C[lang][LAST][3] : c.title;
+  $('capTitle').style.color = closingOn && idx === LAST ? 'var(--brand)' : '';
+  $('capSent').textContent = c.sent;
+}
+function renderSteps(){
+  var ol = $('steps');
+  if (!ol.children.length){
+    STEPS.forEach(function(_, i){
+      var li = document.createElement('li'); var b = document.createElement('button');
+      b.innerHTML = '<span class="bar"><i></i></span><span class="lb"></span>';
+      b.addEventListener('click', function(){ go(i); });
+      li.appendChild(b); ol.appendChild(li);
+    });
+  }
+  Array.prototype.forEach.call(ol.querySelectorAll('button'), function(b, i){
+    var c = capFor(i);
+    b.querySelector('.lb').innerHTML = '<b>' + (i + 1) + '</b>' + esc(c.label);
+    b.setAttribute('aria-label', u('step', {n:i + 1, t:STEPS.length}) + ': ' + c.label);
+    if (i === idx) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+    b.classList.toggle('done', i < idx);
+    b.querySelector('.bar i').style.width = i < idx ? '100%' : i > idx ? '0%' : '';
+  });
+  updateBar();
+  $('bBack').disabled = idx === 0;
+  $('bNext').disabled = idx === STEPS.length - 1;
+}
+function updateBar(){ var b = $('steps').children[idx]; if (!b) return; b.querySelector('.bar i').style.width = Math.min(100, tNow / dur * 100).toFixed(1) + '%'; }
+function renderPlay(){
+  var atEnd = ended || (!playing && idx === STEPS.length - 1 && tNow >= dur);
+  $('icPlay').style.display = !playing && !atEnd ? '' : 'none';
+  $('icPause').style.display = playing ? '' : 'none';
+  $('icReplay').style.display = !playing && atEnd ? '' : 'none';
+  $('bPlay').setAttribute('aria-label', playing ? u('pause') : atEnd ? u('replay') : u('play'));
+}
+function renderChrome(){
+  root.lang = lang;
+  $('hdrSub').textContent = u('sub');
+  $('bBack').setAttribute('aria-label', u('back'));
+  $('bNext').setAttribute('aria-label', u('next'));
+  $('lenEn').setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  $('lenEs').setAttribute('aria-pressed', lang === 'es' ? 'true' : 'false');
+  $('devApple').setAttribute('aria-pressed', dev === 'apple' ? 'true' : 'false');
+  $('devGoogle').setAttribute('aria-pressed', dev === 'google' ? 'true' : 'false');
+  renderPlay();
+}
+function setLang(l){ lang = l; renderChrome(); go(idx); }
+function setDev(d){ dev = d; renderChrome(); go(idx); }
+
+$('bPlay').addEventListener('click', function(){ playing ? pause() : play(); });
+$('bBack').addEventListener('click', function(){ go(idx - 1); });
+$('bNext').addEventListener('click', function(){ go(idx + 1); });
+$('lenEn').addEventListener('click', function(){ setLang('en'); });
+$('lenEs').addEventListener('click', function(){ setLang('es'); });
+$('devApple').addEventListener('click', function(){ setDev('apple'); });
+$('devGoogle').addEventListener('click', function(){ setDev('google'); });
+document.addEventListener('keydown', function(e){
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  var tag = (e.target && e.target.tagName) || '';
+  if (e.key === 'ArrowRight'){ e.preventDefault(); if (idx < STEPS.length - 1) go(idx + 1); }
+  else if (e.key === 'ArrowLeft'){ e.preventDefault(); if (idx > 0) go(idx - 1); }
+  else if ((e.key === ' ' || e.key === 'Spacebar') && tag !== 'BUTTON' && tag !== 'INPUT'){ e.preventDefault(); playing ? pause() : play(); }
+});
+var rz;
+window.addEventListener('resize', function(){ clearTimeout(rz); canvas.style.transition = 'none'; applyCam(); rz = setTimeout(function(){ canvas.style.transition = ''; }, 60); });
+
+/* For reviewers and screenshots: FoldWallet.show(step, {lang, dev}) shows a step's finished frame. */
+window.FoldWallet = {
+  show:function(i, o){ o = o || {}; if (o.lang) lang = o.lang; if (o.dev) dev = o.dev; playing = false; renderChrome(); load(i, 'final'); renderPlay(); },
+  play:function(){ play(); }, pause:function(){ pause(); }, steps:STEPS.length
+};
+
+ripple.style.left = '1055px'; ripple.style.top = '236px';
+canvas.style.transition = 'none';
+renderChrome(); applyCam(); load(0, 'cut');
+requestAnimationFrame(function(){ canvas.style.transition = ''; });
+if (!reduced){ playing = true; renderPlay(); } else { load(0, 'final'); renderPlay(); }
+requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
