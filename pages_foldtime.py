@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """The Fold Time page, in English and Spanish:
 
-    /time-clock      Fold Time: the wall device staff tap with their own phone to clock in,
+    /fold-time      Fold Time: the wall device staff tap with their own phone to clock in,
                      take breaks and clock out. Price, the three steps for the owner, what
                      staff see, why the hours hold up, the device, questions, and the
                      interactive walkthrough (/time-clock-tour) embedded lower on the page.
 
     from pages_foldtime import fold_time     # -> (html, md), English
 
-build_site.py writes the English page like assistants(). The Spanish page (es/time-clock:
+build_site.py writes the English page like assistants(). The Spanish page (es/fold-time:
 .html and .md) is a static file like the rest of es/: run `python3 pages_foldtime.py --es`
 after changing the copy here, then build_site.py and check_seo.py. Built by pages_more._build,
 so it uses that page's markup and styles; the screenshots and the tour are added here.
@@ -56,7 +56,7 @@ def _device(alt, cap):
 
 
 EN = {
-    'slug': 'time-clock', 'lang': 'en', 'home': '/', 'pre': '',
+    'slug': 'fold-time', 'lang': 'en', 'home': '/', 'pre': '',
     'title': 'Fold Time: staff clock in with a tap — Fold POS',
     'desc': 'Fold Time is a small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no PINs to share. $39 a device, your first one free, with Growth and Pro.',
     'og': 'Fold Time: staff clock in with a tap of their own phone',
@@ -135,12 +135,12 @@ EN = {
         ('/help', 'flow', 'Help center', 'Short answers for the counter.'),
     ],
     'md_title': '# Fold Time: staff clock in with a tap',
-    'md_canon': '> Canonical page: https://foldpos.com/time-clock · Markdown mirror.',
+    'md_canon': '> Canonical page: https://foldpos.com/fold-time · Markdown mirror.',
     'md_faq': '## Fold Time questions', 'md_more': '## Where to next',
 }
 
 ES = {
-    'slug': 'time-clock', 'lang': 'es', 'home': '/es/', 'pre': '/es',
+    'slug': 'fold-time', 'lang': 'es', 'home': '/es/', 'pre': '/es',
     'title': 'Fold Time: el personal marca con un toque — Fold POS',
     'desc': 'Fold Time es un pequeño dispositivo de pared que su personal toca con su propio teléfono para marcar entrada, tomar descansos y marcar salida. Sin app y sin PIN compartidos. $39 por dispositivo, el primero gratis, con Growth y Pro.',
     'og': 'Fold Time: el personal marca con un toque de su propio teléfono',
@@ -217,7 +217,7 @@ ES = {
         ('/es/help', 'flow', 'Centro de ayuda', 'Respuestas cortas para el mostrador.'),
     ],
     'md_title': '# Fold Time: el personal marca con un toque',
-    'md_canon': '> Página canónica: https://foldpos.com/es/time-clock · Versión en Markdown.',
+    'md_canon': '> Página canónica: https://foldpos.com/es/fold-time · Versión en Markdown.',
     'md_faq': '## Preguntas sobre Fold Time', 'md_more': '## Para seguir',
 }
 
@@ -242,20 +242,20 @@ def _with_tour(t):
 
 
 def fold_time():
-    """English page: (html, md) for slug 'time-clock'."""
+    """English page: (html, md) for slug 'fold-time'."""
     return _with_tour(EN)
 
 
 def fold_time_es():
-    """Spanish page: (html, md) for es/time-clock (a static file; see the module docstring)."""
+    """Spanish page: (html, md) for es/fold-time (a static file; see the module docstring)."""
     return _with_tour(ES)
 
 
 if __name__ == '__main__':
     root = os.path.dirname(os.path.abspath(__file__))
-    targets = [('es/time-clock', fold_time_es)]
+    targets = [('es/fold-time', fold_time_es)]
     if '--es' not in sys.argv:
-        targets = [('time-clock', fold_time)] + targets
+        targets = [('fold-time', fold_time)] + targets
     for path, fn in targets:
         h, md = fn()
         open(os.path.join(root, path + '.html'), 'w', encoding='utf-8').write(h)

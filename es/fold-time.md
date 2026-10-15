@@ -1,6 +1,6 @@
 # Fold Time: el personal marca con un toque
 
-> Página canónica: https://foldpos.com/es/time-clock · Versión en Markdown.
+> Página canónica: https://foldpos.com/es/fold-time · Versión en Markdown.
 
 Un pequeño dispositivo de pared que su personal toca con su propio teléfono para marcar entrada, tomar descansos y marcar salida. Sin app, sin terminal de reloj checador, sin PIN que compartir. Llega configurado y se activa con el primer toque.
 

@@ -211,7 +211,7 @@ Page: https://foldpos.com/plants · Walkthrough: https://foldpos.com/follow-the-
 
 ### Fold Time, the staff time clock
 
-A small wall device (80 × 110 × 12 mm) that staff tap with their own phone to clock in, start a meal or rest break, end a break and clock out. The tap opens a web page on the phone: no app, no time-clock terminal, no PINs to share. A 10-second Undo follows each tap, and Spanish phones see the page in Spanish. It needs no batteries, power or Wi-Fi; the phone needs its internet connection. Details: https://foldpos.com/time-clock
+A small wall device (80 × 110 × 12 mm) that staff tap with their own phone to clock in, start a meal or rest break, end a break and clock out. The tap opens a web page on the phone: no app, no time-clock terminal, no PINs to share. A 10-second Undo follows each tap, and Spanish phones see the page in Spanish. It needs no batteries, power or Wi-Fi; the phone needs its internet connection. Details: https://foldpos.com/fold-time
 
 - Order in Fold POS: Schedule › Time clock › Tags › Fold Time devices › Order devices (1 to 20). The total shows before ordering, and the owner gets a confirmation by text or email.
 - Devices arrive set up, labelled and boxed. The first tap with the owner's phone switches the box on for that store. The owner then adds staff phones in Time clock › Phones.

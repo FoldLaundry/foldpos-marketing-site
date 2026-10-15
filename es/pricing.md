@@ -67,7 +67,7 @@ Solo si los necesita. Escriba a [contact@foldpos.com](mailto:contact@foldpos.com
 - **¿Y si necesito más mensajes?** Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.
 - **¿Puedo usar mi propio procesador de tarjetas?** Sí. Tarjeta, efectivo, cheque, crédito de la tienda y pagos divididos, con su procesador y a sus tarifas.
 - **¿Hey Fold se cobra aparte?** No. Hey Fold viene incluido en todos los planes: 600 solicitudes habladas al mes en Starter y 1,200 en Growth y Pro. Si una tienda las usa todas, Hey Fold sigue respondiendo por su cuenta los comandos más simples hasta el día 1.
-- **¿Cuánto cuesta Fold Time?** Los dispositivos Fold Time cuestan $39 cada uno, el primero gratis, sumados a su próxima factura de Fold POS cuando se envía la caja. Envío incluido. Fold Time viene con Growth y Pro. Más en la [página de Fold Time](https://foldpos.com/es/time-clock).
+- **¿Cuánto cuesta Fold Time?** Los dispositivos Fold Time cuestan $39 cada uno, el primero gratis, sumados a su próxima factura de Fold POS cuando se envía la caja. Envío incluido. Fold Time viene con Growth y Pro. Más en la [página de Fold Time](https://foldpos.com/es/fold-time).
 - **¿Y si tenemos más de cinco sucursales?** Escriba a [contact@foldpos.com](mailto:contact@foldpos.com?subject=M%C3%A1s%20de%20cinco%20sucursales) y lo configuramos con usted.
 ## Más
 

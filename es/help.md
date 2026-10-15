@@ -52,7 +52,7 @@ Paso 5 de la configuración: https://foldpos.com/setup
 3. Agregue los teléfonos del personal en Reloj checador › Teléfonos; cada persona recibe un mensaje para configurar su teléfono.
 4. El personal toca para marcar la entrada, tomar un descanso y marcar la salida. ¿Se quedó sin batería un teléfono? Use el código QR de entrada o el reloj con PIN del POS.
 
-Cómo funciona Fold Time: https://foldpos.com/es/time-clock
+Cómo funciona Fold Time: https://foldpos.com/es/fold-time
 
 ## Mensajes a clientes
 

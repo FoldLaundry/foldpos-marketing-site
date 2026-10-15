@@ -192,7 +192,7 @@ FAQ = [
         ('Does it run on an iPad?', '<p>Yes. Staff can move work along from an iPad on the wall or a phone in their pocket, and the counter sees it the moment they do.</p>'),
     ]),
     ('foldtime', 'Fold Time', 'tag', [
-        ('What is Fold Time?', '<p>A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. <a href="/time-clock">See Fold Time</a>.</p>'),
+        ('What is Fold Time?', '<p>A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. <a href="/fold-time">See Fold Time</a>.</p>'),
         ('Do my staff need an app?', '<p>No. The tap opens a web page on their phone.</p>'),
         ('What does Fold Time cost?', '<p>$39 a device, your first one free, on your next Fold POS bill. Shipping included. Fold Time comes with Growth and Pro.</p>'),
         ('What if someone copies the link?', '<p>It won’t work. Each tap carries a one-time code from the chip, so a copied or replayed link is refused.</p>'),
@@ -281,7 +281,7 @@ TOPICS = [
      '/setup', 'Setup step 5'),
     ('fold-time', 'tag', 'Fold Time', 'fold time time clock clock in clock out tap phone nfc device tag break hours my hours payroll quickbooks order',
      '<ol><li>Order devices in Fold POS: Schedule › Time clock › Tags › Fold Time devices › Order devices. The screen shows the total first.</li><li>They arrive set up. Tap any device with your phone to switch the box on.</li><li>Add staff phones in Time clock › Phones; each person gets a text to set up their phone.</li><li>Staff tap to clock in, take a break and clock out. A phone died? Use the clock-in QR or the PIN clock on the POS.</li></ol>',
-     '/time-clock', 'How Fold Time works'),
+     '/fold-time', 'How Fold Time works'),
     ('texts', 'chat', 'Customer texts', 'texts sms ready message customers reminder spanish notifications',
      '<ul><li>The ready text goes out the moment the last piece lands, in your shop’s name.</li><li>It’s on already. Change the wording or turn off anything you don’t want in Settings.</li><li>In English or Spanish.</li></ul>',
      '/setup', 'Setup step 6'),
@@ -618,14 +618,14 @@ def put_lang(fname):
 
 
 SITEMAP_PAGES = [('index.html', '1.0'), ('laundromats.html', '0.9'), ('dry-cleaners.html', '0.9'), ('alterations.html', '0.9'),
-                 ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'), ('time-clock.html', '0.8'),
+                 ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'), ('fold-time.html', '0.8'),
                  ('counter-money.html', '0.8'), ('plants.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
                  ('assistants.html', '0.6'), ('contact.html', '0.6'), ('about.html', '0.5'), ('printers.html', '0.7'), ('developers.html', '0.6'),
                  ('download.html', '0.5'),
                  ('privacy.html', '0.3'), ('terms.html', '0.3')]
 SITEMAP_MD = ['fold-pos.md', 'laundromats.md', 'dry-cleaners.md', 'alterations.md', 'features.md', 'pricing.md', 'faq.md',
               'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md',
-              'hey-fold.md', 'pickup-delivery.md', 'counter-money.md', 'plants.md', 'assistants.md', 'time-clock.md']
+              'hey-fold.md', 'pickup-delivery.md', 'counter-money.md', 'plants.md', 'assistants.md', 'fold-time.md']
 
 
 def sitemap():
@@ -709,13 +709,13 @@ def main():
     from pages_foldtime import fold_time
     for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers),
                      ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery),
-                     ('counter-money', counter_money), ('plants', plants), ('assistants', assistants), ('time-clock', fold_time)):
+                     ('counter-money', counter_money), ('plants', plants), ('assistants', assistants), ('fold-time', fold_time)):
         h, md = fn()
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')
         print('wrote', slug)
-    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html', 'follow-the-bag.html', 'time-clock-tour.html', 'wallet.html', 'hardware.html'))
-    chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html'))
+    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html', 'follow-the-bag.html', 'time-clock-tour.html', 'time-clock.html', 'wallet.html', 'hardware.html'))
+    chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html') and f != 'time-clock.html')   # es/time-clock.html only redirects to /es/fold-time
     for f in chrome_pages:
         put_chrome(f)
     print('chrome on', ', '.join(chrome_pages))

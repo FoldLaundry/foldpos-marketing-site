@@ -38,7 +38,7 @@
 
 ## Fold Time
 
-**What is Fold Time?** A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. [See Fold Time](https://foldpos.com/time-clock).
+**What is Fold Time?** A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. [See Fold Time](https://foldpos.com/fold-time).
 
 **Do my staff need an app?** No. The tap opens a web page on their phone.
 

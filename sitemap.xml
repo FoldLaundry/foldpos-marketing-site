@@ -36,10 +36,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/pickup-delivery"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/pickup-delivery"/>
   </url>
-  <url><loc>https://foldpos.com/time-clock</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/time-clock"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/time-clock"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/time-clock"/>
+  <url><loc>https://foldpos.com/fold-time</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/fold-time"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/fold-time"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/fold-time"/>
   </url>
   <url><loc>https://foldpos.com/counter-money</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/counter-money"/>
@@ -135,10 +135,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/pickup-delivery"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/pickup-delivery"/>
   </url>
-  <url><loc>https://foldpos.com/es/time-clock</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/time-clock"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/time-clock"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/time-clock"/>
+  <url><loc>https://foldpos.com/es/fold-time</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/fold-time"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://foldpos.com/es/fold-time"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://foldpos.com/fold-time"/>
   </url>
   <url><loc>https://foldpos.com/es/counter-money</loc><lastmod>2026-10-15</lastmod><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://foldpos.com/counter-money"/>
@@ -216,7 +216,7 @@
   <url><loc>https://foldpos.com/counter-money.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/plants.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/assistants.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
-  <url><loc>https://foldpos.com/time-clock.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/fold-time.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/es/fold-pos.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/es/laundromats.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/es/dry-cleaners.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
@@ -235,7 +235,7 @@
   <url><loc>https://foldpos.com/es/counter-money.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/es/plants.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/es/assistants.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
-  <url><loc>https://foldpos.com/es/time-clock.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
+  <url><loc>https://foldpos.com/es/fold-time.md</loc><lastmod>2026-10-15</lastmod><priority>0.4</priority></url>
   <url><loc>https://foldpos.com/llms.txt</loc><lastmod>2026-10-15</lastmod><priority>0.5</priority></url>
   <url><loc>https://foldpos.com/llms-full.txt</loc><lastmod>2026-10-15</lastmod><priority>0.5</priority></url>
 </urlset>

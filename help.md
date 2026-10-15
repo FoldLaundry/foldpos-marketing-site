@@ -52,7 +52,7 @@ Setup step 5: https://foldpos.com/setup
 - Add staff phones in Time clock › Phones; each person gets a text to set up their phone.
 - Staff tap to clock in, take a break and clock out. A phone died? Use the clock-in QR or the PIN clock on the POS.
 
-How Fold Time works: https://foldpos.com/time-clock
+How Fold Time works: https://foldpos.com/fold-time
 
 ## Customer texts
 

@@ -1,6 +1,6 @@
 # Fold Time: staff clock in with a tap
 
-> Canonical page: https://foldpos.com/time-clock · Markdown mirror.
+> Canonical page: https://foldpos.com/fold-time · Markdown mirror.
 
 A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. It arrives set up and switches on with its first tap.
 
