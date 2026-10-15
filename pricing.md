@@ -27,6 +27,7 @@ Adding delivery and staff.
 - Pickup & delivery routing
 - Online booking and weekly pickups
 - Staff shifts and clock-in
+- Fold Time staff time clock (first device free, more $39 each)
 - Express and subscription pricing
 - Marketing and order reminders
 - Supply inventory and reorder suggestions
@@ -66,6 +67,7 @@ Only if you need them. Write to [contact@foldpos.com](mailto:contact@foldpos.com
 - **What if I need more texts?** Add 1,000 more a month for $20. Your customers’ texts don’t stop without warning; we write to you first.
 - **Can I use my own card processor?** Yes. Card, cash, check, store credit and split payments, on your processor at your rates.
 - **Is Hey Fold extra?** No. Hey Fold is built into every plan: 600 spoken requests a month on Starter and 1,200 on Growth and Pro. If a store uses them all, Hey Fold keeps answering simpler commands on its own until the 1st.
+- **What does Fold Time cost?** Fold Time devices are $39 each, your first one free, added to your next Fold POS bill when the box ships. Shipping included. Fold Time comes with Growth and Pro. More on the [Fold Time page](https://foldpos.com/time-clock).
 - **What if we have more than five locations?** Email [contact@foldpos.com](mailto:contact@foldpos.com?subject=More%20than%20five%20locations) and we’ll set it up with you.
 ## More
 

@@ -55,6 +55,7 @@ EN = {
             'Hey Fold, 600 requests a month', '500 customer texts a month']),
         ('G', 'Growth', 'Adding delivery and staff.', True, [
             'Everything in Starter', 'Pickup &amp; delivery routing', 'Online booking and weekly pickups', 'Staff shifts and clock-in',
+            'Fold Time staff time clock (first device free, more $39 each)',
             'Express and subscription pricing', 'Marketing and order reminders', 'Supply inventory and reorder suggestions',
             '1,200 Hey Fold requests a month', '1,500 customer texts a month']),
         ('P', 'Pro', 'More than one door.', False, [
@@ -81,6 +82,7 @@ EN = {
         ('Customer texts included each month', ('500', '1,500', '3,000')),
         ('Growing the shop', None),
         ('Pickup &amp; delivery routing', 'GP'), ('Online booking and weekly pickups', 'GP'), ('Staff shifts and clock-in', 'GP'),
+        ('<a href="/time-clock">Fold Time</a> staff time clock: first device free, more $39 each', 'GP'),
         ('Express and subscription pricing', 'GP'), ('Marketing and order reminders', 'GP'),
         ('Supply inventory and reorder suggestions', 'GP'),
         ('More than one door', None),
@@ -105,6 +107,7 @@ EN = {
         ('What if I need more texts?', 'Add 1,000 more a month for $20. Your customers’ texts don’t stop without warning; we write to you first.'),
         ('Can I use my own card processor?', 'Yes. Card, cash, check, store credit and split payments, on your processor at your rates.'),
         ('Is Hey Fold extra?', 'No. Hey Fold is built into every plan: 600 spoken requests a month on Starter and 1,200 on Growth and Pro. If a store uses them all, Hey Fold keeps answering simpler commands on its own until the 1st.'),
+        ('What does Fold Time cost?', 'Fold Time devices are $39 each, your first one free, added to your next Fold POS bill when the box ships. Shipping included. Fold Time comes with Growth and Pro. More on the <a href="/time-clock">Fold Time page</a>.'),
         ('What if we have more than five locations?', 'Email <a href="mailto:contact@foldpos.com?subject=More%20than%20five%20locations">contact@foldpos.com</a> and we’ll set it up with you.'),
     ],
     'faq_more': 'More in the <a href="/faq">FAQ</a>.',
@@ -130,6 +133,7 @@ ES = {
             'Hey Fold, 600 solicitudes al mes', '500 mensajes a clientes al mes']),
         ('G', 'Growth', 'Para sumar entregas y personal.', True, [
             'Todo lo de Starter', 'Rutas de recogida y entrega', 'Reservas en línea y recogidas semanales', 'Turnos y registro de entrada del personal',
+            'Reloj de personal Fold Time (el primer dispositivo gratis, los demás a $39 cada uno)',
             'Precios exprés y por suscripción', 'Marketing y recordatorios de pedidos', 'Inventario de insumos y sugerencias de reabastecimiento',
             '1,200 solicitudes de Hey Fold al mes', '1,500 mensajes a clientes al mes']),
         ('P', 'Pro', 'Más de una sucursal.', False, [
@@ -156,6 +160,7 @@ ES = {
         ('Mensajes a clientes incluidos cada mes', ('500', '1,500', '3,000')),
         ('Para crecer', None),
         ('Rutas de recogida y entrega', 'GP'), ('Reservas en línea y recogidas semanales', 'GP'), ('Turnos y registro de entrada del personal', 'GP'),
+        ('Reloj de personal <a href="/es/time-clock">Fold Time</a>: el primer dispositivo gratis, los demás a $39 cada uno', 'GP'),
         ('Precios exprés y por suscripción', 'GP'), ('Marketing y recordatorios de pedidos', 'GP'),
         ('Inventario de insumos y sugerencias de reabastecimiento', 'GP'),
         ('Más de una sucursal', None),
@@ -180,6 +185,7 @@ ES = {
         ('¿Y si necesito más mensajes?', 'Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.'),
         ('¿Puedo usar mi propio procesador de tarjetas?', 'Sí. Tarjeta, efectivo, cheque, crédito de la tienda y pagos divididos, con su procesador y a sus tarifas.'),
         ('¿Hey Fold se cobra aparte?', 'No. Hey Fold viene incluido en todos los planes: 600 solicitudes habladas al mes en Starter y 1,200 en Growth y Pro. Si una tienda las usa todas, Hey Fold sigue respondiendo por su cuenta los comandos más simples hasta el día 1.'),
+        ('¿Cuánto cuesta Fold Time?', 'Los dispositivos Fold Time cuestan $39 cada uno, el primero gratis, sumados a su próxima factura de Fold POS cuando se envía la caja. Envío incluido. Fold Time viene con Growth y Pro. Más en la <a href="/es/time-clock">página de Fold Time</a>.'),
         ('¿Y si tenemos más de cinco sucursales?', 'Escriba a <a href="mailto:contact@foldpos.com?subject=M%C3%A1s%20de%20cinco%20sucursales">contact@foldpos.com</a> y lo configuramos con usted.'),
     ],
     'faq_more': 'Más en las <a href="/es/faq">preguntas frecuentes</a>.',

@@ -209,6 +209,20 @@ Page: https://foldpos.com/plants · Walkthrough: https://foldpos.com/follow-the-
 - Shift notes and activity history for a clean handoff
 - Built-in team chat and notifications
 
+### Fold Time, the staff time clock
+
+A small wall device (80 × 110 × 12 mm) that staff tap with their own phone to clock in, start a meal or rest break, end a break and clock out. The tap opens a web page on the phone: no app, no time-clock terminal, no PINs to share. A 10-second Undo follows each tap, and Spanish phones see the page in Spanish. It needs no batteries, power or Wi-Fi; the phone needs its internet connection. Details: https://foldpos.com/time-clock
+
+- Order in Fold POS: Schedule › Time clock › Tags › Fold Time devices › Order devices (1 to 20). The total shows before ordering, and the owner gets a confirmation by text or email.
+- Devices arrive set up, labelled and boxed. The first tap with the owner's phone switches the box on for that store. The owner then adds staff phones in Time clock › Phones.
+- Every tap carries a one-time code from the chip, so a copied or replayed link is refused. Only phones the manager added can clock in.
+- Punches are never overwritten: a manager's correction is recorded next to the original, and staff see "Changed by your manager" in My hours.
+- After clocking out, staff get a text with today's hours and a link to My hours: this pay period and the last, week by week.
+- Optional selfie at clock-in, seen only by the manager, never face-matched, deleted after 30 days.
+- California mode: daily overtime over 8 hours, double time over 12, the 7th-day rule, and meal and rest premiums flagged for the manager.
+- Approved hours go to QuickBooks by kind of pay; CSV export for any other payroll. Backups when a phone is dead: the clock-in QR on the POS and the POS PIN clock.
+- $39 a device, each store's first device free, added to the next Fold POS bill when the box ships. Shipping included. With Growth and Pro.
+
 ## The rest of the back office
 
 Customers, staff, marketing, printing, reports and payments work identically for a laundromat, a dry cleaner or a tailor — so a mixed shop never runs two systems.
@@ -267,6 +281,7 @@ Pick the plan that matches how many doors you run. Every plan is month-to-month 
 - Everything in Starter
 - Pickup & delivery routing
 - Staff shifts & clock-in/out
+- Fold Time staff time clock (first device free, more $39 each)
 - Express & subscription pricing
 - Marketing & order reminders
 - Supply inventory & reorder suggestions

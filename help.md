@@ -45,6 +45,15 @@ Try the live demo: https://foldpos.com/#heyfold
 
 Setup step 5: https://foldpos.com/setup
 
+## Fold Time
+
+- Order devices in Fold POS: Schedule › Time clock › Tags › Fold Time devices › Order devices. The screen shows the total first.
+- They arrive set up. Tap any device with your phone to switch the box on.
+- Add staff phones in Time clock › Phones; each person gets a text to set up their phone.
+- Staff tap to clock in, take a break and clock out. A phone died? Use the clock-in QR or the PIN clock on the POS.
+
+How Fold Time works: https://foldpos.com/time-clock
+
 ## Customer texts
 
 - The ready text goes out the moment the last piece lands, in your shop’s name.

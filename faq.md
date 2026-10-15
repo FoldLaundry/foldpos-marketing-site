@@ -36,6 +36,26 @@
 
 **Does it run on an iPad?** Yes. Staff can move work along from an iPad on the wall or a phone in their pocket, and the counter sees it the moment they do.
 
+## Fold Time
+
+**What is Fold Time?** A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. [See Fold Time](https://foldpos.com/time-clock).
+
+**Do my staff need an app?** No. The tap opens a web page on their phone.
+
+**What does Fold Time cost?** $39 a device, your first one free, on your next Fold POS bill. Shipping included. Fold Time comes with Growth and Pro.
+
+**What if someone copies the link?** It won’t work. Each tap carries a one-time code from the chip, so a copied or replayed link is refused.
+
+**Can staff clock in from home?** Not by tap: they have to tap the device at the store. The backup clock-in QR is on the POS screen, at the store.
+
+**What if an employee’s phone dies?** Use the clock-in QR on the POS or the POS PIN clock.
+
+**How do staff see their hours?** The link in their clock-out text, or the My hours button after any tap. It shows this pay period and the last.
+
+**How many do I need?** One per door or station where people start work. Most shops need one or two.
+
+**Does it work with payroll?** QuickBooks directly; any payroll through the CSV export.
+
 ## Switching over
 
 **Can I bring my customers from Cents or CleanCloud?** Yes, from Cents, CleanCloud or a CSV: customers and your price list. Export them from your old system, then open Settings › Import data. You can undo an import.

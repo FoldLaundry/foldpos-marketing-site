@@ -58,6 +58,14 @@ tbody th{font-weight:700;width:18%}
 .note{color:var(--muted);font-size:14px;margin:14px 0 0}
 .help{margin:30px 0 0;font-size:14px;color:var(--muted)}
 .help a{color:var(--accent);font-weight:700;text-decoration:none}
+.product{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.product img{width:100%;max-width:200px;height:auto;border-radius:10px;display:block;margin:0 auto}
+.product h3{font-family:Sora,'Plus Jakarta Sans',system-ui,sans-serif;font-size:20px;margin:0 0 6px}
+.product p{margin:0 0 10px;max-width:62ch}
+.product .price{font-weight:700;font-size:17px;margin:0 0 4px}
+.product .small{color:var(--muted);font-size:14px;margin:0}
+.product a{color:var(--accent);font-weight:600}
+@media (max-width:620px){ .product{grid-template-columns:1fr} }
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 </style>
 </head>
@@ -65,7 +73,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 <div class="wrap">
 <header>
   <a class="brand" href="https://foldpos.com/">Fold <span class="pill">POS</span>&nbsp;Hardware</a>
-  <nav class="jump" aria-label="Sections"><a href="#every">Every shop</a><a href="#dry">Dry cleaners</a><a href="#plant">Plants &amp; drop stores</a><a href="#drivers">Drivers</a><a href="#supplies">Supplies</a></nav>
+  <nav class="jump" aria-label="Sections"><a href="#every">Every shop</a><a href="#dry">Dry cleaners</a><a href="#plant">Plants &amp; drop stores</a><a href="#drivers">Drivers</a><a href="#time-clock">Staff time clock</a><a href="#supplies">Supplies</a></nav>
 </header>
 <h1>Hardware for your shop</h1>
 <p class="intro">Most shops already own what Fold POS needs: a computer with Chrome, a receipt printer and a card terminal. Below is what each kind of shop adds, what we recommend, and where to buy it.</p>
@@ -73,6 +81,16 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 <section id="dry"><h2>Dry cleaners</h2><p class="lead">Add a tag printer and a scanner.</p><div class="tbl"><table><thead><tr><th scope="col">Item</th><th scope="col">What it’s for</th><th scope="col">We recommend</th><th scope="col">Where to buy</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row">Garment tag printer</th><td>One 1 × 3 in tag per piece: order, 1/3, name, due day, item</td><td><a href="https://posguys.com/receipt-pos-printer_12/Bixolon-SRP-275III_2573/">Bixolon SRP-275III</a> with auto-cutter (SRP-275IIICOSG)</td><td><a href="https://posguys.com/receipt-pos-printer_12/Bixolon-SRP-275III_2573/">POSGuys</a> · <a href="https://www.amazon.com/Bixolon-SRP-275IIICOSG-Srp-275III-PRINTER-Interface/dp/B01K4J9PDE">Amazon</a> · <a href="https://www.walmart.com/ip/Bixolon-SRP-275III-3-Impact-Dot-Receipt-Printer-USB-Serial-Auto-Cutter-Black-SRP-275IIICOSG/185936316">Walmart</a></td><td>Impact printer: text only, no barcodes. Run Calibrate cutter once in Settings › Receipts.</td></tr><tr><th scope="row">2D barcode scanner</th><td>Find a piece or an order by scanning its tag or ticket</td><td><a href="https://www.amazon.com/Tera-Bluetooth-Smartphone-Model-HW0002/dp/B08X2F4X7H">Tera HW0002</a> (budget, wireless) or <a href="https://www.cdw.com/product/zebra-ds2208-barcode-scanner/4496361">Zebra DS2208</a> (wired workhorse)</td><td><a href="https://www.amazon.com/Tera-Bluetooth-Smartphone-Model-HW0002/dp/B08X2F4X7H">Amazon</a> · <a href="https://www.bestbuy.com/product/tera-hw0002-o-2d-wireless-bluetooth-barcode-scanner/CCFLTK62SP">Best Buy</a> · <a href="https://www.cdw.com/product/zebra-ds2208-barcode-scanner/4496361">CDW</a> · <a href="https://posguys.com/barcode-reader-scanner_3/Zebra-DS2208_2548/">POSGuys</a></td><td>Plugs in by USB and types into the scan box. No setup.</td></tr></tbody></table></div></section>
 <section id="plant"><h2>Plants and drop stores</h2><p class="lead">For shops that send work in bags to a cleaning plant and track every piece. A drop store that already has a thermal receipt printer only adds a scanner and label sleeves. <a href="https://foldpos.com/follow-the-bag">See how it works</a>.</p><div class="tbl"><table><thead><tr><th scope="col">Item</th><th scope="col">Who needs it</th><th scope="col">We recommend</th><th scope="col">Where to buy</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row">2D barcode scanner</th><td>Each drop store counter; each unpacking station at the plant</td><td><a href="https://www.amazon.com/Tera-Bluetooth-Smartphone-Model-HW0002/dp/B08X2F4X7H">Tera HW0002</a> or <a href="https://www.cdw.com/product/zebra-ds2208-barcode-scanner/4496361">Zebra DS2208</a></td><td>See Dry cleaners</td><td>A busy plant needs one per station.</td></tr><tr><th scope="row">Thermal receipt printer</th><td>Any shop whose receipt printer is an impact printer</td><td><a href="https://posguys.com/receipt-pos-printer_12/Epson-TM-T20III_2716/">Epson TM-T20III</a></td><td>See Every shop</td><td>Bag labels print on the receipt printer. Impact printers can’t print the barcode, so drivers would have to type every code.</td></tr><tr><th scope="row">Bags with a label spot</th><td>Every bag that travels</td><td>Your existing laundry bags plus a clear sleeve or tag holder per bag</td><td>Packaging suppliers, Amazon</td><td>The printed label goes in the sleeve.</td></tr><tr><th scope="row">Numbered security seals (optional)</th><td>Shops that want tamper-evidence</td><td>Pull-tight plastic seals</td><td><a href="https://www.uline.com/BL_2304/Plastic-Truck-Seals">Uline</a> · <a href="https://www.amazon.com/Numbered-Security-Disposable-Self-Locking-Extinguisher/dp/B086H5786P">Amazon (1,000-pack)</a></td><td>The seal number can be typed in when the bag is sealed.</td></tr></tbody></table></div></section>
 <section id="drivers"><h2>Drivers</h2><p class="lead">Nothing to buy. Drivers use their own phone with the <b>Fold POS Driver</b> app: routes, stops, proof-of-delivery photos and bag scanning with the camera. A phone mount for the vehicle is a nice extra.</p></section>
+<section id="time-clock"><h2>Staff time clock</h2><p class="lead">For shops on Growth or Pro that want staff to clock in with their own phone.</p>
+<div class="product">
+  <img src="/assets/img/fold-time/device-front.webp" width="520" height="676" alt="Fold Time wall device, a white rounded box that reads Tap your phone, Toque con su teléfono" loading="lazy">
+  <div>
+    <h3>Fold Time</h3>
+    <p>A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no PINs to share. It arrives set up and switches on with its first tap. No batteries, power or Wi-Fi.</p>
+    <p class="price">$39, your first one free</p>
+    <p class="small">Order it in Fold POS: Schedule › Time clock › Tags › Fold Time devices. Added to your next Fold POS bill when it ships; shipping included. With Growth and Pro. Device shown is a render. <a href="https://foldpos.com/time-clock">How Fold Time works</a></p>
+  </div>
+</div></section>
 <section id="supplies"><h2>Supplies</h2><p class="lead">Order these before you run out.</p><div class="tbl"><table><thead><tr><th scope="col">Supply</th><th scope="col">For</th><th scope="col">What to order</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row">Thermal paper rolls</th><td>Receipt printer (tickets, bag labels)</td><td>80 mm (3 1/8 in) thermal rolls</td><td>Keep a case in the back.</td></tr><tr><th scope="row">Tag rolls</th><td>Bixolon tag printer</td><td>3 in (76 mm) roll stock</td><td>Each tag is 1 × 3 in; one short blank strip per print job.</td></tr><tr><th scope="row">Ink ribbon</th><td>Bixolon tag printer</td><td>The ribbon cassette for the SRP-275III</td><td>Check the printer’s manual or the seller’s listing for the part number.</td></tr><tr><th scope="row">Label sleeves</th><td>Plant bags</td><td>One clear sleeve or tag holder per bag</td><td>Reused bag after bag.</td></tr></tbody></table></div></section>
 <section id="know"><h2>Good to know</h2><ul class="know">
 <li><b>Impact printers can’t print barcodes.</b> Fine for garment tags. For bag labels use a thermal printer so the driver’s camera can scan them.</li>
@@ -80,7 +98,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 <li><b>Chrome is the easiest browser.</b> Edge, Firefox and Safari work too, with the free print helper at <a href="https://foldpos.com/download">foldpos.com/download</a>.</li>
 <li><b>No scale integration yet.</b> For wash &amp; fold, weigh on any scale and type the pounds.</li>
 <li><b>Setting up?</b> The seven-step guide at <a href="https://foldpos.com/setup">foldpos.com/setup</a> walks through account, printer, staff and a first order.</li>
-</ul><p class="note">Prices change often, so they’re not listed here. Check the linked listing when you order.</p></section>
+</ul><p class="note">Prices from other sellers change often, so they’re not listed here. Check the linked listing when you order.</p></section>
 <p class="help">Not sure what you need? Email <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20hardware">contact@foldpos.com</a> and we’ll help you pick.</p>
 </div>
 </body>

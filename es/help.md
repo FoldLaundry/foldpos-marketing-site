@@ -45,6 +45,15 @@ Pruebe la demostración en vivo: https://foldpos.com/es/#heyfold
 
 Paso 5 de la configuración: https://foldpos.com/setup
 
+## Fold Time
+
+1. Pida los dispositivos en Fold POS: Cronograma › Reloj checador › Etiquetas › Dispositivos Fold Time › Pedir dispositivos. La pantalla muestra el total antes.
+2. Llegan configurados. Toque cualquier dispositivo con su teléfono para activar la caja.
+3. Agregue los teléfonos del personal en Reloj checador › Teléfonos; cada persona recibe un mensaje para configurar su teléfono.
+4. El personal toca para marcar la entrada, tomar un descanso y marcar la salida. ¿Se quedó sin batería un teléfono? Use el código QR de entrada o el reloj con PIN del POS.
+
+Cómo funciona Fold Time: https://foldpos.com/es/time-clock
+
 ## Mensajes a clientes
 
 - El aviso de “listo” sale en cuanto llega la última pieza, con el nombre de su tienda.

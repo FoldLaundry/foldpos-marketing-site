@@ -36,6 +36,26 @@
 
 **¿Funciona en un iPad?** Sí. El personal puede avanzar el trabajo desde un iPad en la pared o un teléfono en el bolsillo, y el mostrador lo ve en ese mismo momento.
 
+## Fold Time
+
+**¿Qué es Fold Time?** Un pequeño dispositivo de pared que su personal toca con su propio teléfono para marcar la entrada, tomar descansos y marcar la salida. Sin app, sin reloj checador, sin PIN que compartir. Vea Fold Time.
+
+**¿Mi personal necesita una app?** No. El toque abre una página web en su teléfono.
+
+**¿Cuánto cuesta?** $39 por dispositivo, el primero gratis, sumado a su próxima factura de Fold POS. Envío incluido. Fold Time viene con Growth y Pro.
+
+**¿Y si alguien copia el enlace?** No sirve. Cada toque lleva un código de un solo uso del chip, así que un enlace copiado o repetido se rechaza.
+
+**¿Puede el personal marcar desde casa?** No con un toque: tiene que tocar el dispositivo en la tienda. El código QR de respaldo está en la pantalla del POS, en la tienda.
+
+**¿Y si el teléfono de un empleado se queda sin batería?** Use el código QR de entrada del POS o el reloj con PIN del POS.
+
+**¿Cómo ve el personal sus horas?** Con el enlace del mensaje de salida, o con el botón Mis horas después de cualquier toque. Muestra este periodo de pago y el anterior.
+
+**¿Cuántos necesito?** Uno por cada puerta o puesto donde la gente empieza a trabajar. La mayoría de las tiendas necesitan uno o dos.
+
+**¿Funciona con la nómina?** Con QuickBooks directamente; con cualquier otra nómina mediante la exportación CSV.
+
 ## Cambio de sistema
 
 **¿Puedo traer a mis clientes desde Cents o CleanCloud?** Sí, desde Cents, CleanCloud o un CSV: los clientes y su lista de precios. Expórtelos de su sistema anterior y abra Ajustes › Importar datos. Puede deshacer una importación.
