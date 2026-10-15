@@ -5,7 +5,7 @@
 Reembolsos que piden un código. Una caja que se cuenta. Un impuesto que se configura una sola vez. Y un mostrador que sigue tomando pedidos cuando se cae el internet. En todos los planes.
 
 - **Un código en cada reembolso**: Un reembolso necesita el código del propietario o de un administrador, y un motivo.
-- **Una caja que se cuenta**: Se abre con un fondo y se cierra con un conteo. Lo que sobra o falta queda en el reporte.
+- **Una caja que se cuenta**: Se abre con un fondo y se cierra con un conteo. Lo que sobra o falta queda en el informe.
 - **Sigue sin conexión**: ¿Sin internet? Los pedidos nuevos se guardan en la terminal y se sincronizan solos.
 
 ## Reembolsos: Todo el pedido, un importe o una sola pieza.
@@ -26,11 +26,11 @@ El indicador de caja en la pantalla Entrega abre Caja. Cada turno empieza con el
 - El efectivo inicial se escribe o se cuenta por billete, moneda y rollo.
 - Entrada de efectivo, salida de efectivo con su motivo, depósito a caja fuerte y sin venta, cada uno con el nombre del empleado.
 - Al cerrar, Fold muestra si cuadra, sobra o falta. Más de $5.00 de diferencia necesita el código del propietario o de un administrador.
-- Un reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.
+- Un informe X en cualquier momento del turno. El informe Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.
 - La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.
 - El propietario pone las reglas en la misma página: cierre a ciegas, cuánta diferencia necesita un código, el fondo habitual y las cajas registradoras.
 
-Los reportes X y Z se imprimen en su impresora de recibos, y el reporte Z también se exporta como CSV para su contador. El reporte Z es para el personal con acceso a Informes.
+Los informes X y Z se imprimen en su impresora de recibos, y el informe Z también se exporta como CSV para su contador. El informe Z es para el personal con acceso a Informes.
 
 ## Impuesto sobre las ventas: Configure la tasa una vez. Va en cada ticket.
 
@@ -70,7 +70,7 @@ Las etiquetas de prendas y los mensajes al cliente salen después de sincronizar
 ## Siga por aquí
 
 - [Precios](https://foldpos.com/es/pricing): Starter $79, Growth $149, Pro $249. Mes a mes.
-- [Impresoras](https://foldpos.com/es/printers): Recibos, etiquetas y los reportes que se imprimen en ellas.
+- [Impresoras](https://foldpos.com/es/printers): Recibos, etiquetas y los informes que se imprimen en ellas.
 - [Todas las funciones](https://foldpos.com/es/features): El mostrador, el tablero de pedidos, el local y la administración.
 - [Hable con nosotros](https://foldpos.com/es/contact): ¿Preguntas sobre su mostrador? Escríbanos.
 

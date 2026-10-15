@@ -152,7 +152,7 @@ ES = {
     'rows': [
         ('El mostrador', None),
         ('Recepción por libra, por pieza o por trabajo', 'SGP'), ('Tablero de pedidos, estaciones y lugares en los estantes', 'SGP'),
-        ('Cobros con su propio procesador', 'SGP'), ('Reembolsos, caja y reportes de cierre del día', 'SGP'),
+        ('Cobros con su propio procesador', 'SGP'), ('Reembolsos, caja y informes de cierre del día', 'SGP'),
         ('Impuesto sobre las ventas y su informe', 'SGP'), ('Sigue tomando pedidos sin conexión', 'SGP'),
         ('Cuentas de clientes e historial', 'SGP'),
         ('Recibos y etiquetas de 1 × 3 in en Epson, Star, Bixolon y Zebra', 'SGP'), ('Avisos de “listo” en español e inglés', 'SGP'),

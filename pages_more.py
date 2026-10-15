@@ -174,7 +174,7 @@ MONEY_EN = {
 MONEY_ES = {
     'slug': 'counter-money', 'lang': 'es', 'home': '/es/', 'pre': '/es',
     'title': 'Reembolsos, caja, impuestos y sin conexión — Fold POS',
-    'desc': 'El dinero en el mostrador de Fold POS: reembolsos con código del propietario, caja contada con reportes X y Z, impuesto sobre las ventas y pedidos nuevos sin internet.',
+    'desc': 'El dinero en el mostrador de Fold POS: reembolsos con código del propietario, caja contada con informes X y Z, impuesto sobre las ventas y pedidos nuevos sin internet.',
     'og': 'El dinero en el mostrador con Fold POS',
     'crumb': 'El dinero en el mostrador',
     'kicker': 'El dinero en el mostrador',
@@ -182,7 +182,7 @@ MONEY_ES = {
     'lede': 'Reembolsos que piden un código. Una caja que se cuenta. Un impuesto que se configura una sola vez. Y un mostrador que sigue tomando pedidos cuando se cae el internet. En todos los planes.',
     'facts': [
         ('shield', 'Un código en cada reembolso', 'Un reembolso necesita el código del propietario o de un administrador, y un motivo.'),
-        ('ledger', 'Una caja que se cuenta', 'Se abre con un fondo y se cierra con un conteo. Lo que sobra o falta queda en el reporte.'),
+        ('ledger', 'Una caja que se cuenta', 'Se abre con un fondo y se cierra con un conteo. Lo que sobra o falta queda en el informe.'),
         ('history', 'Sigue sin conexión', '¿Sin internet? Los pedidos nuevos se guardan en la terminal y se sincronizan solos.'),
     ],
     'example': 'Ejemplo',
@@ -202,11 +202,11 @@ MONEY_ES = {
          ['El efectivo inicial se escribe o se cuenta por billete, moneda y rollo.',
           'Entrada de efectivo, salida de efectivo con su motivo, depósito a caja fuerte y sin venta, cada uno con el nombre del empleado.',
           'Al cerrar, Fold muestra si cuadra, sobra o falta. Más de $5.00 de diferencia necesita el código del propietario o de un administrador.',
-          'Un reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.',
+          'Un informe X en cualquier momento del turno. El informe Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.',
           'La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.',
           'El propietario pone las reglas en la misma página: cierre a ciegas, cuánta diferencia necesita un código, el fondo habitual y las cajas registradoras.'],
-         'Los reportes X y Z se imprimen en su impresora de recibos, y el reporte Z también se exporta como CSV para su contador. El reporte Z es para el personal con acceso a Informes.',
-         lambda t: _art('Ejemplo de reporte Z de cierre del día', _rc('CIERRE DEL DÍA (Z)', 'Vie, 2 oct · Caja 1', [
+         'Los informes X y Z se imprimen en su impresora de recibos, y el informe Z también se exporta como CSV para su contador. El informe Z es para el personal con acceso a Informes.',
+         lambda t: _art('Ejemplo de informe Z de cierre del día', _rc('CIERRE DEL DÍA (Z)', 'Vie, 2 oct · Caja 1', [
              ('Pedidos', '42'), ('Ventas brutas', '$1,912.50'), ('Descuentos', '−$64.00'), ('Ventas netas', '$1,848.50', True),
              ('Impuesto cobrado', '$87.80'), ('Reembolsos', '−$23.00'), '-',
              ('Efectivo inicial', '$150.00'), ('Ventas en efectivo', '$535.30'), ('Reembolsos en efectivo', '−$23.00'), ('Salida de efectivo', '−$20.00'),
@@ -247,7 +247,7 @@ MONEY_ES = {
     'more_h2': 'Siga por aquí',
     'more': [
         ('/es/pricing', 'card', 'Precios', 'Starter $79, Growth $149, Pro $249. Mes a mes.'),
-        ('/es/printers', 'printer', 'Impresoras', 'Recibos, etiquetas y los reportes que se imprimen en ellas.'),
+        ('/es/printers', 'printer', 'Impresoras', 'Recibos, etiquetas y los informes que se imprimen en ellas.'),
         ('/es/features', 'layers', 'Todas las funciones', 'El mostrador, el tablero de pedidos, el local y la administración.'),
         ('/es/contact', 'mail', 'Hable con nosotros', '¿Preguntas sobre su mostrador? Escríbanos.'),
     ],

@@ -262,7 +262,7 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
                  ['Informes que se entienden',
                   'Ingresos, volumen de pedidos y mezcla de servicios por día, semana o sucursal, sin exportar hojas de cálculo.'],
                  ['Reembolsos, caja e impuestos',
-                  'Reembolsos que piden el código del propietario, una caja que se cuenta al cerrar con reportes X y Z, y un impuesto que se '
+                  'Reembolsos que piden el código del propietario, una caja que se cuenta al cerrar con informes X y Z, y un impuesto que se '
                   'configura una sola vez. <a href="/es/counter-money">El dinero en el mostrador</a>.'],
                  ['Sigue sin conexión',
                   'Cuando se cae el internet, el mostrador sigue tomando pedidos nuevos y los sincroniza solo. <a '

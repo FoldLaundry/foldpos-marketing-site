@@ -18,7 +18,7 @@ Elija su tipo de negocio (lavandería, tintorería o sastrería) y los mismos se
 
 **Sábado, 11:05 a. m.: la puerta. Escanear. Pagar. Listo.** Escanee cualquier etiqueta y aparece todo el pedido. Tarjeta, efectivo o la tarjeta guardada; pagos divididos; facturación mensual para cuentas. La etiqueta queda marcada como recogida, la posición se libera sola, el pedido se cierra con todo su historial y ella recibe el recibo en su teléfono.
 
-**Sábado, 7:15 p. m.: su oficina, o su sofá. Toda la tienda, en una pantalla.** No es un informe que hay que generar: es el día tal como pasó. Ventas por servicio, piezas que entraron y salieron, quién está en turno, qué va atrasado, qué sigue en el rack, desde cualquier navegador o su teléfono. Consolidado de varias sucursales en Pro, turnos y registro de entrada del personal, ventas diarias en QuickBooks.
+**Sábado, 7:15 p. m.: su oficina, o su sofá. Toda la tienda, en una pantalla.** No es un informe que hay que generar: es el día tal como pasó. Ventas por servicio, piezas que entraron y salieron, quién está en turno, qué va atrasado, qué sigue en el estante, desde cualquier navegador o su teléfono. Consolidado de varias sucursales en Pro, turnos y registro de entrada del personal, ventas diarias en QuickBooks.
 
 ## Conozca Hey Fold: el mostrador que escucha
 
