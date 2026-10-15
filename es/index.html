@@ -927,7 +927,7 @@ svg.i{width:18px;height:18px;flex:none}
 .pv-paper{position:absolute;inset:0;background:#f7f9fe;opacity:0}
 .pv-sketch{position:absolute;inset:0;width:1920px;height:1080px;opacity:0}
 .pv-sketch path{stroke-dasharray:1;stroke-dashoffset:1}
-.sk-ready .pv-sketch{opacity:1}
+.sk-ready .pv-paper,.sk-ready .pv-sketch{opacity:1}
 @media (max-width:700px){.hero-sk{padding-top:64px}.pv-wrap{margin-top:28px;padding:0 0 40px}.pv-stage{border-radius:0}}
 </style>
 </head>
@@ -1689,9 +1689,8 @@ svg.i{width:18px;height:18px;flex:none}
   var T=0; place(0); screens(-1);
   if(still){ words.forEach(function(w){w.classList.add('on')}); finalState(); return; }
   hero.classList.add('sk-in'); document.documentElement.classList.add('sk-ready'); drawSketch(0);
-  var narrow=matchMedia('(max-width: 700px)').matches;   // on phones the words are simply there
-  words.forEach(function(w,i){ if(narrow){ w.classList.add('on'); return; } setTimeout(function(){ w.classList.add('on'); }, 250+i*75); });
-  var textDone=narrow?1500:250+words.length*75+250;   // give the headline a moment before the page moves to the film
+  words.forEach(function(w,i){ setTimeout(function(){ w.classList.add('on'); }, 250+i*75); });
+  var textDone=250+words.length*75+250;
   var P=0, start=null, t0=null, reveal=null, playT=null, last=null;
   var autoAt=0;
   function visible(){ var r=stage.getBoundingClientRect(), vh=innerHeight; return c((Math.min(vh,r.bottom)-Math.max(0,r.top))/r.height); }
@@ -1720,7 +1719,7 @@ svg.i{width:18px;height:18px;flex:none}
       }
       // 2) the sketch becomes the real shop, then the clip plays
       if(reveal!==null){
-        var r=c((now-reveal)/900); sk.style.opacity=(1-r).toFixed(3);
+        var r=c((now-reveal)/900); sk.style.opacity=(1-r).toFixed(3); paper.style.opacity=(1-r).toFixed(3);
         if(r>=1&&playT===null&&visible()>=0.6){ playT=now; var pr=vid.play(); if(pr&&pr.catch) pr.catch(function(){}); }
       }
       if(playT!==null){
