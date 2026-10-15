@@ -84,8 +84,9 @@ Fold POS es el sistema operativo de una lavandería o tintorería: recepción de
 
 ## 09 — Personal y turnos
 
-**Un relevo ordenado en cada cambio de turno.** El personal marca entrada y salida en la misma pantalla donde cobra los pedidos. Vea los ingresos, el volumen de pedidos y la mezcla de servicios del turno en curso, y deje un registro claro de actividad para quien abra después, para que el turno de la mañana no tenga que adivinar qué pasó durante la noche.
+**Un relevo ordenado en cada cambio de turno.** El personal marca entrada y salida tocando un dispositivo Fold Time con su propio teléfono, o en la misma pantalla donde cobra los pedidos. Vea los ingresos, el volumen de pedidos y la mezcla de servicios del turno en curso, y deje un registro claro de actividad para quien abra después, para que el turno de la mañana no tenga que adivinar qué pasó durante la noche.
 
+- [Fold Time](https://foldpos.com/es/fold-time): el personal toca el dispositivo de pared con su teléfono para marcar entrada, descansos y salida. Sin app. En Growth y Pro, el primer dispositivo gratis
 - Entrada y salida registradas para cada persona del equipo
 - Ingresos y volumen de pedidos en vivo del turno actual
 - Desglose por tipo de servicio: lavado y doblado, lavado en seco, arreglos

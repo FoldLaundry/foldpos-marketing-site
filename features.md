@@ -84,8 +84,9 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 ## 09 — Staff & shifts
 
-**A clean handoff, every time the shift changes.** Staff clock in and out from the same screen they ring up orders on. See revenue, order volume, and service mix for the shift in progress, and leave a clear activity trail for whoever opens next — so the morning shift isn't guessing what happened overnight.
+**A clean handoff, every time the shift changes.** Staff clock in and out with a tap of their own phone on a Fold Time device, or on the same screen they ring up orders on. See revenue, order volume, and service mix for the shift in progress, and leave a clear activity trail for whoever opens next — so the morning shift isn't guessing what happened overnight.
 
+- [Fold Time](https://foldpos.com/fold-time): staff tap their phone on the wall device to clock in, take breaks and clock out. No app. On Growth and Pro, your first device free
 - Clock-in and clock-out tied to each staff member
 - Live revenue and order volume for the current shift
 - Service mix breakdown — wash & fold, dry cleaning, alterations
