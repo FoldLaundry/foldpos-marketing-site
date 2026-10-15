@@ -37,7 +37,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                           'back to you, and sends the receipt and garment tags to the printer.',
                                   'pts': ['Say “Hey Fold”, press Caps Lock or tap the orb; it stays quiet until called',
                                           'Customer lookup, order status and production updates by voice',
-                                          'Works on the browser, Mac and Windows builds with a plain microphone'],
+                                          'Works in the browser and in the Mac and Windows apps with a plain microphone'],
                                   'rows': [('You', 'you', 'Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.'),
                                            ('Fold', 'fold', 'Got it. Maria Garcia — 2 bags wash &amp; fold, 1 comforter, due Thursday. $46.50. Print and tag?'),
                                            ('You', 'you', 'Yes.'),
@@ -123,21 +123,21 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Lot number, piece count, customer, due day and barcode on every tag',
                                             'Permanent heat-sealed barcodes for regulars: scan the garment, it knows the customer',
                                             'Reprint any receipt or tag from the print queue'],
-                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>DC-0417</span></div> <div '
+                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>WNF-0417</span></div> <div '
                                              'class="big">THU 11</div> <div class="row"><span>MARIA GARCIA</span><span>···3021</span></div> <hr/> <div '
                                              'class="row"><span>2× WASH &amp; FOLD BAG</span><span>32.00</span></div> <div class="row"><span>1× '
                                              'COMFORTER</span><span>14.50</span></div> <div class="row"><span>PIECES</span><span>3</span></div> <hr/> <div '
                                              'class="row"><span>DUE</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div '
                                              'style="text-align:center">CUSTOMER COPY</div> </div> <div class="tagstack"> <div '
-                                             'class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div '
-                                             'class="n">1/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
-                                             'class="n">2/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
+                                             'class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div '
+                                             'class="n">1/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
+                                             'class="n">2/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
                                              'class="n">3/3</div></div> </div>'},
                         'more': {'eyebrow': 'Also in every shop',
                                  'h2': "Everything a shop needs, nothing it doesn't.",
                                  'lede': "The parts you'd otherwise run in three other apps and a spreadsheet.",
                                  'cards': [('Customers &amp; B2B accounts',
-                                            'History, preferences, addresses and notes at the counter. Tax id, payment terms and monthly invoicing for hotels, '
+                                            'History, preferences, addresses and notes at the counter. Tax ID, payment terms and monthly invoicing for hotels, '
                                             'gyms and restaurants.'),
                                            ('Invoices',
                                             'Individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a '
@@ -146,7 +146,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Sales by day, week and month, service mix, customers, costs, profit &amp; loss, orders not collected — and CSV '
                                             'export of any of them.'),
                                            ('Conveyor',
-                                            'Slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you '
+                                            'Slots by conveyor and line, assigned at check-in and freed at handoff. Scan the ticket, the rail tells you '
                                             'where the order hangs.'),
                                            ('Payments built in',
                                             'Cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link '
@@ -171,7 +171,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                           'back to you, and sends the receipt and garment tags to the printer.',
                                   'pts': ['Say “Hey Fold”, press Caps Lock or tap the orb; it stays quiet until called',
                                           'Customer lookup, order status and production updates by voice',
-                                          'Works on the browser, Mac and Windows builds with a plain microphone'],
+                                          'Works in the browser and in the Mac and Windows apps with a plain microphone'],
                                   'rows': [('You', 'you', 'Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.'),
                                            ('Fold', 'fold', 'Got it. Maria Garcia — 2 bags wash &amp; fold, 1 comforter, due Thursday. $46.50. Print and tag?'),
                                            ('You', 'you', 'Yes.'),
@@ -190,7 +190,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                               'Fold POS remembers where it is until the customer walks in.',
                                       'pts': ['Per-piece tickets with photos, stain and damage notes',
                                               'Heat-seal tags numbered 1/8 … 8/8 with lot number and due day',
-                                              'Conveyor slot assigned at check-in, freed at hand-over; find any order by scanning its ticket',
+                                              'Conveyor slot assigned at check-in, freed at handoff; find any order by scanning its ticket',
                                               'Alterations priced per task on the same ticket',
                                               '<span>Sending work to a plant? <a href="/plants">Every piece is counted there and back</a></span>'],
                                       'fact': None,
@@ -252,21 +252,21 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Lot number, piece count, customer, due day and barcode on every tag',
                                             'Permanent heat-sealed barcodes for regulars: scan the garment, it knows the customer',
                                             'Reprint any receipt or tag from the print queue'],
-                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>DC-0417</span></div> <div '
+                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>WNF-0417</span></div> <div '
                                              'class="big">THU 11</div> <div class="row"><span>MARIA GARCIA</span><span>···3021</span></div> <hr/> <div '
                                              'class="row"><span>2× WASH &amp; FOLD BAG</span><span>32.00</span></div> <div class="row"><span>1× '
                                              'COMFORTER</span><span>14.50</span></div> <div class="row"><span>PIECES</span><span>3</span></div> <hr/> <div '
                                              'class="row"><span>DUE</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div '
                                              'style="text-align:center">CUSTOMER COPY</div> </div> <div class="tagstack"> <div '
-                                             'class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div '
-                                             'class="n">1/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
-                                             'class="n">2/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
+                                             'class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div '
+                                             'class="n">1/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
+                                             'class="n">2/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div '
                                              'class="n">3/3</div></div> </div>'},
                         'more': {'eyebrow': 'Also in every shop',
                                  'h2': "Everything a shop needs, nothing it doesn't.",
                                  'lede': "The parts you'd otherwise run in three other apps and a spreadsheet.",
                                  'cards': [('Customers &amp; B2B accounts',
-                                            'History, preferences, addresses and notes at the counter. Tax id, payment terms and monthly invoicing for hotels, '
+                                            'History, preferences, addresses and notes at the counter. Tax ID, payment terms and monthly invoicing for hotels, '
                                             'gyms and restaurants.'),
                                            ('Invoices',
                                             'Individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a '
@@ -275,7 +275,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Sales by day, week and month, service mix, customers, costs, profit &amp; loss, orders not collected — and CSV '
                                             'export of any of them.'),
                                            ('Conveyor',
-                                            'Slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you '
+                                            'Slots by conveyor and line, assigned at check-in and freed at handoff. Scan the ticket, the rail tells you '
                                             'where the order hangs.'),
                                            ('Payments built in',
                                             'Cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link '
@@ -300,7 +300,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                       'to you, and sends the receipt and garment tags to the printer.',
                               'pts': ['Say “Hey Fold”, press Caps Lock or tap the orb; it stays quiet until called',
                                       'Customer lookup, order status and production updates by voice',
-                                      'Works on the browser, Mac and Windows builds with a plain microphone'],
+                                      'Works in the browser and in the Mac and Windows apps with a plain microphone'],
                               'rows': [('You', 'you', 'Hey Fold — new order for Maria Garcia. Two bags wash and fold, one comforter, pickup Thursday.'),
                                        ('Fold', 'fold', 'Got it. Maria Garcia — 2 bags wash &amp; fold, 1 comforter, due Thursday. $46.50. Print and tag?'),
                                        ('You', 'you', 'Yes.'),
@@ -363,21 +363,21 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                         'Lot number, piece count, customer, due day and barcode on every tag',
                                         'Permanent heat-sealed barcodes for regulars: scan the garment, it knows the customer',
                                         'Reprint any receipt or tag from the print queue'],
-                                'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>DC-0417</span></div> <div '
+                                'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · DOWNTOWN</span><span>WNF-0417</span></div> <div '
                                          'class="big">THU 11</div> <div class="row"><span>MARIA GARCIA</span><span>···3021</span></div> <hr/> <div '
                                          'class="row"><span>2× WASH &amp; FOLD BAG</span><span>32.00</span></div> <div class="row"><span>1× '
                                          'COMFORTER</span><span>14.50</span></div> <div class="row"><span>PIECES</span><span>3</span></div> <hr/> <div '
                                          'class="row"><span>DUE</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div '
                                          'style="text-align:center">CUSTOMER COPY</div> </div> <div class="tagstack"> <div '
-                                         'class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div class="n">1/3</div></div> '
-                                         '<div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div class="n">2/3</div></div> '
-                                         '<div class="heattag"><div><b>DC-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div class="n">3/3</div></div> '
+                                         'class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>COMFORTER · WHITE</div><div class="n">1/3</div></div> '
+                                         '<div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div class="n">2/3</div></div> '
+                                         '<div class="heattag"><div><b>WNF-0417</b><br/>GARCIA · THU 11<br/>W&amp;F BAG</div><div class="n">3/3</div></div> '
                                          '</div>'},
                     'more': {'eyebrow': 'Also in every shop',
                              'h2': "Everything a shop needs, nothing it doesn't.",
                              'lede': "The parts you'd otherwise run in three other apps and a spreadsheet.",
                              'cards': [('Customers &amp; B2B accounts',
-                                        'History, preferences, addresses and notes at the counter. Tax id, payment terms and monthly invoicing for hotels, '
+                                        'History, preferences, addresses and notes at the counter. Tax ID, payment terms and monthly invoicing for hotels, '
                                         'gyms and restaurants.'),
                                        ('Invoices',
                                         'Individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a '
@@ -386,7 +386,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                         'Sales by day, week and month, service mix, customers, costs, profit &amp; loss, orders not collected — and CSV export '
                                         'of any of them.'),
                                        ('Conveyor',
-                                        'Slots by conveyor and line, assigned at check-in and freed at hand-over. Scan the ticket, the rail tells you where '
+                                        'Slots by conveyor and line, assigned at check-in and freed at handoff. Scan the ticket, the rail tells you where '
                                         'the order hangs.'),
                                        ('Payments built in',
                                         'Cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link your '
@@ -427,10 +427,10 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                         'switch': {'eyebrow': 'Hecho para la forma en que trabaja su negocio',
                                    'h2': 'Lo que recibe una lavandería desde el primer día.',
                                    'lede': 'Elija “Lavandería” al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. '
-                                           'Cámbielo cuando quiera en Ajustes.',
+                                           'Cámbielo cuando quiera en Configuración.',
                                    'q': '¿No tiene una lavandería?',
                                    'links': [('/es/dry-cleaners', 'Para tintorerías'), ('/es/alterations', 'Para sastrerías')]},
-                        'chapters': [{'eyebrow': 'Lavado y doblado · ropa por encargo',
+                        'chapters': [{'eyebrow': 'Lavado y doblado · ropa que deja el cliente',
                                       'h2': 'Cóbrelo tal como el cliente lo describe.',
                                       'lede': '“Dos bolsas, un edredón, y lo necesito urgente.” Pese una bolsa, agregue un artículo por pieza, active el '
                                               'exprés — y el precio está listo antes de que termine de hablar.',
@@ -509,18 +509,18 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Número de lote, cantidad de piezas, cliente, día de entrega y código de barras en cada etiqueta',
                                             'Códigos de barras termoadhesivos permanentes para clientes frecuentes: escanee la prenda y sabe de quién es',
                                             'Reimprima cualquier recibo o etiqueta desde la cola de impresión'],
-                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>DC-0417</span></div> <div '
+                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>WNF-0417</span></div> <div '
                                              'class="big">JUE 11</div> <div class="row"><span>MARÍA GARCÍA</span><span>···3021</span></div> <hr/> <div '
                                              'class="row"><span>2× BOLSA LAV. Y DOBL.</span><span>32.00</span></div> <div class="row"><span>1× '
                                              'EDREDÓN</span><span>14.50</span></div> <div class="row"><span>PIEZAS</span><span>3</span></div> <hr/> <div '
                                              'class="row"><span>A PAGAR</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div '
                                              'style="text-align:center">COPIA DEL CLIENTE</div> </div> <div class="tagstack"> <div '
-                                             'class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN · BLANCO</div><div class="n">1/3</div></div> '
-                                             '<div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA L&amp;D</div><div '
-                                             'class="n">2/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
+                                             'class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN · BLANCO</div><div class="n">1/3</div></div> '
+                                             '<div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA L&amp;D</div><div '
+                                             'class="n">2/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
                                              'L&amp;D</div><div class="n">3/3</div></div> </div>'},
                         'more': {'eyebrow': 'También en todos los negocios',
-                                 'h2': 'Todo lo que un negocio necesita, nada que no.',
+                                 'h2': 'Todo lo que un negocio necesita, y nada de más.',
                                  'lede': 'Lo que de otro modo manejaría con otras tres apps y una hoja de cálculo.',
                                  'cards': [('Clientes y cuentas empresariales (B2B)',
                                             'Historial, preferencias, direcciones y notas en el mostrador. Identificación fiscal, condiciones de pago y '
@@ -574,7 +574,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                         'switch': {'eyebrow': 'Hecho para la forma en que trabaja su negocio',
                                    'h2': 'Lo que recibe una tintorería desde el primer día.',
                                    'lede': 'Elija “Tintorería” al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. '
-                                           'Cámbielo cuando quiera en Ajustes.',
+                                           'Cámbielo cuando quiera en Configuración.',
                                    'q': '¿No tiene una tintorería?',
                                    'links': [('/es/laundromats', 'Para lavanderías'), ('/es/alterations', 'Para sastrerías')]},
                         'chapters': [{'eyebrow': 'Tintorería',
@@ -591,7 +591,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                       'shots': [('Detalles del pedido',
                                                  '/assets/img/order-detail.webp',
                                                  'Ticket de pedido con prendas detalladas, datos del cliente, notas y fotos')]},
-                                     {'eyebrow': 'Lavado y doblado · ropa por encargo',
+                                     {'eyebrow': 'Lavado y doblado · ropa que deja el cliente',
                                       'h2': 'Cóbrelo tal como el cliente lo describe.',
                                       'lede': '“Dos bolsas, un edredón, y lo necesito urgente.” Pese una bolsa, agregue un artículo por pieza, active el '
                                               'exprés — y el precio está listo antes de que termine de hablar.',
@@ -649,18 +649,18 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                             'Número de lote, cantidad de piezas, cliente, día de entrega y código de barras en cada etiqueta',
                                             'Códigos de barras termoadhesivos permanentes para clientes frecuentes: escanee la prenda y sabe de quién es',
                                             'Reimprima cualquier recibo o etiqueta desde la cola de impresión'],
-                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>DC-0417</span></div> <div '
+                                    'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>WNF-0417</span></div> <div '
                                              'class="big">JUE 11</div> <div class="row"><span>MARÍA GARCÍA</span><span>···3021</span></div> <hr/> <div '
                                              'class="row"><span>2× BOLSA LAV. Y DOBL.</span><span>32.00</span></div> <div class="row"><span>1× '
                                              'EDREDÓN</span><span>14.50</span></div> <div class="row"><span>PIEZAS</span><span>3</span></div> <hr/> <div '
                                              'class="row"><span>A PAGAR</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div '
                                              'style="text-align:center">COPIA DEL CLIENTE</div> </div> <div class="tagstack"> <div '
-                                             'class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN · BLANCO</div><div class="n">1/3</div></div> '
-                                             '<div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA L&amp;D</div><div '
-                                             'class="n">2/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
+                                             'class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN · BLANCO</div><div class="n">1/3</div></div> '
+                                             '<div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA L&amp;D</div><div '
+                                             'class="n">2/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
                                              'L&amp;D</div><div class="n">3/3</div></div> </div>'},
                         'more': {'eyebrow': 'También en todos los negocios',
-                                 'h2': 'Todo lo que un negocio necesita, nada que no.',
+                                 'h2': 'Todo lo que un negocio necesita, y nada de más.',
                                  'lede': 'Lo que de otro modo manejaría con otras tres apps y una hoja de cálculo.',
                                  'cards': [('Clientes y cuentas empresariales (B2B)',
                                             'Historial, preferencias, direcciones y notas en el mostrador. Identificación fiscal, condiciones de pago y '
@@ -713,7 +713,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                     'switch': {'eyebrow': 'Hecho para la forma en que trabaja su negocio',
                                'h2': 'Lo que recibe una sastrería desde el primer día.',
                                'lede': 'Elija “Sastrería” al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. Cámbielo '
-                                       'cuando quiera en Ajustes.',
+                                       'cuando quiera en Configuración.',
                                'q': '¿No tiene una sastrería?',
                                'links': [('/es/laundromats', 'Para lavanderías'), ('/es/dry-cleaners', 'Para tintorerías')]},
                     'chapters': [{'eyebrow': 'Arreglos',
@@ -723,7 +723,7 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                   'pts': ['Tickets por prenda con fotos y notas de manchas y daños',
                                           'Etiquetas termoadhesivas numeradas 1/8 … 8/8 con número de lote y día de entrega',
                                           'Precios por tarea que define una vez y reutiliza: dobladillo, entallado, cierre, cambio de forro',
-                                          'Agregue tintorería más adelante con un solo interruptor en Ajustes'],
+                                          'Agregue tintorería más adelante con un solo interruptor en Configuración'],
                                   'fact': None,
                                   'shots': [('Detalles del pedido',
                                              '/assets/img/order-detail.webp',
@@ -762,24 +762,24 @@ DATA = {('en', 'laundromat'): {'slug': 'laundromats',
                                                    'Chat de equipo y notificaciones integrados']}]},
                     'tickets': {'eyebrow': 'Recibos y etiquetas',
                                 'h2': 'Imprime en las impresoras que ya tiene.',
-                                'lede': 'Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — Fold Print Agent se vincula '
+                                'lede': 'Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — El asistente de impresión de Fold se vincula '
                                         'con un código de seis dígitos y las mantiene imprimiendo desde cualquier pestaña del navegador o la app de '
                                         'escritorio.',
                                 'pts': ['Epson TM-T20, Bixolon SRP-275, Star y Zebra listas para usar',
                                         'Número de lote, cantidad de piezas, cliente, día de entrega y código de barras en cada etiqueta',
                                         'Códigos de barras termoadhesivos permanentes para clientes frecuentes: escanee la prenda y sabe de quién es',
                                         'Reimprima cualquier recibo o etiqueta desde la cola de impresión'],
-                                'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>DC-0417</span></div> <div class="big">JUE '
+                                'paper': '<div class="receipt"> <div class="row"><span>FOLD POS · CENTRO</span><span>WNF-0417</span></div> <div class="big">JUE '
                                          '11</div> <div class="row"><span>MARÍA GARCÍA</span><span>···3021</span></div> <hr/> <div class="row"><span>2× BOLSA '
                                          'LAV. Y DOBL.</span><span>32.00</span></div> <div class="row"><span>1× EDREDÓN</span><span>14.50</span></div> <div '
                                          'class="row"><span>PIEZAS</span><span>3</span></div> <hr/> <div class="row"><span>A '
                                          'PAGAR</span><span><b>$46.50</b></span></div> <div class="bar"></div> <div style="text-align:center">COPIA DEL '
-                                         'CLIENTE</div> </div> <div class="tagstack"> <div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN '
-                                         '· BLANCO</div><div class="n">1/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
-                                         'L&amp;D</div><div class="n">2/3</div></div> <div class="heattag"><div><b>DC-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
+                                         'CLIENTE</div> </div> <div class="tagstack"> <div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>EDREDÓN '
+                                         '· BLANCO</div><div class="n">1/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
+                                         'L&amp;D</div><div class="n">2/3</div></div> <div class="heattag"><div><b>WNF-0417</b><br/>GARCÍA · JUE 11<br/>BOLSA '
                                          'L&amp;D</div><div class="n">3/3</div></div> </div>'},
                     'more': {'eyebrow': 'También en todos los negocios',
-                             'h2': 'Todo lo que un negocio necesita, nada que no.',
+                             'h2': 'Todo lo que un negocio necesita, y nada de más.',
                              'lede': 'Lo que de otro modo manejaría con otras tres apps y una hoja de cálculo.',
                              'cards': [('Clientes y cuentas empresariales (B2B)',
                                         'Historial, preferencias, direcciones y notas en el mostrador. Identificación fiscal, condiciones de pago y '

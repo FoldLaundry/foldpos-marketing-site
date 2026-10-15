@@ -16,7 +16,7 @@ The only POS you can talk to. Say the order — it's rung up, printed and tagged
 
 - Say “Hey Fold”, press Caps Lock or tap the orb; it stays quiet until called
 - Customer lookup, order status and production updates by voice
-- Works on the browser, Mac and Windows builds with a plain microphone
+- Works in the browser and in the Mac and Windows apps with a plain microphone
 
 ## What a laundromat gets on day one
 
@@ -75,7 +75,7 @@ Staff clock in and out on the same screen they ring orders on. Roles decide what
 - Built-in team chat and notifications
 
 ### Receipts & tags
-Claim tickets on the impact printer, garment tags on the heat-seal printer — Fold Print Agent pairs with a six-digit code and keeps them printing from any browser tab or the desktop app.
+Claim tickets on the impact printer, garment tags on the heat-seal printer — the Fold print helper pairs with a six-digit code and keeps them printing from any browser tab or the desktop app.
 
 - Epson TM-T20, Bixolon SRP-275, Star and Zebra out of the box
 - Lot number, piece count, customer, due day and barcode on every tag
@@ -84,10 +84,10 @@ Claim tickets on the impact printer, garment tags on the heat-seal printer — F
 
 ## Also in every shop
 
-- **Customers & B2B accounts** — history, preferences, addresses and notes at the counter. Tax id, payment terms and monthly invoicing for hotels, gyms and restaurants.
+- **Customers & B2B accounts** — history, preferences, addresses and notes at the counter. Tax ID, payment terms and monthly invoicing for hotels, gyms and restaurants.
 - **Invoices** — individual and business invoices with due dates, cancel-with-reason and a paid/pending view you can filter in a second.
 - **Reports you can actually read** — sales by day, week and month, service mix, customers, costs, profit & loss, orders not collected — and CSV export of any of them.
-- **Conveyor** — slots by conveyor and line, assigned at check-in and freed at hand-over.
+- **Conveyor** — slots by conveyor and line, assigned at check-in and freed at handoff.
 - **Payments built in** — cash, card, pay-on-delivery and split tenders. On your own card processor, at your rates, with a payment link your customer can pay on their phone.
 - **Search anything, ⌘F** — one search box for customers, orders, tickets and settings. Keyboard-wedge barcode scanners just work.
 

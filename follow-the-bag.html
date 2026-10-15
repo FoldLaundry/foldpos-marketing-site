@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Follow the bag — Fold POS piece tracking</title>
-<meta name="description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every hand-off scanned, and what happens when a piece goes missing.">
+<meta name="description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every handoff scanned, and what happens when a piece goes missing.">
 <link rel="canonical" href="https://foldpos.com/follow-the-bag">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Follow the bag — Fold POS piece tracking">
-<meta property="og:description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every hand-off scanned, and what happens when a piece goes missing.">
+<meta property="og:description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every handoff scanned, and what happens when a piece goes missing.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
 <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Follow the bag — Fold POS piece tracking">
-<meta name="twitter:description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every hand-off scanned, and what happens when a piece goes missing.">
+<meta name="twitter:description" content="Watch one bag of dry cleaning go from drop store to plant and back with Fold POS piece tracking: every handoff scanned, and what happens when a piece goes missing.">
 <meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -459,7 +459,7 @@ h1 .grad{color:inherit}
     {n:1,item:'Dress shirt',color:'White',fill:'#f6f8fc',t:'shirt'},
     {n:2,item:'Dress shirt',color:'White',fill:'#f6f8fc',t:'shirt'},
     {n:3,item:'Dress shirt',color:'Light blue',fill:'#a9c4f5',t:'shirt'},
-    {n:4,item:'Trousers',color:'Grey',fill:'#8d96a8',t:'trousers'},
+    {n:4,item:'Trousers',color:'Gray',fill:'#8d96a8',t:'trousers'},
     {n:5,item:'Blazer',color:'Blue',fill:'#2f55b8',t:'blazer'},
     {n:6,item:'Trousers',color:'Navy',fill:'#26345c',t:'trousers'},
     {n:7,item:'Dress',color:'Green',fill:'#3f9a78',t:'dress'},
@@ -491,7 +491,7 @@ h1 .grad{color:inherit}
     {id:'drop',shot:'store',van:'offL',face:'R',bag:'none',code:BAG1,stage:'waiting',place:'Drop store',t:'8:02',dana:true,
      pz:{panel:'store',at:'panel',cls:''},
      eyebrow:'Drop-off',title:'Dana drops off seven pieces.',
-     desc:'The counter rings up order <strong>DC-0042</strong>. Every piece is on the order from the first minute: what it is, what colour, what service.',
+     desc:'The counter rings up order <strong>DC-0042</strong>. Every piece is on the order from the first minute: what it is, what color, what service.',
      cap:'Seven pieces come in at Blvd Cleaners.',
      device:()=>counter('Drop store · check in','DC-0042','<p class="app-h">Dana R. · 7 pieces</p>'+pieceList(false)+'<div class="meta">Dry cleaning · ready today after 5 PM</div>'),
      scan:{w:'Drop store',x:'Order DC-0042 checked in · 7 pieces',where:'Blvd Cleaners · counter',what:'Order DC-0042',count:'7 pieces'}},
@@ -534,14 +534,14 @@ h1 .grad{color:inherit}
     {id:'dropoff',shot:'plant',van:'plant',face:'R',bag:'plant',sealed:true,bagDelay:750,code:BAG1,fx:true,stage:'to_plant',place:'Plant door',t:'9:18',
      pz:{panel:null,at:'bagPlant',cls:'tagged',m5:'rack'},
      eyebrow:'Drop-off',title:'Scanned again at the plant door.',
-     desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own, so both sides of the hand-off are on record.',
+     desc:'The drop-off scan says the driver handed it over. The plant confirms with a scan of its own, so both sides of the handoff are on record.',
      cap:'Dropped off at the plant.',
      device:()=>phone('Fold Driver · drop-off',BAG1,'<p class="app-h">Fold Cleaning Plant</p><div class="big">1<small>of 1 bags</small></div><div class="meta">Scanned 9:18</div><div class="spacer"></div>'+pill('Uploaded · 2 scans','good','check')+'<div class="meta">Next stop: Westside Cleaners</div>'),
      scan:{w:'Driver Maria',x:'Dropped off '+BAG1+' at the plant',where:'Fold Cleaning Plant · door',what:'Bag '+BAG1,count:'1 of 1 bags'}},
     {id:'receive',shot:'plant',van:'offR',face:'R',bag:'plant',sealed:true,code:BAG1,fx:true,stage:'at_plant',place:'Plant',t:'9:22',
      pz:{panel:null,at:'bagPlant',cls:'tagged',m5:'rack'},
      eyebrow:'Receive',title:'The plant scans it in.',
-     desc:'One scan confirms the hand-off and checks the count against what was expected today. The plant now holds the bag, and the drop store sees that on its own board.',
+     desc:'One scan confirms the handoff and checks the count against what was expected today. The plant now holds the bag, and the drop store sees that on its own board.',
      cap:'Received at the plant. 1 of 1 bags.',
      device:()=>counter('Plant · receiving',BAG1,'<p class="app-h">Receive from Blvd Cleaners</p><div class="big">1<small>of 1 bags</small></div>'+kv([['Expected today','1 bag · 7 pieces'],['Received','1 bag'],['From','Driver Maria · 9:18']])+'<div class="row">'+pill('Received','good','check')+'</div>'),
      scan:{w:'Plant',x:'Received '+BAG1+' · 1 of 1 bags',where:'Fold Cleaning Plant · receiving',what:'Bag '+BAG1,count:'1 of 1 bags'}},
@@ -606,9 +606,9 @@ h1 .grad{color:inherit}
     {id:'collect',shot:'store',van:'offL',face:'L',bag:'none',code:BAG2,stage:'back',place:'Collected',t:'18:10',done:true,dana:true,
      pz:{panel:'store',at:'panel',cls:'ok',m5:'hide',slot5:'out'},
      eyebrow:'Handed back',title:'Collected. The record is complete.',
-     desc:'Each piece is marked handed back. If a question ever comes up, every hand-off is there with a time, a person and a place.',
+     desc:'Each piece is marked handed back. If a question ever comes up, every handoff is there with a time, a person and a place.',
      cap:'Collected by Dana.',
-     device:()=>counter('Drop store · counter','DC-0042','<p class="app-h">Order DC-0042</p><div class="row">'+pill('Collected','good','check')+'</div><div class="big">'+(missing()?'6':'7')+'<small>pieces handed back</small></div><div class="meta">6 hand-offs · every one scanned · '+(missing()?'piece 5 is at the plant, ready tomorrow':'0 open alerts')+'</div>'),
+     device:()=>counter('Drop store · counter','DC-0042','<p class="app-h">Order DC-0042</p><div class="row">'+pill('Collected','good','check')+'</div><div class="big">'+(missing()?'6':'7')+'<small>pieces handed back</small></div><div class="meta">6 handoffs · every one scanned · '+(missing()?'piece 5 is at the plant, ready tomorrow':'0 open alerts')+'</div>'),
      scan:()=>({w:'Drop store',x:'Handed back to Dana · '+(missing()?6:7)+' pieces released',where:'Blvd Cleaners · counter',what:'Order DC-0042',count:(missing()?'6 of 7 pieces':'7 of 7 pieces')})},
   ];
 
@@ -749,7 +749,7 @@ h1 .grad{color:inherit}
   function numbers(){
     const N=missing()
       ?[['13 min','from drop-off to the missing-piece alert',true],['21 min','from the alert to the blazer being found, on the store rack'],['0','pieces lost. One was in the wrong place, and the record said where to look']]
-      :[['7 of 7','pieces home, each one accounted for'],['6','hand-offs, every one scanned'],['0','arguments about who had it last']];
+      :[['7 of 7','pieces home, each one accounted for'],['6','handoffs, every one scanned'],['0','arguments about who had it last']];
     $('numbers').innerHTML=N.map(([v,l,b])=>'<div class="num'+(b?' bad':'')+'"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>').join('');
   }
   const dur=s=>s.unpack?3000:(s.pz.seq?2500:(s.only?2900:(s.bagDelay?2400:2000)));

@@ -61,14 +61,14 @@ Add the address in your assistant, then approve inside Fold POS.
 - Step 4. Fold POS shows you what is asking for access. Check the name of the app, where you will be sent back to after you answer, and the store it is for.
 - Step 5. If the assistant asked to make changes, choose whether to allow that. Then approve.
 
-Where you will be sent back to is the part that cannot be faked. It should be the site of the assistant you are connecting. If the screen warns you that it does not recognise the app, or that the request was not started from your device, and you did not expect that, say no. Never approve a request that arrived as a link from someone else.
+Where you will be sent back to is the part that cannot be faked. It should be the site of the assistant you are connecting. If the screen warns you that it does not recognize the app, or that the request was not started from your device, and you did not expect that, say no. Never approve a request that arrived as a link from someone else.
 
 ## Token: Or connect with a token.
 
 Some desktop apps do not send you to Fold POS to approve. They ask for a token instead.
 
 - Step 1. In Fold POS, open Settings › Assistants and create a token.
-- Step 2. Give it a name you will recognise later, such as “Claude on my laptop”.
+- Step 2. Give it a name you will recognize later, such as “Claude on my laptop”.
 - Step 3. Choose how long it should last (up to 366 days, or no end date), and whether it may make changes.
 - Step 4. Copy the token. It is shown once. Fold POS cannot show it to you again.
 - Step 5. In your assistant’s settings, add a custom connector or MCP server with the address https://app.foldpos.com/v1/mcp/store and paste the token where it asks for a key or an authorization header.
@@ -96,7 +96,7 @@ You do not need a connected assistant for this. Fold POS itself can send you a s
 - Regular reports. Also on a schedule, each its own message: last week’s sales against the week before, last month’s against the month before (with the sales tax collected), and the hours each person worked last week if your plan includes staff shifts. You pick the day and the time.
 - Where to switch it on. Settings › Assistants › Briefings and alerts. It is off until you turn it on, and only an owner can.
 - Where it goes. To the email on your account. The card shows where the next message will go, and “Send me a test” sends today’s briefing there now.
-- Limits. At most 5 messages a day, reports included. No alerts between 9 pm and 7 am at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.
+- Limits. At most 5 messages a day, reports included. No alerts between 9 PM and 7 AM at your store; whatever is still true goes out in the morning. Several alerts at once arrive as one message.
 - What a message contains. Counts, machine and supply names, and order numbers. Never a customer’s name, phone number or address.
 - Language. English or Spanish, your choice.
 
@@ -106,7 +106,7 @@ Your store needs its time zone set in Settings › Business first, so the mornin
 
 Do these in order.
 
-- Step 1. Open Settings › Assistants and remove any connection you do not recognise. If you are not sure which, pause all of them first.
+- Step 1. Open Settings › Assistants and remove any connection you do not recognize. If you are not sure which, pause all of them first.
 - Step 2. Change your password. This disconnects every assistant you connected, so you will need to connect the ones you want again.
 - Step 3. Look at the activity list to see what was asked.
 - Step 4. Email [contact@foldpos.com](mailto:contact@foldpos.com) and tell us your store name.

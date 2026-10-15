@@ -14,8 +14,8 @@ La guía de configuración en 7 pasos: https://foldpos.com/setup
 
 ## Conecte una impresora
 
-- En Chrome: Ajustes › Recibos › Conectar impresora y luego imprima una página de prueba.
-- En Windows, si la lista está vacía o usa Edge o Firefox: instale el asistente de impresión y escriba el código de 6 dígitos de Ajustes › Recibos.
+- En Chrome: Configuración › Recibos › Conectar impresora y luego imprima una página de prueba.
+- En Windows, si la lista está vacía o usa Edge o Firefox: instale el asistente de impresión y escriba el código de 6 dígitos de Configuración › Recibos.
 - En una Mac: use Chrome.
 - Conecte la impresora por USB; no hace falta agregarla en Windows ni en macOS.
 
@@ -24,7 +24,7 @@ Impresoras y cómo se conectan: https://foldpos.com/es/printers
 ## Importe sus datos
 
 - Exporte clientes y precios desde Cents, CleanCloud o una hoja de cálculo.
-- Abra Ajustes › Importar datos y elija el archivo.
+- Abra Configuración › Importar datos y elija el archivo.
 - Revise lo que entró. Puede deshacer una importación.
 
 Preguntas sobre el cambio: https://foldpos.com/es/faq#switching
@@ -57,7 +57,7 @@ Cómo funciona Fold Time: https://foldpos.com/es/fold-time
 ## Mensajes a clientes
 
 - El aviso de “listo” sale en cuanto llega la última pieza, con el nombre de su tienda.
-- Ya viene activado. Cambie el texto o desactive lo que no quiera en Ajustes.
+- Ya viene activado. Cambie el texto o desactive lo que no quiera en Configuración.
 - En español o en inglés.
 
 Paso 6 de la configuración: https://foldpos.com/setup
@@ -100,7 +100,7 @@ Plantas y tiendas de recepción: https://foldpos.com/es/plants
 
 ## Plan y facturación
 
-- Ajustes › Plan y facturación para elegir, cambiar o cancelar un plan.
+- Configuración › Plan y facturación para elegir, cambiar o cancelar un plan.
 - Si termina la prueba de 14 días sin un plan, el POS queda en solo lectura; sus datos se conservan.
 
 Vea los planes: https://foldpos.com/es/pricing
@@ -108,9 +108,9 @@ Vea los planes: https://foldpos.com/es/pricing
 ## Conecte un asistente de IA
 
 - Deje que su propio asistente de IA, como Claude, responda preguntas sobre sus ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal.
-- Solo un propietario puede conectar uno. Solo mira, salvo que usted encienda tres cambios pequeños.
+- Solo un propietario puede conectar uno. Solo mira, salvo que usted active tres cambios pequeños.
 - Configuración › Asistentes: cree un token, pause todos los asistentes o quite uno, y vea la lista de actividad.
-- Configuración › Asistentes › Resúmenes y alertas: un resumen por la mañana, alertas e informes semanales o mensuales por correo, apagados hasta que usted los enciende.
+- Configuración › Asistentes › Resúmenes y alertas: un resumen por la mañana, alertas e informes semanales o mensuales por correo, apagados hasta que usted los encienda.
 - ¿Cree que alguien más entró? Quite la conexión y luego cambie su contraseña.
 
 Conecte un asistente de IA a su tienda: https://foldpos.com/es/assistants

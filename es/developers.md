@@ -101,7 +101,7 @@ Los clientes que usan una configuración JSON necesitan los mismos dos datos, el
 
 ## El servidor de la tienda: el asistente del propietario
 
-Un segundo servidor de Model Context Protocol permite que el asistente de IA del propietario de una tienda, como Claude, responda preguntas sobre una tienda: ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal. Solo mira, salvo que el propietario encienda tres cambios pequeños.
+Un segundo servidor de Model Context Protocol permite que el asistente de IA del propietario de una tienda, como Claude, responda preguntas sobre una tienda: ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal. Solo mira, salvo que el propietario active tres cambios pequeños.
 
 **Para quién es:** el propietario de una tienda en Fold POS y quienes crean los asistentes que usan los propietarios. Solo un propietario puede conectar un asistente. El personal no puede.
 
@@ -171,7 +171,7 @@ Cada respuesta es un resumen corto seguido de los mismos datos en JSON. Una herr
 ### Reglas de seguridad
 
 - **Solo el propietario.** Solo un propietario puede conectar un asistente, ver la lista o quitar uno.
-- **De solo lectura de forma predeterminada.** Los cambios están apagados hasta que el propietario los enciende, y cada asistente necesita además el permiso del propietario para hacerlos.
+- **De solo lectura de forma predeterminada.** Los cambios están apagados hasta que el propietario los encienda, y cada asistente necesita además el permiso del propietario para hacerlos.
 - **Los cambios se muestran antes.** La primera llamada describe el cambio y no cambia nada. El cambio se hace solo cuando el asistente vuelve a llamar con el código de la vista previa. El código sirve una vez, durante cinco minutos.
 - **El dinero nunca se mueve.** Ninguna herramienta cobra, reembolsa, descuenta, paga, cancela, elimina, envía un mensaje por su cuenta ni cambia una configuración.
 - **Una lista de actividad.** Cada pregunta y cada cambio aparece en la lista de actividad del propietario, que se conserva 90 días. Las respuestas no se guardan.
@@ -180,7 +180,7 @@ Cada respuesta es un resumen corto seguido de los mismos datos en JSON. Una herr
 
 Para propietarios de tiendas: [Conecte un asistente de IA a su tienda](https://foldpos.com/es/assistants).
 
-El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.
+El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, lo lleva de vuelta a esta sección.
 
 ## El servidor de reservas: el asistente del cliente
 
@@ -219,7 +219,7 @@ Diez herramientas.
 | Herramienta | Qué hace |
 | --- | --- |
 | `find_shop` | Busca tiendas que aceptan reservas, por nombre, ciudad, código postal o nombre de reserva. Hasta 5. |
-| `shop_info` | Nombre, teléfono, dirección, horario, servicios, con cuánta anticipación reserva, cargo de entrega, importe para entrega gratis, pedido mínimo y cómo se paga. |
+| `shop_info` | Nombre, teléfono, dirección, horario, servicios, con cuánta anticipación se puede reservar, cargo de entrega, importe para entrega gratis, pedido mínimo y cómo se paga. |
 | `pickup_times` | Horarios de recogida libres en una dirección, después de comprobar que la dirección está en el área de la tienda. |
 | `return_options` | Cuándo estará listo el pedido y qué horarios de entrega corresponden a un horario de recogida. |
 | `send_booking_code` | Le pide a la tienda que envíe un código de 6 dígitos al teléfono del cliente por mensaje de texto. |
@@ -239,13 +239,13 @@ Diez herramientas.
 
 Para propietarios de tiendas: [¿Mis clientes también pueden usar un asistente?](https://foldpos.com/es/assistants#questions) y [cómo funcionan las reservas en línea](https://foldpos.com/es/pickup-delivery#booking).
 
-El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.
+El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, lo lleva de vuelta a esta sección.
 
 ## La API para dueños de tienda
 
 La API que accede a los clientes, pedidos e informes de una tienda es **privada**. No forma parte del servidor MCP público y no tiene documentación pública. El asistente de IA del propietario de una tienda no la usa: se conecta por el servidor de la tienda, más arriba. Si es cliente de Fold POS o un socio que necesita acceso programático a los datos de una tienda, escriba a contact@foldpos.com y cuéntenos qué está creando.
 
-Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan a la agenda de la tienda, con actualizaciones de estado de ida y vuelta.
+Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan al calendario de la tienda, con actualizaciones de estado de ida y vuelta.
 
 ## Más
 

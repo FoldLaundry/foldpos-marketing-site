@@ -129,7 +129,7 @@ ES = {
     'brief': [
         ('bell', '“¿Qué necesita mi atención?”', 'La lista corta de lo que necesita a alguien, primero lo más urgente.'),
         ('users', '“¿Quién está en turno?”', 'Quién marcó entrada, quién está en descanso y quién llegó tarde. Necesita turnos del personal en su plan.'),
-        ('rack', '“¿Qué lleva días en el rack?”', 'Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.'),
+        ('rack', '“¿Qué lleva días en el estante?”', 'Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.'),
     ],
     'brief_note': 'Estas tres son solo para el propietario, en español o inglés. Su propio asistente de IA puede hacer las mismas preguntas desde donde usted esté: <a href="/es/assistants">conecte un asistente de IA a su tienda</a>.',
     'try_h2': 'Pruébelo ahora',

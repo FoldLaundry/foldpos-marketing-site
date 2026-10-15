@@ -9,7 +9,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 ## 01 — The counter
 
-**Ring up any service the way your shop actually prices it.** Switch between wash-and-fold, dry cleaning, and alterations without leaving the screen. Price by the pound with a minimum, by the bag, or by the individual item — set an express rate and a discount once, and Fold POS applies them everywhere they belong. Look up a returning customer or add a new one without losing the order you're building.
+**Ring up any service the way your shop actually prices it.** Switch between wash & fold, dry cleaning, and alterations without leaving the screen. Price by the pound with a minimum, by the bag, or by the individual item — set an express rate and a discount once, and Fold POS applies them everywhere they belong. Look up a returning customer or add a new one without losing the order you're building.
 
 - Per-pound, per-bag, and per-item pricing in the same order
 - Express service and discounts applied automatically
@@ -48,7 +48,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 ## 05 — Your floor, mapped
 
-**A live map of every machine on your floor.** Set up Fold POS once with your actual machine brands, sizes, and layout, and it becomes a live map of your floor — not a generic equipment list. See how many turns each machine ran today, and when your own staff use a machine for a wash-and-fold order, everyone at the counter can see whose order is running and how much time is left on the cycle.
+**A live map of every machine on your floor.** Set up Fold POS once with your actual machine brands, sizes, and layout, and it becomes a live map of your floor — not a generic equipment list. See how many turns each machine ran today, and when your own staff use a machine for a wash & fold order, everyone at the counter can see whose order is running and how much time is left on the cycle.
 
 - Floor plan built from your real machine brands and sizes
 - Turns per machine, per day — see which machines earn their keep
@@ -61,7 +61,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 
 - Live vending and retail inventory for self-serve laundromats
 - Usage tracking for the operational supplies orders consume
-- AI-driven reorder suggestions and quantities, based on historic use and current workload
+- AI-driven reorder suggestions and quantities, based on historical use and current workload
 - Low-stock alerts before you're down to your last bag — or your last vending box
 
 ## 07 — Marketing
@@ -99,7 +99,7 @@ Fold POS is the operating system for a laundromat or dry cleaner — order intak
 - **Reporting that's actually readable** — revenue, order volume, and service mix by day, week, or location — no spreadsheet exports required.
 - **Refunds, cash drawer and sales tax** — refunds that need an owner code, a drawer counted at close with X and Z reports, and sales tax you set once. [Money at the counter](https://foldpos.com/counter-money.md).
 - **Keeps going offline** — when the internet drops, the counter keeps taking new orders and syncs them by itself.
-- **Plants and drop stores** — bags scanned at every hand-off, every piece counted in and out, and a monthly statement for each store. [Plants & drop stores](https://foldpos.com/plants.md).
+- **Plants and drop stores** — bags scanned at every handoff, every piece counted in and out, and a monthly statement for each store. [Plants & drop stores](https://foldpos.com/plants.md).
 
 ## More
 

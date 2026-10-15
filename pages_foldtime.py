@@ -213,7 +213,7 @@ ES = {
     'more_h2': 'Para seguir',
     'more': [
         ('/es/pricing', 'card', 'Precios', 'Fold Time viene con Growth y Pro.'),
-        ('/hardware', 'printer', 'Equipo', 'Qué más puede necesitar su tienda.'),
+        ('/hardware', 'printer', 'Equipos (inglés)', 'Qué más puede necesitar su tienda.'),
         ('/es/help', 'flow', 'Centro de ayuda', 'Respuestas cortas para el mostrador.'),
     ],
     'md_title': '# Fold Time: el personal marca con un toque',

@@ -31,7 +31,7 @@ Pregunte en voz alta y Hey Fold le responde con los registros de su tienda. Solo
 
 - **“¿Qué necesita mi atención?”**: La lista corta de lo que necesita a alguien, primero lo más urgente.
 - **“¿Quién está en turno?”**: Quién marcó entrada, quién está en descanso y quién llegó tarde. Necesita turnos del personal en su plan.
-- **“¿Qué lleva días en el rack?”**: Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.
+- **“¿Qué lleva días en el estante?”**: Los pedidos terminados que siguen esperando al cliente, primero el que más lleva.
 
 Estas tres son solo para el propietario, en español o inglés. Su propio asistente de IA puede hacer las mismas preguntas desde donde usted esté: [conecte un asistente de IA a su tienda](https://foldpos.com/es/assistants).
 

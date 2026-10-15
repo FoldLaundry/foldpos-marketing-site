@@ -76,7 +76,7 @@ Un recorrido por un turno, desde el primer toque hasta las horas en QuickBooks. 
 ## Para seguir
 
 - [Precios](https://foldpos.com/es/pricing): Fold Time viene con Growth y Pro.
-- [Equipo](https://foldpos.com/hardware): Qué más puede necesitar su tienda.
+- [Equipos (inglés)](https://foldpos.com/hardware): Qué más puede necesitar su tienda.
 - [Centro de ayuda](https://foldpos.com/es/help): Respuestas cortas para el mostrador.
 
 ## Más

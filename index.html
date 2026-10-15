@@ -1082,7 +1082,7 @@ svg.i{width:18px;height:18px;flex:none}
       </div>
       <div class="step" data-state="rack">
         <div class="when">Friday · 4:30 PM · Where it lives</div>
-        <h2>A place, not "somewhere in the back."</h2>
+        <h2>A place, not “somewhere in the back.”</h2>
         <p>Scan the tag, tap the slot. When she walks in, you know exactly where it is.</p>
         <a class="see" href="#screens" data-screen="checkout">See this screen ↗</a>
         <div class="irow"><span><svg class="i" aria-hidden="true"><use href="#i-scan"/></svg>Scan to find</span><span><svg class="i" aria-hidden="true"><use href="#i-rack"/></svg>Rack or conveyor</span></div>
@@ -1185,7 +1185,7 @@ svg.i{width:18px;height:18px;flex:none}
     <h2>Your own delivery service, run from the counter.</h2>
     <p class="lede">Your drivers, partner marketplaces and on-demand couriers, in one schedule.</p>
     <div class="hubgrid">
-      <div class="hubsteps" id="hubSteps" role="tablist"><button type="button" data-img="pd-activities" class="on"><svg class="i" aria-hidden="true"><use href="#i-flow"/></svg><span><b>Today’s runs</b><small>Every pickup and drop-off, with who’s on it.</small></span><i class="bar"></i></button><button type="button" data-img="pd-routes"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg><span><b>Routes on a map</b><small>Tick your drivers, build the day’s routes in one tap.</small></span><i class="bar"></i></button><button type="button" data-img="pd-courier" data-url="pos.foldpos.com · Pickup &amp; delivery › Courier"><svg class="i" aria-hidden="true"><use href="#i-car"/></svg><span><b>Uber couriers</b><small>No driver free? Send it with Uber Direct, on your own account.</small></span><i class="bar"></i></button><button type="button" data-img="pd-driver" data-url="Fold Driver app"><svg class="i" aria-hidden="true"><use href="#i-ipad"/></svg><span><b>Driver app</b><small>Today’s stops, navigation, photo and signature at the door.</small></span><i class="bar"></i></button><button type="button" data-img="pd-insights"><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg><span><b>What it costs</b><small>Cost, margin and on-time, per stop and per driver.</small></span><i class="bar"></i></button></div>
+      <div class="hubsteps" id="hubSteps" role="tablist"><button type="button" data-img="pd-activities" class="on"><svg class="i" aria-hidden="true"><use href="#i-flow"/></svg><span><b>Today’s runs</b><small>Every pickup and drop-off, with who’s on it.</small></span><i class="bar"></i></button><button type="button" data-img="pd-routes"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg><span><b>Routes on a map</b><small>Pick your drivers, build the day’s routes in one tap.</small></span><i class="bar"></i></button><button type="button" data-img="pd-courier" data-url="pos.foldpos.com · Pickup &amp; delivery › Courier"><svg class="i" aria-hidden="true"><use href="#i-car"/></svg><span><b>Uber couriers</b><small>No driver free? Send it with Uber Direct, on your own account.</small></span><i class="bar"></i></button><button type="button" data-img="pd-driver" data-url="Fold Driver app"><svg class="i" aria-hidden="true"><use href="#i-ipad"/></svg><span><b>Driver app</b><small>Today’s stops, navigation, photo and signature at the door.</small></span><i class="bar"></i></button><button type="button" data-img="pd-insights"><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg><span><b>What it costs</b><small>Cost, margin and on-time, per stop and per driver.</small></span><i class="bar"></i></button></div>
       <div class="frame hubframe"><div class="bar"><i></i><i></i><i></i><span id="hubUrl">pos.foldpos.com · Pickup &amp; delivery</span></div><img id="hubImg" src="assets/img/new/pd-activities.webp" alt="Fold POS pickup and delivery" width="1600" height="1000"></div>
     </div>
     <div class="hubchips"><span><svg class="i" aria-hidden="true"><use href="#i-stores"/></svg>Partner jobs integration</span><span><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Status texts</span><span><svg class="i" aria-hidden="true"><use href="#i-card"/></svg>Delivery fees at checkout</span><span><svg class="i" aria-hidden="true"><use href="#i-stores"/></svg>Route optimization on Pro</span></div>
@@ -1204,7 +1204,7 @@ svg.i{width:18px;height:18px;flex:none}
       <div class="plan pop"><span class="pill">Most popular</span><h3>Growth</h3><p class="for">Adding delivery and staff</p><div class="price">$149<small> /month</small></div>
         <ul><li>Everything in Starter</li><li>Pickup &amp; delivery routing</li><li>Staff shifts and clock-in</li><li>Express and subscription pricing</li><li>Marketing and order reminders</li><li>Supply inventory and reorder suggestions</li></ul>
         <a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free</a></div>
-      <div class="plan"><h3>Pro</h3><p class="for">More than one location</p><div class="price">$249<small> /month</small></div>
+      <div class="plan"><h3>Pro</h3><p class="for">More than one door</p><div class="price">$249<small> /month</small></div>
         <ul><li>Everything in Growth</li><li>Multi-location reporting</li><li>Route optimization</li><li>Role-based staff permissions</li><li>Priority support</li></ul>
         <a class="btn btn-ghost" href="https://pos.foldpos.com/signup">Start free</a></div>
     </div>
@@ -1384,7 +1384,7 @@ svg.i{width:18px;height:18px;flex:none}
       printer.classList.add('busy');
       var rows=snapshot.map(function(it){return '<div class="row"><span>'+it.name+((it.qty||it.tags)>1?' ×'+(it.qty||it.tags):'')+'</span><span>'+it.amount.toFixed(2)+'</span></div>'}).join('');
       if(r.rush) rows+='<div class="row"><span>Rush</span><span>'+(finalTotal-snapshot.reduce(function(a,b){return a+b.amount},0)).toFixed(2)+'</span></div>';
-      paper.innerHTML='<div class="c big">SUNNY WASH</div><div class="c">Claim ticket · #W'+(1040+Math.floor(Math.random()*900))+'</div>'+(r.who?'<div class="c">'+r.who.replace(/</g,'&lt;')+'</div>':'')+'<div class="rule"></div>'+rows+'<div class="rule"></div><div class="row big"><span>TOTAL</span><span>'+money(finalTotal)+'</span></div><div class="rdy">Ready after '+when.after+'<br>'+when.full.toUpperCase()+'</div><div class="c">Thank you</div>';
+      paper.innerHTML='<div class="c big">SUNNY WASH</div><div class="c">Claim ticket · #W1042</div>'+(r.who?'<div class="c">'+r.who.replace(/</g,'&lt;')+'</div>':'')+'<div class="rule"></div>'+rows+'<div class="rule"></div><div class="row big"><span>TOTAL</span><span>'+money(finalTotal)+'</span></div><div class="rdy">Ready after '+when.after+'<br>'+when.full.toUpperCase()+'</div><div class="c">Thank you</div>';
       paper.classList.add('print');
     },delay+700);
     later(function(){
@@ -1743,7 +1743,7 @@ svg.i{width:18px;height:18px;flex:none}
     <div class="fx-foot-top">
       <div class="fx-foot-brand">
         <a class="fx-mark" href="/"><i></i>Fold POS</a>
-        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry's own counters.</p>
+        <p>The command center for laundromats, dry cleaners and tailors. Built at Fold Laundry’s own counters.</p>
       </div>
       <div><p class="fx-foot-h">Product</p><ul>
         <li><a href="/features">Features</a></li>

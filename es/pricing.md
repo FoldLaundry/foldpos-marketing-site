@@ -2,7 +2,7 @@
 
 > Página canónica: https://foldpos.com/es/pricing · Versión en Markdown.
 
-Mes a mes, 14 días de prueba gratis, sin tarjeta para empezar. Cambie de plan o cancele cuando quiera desde Ajustes. Precios en dólares estadounidenses (USD).
+Mes a mes, 14 días de prueba gratis, sin tarjeta para empezar. Cambie de plan o cancele cuando quiera desde Configuración. Precios en dólares estadounidenses (USD).
 
 Empiece una prueba gratis: https://pos.foldpos.com/signup
 
@@ -42,6 +42,7 @@ Más de una sucursal.
 - Informes de varias sucursales
 - Plantas y tiendas de recepción
 - Optimización de rutas
+- 1,200 solicitudes de Hey Fold al mes
 - Permisos del personal por rol
 - Soporte prioritario
 - 3,000 mensajes a clientes al mes
@@ -59,9 +60,9 @@ Solo si los necesita. Escriba a [contact@foldpos.com](mailto:contact@foldpos.com
 
 ## Todo lo demás sobre el dinero
 
-- **¿Hay contrato?** No. Todos los planes son mes a mes. Cambie de plan o cancele cuando quiera desde Ajustes.
+- **¿Hay contrato?** No. Todos los planes son mes a mes. Cambie de plan o cancele cuando quiera desde Configuración.
 - **¿Necesito una tarjeta para empezar la prueba?** No. Los primeros 14 días son gratis y no le pedimos tarjeta.
-- **¿Qué pasa cuando termina la prueba?** Usted elige un plan en Ajustes › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.
+- **¿Qué pasa cuando termina la prueba?** Usted elige un plan en Configuración › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.
 - **Ya soy cliente. ¿Cambia mi precio?** No. Si hoy usa Fold POS, su precio se queda como está.
 - **¿Qué cuenta como un mensaje a clientes?** Cada mensaje de texto que Fold envía por su tienda: pedido listo, avisos de recogida y entrega, códigos de reserva y recordatorios. Los mensajes que sus clientes le envían no cuentan.
 - **¿Y si necesito más mensajes?** Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.

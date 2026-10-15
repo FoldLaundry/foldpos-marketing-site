@@ -30,15 +30,15 @@ Cualquier lector USB que funcione como teclado.
 
 ## Cómo se conecta
 
-- **Chrome, en Windows o en una Mac**: Imprime directamente en la impresora. Ajustes › Recibos › Conectar impresora, elíjala de la lista e imprima una página de prueba.
-- **Windows con Edge o Firefox, o una lista vacía en Chrome**: Use el asistente de impresión de Fold. Instálelo desde foldpos.com/es/download y escriba el código de 6 dígitos de Ajustes › Recibos. Sigue emparejado después de reiniciar.
+- **Chrome, en Windows o en una Mac**: Imprime directamente en la impresora. Configuración › Recibos › Conectar impresora, elíjala de la lista e imprima una página de prueba.
+- **Windows con Edge o Firefox, o una lista vacía en Chrome**: Use el asistente de impresión de Fold. Instálelo desde foldpos.com/es/download y escriba el código de 6 dígitos de Configuración › Recibos. Sigue emparejado después de reiniciar.
 - **Una Mac con Safari o Firefox**: Por ahora, use Chrome. El asistente de impresión para Mac está en camino. Escríbanos y mientras tanto lo dejamos funcionando.
 
 Asistente de impresión para Windows: https://foldpos.com/es/download
 
 ## Preguntas sobre impresoras
 
-**¿Tengo que agregar primero la impresora en Windows o macOS?** No. Conéctela por USB y nada más. Fold POS la encuentra desde Ajustes › Recibos.
+**¿Tengo que agregar primero la impresora en Windows o macOS?** No. Conéctela por USB y nada más. Fold POS la encuentra desde Configuración › Recibos.
 
 **¿USB o red?** Las dos opciones funcionan. La mayoría de los mostradores usan USB a la computadora del mostrador.
 
@@ -46,7 +46,7 @@ Asistente de impresión para Windows: https://foldpos.com/es/download
 
 **La impresora no aparece en la lista.** En Windows, instale el asistente de impresión y emparéjelo. ¿Sigue sin aparecer? Escriba a contact@foldpos.com con la marca y el modelo de la impresora.
 
-**¿Puedo quitar el código de barras de las etiquetas?** Sí. En Ajustes hay un interruptor para el código de barras en las etiquetas de prendas.
+**¿Puedo quitar el código de barras de las etiquetas?** Sí. En Configuración hay un interruptor para el código de barras en las etiquetas de prendas.
 
 **Todavía no tengo impresora de etiquetas.** Empiece con los recibos y agregue las etiquetas cuando esté listo. Díganos qué impresora está considerando y le decimos si funciona.
 

@@ -5,7 +5,7 @@
 Si usa un asistente de IA como Claude, puede dejar que mire su tienda en Fold POS. Pregúntele “¿cómo vamos hoy?”, “¿qué pedidos están atrasados?” o “¿qué necesita mi atención?” desde donde esté, y le responde con los registros de su propia tienda.
 
 - **Solo el propietario**: Solo un propietario puede conectar un asistente, ver la lista o quitar uno. El personal no puede.
-- **Solo mira, salvo que usted permita más**: Los cambios están apagados hasta que usted los enciende, y son solo tres.
+- **Solo mira, salvo que usted permita más**: Los cambios están apagados hasta que usted los encienda, y son solo tres.
 - **Sin costo extra**: No depende de un plan.
 
 ## Qué puede hacer: Responde con los registros de su propia tienda.
@@ -26,7 +26,7 @@ Si no puede leer algo, le dice que no pudo. No le muestra un cero en su lugar.
 
 ## Cambios: Tres cambios pequeños, solo si usted los permite.
 
-Los cambios están apagados hasta que usted los enciende, y cada asistente necesita además su permiso para hacerlos.
+Los cambios están apagados hasta que usted los encienda, y cada asistente necesita además su permiso para hacerlos.
 
 - Marcar un pedido como listo.
 - Agregar una nota del personal a un pedido.
@@ -94,7 +94,7 @@ Para esto no necesita un asistente conectado. El propio Fold POS puede enviarle 
 - Un resumen por la mañana. Las ventas de ayer y lo que necesita su atención, a la hora y en los días que usted elija.
 - Alertas. Una máquina queda fuera de servicio, un pedido lleva dos días de atraso o un insumo se está acabando; y, si las marca, alguien llega tarde a su turno, una parada de hoy no está en ninguna ruta o una caja cierra con un faltante o sobrante mayor al que usted permite. Cada una se avisa una sola vez.
 - Informes periódicos. También con horario, cada uno en su propio mensaje: las ventas de la semana pasada frente a la anterior, las del mes pasado frente al anterior (con el impuesto sobre las ventas cobrado) y las horas que trabajó cada persona la semana pasada, si su plan incluye turnos del personal. Usted elige el día y la hora.
-- Dónde se enciende. Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo enciende, y solo un propietario puede hacerlo.
+- Dónde se enciende. Configuración › Asistentes › Resúmenes y alertas. Está apagado hasta que usted lo encienda, y solo un propietario puede hacerlo.
 - Adónde llega. Al correo de su cuenta. La tarjeta muestra adónde irá el próximo mensaje, y “Enviarme una prueba” envía allí el resumen de hoy en ese momento.
 - Límites. Como máximo 5 mensajes al día, informes incluidos. No hay alertas entre las 9 p. m. y las 7 a. m. en su tienda; lo que siga siendo cierto sale por la mañana. Varias alertas a la vez llegan en un solo mensaje.
 - Qué contiene un mensaje. Cantidades, nombres de máquinas y de insumos, y números de pedido. Nunca el nombre, el teléfono ni la dirección de un cliente.

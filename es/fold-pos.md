@@ -12,7 +12,7 @@ Elija su tipo de negocio (lavandería, tintorería o sastrería) y los mismos se
 
 **Jueves, 2:10 p. m.: la trastienda. Cada pieza sabe qué sigue.** Sus estaciones, con los nombres que usted les da (clasificado / lavando / secando / doblado; etiquetado / limpieza / planchado / ensamblado; marcado / costura / planchado / prueba). El personal avanza el trabajo desde el iPad de la pared o el teléfono en el bolsillo, y el mostrador lo ve en ese mismo momento. La clienta ve un discreto "en proceso", en lugar de tener que llamarle.
 
-**Viernes, 4:30 p. m.: dónde está. Un lugar, no "por ahí atrás".** Escanee la etiqueta y toque la posición: estantes y contenedores, posiciones en el rack y números del transportador, o ganchos más la prueba en el calendario. Cuando ella llega, la pantalla dice exactamente dónde está su pedido y qué más de ella está junto a él.
+**Viernes, 4:30 p. m.: dónde está. Un lugar, no "por ahí atrás".** Escanee la etiqueta y toque la posición: estantes y contenedores, posiciones en el estante y números del transportador, o ganchos más la prueba en el calendario. Cuando ella llega, la pantalla dice exactamente dónde está su pedido y qué más de ella está junto a él.
 
 **Viernes, 4:31 p. m.: su teléfono. Listo. Su teléfono ya lo sabe.** En cuanto llega la última pieza, sale el aviso de "listo" con el nombre y el horario de su tienda, en inglés o en español. Si el pedido se queda sin recoger, sale un recordatorio según el calendario que usted fije.
 
@@ -40,7 +40,7 @@ Su propio servicio a domicilio, manejado desde el mostrador: sus repartidores, l
 
 ## Precios
 
-Mes a mes, prueba gratis de 14 días, sin tarjeta por adelantado. Cambie o cancele desde Ajustes. Precios en dólares estadounidenses (USD).
+Mes a mes, prueba gratis de 14 días, sin tarjeta por adelantado. Cambie o cancele desde Configuración. Precios en dólares estadounidenses (USD).
 
 - **Starter: $79/mes, un mostrador.** Recepción, pedidos y pagos; cuentas e historial de clientes; recibos, etiquetas e impresión; informes diarios; registro de mantenimiento de máquinas; Hey Fold.
 - **Growth: $149/mes, suma entregas y personal.** Todo lo de Starter, rutas de recogida y entrega, turnos y registro de entrada del personal, precios exprés y por suscripción, marketing y recordatorios de pedidos, inventario de insumos y sugerencias de reabastecimiento.

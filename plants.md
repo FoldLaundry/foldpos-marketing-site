@@ -2,10 +2,10 @@
 
 > Canonical page: https://foldpos.com/plants · Markdown mirror.
 
-Link your drop stores to the plant that cleans for them. Bags are scanned at each hand-off, every piece is counted in and out, and a short bag raises an alert before the customer does.
+Link your drop stores to the plant that cleans for them. Bags are scanned at each handoff, every piece is counted in and out, and a short bag raises an alert before the customer does.
 
 - **Linked in Settings**: Shops you own link in one step. A partner shop joins with a one-time code.
-- **Scanned at every hand-off**: Bag sealed, bag received, each piece unpacked, each order assembled.
+- **Scanned at every handoff**: Bag sealed, bag received, each piece unpacked, each order assembled.
 - **A statement every month**: What the plant cleaned for each store, priced at the rates you set.
 
 ## Link the shops: One plant. As many drop stores as you have.

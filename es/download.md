@@ -6,15 +6,15 @@ El asistente de impresión de Fold es un pequeño programa para la computadora d
 
 **Descargar para Windows** — 22 MB · Windows 10 y 11 · https://foldpos.com/download/Fold-Print-Agent-Setup.exe
 
-¿Usa Mac? Chrome imprime directo a la impresora: abra Fold POS en Chrome y vaya a **Ajustes › Recibos › Conectar impresora**. El asistente para Mac, para Safari y Firefox, está en camino; mientras tanto, escriba a contact@foldpos.com y lo configuramos con usted.
+¿Usa Mac? Chrome imprime directo a la impresora: abra Fold POS en Chrome y vaya a **Configuración › Recibos › Conectar impresora**. El asistente para Mac, para Safari y Firefox, está en camino; mientras tanto, escriba a contact@foldpos.com y lo configuramos con usted.
 
 Descárguelo en la computadora con Windows a la que está conectada la impresora.
 
 ## Tres pasos
 
 1. Abra el archivo que descargó y haga clic en **Next** (Siguiente) hasta terminar. No necesita contraseña de administrador.
-2. Al terminar, se abre una página en su navegador. Inicie sesión en Fold POS, vaya a **Ajustes › Recibos › Agente de impresión Fold › Emparejar con un código** y escriba el código de 6 dígitos en esa página.
-3. Elija su impresora en Ajustes › Recibos e imprima un recibo de prueba. Listo: queda emparejado incluso después de reiniciar.
+2. Al terminar, se abre una página en su navegador. Inicie sesión en Fold POS, vaya a **Configuración › Recibos › Agente de impresión Fold › Emparejar con un código** y escriba el código de 6 dígitos en esa página.
+3. Elija su impresora en Configuración › Recibos e imprima un recibo de prueba. Listo: queda emparejado incluso después de reiniciar.
 
 ## Si Windows muestra un aviso azul
 

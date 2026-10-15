@@ -539,7 +539,7 @@ function hmPos(min){ return min < 60 ? min + 'm' : hm(min); }
 
 /* The POS app's own words (app_localizations_en/es). */
 var POSW = {
-  en:{schedule:'Schedule', week:'Week', today:'Today', hours:'Hours', tc:'Time clock', who:"Who's in", sheets:'Timesheets', phones:'Phones', tags:'Tags', settings:'Settings', code:'Clock-in code',
+  en:{schedule:'Schedule', week:'Week', today:'Today', hours:'Hours', tc:'Time clock', who:"Who’s in", sheets:'Timesheets', phones:'Phones', tags:'Tags', settings:'Settings', code:'Clock-in code',
     addPhone:'Add phone', active:'Active', waiting:'Waiting for setup', ending:'Ending {0}', lastUsed:'Last used: {0}', remove:'Remove phone',
     employee:'Employee', otherNum:'Other number (optional)', otherHint:'Leave empty to use the number on their record', cancel:'Cancel', send:'Send setup link',
     added:'Phone added', texted:'We texted the setup link to the number ending {0}.', setupCode:'Setup code', setupLink:'Setup link (works for 24 hours)', copy:'Copy',
@@ -581,7 +581,7 @@ function w(k){ var s = POSW[lang][k]; var a = arguments; return s.replace(/\{(\d
 /* The explainer's own words. */
 var UI = {
   en:{sub:'Time clock', selfie:'Selfie', step:'Step {0} of {1}', back:'Back', next:'Next', play:'Play', pause:'Pause', replay:'Play again',
-    msgHdr:'Text Message', today:'Today', now:'now', messages:'MESSAGES', fromLuis:"Link from yesterday's tap:", luis:'Luis O.'},
+    msgHdr:'Text Message', today:'Today', now:'now', messages:'MESSAGES', fromLuis:"Link from yesterday’s tap:", luis:'Luis O.'},
   es:{sub:'Reloj checador', selfie:'Selfie', step:'Paso {0} de {1}', back:'Atrás', next:'Siguiente', play:'Reproducir', pause:'Pausa', replay:'Ver de nuevo',
     msgHdr:'Mensaje de texto', today:'Hoy', now:'ahora', messages:'MENSAJES', fromLuis:'El enlace del toque de ayer:', luis:'Luis O.'}
 };

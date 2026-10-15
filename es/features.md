@@ -2,14 +2,14 @@
 
 > Página canónica: https://foldpos.com/es/features · Espejo en markdown.
 
-Fold POS es el sistema operativo de una lavandería o tintorería: recepción de pedidos y pagos, un tablero de trabajo en vivo, gestión de equipos e inventario, marketing, y recogida y entrega, todo en un solo lugar.
+Fold POS es el sistema operativo de una lavandería o tintorería: recepción de pedidos y pagos, un tablero de pedidos en vivo, gestión de equipos e inventario, marketing, y recogida y entrega, todo en un solo lugar.
 
 - Empiece su prueba gratis: https://pos.foldpos.com/signup
 - Precios: [pricing.md](/es/pricing.md)
 
 ## 01 — El mostrador
 
-**Cobre cualquier servicio tal como lo cobra su negocio.** Pase de lavado y doblado a lavado en seco o arreglos sin salir de la pantalla. Cobre por libra con un mínimo, por bolsa o por prenda; configure una tarifa exprés y un descuento una sola vez, y Fold POS los aplica en todos los lugares que corresponde. Busque a un cliente habitual o agregue uno nuevo sin perder el pedido que está armando.
+**Cobre cualquier servicio tal como lo cobra su negocio.** Pase de lavado y doblado a lavado en seco o arreglos sin salir de la pantalla. Cobre por libra con un mínimo, por bolsa o por prenda; configure una tarifa exprés y un descuento una sola vez, y Fold POS los aplica en todos los lugares donde corresponde. Busque a un cliente habitual o agregue uno nuevo sin perder el pedido que está armando.
 
 - Precio por libra, por bolsa y por prenda en el mismo pedido
 - Servicio exprés y descuentos aplicados automáticamente
@@ -17,7 +17,7 @@ Fold POS es el sistema operativo de una lavandería o tintorería: recepción de
 - Efectivo, tarjeta o pago contra entrega, en cada pedido
 - Artículos personalizados para pedidos especiales
 
-## 02 — El tablero de trabajo
+## 02 — El tablero de pedidos
 
 **Cada pedido tiene su lugar y cada etapa, su conteo.** Los pedidos avanzan de izquierda a derecha por las mismas etapas que usa su negocio (por hacer, lavado, secado, planchado, doblado y terminado), con un conteo en vivo en cada columna. Abra una etapa para asignar una lavadora, una secadora o a alguien del personal, y vea avanzar la barra de progreso mientras corre la carga.
 

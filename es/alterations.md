@@ -20,7 +20,7 @@ El único POS con el que puede hablar. Diga el pedido — queda registrado, impr
 
 ## Lo que recibe una sastrería desde el primer día
 
-Elija "Sastrería" al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. Cámbielo cuando quiera en Ajustes.
+Elija "Sastrería" al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. Cámbielo cuando quiera en Configuración.
 
 ### Arreglos
 
@@ -29,7 +29,7 @@ Elija "Sastrería" al registrarse y este es el POS que verá: las herramientas d
 - Tickets por prenda con fotos y notas de manchas y daños
 - Etiquetas termoadhesivas numeradas 1/8 … 8/8 con número de lote y día de entrega
 - Precios por tarea que define una vez y reutiliza: dobladillo, entallado, cierre, cambio de forro
-- Agregue tintorería más adelante con un solo interruptor en Ajustes
+- Agregue tintorería más adelante con un solo interruptor en Configuración
 
 ### Pedidos
 
@@ -60,7 +60,7 @@ El personal marca entrada y salida en la misma pantalla donde registra los pedid
 - Chat de equipo y notificaciones integrados
 
 ### Recibos y etiquetas
-Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — Fold Print Agent se vincula con un código de seis dígitos y las mantiene imprimiendo desde cualquier pestaña del navegador o la app de escritorio.
+Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — El asistente de impresión de Fold se vincula con un código de seis dígitos y las mantiene imprimiendo desde cualquier pestaña del navegador o la app de escritorio.
 
 - Epson TM-T20, Bixolon SRP-275, Star y Zebra listas para usar
 - Número de lote, cantidad de piezas, cliente, día de entrega y código de barras en cada etiqueta

@@ -2,7 +2,7 @@
 
 > Canonical page: https://foldpos.com/developers · Markdown mirror.
 
-Fold POS is point of sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. This page is the machine-readable entrance: a site map for language models, markdown copies of every page, and a public MCP server that answers questions about the product. Two more MCP servers are for people’s own AI assistants: one for a store owner, and one for a customer booking a pickup. The files and the public MCP server are read-only and need no account. The store server needs the owner’s sign-in or a token. The booking server needs no sign-in, only a code texted to the customer’s phone.
+Fold POS is point-of-sale and operations software for laundromats, dry cleaners and tailors, built by Fold Laundry. This page is the machine-readable entrance: a site map for language models, markdown copies of every page, and a public MCP server that answers questions about the product. Two more MCP servers are for people’s own AI assistants: one for a store owner, and one for a customer booking a pickup. The files and the public MCP server are read-only and need no account. The store server needs the owner’s sign-in or a token. The booking server needs no sign-in, only a code texted to the customer’s phone.
 
 ## llms.txt and llms-full.txt
 
@@ -213,7 +213,7 @@ Ten tools.
 | `return_options` | When the order will be ready and which delivery times go with a pickup time. |
 | `send_booking_code` | Asks the shop to text a 6-digit code to the customer’s phone. |
 | `book_pickup` | Makes the booking. Needs the code. |
-| `my_booking` | A booking’s times, and whether it can still be moved or cancelled here. |
+| `my_booking` | A booking’s times, and whether it can still be moved or canceled here. |
 | `booking_move_times` | The times a booking can move to. |
 | `move_booking` | Moves a booking. |
 | `cancel_booking` | Cancels a booking. |

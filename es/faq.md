@@ -22,15 +22,15 @@
 
 **¿Hay prueba gratis?** 14 días gratis, sin tarjeta para empezar.
 
-**¿Hay contrato?** No. Todos los planes son mes a mes. Cambie de plan o cancele desde Ajustes.
+**¿Hay contrato?** No. Todos los planes son mes a mes. Cambie de plan o cancele desde Configuración.
 
-**¿Qué pasa después de la prueba?** Usted elige un plan en Ajustes › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.
+**¿Qué pasa después de la prueba?** Usted elige un plan en Configuración › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.
 
 ## Impresoras y equipos
 
 **¿Con qué impresoras funciona?** Con las impresoras de recibos y de etiquetas que ya tiene: Epson, Star, Bixolon y Zebra, de impacto o térmicas, por USB o en red. Los recibos se imprimen en cuanto se registra un pedido, con una etiqueta de 1 × 3 pulgadas por pieza, en una impresora de etiquetas termoadhesivas o en su impresora de impacto. [Vea todas las impresoras](https://foldpos.com/es/printers).
 
-**¿Necesito el asistente de impresión?** Chrome puede imprimir directamente en la impresora: Ajustes › Recibos › Conectar impresora. En Windows, si la lista está vacía o si usa Edge o Firefox, instale el asistente de impresión de Fold y emparéjelo con el código de 6 dígitos de Ajustes › Recibos. En una Mac, use Chrome; el asistente para Mac está en camino.
+**¿Necesito el asistente de impresión?** Chrome puede imprimir directamente en la impresora: Configuración › Recibos › Conectar impresora. En Windows, si la lista está vacía o si usa Edge o Firefox, instale el asistente de impresión de Fold y emparéjelo con el código de 6 dígitos de Configuración › Recibos. En una Mac, use Chrome; el asistente para Mac está en camino.
 
 **Windows dice “Windows protegió su PC”. ¿Es seguro?** Ese aviso aparece porque el asistente es nuevo. Haga clic en Más información y luego en Ejecutar de todas formas. El asistente solo se comunica con Fold POS y sus impresoras, y se desinstala como cualquier otro programa.
 
@@ -58,7 +58,7 @@
 
 ## Cambio de sistema
 
-**¿Puedo traer a mis clientes desde Cents o CleanCloud?** Sí, desde Cents, CleanCloud o un CSV: los clientes y su lista de precios. Expórtelos de su sistema anterior y abra Ajustes › Importar datos. Puede deshacer una importación.
+**¿Puedo traer a mis clientes desde Cents o CleanCloud?** Sí, desde Cents, CleanCloud o un CSV: los clientes y su lista de precios. Expórtelos de su sistema anterior y abra Configuración › Importar datos. Puede deshacer una importación.
 
 **¿Puedo llevarme mis datos si me voy?** Sí, de la misma forma en que entraron.
 
@@ -102,7 +102,7 @@
 
 **¿Mis tiendas de recepción pueden enviar trabajo a una planta?** Sí. Vincule las tiendas en Configuración; después las bolsas se escanean en cada entrega y cada pieza se cuenta al salir y al llegar. Las tiendas pueden ser suyas o de un socio. [Plantas y tiendas de recepción](https://foldpos.com/es/plants).
 
-**¿Qué pasa cuando falta una pieza?** La bolsa se cierra incompleta y Fold genera una alerta de Conteo no coincide, que sigue abierta hasta que alguien la resuelve con una nota. Puede buscar una pieza por su etiqueta, el número de pedido o el código de la bolsa.
+**¿Qué pasa cuando falta una pieza?** La bolsa se cierra incompleta y Fold genera una alerta de Conteo no coincide, que sigue abierta hasta que alguien la resuelva con una nota. Puede buscar una pieza por su etiqueta, el número de pedido o el código de la bolsa.
 
 ## Sobre Fold
 

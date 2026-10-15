@@ -100,7 +100,7 @@
 
 ## Plants & drop stores
 
-**Can my drop stores send work to a plant?** Yes. Link the shops in Settings, then bags are scanned at every hand-off and every piece is counted in and out. The shops can belong to you or to a partner. [Plants & drop stores](https://foldpos.com/plants).
+**Can my drop stores send work to a plant?** Yes. Link the shops in Settings, then bags are scanned at every handoff and every piece is counted in and out. The shops can belong to you or to a partner. [Plants & drop stores](https://foldpos.com/plants).
 
 **What happens when a piece goes missing?** The bag closes short and Fold raises a Count mismatch alert that stays open until someone resolves it with a note. You can find a piece by its tag, the order number or the bag code.
 

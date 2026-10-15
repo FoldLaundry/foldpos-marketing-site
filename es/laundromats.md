@@ -20,9 +20,9 @@ El único POS con el que puede hablar. Diga el pedido — queda registrado, impr
 
 ## Lo que recibe una lavandería desde el primer día
 
-Elija "Lavandería" al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. Cámbielo cuando quiera en Ajustes.
+Elija "Lavandería" al registrarse y este es el POS que verá: las herramientas de abajo y nada que estorbe. Cámbielo cuando quiera en Configuración.
 
-### Lavado y doblado — ropa por encargo
+### Lavado y doblado — ropa que deja el cliente
 
 **Cóbrelo tal como el cliente lo describe.** "Dos bolsas, un edredón, y lo necesito urgente." Pese una bolsa, agregue un artículo por pieza, active el exprés — y el precio está listo antes de que termine de hablar.
 
@@ -75,7 +75,7 @@ El personal marca entrada y salida en la misma pantalla donde registra los pedid
 - Chat de equipo y notificaciones integrados
 
 ### Recibos y etiquetas
-Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — Fold Print Agent se vincula con un código de seis dígitos y las mantiene imprimiendo desde cualquier pestaña del navegador o la app de escritorio.
+Tickets de retiro en la impresora de impacto, etiquetas de prendas en la termoselladora — El asistente de impresión de Fold se vincula con un código de seis dígitos y las mantiene imprimiendo desde cualquier pestaña del navegador o la app de escritorio.
 
 - Epson TM-T20, Bixolon SRP-275, Star y Zebra listas para usar
 - Número de lote, cantidad de piezas, cliente, día de entrega y código de barras en cada etiqueta

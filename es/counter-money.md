@@ -26,7 +26,7 @@ El indicador de caja en la pantalla Entrega abre Caja. Cada turno empieza con el
 - El efectivo inicial se escribe o se cuenta por billete, moneda y rollo.
 - Entrada de efectivo, salida de efectivo con su motivo, depósito a caja fuerte y sin venta, cada uno con el nombre del empleado.
 - Al cerrar, Fold muestra si cuadra, sobra o falta. Más de $5.00 de diferencia necesita el código del propietario o de un administrador.
-- Un Reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.
+- Un reporte X en cualquier momento del turno. El reporte Z cierra el día: ventas, descuentos, impuesto, reembolsos, cada forma de pago, cada empleado y cada caja contada contra lo que debía tener.
 - La caja se abre después de una venta en efectivo. ¿Más de una caja registradora? Cada terminal elige la suya.
 - El propietario pone las reglas en la misma página: cierre a ciegas, cuánta diferencia necesita un código, el fondo habitual y las cajas registradoras.
 

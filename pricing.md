@@ -44,6 +44,7 @@ More than one door.
 - Route optimization
 - Role-based staff permissions
 - Priority support
+- 1,200 Hey Fold requests a month
 - 3,000 customer texts a month
 
 Already on Fold POS? Your price stays what it is today.
@@ -54,7 +55,7 @@ Only if you need them. Write to [contact@foldpos.com](mailto:contact@foldpos.com
 
 - **More texts** — $20 / month. Another 1,000 customer texts a month, on any plan. We tell you before you run out.
 - **Another location** — $59 / month. Each location after the first, on Pro. One login, one report across all of them.
-- **Plants & drop stores** — $49 / month. On Starter or Growth, for each plant. Bags scanned at every hand-off and a monthly statement. Included in Pro.
+- **Plants & drop stores** — $49 / month. On Starter or Growth, for each plant. Bags scanned at every handoff and a monthly statement. Included in Pro.
 - **We move you** — $299 once. We bring your customers and price list over from Cents, CleanCloud or a spreadsheet and check them with you. Importing them yourself is free.
 
 ## Everything else about the money

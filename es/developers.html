@@ -353,7 +353,7 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
     </table>
     <p>Recursos: <code>foldpos://llms.txt</code>, <code>foldpos://llms-full.txt</code> y cada página como <code>foldpos://pages/{language}/{page}.md</code>. Prompts: <code>recommend_plan</code> y <code>explain_fold_pos_es</code>.</p>
 
-    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta página.</p>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, lo lleva de vuelta a esta página.</p>
 
     <h3>Claude (claude.ai y la app de escritorio)</h3>
     <ol>
@@ -379,7 +379,7 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
 
   <section class="card" id="store-mcp">
     <h2>El servidor de la tienda: el asistente del propietario</h2>
-    <p>Un segundo servidor de Model Context Protocol permite que el asistente de IA del propietario de una tienda, como Claude, responda preguntas sobre una tienda: ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal. Solo mira, salvo que el propietario encienda tres cambios pequeños.</p>
+    <p>Un segundo servidor de Model Context Protocol permite que el asistente de IA del propietario de una tienda, como Claude, responda preguntas sobre una tienda: ventas, pedidos, clientes, máquinas, insumos, recogidas y entregas, y personal. Solo mira, salvo que el propietario active tres cambios pequeños.</p>
     <p><b>Para quién es:</b> el propietario de una tienda en Fold POS y quienes crean los asistentes que usan los propietarios. Solo un propietario puede conectar un asistente. El personal no puede.</p>
     <ul class="plain">
       <li><span>Endpoint: <code>https://app.foldpos.com/v1/mcp/store</code></span></li>
@@ -440,7 +440,7 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
     <h3>Reglas de seguridad</h3>
     <ul class="plain">
       <li><span><b>Solo el propietario.</b> Solo un propietario puede conectar un asistente, ver la lista o quitar uno.</span></li>
-      <li><span><b>De solo lectura de forma predeterminada.</b> Los cambios están apagados hasta que el propietario los enciende, y cada asistente necesita además el permiso del propietario para hacerlos.</span></li>
+      <li><span><b>De solo lectura de forma predeterminada.</b> Los cambios están apagados hasta que el propietario los encienda, y cada asistente necesita además el permiso del propietario para hacerlos.</span></li>
       <li><span><b>Los cambios se muestran antes.</b> La primera llamada describe el cambio y no cambia nada. El cambio se hace solo cuando el asistente vuelve a llamar con el código de la vista previa. El código sirve una vez, durante cinco minutos.</span></li>
       <li><span><b>El dinero nunca se mueve.</b> Ninguna herramienta cobra, reembolsa, descuenta, paga, cancela, elimina, envía un mensaje por su cuenta ni cambia una configuración.</span></li>
       <li><span><b>Una lista de actividad.</b> Cada pregunta y cada cambio aparece en la lista de actividad del propietario, que se conserva 90 días. Las respuestas no se guardan.</span></li>
@@ -448,7 +448,7 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
       <li><span><b>Datos personales.</b> En las listas, los teléfonos y correos de los clientes aparecen parcialmente ocultos. Los números de tarjeta nunca se muestran; Fold POS no los guarda.</span></li>
     </ul>
     <p>Para propietarios de tiendas: <a href="/es/assistants">Conecte un asistente de IA a su tienda</a>.</p>
-    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.</p>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, lo lleva de vuelta a esta sección.</p>
   </section>
 
   <section class="card" id="booking-mcp">
@@ -484,7 +484,7 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
       <thead><tr><th>Herramienta</th><th>Qué hace</th></tr></thead>
       <tbody>
         <tr><td><code>find_shop</code></td><td>Busca tiendas que aceptan reservas, por nombre, ciudad, código postal o nombre de reserva. Hasta 5.</td></tr>
-        <tr><td><code>shop_info</code></td><td>Nombre, teléfono, dirección, horario, servicios, con cuánta anticipación reserva, cargo de entrega, importe para entrega gratis, pedido mínimo y cómo se paga.</td></tr>
+        <tr><td><code>shop_info</code></td><td>Nombre, teléfono, dirección, horario, servicios, con cuánta anticipación se puede reservar, cargo de entrega, importe para entrega gratis, pedido mínimo y cómo se paga.</td></tr>
         <tr><td><code>pickup_times</code></td><td>Horarios de recogida libres en una dirección, después de comprobar que la dirección está en el área de la tienda.</td></tr>
         <tr><td><code>return_options</code></td><td>Cuándo estará listo el pedido y qué horarios de entrega corresponden a un horario de recogida.</td></tr>
         <tr><td><code>send_booking_code</code></td><td>Le pide a la tienda que envíe un código de 6 dígitos al teléfono del cliente por mensaje de texto.</td></tr>
@@ -505,14 +505,14 @@ ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
       <li><span><b>Una falla es una falla.</b> Una herramienta que falla lo dice. Nunca se presenta como “no hay horarios disponibles”.</span></li>
     </ul>
     <p>Para propietarios de tiendas: <a href="/es/assistants#questions">¿Mis clientes también pueden usar un asistente?</a> y <a href="/es/pickup-delivery#booking">cómo funcionan las reservas en línea</a>.</p>
-    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, vuelve a esta sección.</p>
+    <p class="muted">El endpoint es para apps de IA, no para el navegador. Si lo abre en el navegador, lo lleva de vuelta a esta sección.</p>
   </section>
 
   <section class="card">
     <h2>La API para dueños de tienda</h2>
     <p class="note">La API que accede a los clientes, pedidos e informes de una tienda es <b>privada</b>. No forma parte del servidor MCP público y no tiene documentación pública. El asistente de IA del propietario de una tienda no la usa: se conecta por <a href="#store-mcp">el servidor de la tienda</a>, más arriba.</p>
     <p class="muted">Si es cliente de Fold POS o un socio que necesita acceso programático a los datos de una tienda, escriba a <a href="mailto:contact@foldpos.com?subject=Fold%20POS%20API">contact@foldpos.com</a> y cuéntenos qué está creando.</p>
-    <p class="muted">Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan a la agenda de la tienda, con actualizaciones de estado de ida y vuelta.</p>
+    <p class="muted">Los marketplaces de entrega son un camino aparte: Fold, Laundryheap y Rinse se conectan desde el propio POS. Active al socio, entréguele la clave de API y sus trabajos llegan al calendario de la tienda, con actualizaciones de estado de ida y vuelta.</p>
   </section>
 </main>
 

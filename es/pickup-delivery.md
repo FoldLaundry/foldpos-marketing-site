@@ -28,7 +28,7 @@ Reserve un mensajero de Uber Direct desde el mostrador, con la propia cuenta de 
 
 Active Aceptar reservas en línea y su tienda tiene su propia página de reservas. El cliente escribe la dirección, elige un horario de recogida y cómo regresa el pedido, y confirma con un código que le llega por mensaje de texto. Sin cuenta, sin contraseña, sin tarjeta.
 
-- **Usted pone las reglas**: Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.
+- **Usted pone las reglas**: Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación se puede reservar. Está en Configuración › Horario y tiempos de entrega.
 - **Llega a su calendario**: La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.
 - **Recogidas semanales**: El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.
 - **Un toque para volver a reservar**: El mensaje de confirmación trae un enlace para ver la recogida, cambiarle la hora o cancelarla. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.

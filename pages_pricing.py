@@ -60,7 +60,7 @@ EN = {
             '1,200 Hey Fold requests a month', '1,500 customer texts a month']),
         ('P', 'Pro', 'More than one door.', False, [
             'Everything in Growth', 'Multi-location reporting', 'Plants &amp; drop stores', 'Route optimization',
-            'Role-based staff permissions', 'Priority support', '3,000 customer texts a month']),
+            'Role-based staff permissions', 'Priority support', '1,200 Hey Fold requests a month', '3,000 customer texts a month']),
     ],
     'old': '<b>Already on Fold POS?</b> Your price stays what it is today.',
     'facts': [
@@ -94,7 +94,7 @@ EN = {
     'adds': [
         ('More texts', '$20', '/ month', 'Another 1,000 customer texts a month, on any plan. We tell you before you run out.'),
         ('Another location', '$59', '/ month', 'Each location after the first, on Pro. One login, one report across all of them.'),
-        ('Plants &amp; drop stores', '$49', '/ month', 'On Starter or Growth, for each plant. Bags scanned at every hand-off and a monthly statement. Included in Pro.'),
+        ('Plants &amp; drop stores', '$49', '/ month', 'On Starter or Growth, for each plant. Bags scanned at every handoff and a monthly statement. Included in Pro.'),
         ('We move you', '$299', 'once', 'We bring your customers and price list over from Cents, CleanCloud or a spreadsheet and check them with you. Importing them yourself is free.'),
     ],
     'faq_h2': 'Pricing questions',
@@ -137,7 +137,7 @@ ES = {
             'Precios exprés y por suscripción', 'Marketing y recordatorios de pedidos', 'Inventario de insumos y sugerencias de reabastecimiento',
             '1,200 solicitudes de Hey Fold al mes', '1,500 mensajes a clientes al mes']),
         ('P', 'Pro', 'Más de una sucursal.', False, [
-            'Todo lo de Growth', 'Informes de varias sucursales', 'Plantas y tiendas de recepción', 'Optimización de rutas',
+            'Todo lo de Growth', 'Informes de varias sucursales', 'Plantas y tiendas de recepción', 'Optimización de rutas', '1,200 solicitudes de Hey Fold al mes',
             'Permisos del personal por rol', 'Soporte prioritario', '3,000 mensajes a clientes al mes']),
     ],
     'old': '<b>¿Ya usa Fold POS?</b> Su precio se queda como está hoy.',
@@ -177,9 +177,9 @@ ES = {
     ],
     'faq_h2': 'Preguntas sobre precios',
     'faq': [
-        ('¿Hay contrato?', 'No. Todos los planes son mes a mes. Cambie de plan o cancele cuando quiera desde Ajustes.'),
+        ('¿Hay contrato?', 'No. Todos los planes son mes a mes. Cambie de plan o cancele cuando quiera desde Configuración.'),
         ('¿Necesito una tarjeta para empezar la prueba?', 'No. Los primeros 14 días son gratis y no le pedimos tarjeta.'),
-        ('¿Qué pasa cuando termina la prueba?', 'Usted elige un plan en Ajustes › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.'),
+        ('¿Qué pasa cuando termina la prueba?', 'Usted elige un plan en Configuración › Plan y facturación. Si no lo hace, el POS queda en solo lectura: todo lo que ingresó se conserva y, al elegir un plan, vuelve de inmediato.'),
         ('Ya soy cliente. ¿Cambia mi precio?', 'No. Si hoy usa Fold POS, su precio se queda como está.'),
         ('¿Qué cuenta como un mensaje a clientes?', 'Cada mensaje de texto que Fold envía por su tienda: pedido listo, avisos de recogida y entrega, códigos de reserva y recordatorios. Los mensajes que sus clientes le envían no cuentan.'),
         ('¿Y si necesito más mensajes?', 'Agregue 1,000 más al mes por $20. Los mensajes a sus clientes no se detienen sin aviso; primero le escribimos.'),
@@ -191,7 +191,7 @@ ES = {
     'faq_more': 'Más en las <a href="/es/faq">preguntas frecuentes</a>.',
     'md_title': '# Precios de Fold POS',
     'md_canon': '> Página canónica: https://foldpos.com/es/pricing · Versión en Markdown.',
-    'md_intro': 'Mes a mes, 14 días de prueba gratis, sin tarjeta para empezar. Cambie de plan o cancele cuando quiera desde Ajustes. Precios en dólares estadounidenses (USD).',
+    'md_intro': 'Mes a mes, 14 días de prueba gratis, sin tarjeta para empezar. Cambie de plan o cancele cuando quiera desde Configuración. Precios en dólares estadounidenses (USD).',
     'md_start': 'Empiece una prueba gratis', 'md_month': '/mes', 'md_popular': ' (el más popular)',
     'md_adds': '## Complementos', 'md_faq': '## Todo lo demás sobre el dinero',
 }

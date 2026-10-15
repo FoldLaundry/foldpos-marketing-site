@@ -2,7 +2,7 @@
 
 > Página canónica: https://foldpos.com/es/plants · Versión en Markdown.
 
-Vincule sus tiendas de recepción con la planta que les limpia. Las bolsas se escanean en cada entrega, cada pieza se cuenta al salir y al llegar, y una bolsa incompleta genera una alerta antes de que el cliente reclame.
+Vincule sus tiendas de recepción con la planta que les limpia la ropa. Las bolsas se escanean en cada entrega, cada pieza se cuenta al salir y al llegar, y una bolsa incompleta genera una alerta antes de que el cliente reclame.
 
 - **Se vincula en Configuración**: Sus propias tiendas se vinculan en un paso. Una tienda asociada entra con un código de un solo uso.
 - **Escaneo en cada entrega**: Bolsa sellada, bolsa recibida, cada pieza desempacada, cada pedido ensamblado.
@@ -62,7 +62,7 @@ El estado de cuenta es el registro con el que usted cobra. Fold no le cobra a la
 
 ## Lo que necesita
 
-Un lector de códigos de barras, una impresora de recibos para las etiquetas de bolsa y una impresora de etiquetas que imprima códigos de barras si quiere escanear cada pieza por su etiqueta. Active Código de barras en las etiquetas de prendas en Configuración. [Vea la lista de equipos (en inglés)](https://foldpos.com/hardware#plant) o [siga una bolsa en todo su recorrido (en inglés)](https://foldpos.com/follow-the-bag).
+Un lector de códigos de barras, una impresora de recibos para las etiquetas de bolsa y una impresora de etiquetas que imprima códigos de barras si quiere escanear cada pieza por su etiqueta. Active Código de barras en las etiquetas de prendas en Configuración. [Vea la lista de equipos (inglés)](https://foldpos.com/hardware#plant) o [siga una bolsa en todo su recorrido (inglés)](https://foldpos.com/follow-the-bag).
 
 ## Preguntas sobre plantas
 
@@ -70,17 +70,17 @@ Un lector de códigos de barras, una impresora de recibos para las etiquetas de 
 
 **¿Qué ve una planta asociada de mis clientes?** El nombre de pila del cliente. No el teléfono, ni el correo, ni la dirección.
 
-**¿Qué pasa cuando falta una pieza?** La bolsa se cierra incompleta y Fold genera una alerta de Conteo no coincide. Sigue abierta hasta que alguien la resuelve con una nota, y la pieza aparece como faltante en el estado de cuenta.
+**¿Qué pasa cuando falta una pieza?** La bolsa se cierra incompleta y Fold genera una alerta de Conteo no coincide. Sigue abierta hasta que alguien la resuelva con una nota, y la pieza aparece como faltante en el estado de cuenta.
 
 **¿Fold le cobra a la tienda de recepción?** No. Fold le da el estado de cuenta mensual, con sus tarifas, y un CSV. El cobro lo hace usted.
 
-**¿Necesito equipo especial?** Un lector de códigos y una impresora de recibos. Para códigos de barras en cada etiqueta de prenda, una impresora de etiquetas térmica. La [lista de equipos (en inglés)](https://foldpos.com/hardware#plant) tiene lo que recomendamos.
+**¿Necesito equipo especial?** Un lector de códigos y una impresora de recibos. Para códigos de barras en cada etiqueta de prenda, una impresora de etiquetas térmica. La [lista de equipos (inglés)](https://foldpos.com/hardware#plant) tiene lo que recomendamos.
 
 ## Siga por aquí
 
-- [Siga la bolsa (en inglés)](https://foldpos.com/follow-the-bag): Una bolsa de tintorería, de la tienda de recepción a la planta y de vuelta.
+- [Siga la bolsa (inglés)](https://foldpos.com/follow-the-bag): Una bolsa de tintorería, de la tienda de recepción a la planta y de vuelta.
 - [Para tintorerías](https://foldpos.com/es/dry-cleaners): Tickets por prenda, etiquetas y lugares en el transportador.
-- [Equipos (en inglés)](https://foldpos.com/hardware): Impresoras, lectores y suministros para cada tipo de tienda.
+- [Equipos (inglés)](https://foldpos.com/hardware): Impresoras, lectores y suministros para cada tipo de tienda.
 - [Hable con nosotros](https://foldpos.com/es/contact): ¿Tiene una planta o un grupo de tiendas de recepción? Escríbanos.
 
 ## Más

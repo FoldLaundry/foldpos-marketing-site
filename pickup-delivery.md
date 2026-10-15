@@ -2,7 +2,7 @@
 
 > Canonical page: https://foldpos.com/pickup-delivery · Markdown mirror.
 
-Your drivers, partner marketplaces and on-demand couriers, in one schedule, in the same screen as your counter.
+Your drivers, partner marketplaces and on-demand couriers, in one schedule, on the same screen as your counter.
 
 - **On Growth and Pro**: Pickup & delivery routing from $149 a month. Route optimization on Pro.
 - **Customers texted at each step**: Picked up, ready and out for delivery, in your shop’s name.
@@ -12,7 +12,7 @@ Your drivers, partner marketplaces and on-demand couriers, in one schedule, in t
 
 Open Pickup & delivery in the left menu and today’s runs are there: each pickup and drop-off, with the driver on it. A live stop list and status for every driver on the road.
 
-## Routes on a map: Tick your drivers. Build the day’s routes.
+## Routes on a map: Pick your drivers. Build the day’s routes.
 
 Pick the drivers, press Build, and every pickup and delivery is sequenced into a route with ETAs and a map. Drag a stop to reorder it. Route optimization is on the Pro plan.
 

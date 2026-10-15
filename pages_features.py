@@ -36,7 +36,7 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
         'sections': [['counter',
                       'The counter',
                       'Ring up any service the way your shop actually prices it',
-                      'Switch between wash-and-fold, dry cleaning, and alterations without leaving the screen. Price by the pound with a minimum, by '
+                      'Switch between wash &amp; fold, dry cleaning, and alterations without leaving the screen. Price by the pound with a minimum, by '
                       'the bag, or by the individual item — set an express rate and a discount once, and Fold POS applies them everywhere they '
                       "belong. Look up a returning customer or add a new one without losing the order you're building.",
                       ['Per-pound, per-bag, and per-item pricing in the same order',
@@ -94,7 +94,7 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
                       "a fixed reorder point — and tells you what to reorder, and how much, before you're caught short.",
                       ['Live vending and retail inventory for self-serve laundromats',
                        'Usage tracking for the operational supplies orders consume',
-                       'AI-driven reorder suggestions and quantities, based on historic use and current workload',
+                       'AI-driven reorder suggestions and quantities, based on historical use and current workload',
                        "Low-stock alerts before you're down to your last bag — or your last vending box"]],
                      ['marketing',
                       'Marketing',
@@ -139,16 +139,16 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
                   'When the internet drops, the counter keeps taking new orders and syncs them by itself. <a href="/counter-money#offline">What '
                   'works offline</a>.'],
                  ['Plants and drop stores',
-                  'Bags scanned at every hand-off, every piece counted in and out, and a monthly statement for each store. <a href="/plants">Plants '
+                  'Bags scanned at every handoff, every piece counted in and out, and a monthly statement for each store. <a href="/plants">Plants '
                   '&amp; drop stores</a>.']]},
- 'es': {'title': 'Funciones de Fold POS — mostrador, tablero de trabajo, máquinas, insumos, entregas',
+ 'es': {'title': 'Funciones de Fold POS — mostrador, tablero de pedidos, máquinas, insumos, entregas',
         'desc': 'Punto de venta (POS) para el mostrador, tablero de flujo de trabajo, gestión de máquinas, plano del local, insumos, marketing, '
                 'recogida y entrega, turnos del personal, pagos e informes para lavanderías y tintorerías.',
         'h1': 'Hecho para el mostrador, las máquinas y los estantes',
-        'lede': 'Fold POS es el sistema operativo de una lavandería o tintorería: recepción de pedidos y pagos, un tablero de trabajo en vivo, '
+        'lede': 'Fold POS es el sistema operativo de una lavandería o tintorería: recepción de pedidos y pagos, un tablero de pedidos en vivo, '
                 'gestión de equipos e inventario, marketing, y recogida y entrega, todo en un solo lugar.',
         'toc': [['#counter', 'Mostrador'],
-                ['#workflow', 'Tablero de trabajo'],
+                ['#workflow', 'Tablero de pedidos'],
                 ['#tickets', 'Tickets'],
                 ['#machines', 'Máquinas'],
                 ['#floorplan', 'Plano del local'],
@@ -161,7 +161,7 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
                       'El mostrador',
                       'Cobre cualquier servicio tal como lo cobra su negocio',
                       'Pase de lavado y doblado a lavado en seco o arreglos sin salir de la pantalla. Cobre por libra con un mínimo, por bolsa o por '
-                      'prenda; configure una tarifa exprés y un descuento una sola vez, y Fold POS los aplica en todos los lugares que corresponde. '
+                      'prenda; configure una tarifa exprés y un descuento una sola vez, y Fold POS los aplica en todos los lugares donde corresponde. '
                       'Busque a un cliente habitual o agregue uno nuevo sin perder el pedido que está armando.',
                       ['Precio por libra, por bolsa y por prenda en el mismo pedido',
                        'Servicio exprés y descuentos aplicados automáticamente',
@@ -169,7 +169,7 @@ DATA = {'en': {'title': 'Fold POS features — counter, workflow board, machines
                        'Efectivo, tarjeta o pago contra entrega, en cada pedido',
                        'Artículos personalizados para pedidos especiales']],
                      ['workflow',
-                      'El tablero de trabajo',
+                      'El tablero de pedidos',
                       'Cada pedido tiene su lugar y cada etapa, su conteo',
                       'Los pedidos avanzan de izquierda a derecha por las mismas etapas que usa su negocio (por hacer, lavado, secado, planchado, '
                       'doblado y terminado), con un conteo en vivo en cada columna. Abra una etapa para asignar una lavadora, una secadora o a '

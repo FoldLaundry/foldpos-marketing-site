@@ -33,7 +33,7 @@ EN = {
     'crumb': 'Pickup & delivery',
     'kicker': 'Pickup &amp; delivery',
     'h1': 'Your own delivery service, run from the counter.',
-    'lede': 'Your drivers, partner marketplaces and on-demand couriers, in one schedule, in the same screen as your counter.',
+    'lede': 'Your drivers, partner marketplaces and on-demand couriers, in one schedule, on the same screen as your counter.',
     'facts': [
         ('car', 'On Growth and Pro', 'Pickup &amp; delivery routing from $149 a month. Route optimization on Pro.'),
         ('chat', 'Customers texted at each step', 'Picked up, ready and out for delivery, in your shop’s name.'),
@@ -44,7 +44,7 @@ EN = {
          'Open Pickup &amp; delivery in the left menu and today’s runs are there: each pickup and drop-off, with the driver on it.',
          'A live stop list and status for every driver on the road.',
          'pd-activities', 'Fold POS Pickup & delivery, Activities tab: pickups and deliveries with the staff assigned to each, and today’s activities.'),
-        ('routes', 'route', 'Routes on a map', 'Tick your drivers. Build the day’s routes.',
+        ('routes', 'route', 'Routes on a map', 'Pick your drivers. Build the day’s routes.',
          'Pick the drivers, press Build, and every pickup and delivery is sequenced into a route with ETAs and a map. Drag a stop to reorder it.',
          'Route optimization is on the Pro plan.',
          'pd-routes', 'Fold POS Routes tab: drivers ticked at the top, one driver’s stops in order with ETAs, and the route drawn on a map.'),
@@ -148,7 +148,7 @@ ES = {
         'label': 'Reservas en línea', 'h2': 'Sus clientes reservan su propia recogida.',
         'sub': 'Active Aceptar reservas en línea y su tienda tiene su propia página de reservas. El cliente escribe la dirección, elige un horario de recogida y cómo regresa el pedido, y confirma con un código que le llega por mensaje de texto. Sin cuenta, sin contraseña, sin tarjeta.',
         'items': [
-            ('flow', 'Usted pone las reglas', 'Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación. Está en Configuración › Horario y tiempos de entrega.'),
+            ('flow', 'Usted pone las reglas', 'Su área de servicio por código postal, los horarios de recogida y entrega y cuántas paradas admite cada uno, el tiempo de entrega, la hora límite y con cuánta anticipación se puede reservar. Está en Configuración › Horario y tiempos de entrega.'),
             ('car', 'Llega a su calendario', 'La reserva aparece en Recogida y entrega como una parada marcada En línea, junto a los recorridos que usted mismo ingresó.'),
             ('history', 'Recogidas semanales', 'El cliente puede pedir la misma recogida cada semana, y usted puede agregar una desde la pestaña Semanales. Deténgala cuando quiera.'),
             ('chat', 'Un toque para volver a reservar', 'El mensaje de confirmación trae un enlace para ver la recogida, cambiarle la hora o cancelarla. El mensaje de agradecimiento trae un enlace para reservar la siguiente, con los datos ya puestos.'),
