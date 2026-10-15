@@ -43,22 +43,6 @@
   --ease:cubic-bezier(.65,0,.35,1);
   --spring:cubic-bezier(.34,1.56,.64,1);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#05080f; --surface:#0e1524; --ink:#eef2fb; --muted:#97a3bc; --hair:#1e2a40;
-  --accent:#6f9bff; --accent-2:#a78bff; --accent-soft:#16264a;
-  --good:#4cc79a; --good-soft:#10301f; --bad:#ff7b70; --bad-soft:#3a1714;
-  --frame:#2b3753; --screen:#0b111e;
-  --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
-  --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
-  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; --sun:#aebff0; --skin:#c99873; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#05080f; --surface:#0e1524; --ink:#eef2fb; --muted:#97a3bc; --hair:#1e2a40;
-  --accent:#6f9bff; --accent-2:#a78bff; --accent-soft:#16264a;
-  --good:#4cc79a; --good-soft:#10301f; --bad:#ff7b70; --bad-soft:#3a1714;
-  --frame:#2b3753; --screen:#0b111e;
-  --sky-top:#0a1430; --sky-bot:#121c34; --hill:#16213b; --ground:#0f1729; --road:#1a253d; --dash:#33415f;
-  --bldg:#17213a; --edge:#2a3753; --glass:#1f2c4b; --roof:#24314e; --tire:#02040a; --hub:#3a4867;
-  --paper:#ece6d8; --label:#f4f6fb; --bars:#0d1526; --sun:#aebff0; --skin:#c99873; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font:17px/1.5 var(--body);margin:0;-webkit-font-smoothing:antialiased}
@@ -71,7 +55,7 @@ button{font:inherit;color:inherit}
 .kicker{font:600 15px var(--body);color:var(--accent);margin:0}
 .kicker a{color:inherit;text-decoration:none}.kicker a:hover{text-decoration:underline}
 h1{font:800 clamp(44px,8.5vw,96px)/.98 var(--display);letter-spacing:-.035em;margin:0;text-wrap:balance}
-h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .grad{color:inherit}
 .lede{font:500 clamp(18px,2.2vw,22px)/1.4 var(--body);color:var(--muted);max-width:34ch;margin:4px 0 0;text-wrap:balance}
 .seg{display:inline-flex;position:relative;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:999px;padding:4px;margin-top:10px}
 .seg button{position:relative;z-index:1;border:0;background:none;color:var(--muted);font:600 14px var(--body);padding:9px 18px;border-radius:999px;cursor:pointer;transition:color .3s}
@@ -278,8 +262,8 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,var(--accent-2) 90%
 .numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:center;padding-block:28px}
 @media (max-width:700px){.numbers{grid-template-columns:minmax(0,1fr)}}
 .num{display:grid;gap:6px}
-.num .v{font:800 clamp(48px,7vw,80px)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(180deg,var(--ink),color-mix(in srgb,var(--ink) 55%,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-.num.bad .v{background:linear-gradient(180deg,var(--bad),color-mix(in srgb,var(--bad) 60%,var(--ink)));-webkit-background-clip:text;background-clip:text}
+.num .v{font:800 clamp(48px,7vw,80px)/1 var(--display);letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.num.bad .v{color:var(--bad)}
 .num .l{font:500 16px/1.35 var(--body);color:var(--muted);max-width:24ch;margin:0 auto}
 .foot{color:var(--muted);font-size:13px;text-align:center;max-width:70ch;margin:0 auto}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

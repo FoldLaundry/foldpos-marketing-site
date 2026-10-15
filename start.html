@@ -22,8 +22,7 @@
 <meta name="twitter:title" content="Start here — Fold POS">
 <meta name="twitter:description" content="Welcome to Fold POS. Get your shop open in about an hour, one short step at a time.">
 <meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d0f16" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://foldpos.com/start#page","url":"https://foldpos.com/start","name":"Start here — Fold POS","description":"Getting started with Fold POS after you sign up: the counter, prices, printer, staff, customer texts and a first order.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Fold POS","url":"https://foldpos.com/"}}
 </script>
@@ -38,22 +37,10 @@
   --foot-bg:linear-gradient(180deg,#fff 0%,#f6f8fe 150px); --foot-ink:#3b4a73; --foot-h:#5a6a95;
   --lbar-h:60px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ink:#eef0f6; --ink-2:#c3c8d6; --ink-3:#a3aabb;
-  --paper:#0d0f16; --fog:#141823; --surface:#1b1f2b; --line:#2a2e3c; --line-2:#3a4052;
-  --brand-soft:#182241; --link:#8fb0ff; --ok:#3ecf98; --ok-soft:#113326; --tag:#3a321a; --tag-ink:#f3df9b;
-  --stage:#11141d; --shadow:0 24px 48px -28px rgba(0,0,0,.9);
-  --foot-bg:#0d0f16; --foot-ink:#c3c8d6; --foot-h:#a3aabb; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --ink:#eef0f6; --ink-2:#c3c8d6; --ink-3:#a3aabb;
-  --paper:#0d0f16; --fog:#141823; --surface:#1b1f2b; --line:#2a2e3c; --line-2:#3a4052;
-  --brand-soft:#182241; --link:#8fb0ff; --ok:#3ecf98; --ok-soft:#113326; --tag:#3a321a; --tag-ink:#f3df9b;
-  --stage:#11141d; --shadow:0 24px 48px -28px rgba(0,0,0,.9);
-  --foot-bg:#0d0f16; --foot-ink:#c3c8d6; --foot-h:#a3aabb; color-scheme:dark}
 *{box-sizing:border-box}
 html{background:var(--paper)}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:"Sora",-apple-system,sans-serif;margin:0;letter-spacing:-.03em;text-wrap:balance;color:var(--ink)}
+h1,h2,h3{font-family:"Sora",-apple-system,sans-serif;margin:0;letter-spacing:-.03em;text-wrap:balance;color:var(--ink);word-spacing:normal}
 p{margin:0}
 a{color:var(--link)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
@@ -80,7 +67,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 /* Local bar: shop type, step x of y, Continue. */
 .lbar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
 .lbar-in{max-width:1120px;margin:0 auto;padding:6px 24px;min-height:var(--lbar-h);display:flex;align-items:center;gap:16px}
-.lb-title{display:inline-flex;align-items:center;min-height:44px;font:700 17px/1.2 "Sora",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lb-title{display:inline-flex;align-items:center;min-height:44px;font:700 17px/1.2 "Sora",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;word-spacing:normal}
 .lb-type{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:var(--ink-2);font-size:15px;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34ch}
 .lb-prog{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
 .meter{width:120px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
@@ -135,7 +122,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .have li b{color:var(--ink)}
 .dotk{flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;border:1.5px solid var(--line-2)}
 .total{margin-top:18px;font-size:19px;color:var(--ink)}
-.total b{font-family:"Sora",sans-serif}
+.total b{font-family:"Sora",sans-serif;word-spacing:normal}
 
 /* Steps */
 .setup{display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px;align-items:start}
@@ -202,7 +189,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .printer{display:flex;flex-direction:column;align-items:center}
 .pbody{width:250px;height:84px;border-radius:20px;background:linear-gradient(180deg,#3a3a3c,#1d1d1f);position:relative;z-index:2}
 .pbody::after{content:"";position:absolute;left:36px;right:36px;top:18px;height:6px;border-radius:4px;background:#0d0d0e}
-.paper{width:214px;margin-top:-62px;padding:0 14px;background:#fff;color:#1d1d1f;font:11.5px/1.55 ui-monospace,Menlo,Consolas,monospace;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:62px;overflow:hidden;transition:height 1.4s cubic-bezier(.3,.7,.3,1),padding-top 1.4s;z-index:1}
+.paper{width:214px;margin-top:-62px;padding:0 14px;background:#fff;color:#1d1d1f;font:11.5px/1.55 ui-monospace,Menlo,Consolas,monospace;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:62px;overflow:hidden;transition:height 1.4s cubic-bezier(.3,.7,.3,1),padding-top 1.4s;z-index:1;word-spacing:normal}
 .paper.out{height:186px;padding-top:68px}
 .paper div{display:flex;justify-content:space-between;white-space:nowrap}
 .paper b{font-weight:700}
@@ -353,7 +340,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/chrome.css?v=e400cb5706">
+<link rel="stylesheet" href="/assets/css/chrome.css?v=0e47acc950">
 </head>
 <body>
 <!--fx:header-->

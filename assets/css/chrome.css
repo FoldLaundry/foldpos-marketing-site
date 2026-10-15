@@ -11,7 +11,7 @@
 .fx-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
 .fx-nav.scrolled,.fx-nav.fx-solid{border-bottom-color:var(--fx-line)}
 .fx-nav-in{max-width:var(--fx-max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:26px}
-.fx-mark{display:flex;align-items:center;gap:10px;font:700 18px/1 "Sora",-apple-system,sans-serif;letter-spacing:-.02em;color:var(--fx-ink);text-decoration:none;flex:none}
+.fx-mark{display:flex;align-items:center;gap:10px;font:700 18px/1 "Sora",-apple-system,sans-serif;letter-spacing:-.02em;color:var(--fx-ink);text-decoration:none;flex:none;word-spacing:normal}
 .fx-mark i{width:26px;height:26px;border-radius:8px;background:var(--fx-brand);display:inline-block;position:relative}
 .fx-mark i::after{content:"";position:absolute;inset:7px 6px;border:2px solid #fff;border-radius:3px;border-top-width:5px}
 .fx-links{display:flex;align-items:center;gap:4px;margin:0;padding:0;list-style:none;font-size:14px}
@@ -82,3 +82,9 @@ body.fx-locked{overflow:hidden}
   .fx-scene{height:250px}
   .fx-scene svg{position:absolute;bottom:0;left:50%;height:250px;width:auto;max-width:none;max-height:none;transform:translateX(-60%)}
 }
+
+/* Plus Jakarta Sans draws a very narrow word space at text sizes, so short
+   labels ran together ("Print helper" read as "Printhelper"). Widen it for
+   body text only; headings and Sora text keep the font's own spacing. */
+body{word-spacing:.1em}
+h1,h2,h3,h4,h5,h6,pre,code,kbd,samp{word-spacing:normal}

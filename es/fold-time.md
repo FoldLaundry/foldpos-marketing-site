@@ -10,7 +10,7 @@ Un pequeño dispositivo de pared que su personal toca con su propio teléfono pa
 
 ## Para empezar: Pida, abra la caja, toque.
 
-Tres pasos, todos desde Fold POS.
+Cuatro pasos, todos desde Fold POS.
 
 - Pida en Fold POS. Cronograma › Reloj checador › Etiquetas › Dispositivos Fold Time › Pedir dispositivos, de 1 a 20 a la vez. Ve el total antes de pedir, y le llega una confirmación con el precio por mensaje de texto o correo.
 - Se lo enviamos listo. Cada dispositivo se configura en Fold, se etiqueta y se empaca. Recibe un aviso de “en camino” con el enlace de seguimiento.

@@ -10,10 +10,10 @@ A small wall device your staff tap with their own phone to clock in, take breaks
 
 ## Getting started: Order, unbox, tap.
 
-Three steps, all from Fold POS.
+Four steps, all from Fold POS.
 
 - Order in Fold POS. Schedule › Time clock › Tags › Fold Time devices › Order devices, 1 to 20 at a time. You see the total before you order, and a confirmation with the price comes by text or email.
-- We ship it ready. Each device is set up at Fold, labelled and boxed. You get an “on the way” message with the tracking link.
+- We ship it ready. Each device is set up at Fold, labeled and boxed. You get an “on the way” message with the tracking link.
 - Tap to switch it on. The first tap of any device with your own phone switches on the whole box for your store and turns on phone clock-in.
 - Add your staff. In Fold POS, Time clock › Phones, add each person. They get a text to set up their phone, then tap any Fold Time device to clock in.
 

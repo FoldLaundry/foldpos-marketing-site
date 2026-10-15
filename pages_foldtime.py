@@ -61,7 +61,7 @@ EN = {
     'desc': 'Fold Time is a small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no PINs to share. $39 a device, your first one free, with Growth and Pro.',
     'og': 'Fold Time: staff clock in with a tap of their own phone',
     'crumb': 'Fold Time',
-    'kicker': 'Staff time clock',
+    'kicker_keep': True, 'kicker': 'Staff time clock',
     'h1': 'Fold Time.',
     'lede': 'A small wall device your staff tap with their own phone to clock in, take breaks and clock out. No app, no time-clock terminal, no PINs to share. It arrives set up and switches on with its first tap.',
     'facts': [
@@ -71,9 +71,9 @@ EN = {
     ],
     'sections': [
         ('start', 'box', 'Getting started', 'Order, unbox, tap.',
-         'Three steps, all from Fold POS.',
+         'Four steps, all from Fold POS.',
          ['<b>Order in Fold POS.</b> Schedule › Time clock › Tags › Fold Time devices › Order devices, 1 to 20 at a time. You see the total before you order, and a confirmation with the price comes by text or email.',
-          '<b>We ship it ready.</b> Each device is set up at Fold, labelled and boxed. You get an “on the way” message with the tracking link.',
+          '<b>We ship it ready.</b> Each device is set up at Fold, labeled and boxed. You get an “on the way” message with the tracking link.',
           '<b>Tap to switch it on.</b> The first tap of any device with your own phone switches on the whole box for your store and turns on phone clock-in.',
           '<b>Add your staff.</b> In Fold POS, Time clock › Phones, add each person. They get a text to set up their phone, then tap any Fold Time device to clock in.'],
          'Nothing to pay at checkout: the devices are added to your next Fold POS bill when the box ships.',
@@ -145,7 +145,7 @@ ES = {
     'desc': 'Fold Time es un pequeño dispositivo de pared que su personal toca con su propio teléfono para marcar entrada, tomar descansos y marcar salida. Sin app y sin PIN compartidos. $39 por dispositivo, el primero gratis, con Growth y Pro.',
     'og': 'Fold Time: el personal marca con un toque de su propio teléfono',
     'crumb': 'Fold Time',
-    'kicker': 'Reloj de asistencia',
+    'kicker_keep': True, 'kicker': 'Reloj de asistencia',
     'h1': 'Fold Time.',
     'lede': 'Un pequeño dispositivo de pared que su personal toca con su propio teléfono para marcar entrada, tomar descansos y marcar salida. Sin app, sin terminal de reloj checador, sin PIN que compartir. Llega configurado y se activa con el primer toque.',
     'facts': [
@@ -155,7 +155,7 @@ ES = {
     ],
     'sections': [
         ('start', 'box', 'Para empezar', 'Pida, abra la caja, toque.',
-         'Tres pasos, todos desde Fold POS.',
+         'Cuatro pasos, todos desde Fold POS.',
          ['<b>Pida en Fold POS.</b> Cronograma › Reloj checador › Etiquetas › Dispositivos Fold Time › Pedir dispositivos, de 1 a 20 a la vez. Ve el total antes de pedir, y le llega una confirmación con el precio por mensaje de texto o correo.',
           '<b>Se lo enviamos listo.</b> Cada dispositivo se configura en Fold, se etiqueta y se empaca. Recibe un aviso de “en camino” con el enlace de seguimiento.',
           '<b>Toque para activarlo.</b> El primer toque de cualquier dispositivo con su propio teléfono activa toda la caja para su tienda y enciende el registro de entrada con el teléfono.',

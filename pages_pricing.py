@@ -33,7 +33,7 @@ STYLE = '''<style>
 .px-adds{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
 .px-add{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:#fff;display:grid;grid-template-columns:1fr auto;column-gap:16px;row-gap:6px;align-items:baseline}
 .px-add h3{font-size:17px;margin:0}
-.px-add .p{font:700 17px/1.2 "Sora",sans-serif;white-space:nowrap;color:var(--ink)}
+.px-add .p{font:700 17px/1.2 "Sora",sans-serif;white-space:nowrap;color:var(--ink);word-spacing:normal}
 .px-add .p small{font:500 13px "Plus Jakarta Sans",sans-serif;color:var(--ink-3)}
 .px-add p{grid-column:1 / -1;margin:0;color:var(--ink-2);font-size:14.5px}
 .compare td.v{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -241,7 +241,7 @@ def _build(t):
   <p class="px-old">{t['old']}</p>
 </div></section>
 <section class="section" style="padding-top:8px"><div class="wrap">
-  <div class="facts">{facts}</div>
+  <div class="facts boxed">{facts}</div>
 </div></section>
 <section class="section" id="compare"><div class="wrap">
   <h2>{t['cmp_h2']}</h2>
