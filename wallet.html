@@ -25,7 +25,7 @@
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
 <style>
 :root{
   /* page */
@@ -54,7 +54,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
@@ -93,7 +93,7 @@ button{font:inherit;color:inherit}
 .phone.tapping{transform:translate(64px,118px) rotate(11deg)}
 .ph-scr{width:299px;height:616px;border-radius:43px;overflow:hidden;position:relative;background:var(--ph-bg)}
 .ph-in{position:absolute;left:0;top:0;width:360px;height:742px;transform:scale(.83056);transform-origin:0 0;
-  font:17px/1.4 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ph-ink);background:var(--ph-bg)}
+  font:17px/1.4 "Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ph-ink);background:var(--ph-bg)}
 .ph-status{position:absolute;left:0;right:0;top:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 40px;font-weight:600;font-size:17px;z-index:6;color:var(--ph-ink);pointer-events:none}
 .ph-status.dark{color:var(--white)}
 .ph-status .ic{display:flex;gap:6px;align-items:center}
@@ -123,7 +123,7 @@ button{font:inherit;color:inherit}
 .pv .state.meal{background:var(--ph-meal-soft);color:var(--ph-meal)}
 .pv .state.rest{background:var(--ph-rest-soft);color:var(--ph-rest)}
 .pv .dot{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
-.pv .btn{display:block;border:0;border-radius:16px;padding:18px;font-weight:650;font-size:19px;width:100%;text-align:center;transition:transform .15s,filter .15s}
+.pv .btn{display:block;border:0;border-radius:16px;padding:18px;font-weight:600;font-size:19px;width:100%;text-align:center;transition:transform .15s,filter .15s}
 .pv .primary{background:var(--ph-brand);color:var(--white)}
 .pv .secondary{background:var(--ph-card);color:var(--ph-ink);border:1px solid var(--ph-line)}
 .pv .meal-btn{background:var(--ph-meal);color:var(--white)}
@@ -171,7 +171,7 @@ button{font:inherit;color:inherit}
   transform:translateY(-170%);opacity:0;transition:transform .6s cubic-bezier(.25,1.2,.45,1),opacity .35s}
 .banner.show{transform:none;opacity:1}
 .banner .appic{width:38px;height:38px;border-radius:9px;background:linear-gradient(#5df46f,#16c52f);flex:none;display:grid;place-items:center}
-.banner .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:650}
+.banner .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:600}
 .banner .bt span{font-weight:400;color:#7c7c82;font-size:14px}
 .banner .bb{font-size:15px;line-height:1.3;margin-top:2px}
 .camui{position:absolute;inset:0;background:var(--cam-bg);display:flex;flex-direction:column;align-items:center}
@@ -185,7 +185,7 @@ button{font:inherit;color:inherit}
 /* ---------- POS window ---------- */
 .pos{position:absolute;left:30px;top:30px;width:800px;height:600px;border-radius:16px;background:var(--pos-bg);overflow:hidden;
   box-shadow:0 0 0 1px rgba(15,24,48,.08),0 30px 60px -24px var(--shadow-2),0 10px 22px -12px var(--shadow-1);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--pos-ink);font-size:14px;
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--pos-ink);font-size:14px;
   display:grid;grid-template-columns:60px 1fr;container-type:inline-size;transition:opacity .6s,transform .75s cubic-bezier(.45,0,.18,1);z-index:2}
 .m .pos{width:440px;grid-template-columns:1fr}
 .m .pos .rail{display:none}
@@ -210,7 +210,7 @@ button{font:inherit;color:inherit}
 @keyframes pfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .pcard{background:var(--pos-surface);border:1px solid var(--pos-line);border-radius:14px;padding:16px 18px}
 .pcard-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
-.pcard-h h3{margin:0;font-size:16px;font-weight:650}
+.pcard-h h3{margin:0;font-size:16px;font-weight:600}
 .pact{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .pb{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;border:1px solid transparent;white-space:nowrap;transition:transform .15s,filter .15s,background .3s,color .3s}
 .pb svg{width:15px;height:15px}
@@ -254,7 +254,7 @@ button{font:inherit;color:inherit}
 .pdlg-wrap.show{opacity:1}
 .pdlg{width:400px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);overflow:hidden;background:var(--pos-surface);border-radius:20px;padding:22px 22px 14px;box-shadow:0 24px 50px rgba(0,0,0,.22);transform:translateY(10px) scale(.97);transition:transform .45s cubic-bezier(.3,1.2,.5,1)}
 .pdlg-wrap.show .pdlg{transform:none}
-.pdlg h4{margin:0 0 12px;font-size:19px;font-weight:650}
+.pdlg h4{margin:0 0 12px;font-size:19px;font-weight:600}
 .pdlg .acts{display:flex;justify-content:flex-end;gap:6px;margin-top:14px}
 .field{border:1px solid #cfd4dc;border-radius:10px;padding:10px 12px;font-size:14px;display:flex;justify-content:space-between;align-items:center;margin:6px 0 12px}
 .field.ph{color:#9aa1ad}
@@ -385,7 +385,7 @@ button{font:inherit;color:inherit}
   transition:opacity .6s,transform .75s cubic-bezier(.45,0,.18,1)}
 .term.off{opacity:0;transform:translateX(60px) scale(.97);pointer-events:none}
 .term .scr{height:300px;border-radius:16px;background:var(--term-screen);color:var(--term-ink);overflow:hidden;position:relative;
-  font:15px/1.35 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  font:15px/1.35 "Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 .term .tv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:18px;transition:opacity .4s}
 .term .tv.enter{opacity:0}
 .term .tshop{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:12px;font-weight:600;color:#6b7080;letter-spacing:.04em;text-transform:uppercase}
@@ -401,13 +401,13 @@ button{font:inherit;color:inherit}
 .paycard{position:absolute;left:1150px;top:560px;width:150px;height:95px;border-radius:12px;background:linear-gradient(135deg,var(--card-a),var(--card-b));z-index:4;
   box-shadow:0 14px 26px -10px rgba(10,20,60,.45);opacity:0;transition:transform .7s cubic-bezier(.45,0,.18,1),opacity .4s}
 .paycard::before{content:"";position:absolute;left:16px;top:30px;width:28px;height:21px;border-radius:5px;background:linear-gradient(135deg,#f3d27a,#c9a44a)}
-.paycard::after{content:"•••• 4242";position:absolute;left:16px;bottom:12px;color:rgba(255,255,255,.9);font:600 12px "Inter",sans-serif;letter-spacing:.08em}
+.paycard::after{content:"•••• 4242";position:absolute;left:16px;bottom:12px;color:rgba(255,255,255,.9);font:600 12px "Figtree",sans-serif;letter-spacing:.08em}
 .paycard.show{opacity:1}
 .paycard.tap{transform:translate(-160px,-330px) rotate(-8deg)}
 #ripple.t{left:1055px;top:225px}
 
 /* the customer wallet page (foldpos.com/<shop>/wallet), scoped */
-.wp{position:absolute;inset:0;padding-top:54px;background:var(--wp-bg);color:var(--wp-ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",sans-serif;overflow:hidden}
+.wp{position:absolute;inset:0;padding-top:54px;background:var(--wp-bg);color:var(--wp-ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Figtree",sans-serif;overflow:hidden}
 .wp .url{margin:2px 14px 0;height:34px;border-radius:12px;background:#e6e7eb;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;color:#3c3f47}
 .wp .url svg{width:11px;height:11px}
 .wp main{padding:14px 16px 40px}
@@ -440,7 +440,7 @@ button{font:inherit;color:inherit}
 .wp .scroller{transition:transform 1.2s cubic-bezier(.45,0,.2,1)}
 
 /* iOS Add-pass sheet and the Wallet app */
-.ios{position:absolute;inset:0;padding-top:54px;background:var(--ios-bg);font:16px/1.35 -apple-system,BlinkMacSystemFont,"Inter",sans-serif;color:#111}
+.ios{position:absolute;inset:0;padding-top:54px;background:var(--ios-bg);font:16px/1.35 -apple-system,BlinkMacSystemFont,"Figtree",sans-serif;color:#111}
 .ios .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 14px;font-size:17px}
 .ios .bar b{font-weight:600}
 .ios .bar span{color:var(--ios-blue)}
@@ -450,7 +450,7 @@ button{font:inherit;color:inherit}
 .ios .sheetnote{font-size:13px;color:#6b6b72;text-align:center;padding:14px 26px 0}
 
 /* the Apple storeCard pass (Aurora Spin) */
-.pass{border-radius:14px;overflow:hidden;background:var(--aur-ground);color:#fff;box-shadow:0 10px 26px -10px rgba(10,8,30,.55);font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif}
+.pass{border-radius:14px;overflow:hidden;background:var(--aur-ground);color:#fff;box-shadow:0 10px 26px -10px rgba(10,8,30,.55);font-family:"Figtree",-apple-system,BlinkMacSystemFont,sans-serif}
 .pass .pt{display:flex;align-items:center;gap:8px;padding:12px 14px 10px}
 .pass .pt svg{width:28px;height:28px;flex:none}
 .pass .pt .lt{font-size:15px;font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -466,7 +466,7 @@ button{font:inherit;color:inherit}
 .pass .bc span{font:11px ui-monospace,SFMono-Regular,Menlo,monospace;color:#111;letter-spacing:.04em}
 
 /* the Google loyalty pass */
-.gw{position:absolute;inset:0;padding-top:54px;background:var(--g-bg);font:15px/1.35 "Roboto","Inter",Arial,sans-serif;color:#1f1f1f}
+.gw{position:absolute;inset:0;padding-top:54px;background:var(--g-bg);font:15px/1.35 "Roboto","Figtree",Arial,sans-serif;color:#1f1f1f}
 .gw .gbar{display:flex;justify-content:space-between;align-items:center;padding:10px 18px 12px}
 .gw .gbar b{font-size:18px;font-weight:500}
 .gw .gbtn{background:var(--g-blue);color:#fff;border-radius:20px;padding:8px 20px;font-weight:500;font-size:15px;transition:transform .15s,filter .15s}
@@ -486,7 +486,7 @@ button{font:inherit;color:inherit}
 .gpass .hero{display:block;width:100%;height:auto}
 
 /* lock screen */
-.lock{position:absolute;inset:0;background:linear-gradient(160deg,var(--lock-a),var(--lock-b));color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;text-align:center;padding-top:96px}
+.lock{position:absolute;inset:0;background:linear-gradient(160deg,var(--lock-a),var(--lock-b));color:#fff;font-family:"Figtree",-apple-system,BlinkMacSystemFont,sans-serif;text-align:center;padding-top:96px}
 .lock .ld{font-size:18px;font-weight:600;opacity:.9}
 .lock .lt{font-size:86px;font-weight:600;letter-spacing:-.02em;line-height:1;margin-top:2px}
 .lock .nt{margin:40px 12px 0;background:var(--notif);color:#111;border-radius:20px;padding:12px 14px;text-align:left;display:flex;gap:11px;

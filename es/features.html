@@ -31,7 +31,7 @@
 <meta name="theme-color" content="#2e5ce6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
 <style>
   /* ============ TOKENS ============ */
@@ -68,7 +68,7 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family:"Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size:16px;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
@@ -78,25 +78,25 @@
   ::selection{background:var(--brand-soft); color:var(--brand-deep);}
 
   h1,h2,h3,h4{
-    font-family:"Sora", -apple-system, sans-serif;
+    font-family:"Figtree", -apple-system, sans-serif;
     margin:0;
     text-wrap:balance;
     color:var(--ink);
-    letter-spacing:-0.01em;word-spacing:normal}
+    letter-spacing:-0.01em}
   .eyebrow{
-    font-family:"IBM Plex Mono", monospace;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace;
     font-size:12.5px;
     font-weight:600;
     letter-spacing:0.09em;
     text-transform:uppercase;
-    color:var(--brand);word-spacing:normal}
+    color:var(--brand)}
   .lede{
     color:var(--ink-soft);
     font-size:1.15rem;
     line-height:1.6;
     max-width:38em;
   }
-  .mono-num{ font-family:"IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;word-spacing:normal}
+  .mono-num{ font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-variant-numeric: tabular-nums}
 
   .wrap{
     max-width:1180px;
@@ -120,7 +120,7 @@
     display:inline-flex;
     align-items:center;
     gap:8px;
-    font-family:"Plus Jakarta Sans", sans-serif;
+    font-family:"Figtree", sans-serif;
     font-weight:600;
     font-size:0.95rem;
     padding:13px 22px;
@@ -168,18 +168,18 @@
     width:34px; height:34px; border-radius:9px;
     background:linear-gradient(155deg, var(--brand), var(--brand-deep));
     display:flex; align-items:center; justify-content:center;
-    color:#fff; font-family:"Sora", sans-serif; font-weight:700; font-size:17px;
-    flex:none;word-spacing:normal}
-  .brand-word{ font-family:"Sora", sans-serif; font-weight:700; font-size:1.15rem; color:var(--ink);word-spacing:normal}
+    color:#fff; font-family:"Figtree", sans-serif; font-weight:700; font-size:17px;
+    flex:none}
+  .brand-word{ font-family:"Figtree", sans-serif; font-weight:700; font-size:1.15rem; color:var(--ink)}
   .family-pill{
-    font-family:"IBM Plex Mono", monospace;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace;
     font-size:10.5px; font-weight:600; letter-spacing:0.04em;
     color:var(--brand-deep);
     background:var(--brand-soft);
     border:1px solid color-mix(in srgb, var(--brand) 30%, transparent);
     border-radius:100px;
     padding:3px 9px;
-    margin-left:2px;word-spacing:normal}
+    margin-left:2px}
   nav.links{ display:flex; align-items:center; gap:34px; }
   nav.links a{ text-decoration:none; color:var(--ink-soft); font-size:0.94rem; font-weight:500; }
   nav.links a:hover{ color:var(--ink); }
@@ -216,10 +216,10 @@
   .hero-actions{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
   .hero-fine{
     margin-top:20px;
-    font-family:"IBM Plex Mono", monospace;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace;
     font-size:12.5px;
     color:var(--muted);
-    letter-spacing:0.01em;word-spacing:normal}
+    letter-spacing:0.01em}
 
   .hero-stage{
     position:relative;
@@ -308,13 +308,13 @@
     border:2px solid var(--brand);
     color:var(--brand);
     display:flex; align-items:center; justify-content:center;
-    font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:12.5px;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-weight:600; font-size:12.5px;
     flex:none;
-    background:var(--surface);word-spacing:normal}
+    background:var(--surface)}
   .walk-stage-label{
-    font-family:"IBM Plex Mono", monospace;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace;
     font-size:12px; font-weight:600; letter-spacing:0.08em;
-    color:var(--muted); text-transform:uppercase;word-spacing:normal}
+    color:var(--muted); text-transform:uppercase}
   .walk-text h3{ font-size:1.55rem; line-height:1.2; margin-bottom:14px; }
   .walk-text p{ color:var(--ink-soft); font-size:1.02rem; max-width:34em; }
   .walk-media .chrome{ transform:rotate(-0.4deg); }
@@ -402,8 +402,8 @@
   }
   .stat-row + .stat-row{ border-top:1px solid rgba(255,255,255,0.14); }
   .stat-num{
-    font-family:"Sora", sans-serif; font-weight:700;
-    font-size:2rem; color:#fff; flex:none; min-width:108px;word-spacing:normal}
+    font-family:"Figtree", sans-serif; font-weight:700;
+    font-size:2rem; color:#fff; flex:none; min-width:108px}
   .stat-desc{ color:#c3caed; font-size:0.95rem; line-height:1.5; }
 
   /* ============ PRICING ============ */
@@ -427,14 +427,14 @@
   .price-featured-tag{
     position:absolute; top:-13px; left:28px;
     background:var(--brand); color:#fff;
-    font-family:"IBM Plex Mono", monospace;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace;
     font-size:10.5px; font-weight:600; letter-spacing:0.06em;
     text-transform:uppercase;
-    padding:5px 11px; border-radius:100px;word-spacing:normal}
-  .price-tier{ font-family:"Sora", sans-serif; font-weight:700; font-size:1.2rem;word-spacing:normal}
+    padding:5px 11px; border-radius:100px}
+  .price-tier{ font-family:"Figtree", sans-serif; font-weight:700; font-size:1.2rem}
   .price-audience{ color:var(--muted); font-size:0.88rem; margin-top:4px; }
   .price-amount{ display:flex; align-items:baseline; gap:6px; margin:22px 0 4px; }
-  .price-amount .num{ font-family:"Sora", sans-serif; font-weight:700; font-size:2.5rem; font-variant-numeric:tabular-nums;word-spacing:normal}
+  .price-amount .num{ font-family:"Figtree", sans-serif; font-weight:700; font-size:2.5rem; font-variant-numeric:tabular-nums}
   .price-amount .per{ color:var(--muted); font-size:0.9rem; }
   .price-card .btn{ margin-top:22px; justify-content:center; width:100%; }
   .price-list{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; flex:1; }
@@ -454,7 +454,7 @@
   .faq-item summary{
     cursor:pointer; list-style:none;
     display:flex; align-items:center; justify-content:space-between; gap:20px;
-    font-family:"Sora", sans-serif; font-weight:600; font-size:1.03rem;word-spacing:normal}
+    font-family:"Figtree", sans-serif; font-weight:600; font-size:1.03rem}
   .faq-item summary::-webkit-details-marker{ display:none; }
   .faq-item .plus{
     width:24px; height:24px; flex:none; position:relative;
@@ -490,8 +490,8 @@
   @media (min-width:760px){ .foot-top{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
   .foot-brand p{ color:var(--muted); font-size:0.92rem; max-width:26em; margin-top:14px; }
   .foot-col h5{
-    font-family:"IBM Plex Mono", monospace; font-size:11.5px; letter-spacing:0.07em;
-    text-transform:uppercase; color:var(--muted); margin:0 0 16px;word-spacing:normal}
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:11.5px; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 16px}
   .foot-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
   .foot-col a{ text-decoration:none; color:var(--ink-soft); font-size:0.93rem; }
   .foot-col a:hover{ color:var(--brand); }
@@ -541,7 +541,7 @@
     display:inline-flex; align-items:center; gap:10px;
     margin-bottom:16px;
   }
-  .feat-num{ font-family:"IBM Plex Mono", monospace; font-size:12px; font-weight:600; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase;word-spacing:normal}
+  .feat-num{ font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:12px; font-weight:600; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase}
   .feat-text h2{ font-size:clamp(1.5rem, 2.6vw, 1.95rem); line-height:1.18; margin-bottom:16px; }
   .feat-text > p.body{ color:var(--ink-soft); font-size:1.02rem; line-height:1.65; max-width:36em; margin:0 0 24px; }
   .feat-text,.feat-media{ min-width:0; overflow-wrap:break-word; }
@@ -569,7 +569,7 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:10px 12px 4px;
   }
-  .mini-widget-head .t{ font-family:"IBM Plex Mono", monospace; font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);word-spacing:normal}
+  .mini-widget-head .t{ font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)}
   .mini-row{
     display:flex; align-items:center; gap:14px;
     padding:14px 14px;
@@ -585,13 +585,13 @@
   .mini-icon svg{ width:18px; height:18px; }
   .mini-main{ flex:1; min-width:0; }
   .mini-title{ font-weight:600; font-size:0.93rem; }
-  .mini-sub{ font-size:0.79rem; color:var(--muted); margin-top:3px; font-family:"IBM Plex Mono", monospace;word-spacing:normal}
+  .mini-sub{ font-size:0.79rem; color:var(--muted); margin-top:3px; font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace}
   .mini-right{ display:flex; align-items:center; gap:10px; flex:none; }
   .stock-bar{ width:56px; height:6px; border-radius:100px; background:var(--line-soft); overflow:hidden; flex:none; }
   .stock-bar span{ display:block; height:100%; background:var(--brand); border-radius:100px; }
   .mini-status{
-    font-family:"IBM Plex Mono", monospace; font-size:10.5px; font-weight:600;
-    padding:5px 10px; border-radius:100px; white-space:nowrap;word-spacing:normal}
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10.5px; font-weight:600;
+    padding:5px 10px; border-radius:100px; white-space:nowrap}
   .mini-status.ok{ background:var(--success-soft); color:var(--success); }
   .mini-status.warn{ background:var(--amber-soft); color:var(--amber); }
   .mini-status.info{ background:var(--brand-soft); color:var(--brand); }
@@ -608,11 +608,11 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:2px 4px 14px;
   }
-  .floor-panel-head .t{ font-family:"IBM Plex Mono", monospace; font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);word-spacing:normal}
+  .floor-panel-head .t{ font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted)}
   .floor-row-label{
-    font-family:"IBM Plex Mono", monospace; font-size:10.5px; font-weight:600; letter-spacing:0.06em;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10.5px; font-weight:600; letter-spacing:0.06em;
     text-transform:uppercase; color:var(--muted);
-    padding:12px 4px 8px;word-spacing:normal}
+    padding:12px 4px 8px}
   .floor-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; }
   @media (min-width:520px){ .floor-grid{ grid-template-columns:repeat(4, 1fr); } }
   .floor-tile{
@@ -629,20 +629,20 @@
     width:44px; height:44px; border-radius:50%;
     border:2.5px solid var(--line);
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:13px; color:var(--ink);
-    background:var(--surface);word-spacing:normal}
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-weight:600; font-size:13px; color:var(--ink);
+    background:var(--surface)}
   .floor-tile.running .ring{ border-color:var(--brand); color:var(--brand); }
   .floor-tile.flagged .ring.flag{ border-color:var(--amber); color:var(--amber); font-size:18px; }
   .floor-tile .ring.open{ font-size:10.5px; letter-spacing:0.02em; color:var(--muted); border-style:dashed; }
   .floor-tile .ring small{ font-size:8.5px; font-weight:600; }
-  .floor-tile .f-label{ font-family:"IBM Plex Mono", monospace; font-size:10.5px; color:var(--muted);word-spacing:normal}
+  .floor-tile .f-label{ font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10.5px; color:var(--muted)}
   .floor-tile .order-tag{
-    font-family:"IBM Plex Mono", monospace; font-size:10px; font-weight:600;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10px; font-weight:600;
     background:var(--surface); border:1px solid var(--line); border-radius:100px;
-    padding:3px 8px; color:var(--ink-soft);word-spacing:normal}
+    padding:3px 8px; color:var(--ink-soft)}
   .floor-tile .turns-badge{
-    font-family:"IBM Plex Mono", monospace; font-size:10px; font-weight:600;
-    color:var(--muted);word-spacing:normal}
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10px; font-weight:600;
+    color:var(--muted)}
 
   /* marketing visual: campaign card */
   .marketing-visual{
@@ -673,9 +673,9 @@
   }
   .campaign-message-label{
     display:block;
-    font-family:"IBM Plex Mono", monospace; font-size:10.5px; font-weight:600; letter-spacing:0.06em;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas, monospace; font-size:10.5px; font-weight:600; letter-spacing:0.06em;
     text-transform:uppercase; color:var(--muted);
-    margin-bottom:8px;word-spacing:normal}
+    margin-bottom:8px}
   .campaign-message p{
     margin:0;
     background:var(--brand-soft);
@@ -697,7 +697,7 @@
   @media (min-width:1020px){ .more-grid{ grid-template-columns:1fr 1fr 1fr; } }
   .more-card{ background:var(--surface); padding:28px 24px; }
   .more-card .feature-icon{ margin-bottom:16px; }
-  .more-card h4{ font-family:"Sora", sans-serif; font-size:1rem; margin-bottom:8px;word-spacing:normal}
+  .more-card h4{ font-family:"Figtree", sans-serif; font-size:1rem; margin-bottom:8px}
   .more-card p{ margin:0; color:var(--muted); font-size:0.9rem; line-height:1.6; }
   .more-card p a{ color:var(--brand); font-weight:600; }
 </style>
@@ -780,7 +780,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/css/chrome.css?v=0e47acc950">
+<link rel="stylesheet" href="/assets/css/chrome.css?v=16fdc6eea2">
 </head>
 <body>
 <!--fx:header-->

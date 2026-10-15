@@ -39,8 +39,8 @@
 }
 *{box-sizing:border-box}
 html{background:var(--paper)}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:"Sora",-apple-system,sans-serif;margin:0;letter-spacing:-.03em;text-wrap:balance;color:var(--ink);word-spacing:normal}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Figtree",-apple-system,sans-serif;margin:0;letter-spacing:-.02em;text-wrap:balance;color:var(--ink)}
 p{margin:0}
 a{color:var(--link)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
@@ -48,12 +48,12 @@ a{color:var(--link)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .band{padding:72px 0}
 .band.fog{background:var(--fog)}
-.label{font:600 14px/1.2 "Plus Jakarta Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.label{font:600 14px/1.2 "Figtree",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
 .h2{font-size:clamp(30px,4vw,44px);line-height:1.1}
 .lead{font-size:19px;color:var(--ink-2);margin-top:12px;max-width:52ch}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--brand);color:#fff;font:600 16px/1 "Plus Jakarta Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--brand);color:#fff;font:600 16px/1 "Figtree",sans-serif;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
 .btn:hover{background:var(--brand-hover)}
-.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;background:transparent;color:var(--ink);border:1px solid var(--line-2);font:600 16px/1 "Plus Jakarta Sans",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;background:transparent;color:var(--ink);border:1px solid var(--line-2);font:600 16px/1 "Figtree",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
 .btn2:hover{border-color:var(--ink-3)}
 
 /* Shared chrome, page-local tweaks: the site header scrolls away (the local bar below sticks),
@@ -67,7 +67,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 /* Local bar: shop type, step x of y, Continue. */
 .lbar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
 .lbar-in{max-width:1120px;margin:0 auto;padding:6px 24px;min-height:var(--lbar-h);display:flex;align-items:center;gap:16px}
-.lb-title{display:inline-flex;align-items:center;min-height:44px;font:700 17px/1.2 "Sora",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;word-spacing:normal}
+.lb-title{display:inline-flex;align-items:center;min-height:44px;font:700 17px/1.2 "Figtree",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .lb-type{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:var(--ink-2);font-size:15px;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34ch}
 .lb-prog{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
 .meter{width:120px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
@@ -76,7 +76,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 
 /* Hero */
 .hero{padding:72px 0 64px;text-align:center}
-.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.045em}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.02em}
 .hero .lead{margin:16px auto 0;font-size:clamp(20px,2.4vw,26px);color:var(--ink-2);text-align:center}
 .hero .acts{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:30px}
 .hero .meta{font-size:16px;color:var(--ink-2);font-variant-numeric:tabular-nums}
@@ -86,7 +86,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 /* Shop type */
 .shop{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center}
 .types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.type{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 17px/1.25 "Plus Jakarta Sans",sans-serif;text-align:left;cursor:pointer}
+.type{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 17px/1.25 "Figtree",sans-serif;text-align:left;cursor:pointer}
 .type svg{width:28px;height:28px;flex:none;color:var(--ink-2)}
 .type .tk{margin-left:auto;width:24px;height:24px;flex:none;border-radius:50%;border:1.5px solid var(--line-2);position:relative}
 .type[aria-pressed="true"]{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
@@ -122,7 +122,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .have li b{color:var(--ink)}
 .dotk{flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;border:1.5px solid var(--line-2)}
 .total{margin-top:18px;font-size:19px;color:var(--ink)}
-.total b{font-family:"Sora",sans-serif;word-spacing:normal}
+.total b{font-family:"Figtree",sans-serif}
 
 /* Steps */
 .setup{display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px;align-items:start}
@@ -146,7 +146,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .normal{display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-size:16px;margin:4px 0 12px;max-width:48ch}
 .normal::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--ok)}
 .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
-.done{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--ink);font:600 16px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.done{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--ink);font:600 16px/1 "Figtree",sans-serif;cursor:pointer}
 .done .box{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ink-3);position:relative;flex:none}
 .done[aria-pressed="true"]{border-color:var(--ok);background:var(--ok-soft)}
 .done[aria-pressed="true"] .box{background:var(--ok);border-color:var(--ok)}
@@ -161,7 +161,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .fig{margin:0}
 .stage{position:relative;aspect-ratio:4/3;border-radius:24px;background:var(--stage);display:flex;align-items:center;justify-content:center;padding:20px}
 .cap{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;font-size:15px;color:var(--ink-2)}
-.rp{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 15px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.rp{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:600 15px/1 "Figtree",sans-serif;cursor:pointer}
 .rp svg{width:14px;height:14px}
 
 /* Scene pieces */
@@ -189,7 +189,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 .printer{display:flex;flex-direction:column;align-items:center}
 .pbody{width:250px;height:84px;border-radius:20px;background:linear-gradient(180deg,#3a3a3c,#1d1d1f);position:relative;z-index:2}
 .pbody::after{content:"";position:absolute;left:36px;right:36px;top:18px;height:6px;border-radius:4px;background:#0d0d0e}
-.paper{width:214px;margin-top:-62px;padding:0 14px;background:#fff;color:#1d1d1f;font:11.5px/1.55 ui-monospace,Menlo,Consolas,monospace;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:62px;overflow:hidden;transition:height 1.4s cubic-bezier(.3,.7,.3,1),padding-top 1.4s;z-index:1;word-spacing:normal}
+.paper{width:214px;margin-top:-62px;padding:0 14px;background:#fff;color:#1d1d1f;font:11.5px/1.55 ui-monospace,Menlo,Consolas,monospace;border-radius:0 0 6px 6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);height:62px;overflow:hidden;transition:height 1.4s cubic-bezier(.3,.7,.3,1),padding-top 1.4s;z-index:1}
 .paper.out{height:186px;padding-top:68px}
 .paper div{display:flex;justify-content:space-between;white-space:nowrap}
 .paper b{font-weight:700}
@@ -339,8 +339,8 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/chrome.css?v=0e47acc950">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
+<link rel="stylesheet" href="/assets/css/chrome.css?v=16fdc6eea2">
 </head>
 <body>
 <!--fx:header-->
@@ -625,7 +625,7 @@ body .fx-foot-scene .fx-foot-h{color:var(--foot-h)}
         <figure class="fig" data-scene="route"><div class="stage" role="img" aria-label="A map. A route is drawn from the shop through four stops: pickup, delivery, pickup, delivery."><div class="map"><svg viewBox="0 0 900 450" aria-hidden="true">
           <g stroke="var(--line-2)" stroke-width="10" fill="none"><path d="M0 120h900M0 300h900M200 0v450M520 0v450M760 0v450"/></g>
           <path class="route" d="M120 300H200V120H520V300H760V120" fill="none" stroke="var(--brand)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1700" stroke-dashoffset="1700"/>
-          <g font-size="22" font-weight="700" fill="var(--ink)" font-family="Plus Jakarta Sans,sans-serif">
+          <g font-size="22" font-weight="700" fill="var(--ink)" font-family="Figtree,sans-serif">
             <circle cx="120" cy="300" r="13" fill="var(--ink)"/><text x="70" y="350">Shop</text>
             <circle class="pin" cx="200" cy="200" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="218" y="207">1 · Pickup</text>
             <circle class="pin" cx="420" cy="120" r="11" fill="var(--surface)" stroke="var(--brand)" stroke-width="5"/><text x="330" y="96">2 · Delivery</text>

@@ -48,8 +48,7 @@ FOOTER_ES = FOOTER_ES.replace('{{SCENE}}', scene_for('es'))
 LASTMOD = '2026-10-15'   # bump when the site content changes
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700'
-         '&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">')
 # ?v= is a hash of the file, so a changed chrome.css / chrome.js is fetched fresh
 # instead of browsers reusing a cached copy (the server sends no cache headers).
 def _asset_v(path):
@@ -691,7 +690,7 @@ def put_chrome(fname):
     s = re.sub(r'<link rel="stylesheet" href="/assets/css/chrome\.css(?:\?v=\w+)?">', lambda m: CHROME_CSS, s)
     if CHROME_CSS not in s:
         s = s.replace('</head>', CHROME_CSS + '\n</head>', 1)
-    if 'fonts.googleapis.com/css2?family=Sora' not in s:
+    if 'fonts.googleapis.com/css2?family=Figtree' not in s:
         s = s.replace(CHROME_CSS, FONTS + '\n' + CHROME_CSS, 1)
     # chrome.js always sits last in <body>, after the footer, so running this twice changes nothing.
     s = re.sub(r'\n?<script src="/assets/js/chrome\.js(?:\?v=\w+)?" defer></script>', '', s)

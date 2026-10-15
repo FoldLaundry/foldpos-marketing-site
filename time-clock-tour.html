@@ -25,7 +25,7 @@
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
 <style>
 :root{
   /* page */
@@ -54,7 +54,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
@@ -93,7 +93,7 @@ button{font:inherit;color:inherit}
 .phone.tapping{transform:translate(64px,118px) rotate(11deg)}
 .ph-scr{width:299px;height:616px;border-radius:43px;overflow:hidden;position:relative;background:var(--ph-bg)}
 .ph-in{position:absolute;left:0;top:0;width:360px;height:742px;transform:scale(.83056);transform-origin:0 0;
-  font:17px/1.4 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ph-ink);background:var(--ph-bg)}
+  font:17px/1.4 "Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ph-ink);background:var(--ph-bg)}
 .ph-status{position:absolute;left:0;right:0;top:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 40px;font-weight:600;font-size:17px;z-index:6;color:var(--ph-ink);pointer-events:none}
 .ph-status.dark{color:var(--white)}
 .ph-status .ic{display:flex;gap:6px;align-items:center}
@@ -123,7 +123,7 @@ button{font:inherit;color:inherit}
 .pv .state.meal{background:var(--ph-meal-soft);color:var(--ph-meal)}
 .pv .state.rest{background:var(--ph-rest-soft);color:var(--ph-rest)}
 .pv .dot{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
-.pv .btn{display:block;border:0;border-radius:16px;padding:18px;font-weight:650;font-size:19px;width:100%;text-align:center;transition:transform .15s,filter .15s}
+.pv .btn{display:block;border:0;border-radius:16px;padding:18px;font-weight:600;font-size:19px;width:100%;text-align:center;transition:transform .15s,filter .15s}
 .pv .primary{background:var(--ph-brand);color:var(--white)}
 .pv .secondary{background:var(--ph-card);color:var(--ph-ink);border:1px solid var(--ph-line)}
 .pv .meal-btn{background:var(--ph-meal);color:var(--white)}
@@ -171,7 +171,7 @@ button{font:inherit;color:inherit}
   transform:translateY(-170%);opacity:0;transition:transform .6s cubic-bezier(.25,1.2,.45,1),opacity .35s}
 .banner.show{transform:none;opacity:1}
 .banner .appic{width:38px;height:38px;border-radius:9px;background:linear-gradient(#5df46f,#16c52f);flex:none;display:grid;place-items:center}
-.banner .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:650}
+.banner .bt{display:flex;justify-content:space-between;font-size:15px;font-weight:600}
 .banner .bt span{font-weight:400;color:#7c7c82;font-size:14px}
 .banner .bb{font-size:15px;line-height:1.3;margin-top:2px}
 .camui{position:absolute;inset:0;background:var(--cam-bg);display:flex;flex-direction:column;align-items:center}
@@ -185,7 +185,7 @@ button{font:inherit;color:inherit}
 /* ---------- POS window ---------- */
 .pos{position:absolute;left:30px;top:30px;width:800px;height:600px;border-radius:16px;background:var(--pos-bg);overflow:hidden;
   box-shadow:0 0 0 1px rgba(15,24,48,.08),0 30px 60px -24px var(--shadow-2),0 10px 22px -12px var(--shadow-1);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--pos-ink);font-size:14px;
+  font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--pos-ink);font-size:14px;
   display:grid;grid-template-columns:60px 1fr;container-type:inline-size;transition:opacity .6s,transform .75s cubic-bezier(.45,0,.18,1);z-index:2}
 .m .pos{width:440px;grid-template-columns:1fr}
 .m .pos .rail{display:none}
@@ -210,7 +210,7 @@ button{font:inherit;color:inherit}
 @keyframes pfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .pcard{background:var(--pos-surface);border:1px solid var(--pos-line);border-radius:14px;padding:16px 18px}
 .pcard-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
-.pcard-h h3{margin:0;font-size:16px;font-weight:650}
+.pcard-h h3{margin:0;font-size:16px;font-weight:600}
 .pact{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .pb{display:inline-flex;align-items:center;gap:6px;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;border:1px solid transparent;white-space:nowrap;transition:transform .15s,filter .15s,background .3s,color .3s}
 .pb svg{width:15px;height:15px}
@@ -254,7 +254,7 @@ button{font:inherit;color:inherit}
 .pdlg-wrap.show{opacity:1}
 .pdlg{width:400px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);overflow:hidden;background:var(--pos-surface);border-radius:20px;padding:22px 22px 14px;box-shadow:0 24px 50px rgba(0,0,0,.22);transform:translateY(10px) scale(.97);transition:transform .45s cubic-bezier(.3,1.2,.5,1)}
 .pdlg-wrap.show .pdlg{transform:none}
-.pdlg h4{margin:0 0 12px;font-size:19px;font-weight:650}
+.pdlg h4{margin:0 0 12px;font-size:19px;font-weight:600}
 .pdlg .acts{display:flex;justify-content:flex-end;gap:6px;margin-top:14px}
 .field{border:1px solid #cfd4dc;border-radius:10px;padding:10px 12px;font-size:14px;display:flex;justify-content:space-between;align-items:center;margin:6px 0 12px}
 .field.ph{color:#9aa1ad}
@@ -416,7 +416,7 @@ a.wm{color:inherit;text-decoration:none}
           <g fill="none" stroke="var(--il-ring)" stroke-width="2.4" stroke-linecap="round">
             <path d="M1256 462 a10 10 0 0 1 0 16"/><path d="M1262 457 a16 16 0 0 1 0 26"/><path d="M1268 452 a22 22 0 0 1 0 36" opacity=".55"/>
           </g>
-          <text x="1262" y="525" text-anchor="middle" font-size="11" font-weight="700" fill="var(--muted)" font-family="Inter,Arial,sans-serif" letter-spacing=".08em">FOLD</text>
+          <text x="1262" y="525" text-anchor="middle" font-size="11" font-weight="700" fill="var(--muted)" font-family="Figtree,Arial,sans-serif" letter-spacing=".08em">FOLD</text>
         </g>
         <g class="g il-home">
           <rect x="600" y="120" width="190" height="220" rx="10" fill="var(--il-fill)" stroke="var(--il-line)" stroke-width="2"/>

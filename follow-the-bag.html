@@ -25,7 +25,7 @@
 <meta name="theme-color" content="#1e5eff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
 <style>
 /* Layout: Apple-style product film. One cinematic stage with a camera that pans and pushes in on the bag,
    a chapter bar under it, then the chapter's words beside the real screen, then the record and the numbers. */
@@ -37,9 +37,9 @@
   --sky-top:#d9e4fb; --sky-bot:#f6f8fd; --hill:#e3e9f5; --ground:#e9eef6; --road:#d3dbe8; --dash:#ffffff;
   --bldg:#ffffff; --edge:#d3dbe9; --glass:#e9f0fd; --roof:#c9d3e4; --tire:#0d1526; --hub:#c9d3e4;
   --paper:#fffdf8; --label:#ffffff; --bars:#0d1526; --sun:#ffd465; --skin:#e9b48c;
-  --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --display:"Figtree","Avenir Next",system-ui,sans-serif;
   --body:"Figtree","Segoe UI",system-ui,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --ease:cubic-bezier(.65,0,.35,1);
   --spring:cubic-bezier(.34,1.56,.64,1);
 }
@@ -54,7 +54,7 @@ button{font:inherit;color:inherit}
 .hero{display:grid;justify-items:center;text-align:center;gap:14px}
 .kicker{font:600 15px var(--body);color:var(--accent);margin:0}
 .kicker a{color:inherit;text-decoration:none}.kicker a:hover{text-decoration:underline}
-h1{font:800 clamp(44px,8.5vw,96px)/.98 var(--display);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1{font:700 clamp(44px,8.5vw,96px)/.98 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 h1 .grad{color:inherit}
 .lede{font:500 clamp(18px,2.2vw,22px)/1.4 var(--body);color:var(--muted);max-width:34ch;margin:4px 0 0;text-wrap:balance}
 .seg{display:inline-flex;position:relative;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:999px;padding:4px;margin-top:10px}
@@ -160,7 +160,7 @@ h1 .grad{color:inherit}
 @media (max-width:860px){.chapter{grid-template-columns:minmax(0,1fr);gap:28px}}
 .eyebrow{font:600 14px var(--body);color:var(--accent);margin:0 0 10px}
 .eyebrow.bad{color:var(--bad)}
-.chapter h2{font:800 clamp(30px,4.4vw,50px)/1.04 var(--display);letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+.chapter h2{font:700 clamp(30px,4.4vw,50px)/1.04 var(--display);letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
 .chapter p.desc{font:500 19px/1.5 var(--body);color:var(--muted);margin:0;max-width:40ch}
 .chapter p.desc strong{color:var(--ink);font-weight:600}
 .device-wrap{display:grid;place-items:center;min-height:420px}
@@ -176,7 +176,7 @@ h1 .grad{color:inherit}
 .app-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font:600 12px var(--body);color:var(--muted)}
 .app-top .code{font:600 12px var(--mono);color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent);padding:3px 8px;border-radius:6px}
 .app-h{font:700 20px/1.2 var(--display);letter-spacing:-.01em;margin:0}
-.big{font:800 54px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.big{font:700 54px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .big small{font:600 18px var(--body);color:var(--muted);letter-spacing:0;margin-left:6px}
 .meta{font:500 14px/1.45 var(--body);color:var(--muted)}
 .meta .mono{font:600 12px var(--mono);color:var(--ink)}
@@ -221,7 +221,7 @@ h1 .grad{color:inherit}
 .mini{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
 .mini div{border-radius:10px;padding:8px 6px;background:color-mix(in srgb,var(--ink) 5%,transparent);display:grid;gap:2px}
 .mini div.on{background:var(--accent-soft);outline:1.5px solid var(--accent)}
-.mini b{font:800 20px/1 var(--display)} .mini span{font:600 10px/1.2 var(--body);color:var(--muted)}
+.mini b{font:700 20px/1 var(--display)} .mini span{font:600 10px/1.2 var(--body);color:var(--muted)}
 .piece.out{border:1px dashed var(--muted);color:var(--muted);background:none}
 .anat{margin:18px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:14px;overflow:hidden}
 .anat div{background:var(--surface);padding:10px 10px 11px;min-width:0}
@@ -235,7 +235,7 @@ h1 .grad{color:inherit}
 .duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
 @media (max-width:860px){.duo{grid-template-columns:minmax(0,1fr)}}
 .panel{background:var(--surface);border-radius:24px;padding:26px;min-width:0}
-.panel h3{font:800 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 6px}
+.panel h3{font:700 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 6px}
 .panel .sub{color:var(--muted);margin:0;font-size:15px;max-width:44ch}
 .log{list-style:none;margin:6px 0 0;padding:0;position:relative;max-height:390px;overflow:auto}
 .log li{display:grid;grid-template-columns:20px 54px minmax(0,1fr);gap:10px;padding:9px 0;font-size:15px;align-items:baseline;position:relative}
@@ -255,14 +255,14 @@ h1 .grad{color:inherit}
 .stops div.on{color:var(--ink)}
 .stops div.on::after{content:"DC-0042";display:block;margin-top:4px;font:600 11px var(--mono);color:var(--accent)}
 .where{margin-top:22px;padding:16px 18px;border-radius:16px;background:var(--bg);display:flex;gap:12px;align-items:center}
-.where .big2{font:800 22px/1.15 var(--display);letter-spacing:-.01em}
+.where .big2{font:700 22px/1.15 var(--display);letter-spacing:-.01em}
 .where .meta{font-size:14px}
 
 /* Numbers */
 .numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:center;padding-block:28px}
 @media (max-width:700px){.numbers{grid-template-columns:minmax(0,1fr)}}
 .num{display:grid;gap:6px}
-.num .v{font:800 clamp(48px,7vw,80px)/1 var(--display);letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.num .v{font:700 clamp(48px,7vw,80px)/1 var(--display);letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
 .num.bad .v{color:var(--bad)}
 .num .l{font:500 16px/1.35 var(--body);color:var(--muted);max-width:24ch;margin:0 auto}
 .foot{color:var(--muted);font-size:13px;text-align:center;max-width:70ch;margin:0 auto}
