@@ -607,6 +607,10 @@
   .feat-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px; max-width:36em; }
   .feat-list li{ display:flex; gap:10px; font-size:0.94rem; color:var(--ink-soft); align-items:flex-start; }
   .feat-list a{ color:var(--brand); font-weight:600; }
+  .ft-pair{ display:flex; align-items:center; justify-content:center; gap:28px; padding:36px 24px; border-radius:22px; background:linear-gradient(160deg,var(--brand-soft),var(--paper)); border:1px solid var(--line-soft); }
+  .ft-pair .ft-dev{ width:44%; max-width:230px; height:auto; filter:drop-shadow(0 22px 26px rgba(20,27,61,.18)); }
+  .ft-pair .ft-phone{ width:42%; max-width:220px; height:auto; border-radius:26px; border:1px solid var(--line); background:#fff; box-shadow:0 26px 48px -28px rgba(20,27,61,.55); }
+  @media (max-width:520px){ .ft-pair{ gap:16px; padding:24px 14px; } }
   .feat-list svg{ width:16px; height:16px; flex:none; margin-top:3px; color:var(--success); }
   .feat-media .chrome{ transform:rotate(-0.4deg); }
   .feat-row.reverse .feat-media .chrome{ transform:rotate(0.5deg); }
@@ -1270,9 +1274,9 @@
           </ul>
         </div>
         <div class="feat-media">
-          <div class="chrome">
-            <div class="chrome-bar"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
-            <img src="assets/img/dashboard.webp" alt="Shift dashboard showing total customers, total revenue, service breakdown, and clock-in history" />
+          <div class="ft-pair">
+            <img class="ft-dev" src="/assets/img/fold-time/device-front-cut.webp" width="456" height="548" loading="lazy" decoding="async" alt="Fold Time wall device: Tap your phone" />
+            <img class="ft-phone" src="/assets/img/fold-time/staff-clocked-in.webp" width="520" height="885" loading="lazy" decoding="async" alt="Phone screen after a tap on Fold Time: Clocked in, 11:32 AM, with Undo" />
           </div>
         </div>
       </div>
