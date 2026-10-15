@@ -64,6 +64,18 @@ ol.steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-r
 .help a{color:var(--accent);font-weight:700;text-decoration:none}
 [hidden]{display:none!important}
 code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
+
+/* same page system as the rest of the site: a page head and plain sections, no floating cards */
+body{background:#fff}
+.wrap{max-width:860px;padding:56px 24px 72px}
+.card{background:none;border:0;border-radius:0;box-shadow:none;padding:32px 0;margin:0;border-top:1px solid var(--line)}
+main>.card:first-child{border-top:0;padding-top:0}
+main>.card:first-child .ico{display:none}
+main>.card:first-child h1{font-size:clamp(34px,4.6vw,52px);line-height:1.1;margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--muted);text-decoration:none}
+ul.plain li{display:block;position:relative;padding-left:19px}
+ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
 </style>
 <script type="application/ld+json">
 {
@@ -232,6 +244,7 @@ code{background:var(--ground);padding:2px 6px;border-radius:6px;font-size:.92em}
 <main>
   <section class="card">
     <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V4h10v4"/><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M7 14h10v6H7z"/><circle cx="17" cy="11.5" r=".7" fill="currentColor"/></svg></div>
+    <div class="crumbs"><a href="/">Fold POS</a> › Print helper</div>
     <h1>Print from any browser</h1>
     <p class="lead">The Fold print helper is a small program for the counter computer. It starts when you sign in, finds the receipt and tag printers you already have, and prints whatever Fold POS sends — from Chrome, Edge or Firefox on Windows.</p>
 

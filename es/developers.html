@@ -65,6 +65,18 @@ td code{white-space:nowrap}
 .help{margin:22px 0 0;text-align:center;font-size:14px;color:var(--muted)}
 .help a{color:var(--accent);font-weight:700;text-decoration:none}
 code{overflow-wrap:anywhere}
+
+/* same page system as the rest of the site: a page head and plain sections, no floating cards */
+body{background:#fff}
+.wrap{max-width:860px;padding:56px 24px 72px}
+.card{background:none;border:0;border-radius:0;box-shadow:none;padding:32px 0;margin:0;border-top:1px solid var(--line)}
+main>.card:first-child{border-top:0;padding-top:0}
+main>.card:first-child .ico{display:none}
+main>.card:first-child h1{font-size:clamp(34px,4.6vw,52px);line-height:1.1;margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--muted);text-decoration:none}
+ul.plain li{display:block;position:relative;padding-left:19px}
+ul.plain li::before{position:absolute;left:0;top:.62em;margin-top:0}
 </style>
 <script type="application/ld+json">
 {
@@ -260,6 +272,7 @@ code{overflow-wrap:anywhere}
 <main>
   <section class="card">
     <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-5-6 5-6M15 6l5 6-5 6"/></svg></div>
+    <div class="crumbs"><a href="/es/">Fold POS</a> › Desarrolladores e IA</div>
     <h1>Fold POS para desarrolladores y agentes de IA</h1>
     <p class="lead">Fold POS es un software de punto de venta (POS) y operaciones para lavanderías, tintorerías y sastrerías, creado por Fold Laundry. Esta página es la entrada legible por máquinas: un mapa del sitio para modelos de lenguaje, copias en markdown de cada página y un servidor MCP público que responde preguntas sobre el producto. Hay dos servidores MCP más, para los asistentes de IA de cada persona: <a href="#store-mcp">uno para el propietario de una tienda</a> y <a href="#booking-mcp">otro para un cliente que reserva una recogida</a>.</p>
     <p class="muted">Los archivos y el servidor MCP público son de solo lectura y no requieren una cuenta. El servidor de la tienda requiere el inicio de sesión del propietario o un token. El servidor de reservas no requiere inicio de sesión, solo un código que el cliente recibe por mensaje de texto.</p>

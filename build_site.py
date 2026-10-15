@@ -713,12 +713,19 @@ def main():
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')
         print('wrote', slug)
-    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('setup.html', 'new.html', 'follow-the-bag.html', 'time-clock-tour.html', 'time-clock.html', 'wallet.html', 'hardware.html'))
+    from pages_features import features   # features.md stays a static mirror
+    from pages_shops import laundromats, dry_cleaners, alterations   # their .md mirrors are static too
+    for slug, fn in (('laundromats', laundromats), ('dry-cleaners', dry_cleaners), ('alterations', alterations)):
+        open(f'{slug}.html', 'w', encoding='utf-8').write(fn())
+        print('wrote', slug)
+    open('features.html', 'w', encoding='utf-8').write(features())
+    print('wrote features')
+    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('new.html', 'follow-the-bag.html', 'time-clock-tour.html', 'time-clock.html', 'wallet.html'))
     chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html') and f != 'time-clock.html')   # es/time-clock.html only redirects to /es/fold-time
     for f in chrome_pages:
         put_chrome(f)
     print('chrome on', ', '.join(chrome_pages))
-    for f in chrome_pages + ['setup.html']:
+    for f in chrome_pages:
         put_lang(f)
     sitemap()
     print('hreflang, og:locale, JSON-LD regions and sitemap.xml done')
