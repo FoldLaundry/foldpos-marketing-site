@@ -619,14 +619,13 @@ def put_lang(fname):
 
 SITEMAP_PAGES = [('index.html', '1.0'), ('laundromats.html', '0.9'), ('dry-cleaners.html', '0.9'), ('alterations.html', '0.9'),
                  ('features.html', '0.8'), ('hey-fold.html', '0.8'), ('pickup-delivery.html', '0.8'), ('fold-time.html', '0.8'),
-                 ('counter-money.html', '0.8'), ('plants.html', '0.8'), ('laundromat-roi.html', '0.7'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
+                 ('counter-money.html', '0.8'), ('plants.html', '0.8'), ('pricing.html', '0.9'), ('faq.html', '0.7'), ('help.html', '0.7'),
                  ('assistants.html', '0.6'), ('contact.html', '0.6'), ('about.html', '0.5'), ('printers.html', '0.7'), ('developers.html', '0.6'),
                  ('download.html', '0.5'),
                  ('privacy.html', '0.3'), ('terms.html', '0.3')]
 SITEMAP_MD = ['fold-pos.md', 'laundromats.md', 'dry-cleaners.md', 'alterations.md', 'features.md', 'pricing.md', 'faq.md',
               'help.md', 'contact.md', 'about.md', 'printers.md', 'setup.md', 'download.md', 'developers.md',
-              'hey-fold.md', 'pickup-delivery.md', 'counter-money.md', 'plants.md', 'assistants.md', 'fold-time.md',
-              'laundromat-roi.md']
+              'hey-fold.md', 'pickup-delivery.md', 'counter-money.md', 'plants.md', 'assistants.md', 'fold-time.md']
 
 
 def sitemap():
@@ -709,11 +708,15 @@ def main():
     from pages_assistants import assistants
     from pages_foldtime import fold_time
     from pages_roi import roi
+    # Fold Pay isn't announced publicly yet: the ROI page is linked only from the wallet walkthrough.
+    UNLISTED_PAGES = {'laundromat-roi'}
     for slug, fn in (('pricing', pricing), ('faq', faq), ('help', help_), ('contact', contact), ('about', about), ('printers', printers),
                      ('hey-fold', hey_fold), ('pickup-delivery', pickup_delivery),
                      ('counter-money', counter_money), ('plants', plants), ('assistants', assistants), ('fold-time', fold_time),
                      ('laundromat-roi', roi)):
         h, md = fn()
+        if slug in UNLISTED_PAGES:   # reachable by link, kept out of search until it's announced
+            h = h.replace('<head>', '<head>\n<meta name="robots" content="noindex">', 1)
         open(f'{slug}.html', 'w', encoding='utf-8').write(h)
         open(f'{slug}.md', 'w', encoding='utf-8').write(md.rstrip() + '\n')
         print('wrote', slug)
