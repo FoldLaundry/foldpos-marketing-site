@@ -48,7 +48,7 @@
 body{background:var(--bg);color:var(--ink);font:17px/1.5 var(--body);margin:0;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:56px 72px;display:grid;gap:28px}
 button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 
 /* Hero */
 .hero{display:grid;justify-items:center;text-align:center;gap:14px}
@@ -63,7 +63,7 @@ h1 .grad{color:inherit}
 .seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:var(--surface);box-shadow:0 1px 3px rgb(0 0 0 / .12),0 4px 14px rgb(0 0 0 / .06);transition:transform .45s var(--ease),width .45s var(--ease)}
 
 /* Stage */
-.stage{position:relative;border-radius:28px;overflow:hidden;background:var(--sky-bot);box-shadow:0 30px 80px -40px rgb(13 21 38 / .35);isolation:isolate}
+.stage{position:relative;border-radius:18px;overflow:hidden;background:var(--sky-bot);box-shadow:0 30px 80px -40px rgb(13 21 38 / .35);isolation:isolate}
 .scene{display:block;width:100%;height:auto}
 #world{transition:transform .9s var(--ease)}
 .hud{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}
@@ -170,8 +170,8 @@ h1 .grad{color:inherit}
 .phone{width:min(290px,100%);border-radius:46px;padding:12px;background:var(--frame);box-shadow:0 40px 70px -40px rgb(13 21 38 / .55),0 0 0 1px color-mix(in srgb,var(--ink) 10%,transparent)}
 .phone .scr{border-radius:35px;background:var(--screen);min-height:500px;padding:46px 18px 22px;position:relative;display:flex;flex-direction:column;gap:14px;overflow:hidden}
 .phone .scr::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:92px;height:26px;border-radius:14px;background:var(--frame)}
-.counter{width:min(440px,100%);border-radius:26px;padding:12px;background:var(--frame);box-shadow:0 40px 70px -40px rgb(13 21 38 / .55)}
-.counter .scr{border-radius:16px;background:var(--screen);min-height:300px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.counter{width:min(440px,100%);border-radius:18px;padding:12px;background:var(--frame);box-shadow:0 40px 70px -40px rgb(13 21 38 / .55)}
+.counter .scr{border-radius:14px;background:var(--screen);min-height:300px;padding:20px;display:flex;flex-direction:column;gap:14px}
 .stand{width:120px;height:14px;margin:0 auto;border-radius:0 0 12px 12px;background:var(--frame);opacity:.8}
 .app-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font:600 12px var(--body);color:var(--muted)}
 .app-top .code{font:600 12px var(--mono);color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent);padding:3px 8px;border-radius:6px}
@@ -209,7 +209,7 @@ h1 .grad{color:inherit}
 .plist .tg.on{opacity:1;color:var(--ink)}
 .tagstrip{border:1px dashed color-mix(in srgb,var(--ink) 35%,transparent);background:var(--paper);color:#0d1526;border-radius:6px;padding:10px 12px;font:600 13px/1.5 var(--mono);display:grid;gap:2px}
 .tagstrip .l1{display:flex;gap:12px;flex-wrap:wrap;font-size:15px}
-.baglabel{background:#fff;color:#0d1526;border-radius:10px;padding:14px;display:grid;gap:8px;justify-items:center;box-shadow:0 8px 24px -14px rgb(13 21 38 / .5);border:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+.baglabel{background:#fff;color:#0d1526;border-radius:8px;padding:14px;display:grid;gap:8px;justify-items:center;box-shadow:0 8px 24px -14px rgb(13 21 38 / .5);border:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
 .baglabel .route{font:700 12px var(--body);letter-spacing:.06em}
 .baglabel .bars{width:min(220px,100%);height:44px;background:repeating-linear-gradient(90deg,#0d1526 0 2px,transparent 2px 5px,#0d1526 5px 9px,transparent 9px 11px,#0d1526 11px 12px,transparent 12px 15px)}
 .baglabel .bcode{font:600 17px var(--mono);letter-spacing:.12em}
@@ -219,7 +219,7 @@ h1 .grad{color:inherit}
 .kv div:last-child{border-bottom:0}
 .kv dt{color:var(--muted);font-weight:500} .kv dd{margin:0;font-weight:600;text-align:right;overflow-wrap:anywhere}
 .mini{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
-.mini div{border-radius:10px;padding:8px 6px;background:color-mix(in srgb,var(--ink) 5%,transparent);display:grid;gap:2px}
+.mini div{border-radius:8px;padding:8px 6px;background:color-mix(in srgb,var(--ink) 5%,transparent);display:grid;gap:2px}
 .mini div.on{background:var(--accent-soft);outline:1.5px solid var(--accent)}
 .mini b{font:700 20px/1 var(--display)} .mini span{font:600 10px/1.2 var(--body);color:var(--muted)}
 .piece.out{border:1px dashed var(--muted);color:var(--muted);background:none}
@@ -234,7 +234,7 @@ h1 .grad{color:inherit}
 /* Record + tracker */
 .duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
 @media (max-width:860px){.duo{grid-template-columns:minmax(0,1fr)}}
-.panel{background:var(--surface);border-radius:24px;padding:26px;min-width:0}
+.panel{background:var(--surface);border-radius:18px;padding:26px;min-width:0}
 .panel h3{font:700 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 6px}
 .panel .sub{color:var(--muted);margin:0;font-size:15px;max-width:44ch}
 .log{list-style:none;margin:6px 0 0;padding:0;position:relative;max-height:390px;overflow:auto}
@@ -254,7 +254,7 @@ h1 .grad{color:inherit}
 .stops div{font:600 13px/1.25 var(--body);color:var(--muted);padding-inline:2px}
 .stops div.on{color:var(--ink)}
 .stops div.on::after{content:"DC-0042";display:block;margin-top:4px;font:600 11px var(--mono);color:var(--accent)}
-.where{margin-top:22px;padding:16px 18px;border-radius:16px;background:var(--bg);display:flex;gap:12px;align-items:center}
+.where{margin-top:22px;padding:16px 18px;border-radius:14px;background:var(--bg);display:flex;gap:12px;align-items:center}
 .where .big2{font:700 22px/1.15 var(--display);letter-spacing:-.01em}
 .where .meta{font-size:14px}
 
@@ -273,7 +273,7 @@ h1 .grad{color:inherit}
   .hud{top:10px;left:10px;right:10px} .glass{font-size:11px;padding:5px 10px} .glass .t{font-size:11px}
   .hud .right{display:none}
   .cap{position:static;padding:14px 16px 16px;background:none}
-  .stage{border-radius:22px}
+  .stage{border-radius:18px}
   .count{display:none}
   .panel{padding:20px}
 }

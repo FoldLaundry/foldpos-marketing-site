@@ -314,9 +314,9 @@ STYLE = """<style>
 .ff-pts a{font-weight:600}
 .ff-sec .tagsplit{align-items:center}
 .ff-sec:nth-of-type(even) .tagsplit>div:first-child{order:2}
-.ff-pair{display:flex;align-items:center;justify-content:center;gap:28px;padding:36px 24px;border-radius:22px;background:var(--fog)}
+.ff-pair{display:flex;align-items:center;justify-content:center;gap:28px;padding:36px 24px;border-radius:18px;background:var(--fog)}
 .ff-dev{width:44%;max-width:230px;height:auto;filter:drop-shadow(0 22px 26px rgba(20,27,61,.18))}
-.ff-phone{width:42%;max-width:220px;height:auto;border-radius:26px;border:1px solid var(--line);background:#fff;box-shadow:0 26px 48px -28px rgba(20,27,61,.55)}
+.ff-phone{width:42%;max-width:220px;height:auto;border-radius:18px;border:1px solid var(--line);background:#fff;box-shadow:0 26px 48px -28px rgba(20,27,61,.55)}
 .values.three{grid-template-columns:repeat(3,1fr)}
 .values .fact p{color:var(--ink-2);font-size:15px;line-height:1.55;margin-top:6px}
 @media (max-width:900px){.ff-sec:nth-of-type(even) .tagsplit>div:first-child{order:0}.values.three{grid-template-columns:1fr}}

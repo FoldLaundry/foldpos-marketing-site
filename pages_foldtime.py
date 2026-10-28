@@ -35,7 +35,7 @@ TOUR = '/time-clock-tour'
 
 EXTRA_STYLE = '''<style>
 .ft-shots{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.ft-shot{width:min(240px,100%);height:auto;border-radius:26px;border:1px solid var(--line);background:#fff;box-shadow:0 22px 44px -30px rgba(14,23,48,.55)}
+.ft-shot{width:min(240px,100%);height:auto;border-radius:18px;border:1px solid var(--line);background:#fff;box-shadow:0 22px 44px -30px rgba(14,23,48,.55)}
 .ft-dev{width:min(300px,100%);height:auto;border-radius:18px}
 .ft-tour{margin-top:20px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface,#fff)}
 .ft-tour iframe{display:block;width:100%;height:min(760px,88vh);border:0}

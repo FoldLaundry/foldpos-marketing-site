@@ -164,7 +164,7 @@ ES = {
 
 FILM = '''<figure style="margin:0">
     <video controls muted playsinline preload="none" poster="/assets/video/fold-hey-fold-film-poster.jpg" width="1920" height="1080"
-      style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);background:#0e1730"
+      style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);background:#0e1730"
       aria-label="Hey Fold at the counter, then the tags, the ready text and the office">
       <source src="/assets/video/fold-hey-fold-film.webm" type="video/webm">
       <source src="/assets/video/fold-hey-fold-film.mp4" type="video/mp4">

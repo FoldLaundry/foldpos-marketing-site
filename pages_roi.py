@@ -259,7 +259,7 @@ STYLE = '''<style>
 .roi-lede+.roi-f,legend+.roi-f{border-top:0}
 .roi-fh{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .roi-fh label{font-weight:600;font-size:15px;line-height:1.35}
-.roi-num{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:#fff;flex:none;transition:border-color .2s}
+.roi-num{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:8px;padding:0 10px;background:#fff;flex:none;transition:border-color .2s}
 .roi-num:focus-within{border-color:var(--brand)}
 .roi-num input{width:72px;border:0;outline:0;background:transparent;font:600 16px/1 "Figtree",sans-serif;color:var(--ink);padding:10px 0;text-align:right;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
 .roi-num input::-webkit-outer-spin-button,.roi-num input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
@@ -277,7 +277,7 @@ STYLE = '''<style>
 .roi-costs li svg{color:var(--mint);width:18px;height:18px;margin-top:3px}
 .roi-costs b{color:var(--ink)}
 .roi-out{position:sticky;top:88px;display:grid;gap:14px}
-.roi-card{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;box-shadow:0 30px 60px -44px rgba(14,23,48,.4);scroll-margin-top:88px}
+.roi-card{border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;box-shadow:0 30px 60px -44px rgba(14,23,48,.4);scroll-margin-top:88px}
 .roi-card h2{font-size:15px;font-weight:700;color:var(--ink-3);letter-spacing:0}
 .roi-net{font:700 clamp(40px,5vw,52px)/1.05 "Figtree",sans-serif;letter-spacing:-.03em;color:var(--ink);margin-top:8px;font-variant-numeric:tabular-nums}
 .roi-net small{font:500 16px "Figtree",sans-serif;color:var(--ink-3);letter-spacing:0}
@@ -311,7 +311,7 @@ STYLE = '''<style>
   .roi{grid-template-columns:1fr;gap:24px}
   .roi-out{position:static}
   .roi-bar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;align-items:center;justify-content:space-between;gap:12px;
-    background:var(--deep);color:#fff;border-radius:16px;padding:12px 16px;text-decoration:none;box-shadow:0 18px 40px -16px rgba(14,23,48,.6);
+    background:var(--deep);color:#fff;border-radius:14px;padding:12px 16px;text-decoration:none;box-shadow:0 18px 40px -16px rgba(14,23,48,.6);
     transform:translateY(140%);transition:transform .3s var(--ease)}
   .roi-bar.show{transform:none}
   .roi-bar span{font-size:13px;color:rgba(255,255,255,.75)}

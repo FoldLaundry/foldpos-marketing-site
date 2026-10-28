@@ -21,7 +21,7 @@ from build_site import page, md_footer, md_text, strip_tags, esc, ic, SITE, BAND
 
 SLUG = 'pickup-delivery'
 IMG = '/assets/img/new/{}.webp'
-IMG_STYLE = ('width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:16px;'
+IMG_STYLE = ('width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px;'
              'background:#fff;box-shadow:0 30px 60px -44px rgba(14,23,48,.4)')
 LABEL_STYLE = 'display:flex;gap:8px;align-items:center;font-weight:700;font-size:14px;color:var(--brand);margin-bottom:12px'
 
