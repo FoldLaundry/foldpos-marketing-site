@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tap to Pay on iPhone shortcut — Fold POS</title>
+<meta name="description" content="See how to open Tap to Pay on iPhone in one move: press and hold the Fold POS icon on the store’s iPhone and choose Tap to Pay on iPhone.">
+<link rel="canonical" href="https://foldpos.com/tap-to-pay-tour">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Tap to Pay on iPhone shortcut — Fold POS">
+<meta property="og:description" content="See how to open Tap to Pay on iPhone in one move: press and hold the Fold POS icon on the store’s iPhone and choose Tap to Pay on iPhone.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta property="og:url" content="https://foldpos.com/tap-to-pay-tour">
+<meta property="og:site_name" content="Fold POS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tap to Pay on iPhone shortcut — Fold POS">
+<meta name="twitter:description" content="See how to open Tap to Pay on iPhone in one move: press and hold the Fold POS icon on the store’s iPhone and choose Tap to Pay on iPhone.">
+<meta name="twitter:image" content="https://foldpos.com/assets/img/og-2026.png">
+<meta name="theme-color" content="#1e5eff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<style>
+html,body{margin:0}
+/* Layout: one big faithful screen on a quiet counter, steps beside it (stacked on phones). Calm, Apple-style motion. */
+:root {
+  --bg: #f5f7fc;
+  --panel: #FFFFFF;
+  --fg: #0f1830;
+  --fg2: #465373;
+  --line: #dfe5f1;
+  --accent: #1e5eff;
+  --accent-soft: #e6edff;
+  --counter: #eef2fa;
+  --ink: #0E1730;
+  --font: "Figtree", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+  --screen-font: -apple-system, "SF Pro Text", "Figtree", "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 40px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+header h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+header p { margin: 6px 0 0; color: var(--fg2); max-width: 60ch; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--panel); }
+.lang button { font: 600 13px var(--font); border: 0; background: none; color: var(--fg2); padding: 6px 14px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+@media (max-width: 760px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+/* The counter and the screen */
+.counter { background: var(--counter); border-radius: 28px; padding: 36px 20px; display: grid; place-items: center; }
+.screen {
+  position: relative; width: min(300px, 100%); aspect-ratio: 9 / 19.5; max-width: 100%;
+  border-radius: 40px; overflow: hidden; background: #1d2a4a;
+  box-shadow: 0 0 0 8px #0b0f1a, 0 24px 60px rgba(14, 23, 48, .28);
+  font-family: var(--screen-font); color: #fff; user-select: none;
+}
+.layer { position: absolute; inset: 0; transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1), filter .6s ease; }
+
+/* Home Screen */
+.home { background: linear-gradient(160deg, #3b5c9e 0%, #23365f 45%, #121c35 100%); padding: 56px 18px 0; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 12px; }
+.app { display: grid; justify-items: center; gap: 5px; font-size: 10px; color: rgba(255,255,255,.85); }
+.app i { width: 100%; aspect-ratio: 1; border-radius: 23%; display: block; background: rgba(255,255,255,.16); }
+.app:nth-child(3n) i { background: rgba(255,255,255,.11); }
+.app:nth-child(5n) i { background: rgba(255,255,255,.2); }
+.app span { height: 12px; }
+.fold i { background: #0E1730; display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(255,255,255,.08); transition: transform .5s ease; }
+.fold i svg { width: 100%; height: 100%; display: block; }
+.dock { position: absolute; left: 12px; right: 12px; bottom: 12px; height: 74px; border-radius: 26px; background: rgba(255,255,255,.14); display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 12px 14px; }
+.dock i { border-radius: 23%; background: rgba(255,255,255,.18); }
+
+/* Hold: everything else blurs, the icon lifts, the menu opens */
+.blur { position: absolute; inset: 0; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(10,16,32,.25); opacity: 0; transition: opacity .5s ease; }
+.lift { position: absolute; opacity: 0; transition: opacity .3s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.lift i { display: grid; place-items: center; width: 100%; aspect-ratio: 1; border-radius: 23%; background: #0E1730; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+.lift i svg { width: 100%; height: 100%; display: block; }
+.menu {
+  position: absolute; left: 18px; width: 210px; border-radius: 16px; overflow: hidden;
+  background: rgba(245,246,250,.94); color: #111; font-size: 13.5px;
+  transform-origin: 20px 0; transform: scale(.6); opacity: 0;
+  transition: opacity .35s ease, transform .45s cubic-bezier(.2,1.3,.4,1);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+.menu div { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; }
+.menu div + div { border-top: 1px solid rgba(0,0,0,.09); }
+.menu .ours { font-weight: 600; transition: background .2s ease; }
+.menu .ours.pressed { background: rgba(0,0,0,.08); }
+.menu .muted { color: rgba(0,0,0,.35); }
+.menu svg { width: 20px; height: 20px; flex: none; }
+
+/* Fold's Tap to Pay screen (Fold Pay is ready) */
+.ttp { background: radial-gradient(120% 70% at 20% 0%, rgba(124,92,255,.45), transparent 60%), radial-gradient(110% 60% at 100% 30%, rgba(59,130,246,.35), transparent 60%), #0E1730; display: flex; flex-direction: column; padding: 54px 20px 26px; opacity: 0; transform: scale(1.06); }
+.ttp .top { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,.55); }
+.ttp .mid { flex: 1; display: grid; place-content: center; justify-items: center; text-align: center; gap: 8px; }
+.ttp .logo { width: 64px; height: 64px; border-radius: 18px; background: #2F7BFF; display: grid; place-items: center; margin-bottom: 18px; box-shadow: 0 0 0 0 rgba(47,123,255,.5); }
+.ttp .logo svg { width: 40px; height: 40px; }
+.ttp h3 { margin: 0; font-size: 22px; font-weight: 700; }
+.ttp p { margin: 0; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.72); max-width: 22ch; }
+.ttp .btn { border: 1.5px solid rgba(255,255,255,.35); border-radius: 14px; padding: 12px; text-align: center; font-size: 14px; font-weight: 600; }
+.ttp .lock { margin-top: 12px; text-align: center; font-size: 11px; color: rgba(255,255,255,.5); }
+
+/* The finger */
+.touch { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: 0 0 0 1px rgba(255,255,255,.7); opacity: 0; transform: scale(.6); transition: opacity .3s ease, transform .3s ease, left .7s cubic-bezier(.4,0,.2,1), top .7s cubic-bezier(.4,0,.2,1); pointer-events: none; }
+.touch::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 3px solid #fff; opacity: 0; clip-path: inset(0 0 0 0); }
+.touch.on { opacity: 1; transform: scale(1); }
+.touch.hold::after { animation: hold 1.2s linear forwards; }
+.touch.tap { transform: scale(.82); }
+@keyframes hold { 0% { opacity: .9; transform: scale(.7); } 100% { opacity: 0; transform: scale(1.5); } }
+
+/* Scene states */
+.screen[data-scene="1"] .fold i { transform: scale(.94); }
+.screen[data-scene="2"] .blur, .screen[data-scene="3"] .blur { opacity: 1; }
+.screen[data-scene="2"] .lift, .screen[data-scene="3"] .lift { opacity: 1; }
+.screen[data-scene="2"] .fold i, .screen[data-scene="3"] .fold i { opacity: 0; }
+.screen[data-scene="2"] .menu, .screen[data-scene="3"] .menu { opacity: 1; transform: scale(1); }
+.screen[data-scene="4"] .ttp { opacity: 1; transform: scale(1); }
+.screen[data-scene="4"] .home { opacity: 0; transform: scale(.92); filter: blur(6px); }
+.screen[data-scene="4"] .ttp .logo { animation: glow 2.4s ease-out .4s 2; }
+@keyframes glow { 0% { box-shadow: 0 0 0 0 rgba(47,123,255,.55); } 100% { box-shadow: 0 0 0 26px rgba(47,123,255,0); } }
+
+/* Steps */
+.steps { display: grid; gap: 10px; }
+.steps h2 { margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--fg2); }
+.step {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; align-items: start; text-align: left;
+  width: 100%; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel);
+  color: var(--fg); font: inherit; cursor: pointer; transition: border-color .25s ease, box-shadow .25s ease;
+}
+.step:hover { border-color: var(--accent); }
+.step:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.step b { display: block; font-size: 16px; font-weight: 700; }
+.step span { color: var(--fg2); font-size: 14px; }
+.step .n { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--accent-soft); color: var(--accent); font-variant-numeric: tabular-nums; position: relative; }
+.step[aria-current="step"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.step[aria-current="step"] .n { background: var(--accent); color: #fff; }
+.bar { height: 3px; border-radius: 3px; background: var(--line); margin-top: 10px; overflow: hidden; grid-column: 2; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+.controls { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+.controls button { font: 600 14px var(--font); padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); cursor: pointer; }
+.controls button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.caption { min-height: 3em; font-size: 15px; color: var(--fg2); }
+
+/* Other ways in */
+.more { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: grid; gap: 14px; align-content: start; }
+.card h3 { margin: 0; font-size: 17px; }
+.card p { margin: 0; color: var(--fg2); font-size: 14px; max-width: 60ch; }
+.mini { border-radius: 14px; background: var(--counter); padding: 14px; display: grid; gap: 8px; font-size: 13px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; font-weight: 700; }
+.topbar .icons { display: flex; gap: 14px; align-items: center; color: var(--fg2); }
+.topbar .icons svg { width: 20px; height: 20px; }
+.topbar .hl { color: var(--fg); position: relative; display: grid; }
+.topbar .hl::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid var(--accent); animation: pulse 2.2s ease-out infinite; }
+@keyframes pulse { 0% { opacity: .9; transform: scale(.8); } 100% { opacity: 0; transform: scale(1.4); } }
+.switchrow { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+.switchrow small { display: block; color: var(--fg2); font-size: 12px; }
+.sw { width: 44px; height: 26px; border-radius: 999px; background: #34C759; position: relative; flex: none; }
+.sw::after { content: ""; position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+.crumb { color: var(--fg2); font-size: 12px; }
+.note { color: var(--fg2); font-size: 13.5px; max-width: 75ch; border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .layer, .menu, .touch, .lift { transition: none !important; }
+  .touch.hold::after, .topbar .hl::after, .screen[data-scene="4"] .ttp .logo { animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1 data-t="title">Open Tap to Pay on iPhone in one move</h1>
+      <p data-t="lede">On the store’s Tap to Pay iPhone, you don’t have to open Fold POS and look for the reader. Press and hold the Fold POS icon and pick Tap to Pay on iPhone.</p>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" aria-pressed="true">English</button>
+      <button type="button" id="lang-es" aria-pressed="false">Español</button>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="counter">
+      <div class="screen" id="screen" data-scene="1" role="img" aria-label="Home Screen: press and hold the Fold POS icon, choose Tap to Pay on iPhone, and the Fold Pay screen opens ready">
+        <div class="layer home" id="home">
+          <div class="grid" id="grid"></div>
+          <div class="dock"><i></i><i></i><i></i><i></i></div>
+          <div class="blur"></div>
+          <div class="lift" id="lift"><i><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#fold-mark"/></svg></i></div>
+          <div class="menu" id="menu">
+            <div class="ours" id="menu-ours"><span data-t="menuItem">Tap to Pay on iPhone</span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#contactless"/></svg></div>
+            <div class="muted"><span data-t="menuEdit">Edit Home Screen</span></div>
+          </div>
+        </div>
+        <div class="layer ttp" aria-hidden="true">
+          <div class="top"><span>Fold Pay</span><span></span></div>
+          <div class="mid">
+            <div class="logo"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#contactless-white"/></svg></div>
+            <h3 data-t="ready">Fold Pay is ready</h3>
+            <p data-t="readyBody">This iPhone lights up when the cashier sends a payment.</p>
+          </div>
+          <div class="btn" data-t="charge">Charge an amount</div>
+          <div class="lock" data-t="lock">Counter iPhone · payments secured by Apple</div>
+        </div>
+        <div class="touch" id="touch"></div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <h2 data-t="how">How it works</h2>
+      <button class="step" type="button" data-step="1" aria-current="step"><span class="n">1</span><div><b data-t="s1">Press and hold Fold POS</b><span data-t="s1b">On the Home Screen, hold the Fold POS icon until a menu appears.</span></div><div class="bar"><i></i></div></button>
+      <button class="step" type="button" data-step="2"><span class="n">2</span><div><b data-t="s2">Choose Tap to Pay on iPhone</b><span data-t="s2b">It’s the first item in the menu.</span></div><div class="bar"><i></i></div></button>
+      <button class="step" type="button" data-step="3"><span class="n">3</span><div><b data-t="s3">Fold Pay is ready</b><span data-t="s3b">Fold POS opens straight to the payment screen. Sales from the counter show up here, or tap Charge an amount.</span></div><div class="bar"><i></i></div></button>
+      <div class="controls">
+        <button type="button" id="play" data-t="pause">Pause</button>
+        <button type="button" id="replay" data-t="replay">Start over</button>
+      </div>
+      <div class="caption" id="caption" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="more" aria-labelledby="more-h">
+    <h2 id="more-h" data-t="moreH" style="grid-column: 1 / -1; margin: 0; font-size: 20px;">Two more quick ways in</h2>
+    <div class="card">
+      <h3 data-t="c1">From inside Fold POS</h3>
+      <p data-t="c1b">On a Tap to Pay iPhone, the top bar has a Tap to Pay button next to the bell. One tap from any screen.</p>
+      <div class="mini">
+        <div class="topbar"><span>Fold POS</span>
+          <span class="icons">
+            <span class="hl"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#contactless-cur"/></svg></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6Zm-2 15a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 data-t="c2">Open it every time</h3>
+      <p data-t="c2b">For an iPhone that stays at the counter: Fold POS can open straight to Tap to Pay whenever it starts.</p>
+      <div class="mini">
+        <span class="crumb" data-t="crumb">Settings › Payment › Tap to Pay on iPhone</span>
+        <div class="switchrow"><div><span data-t="sw">Open Tap to Pay when Fold POS starts</span><small data-t="swb">On this iPhone only.</small></div><span class="sw" aria-hidden="true"></span></div>
+      </div>
+    </div>
+    <p class="note" data-t="note" style="grid-column: 1 / -1;">The shortcut appears only on an iPhone that’s one of your store’s Tap to Pay phones. After adding the iPhone in Settings › Payment, open Fold POS on it once and the shortcut is there from then on. Don’t see it? Update Fold POS and open it again.</p>
+  </section>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="fold-mark" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#0e1730"/><path d="M31 15 L69 15 Q74 15 74 20 L74 83 L68 78 L62 83 L56 78 L50 83 L44 78 L38 83 L32 78 L26 83 L26 20 Q26 15 31 15 Z" fill="#ffffff"/><path d="M38.5 26 H61.5 a5.5 5.5 0 0 1 0 11 H38.5 a5.5 5.5 0 0 1 0 -11 Z" fill="#1e5eff"/><path d="M43.5 42 H56.5 a5.5 5.5 0 0 1 0 11 H43.5 a5.5 5.5 0 0 1 0 -11 Z" fill="#1e5eff"/><path d="M38.5 58 H61.5 a5.5 5.5 0 0 1 0 11 H38.5 a5.5 5.5 0 0 1 0 -11 Z" fill="#1e5eff"/></symbol>
+    <g id="contactless" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="10"/><path d="M9 9.2a4 4 0 0 1 0 5.6M12 7.3a7 7 0 0 1 0 9.4M15 5.6a9.6 9.6 0 0 1 0 12.8"/>
+    </g>
+    <g id="contactless-white" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+      <path d="M7 8.5a5 5 0 0 1 0 7M11 6a8.5 8.5 0 0 1 0 12M15 3.8a12 12 0 0 1 0 16.4"/>
+    </g>
+    <g id="contactless-cur" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="12" cy="12" r="10"/><path d="M9 9.2a4 4 0 0 1 0 5.6M12 7.3a7 7 0 0 1 0 9.4M15 5.6a9.6 9.6 0 0 1 0 12.8"/>
+    </g>
+  </defs>
+</svg>
+
+<script>
+(() => {
+  const T = {
+    en: {
+      title: "Open Tap to Pay on iPhone in one move",
+      lede: "On the store’s Tap to Pay iPhone, you don’t have to open Fold POS and look for the reader. Press and hold the Fold POS icon and pick Tap to Pay on iPhone.",
+      menuItem: "Tap to Pay on iPhone", menuEdit: "Edit Home Screen",
+      ready: "Fold Pay is ready", readyBody: "This iPhone lights up when the cashier sends a payment.",
+      charge: "Charge an amount", lock: "Counter iPhone · payments secured by Apple",
+      how: "How it works",
+      s1: "Press and hold Fold POS", s1b: "On the Home Screen, hold the Fold POS icon until a menu appears.",
+      s2: "Choose Tap to Pay on iPhone", s2b: "It’s the first item in the menu.",
+      s3: "Fold Pay is ready", s3b: "Fold POS opens straight to the payment screen. Sales from the counter show up here, or tap Charge an amount.",
+      pause: "Pause", play: "Play", replay: "Start over",
+      cap1: "Hold the Fold POS icon. Don’t tap it, hold it for a second.",
+      cap2: "A menu opens. Tap “Tap to Pay on iPhone”.",
+      cap3: "That’s it. The iPhone is ready to take a card.",
+      moreH: "Two more quick ways in",
+      c1: "From inside Fold POS", c1b: "On a Tap to Pay iPhone, the top bar has a Tap to Pay button next to the bell. One tap from any screen.",
+      c2: "Open it every time", c2b: "For an iPhone that stays at the counter: Fold POS can open straight to Tap to Pay whenever it starts.",
+      crumb: "Settings › Payment › Tap to Pay on iPhone",
+      sw: "Open Tap to Pay when Fold POS starts", swb: "On this iPhone only.",
+      note: "The shortcut appears only on an iPhone that’s one of your store’s Tap to Pay phones. After adding the iPhone in Settings › Payment, open Fold POS on it once and the shortcut is there from then on. Don’t see it? Update Fold POS and open it again."
+    },
+    es: {
+      title: "Abre Tap to Pay on iPhone en un solo paso",
+      lede: "En el iPhone de Tap to Pay de la tienda no tienes que abrir Fold POS y buscar el lector. Mantén presionado el ícono de Fold POS y elige Tap to Pay on iPhone.",
+      menuItem: "Tap to Pay on iPhone", menuEdit: "Editar pantalla de inicio",
+      ready: "Fold Pay está listo", readyBody: "Este iPhone se enciende cuando el cajero envía un cobro.",
+      charge: "Cobrar un monto", lock: "Counter iPhone · pagos protegidos por Apple",
+      how: "Cómo funciona",
+      s1: "Mantén presionado Fold POS", s1b: "En la pantalla de inicio, mantén presionado el ícono de Fold POS hasta que aparezca un menú.",
+      s2: "Elige Tap to Pay on iPhone", s2b: "Es la primera opción del menú.",
+      s3: "Fold Pay está listo", s3b: "Fold POS abre directo en la pantalla de pago. Las ventas del mostrador aparecen aquí, o toca Cobrar un monto.",
+      pause: "Pausa", play: "Reproducir", replay: "Empezar de nuevo",
+      cap1: "Mantén presionado el ícono de Fold POS. No lo toques rápido; déjalo presionado un segundo.",
+      cap2: "Se abre un menú. Toca “Tap to Pay on iPhone”.",
+      cap3: "Listo. El iPhone ya puede aceptar una tarjeta.",
+      moreH: "Otras dos formas rápidas de entrar",
+      c1: "Desde Fold POS", c1b: "En un iPhone de Tap to Pay, la barra superior tiene un botón de Tap to Pay junto a la campana. Un toque desde cualquier pantalla.",
+      c2: "Que se abra siempre", c2b: "Para un iPhone que se queda en el mostrador: Fold POS puede abrir directo en Tap to Pay cada vez que inicia.",
+      crumb: "Ajustes › Pagos › Tap to Pay on iPhone",
+      sw: "Abrir Tap to Pay al iniciar Fold POS", swb: "Solo en este iPhone.",
+      note: "El atajo aparece solo en un iPhone que es uno de los teléfonos de Tap to Pay de tu tienda. Después de agregar el iPhone en Ajustes › Pagos, abre Fold POS en él una vez y el atajo queda ahí. ¿No lo ves? Actualiza Fold POS y vuelve a abrirlo."
+    }
+  };
+
+  // Home Screen: plain placeholder icons, Fold POS second row.
+  const grid = document.getElementById('grid');
+  const FOLD_INDEX = 5;
+  for (let i = 0; i < 16; i++) {
+    const a = document.createElement('div');
+    a.className = 'app' + (i === FOLD_INDEX ? ' fold' : '');
+    a.innerHTML = i === FOLD_INDEX
+      ? '<i><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#fold-mark"/></svg></i><span>Fold POS</span>'
+      : '<i></i><span></span>';
+    grid.appendChild(a);
+  }
+
+  const screen = document.getElementById('screen');
+  const touch = document.getElementById('touch');
+  const lift = document.getElementById('lift');
+  const menu = document.getElementById('menu');
+  const ours = document.getElementById('menu-ours');
+  const caption = document.getElementById('caption');
+  const steps = [...document.querySelectorAll('.step')];
+  const playBtn = document.getElementById('play');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let lang = 'en';
+  try { const s = localStorage.getItem('ttp-sc-lang'); if (s === 'es') lang = 'es'; } catch (e) {}
+  // /start links here; ?lang=es opens it in Spanish.
+  if (/[?&]lang=es(&|$)/.test(location.search)) lang = 'es';
+
+  function place() {
+    // Put the lifted icon, the menu and the finger where the Fold POS icon is.
+    const s = screen.getBoundingClientRect();
+    const ic = grid.children[FOLD_INDEX].querySelector('i').getBoundingClientRect();
+    const x = ic.left - s.left, y = ic.top - s.top;
+    lift.style.left = x + 'px'; lift.style.top = y + 'px'; lift.style.width = ic.width + 'px';
+    menu.style.top = (y + ic.height + 12) + 'px';
+    menu.style.left = Math.max(12, Math.min(x - 10, s.width - 222)) + 'px';
+    return { icon: [x + ic.width / 2, y + ic.height / 2], s };
+  }
+  function finger(xy) { touch.style.left = xy[0] + 'px'; touch.style.top = xy[1] + 'px'; }
+  function oursXY() {
+    const s = screen.getBoundingClientRect(), r = ours.getBoundingClientRect();
+    return [r.left - s.left + r.width * 0.35, r.top - s.top + r.height / 2];
+  }
+
+  // Timeline: [step, at ms, action]
+  const DUR = { 1: 3200, 2: 2600, 3: 4200 };
+  let timers = [], playing = !reduce, current = 1, startAt = 0, raf = 0;
+
+  function clear() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); }
+  function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+  function text(k) { return T[lang][k]; }
+
+  function show(step) {
+    clear(); current = step;
+    steps.forEach(b => { const on = +b.dataset.step === step; b.setAttribute('aria-current', on ? 'step' : 'false'); b.querySelector('.bar i').style.width = on ? '0%' : (+b.dataset.step < step ? '100%' : '0%'); });
+    caption.textContent = text('cap' + step);
+    const p = place();
+    touch.className = 'touch'; ours.classList.remove('pressed');
+
+    if (step === 1) {
+      screen.dataset.scene = '0';
+      finger(p.icon);
+      at(reduce ? 0 : 500, () => { touch.className = 'touch on'; screen.dataset.scene = '1'; });
+      at(reduce ? 0 : 700, () => touch.classList.add('hold'));
+      at(reduce ? 0 : 1900, () => { touch.className = 'touch'; screen.dataset.scene = '2'; });
+      if (reduce) at(0, () => { screen.dataset.scene = '1'; touch.className = 'touch on'; });
+    } else if (step === 2) {
+      screen.dataset.scene = '2';
+      const o = oursXY();
+      finger([o[0], o[1] + 60]);
+      at(reduce ? 0 : 350, () => { touch.className = 'touch on'; finger(o); });
+      at(reduce ? 0 : 1300, () => { touch.classList.add('tap'); ours.classList.add('pressed'); });
+      at(reduce ? 0 : 1600, () => { touch.classList.remove('tap'); });
+      at(reduce ? 0 : 2000, () => { touch.className = 'touch'; });
+    } else {
+      screen.dataset.scene = '4';
+    }
+    if (playing) run(step);
+  }
+
+  function run(step) {
+    startAt = performance.now();
+    const bar = steps[step - 1].querySelector('.bar i');
+    const tick = (now) => {
+      const f = Math.min(1, (now - startAt) / DUR[step]);
+      bar.style.width = (f * 100) + '%';
+      if (f < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    at(DUR[step], () => show(step === 3 ? 1 : step + 1));
+  }
+
+  function setPlaying(on) {
+    playing = on;
+    playBtn.dataset.t = on ? 'pause' : 'play';
+    playBtn.textContent = text(on ? 'pause' : 'play');
+    show(current);
+  }
+
+  function setLang(l) {
+    lang = l;
+    try { localStorage.setItem('ttp-sc-lang', l); } catch (e) {}
+    document.documentElement.lang = l;
+    document.getElementById('lang-en').setAttribute('aria-pressed', l === 'en');
+    document.getElementById('lang-es').setAttribute('aria-pressed', l === 'es');
+    document.querySelectorAll('[data-t]').forEach(el => { const v = T[l][el.dataset.t]; if (v) el.textContent = v; });
+    caption.textContent = text('cap' + current);
+    requestAnimationFrame(place);
+  }
+
+  steps.forEach(b => b.addEventListener('click', () => { setPlaying(false); show(+b.dataset.step); }));
+  playBtn.addEventListener('click', () => setPlaying(!playing));
+  document.getElementById('replay').addEventListener('click', () => { playing = true; playBtn.textContent = text('pause'); show(1); });
+  document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+  document.getElementById('lang-es').addEventListener('click', () => setLang('es'));
+  addEventListener('resize', () => place());
+
+  setLang(lang);
+  playBtn.textContent = text(playing ? 'pause' : 'play');
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => show(1)); else show(1);
+})();
+</script>
+
+</body>
+</html>

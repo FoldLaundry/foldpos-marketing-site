@@ -727,7 +727,7 @@ def main():
         print('wrote', slug)
     open('features.html', 'w', encoding='utf-8').write(features())
     print('wrote features')
-    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('new.html', 'follow-the-bag.html', 'time-clock-tour.html', 'time-clock.html', 'wallet.html'))
+    chrome_pages = sorted(f for f in os.listdir('.') if f.endswith('.html') and f not in ('new.html', 'follow-the-bag.html', 'tap-to-pay-tour.html', 'time-clock-tour.html', 'time-clock.html', 'wallet.html'))
     chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html') and f != 'time-clock.html')   # es/time-clock.html only redirects to /es/fold-time
     for f in chrome_pages:
         put_chrome(f)
