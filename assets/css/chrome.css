@@ -12,8 +12,7 @@
 .fx-nav.scrolled,.fx-nav.fx-solid{border-bottom-color:var(--fx-line)}
 .fx-nav-in{max-width:var(--fx-max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:26px}
 .fx-mark{display:flex;align-items:center;gap:10px;font:700 18px/1 "Figtree",-apple-system,sans-serif;letter-spacing:-.02em;color:var(--fx-ink);text-decoration:none;flex:none}
-.fx-mark i{width:26px;height:26px;border-radius:8px;background:var(--fx-brand);display:inline-block;position:relative}
-.fx-mark i::after{content:"";position:absolute;inset:7px 6px;border:2px solid #fff;border-radius:3px;border-top-width:5px}
+.fx-mark i{width:26px;height:26px;border-radius:8px;background:#0e1730 url(/assets/img/fold-pos-mark.svg) center/26px 26px no-repeat;display:inline-block;flex:none}
 .fx-links{display:flex;align-items:center;gap:4px;margin:0;padding:0;list-style:none;font-size:14px}
 .fx-links>li{position:relative}
 .fx-links a,.fx-drop-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 10px;border-radius:8px;color:var(--fx-ink-2);text-decoration:none;font-weight:500;font-size:14px;line-height:1.2;font-family:inherit;background:none;border:0;cursor:pointer}
