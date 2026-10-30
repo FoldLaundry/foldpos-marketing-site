@@ -56,7 +56,7 @@ if __name__ == '__main__':
 #   "@id": "https://foldpos.com/#organization",
 #   "name": "Fold POS",
 #   "url": "https://foldpos.com/",
-#   "logo": "https://foldpos.com/assets/img/og-2026.png",
+#   "logo": "https://foldpos.com/assets/img/og-fold-pos.png",
 #   "description": "Point of sale and operations software for laundromats, dry cleaners and tailors. Built by Fold Laundry.",
 #   "parentOrganization": {{ "@type": "Organization", "name": "Fold Laundry LLC" }},
 #   "contactPoint": [{{
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 #   "inLanguage": "en-US",
 #   "isPartOf": {{ "@id": "https://foldpos.com/#website" }},
 #   "about": {{ "@id": "https://foldpos.com/#software" }},
-#   "primaryImageOfPage": "https://foldpos.com/assets/img/og-2026.png",
+#   "primaryImageOfPage": "https://foldpos.com/assets/img/og-fold-pos.png",
 #   "publisher": {{ "@id": "https://foldpos.com/#organization" }}
 # }}
 # </script>
