@@ -56,6 +56,17 @@ def _asset_v(path):
     return hashlib.sha1(open(path, 'rb').read()).hexdigest()[:10]
 CHROME_CSS = '<link rel="stylesheet" href="/assets/css/chrome.css?v=%s">' % _asset_v('assets/css/chrome.css')
 CHROME_JS = '<script src="/assets/js/chrome.js?v=%s" defer></script>' % _asset_v('assets/js/chrome.js')
+# Site analytics (Microsoft Clarity). analytics.json holds the Clarity project ID (public, safe to commit).
+# With no ID the tag is left out entirely, so the site behaves exactly as before.
+def _analytics_tag():
+    try:
+        cfg = json.load(open('analytics.json', encoding='utf-8'))
+    except FileNotFoundError:
+        return ''
+    cid = (cfg.get('clarity_id') or '').strip()
+    if not re.fullmatch(r'[a-z0-9]{6,20}', cid):
+        return ''
+    return '<script src="/assets/js/fx-analytics.js?v=%s" data-clarity="%s" defer></script>' % (_asset_v('assets/js/fx-analytics.js'), cid)
 
 # ─── icons: reuse the homepage sprite ───
 _sprite = open('index.html', encoding='utf-8').read()
@@ -698,6 +709,18 @@ def put_chrome(fname):
     i = s.rindex('</body>')
     s = s[:i].rstrip('\n') + '\n' + CHROME_JS + '\n' + s[i:]
     open(fname, 'w', encoding='utf-8').write(s)
+    put_analytics(fname)
+
+
+def put_analytics(fname):
+    """Add (or refresh, or remove) the analytics tag just before </body>. Running it twice changes nothing."""
+    s = open(fname, encoding='utf-8').read()
+    s = re.sub(r'\n?<script src="/assets/js/fx-analytics\.js[^>]*></script>', '', s)
+    tag = _analytics_tag()
+    if tag:
+        i = s.rindex('</body>')
+        s = s[:i].rstrip('\n') + '\n' + tag + '\n' + s[i:]
+    open(fname, 'w', encoding='utf-8').write(s)
 
 
 def main():
@@ -731,6 +754,10 @@ def main():
     chrome_pages += sorted('es/' + f for f in os.listdir('es') if f.endswith('.html') and f != 'time-clock.html')   # es/time-clock.html only redirects to /es/fold-time
     for f in chrome_pages:
         put_chrome(f)
+    # Public pages that keep their own look still get analytics (the owner tours don't: they're for stores already on Fold).
+    for f in ('follow-the-bag.html', 'wallet.html'):
+        if os.path.isfile(f):
+            put_analytics(f)
     print('chrome on', ', '.join(chrome_pages))
     for f in chrome_pages:
         put_lang(f)
