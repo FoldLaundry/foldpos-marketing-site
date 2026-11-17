@@ -906,6 +906,20 @@ svg.i{width:18px;height:18px;flex:none}
 .sk-in .w,.sk-in .fade{opacity:0;transform:translateY(14px);display:inline-block;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
 .sk-in .fade{display:block}.sk-in .hero-cta.fade{display:flex}
 .sk-in .w.on,.sk-in .fade.on{opacity:1;transform:none}
+/* signup: the promise under the hero button, the mid-page band, tap-to-enlarge screens */
+.hero-sk .hero-note{margin:12px 0 0;font-size:14px;color:var(--ink-3)}
+.midcta{padding:64px 0;text-align:center;background:var(--fog);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.midcta h2{font-size:clamp(28px,4.4vw,44px);font-weight:700;line-height:1.08;text-wrap:balance}
+.midcta p{margin:12px auto 0;color:var(--ink-2);max-width:36em}
+.midcta .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+@media (max-width:899px){#screenImg{cursor:zoom-in}}
+.zoomv{position:fixed;inset:0;z-index:60;background:rgba(10,14,25,.94);display:flex;flex-direction:column;padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
+.zoomv[hidden]{display:none}
+.zoomv .zbar{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#fff;font-weight:600;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.zoomv .zbar button{background:#fff;color:#0b0d12;border:0;border-radius:999px;padding:9px 18px;font:inherit;font-weight:600;cursor:pointer}
+.zoomv .zhint{color:#c9cfdc;font-size:13px;margin:8px 0 10px;padding:0 max(16px,env(safe-area-inset-left,0px))}
+.zoomv .zsc{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.zoomv img{display:block;width:1400px;max-width:none;height:auto}
 .pv-wrap{max-width:1180px;margin:44px auto 0;padding:0 16px 56px}
 .pv-stage{position:relative;text-align:left;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#f7f9fe;box-shadow:0 40px 80px -40px rgba(14,23,48,.35),0 0 0 1px rgba(14,23,48,.06)}
 .pv-world{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
@@ -1001,7 +1015,8 @@ svg.i{width:18px;height:18px;flex:none}
     <span class="eyebrow fade">Made at Fold Laundry’s own counters.</span>
     <h1><span class="w">The</span> <span class="w">POS</span> <span class="w">built</span> <span class="w">behind</span> <span class="w">a</span> <span class="w">real</span> <span class="w">counter.</span><br><em><span class="w">For</span> <span class="w">laundromats</span> <span class="w">and</span> <span class="w">dry</span> <span class="w">cleaners,</span> <span class="w">by</span> <span class="w">owners</span> <span class="w">who</span> <span class="w">run</span> <span class="w">one.</span></em></h1>
     <p class="lede"><span class="w">Check-in,</span> <span class="w">tags,</span> <span class="w">texts</span> <span class="w">and</span> <span class="w">payment</span> <span class="w">on</span> <span class="w">one</span> <span class="w">screen,</span> <span class="w">the</span> <span class="w">way</span> <span class="w">a</span> <span class="w">busy</span> <span class="w">counter</span> <span class="w">actually</span> <span class="w">works.</span></p>
-    <div class="hero-cta fade"><a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free</a><a class="btn btn-ghost" href="#heyfold">Try Hey Fold</a></div>
+    <div class="hero-cta"><a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free</a><a class="btn btn-ghost" href="#heyfold">Try Hey Fold</a></div>
+    <p class="hero-note">14 days free · No card · Month to month</p>
     <div class="fade"><div class="seg" id="shopSeg" role="tablist" aria-label="Kind of shop">
       <button type="button" class="on" data-shop="laundromat" role="tab" aria-selected="true">Laundromat</button>
       <button type="button" data-shop="cleaner" role="tab" aria-selected="false">Dry cleaner</button>
@@ -1112,6 +1127,14 @@ svg.i{width:18px;height:18px;flex:none}
   </div>
 </section>
 
+<section class="midcta" id="try">
+  <div class="wrap">
+    <h2>See it at your own counter.</h2>
+    <p>14 days free. No card, no contract, no sales call.</p>
+    <div class="actions"><a class="btn btn-primary" href="https://pos.foldpos.com/signup">Start free</a><a class="btn btn-ghost" href="/pricing">See pricing</a></div>
+  </div>
+</section>
+
 <section class="heyfold" id="heyfold">
   <div class="wrap">
     <div class="kicker">Meet Hey Fold</div>
@@ -1164,7 +1187,7 @@ svg.i{width:18px;height:18px;flex:none}
 <section class="screens" id="screens">
   <div class="wrap">
     <h2>Every screen. Every door.</h2>
-    <p class="lede">Real screens from a Fold store. Tap one, or watch it play.</p>
+    <p class="lede">Real screens from a Fold store. Pick one, or tap the picture to see it full size.</p>
     <div class="tabrow"><span class="tl" id="tabsForLbl">For laundromats</span><div class="tabs" id="screenTabs" role="tablist"></div></div>
     <div class="tabrow"><span class="tl">Every shop</span><div class="tabs icotabs" id="screenTabsAll" role="tablist"><button type="button" data-screen="checkout"><svg class="i" aria-hidden="true"><use href="#i-scan"/></svg><span>Check out</span></button><button type="button" data-screen="payment"><svg class="i" aria-hidden="true"><use href="#i-card"/></svg><span>Payments</span></button><button type="button" data-screen="customers"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>Customers</span></button><button type="button" data-screen="invoices"><svg class="i" aria-hidden="true"><use href="#i-invoice"/></svg><span>Invoices</span></button><button type="button" data-screen="dashboard"><svg class="i" aria-hidden="true"><use href="#i-ledger"/></svg><span>Reports</span></button><button type="button" data-screen="marketing"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><span>Marketing</span></button><button type="button" data-screen="supplies"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg><span>Supplies</span></button><button type="button" data-screen="schedule"><svg class="i" aria-hidden="true"><use href="#i-history"/></svg><span>Shifts</span></button></div></div>
     <div class="devs" id="devs" role="tablist" aria-label="Device"><button type="button" data-dev="browser" class="on"><svg class="i" aria-hidden="true"><use href="#i-browser"/></svg>Browser</button><button type="button" data-dev="desktop"><svg class="i" aria-hidden="true"><use href="#i-desktop"/></svg>Windows &amp; Mac</button><button type="button" data-dev="ipad"><svg class="i" aria-hidden="true"><use href="#i-ipad"/></svg>iPad</button></div>
@@ -1178,6 +1201,7 @@ svg.i{width:18px;height:18px;flex:none}
       <div class="feats" id="screenFeats"></div>
     </div>
   </div>
+    <div class="zoomv" id="zoomv" hidden role="dialog" aria-modal="true" aria-labelledby="zoomTitle"><div class="zbar"><span id="zoomTitle"></span><button type="button" id="zoomClose">Close</button></div><p class="zhint">Swipe sideways to see the whole screen.</p><div class="zsc"><img id="zoomImg" src="" alt="" width="1600" height="1000"></div></div>
 </section>
 
 <section class="chapter hub" id="delivery">
@@ -1689,8 +1713,8 @@ svg.i{width:18px;height:18px;flex:none}
   var T=0; place(0); screens(-1);
   if(still){ words.forEach(function(w){w.classList.add('on')}); finalState(); return; }
   hero.classList.add('sk-in'); document.documentElement.classList.add('sk-ready'); drawSketch(0);
-  words.forEach(function(w,i){ setTimeout(function(){ w.classList.add('on'); }, 250+i*75); });
-  var textDone=250+words.length*75+250;
+  words.forEach(function(w,i){ setTimeout(function(){ w.classList.add('on'); }, 200+i*40); });
+  var textDone=200+words.length*40+250;
   var P=0, start=null, t0=null, reveal=null, playT=null, last=null;
   var autoAt=0;
   function visible(){ var r=stage.getBoundingClientRect(), vh=innerHeight; return c((Math.min(vh,r.bottom)-Math.max(0,r.top))/r.height); }
@@ -1734,6 +1758,26 @@ svg.i{width:18px;height:18px;flex:none}
   window.pvStop=function(){ halted=true; };
   window.pvAt=function(t){ place(t); screens(t); };
   window.pvSketch=function(P,r){ drawSketch(P); sk.style.opacity=1-r; paper.style.opacity=1-r; };
+})();
+</script>
+<script>
+/* tap a screen to see it full size (phones and small tablets, where the screenshot is too small to read) */
+(function(){
+  var img=document.getElementById('screenImg'), z=document.getElementById('zoomv'); if(!img||!z) return;
+  var zi=document.getElementById('zoomImg'), zt=document.getElementById('zoomTitle'), zc=document.getElementById('zoomClose'), prev=null;
+  function open(){
+    if(img.clientWidth>=900||!img.getAttribute('src')) return;
+    zi.src=img.src; zi.alt=img.alt; zt.textContent=(document.getElementById('screenTitle')||{}).textContent||'';
+    prev=document.documentElement.style.overflow; document.documentElement.style.overflow='hidden';
+    z.hidden=false; z.querySelector('.zsc').scrollLeft=0; zc.focus();
+    try{ window.clarity('event','screen_zoom'); }catch(e){}
+  }
+  function close(){ z.hidden=true; document.documentElement.style.overflow=prev||''; img.focus&&img.focus(); }
+  img.setAttribute('tabindex','0'); img.setAttribute('role','button');
+  img.addEventListener('click',open);
+  img.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  zc.addEventListener('click',close);
+  addEventListener('keydown',function(e){ if(e.key==='Escape'&&!z.hidden) close(); });
 })();
 </script>
 <!--fx:footer-->
